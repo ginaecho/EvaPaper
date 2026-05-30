@@ -31,3 +31,9 @@
 ## Last Check
 - Date: 2026-05-30
 - Status: Initial baseline established
+- Findings: None (baseline creation)
+
+## Scout Behavior Rule
+- **CRITICAL:** Scout only reports and pushes to git when NEW findings are discovered
+- If no new findings: finish silently (NO_REPLY, no git push, no report)
+- This avoids noise and only surfaces actual new research
