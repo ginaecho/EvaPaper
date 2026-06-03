@@ -25,3 +25,6 @@ I will include this in every scout report so the user can copy-paste.
 - 2026-05-30: Initial baseline established
 - 2026-05-31: 7 new papers + 4 new products discovered
 - 2026-06-01: 11 new papers + 7 new products discovered (commit 5e9c44b, not pushed)
+- 2026-06-04: 10 new papers + 5 new products discovered (commit 7e0e687)
+  - Key: Formal methods momentum accelerating — ABC (Design-by-Contract for agents), AgentVerify (LTL model checking), SkillFortify (formal skill supply chain verification), AgentAssay (regression testing), ACP (temporal admission control, 1.7M req/s). Benchmark consistency analysis reveals zero concordance (Kendall's W=0.10) across safety benchmarks. Agent Governance Series (6 papers) by Marcelo Fernandez is the most concentrated formal governance research program currently active.
+  - Critical insight: "benchmark choice can yield contradictory safety conclusions" — current safety rankings are mostly noise.
