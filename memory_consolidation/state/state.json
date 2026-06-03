@@ -1,0 +1,29 @@
+{
+  "diary": {
+    "count": 6,
+    "last_ts": "2026-06-03T03:45:28.816005",
+    "last_day": 4,
+    "last_sessions": 2,
+    "last_messages": 12,
+    "last_filename": "day4-2026-06-02-three_pleases_one_wrong_bridge.md",
+    "last_latency_s": 18.0,
+    "last_skip": "no_sessions_today"
+  },
+  "compact": {
+    "count": 6,
+    "last_ts": "2026-06-03T03:45:29.208928",
+    "last_invoke": 4,
+    "last_sessions": 20,
+    "last_messages": 166,
+    "last_latency_s": 18.0,
+    "last_model": "k2p6",
+    "last_skip": "stm_hash_unchanged"
+  },
+  "stm": {
+    "count": 3,
+    "last_ts": "2026-06-04T03:15:31.352324",
+    "last_sessions": 20,
+    "last_messages": 166,
+    "last_chars": 29633
+  }
+}

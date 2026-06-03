@@ -214,7 +214,490 @@ This is the business and operational justification for our entire governance sta
 
 ---
 
-## The Three-Layer Stack in Detail
+### 10. ClawBench — Real-World Web Agent Benchmark
+
+- **arXiv ID:** 2604.08523
+- **URL:** https://arxiv.org/abs/2604.08523
+- **PDF:** https://arxiv.org/pdf/2604.08523
+- **Website:** https://claw-bench.com
+- **GitHub:** https://github.com/TIGER-AI-Lab/ClawBench
+- **Authors:** Yuxuan Zhang, Yubo Wang, Yipeng Zhu et al.
+- **Institutions:** UBC, Vector Institute, CMU, UWaterloo, SJTU, ZJU, HKUST, Tsinghua
+- **Date:** April 9, 2026
+
+**Abstract:**
+> AI agents may be able to automate your inbox, but can they automate other routine aspects of your life? Everyday online tasks offer a realistic yet unsolved testbed for evaluating the next generation of AI agents. To this end, we introduce ClawBench, an evaluation framework of 153 simple tasks that people need to accomplish regularly in their lives and work, spanning 144 live platforms across 15 categories, from completing purchases and booking appointments to submitting job applications. These tasks require demanding capabilities beyond existing benchmarks, such as obtaining relevant information from user-provided documents, navigating multi-step workflows across diverse platforms, and write-heavy operations like filling in many detailed forms correctly. Unlike existing benchmarks that evaluate agents in offline sandboxes with static pages, ClawBench operates on production websites, preserving the full complexity, dynamic nature, and challenges of real-world web interaction. A lightweight interception layer captures and blocks only the final submission request, ensuring safe evaluation without real-world side effects. Our evaluations of 7 frontier models show that both proprietary and open-source models can complete only a small portion of these tasks. For example, Claude Sonnet 4.6 achieves only 33.3%.
+
+**Why I recommend this paper:**
+ClawBench is the **first benchmark to evaluate agents on live production websites with write-heavy transactions** (purchases, bookings, applications). Unlike sandboxed benchmarks, it captures real-world complexity: dynamic DOMs, authentication flows, payment processing, and form validation. The fact that the best model (Claude Sonnet 4.6) achieves only 33.3% exposes the massive gap between sandbox optimism and production reality.
+
+**Relevance to our topic:**
+This is a complementary Layer 2 benchmark to BeSafe-Bench and ST-WebAgentBench. Where BeSafe-Bench measures safety violations and ST-WebAgentBench measures policy adherence, ClawBench measures whether agents can even *function* on real websites under realistic constraints. It provides the operational reality check that governance must address.
+
+**Which layer:** **Layer 2 — Behavioral-Level Governance**
+
+**Is it a solution we're looking into?** Yes. ClawBench should be integrated into our evaluation stack alongside BeSafe-Bench and ST-WebAgentBench. It provides the "can it actually work" baseline that safety benchmarks assume.
+
+**Recommendation reason:** The 33.3% success rate on real websites is the most sobering agent benchmark result to date. Any governance framework that doesn't account for this operational reality is designing for a fantasy. The five-layer recording (session replays, screenshots, HTTP traffic, agent messages, browser actions) is also a gold standard for forensic governance.
+
+---
+
+### 11. OWASP Top 10 for Agentic Skills (AST10)
+
+- **URL:** https://owasp.org/www-project-agentic-skills-top-10/
+- **GitHub:** https://github.com/OWASP/www-project-agentic-skills-top-10
+- **Type:** Industry standard / Security framework
+- **Date:** 2026 Edition (incubated at OWASP Project Summit, Oslo, Norway)
+- **License:** CC-BY-SA-4.0
+- **Status:** Active development, v1.0 RC targeted Q3 2026
+
+**Abstract/Summary:**
+> The OWASP Agentic Skills Top 10 (AST10) documents the 10 most critical security risks in agentic AI skills across all major AI agent platforms. Skills represent the execution layer giving agents real-world impact through platform-specific metadata + scripts. The 10 risks are: AST01 Malicious Skills, AST02 Supply Chain Compromise, AST03 Over-Privileged Skills, AST04 Insecure Metadata, AST05 Unsafe Deserialization, AST06 Weak Isolation, AST07 Update Drift, AST08 Poor Scanning, AST09 No Governance, and AST10 Cross-Platform Reuse. Each risk includes platform-specific attack scenarios (OpenClaw SKILL.md, Claude Code skill.json, Cursor manifest.json, VS Code package.json), preventive mitigations, OWASP/NIST/CVE mappings, and real-world evidence citations. The project also proposes a Universal Skill Format — a YAML standard normalizing security properties across all platforms.
+
+**Why I recommend this:**
+AST10 is the **first security framework focused specifically on agent skills as an attack surface**. While OWASP Agentic Applications (ASI) covers model-layer risks, AST10 covers the skill content layer — the reusable, named behaviors that encode complete workflows. Real-world evidence is already severe: 36% of AI agent skills contain security flaws (Snyk ToxicSkills), the ClawHub registry was poisoned at scale, and 135,000+ OpenClaw instances are publicly exposed. This is the framework that defines what "secure skill authoring" means.
+
+**Relevance to our topic:**
+AST10 maps directly to Layer 0 (Spec-Level Governance). It defines the security properties that every skill specification must have: least-privilege manifests, schema validation, signing, provenance tracking, and governance metadata. The Universal Skill Format proposal is the cross-platform standard that could unify OpenClaw, Claude Code, and Cursor skill formats under one security schema.
+
+**Which layer:** **Layer 0 — Spec-Level Governance** (with Layer 1 hooks for isolation and sandboxing)
+
+**Is it a solution we're looking into?** Yes. AST10 should be the security checklist for all skill development. The 12 contract sections from GovernSpec plus the 10 risk categories from AST10 together define what a "production-ready skill" looks like.
+
+**Recommendation reason:** The ClawHub poisoning incident and 36% vulnerability rate prove that skills are not just documentation — they're executable code with real attack surface. AST10 is the first framework to treat them with the security rigor they deserve.
+
+---
+
+### 12. MCP-38 — Comprehensive Threat Taxonomy for Model Context Protocol
+
+- **arXiv ID:** 2603.18063
+- **URL:** https://arxiv.org/abs/2603.18063
+- **PDF:** https://arxiv.org/pdf/2603.18063
+- **GitHub (tool):** https://github.com/VulcanLab/MCPThreatHive
+- **Authors:** Yi Ting Shen, Kentaroh Toyoda, Alex Leung
+- **Date:** March 2026
+
+**Abstract:**
+> The Model Context Protocol (MCP) introduces a structurally distinct attack surface that existing threat frameworks, designed for traditional software systems or generic LLM deployments, do not adequately cover. This paper presents MCP-38, a protocol-specific threat taxonomy consisting of 38 threat categories (MCP-01 through MCP-38). The taxonomy was derived through a systematic four-phase methodology: protocol decomposition, multi-framework cross-mapping, real-world incident synthesis, and remediation-surface categorization. Each category is mapped to STRIDE, OWASP Top 10 for LLM Applications (2025, LLM01--LLM10), and the OWASP Top 10 for Agentic Applications (2026, ASI01--ASI10). MCP-38 addresses critical threats arising from MCP's semantic attack surface (tool description poisoning, indirect prompt injection, parasitic tool chaining, and dynamic trust violations), none of which are adequately captured by prior work. MCP-38 provides the definitional and empirical foundation for automated threat intelligence platforms.
+
+**Why I recommend this paper:**
+MCP-38 is the **first comprehensive threat taxonomy for the Model Context Protocol**, which is rapidly becoming the standard for agent-tool communication. The 38 categories cover threats that don't exist in traditional software (tool description poisoning, parasitic tool chaining, dynamic trust violations) and map them to established frameworks (STRIDE, OWASP LLM, OWASP Agentic). This is the reference that every MCP server developer and agent builder needs.
+
+**Relevance to our topic:**
+This is Layer 1 (Runtime-Level Governance) at the protocol level. MCP is the de facto standard for agent-tool interaction, and MCP-38 provides the threat model that runtime governance must defend against. The accompanying MCPThreatHive tool provides automated threat intelligence for MCP ecosystems.
+
+**Which layer:** **Layer 1 — Runtime-Level Governance** (protocol security)
+
+**Is it a solution we're looking into?** Yes. Any agent system using MCP (which is most modern ones) needs to understand these 38 threat categories. The cross-mapping to OWASP means we can integrate MCP-38 into existing AppSec programs.
+
+**Recommendation reason:** MCP is the plumbing of agent infrastructure. If the plumbing is insecure, no amount of spec-level or behavioral governance can compensate. MCP-38 is the threat model that makes MCP security measurable and manageable.
+
+---
+
+### 13. Tencent AI-Infra-Guard — Full-Stack AI Red Teaming Platform
+
+- **URL:** https://github.com/Tencent/AI-Infra-Guard
+- **Type:** Open-source security product
+- **Date:** May 2026 (actively maintained)
+- **License:** Tencent open-source
+
+**Abstract/Summary:**
+> AI-Infra-Guard is a full-stack AI Red Teaming platform securing AI ecosystems via OpenClaw Security Scan, Agent Scan, Skills Scan, MCP scan, AI Infra scan, and LLM jailbreak evaluation. It provides automated scanning capabilities across the entire agent stack: from OpenClaw instance configuration and skill package security to MCP server integrity and infrastructure hardening. The platform integrates with research from the broader ecosystem including MCP-38, SkillAttack, TRUSTDESC, and MalTool papers. Tencent published this as an open-source tool for the community to self-assess AI infrastructure security posture.
+
+**Why I recommend this:**
+This is the **first open-source full-stack scanner for agent ecosystems**. Unlike point solutions (Skilldex for validation, MCPThreatHive for MCP threats), AI-Infra-Guard covers the entire stack: OpenClaw instances, agent configurations, skill packages, MCP servers, and infrastructure. It's the closest thing to a "security audit tool for agent deployments."
+
+**Relevance to our topic:**
+AI-Infra-Guard spans all three layers: Skills Scan maps to Layer 0 (spec validation), MCP scan and Agent Scan map to Layer 1 (runtime security), and LLM jailbreak evaluation maps to Layer 2 (behavioral safety). It's the operational tool that implements governance across the stack.
+
+**Which layer:** **All layers** — Layer 0 (Skills Scan), Layer 1 (MCP scan, Agent Scan, OpenClaw Security Scan), Layer 2 (LLM jailbreak evaluation)
+
+**Is it a solution we're looking into?** Yes. This is the closest open-source equivalent to Microsoft's commercial Agent Governance Toolkit. It provides the scanning and assessment infrastructure that governance frameworks need to be operational.
+
+**Recommendation reason:** Governance without measurement is just policy. AI-Infra-Guard provides the measurement tools that turn governance frameworks into actionable security assessments. The integration with MCP-38 and SkillAttack research means it's evidence-based, not theoretical.
+
+---
+
+### 14. IBM Sovereign Core — Governance Policy at Infrastructure Runtime
+
+- **URL:** https://www.ibm.com/products/sovereign-core
+- **Type:** Enterprise product
+- **Date:** General Availability announced May 7, 2026 (IBM Think 2026)
+
+**Abstract/Summary:**
+> IBM Sovereign Core is a platform that embeds governance policy at the infrastructure runtime level for regulated, cross-border environments. It reached General Availability at IBM Think 2026 in Boston. Unlike policy-as-configuration tools, Sovereign Core enforces governance at the infrastructure layer — meaning policy compliance is guaranteed by the runtime environment itself, not by agent self-reporting or post-hoc audit. This is designed for enterprises in regulated industries (finance, healthcare, government) where data residency, compliance, and audit requirements are non-negotiable.
+
+**Why I recommend this:**
+IBM Sovereign Core represents the **next generation of runtime governance** — policy enforcement at the infrastructure level rather than the application level. This is a fundamentally different approach from LGA (which operates at the agent execution layer) or Microsoft Agent Governance Toolkit (which operates at the platform layer). Infrastructure-level enforcement means policy violations are physically impossible, not just detectable.
+
+**Relevance to our topic:**
+This is Layer 1 (Runtime-Level Governance) at the infrastructure tier. It complements LGA's execution-layer controls with physical-layer guarantees. For regulated enterprises, this is the difference between "we have policies" and "policies are enforced by the substrate."
+
+**Which layer:** **Layer 1 — Runtime-Level Governance** (infrastructure tier)
+
+**Is it a solution we're looking into?** Yes. For enterprises in regulated industries, infrastructure-level governance is the only viable approach. Sovereign Core provides the physical enforcement layer that makes policy compliance verifiable to auditors.
+
+**Recommendation reason:** Most governance frameworks operate at the application layer, which means a compromised agent can bypass them. Infrastructure-level enforcement is the only approach that provides non-bypassable governance for high-assurance environments.
+
+---
+
+## New Findings — June 4, 2026 Scout Run
+
+### 15. Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents
+
+- **arXiv ID:** 2605.16282
+- **URL:** https://arxiv.org/abs/2605.16282
+- **PDF:** https://arxiv.org/pdf/2605.16282
+- **Authors:** Miles Q. Li et al.
+- **Date:** April 11, 2026
+
+**Abstract:**
+> The rapid deployment of LLM-based autonomous agents has introduced safety risks that extend far beyond traditional LLM concerns, prompting a proliferation of safety benchmarks since late 2023. However, these benchmarks have developed independently, with inconsistent threat models, incompatible metrics, and overlapping yet incomplete risk coverage. We present the first systematic analysis dedicated to agent safety benchmarks as evaluation instruments. We catalog 40 behavioral agent-safety benchmarks (2023-2026), plus 5 adjacent evaluator, defense, and dataset artifacts, propose a six-axis taxonomy of benchmark evaluation methodology, and apply it across the corpus to characterize how methodological choices shape safety conclusions. A coverage matrix reveals broad risk coverage but limited methodological convergence, while the taxonomy analysis shows a behavioral-benchmark core concentrated in sandboxed, constrained, and often safety-only evaluation. Across the landscape, we find that benchmark choice can yield contradictory safety conclusions, coverage counts often overstate evaluation depth, environment fidelity systematically shapes reported safety, the field disproportionately tests externally imposed rather than agent-internal risks, metric fragmentation limits comparison, and robustness remains effectively unbenchmarked. We ground these claims with a cross-benchmark consistency check, with 95% confidence intervals and Kendall's W concordance analysis, finding no evidence of ranking concordance across evaluation dimensions (W = 0.10, p = 0.94).
+
+**Why I recommend this paper:**
+This is the **first meta-analysis of agent safety benchmarks** — it tells us whether the benchmarks themselves are trustworthy. The finding that benchmark choice yields contradictory conclusions (Kendall's W = 0.10, meaning essentially zero concordance) is devastating: it means current safety rankings are mostly noise. This paper is essential for anyone relying on benchmark scores to make governance decisions.
+
+**Relevance to our topic:**
+This is a **Layer 3 (Meta-Governance)** paper. It evaluates the evaluators. Before we can trust any benchmark — BeSafe-Bench, ST-WebAgentBench, EmbodiedGovBench — we need to know if benchmark results are consistent. This paper proves they are not, which means governance frameworks must use multiple benchmarks and compare methodological axes, not just headline scores.
+
+**Which layer:** **Layer 2/3 — Behavioral-Level + Meta-Governance**
+
+**Is it a solution we're looking into?** Yes, as a critical filter. We should not trust any single benchmark. This paper provides the taxonomy for comparing benchmarks and identifying which dimensions of safety are actually being measured.
+
+**Recommendation reason:** If benchmarks disagree this fundamentally, then "passing a safety benchmark" is not evidence of safety. This paper gives us the framework to interpret benchmark results correctly and identify which benchmarks cover which risk dimensions.
+
+---
+
+### 16. Governance by Construction for Generalist Agents (CUGA)
+
+- **arXiv ID:** 2605.20874
+- **URL:** https://arxiv.org/abs/2605.20874
+- **PDF:** https://arxiv.org/pdf/2605.20874
+- **Authors:** Segev Shlomov, IBM Research
+- **Date:** May 20, 2026
+
+**Abstract:**
+> Enterprise agents are increasingly expected to operate autonomously across tools and interfaces, yet production deployments require governance by construction. Systems must specify which actions are allowed, when human oversight is required, and what information may be exposed, without rebuilding the agent for each domain. This demo presents CUGA's policy system, a modular policy-as-code layer that composes with a generalist LLM agent to deliver predictable, auditable, and compliance-aware behavior in compound workflows without model fine-tuning. We present a runtime governance architecture that enforces policy interventions at every critical stage of execution. Rather than passively constraining behavior, policies intercept the agent at five structural checkpoints: upstream of planning (Intent Guard), within the system prompt to steer reasoning (Playbook), at the tool-call boundary to enforce proper usage (Tool Guide), outside the reasoning loop as a Human-in-the-Loop gate for high-risk actions (Tool Approvals), and at the output stage to filter and structure the final response (Output Formatter). Together, these stages embed governance continuously across the agent's execution pipeline rather than treating it as an afterthought.
+
+**Why I recommend this paper:**
+CUGA is the **first enterprise-grade "governance by construction" framework** that doesn't require model fine-tuning. The five checkpoints (Intent Guard → Playbook → Tool Guide → Tool Approvals → Output Formatter) provide a complete execution pipeline with governance embedded at every stage. The healthcare demo with multi-layered enforcement shows this is production-ready, not theoretical.
+
+**Relevance to our topic:**
+This spans **Layer 0 (spec/policy) through Layer 1 (runtime enforcement)**. The Playbook and Tool Guide are specification artifacts (Layer 0) that are dynamically injected at runtime (Layer 1). The Intent Guard and Tool Approvals are runtime mediation mechanisms. This is exactly how we want skill governance to work: specs that are not just documents but active enforcement points.
+
+**Which layer:** **Layer 0 → Layer 1 bridge** (Spec-Level to Runtime-Level)
+
+**Is it a solution we're looking into?** Yes. The policy-as-code approach with typed governance primitives is directly applicable to how we design SKILL.md constraints. The "governance by construction" philosophy (governance built in, not bolted on) aligns with our governance goals.
+
+**Recommendation reason:** Most governance frameworks treat governance as a constraint applied after the agent is built. CUGA embeds governance into the construction process itself. The checkpoint architecture is a design pattern we should adopt.
+
+---
+
+### 17. Agent Behavioral Contracts (ABC)
+
+- **arXiv ID:** 2602.22302
+- **URL:** https://arxiv.org/abs/2602.22302
+- **PDF:** https://arxiv.org/pdf/2602.22302
+- **Authors:** Varun Pratap Bhardwaj, Accenture
+- **Date:** February 25, 2026
+
+**Abstract:**
+> Traditional software relies on contracts -- APIs, type systems, assertions -- to specify and enforce correct behavior. AI agents, by contrast, operate on prompts and natural language instructions with no formal behavioral specification. This gap is the root cause of drift, governance failures, and frequent project failures in agentic AI deployments. We introduce Agent Behavioral Contracts (ABC), a formal framework that brings Design-by-Contract principles to autonomous AI agents. An ABC contract C = (P, I, G, R) specifies Preconditions, Invariants, Governance policies, and Recovery mechanisms as first-class, runtime-enforceable components. We define (p, delta, k)-satisfaction -- a probabilistic notion of contract compliance that accounts for LLM non-determinism and recovery -- and prove a Drift Bounds Theorem showing that contracts with recovery rate gamma > alpha (the natural drift rate) bound behavioral drift to D* = alpha/gamma in expectation, with Gaussian concentration in the stochastic setting. We establish sufficient conditions for safe contract composition in multi-agent chains and derive probabilistic degradation bounds. We implement ABC in AgentAssert, a runtime enforcement library, and evaluate on AgentContract-Bench, a benchmark of 200 scenarios across 7 models from 6 vendors. Results across 1,980 sessions show that contracted agents detect 5.2-6.8 soft violations per session that uncontracted baselines miss entirely (p < 0.0001, Cohen's d = 6.7-33.8), achieve 88-100% hard constraint compliance, and bound behavioral drift to D* < 0.27 across extended sessions, with 100% recovery for frontier models and 17-100% across all models, at overhead < 10 ms per action.
+
+**Why I recommend this paper:**
+This is the **first formal Design-by-Contract framework for AI agents**. It doesn't just propose contracts — it proves they work mathematically (Drift Bounds Theorem), implements them (AgentAssert), and empirically validates them (1,980 sessions, 7 models). The probabilistic compliance notion (p, delta, k)-satisfaction is the right formalism for LLM non-determinism. The overhead (< 10 ms/action) makes it production-viable.
+
+**Relevance to our topic:**
+This directly answers **"how to verify if specs are well defined"** — ABC contracts are the formal specification, and (p, delta, k)-satisfaction is the verification criterion. It spans all three layers: contracts are specs (Layer 0), AgentAssert enforces at runtime (Layer 1), and AgentContract-Bench measures behavioral compliance (Layer 2).
+
+**Which layer:** **All layers — Layer 0 (contracts as specs), Layer 1 (AgentAssert runtime enforcement), Layer 2 (AgentContract-Bench behavioral validation)**
+
+**Is it a solution we're looking into?** Yes. This is the most comprehensive formal governance framework available. The mathematical foundations (Drift Bounds Theorem, composition conditions) provide guarantees that heuristic approaches cannot. The open-source AgentAssert implementation means we can adopt it immediately.
+
+**Recommendation reason:** The "governance failures and frequent project failures" that ABC attributes to lack of formal specification is exactly our problem. ABC provides the mathematical and implementation foundation for solving it.
+
+---
+
+### 18. AgentVerify
+
+- **Preprint DOI:** 10.20944/preprints202604.1029.v1
+- **URL:** https://www.preprints.org/manuscript/202604.1029/v1
+- **Authors:** Eric Fang et al.
+- **Date:** April 14, 2026
+
+**Abstract:**
+> Autonomous AI agents operating in high-stakes domains -- financial trading, medical diagnostics, autonomous code execution -- lack formal safety guarantees for their core operational loops, including memory management, tool invocations, and human interactions. Current verification approaches either fail to scale to neural components or ignore the structured control flow of agentic systems entirely. We introduce AgentVerify, a model checking framework that specifies and verifies safety properties for agent architectures using temporal logic. AgentVerify defines compositional specifications for memory integrity, tool call protocols, MCP/skill invocations, and human-in-the-loop boundaries, enabling rigorous runtime monitoring and post-hoc behavioral analysis. In an empirical evaluation across 15 diverse agent scenarios (low- and high-difficulty), our post-hoc behavioral analysis component achieved a verification accuracy of 86.67% (mean over 3 seeds, sigma=0.00), outperforming a monolithic contract verification baseline (80.00%) and a runtime monitoring baseline without temporal logic (46.67%). A monolithic neural verifier, which attempts to verify the LLM outputs directly, performed poorly at 13.33%, confirming that end-to-end neural verification is currently intractable for production-scale agents.
+
+**Why I recommend this paper:**
+AgentVerify demonstrates that **formal methods applied to observable control flow (not neural internals) are tractable and effective**. The 86.67% accuracy on post-hoc behavioral analysis, 100% catastrophic failure detection rate, and 0.04% runtime overhead make it a practical safety layer. The key insight: verify the agent's actions in the world, not the LLM's internal reasoning.
+
+**Relevance to our topic:**
+**Layer 1/2** — Compositional verification of agent safety properties. The 23 LTL templates for memory integrity, tool protocols, MCP/skill invocations, and human-in-the-loop boundaries are reusable specification patterns. The hybrid architecture (O(1) runtime monitor + post-hoc analyser) provides both immediate intervention and comprehensive auditing.
+
+**Which layer:** **Layer 1 — Runtime-Level Governance** (with Layer 2 post-hoc analysis)
+
+**Is it a solution we're looking into?** Yes. The compositional specification library is directly applicable to our skill/agent verification needs. The finding that monolithic neural verification fails (13.33%) while control-flow verification succeeds (86.67%) tells us where to invest engineering effort.
+
+**Recommendation reason:** This paper proves that formal verification of agent behavior is not just theoretically possible but practically achievable with the right abstraction (observable control flow, not neural weights).
+
+---
+
+### 19. SkillFortify
+
+- **arXiv ID:** 2603.00195
+- **URL:** https://arxiv.org/abs/2603.00195
+- **PDF:** https://arxiv.org/pdf/2603.00195
+- **GitHub:** https://github.com/varun369/skillfortify
+- **Authors:** Varun Pratap Bhardwaj
+- **Date:** February 27, 2026
+
+**Abstract:**
+> The rapid proliferation of agentic AI skill ecosystems -- exemplified by OpenClaw (228,000 GitHub stars) and Anthropic Agent Skills (75,600 stars) -- has introduced a critical supply chain attack surface. The ClawHavoc campaign (January-February 2026) infiltrated over 1,200 malicious skills into the OpenClaw marketplace, while MalTool catalogued 6,487 malicious tools that evade conventional detection. In response, twelve reactive security tools emerged, yet all rely on heuristic methods that provide no formal guarantees. We present SkillFortify, the first formal analysis framework for agent skill supply chains, with six contributions: (1) the DY-Skill attacker model, a Dolev-Yao adaptation to the five-phase skill lifecycle with a maximality proof; (2) a sound static analysis framework grounded in abstract interpretation; (3) capability-based sandboxing with a confinement proof; (4) an Agent Dependency Graph with SAT-based resolution and lockfile semantics; (5) a trust score algebra with formal monotonicity; and (6) SkillFortifyBench, a 540-skill benchmark. SkillFortify achieves 96.95% F1 (95% CI: [95.1%, 98.4%]) with 100% precision and 0% false positive rate on 540 skills, while SAT-based resolution handles 1,000-node graphs in under 100 ms.
+
+**Why I recommend this paper:**
+SkillFortify is the **first formal verification framework for skill supply chain security**. Unlike Snyk agent-scan (heuristic, "no findings does not mean no risk"), Cisco skill-scanner (YARA patterns), or ToolShield (behavioral heuristics), SkillFortify provides mathematical guarantees: soundness, confinement, resolution correctness, trust monotonicity. The 0% false positive rate on 540 skills is critical for CI/CD adoption — developers won't ignore findings if there are no false alarms.
+
+**Relevance to our topic:**
+**Layer 0/1** — Directly validates SKILL.md security with formal guarantees. The DY-Skill threat model captures all symbolic attacks on the skill supply chain. The capability confinement proof ensures verified skills cannot exceed declared permissions. This is the validation infrastructure we need for the spec layer.
+
+**Which layer:** **Layer 0 — Spec-Level Governance** (with Layer 1 runtime sandboxing)
+
+**Is it a solution we're looking into?** Yes. pip install skillfortify. MIT license. This replaces heuristic skill scanning with formal analysis. The SAT-based dependency resolver (1,000 nodes in <100 ms) makes it viable for large skill ecosystems.
+
+**Recommendation reason:** After ClawHavoc (1,200+ malicious skills), heuristic scanning is insufficient. SkillFortify provides the formal foundation for skill security — the same rigor as traditional software supply chain security (SLSA, SBOM) adapted for agent skills.
+
+---
+
+### 20. AgentAssay
+
+- **arXiv ID:** 2603.02601
+- **URL:** https://arxiv.org/abs/2603.02601
+- **PDF:** https://arxiv.org/pdf/2603.02601
+- **GitHub:** https://github.com/qualixar/agentassay
+- **Authors:** Varun Pratap Bhardwaj
+- **Date:** March 3, 2026
+
+**Abstract:**
+> Autonomous AI agents are deployed at unprecedented scale, yet no principled methodology exists for verifying that an agent has not regressed after changes to its prompts, tools, models, or orchestration logic. We present AgentAssay, the first token-efficient framework for regression testing non-deterministic AI agent workflows, achieving 78-100% cost reduction while maintaining rigorous statistical guarantees. Our contributions include: (1) stochastic three-valued verdicts (PASS/FAIL/INCONCLUSIVE) grounded in hypothesis testing; (2) five-dimensional agent coverage metrics; (3) agent-specific mutation testing operators; (4) metamorphic relations for agent workflows; (5) CI/CD deployment gates as statistical decision procedures; (6) behavioral fingerprinting that maps execution traces to compact vectors, enabling multivariate regression detection; (7) adaptive budget optimization calibrating trial counts to behavioral variance; and (8) trace-first offline analysis enabling zero-cost testing on production traces. Experiments across 5 models (GPT-5.2, Claude Sonnet 4.6, Mistral-Large-3, Llama-4-Maverick, Phi-4), 3 scenarios, and 7,605 trials demonstrate that behavioral fingerprinting achieves 86% detection power where binary testing has 0%, SPRT reduces trials by 78%, and the full pipeline achieves 100% cost savings through trace-first analysis.
+
+**Why I recommend this paper:**
+AgentAssay solves the **regression testing problem for non-deterministic agents**. Traditional software regression tests are deterministic — run the test, compare output. Agents are stochastic — same input, different outputs. AgentAssay's behavioral fingerprinting (86% detection where binary tests have 0%), adaptive budget optimization (78% cost reduction), and trace-first offline analysis (100% cost savings) make regression testing economically viable for agents.
+
+**Relevance to our topic:**
+**Layer 2** — Ensures governance properties persist across updates. When skills, prompts, or models change, AgentAssay detects if safety properties have regressed. The CI/CD deployment gates mean governance is enforced in the delivery pipeline, not just at runtime.
+
+**Which layer:** **Layer 2 — Behavioral-Level Governance** (with Layer 1 CI/CD integration)
+
+**Is it a solution we're looking into?** Yes. pip install agentassay. pytest integration. This is the missing piece for continuous governance: how do we know that today's update didn't break yesterday's safety guarantees?
+
+**Recommendation reason:** Without regression testing, governance is a point-in-time assessment. AgentAssay makes governance continuous by providing statistical guarantees that agent behavior hasn't degraded after changes.
+
+---
+
+### 21. A Comprehensive Survey on Agent Skills: Taxonomy, Techniques, and Applications
+
+- **arXiv ID:** 2605.07358
+- **URL:** https://arxiv.org/abs/2605.07358
+- **PDF:** https://arxiv.org/pdf/2605.07358
+- **Authors:** Wenchuan Du et al.
+- **Date:** May 8, 2026
+
+**Abstract:**
+> Large language model (LLM)-based agents that reason, plan, and act through tools, memory, and structured interaction are emerging as a promising paradigm for automating complex workflows. Recent systems such as OpenClaw and Claude Code exemplify a broader shift from passive response generation to action-oriented task execution. Yet as agents move toward open-ended, real-world deployment, relying on from-scratch reasoning and low-level tool calls for every task become increasingly inefficient, error-prone, and hard to maintain. This survey examines this challenge through the lens of agent skills, which we define as reusable procedural artifacts that coordinate tools, memory, and runtime context under task-specific constraints. Under this view, agents and skills play complementary roles: agents handle high-level reasoning and planning, while skills form the operational layer that enables reliable, reusable, and composable execution. We organize the literature around four stages of the agent skill lifecycle -- representation, acquisition, retrieval, and evolution -- and review representative methods, ecosystem resources, and application settings across each stage. We conclude by discussing open challenges in quality control, interoperability, safe updating, and long-term capability management.
+
+**Why I recommend this paper:**
+This is the **definitive survey of the agent skills ecosystem**. It explicitly identifies "quality control, interoperability, safe updating, and long-term capability management" as open challenges — exactly our governance focus. The four-stage lifecycle (representation → acquisition → retrieval → evolution) provides the organizing framework for understanding where governance interventions are needed.
+
+**Relevance to our topic:**
+**All layers** — The survey covers skill representation (Layer 0), retrieval and execution (Layer 1), and evolution/quality control (Layer 2/3). The finding that "safe updating" is an open challenge directly validates our governance focus: skills change over time, and current systems don't verify that updates preserve safety properties.
+
+**Which layer:** **Layer 0/1/2/3 — All layers**
+
+**Is it a solution we're looking into?** Yes, as a roadmap. The survey collects all related resources (papers, open-source data, projects) and organizes them by lifecycle stage. This is the reference we use to identify which governance mechanisms exist and which are missing.
+
+**Recommendation reason:** Before building governance, we need to understand the ecosystem we're governing. This survey provides that understanding and explicitly flags the governance gaps.
+
+---
+
+### 22. Machine Identity Governance Taxonomy (MIGT) — "Who Governs the Machine?"
+
+- **arXiv ID:** 2604.06148
+- **URL:** https://arxiv.org/abs/2604.06148
+- **PDF:** https://arxiv.org/pdf/2604.06148
+- **Authors:** Klaudia Krawiecka et al., Cloud Security Alliance
+- **Date:** April 7, 2026
+
+**Abstract:**
+> The governance of artificial intelligence has a blind spot: the machine identities that AI systems use to act. AI agents, service accounts, API tokens, and automated workflows now outnumber human identities in enterprise environments by ratios exceeding 80 to 1, yet no integrated framework exists to govern them. A single ungoverned automated agent produced $5.4-10 billion in losses in the 2024 CrowdStrike outage; nation-state actors including Silk Typhoon and Salt Typhoon have operationalized ungoverned machine credentials as primary espionage vectors against critical infrastructure. This paper makes four original contributions. First, the AI-Identity Risk Taxonomy (AIRT): a comprehensive enumeration of 37 risk sub-categories across eight domains. Second, the Machine Identity Governance Taxonomy (MIGT): an integrated six-domain governance framework simultaneously addressing the technical governance gap, the regulatory compliance gap, and the cross-jurisdictional coordination gap. Third, a foreign state actor threat model for enterprise identity governance. Fourth, a cross-jurisdictional regulatory alignment structure mapping enterprise AI identity governance obligations under EU, US, and Chinese frameworks simultaneously.
+
+**Why I recommend this paper:**
+This paper exposes the **machine identity governance blind spot** — the foundation layer that everything else rests on. If machine identities (agents, API tokens, service accounts) are ungoverned, no amount of skill validation or runtime sandboxing can provide accountability. The 80:1 machine-to-human identity ratio and the $5.4-10B CrowdStrike loss demonstrate the scale of the problem.
+
+**Relevance to our topic:**
+**Layer 1/3** — Machine identity is the prerequisite for all other governance. The paper's speculative extension on "skill-level attestation as a runtime admission control mechanism" directly connects to our spec/skill/agent validation goals: attestation would bind skill execution to verified identity and capabilities.
+
+**Which layer:** **Layer 1 — Runtime-Level Governance** (foundational identity layer)
+
+**Is it a solution we're looking into?** Yes. The MIGT framework provides the identity foundation that our skill and agent governance mechanisms require. Without verifiable machine identity, contracts, benchmarks, and runtime enforcement lack an accountability anchor.
+
+**Recommendation reason:** Governance without identity is unenforceable. This paper provides the framework for governing the identities that execute skills and agent policies.
+
+---
+
+### 23. Admission Control for Agent Actions (ACP)
+
+- **arXiv ID:** 2603.18829
+- **URL:** https://arxiv.org/abs/2603.18829
+- **PDF:** https://arxiv.org/pdf/2603.18829
+- **Authors:** Marcelo Fernandez
+- **Date:** April 30, 2026 (v10)
+
+**Abstract:**
+> Autonomous agents can produce harmful behavioral patterns from individually valid requests -- a threat class per-request policy evaluation cannot address, because stateless engines evaluate each request in isolation. We present ACP, a temporal admission control protocol enforcing behavioral properties over execution traces via static risk scoring combined with stateful signals (anomaly accumulation, cooldown) through a LedgerQuerier abstraction. ACP blocks execution based on deterministic, history-aware risk scoring -- not anomaly detection. Under a 500-request workload where every request is individually valid (RS=35), a stateless engine approves all 500; ACP limits autonomous execution to 2 out of 500 (0.4%), escalating after 3 actions and denying after 11. We identify a state-mixing vulnerability in ACP-RISK-2.0 and introduce ACP-RISK-3.0. Decision evaluation: 739-832 ns (p50); throughput 1,720,000 req/s. Safety and liveness model-checked via TLA+ (11 invariants + 4 temporal properties, 0 violations) across 4,294,930,695 distinct states.
+
+**Why I recommend this paper:**
+ACP is the **fastest formally-verified admission control system for agents** — 1.7M req/s with sub-microsecond decision latency. The key innovation: temporal (history-aware) risk scoring, not per-request evaluation. The 500-request experiment is devastating: stateless engines approve 100% of individually-valid requests that collectively form an attack chain; ACP limits autonomous execution to 0.4%. The TLA+ verification across 4.2 billion states provides mathematical confidence.
+
+**Relevance to our topic:**
+**Layer 1** — Runtime admission control with formal verification. ACP is Paper 1 of a 6-paper Agent Governance Series (P0: atomic decision boundaries; P2: behavioral drift detection; P3/4: governance structure and irreducibility; P5: runtime execution validity; P6: operationalization). This series is the most concentrated formal governance research program currently active.
+
+**Which layer:** **Layer 1 — Runtime-Level Governance**
+
+**Is it a solution we're looking into?** Yes. The Go reference implementation (23 packages, 138 conformance tests) and the performance profile make this production-ready. The 6-paper series provides a comprehensive governance theory.
+
+**Recommendation reason:** Per-request policy evaluation is insufficient for agents that chain actions over time. ACP's temporal scoring addresses this fundamental gap with formally verified, high-performance implementation.
+
+---
+
+### 24. A Unified Review of Memory, Skills, Protocols and Harness Engineering
+
+- **arXiv ID:** 2604.08224
+- **URL:** https://arxiv.org/abs/2604.08224
+- **PDF:** https://arxiv.org/pdf/2604.08224
+- **Authors:** Weinan Zhang et al.
+- **Date:** April 9, 2026
+
+**Abstract:**
+> Large language model (LLM) agents are increasingly built less by changing model weights than by reorganizing the runtime around them. Capabilities that earlier systems expected the model to recover internally are now externalized into memory stores, reusable skills, interaction protocols, and the surrounding harness that makes these modules reliable in practice. This paper reviews that shift through the lens of externalization. Drawing on the idea of cognitive artifacts, we argue that agent infrastructure matters not merely because it adds auxiliary components, but because it transforms hard cognitive burdens into forms that the model can solve more reliably. Under this view, memory externalizes state across time, skills externalize procedural expertise, protocols externalize interaction structure, and harness engineering serves as the unification layer that coordinates them into governed execution. We trace a historical progression from weights to context to harness, analyze memory, skills, and protocols as three distinct but coupled forms of externalization, and examine how they interact inside a larger agent system.
+
+**Why I recommend this paper:**
+This paper provides the **systems-level theory for why externalized infrastructure (skills, protocols, harness) is essential for agent governance**. The insight: "agent infrastructure matters not merely because it adds auxiliary components, but because it transforms hard cognitive burdens into forms that the model can solve more reliably." Skills are not just convenience — they are the mechanism by which procedural expertise becomes inspectable, versionable, and governable.
+
+**Relevance to our topic:**
+**Layer 1/2/3** — The harness engineering layer is where governance is implemented. The paper identifies "evaluation, governance, and the long-term co-evolution of models and external infrastructure" as open challenges. The "self-evolving harnesses" direction is particularly relevant: as skills update themselves, governance must co-evolve.
+
+**Which layer:** **Layer 1/2/3 — All layers** (harness as unification layer)
+
+**Is it a solution we're looking into?** Yes, as architectural guidance. The externalization framework explains why our three-layer stack is the right structure: specs externalize intent (Layer 0), runtime enforcement externalizes control (Layer 1), and benchmarks externalize evaluation (Layer 2).
+
+**Recommendation reason:** This paper validates our fundamental approach: governance is not a feature added to agents, but a property of the externalized infrastructure that makes agents reliable.
+
+---
+
+## New Products & Frameworks (June 4, 2026)
+
+### AgentAssert
+- **Type:** Runtime enforcement library
+- **Source:** Agent Behavioral Contracts (ABC) paper implementation
+- **URL:** https://agentassert.com/research/
+- **Performance:** <10 ms per action overhead
+- **Capability:** Detects 5.2-6.8 soft violations per session; 88-100% hard constraint compliance; behavioral drift bounded to D* < 0.27
+- **License:** Open source (Qualixar suite)
+
+**Why it matters:** AgentAssert is the runtime implementation of ABC contracts. It turns formal specifications into executable enforcement. The <10 ms overhead means zero perceptible latency in production.
+
+---
+
+### SkillFortify (Open Source)
+- **Type:** Formal verification framework for skill supply chains
+- **Install:** `pip install skillfortify`
+- **GitHub:** https://github.com/varun369/skillfortify
+- **Performance:** F1=96.95%, 0% false positives on 540 skills; SAT resolution <100 ms for 1,000-node graphs
+- **License:** MIT
+
+**Why it matters:** The first formal (not heuristic) skill security scanner. Replaces "no findings does not mean no risk" with mathematical guarantees. Critical for CI/CD pipelines where false positives destroy developer trust.
+
+---
+
+### AgentAssay (Open Source)
+- **Type:** Token-efficient regression testing for agent workflows
+- **Install:** `pip install agentassay`
+- **GitHub:** https://github.com/qualixar/agentassay
+- **Performance:** 78-100% cost reduction vs fixed-trial testing; 86% regression detection where binary tests have 0%
+- **License:** Open source
+
+**Why it matters:** The first principled regression testing framework for non-deterministic agents. Enables CI/CD governance: "did this update break safety properties?" With pytest integration, it fits existing developer workflows.
+
+---
+
+### Agent Control Protocol (ACP)
+- **Type:** Temporal admission control protocol with formal verification
+- **Implementation:** Go (23 packages), 138 conformance test vectors
+- **Performance:** 1,720,000 req/s; 739-832 ns decision latency
+- **Verification:** TLA+ across 4,294,930,695 states, 0 violations
+- **URL:** https://github.com/topics/agent-control-protocol
+
+**Why it matters:** Production-ready admission control with mathematical proof of safety and liveness. The 6-paper Agent Governance Series provides the theoretical foundation; ACP is the operational implementation.
+
+---
+
+### SkillsVote
+- **Type:** Skills engine for AI agents
+- **Reference:** Comprehensive Survey on Agent Skills (arXiv:2605.07358)
+- **Status:** Mentioned as ecosystem resource
+
+**Why it matters:** Part of the emerging skill routing and governance infrastructure. SkillsVote and similar engines will become the distribution layer where governance policies are enforced.
+
+---
+
+## Updated Implementation Roadmap
+
+### Immediate (30 days)
+1. **Adopt GovernSpec's 12 contract sections** for all skill specifications
+2. **Deploy Skilldex** for validation — check 100% of skill packages
+3. **Map existing skills to OWASP Top 10** — identify which risks are unaddressed
+4. **NEW: Integrate SkillFortify** into CI/CD for formal skill supply chain verification
+5. **NEW: Adopt ABC contract structure** (P, I, G, R) for all agent specifications
+
+### Short-term (90 days)
+6. **Implement LGA Layer 1** (sandboxing) for all agent execution
+7. **Deploy ST-WebAgentBench** for web agent evaluation
+8. **Establish baseline** with BeSafe-Bench on current agents
+9. **NEW: Deploy AgentAssert** for runtime contract enforcement on critical agents
+10. **NEW: Implement ACP-style temporal admission control** for high-throughput agent services
+11. **NEW: Integrate AgentAssay** into CI/CD for regression testing of safety properties
+
+### Strategic (12 months)
+12. **Full LGA stack** — all four layers operational
+13. **Microsoft-style governance toolkit** — registration, policy, audit, evaluation, human-in-the-loop
+14. **Continuous evaluation** — weekly safety benchmarks with automated reporting
+15. **NEW: Implement skill-level attestation** (per MIGT) binding skill execution to verified machine identity
+16. **NEW: Adopt Agent Governance Series** (6 papers) as the formal foundation for all governance architecture
+17. **NEW: Build benchmark consistency dashboard** using Taxonomy and Consistency Analysis framework — never trust a single benchmark
+
+---
+
+## Why This Matters (Updated)
+
+**The data is clear:**
+- 34% of community skill packages are malformed (Skilldex)
+- 89% of attacks succeed against baseline guardrails (LGA)
+- 60%+ of tasks have safety violations (BeSafe-Bench)
+- 40% of agent projects face cancellation (Agent Evaluation Guide)
+- 73% incident reduction with governance toolkit (Microsoft)
+- **NEW: 0% concordance across safety benchmarks (Kendall's W = 0.10) — benchmark scores are mostly noise**
+- **NEW: 100% of individually-valid requests in a 500-request attack chain approved by stateless engines — temporal governance is essential**
+- **NEW: 1,200+ malicious skills infiltrated OpenClaw marketplace (ClawHavoc) — heuristic scanning is insufficient**
+
+**Governance is not optional. It's the difference between agents that work and agents that are safe to use.**
+
+**The shift from heuristic to formal guarantees is accelerating. ABC, AgentVerify, SkillFortify, and ACP provide mathematically grounded governance mechanisms. The question is no longer "should we govern agents?" but "which formal framework should we adopt first?"**
+
+---
+
+*Compiled by EvaPaper | June 4, 2026*  
+*Repo: https://github.com/ginaecho/EvaPaper*
+
 
 ### Layer 0: Spec-Level Governance
 

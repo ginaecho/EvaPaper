@@ -94,6 +94,53 @@ Status: **NEW FINDINGS FOUND**
 6. **Agentic AI Foundation (AAIF)** — Under Linux Foundation. Governing body for AGENTS.md and MCP standards. URL: https://github.com/topics/agent-ready — **Layer 3** — Governance structure for the standards themselves. Important for long-term spec stewardship.
 
 7. **FinBot Agentic AI CTF** — Capture The Flag competition for agentic AI security. 2026-05-26. URL: https://www.techtimes.com/articles/304034/20260526/finbot-launches-first-agentic-ai-ctf.htm — **Layer 2** — Gamified security evaluation. CTFs produce reusable test cases and benchmark data.
-- **CRITICAL:** Scout only reports and pushes to git when NEW findings are discovered
-- If no new findings: finish silently (NO_REPLY, no git push, no report)
-- This avoids noise and only surfaces actual new research
+
+## 2026-06-04 Scout Run — NEW FINDINGS DISCOVERED
+Search queries: agent governance safety benchmark 2026, agent skill markdown specification validation governance 2026, OWASP agentic applications framework 2026, agent behavioral contracts runtime enforcement 2026, agent skill supply chain formal verification 2026
+Status: **NEW FINDINGS FOUND**
+
+### New Papers
+1. **Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents** (arXiv:2605.16282) — Apr 11, 2026. First systematic analysis of 40 behavioral agent-safety benchmarks (2023–2026). Six-axis taxonomy. Coverage matrix reveals no ranking concordance (Kendall's W = 0.10, p = 0.94). Benchmark choice can yield contradictory safety conclusions. URL: https://arxiv.org/abs/2605.16282 — **Layer 2/3** — Essential meta-evaluation: tells us which benchmarks to trust and why current safety conclusions may be inconsistent.
+
+2. **Governance by Construction for Generalist Agents / CUGA** (arXiv:2605.20874) — May 20, 2026. IBM Research. Policy-as-code layer composing with generalist LLM agents. Five structural checkpoints: Intent Guard, Playbook, Tool Guide, Tool Approvals, Output Formatter. Runtime governance architecture embedding interventions continuously. URL: https://arxiv.org/abs/2605.20874 — **Layer 1/2** — Direct implementation of "governance by construction" rather than governance as afterthought. Enterprise healthcare demo included.
+
+3. **Agent Behavioral Contracts (ABC)** (arXiv:2602.22302) — Feb 25, 2026. Formal framework bringing Design-by-Contract to autonomous AI agents. Contract C = (P, I, G, R): Preconditions, Invariants, Governance policies, Recovery. (p, delta, k)-satisfaction for probabilistic compliance. Drift Bounds Theorem: contracts with recovery rate gamma > alpha bound drift to D* = alpha/gamma. AgentAssert runtime enforcement library. 200 scenarios, 1,980 sessions, 7 models. URL: https://arxiv.org/abs/2602.22302 — **Layer 1/2** — The formal specification and runtime enforcement mechanism we need. Directly addresses "how to verify if specs are well defined" via probabilistic contract compliance.
+
+4. **AgentVerify** (preprints.org, DOI: 10.20944/preprints202604.1029.v1) — Apr 14, 2026. Compositional formal verification of AI agent safety properties via LTL model checking. 23 temporal logic templates for memory integrity, tool call protocols, MCP/skill invocations, human-in-the-loop boundaries. Hybrid architecture: O(1) runtime monitor + post-hoc Kripke-structure analyser. 86.67% verification accuracy vs 80% contract baseline, 46.67% runtime baseline, 13.33% neural verifier. URL: https://www.preprints.org/manuscript/202604.1029/v1 — **Layer 1/2** — Formal verification for agent observable control flow. Proves that compositional model checking is tractable for production agents.
+
+5. **SkillFortify** (arXiv:2603.00195) — Feb 27, 2026. First formal analysis framework for agent skill supply chain security. DY-Skill attacker model (Dolev-Yao adapted to five-phase skill lifecycle). Sound static analysis via abstract interpretation. Capability-based sandboxing with confinement proof. Agent Dependency Graph with SAT-based resolution. F1=96.95%, 0% false positive rate on 540 skills. GitHub: https://github.com/varun369/skillfortify. URL: https://arxiv.org/abs/2603.00195 — **Layer 0/1** — Directly validates SKILL.md security with formal guarantees, not heuristics. The skill supply chain validation tool we need.
+
+6. **AgentAssay** (arXiv:2603.02601) — Mar 3, 2026. First token-efficient regression testing framework for non-deterministic AI agent workflows. Stochastic three-valued verdicts (PASS/FAIL/INCONCLUSIVE). Five-dimensional coverage metrics. Behavioral fingerprinting: 86% detection power where binary testing has 0%. SPRT reduces trials by 78%. Trace-first offline analysis = 100% cost savings. GitHub: https://github.com/qualixar/agentassay. URL: https://arxiv.org/abs/2603.02601 — **Layer 2** — Regression testing for agent behavior changes. Critical for CI/CD governance: ensures skill/agent updates don't break safety properties.
+
+7. **A Comprehensive Survey on Agent Skills** (arXiv:2605.07358) — May 8, 2026. Survey of agent skills lifecycle: representation, acquisition, retrieval, evolution. OpenClaw and Claude Code as exemplars. Four stages with methods, ecosystem resources, applications. Quality control, interoperability, safe updating, long-term capability management as open challenges. URL: https://arxiv.org/abs/2605.07358 — **Layer 0/1/2/3** — The definitive survey of the skill ecosystem. Organizes the entire research landscape we operate in.
+
+8. **Machine Identity Governance Taxonomy (MIGT)** / "Who Governs the Machine?" (arXiv:2604.06148) — Apr 7, 2026. Cloud Security Alliance. AI-Identity Risk Taxonomy: 37 risk sub-categories across 8 domains. Six-domain MIGT framework addressing technical governance gap, regulatory compliance gap, cross-jurisdictional coordination gap. Foreign state actor threat model (Silk Typhoon, Salt Typhoon, Volt Typhoon). Skill-level attestation as runtime admission control mechanism. URL: https://arxiv.org/abs/2604.06148 — **Layer 1/3** — Machine identity is the foundation of agent governance. Without governed machine identities, no accountability chain exists. Skill-level attestation proposal directly relevant.
+
+9. **Admission Control for Agent Actions (ACP)** (arXiv:2603.18829) — Apr 30, 2026. Temporal admission control protocol enforcing behavioral properties over execution traces. Static risk scoring + stateful signals (anomaly accumulation, cooldown) via LedgerQuerier. 500-request workload: stateless approves all 500; ACP limits autonomous execution to 2 (0.4%). Decision evaluation: 739-832 ns (p50); throughput 1,720,000 req/s. TLA+ verified across 4,294,930,695 states. Boundary Activation Rate (BAR) for deviation collapse detection. Paper 1 of 6-paper Agent Governance Series. URL: https://arxiv.org/abs/2603.18829 — **Layer 1** — Runtime admission control with formal verification. The performance (1.7M req/s) and formal verification make it production-viable.
+
+10. **A Unified Review of Memory, Skills, Protocols and Harness Engineering** (arXiv:2604.08224) — Apr 9, 2026. Externalization framework: memory externalizes state, skills externalize procedural expertise, protocols externalize interaction structure, harness engineering coordinates them into governed execution. Historical progression from weights to context to harness. Self-evolving harnesses and shared agent infrastructure as emerging directions. URL: https://arxiv.org/abs/2604.08224 — **Layer 1/2/3** — Systems-level framework explaining why agent progress depends on externalized cognitive infrastructure. Skills as "reusable procedural artifacts" central to scalability and governance.
+
+### New Products/Frameworks
+1. **AgentAssert** — Runtime enforcement library implementing ABC (Agent Behavioral Contracts). Detects 5.2-6.8 soft violations per session that uncontracted baselines miss. 88-100% hard constraint compliance. <10 ms overhead per action. Part of Qualixar suite. — **Layer 1** — The runtime contract enforcement mechanism we need for skill/agent behavior validation.
+
+2. **SkillFortify (Open Source)** — pip install skillfortify. Formal verification framework for agent skill supply chains. 22 frameworks supported. SAT-based resolution, capability confinement, trust score algebra. MIT license. GitHub: https://github.com/varun369/skillfortify — **Layer 0/1** — The formal skill validation tool. Replaces heuristic scanning with mathematical guarantees.
+
+3. **AgentAssay (Open Source)** — pip install agentassay. Token-efficient stochastic testing for AI agents. pytest integration. 8 CLI commands. 10 framework adapters. MIT license. GitHub: https://github.com/qualixar/agentassay — **Layer 2** — CI/CD regression testing for agent behavior. Ensures governance properties persist across updates.
+
+4. **Agent Control Protocol (ACP)** — Reference implementation in Go. 38 documents, 23 packages, 138 conformance test vectors (73 signed + 65 unsigned). ACR-1.0 sequence compliance runner. Part of Agent Governance Series (6 papers). URL: https://github.com/topics/agent-control-protocol — **Layer 1** — Production-ready admission control with formal verification backing.
+
+5. **SkillsVote** — Skills engine for AI agents. Referenced in Comprehensive Survey. — **Layer 0/1** — Skill routing and governance infrastructure.
+
+## Key Search Queries Added
+- agent behavioral contracts runtime enforcement 2026
+- agent skill supply chain formal verification 2026
+- agent regression testing non-deterministic workflow 2026
+- machine identity governance taxonomy AI agent 2026
+- admission control protocol agent actions temporal 2026
+- agent harness engineering memory skills protocols 2026
+- agent safety benchmark taxonomy consistency analysis 2026
+
+## Last Check
+- Date: 2026-06-04
+- Status: 10 new papers + 5 new products/frameworks discovered
+- Findings: Significant formal methods momentum — ABC, AgentVerify, SkillFortify, AgentAssay, ACP all provide mathematically grounded governance mechanisms. The shift from heuristic to formal guarantees is accelerating. Agent Governance Series (6 papers) by Marcelo Fernandez is a major emerging body of work.
