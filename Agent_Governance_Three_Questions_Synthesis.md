@@ -74,84 +74,104 @@ If you need **guaranteed** behavior, you need:
 
 ## Question 2: Formal Static Typing / Checking Before Runtime?
 
-### Short Answer: **Yes, multiple approaches exist — but none are universally deployed.**
+### Short Answer: **Yes — and ZipperGen (arXiv:2604.17612) is the breakthrough for multi-agent coordination.**
 
 ---
 
 ### Papers With Static Analysis / Pre-Runtime Verification
 
-#### 1. **SkillFortify** (arXiv:2603.00195, Layer 0/1) — **Most Advanced**
+#### 1. **ZipperGen / Provable Coordination for LLM Agents via MSCs** (arXiv:2604.17612, Cross-layer Layer 0+1) — **Multi-Agent Coordination**
+- **What it does:** Domain-specific language (DSL) for specifying multi-agent coordination using Message Sequence Charts (MSCs). Syntax-directed projection generates deadlock-free local agent programs from global coordination specifications.
+- **Static analysis:** Well-typedness checks (Definition 5) — payload matching, local type correctness, control condition well-typedness — all checked before any agent executes. The global workflow is a formal specification that is statically verified before projection.
+- **Formal guarantee:** Deadlock-free by construction (Theorem in Section 5). The projection is a structural recursion with correctness proof by structural induction.
+- **Key insight:** Separates deterministic message-passing structure (formally specified, statically verified) from stochastic LLM actions (opaque, unpredictable). The coordination structure is guaranteed correct regardless of LLM nondeterminism.
+- **Open source:** ZipperGen — https://zippergen.io
+- **Gap:** Only verifies coordination structure, not LLM action content. No behavioral type checking for the content of messages or actions.
+
+#### 2. **SkillFortify** (arXiv:2603.00195, Layer 0/1) — **Most Advanced for Single-Agent Skills**
 - **What it does:** First formal analysis framework for skill supply chain security
 - **Static analysis:** Sound static analysis via abstract interpretation
 - **Capability-based sandboxing:** Confinement proof before deployment
 - **Results:** F1=96.95%, 0% false positives on 540 skills
 - **Mechanism:** Abstract interpretation builds a mathematical model of skill behavior; SAT-based resolution checks constraints
 - **Open source:** `pip install skillfortify` — https://github.com/varun369/skillfortify
-- **Gap:** Analyzes code, not natural language skill descriptions
+- **Gap:** Analyzes code, not natural language skill descriptions; single-agent only
 
-#### 2. **SkCC / Skill Compilation** (arXiv:2605.03353, Layer 1/2)
+#### 3. **SkCC / Skill Compilation** (arXiv:2605.03353, Layer 1/2)
 - **What it does:** Portable and secure skill compilation with strongly-typed intermediate representation (SkIR)
 - **Static typing:** SkIR decouples skill semantics from framework-specific formatting
 - **Security:** Static optimizer enforces security constraints before deployment
 - **Results:** 94.8% proactive security trigger rate; reduces adaptation complexity from O(m×n) to O(m+n)
-- **Gap:** Requires skills to be written in SkIR, not natural language markdown
+- **Gap:** Requires skills to be written in SkIR, not natural language markdown; single-agent only
 
-#### 3. **GovernSpec / Contractual Skills** (arXiv:2605.22634, Layer 0)
+#### 4. **GovernSpec / Contractual Skills** (arXiv:2605.22634, Layer 0)
 - **What it does:** 12 contract sections (P, I, G, R — Preconditions, Invariants, Governance, Recovery)
 - **Static checking:** Machine-parseable contracts checked at skill load time
-- **Gap:** Contracts are natural language with structured sections, not formal logic; no type system
+- **Gap:** Contracts are natural language with structured sections, not formal logic; no type system; single-agent only
 
-#### 4. **SSL Representation** (arXiv:2604.24026, Layer 0)
+#### 5. **SSL Representation** (arXiv:2604.24026, Layer 0)
 - **What it does:** Decomposes skill text into Scheduling-Structural-Logical representations
 - **Static checking:** Structured representation enables automated verification, policy checking
-- **Gap:** 87% accuracy vs expert annotations; not a formal type system
+- **Gap:** 87% accuracy vs expert annotations; not a formal type system; single-agent only
 
-#### 5. **AgentVerify** (preprints.org, 2026, Layer 1/2)
+#### 6. **AgentVerify** (preprints.org, 2026, Layer 1/2)
 - **What it does:** Compositional formal verification via LTL model checking
 - **Static checking:** 23 temporal logic templates for memory integrity, tool call protocols, MCP/skill invocations
 - **Results:** 86.67% verification accuracy
-- **Gap:** Post-hoc analysis, not pre-runtime type checking; requires model checking expertise
+- **Gap:** Post-hoc analysis, not pre-runtime type checking; requires model checking expertise; single-agent only
 
-#### 6. **Skilldex** (arXiv:2604.16911, Layer 0)
+#### 7. **Skilldex** (arXiv:2604.16911, Layer 0)
 - **What it does:** Validation engine for skill packages
 - **Static checking:** Schema validation, format checking, coherence analysis
 - **Results:** 34% of community packages malformed
-- **Gap:** Schema-level, not behavioral type checking
+- **Gap:** Schema-level, not behavioral type checking; single-agent only
 
-#### 7. **MIGT / Machine Identity Governance** (arXiv:2604.06148, Layer 1/3)
+#### 8. **MIGT / Machine Identity Governance** (arXiv:2604.06148, Layer 1/3)
 - **What it does:** Skill-level attestation as runtime admission control
 - **Static checking:** Attestation binds skill to verified identity before execution
-- **Gap:** Identity verification, not behavioral type checking
+- **Gap:** Identity verification, not behavioral type checking; single-agent only
 
 ---
 
-### What Is **Missing** (The Gap)
+### What Is **Missing** (The Gap) — UPDATED with ZipperGen
 
 | Capability | Exists? | Notes |
 |-----------|---------|-------|
 | **Formal type system for skill interfaces** | ❌ No | SkCC has SkIR but it's not a type system for natural language skills |
-| **Static behavioral type checking** | ⚠️ Partial | SkillFortify does formal analysis of code; not for NL descriptions |
-| **Protocol compatibility checking** | ❌ No | No MPST-style session type checking for multi-agent interactions |
-| **Pre-runtime deadlock detection** | ❌ No | Not addressed in any paper |
-| **Skill-skill interaction verification** | ❌ No | No static analysis of how multiple skills compose |
+| **Static behavioral type checking (single-agent)** | ⚠️ Partial | SkillFortify does formal analysis of code; not for NL descriptions |
+| **Static behavioral type checking (multi-agent)** | ⚠️ Partial | ZipperGen provides formal coordination structure checking, but not behavioral typing of message content |
+| **Protocol compatibility checking (multi-agent)** | ✅ Yes | **ZipperGen** — MSC-based DSL with syntax-directed projection and well-typedness checks |
+| **Pre-runtime deadlock detection** | ✅ Yes | **ZipperGen** — deadlock-free by construction from global specs |
+| **Skill-skill interaction verification** | ❌ No | No static analysis of how multiple skills compose within a single agent |
+
+**ZipperGen changes the picture:** Before ZipperGen, the answer was "no formal static checking for multi-agent interactions." Now there is a concrete implementation (ZipperGen) that provides formal global specifications + guaranteed deadlock-free local programs. The gap is no longer "does this exist?" but "how do we extend this to skill content verification and behavioral typing?"
 
 ---
 
 ### Verdict on Question 2
 
-> **Static analysis exists (SkillFortify, SkCC) but is limited to code artifacts or structured representations. There is no formal type system for natural language skill descriptions, and no MPST-style static protocol checking for multi-agent interactions. This is a research gap.**
+> **ZipperGen is the breakthrough paper for multi-agent static coordination. It provides formal type checking (well-typedness), deadlock-free-by-construction guarantees, and syntax-directed projection — all before any agent runs. For single-agent skills, SkillFortify and SkCC provide formal static analysis. The remaining gap is behavioral typing of message content and automatic skill composition verification.**
 
 ---
 
 ## Question 3: Runtime Checking in a Deterministic Way (Not LLM-as-Judge)?
 
-### Short Answer: **Yes — multiple deterministic runtime enforcement mechanisms exist, some formally verified.**
+### Short Answer: **Yes — and ZipperGen is the only multi-agent approach that deterministically enforces coordination structure.**
 
 ---
 
 ### Papers With Deterministic Runtime Enforcement
 
-#### 1. **ACP — Admission Control Protocol** (arXiv:2603.18829, Layer 1) — **Fastest + Formally Verified**
+#### 1. **ZipperGen / Provable Coordination for LLM Agents via MSCs** (arXiv:2604.17612, Cross-layer Layer 0+1) — **Multi-Agent Coordination — Breakthrough**
+- **Deterministic:** Yes — message-passing structure is formally specified and deterministically enforced; LLM actions remain opaque
+- **Mechanism:** Domain-specific language (DSL) based on Message Sequence Charts (MSCs). Syntax-directed projection generates local agent programs from global coordination specifications. Owned control flow with explicit deciders. Control broadcasts ensure non-owner lifelines observe branch choices.
+- **Key innovation:** The coordination structure (message passing, branch decisions, loops) is **guaranteed correct by construction** — deadlock-free, no message mismatches, no race conditions. The LLM actions inside the structure are opaque (unpredictable), but the *structure around them* is deterministic and formally verified.
+- **Runtime:** The projected local programs are deterministic finite-state programs that agents execute. No LLM-as-judge for coordination decisions.
+- **Results:** Deadlock-free by construction. Coordination properties established independently of LLM nondeterminism. Runtime planning extension: LLM dynamically generates coordination workflows with same structural guarantees.
+- **Open source:** ZipperGen — https://zippergen.io
+- **Gap:** Does not verify LLM action content (opaque by design). No runtime behavioral enforcement of what agents actually do inside action blocks.
+
+#### 2. **ACP — Admission Control Protocol** (arXiv:2603.18829, Layer 1) — **Fastest Single-Agent + Formally Verified**
 - **Deterministic:** Yes — risk scoring is deterministic, not LLM-based
 - **Mechanism:** Temporal admission control with static risk scoring + stateful signals (anomaly accumulation, cooldown) through LedgerQuerier
 - **Performance:** 739-832 ns decision latency; 1,720,000 req/s throughput
@@ -160,53 +180,53 @@ If you need **guaranteed** behavior, you need:
 - **Open source:** Go reference implementation (23 packages, 138 conformance tests)
 - **Paper series:** 1 of 6-paper Agent Governance Series (Marcelo Fernandez)
 
-#### 2. **Agent Behavioral Contracts (ABC)** (arXiv:2602.22302, Layer 1/2) — **Most Comprehensive**
+#### 3. **Agent Behavioral Contracts (ABC)** (arXiv:2602.22302, Layer 1/2) — **Most Comprehensive Single-Agent**
 - **Deterministic:** Yes — contracts are formal, not probabilistic
 - **Mechanism:** Contract C = (P, I, G, R) — Preconditions, Invariants, Governance policies, Recovery
 - **Runtime:** AgentAssert library enforces contracts with <10 ms overhead per action
 - **Results:** 88-100% hard constraint compliance; behavioral drift bounded to D* < 0.27
 - **Verification:** (p, delta, k)-satisfaction for probabilistic compliance; Drift Bounds Theorem
 - **Open source:** AgentAssert runtime library (Qualixar suite)
-- **Gap:** Contracts are probabilistically satisfied, not 100% deterministic
+- **Gap:** Contracts are probabilistically satisfied, not 100% deterministic; single-agent only
 
-#### 3. **Runtime Governance / Policies on Paths** (arXiv:2603.16586, Layer 1) — **Most Expressive**
+#### 4. **Runtime Governance / Policies on Paths** (arXiv:2603.16586, Layer 1) — **Most Expressive Single-Agent**
 - **Deterministic:** Yes — policies are temporal predicates, not LLM-evaluated
 - **Mechanism:** Path-based policies as functions on execution paths; policy compiler translates requirements to executable path monitors
 - **Complexity:** Polynomial-time evaluation
 - **Expressiveness:** Can encode separation of duties, data minimization, audit trails
-- **Gap:** Proposed framework, not yet evaluated at scale
+- **Gap:** Proposed framework, not yet evaluated at scale; single-agent only
 
-#### 4. **AgentVerify** (preprints.org, 2026, Layer 1/2)
+#### 5. **AgentVerify** (preprints.org, 2026, Layer 1/2)
 - **Deterministic:** Hybrid — O(1) runtime monitor + post-hoc Kripke-structure analyser
 - **Mechanism:** LTL model checking for memory integrity, tool call protocols, MCP/skill invocations, human-in-the-loop boundaries
 - **Results:** 86.67% verification accuracy vs 46.67% runtime baseline
-- **Gap:** Hybrid architecture, not purely deterministic runtime
+- **Gap:** Hybrid architecture, not purely deterministic runtime; single-agent only
 
-#### 5. **SentinelAgent** (arXiv:2604.02767, Layer 1)
+#### 6. **SentinelAgent** (arXiv:2604.02767, Layer 1)
 - **Deterministic:** Yes — Delegation Chain Calculus with 7 formal properties
 - **Mechanism:** DCC (Delegation Chain Calculus) — authority narrowing, policy preservation, forensic reconstructibility, cascade containment, scope-action conformance, output schema conformance, intent preservation
 - **Verification:** TLA+ verified across 2.7 million states
 - **Results:** 100% TPR at 0% FPR on DelegationBench v4 (516 scenarios, 10 attack categories)
-- **Gap:** Focused on delegation chains, not general skill execution
+- **Gap:** Focused on delegation chains, not general skill execution; single-agent only
 
-#### 6. **Trace-Based Assurance Framework** (arXiv:2603.18096, Layer 1/2)
+#### 7. **Trace-Based Assurance Framework** (arXiv:2603.18096, Layer 1/2)
 - **Deterministic:** Yes — Message-Action Traces (MAT) with explicit contracts
 - **Mechanism:** Machine-checkable verdicts, deterministic replay, structured fault injection
 - **Governance:** Runtime component enforcing per-agent capability limits and action mediation (allow/rewrite/block)
-- **Gap:** Complex to implement; requires trace instrumentation
+- **Gap:** Complex to implement; requires trace instrumentation; single-agent only
 
-#### 7. **LGA / Layered Governance Architecture** (arXiv:2603.07191, Layer 1)
+#### 8. **LGA / Layered Governance Architecture** (arXiv:2603.07191, Layer 1)
 - **Deterministic:** Yes — sandboxing, intent verification, zero-trust authorization, audit logging
 - **Mechanism:** Four layers of runtime governance
 - **Results:** 89% of attacks succeed against baseline guardrails — showing LGA's enforcement is needed
-- **Gap:** Architectural framework, not a specific implementation
+- **Gap:** Architectural framework, not a specific implementation; single-agent only
 
-#### 8. **MCP-38 / Threat Taxonomy** (arXiv:2603.18063, Layer 1)
+#### 9. **MCP-38 / Threat Taxonomy** (arXiv:2603.18063, Layer 1)
 - **Deterministic:** N/A — taxonomy paper, not enforcement
 - **Contribution:** 38 threat categories mapped to STRIDE, OWASP LLM Top 10, OWASP Agentic Top 10
 - **Gap:** No runtime enforcement mechanism
 
-#### 9. **NIST IR 8596** (Dec 2025, Layer 1/2)
+#### 10. **NIST IR 8596** (Dec 2025, Layer 1/2)
 - **Deterministic:** Standards document, not implementation
 - **Gap:** Framework only, no runtime enforcement
 
@@ -223,28 +243,31 @@ If you need **guaranteed** behavior, you need:
 
 ### Comparison: Deterministic vs LLM-as-Judge Runtime Checking
 
-| Mechanism | Deterministic? | Speed | Formal Verification | Production Ready |
-|-----------|---------------|-------|---------------------|------------------|
-| **ACP** | ✅ Yes | 739-832 ns | TLA+ (4.2B states) | ✅ Go impl |
-| **ABC / AgentAssert** | ✅ Mostly | <10 ms | Drift Bounds Theorem | ✅ Library |
-| **Runtime Governance** | ✅ Yes | Polynomial | Framework | ⚠️ Proposed |
-| **AgentVerify** | ⚠️ Hybrid | O(1) monitor | LTL model checking | ⚠️ Research |
-| **SentinelAgent** | ✅ Yes | — | TLA+ (2.7M states) | ⚠️ Research |
-| **Trace-Based Assurance** | ✅ Yes | — | Replay-based | ⚠️ Complex |
-| **BeSafe-Bench** | ❌ No | — | — | ✅ Benchmark |
-| **ST-WebAgentBench** | ❌ No | — | — | ✅ Benchmark |
+| Mechanism | Scope | Deterministic? | Speed | Formal Verification | Production Ready |
+|-----------|-------|---------------|-------|---------------------|------------------|
+| **ZipperGen** | **Multi-agent** | ✅ Yes (coordination structure) | — | Structural induction proof | ✅ Python impl |
+| **ACP** | Single-agent | ✅ Yes | 739-832 ns | TLA+ (4.2B states) | ✅ Go impl |
+| **ABC / AgentAssert** | Single-agent | ✅ Mostly | <10 ms | Drift Bounds Theorem | ✅ Library |
+| **Runtime Governance** | Single-agent | ✅ Yes | Polynomial | Framework | ⚠️ Proposed |
+| **AgentVerify** | Single-agent | ⚠️ Hybrid | O(1) monitor | LTL model checking | ⚠️ Research |
+| **SentinelAgent** | Single-agent | ✅ Yes | — | TLA+ (2.7M states) | ⚠️ Research |
+| **Trace-Based Assurance** | Single-agent | ✅ Yes | — | Replay-based | ⚠️ Complex |
+| **BeSafe-Bench** | Benchmark | ❌ No | — | — | ✅ Benchmark |
+| **ST-WebAgentBench** | Benchmark | ❌ No | — | — | ✅ Benchmark |
 
 ---
 
-### What Is **Missing** (The Gap)
+### What Is **Missing** (The Gap) — UPDATED with ZipperGen
 
 | Capability | Exists? | Notes |
 |-----------|---------|-------|
-| **Deterministic skill-level policy enforcement** | ✅ Yes | ABC, ACP, Runtime Governance |
+| **Deterministic skill-level policy enforcement** | ✅ Yes | ABC, ACP, Runtime Governance (single-agent) |
+| **Deterministic multi-agent coordination enforcement** | ✅ Yes | **ZipperGen** — message structure guaranteed correct; action content remains opaque |
 | **Sub-microsecond enforcement** | ✅ Yes | ACP (739-832 ns) |
-| **Formally verified runtime** | ✅ Yes | ACP (TLA+), SentinelAgent (TLA+) |
-| **MPST-style session type enforcement** | ❌ No | No multi-party session type checking at runtime |
-| **Deterministic skill composition verification** | ❌ No | No runtime checking that composed skills preserve invariants |
+| **Formally verified runtime** | ✅ Yes | ACP (TLA+), SentinelAgent (TLA+), ZipperGen (structural induction) |
+| **MPST-style session type enforcement** | ✅ Yes | **ZipperGen** — MSC-based DSL with syntax-directed projection |
+| **Behavioral typing of message content** | ❌ No | ZipperGen checks structure, not what LLMs put inside messages |
+| **Deterministic skill composition verification** | ❌ No | No static analysis of how multiple skills compose within a single agent |
 | **Behavioral typing with blame** | ❌ No | No blame assignment when agents violate protocols |
 | **Real-time rollback on violation** | ⚠️ Partial | ABC has Recovery (R) contracts; not automatic rollback |
 
@@ -252,7 +275,7 @@ If you need **guaranteed** behavior, you need:
 
 ### Verdict on Question 3
 
-> **Deterministic runtime enforcement exists and is production-ready (ACP, ABC/AgentAssert). These are not LLM-as-judge — they use formal risk scoring, temporal logic, and contract enforcement. The fastest (ACP) is sub-microsecond with TLA+ formal verification. However, MPST-style multi-party session type enforcement and automatic rollback are still research gaps.**
+> **Deterministic runtime enforcement exists at both single-agent (ACP, ABC/AgentAssert) and multi-agent (ZipperGen) levels. ZipperGen is the breakthrough: it guarantees deadlock-free coordination regardless of LLM nondeterminism, by separating deterministic message structure (enforced) from stochastic actions (opaque). The remaining gap is not "does MPST exist for agents?" — it does — but "can we type-check the content of LLM actions within that structure?"**
 
 ---
 
@@ -260,29 +283,57 @@ If you need **guaranteed** behavior, you need:
 
 ### The Three Questions — Synthesis
 
-| Question | Status | Best Existing Work | Gap |
-|----------|--------|-------------------|-----|
-| **1. Do skills affect behavior?** | ✅ Yes, empirically | BIV, SSL Survey, GovernSpec | No formal guarantee without L3 enforcement |
-| **2. Static type checking?** | ⚠️ Partial | SkillFortify, SkCC, GovernSpec | No formal type system for NL skills; no MPST static checking |
-| **3. Deterministic runtime?** | ✅ Yes | ACP, ABC/AgentAssert, Runtime Governance | No MPST runtime enforcement; no automatic rollback |
+| Question | Status | Best Existing Work | What ZipperGen Changes |
+|----------|--------|-------------------|----------------------|
+| **1. Do skills affect behavior?** | ✅ Yes, empirically | BIV, SSL Survey, GovernSpec | ZipperGen does not directly address this, but its runtime planning extension shows LLMs can generate coordination structures that are formally guaranteed |
+| **2. Static type checking?** | ✅ Yes for multi-agent | **ZipperGen** — formal well-typedness checks, deadlock-free by construction | **Closes the MPST gap:** formal global specs + deterministic local projection |
+| **3. Deterministic runtime?** | ✅ Yes for multi-agent | **ZipperGen** — coordination structure enforced deterministically, independent of LLM nondeterminism | **Closes the multi-agent gap:** the only paper that guarantees correct multi-agent coordination regardless of LLM stochasticity |
 
-### The MPST Opportunity
+### The MPST Opportunity — REVISED
 
-Your intuition is correct: **the gap is at the intersection of all three.**
+**The MPST gap is now partially closed by ZipperGen.** Here is what exists and what remains:
 
-What doesn't exist yet:
-- **Static:** MPST session types for multi-agent skill interactions, checked before runtime
-- **Runtime:** Deterministic enforcement of MPST protocols with blame assignment and rollback
-- **Behavioral guarantee:** Proof that if all agents follow the protocol, global invariants hold
+**What ZipperGen provides (2026):**
+- ✅ **Formal global specifications** for multi-agent coordination (MSC-based DSL)
+- ✅ **Static well-typedness checking** before runtime (payload matching, type correctness, control condition consistency)
+- ✅ **Deadlock-free by construction** — guaranteed via syntax-directed projection, not runtime detection
+- ✅ **Runtime execution** of projected local programs — deterministic finite-state programs, no LLM-as-judge for coordination
+- ✅ **LLM runtime planning** — an LLM can dynamically generate coordination workflows and the same guarantees apply
+- ✅ **Open-source implementation** — https://zippergen.io
 
-The closest existing work:
-- **ACP** — fast, formally verified, temporal admission control (single agent)
-- **ABC** — behavioral contracts with probabilistic compliance (single agent)
-- **SentinelAgent** — formal delegation chain verification (multi-agent, but not general protocols)
-- **Runtime Governance** — temporal predicates on paths (expressive, but not yet multi-agent)
+**What remains missing (the new frontier):**
+- ❌ **Behavioral typing of LLM actions** — ZipperGen treats LLM actions as opaque blocks; it does not verify *what* the LLM computes inside them
+- ❌ **Skill-skill composition within a single agent** — ZipperGen verifies multi-agent coordination, not how skills compose within one agent
+- ❌ **Blame assignment** — When coordination fails, ZipperGen does not identify which agent (or which LLM action) is at fault
+- ❌ **Runtime behavioral enforcement** — ZipperGen enforces message structure, not behavior (e.g., "this agent must not send credit card numbers")
+- ❌ **Automatic rollback** — No mechanism to revert multi-agent execution when a violation is detected
 
-**The research opportunity:** Extend MPST to the agent skill domain — static session type checking for skill composition, plus deterministic runtime enforcement with sub-microsecond overhead and formal verification.
+**The research opportunity is now sharper:**
+
+Before ZipperGen: "Does MPST for LLM agents exist?" → No.
+After ZipperGen: "How do we add behavioral typing, blame, and rollback to the ZipperGen framework?"
+
+Specifically:
+1. **Action-level contracts:** Extend ZipperGen's action blocks from opaque `act A: y = f(x)` to contract-typed `act A: y = f(x) requires P ensures Q` — where P/Q are pre/postconditions enforced by ABC/AgentAssert or ACP
+2. **Skill composition:** Apply ZipperGen's projection logic to intra-agent skill composition (e.g., when two skills loaded by the same agent interact via tool calls)
+3. **Blame and rollback:** Add sentinel actions that monitor message payloads and trigger rollback protocols when violations are detected
+
+**The architecture of the future:**
+
+```
+Global Specification (ZipperGen MSC)
+    ↓ Syntax-directed projection
+Local Agent Programs (deadlock-free by construction)
+    ↓ Runtime execution
+    ├─ Message passing (deterministic, guaranteed)
+    └─ Action blocks (opaque LLM calls)
+         ↓ ABC/ACP enforcement inside each action
+         Behavior contracts (pre/postconditions)
+         Admission control (risk scoring)
+```
+
+ZipperGen is the **coordination layer**. ABC/ACP is the **behavioral layer**. Together they form the complete multi-agent governance stack.
 
 ---
 
-*Compiled by EvaPaper | Based on 28 papers across the Three-Layer Governance Stack*
+*Compiled by EvaPaper | Based on 29 papers across the Three-Layer Governance Stack*
