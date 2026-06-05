@@ -806,6 +806,41 @@ This is the **most rigorous conceptual framework for agent governance** from the
 
 ---
 
+### 29. Provable Coordination for LLM Agents via Message Sequence Charts
+
+- **arXiv ID:** 2604.17612
+- **URL:** https://arxiv.org/abs/2604.17612
+- **PDF:** https://arxiv.org/pdf/2604.17612
+- **Authors:** Benedikt Bollig, Matthias Függer, Thomas Nowak (Université Paris-Saclay, CNRS, ENS Paris-Saclay, LMF)
+- **Date:** April 19, 2026 (v2: Apr 29)
+- **Open Source:** ZipperGen — https://zippergen.io
+
+**Abstract:**
+> Multi-agent systems built on large language models (LLMs) are difficult to reason about. Coordination errors such as deadlocks or type-mismatched messages are often hard to detect through testing. We introduce a domain-specific language for specifying agent coordination based on message sequence charts (MSCs). The language separates message-passing structure from LLM actions, whose outputs remain unpredictable. We define the syntax and semantics of the language and present a syntax-directed projection that generates deadlock-free local agent programs from global coordination specifications. We illustrate the approach with a diagnosis consensus protocol and show how coordination properties can be established independently of LLM nondeterminism. We also describe a runtime planning extension in which an LLM dynamically generates a coordination workflow for which the same structural guarantees apply.
+
+**Why I recommend this paper:**
+This is the **closest existing work to the MPST vision** for multi-agent governance. It provides a formal DSL for specifying multi-agent coordination, with **syntax-directed projection** that generates **deadlock-free local programs** from global specifications. The key insight: the coordination structure (message passing) is deterministic and formally verifiable, while LLM actions remain opaque and stochastic. This exactly matches the user's intuition about separating deterministic protocol enforcement from probabilistic LLM behavior.
+
+**Relevance to our topic:**
+**Cross-layer (Layer 0 + Layer 1)** — This paper bridges specification and runtime:
+- **Layer 0 (Spec):** Global workflows are specified in a formal DSL with MSC semantics, enabling static verification of coordination properties before deployment.
+- **Layer 1 (Runtime):** The projection generates local agent programs that are **guaranteed deadlock-free** by construction. The runtime enforces the message-passing structure deterministically, independent of LLM nondeterminism.
+- **MPST connection:** The paper explicitly cites multiparty session types (MPSTs) as related work and positions itself as a structured-program alternative to automata-based approaches. The projection is always defined (no well-formedness conditions needed), which is a practical advantage over standard MPST.
+
+**Key technical contributions:**
+1. **Syntax-directed projection:** No automaton construction; projection is a structural recursion on the global workflow, with correctness proof by structural induction.
+2. **Owned control flow:** Every conditional and loop has an explicit decider lifeline, eliminating the need for MPST-style branch-mergeability conditions.
+3. **Control broadcasts:** The projection automatically inserts explicit control messages to inform non-owner lifelines of branch choices, ensuring all agents maintain consistent local state.
+4. **Runtime planning extension:** An LLM can dynamically generate a coordination workflow at runtime; the same structural guarantees apply because the planner only needs to produce syntactically valid global workflows.
+
+**Which layer:** **Cross-layer — Layer 0 (Spec-Level) + Layer 1 (Runtime-Level)**
+
+**Is it a solution we're looking into?** Yes. This is the most direct precedent for the MPST-style multi-agent governance the user has been asking about. It demonstrates that formal coordination specifications for LLM agents are feasible, with open-source implementation (ZipperGen). The limitation: it handles coordination structure but does not verify the content of LLM actions (which remain opaque). This suggests a two-layer approach: ZipperGen for deterministic coordination + ABC/ACP for runtime behavioral enforcement.
+
+**Recommendation reason:** This paper proves that the MPST vision is not hypothetical — it has been implemented. The combination of formal global specifications + guaranteed deadlock-free local programs + runtime workflow generation is exactly the architecture needed for trustworthy multi-agent systems. It should be the reference implementation for any multi-agent governance framework.
+
+---
+
 ## New Products & Frameworks (June 5, 2026)
 
 ### AgentAssert

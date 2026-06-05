@@ -145,8 +145,8 @@ Status: **NEW FINDINGS FOUND**
 - Status: 10 new papers + 5 new products/frameworks discovered
 - Findings: Significant formal methods momentum — ABC, AgentVerify, SkillFortify, AgentAssay, ACP all provide mathematically grounded governance mechanisms. The shift from heuristic to formal guarantees is accelerating. Agent Governance Series (6 papers) by Marcelo Fernandez is a major emerging body of work.
 
-## 2026-06-05 Scout Run — NEW FINDINGS DISCOVERED
-Search queries: agent behavioral integrity verification skill 2026, agent runtime governance path policy temporal 2026, skill structure representation markdown parsing 2026, FAccT 2026 agent governance alignment pluralistic
+## 2026-06-06 Scout Run — NEW FINDINGS DISCOVERED
+Search queries: agent behavioral integrity verification skill 2026, agent runtime governance path policy temporal 2026, skill structure representation markdown parsing 2026, FAccT 2026 agent governance alignment pluralistic, agent coordination message sequence charts formal 2026
 Status: **NEW FINDINGS FOUND**
 
 ### New Papers
@@ -157,6 +157,8 @@ Status: **NEW FINDINGS FOUND**
 3. **SSL Representation / Skill Text to Structure** (arXiv:2604.24026) — Apr 27, 2026. Scheduling-Structural-Logical representation for agent skills. 94% decomposition rate, 87% accuracy vs expert annotations. Machine-verifiable skill descriptions. URL: https://arxiv.org/abs/2604.24026 — **Layer 0** — Makes unstructured skill text governable by transforming into verifiable structures.
 
 4. **FAccT '26 / Relative Principals, Pluralistic Alignment** (arXiv:2604.20805) — Apr 22, 2026. Travis LaCroix, Durham University. FAccT '26 conference paper (June 25-28). Three-axis framework: objectives, information, principals. Alignment is fundamentally governance, not engineering alone. URL: https://arxiv.org/abs/2604.20805 — **Cross-layer** — Conceptual foundation explaining why our three-layer stack is necessary.
+
+5. **ZipperGen / Provable Coordination for LLM Agents via MSCs** (arXiv:2604.17612) — Apr 19, 2026 (v2 Apr 29). Benedikt Bollig, Matthias Függer, Thomas Nowak, Université Paris-Saclay/CNRS/ENS Paris-Saclay. Domain-specific language for agent coordination based on Message Sequence Charts (MSCs). Syntax-directed projection generates deadlock-free local agent programs from global coordination specifications. Separates deterministic message-passing structure from stochastic LLM actions. Runtime planning extension: LLM dynamically generates coordination workflows with same structural guarantees. Open source: https://zippergen.io — **Cross-layer (Layer 0 + Layer 1)** — The closest existing work to MPST-style multi-agent governance. Formal global specs + guaranteed deadlock-free local programs + runtime workflow generation.
 
 ### New Products/Frameworks
 - No new products/frameworks discovered today (search focused on academic papers)

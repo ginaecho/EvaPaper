@@ -212,6 +212,15 @@ If you need **guaranteed** behavior, you need:
 
 ---
 
+#### 10. **ZipperGen / Provable Coordination for LLM Agents via MSCs** (arXiv:2604.17612, Cross-layer Layer 0+1)
+- **Deterministic:** Yes — message-passing structure is formally specified; LLM actions remain opaque
+- **Mechanism:** Domain-specific language based on Message Sequence Charts (MSCs). Syntax-directed projection generates deadlock-free local agent programs from global coordination specifications. Owned control flow with explicit deciders. Control broadcasts ensure non-owner lifelines observe branch choices.
+- **Results:** Deadlock-free by construction. Coordination properties established independently of LLM nondeterminism. Runtime planning extension: LLM generates workflows with same structural guarantees.
+- **Open source:** ZipperGen — https://zippergen.io
+- **Gap:** Does not verify LLM action content (opaque by design). No runtime behavioral enforcement beyond coordination structure.
+
+---
+
 ### Comparison: Deterministic vs LLM-as-Judge Runtime Checking
 
 | Mechanism | Deterministic? | Speed | Formal Verification | Production Ready |
