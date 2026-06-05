@@ -1,29 +1,29 @@
 {
   "diary": {
-    "count": 6,
-    "last_ts": "2026-06-03T03:45:28.816005",
-    "last_day": 4,
-    "last_sessions": 2,
-    "last_messages": 12,
-    "last_filename": "day4-2026-06-02-three_pleases_one_wrong_bridge.md",
-    "last_latency_s": 18.0,
+    "count": 10,
+    "last_ts": "2026-06-05T03:56:53.792112",
+    "last_day": 6,
+    "last_sessions": 4,
+    "last_messages": 19,
+    "last_filename": "day6-2026-06-04-they_just_kept_saying_it.md",
+    "last_latency_s": 16.8,
     "last_skip": "no_sessions_today"
   },
   "compact": {
-    "count": 6,
-    "last_ts": "2026-06-03T03:45:29.208928",
-    "last_invoke": 4,
-    "last_sessions": 20,
-    "last_messages": 166,
-    "last_latency_s": 18.0,
+    "count": 10,
+    "last_ts": "2026-06-05T03:56:54.201325",
+    "last_invoke": 5,
+    "last_sessions": 24,
+    "last_messages": 180,
+    "last_latency_s": 13.7,
     "last_model": "k2p6",
     "last_skip": "stm_hash_unchanged"
   },
   "stm": {
-    "count": 3,
-    "last_ts": "2026-06-04T03:15:31.352324",
-    "last_sessions": 20,
-    "last_messages": 166,
-    "last_chars": 29633
+    "count": 5,
+    "last_ts": "2026-06-05T23:37:56.689008",
+    "last_sessions": 28,
+    "last_messages": 193,
+    "last_chars": 28453
   }
 }

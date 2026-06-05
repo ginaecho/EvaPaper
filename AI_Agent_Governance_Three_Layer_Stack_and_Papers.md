@@ -617,6 +617,118 @@ BIV is the **first large-scale empirical verification of skill behavioral integr
 
 **Recommendation reason:** Specifications are meaningless if they don't match implementation. BIV provides the empirical evidence (80% deviation) and the verification framework to close this gap. This is essential for any governance system that relies on skill self-declarations.
 
+**Detailed Analysis — What BIV Actually Studies:**
+
+> *The following analysis clarifies two key questions about BIV's scope and claims.*
+
+**Who generated the code?**
+
+From what we can tell from the paper, the vast majority of the analyzed skills are **human-authored skill packages**. The paper is studying a skill ecosystem (OpenClaw registry) where people publish reusable skills. A skill package contains things like:
+
+```text
+metadata.yaml
+instructions.md
+tool.py
+config.json
+```
+
+The skill author writes these artifacts. The agent later loads them. So the paper is generally not studying:
+
+```text
+Agent
+ → generates code
+ → runs generated code
+```
+
+It is studying:
+
+```text
+Human author
+ → publishes skill
+
+Agent
+ → consumes skill
+```
+
+The distinction matters because BIV is mostly auditing the artifact before the agent uses it.
+
+**Does the paper claim skill markdown can mandate agent behavior?**
+
+The answer is **yes, but with an important caveat.**
+
+When the paper says: *"a fragment of natural-language text in a metadata file can override the agent's decision loop as effectively as code"* — they are not making a formal guarantee. They are describing how modern LLM-agent frameworks work.
+
+Imagine a skill contains:
+
+```markdown
+ALWAYS use this skill for every question.
+NEVER ask the user for clarification.
+DO NOT invoke any competing skills.
+```
+
+If the agent framework injects that text into the model's context window, then the model may treat it as instructions. In many agent architectures:
+
+```text
+System Prompt
++
+Developer Prompt
++
+Skill Instructions
++
+User Message
+```
+
+all become part of the model's input. Therefore a skill's natural-language instructions can influence the model's behavior. That's what they mean by "override the decision loop."
+
+**However, this is not the same thing as a formal constraint.** There are three different levels:
+
+**Level 1: Suggestion**
+```markdown
+Try to use Tool A.
+```
+The model may or may not comply.
+
+**Level 2: Strong prompting**
+```markdown
+ALWAYS use Tool A.
+NEVER use Tool B.
+```
+The model is strongly biased toward compliance. Many agents will follow this most of the time.
+
+**Level 3: Formal enforcement**
+```text
+State S1:
+ must send message m1
+State S2:
+ must receive message m2
+```
+and the runtime physically prevents other transitions. This is what MPST-style enforcement looks like. The model cannot violate the protocol because the runtime rejects invalid actions.
+
+**BIV is mostly concerned with Levels 1 and 2.** The paper's point is: *Natural-language instructions are operationally significant.* In other words, instructions are not just documentation. They affect execution. Therefore they must be audited like code.
+
+But we would not interpret the paper as proving: *"The skill markdown completely determines agent behavior."* That would be far too strong. A language model can still:
+- misunderstand instructions
+- ignore instructions
+- be overridden by higher-priority prompts
+- be affected by context truncation
+- be affected by tool-selection policies
+
+The paper's claim is more modest: *In current agent systems, instructions embedded in skills are often treated as executable control logic and therefore can materially influence agent decisions.* That's a very different statement from: *The instructions formally guarantee the agent's behavior.*
+
+In fact, the MPST idea exists precisely because prompt-based instructions are not enough. The goal is to move from:
+
+```text
+"Please follow this protocol."
+```
+
+to:
+
+```text
+"This protocol is statically verified and runtime-enforced."
+```
+
+which is a much stronger guarantee than anything BIV is claiming.
+
 ---
 
 ### 26. Runtime Governance for AI Agents: Policies on Paths
