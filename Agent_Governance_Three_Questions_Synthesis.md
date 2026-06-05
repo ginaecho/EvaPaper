@@ -361,13 +361,261 @@ ZipperGen is the **coordination layer**. ABC/ACP is the **behavioral layer**. To
 
 The user's intuition about MPST-style governance was prescient. ZipperGen (arXiv:2604.17612) proves that formal multi-agent coordination with guaranteed deadlock-freedom is not just theoretical — it is implementable, open-source, and compatible with LLM runtime planning. The next step is not to invent MPST for agents, but to **extend ZipperGen with behavioral typing, blame assignment, and rollback mechanisms**.
 
-The research agenda should focus on:
-- **Action-level contracts** inside ZipperGen's action blocks (integrating ABC/AgentAssert)
-- **Skill composition analysis** for single-agent multi-skill scenarios (applying ZipperGen's projection logic to intra-agent interactions)
-- **Blame and rollback** as first-class primitives in the coordination DSL (extending ZipperGen's owned control flow with violation handling)
-
-The Three-Layer Governance Stack is not a wishlist — it is a near-term engineering roadmap. The papers are already being written. The tools are already being built. The gap is closing.
+However, a critical practical gap remains that no formal-methods paper addresses: **ZipperGen assumes you already have a formal global specification. But in practice, you start with a human SOP — and the hard work is getting from the SOP to the spec.**
 
 ---
 
-*Compiled by EvaPaper | Based on 29 papers across the Three-Layer Governance Stack*
+## The SOP-to-Workflow Reality Gap: What ZipperGen (and All Formal MPST Papers) Cannot Handle
+
+### The Practical Workflow from Human SOP to Agentic Execution
+
+A recent practical methodology (widely circulated in enterprise AI training) demonstrates the real-world process of converting human Standard Operating Procedures (SOPs) into agentic workflows. This process reveals why formal coordination guarantees like ZipperGen's, while mathematically elegant, do not address the most labor-intensive and error-prone part of agent governance.
+
+#### The Four-Step Conversion Process
+
+| Step | Description | What Can Go Wrong | Formal Methods Gap |
+|------|-------------|-------------------|-------------------|
+| **1. Format Standardization** | Parameterize SOP (avoid fixed values), apply MUST/SHOULD/MAY rules (RFC 2119), structure with Markdown for machine parseability | Human SOPs encode implicit assumptions (e.g., "wash normally" assumes user knows fabric types). Agents lack this tacit knowledge. | **ZipperGen assumes parameters and types are already defined.** It does not help decide what should be parameterized or how to extract implicit knowledge. |
+| **2. Task Decomposition** | Split into independent pipeline steps with explicit inputs, outputs, and success criteria; connect via structured artifacts (JSON) | Scope decisions: too broad → unreliable; too narrow → inefficiency. Agents cannot self-correct scope boundaries. | **ZipperGen assumes the global workflow is already decomposed.** It does not guide how to scope a "skill" vs. an "agent" vs. a "workflow step." |
+| **3. Bidirectional Development** | Deploy, observe failures (e.g., shrinking clothes from overheating), refine SOP with new rules (e.g., "no high-heat for >80% cotton"), iterate | Real-world failures expose tacit knowledge that was never documented. Each iteration takes days or weeks. | **ZipperGen has no mechanism for iterative refinement.** A formal spec is either correct or incorrect; it does not learn from runtime failures. |
+| **4. Integration & Execution** | Connect to real tools via MCP; add human-in-the-loop for high-risk decisions (e.g., finance >$5,000) | Tool APIs change, rate limits, error handling, edge cases. Production integration is where most projects fail. | **ZipperGen assumes channels are FIFO and well-typed.** It does not handle real-world API failures, retries, or human-in-the-loop pauses. |
+
+#### Why This Matters for Formal Governance
+
+ZipperGen's paper begins with: *"We introduce a domain-specific language for specifying agent coordination..."* The key word is **specifying**. The paper assumes the developer has already:
+- Extracted all implicit knowledge from the human SOP
+- Parameterized all variables correctly
+- Decided the scope of each agent/skill
+- Identified all branch conditions and loop structures
+- Defined the message types and payload structures
+
+In practice, this is **months of work** for a real-world workflow. The video's laundry example shows that even a simple SOP ("wash the clothes") requires:
+- Fabric classification (delicate, normal, heavy)
+- Stain pre-treatment (implicit knowledge: "check pockets")
+- Temperature parameterization (cold/warm/hot — not fixed)
+- Drying method decisions (weather-dependent, fabric-dependent)
+- Human-in-the-loop for high-value items
+
+ZipperGen would deadlock-freely coordinate the washing-agent, drying-agent, and sorting-agent once the global workflow is written. But it provides **no guidance on how to write that workflow** from the human SOP. The 80% deviation rate in BIV is not because agents violate formal specs — it's because the specs themselves were incomplete, derived from human SOPs with tacit knowledge gaps.
+
+#### The New Research Gap: Specification Engineering for Agents
+
+This reveals a gap not captured in our three questions or the MPST discussion:
+
+| Gap | Description | Why Formal Methods Fail |
+|-----|-------------|----------------------|
+| **Tacit knowledge extraction** | Converting implicit human assumptions into explicit parameters | Formal methods require explicit specs; they cannot infer unstated assumptions |
+| **Scope boundary determination** | Deciding what is a "skill" vs. "agent" vs. "workflow step" | ZipperGen assumes lifelines are already defined; it does not help scope them |
+| **Iterative SOP refinement** | Learning from real-world failures to update the spec | Formal specs are static; they do not incorporate runtime feedback into the specification itself |
+| **Human-in-the-loop integration** | Designing checkpoints where agents pause for human approval | ZipperGen's owned control flow has explicit deciders, but no concept of "human decider with latency and uncertainty" |
+| **Tool API abstraction** | Mapping real-world APIs (with rate limits, errors, version changes) to formal message types | ZipperGen assumes perfect FIFO channels; real APIs are messy |
+
+#### Verdict: What ZipperGen Really Is
+
+> **ZipperGen is a coordination compiler, not a workflow designer.** It takes a formal global specification and guarantees deadlock-free local execution. But the formal specification itself must be produced through a messy, iterative, human-in-the-loop process that no current paper addresses. The SOP-to-workflow conversion is the **missing middle** between human intent and formal verification. Future research should integrate ZipperGen's projection guarantees with iterative SOP refinement methods, tacit knowledge extraction, and human-in-the-loop specification design.
+
+---
+
+### The Path Forward (Revised)
+
+The user's intuition about MPST-style governance was prescient. ZipperGen (arXiv:2604.17612) proves that formal multi-agent coordination with guaranteed deadlock-freedom is not just theoretical — it is implementable, open-source, and compatible with LLM runtime planning. The next step is not to invent MPST for agents, but to **extend ZipperGen with behavioral typing, blame assignment, and rollback mechanisms**.
+
+But the research agenda must also include:
+- **SOP-to-specification extraction:** Tools that convert human SOPs (with tacit knowledge) into formal global workflows, iteratively refined from runtime failures
+- **Human-in-the-loop as first-class primitives:** Not just "human decider" in ZipperGen's control flow, but latency-aware, uncertainty-aware human integration
+- **Scope boundary guidance:** Formal methods that help decide which subtasks should be skills, agents, or workflow steps
+- **Tool API abstraction layer:** Formal verification that accounts for real-world API failures, rate limits, and retries
+
+The Three-Layer Governance Stack is not a wishlist — it is a near-term engineering roadmap. The papers are already being written. The tools are already being built. The gap is closing. But the **biggest gap is not the formal verification — it's the formal specification process that precedes it.**
+
+---
+
+*Compiled by EvaPaper | Based on 29 papers across the Three-Layer Governance Stack + practical enterprise SOP methodology*
+
+---
+
+## Appendix B: Full Source Transcript — Agentic Workflow Methodology
+
+> The following transcript is reproduced verbatim from a widely circulated enterprise AI training video on converting human SOPs into agentic workflows. It is included here as primary-source evidence for the gap between formal methods (e.g., ZipperGen) and real-world deployment practice. The timestamps and formatting are preserved from the original.
+
+[00:00:00]
+This video introduces the concept of **agentic workflow**, focusing on the crucial skill of **task decomposition** for effective AI system design. The speaker highlights the gap between powerful current AI models and unsatisfactory results often caused by improper task division rather than model limitations. The discussion begins by clarifying three essential terms that are frequently confused but fundamentally different in scope and function:
+
+- **Human SOP (Standard Operating Procedure):** Traditional, human-readable process documents that guide steps and exceptions, often in Word or slides. SOPs rely heavily on implicit human context, allowing flexible judgment on rules but presenting **high comprehension difficulty for agents due to unstructured format**.
+- **Skill:** A packaged methodology, including operational logic, decision criteria, and lessons learned, delivered to agents as executable units. A skill usually contains:
+ 1. A **Skill markdown document** acting as a core SOP and guiding principles.
+ 2. **References** for supplementary data such as sample outputs and terminology.
+ 3. Executable **scripts** for deterministic actions like file parsing and format conversion.
+
+ Skills correspond to **single, clearly defined tasks** (e.g., weekly-report-drafting, invoice-categorization). Determining the right scope for a skill is critical: too broad makes it unreliable; too narrow causes inefficiency.
+- **Agentic Workflow:** A comprehensive workflow made by connecting multiple agents, tools, skills, and data sources, resembling a production line for autonomous AI task execution rather than a single prompt. It involves roles such as problem understanding, data searching, action execution, and report writing.
+
+The primary focus is **transforming Human SOPs (meant for humans) into agentic workflows (understandable and executable by AI agents)**.
+
+[00:04:09]
+The video stresses that despite rapid advances and potential future AGI, agents cannot magically understand implicit preferences without explicit instructions, using a home-cleaning analogy:
+
+- A helper who receives only the instruction "clean the house" will produce varying results depending on their internal interpretation of "clean," which may differ significantly from the homeowner’s expectations.
+- This illustrates that clear instructions plus iterative adjustment are necessary for agent reliability.
+- Similarly, in agentic workflows, implicit human assumptions must be made explicit for AI to meet expectations.
+
+[00:05:23]
+The **mega agent** approach—assigning all tasks to a single, powerful model—is critiqued as opaque and error-prone:
+
+- Such all-in-one agents provide outputs that are difficult to debug or validate.
+- Users often respond by upgrading models or refining prompts, but the real issue is task granularity and clarity.
+- Instead, **dividing a large task into smaller, modular tasks (task decomposition)** allows clear inputs, outputs, and success criteria per sub-task.
+
+Example: For handling customer tickets, separate agents could be assigned to classification, database searching, reply drafting, and quality control. This breakdown enables debugging and iterative improvement on each specific function without disrupting the entire system.
+
+[00:06:25]
+Advantages of task decomposition include:
+
+- Easier error localization (e.g., fixing misclassification without changing other components).
+- Improved stability, observability, and maintainability required for production environments.
+- The workflow turns from an unmanageable black box into a predictable and repairable production line.
+
+The speaker sums this paradigm as "divide and conquer," a classical approach now more vital than ever in AI-driven systems.
+
+[00:07:26]
+A concrete example of washing clothes illustrates this:
+
+- Human SOPs for washing often omit critical implicit knowledge—such as separating whites from colours, delicate hand-washing, or weather considerations for drying.
+- A naive agent following the SOP literally may damage clothes by missing unexpressed preferences.
+
+Thus, the speaker proposes a **four-step methodology** to convert human SOPs into agentic workflows, starting with **format standardization**.
+
+[00:08:34]
+**Step 1: Format Standardization** involves:
+
+- **Parameterisation:** Avoid fixing values (e.g., wash mode as "normal") and instead define parameters like mode (quick, normal, delicate) and temperature (cold, warm, hot). This makes the SOP reusable across varying contexts.
+- **MUST, SHOULD, MAY rules:** Borrowed from RFC 2119 specification language, this categorises rules by importance:
+  - **MUST:** Mandatory, non-negotiable steps.
+  - **SHOULD:** Recommended but can be skipped with justification.
+  - **MAY:** Optional steps.
+
+- **Structured documentation style:** Use Markdown to divide SOP into sections such as Parameters, Steps, and Error Handling, facilitating machine parseability and integration with interfaces like Model Context Protocol (MCP).
+
+This step transforms the SOP from unstructured prose into a schema that agents can systematically interpret.
+
+[00:10:36]
+**Step 2: Task decomposition and linking** is the core of task breakdown:
+
+- Tasks are split into independent pipeline steps, each with explicit input, output, and success criteria, enabling independent execution and debugging.
+- For washing clothes, pipeline steps might be:
+  1. Classify clothing types.
+  2. Check pockets and stains.
+  3. Set washing machine parameters.
+  4. Decide drying method.
+- Each step can be implemented as a separate skill or small agent connected via **artifacts**—structured data outputs (e.g., JSON files) passed from one agent to another, ensuring clarity and interoperability without magical or implicit communication.
+
+[00:12:31]
+**Step 3: Bidirectional development (iterative refinement):**
+
+- Initial SOPs inevitably omit "tacit knowledge"—implicit insights hard to verbalise.
+- Real-world errors during execution reveal gaps and ambiguities; these necessitate continuous SOP adjustment.
+- The process involves deploying the workflow, observing failures (e.g., shrinking clothes due to overheating), updating the SOP with additional rules (e.g., no high-temperature drying for >80% cotton), and rerunning.
+- After repeated cycles, the automated workflow becomes robust enough for most scenarios, with remaining edge cases handled via **human-in-the-loop**.
+- This iterative approach contrasts sharply with attempting to author a perfect SOP in isolation.
+
+[00:14:37]
+**Step 4: Integration and execution environment:**
+
+- An agentic workflow must connect to **real-world tools and data sources**—e.g., washing machine controls, weather APIs.
+- Without integration, SOPs remain inert documents.
+- The variety of tools across companies creates challenges for reusability.
+
+The **Model Context Protocol (MCP)** is introduced as a solution:
+
+- MCP is an **open standard protocol** enabling large language models and agents to uniformly access tools, APIs, resources, and prompts across different platforms (ChatGPT, Claude, Cursor, etc.).
+- The analogy is given to USB-C standardising hardware connections across brands.
+- MCP greatly simplifies cross-platform deployment and tool integration.
+
+Finally, the workflow should include **human-in-the-loop checkpoints** at critical points, such as high-risk decisions, to avoid unmanaged failure and retain human oversight.
+
+[00:16:41]
+The speaker applies the methodology to an internal company request triage system, described as follows:
+
+- Inputs are requests coming from channels such as forms, Slack, email, or direct messages.
+- The SOP for triage includes steps to validate the employee, categorise the request into IT/HR/Finance, set priority, and assign to correct teams.
+- If requests are ambiguous, the agent should generate clarifying questions.
+
+Four steps applied:
+
+| Step | Description |
+|-------|-------------|
+| 1. Standardisation | SOP written with parameters (ticket source, text, employee ID), categorising rules as MUST/SHOULD |
+| 2. Decomposition | Two skills: internal request triage (classify, prioritise, assign) and reply drafting (compose response based on triage output) linked by JSON outputs |
+| 3. Iteration | Refine SOP by correcting errors such as misclassification or wrong assignee recommendations through multiple runs |
+| 4. Integration | Hook workflow to real systems (e.g., tracking sheets like Notion, Jira, Google Sheets), and add human-in-the-loop for sensitive requests (e.g., finance > $5000 approval) |
+
+This transforms a manual, repetitive SOP into an automated, debuggable, and auditable workflow with built-in human control.
+
+[00:19:31]
+The speaker offers a **five-prompt toolkit** (details in video description) to facilitate the SOP decomposition and workflow creation process.
+
+They emphasise that:
+
+- This methodology is no longer niche but central to enterprise AI adoption.
+- MCP and agentic workflows are gaining involvement from major companies (Anthropic donating MCP to Linux Foundation’s Agentic AI Foundation, IBM, AWS, ServiceNow implementing these concepts in internal workflows).
+
+[00:20:30]
+The key message is that knowing how to convert a human SOP into an executable workflow that machines can run reliably is a **vital competitive skill for AI practitioners over the next few years**.
+
+The speaker advises starting small, focusing on the most tedious, repetitive processes, rather than trying to automate everything at once. Early deliverables should prioritise functional workflows that save time and then progressively improve.
+
+The distinction is made between simply learning to use AI tools vs. learning how to **design workflows for AI**. The latter has far greater lasting value.
+
+[00:21:29]
+To conclude:
+
+- Designing effective agentic workflows based on decomposed, parameterised SOPs connected by structured outputs and integrated with real-world tools supported by protocols like MCP is the future.
+- Human oversight remains critical to handle uncertainty and edge cases.
+- The ability to engineer these workflows will only rise in value as AI multi-agent systems become mainstream.
+
+The speaker invites viewers to subscribe, like, and share to support ongoing content creation.
+
+---
+
+### Key Terms Defined
+
+| Term | Definition | Function |
+|------------------|------------------------------------------------------------------------------------------------|-------------------------------------------|
+| Human SOP | Traditional unstructured process document for humans, rich in implicit context | Guides humans, difficult for AI agents |
+| Skill | Encapsulated methodology with SOP, references, and scripts for a single task | Executed by agents |
+| Agentic Workflow | Workflow connecting multiple agents, skills, tools, and data sources into an autonomous pipeline | Produces end-to-end automation |
+| Task Decomposition | Breaking tasks into small, modular, independent subtasks with clear inputs/outputs and success criteria | Enables debugging and iterative development |
+| Model Context Protocol (MCP) | Open standard protocol for LLMs/agents to uniformly access external tools and resources | Enables cross-platform tool integration |
+| Tacit Knowledge | Implicit, hard-to-express knowledge residing in human experience | Causes SOP gaps requiring iterative updates |
+| Human-in-the-loop| Process checkpoints requiring human confirmation for critical decisions | Mitigates risk and handles edge cases |
+
+---
+
+### Summary of the Four-Step Agentic Workflow Conversion Methodology
+
+| Step | Description | Purpose |
+|--------------------------|---------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| 1. Format Standardization | Parameterise SOP, use MUST/SHOULD/MAY, structure with Markdown | Make SOP machine-readable and reusable |
+| 2. Task Decomposition | Split task into clear, independent pipeline steps connected by structured output artifacts | Modularise workflow for observability and agility |
+| 3. Bidirectional Development | Iterate on SOP by testing, identifying errors related to tacit knowledge, refining accordingly | Build SOP robustness through real-world feedback |
+| 4. Integration & Execution | Connect workflow to real tools and environment via MCP; add human-in-the-loop decision checkpoints | Enable production-ready automation with human oversight |
+
+---
+
+### Core Insights
+
+- Powerful AI models alone do not guarantee reliable automation—**explicit task design and decomposition are crucial**.
+- Human SOPs depend heavily on implicit context; without translating them into parameterised, structured workflows, agents cannot execute them effectively.
+- **Divide and conquer** principle dramatically improves maintainability, observability, and debugging.
+- **Iterative collaboration between developers and agents exposes tacit knowledge gaps, enabling continuous improvement**.
+- Open standards like MCP are critical to integrating agents with heterogeneous corporate tools and supporting multi-agent ecosystems.
+- Human-in-the-loop remains necessary for risk management and handling unpredictable edge cases in automation.
+- Starting small with the most repetitive tasks yields immediate ROI and lays the foundation for scaling AI automation.
+
+---
+
+*This comprehensive methodology and real-world example position agentic workflows as a foundational skill and technology for the near future of AI-driven enterprise operations.*
+
+---
+
+*Compiled by EvaPaper | Based on 29 papers across the Three-Layer Governance Stack + practical enterprise SOP methodology*
