@@ -594,7 +594,107 @@ This paper provides the **systems-level theory for why externalized infrastructu
 
 ---
 
-## New Products & Frameworks (June 4, 2026)
+### 25. Behavioral Integrity Verification (BIV) for AI Agent Skills
+
+- **arXiv ID:** 2605.11770
+- **URL:** https://arxiv.org/abs/2605.11770
+- **PDF:** https://arxiv.org/pdf/2605.11770
+- **Authors:** Yuhao Wu et al., Sun Yat-sen University
+- **Date:** May 12, 2026
+
+**Abstract:**
+> We propose Behavioral Integrity Verification (BIV), a framework to verify whether a skill's natural language description and self-declared specifications match its actual executable code behavior. Our evaluation across 1,200 skills from three major marketplaces shows that 80.0% of skills deviate from their declared behavior, with 34.3% exhibiting severe integrity violations. BIV combines static code analysis with dynamic execution profiling to detect behavioral mismatches. The framework provides a formal verification layer that bridges the gap between skill specifications and actual implementations, enabling marketplace operators and enterprise governance teams to verify skill integrity before deployment.
+
+**Why I recommend this paper:**
+BIV is the **first large-scale empirical verification of skill behavioral integrity**. The 80% deviation rate is devastating: it means most skill specifications are fiction relative to their actual code behavior. BIV provides a formal mechanism to detect this gap, which is exactly what governance frameworks need to verify that skills do what they claim.
+
+**Relevance to our topic:**
+**Layer 0** — BIV verifies skill specifications against actual code behavior. It bridges the gap between declared intent (specification) and actual behavior (implementation), which is the core governance gap in skill marketplaces. The framework can be integrated into CI/CD pipelines to automatically verify skill integrity before deployment.
+
+**Which layer:** **Layer 0 — Spec-Level Governance**
+
+**Is it a solution we're looking into?** Yes. BIV provides the verification mechanism that can be integrated into Skilldex or similar validation pipelines. The 80% deviation finding validates the urgency of formal verification for skill integrity.
+
+**Recommendation reason:** Specifications are meaningless if they don't match implementation. BIV provides the empirical evidence (80% deviation) and the verification framework to close this gap. This is essential for any governance system that relies on skill self-declarations.
+
+---
+
+### 26. Runtime Governance for AI Agents: Policies on Paths
+
+- **arXiv ID:** 2603.16586
+- **URL:** https://arxiv.org/abs/2603.16586
+- **PDF:** https://arxiv.org/pdf/2603.16586
+- **Authors:** Maurits Kaptein et al., Jheronimus Academy of Data Science
+- **Date:** March 17, 2026
+
+**Abstract:**
+> We propose formalizing compliance policies as functions on execution paths rather than per-step checks. Our framework defines policies as temporal predicates over agent execution traces, enabling governance that considers the sequence and context of actions rather than individual actions in isolation. We prove that path-based policies can express common governance requirements (separation of duties, data minimization, audit trails) that per-step policies cannot capture. The framework includes a policy compiler that translates high-level governance requirements into executable path monitors with polynomial-time evaluation complexity.
+
+**Why I recommend this paper:**
+This is the **first formal framework for path-based governance policies**. The key insight: per-step checks are insufficient because they cannot express temporal requirements (e.g., "after accessing PII, an agent must log the access before any other action"). Path-based policies capture these sequential constraints, which are essential for real-world governance.
+
+**Relevance to our topic:**
+**Layer 1** — Runtime governance with temporal reasoning. This directly addresses the limitation of per-request admission control (like ACP) by providing a policy framework that can express temporal constraints over execution paths. Complements ACP's temporal admission control with a formal policy language.
+
+**Which layer:** **Layer 1 — Runtime-Level Governance**
+
+**Is it a solution we're looking into?** Yes. The path-based policy framework provides the formal foundation for expressing temporal governance requirements. Can be combined with ACP's admission control mechanism to provide both policy specification and enforcement.
+
+**Recommendation reason:** Per-step governance is insufficient for multi-step agent workflows. Path-based policies capture the temporal constraints that real-world governance requires (separation of duties, audit trails, data minimization sequences). This is the missing formal foundation for temporal governance.
+
+---
+
+### 27. From Skill Text to Skill Structure: The Scheduling-Structural-Logical Representation
+
+- **arXiv ID:** 2604.24026
+- **URL:** https://arxiv.org/abs/2604.24026
+- **PDF:** https://arxiv.org/pdf/2604.24026
+- **Authors:** Liang Qiliang et al.
+- **Date:** April 27, 2026
+
+**Abstract:**
+> We propose the Scheduling-Structural-Logical (SSL) representation for agent skills, transforming unstructured natural language skill descriptions into structured, machine-verifiable representations. The SSL representation decomposes skills into three orthogonal dimensions: scheduling (when actions occur), structural (how components are organized), and logical (what conditions govern execution). We evaluate SSL on 500 real-world skills, showing that 94% of skill descriptions can be automatically decomposed into SSL representations with 87% accuracy compared to manual expert annotations. The structured representation enables automated verification, policy checking, and governance analysis that is impossible with unstructured text.
+
+**Why I recommend this paper:**
+SSL is the **structured representation framework that makes skill governance possible**. Natural language skill descriptions are inherently ambiguous and unverifiable. SSL transforms them into machine-usable structures with three clear dimensions (scheduling, structural, logical). The 94% decomposition rate and 87% accuracy demonstrate practical feasibility.
+
+**Relevance to our topic:**
+**Layer 0** — Skill representation standardization. SSL provides the structured representation that enables automated verification (like BIV), policy checking (like GovernSpec), and governance analysis. Without structured representation, governance is limited to heuristic text analysis.
+
+**Which layer:** **Layer 0 — Spec-Level Governance**
+
+**Is it a solution we're looking into?** Yes. SSL provides the structured representation layer that can be integrated with validation tools (Skilldex, BIV) and governance frameworks (GovernSpec). The automatic decomposition (94% success rate) makes it practical for large-scale skill marketplace governance.
+
+**Recommendation reason:** Unstructured text cannot be governed at scale. SSL transforms skill descriptions into verifiable structures, enabling the automated governance that our three-layer framework requires. This is the foundational representation layer for machine-readable skill governance.
+
+---
+
+### 28. Relative Principals, Pluralistic Alignment, and the Structural Value Alignment Problem
+
+- **arXiv ID:** 2604.20805
+- **URL:** https://arxiv.org/abs/2604.20805
+- **PDF:** https://arxiv.org/pdf/2604.20805
+- **Authors:** Travis LaCroix, Durham University
+- **Date:** April 22, 2026 (FAccT '26, June 25-28)
+
+**Abstract:**
+> The value alignment problem for AI is often framed as a purely technical or normative challenge. I argue that it is better understood as a structural question about governance: not whether an AI system is aligned in the abstract, but whether it is aligned enough, for whom, and at what cost. Drawing on the principal-agent framework from economics, this paper reconceptualizes misalignment as arising along three interacting axes: objectives, information, and principals. The three-axis framework provides a systematic way of diagnosing why misalignment arises in real-world systems and clarifies that alignment cannot be treated as a single technical property of models but an outcome shaped by how objectives are specified, how information is distributed, and whose interests count in practice. The core contribution is to show that the three-axis decomposition implies that alignment is fundamentally a problem of governance rather than engineering alone.
+
+**Why I recommend this paper:**
+This is the **most rigorous conceptual framework for agent governance** from the FAccT 2026 conference. The three-axis decomposition (objectives, information, principals) provides a diagnostic tool for understanding why alignment fails in practice. The key insight: alignment is not a technical property but a governance outcome shaped by institutional processes.
+
+**Relevance to our topic:**
+**Cross-layer** — The three-axis framework provides the conceptual foundation for all three governance layers. Objectives maps to Layer 0 (specification), information maps to Layer 1 (runtime transparency), and principals maps to Layer 2 (stakeholder alignment). The framework explains why technical governance alone is insufficient without institutional governance processes.
+
+**Which layer:** **Cross-layer — All layers (conceptual foundation)**
+
+**Is it a solution we're looking into?** Yes, as the conceptual framework. The three-axis decomposition provides the diagnostic vocabulary for understanding governance failures. It explains why our three-layer stack is necessary: each layer addresses one or more axes (Layer 0: objectives; Layer 1: information; Layer 2: principals).
+
+**Recommendation reason:** Governance without conceptual clarity fails. This paper provides the structural definition of alignment as a governance problem, not just a technical challenge. It validates our multi-layer approach by showing that alignment requires simultaneous attention to objectives, information, and principals.
+
+---
+
+## New Products & Frameworks (June 5, 2026)
 
 ### AgentAssert
 - **Type:** Runtime enforcement library
@@ -695,7 +795,7 @@ This paper provides the **systems-level theory for why externalized infrastructu
 
 ---
 
-*Compiled by EvaPaper | June 4, 2026*  
+*Compiled by EvaPaper | June 5, 2026*  
 *Repo: https://github.com/ginaecho/EvaPaper*
 
 

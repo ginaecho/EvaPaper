@@ -144,3 +144,36 @@ Status: **NEW FINDINGS FOUND**
 - Date: 2026-06-04
 - Status: 10 new papers + 5 new products/frameworks discovered
 - Findings: Significant formal methods momentum — ABC, AgentVerify, SkillFortify, AgentAssay, ACP all provide mathematically grounded governance mechanisms. The shift from heuristic to formal guarantees is accelerating. Agent Governance Series (6 papers) by Marcelo Fernandez is a major emerging body of work.
+
+## 2026-06-05 Scout Run — NEW FINDINGS DISCOVERED
+Search queries: agent behavioral integrity verification skill 2026, agent runtime governance path policy temporal 2026, skill structure representation markdown parsing 2026, FAccT 2026 agent governance alignment pluralistic
+Status: **NEW FINDINGS FOUND**
+
+### New Papers
+1. **BIV / Behavioral Integrity Verification** (arXiv:2605.11770) — May 12, 2026. Sun Yat-sen University. Verifies whether skill descriptions match actual code behavior. 80.0% deviation rate across 1,200 skills. 34.3% severe violations. URL: https://arxiv.org/abs/2605.11770 — **Layer 0** — Directly addresses "do skills do what they claim?" Essential for marketplace validation.
+
+2. **Runtime Governance / Policies on Paths** (arXiv:2603.16586) — Mar 17, 2026. Jheronimus Academy of Data Science. Formalizes compliance policies as temporal predicates over execution paths. Path-based policies express separation of duties, data minimization, audit trails that per-step checks cannot capture. Polynomial-time evaluation. URL: https://arxiv.org/abs/2603.16586 — **Layer 1** — The missing formal foundation for temporal governance requirements.
+
+3. **SSL Representation / Skill Text to Structure** (arXiv:2604.24026) — Apr 27, 2026. Scheduling-Structural-Logical representation for agent skills. 94% decomposition rate, 87% accuracy vs expert annotations. Machine-verifiable skill descriptions. URL: https://arxiv.org/abs/2604.24026 — **Layer 0** — Makes unstructured skill text governable by transforming into verifiable structures.
+
+4. **FAccT '26 / Relative Principals, Pluralistic Alignment** (arXiv:2604.20805) — Apr 22, 2026. Travis LaCroix, Durham University. FAccT '26 conference paper (June 25-28). Three-axis framework: objectives, information, principals. Alignment is fundamentally governance, not engineering alone. URL: https://arxiv.org/abs/2604.20805 — **Cross-layer** — Conceptual foundation explaining why our three-layer stack is necessary.
+
+### New Products/Frameworks
+- No new products/frameworks discovered today (search focused on academic papers)
+
+## Key Search Queries Added
+- agent behavioral integrity verification skill 2026
+- agent runtime governance path policy temporal 2026
+- skill structure representation markdown parsing 2026
+- FAccT 2026 agent governance alignment pluralistic
+
+## Research Momentum Observations
+- **Skill integrity crisis:** BIV's 80% deviation rate + ClawHavoc's 1,200+ malicious skills = current validation is completely insufficient
+- **Temporal governance emergence:** Path-based policies (Runtime Governance) + ACP admission control = formal temporal reasoning is replacing per-step checks
+- **Structured representation gap:** SSL's 94% decomposition rate shows automatic skill structure extraction is feasible — enabling automated governance
+- **FAccT governance focus:** Three-axis framework (objectives, information, principals) validates our multi-layer approach conceptually
+- **Formal methods dominance:** 4 new papers all use formal/mathematical approaches (integrity verification, temporal logic, structured decomposition, principal-agent theory) — heuristic governance is being replaced by formal guarantees
+
+## Next Scout Run
+- Scheduled: June 12, 2026
+- Focus: FAccT 2026 conference proceedings (June 25-28), OWASP Top 10 adoption metrics, skill marketplace integrity implementations, ACP/AgentAssert production deployments
