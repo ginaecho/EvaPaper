@@ -1,7 +1,7 @@
 # Agent Governance Research Summary: Three Critical Questions
 
 > Compiled by EvaPaper | June 6, 2026
-> Based on 28 papers across the Three-Layer Governance Stack
+> Based on 29 papers across the Three-Layer Governance Stack
 
 ---
 
@@ -232,15 +232,6 @@ If you need **guaranteed** behavior, you need:
 
 ---
 
-#### 10. **ZipperGen / Provable Coordination for LLM Agents via MSCs** (arXiv:2604.17612, Cross-layer Layer 0+1)
-- **Deterministic:** Yes — message-passing structure is formally specified; LLM actions remain opaque
-- **Mechanism:** Domain-specific language based on Message Sequence Charts (MSCs). Syntax-directed projection generates deadlock-free local agent programs from global coordination specifications. Owned control flow with explicit deciders. Control broadcasts ensure non-owner lifelines observe branch choices.
-- **Results:** Deadlock-free by construction. Coordination properties established independently of LLM nondeterminism. Runtime planning extension: LLM generates workflows with same structural guarantees.
-- **Open source:** ZipperGen — https://zippergen.io
-- **Gap:** Does not verify LLM action content (opaque by design). No runtime behavioral enforcement beyond coordination structure.
-
----
-
 ### Comparison: Deterministic vs LLM-as-Judge Runtime Checking
 
 | Mechanism | Scope | Deterministic? | Speed | Formal Verification | Production Ready |
@@ -281,13 +272,21 @@ If you need **guaranteed** behavior, you need:
 
 ## Overall Assessment
 
-### The Three Questions — Synthesis
+### The Three Questions — Comprehensive Synthesis
 
-| Question | Status | Best Existing Work | What ZipperGen Changes |
-|----------|--------|-------------------|----------------------|
-| **1. Do skills affect behavior?** | ✅ Yes, empirically | BIV, SSL Survey, GovernSpec | ZipperGen does not directly address this, but its runtime planning extension shows LLMs can generate coordination structures that are formally guaranteed |
-| **2. Static type checking?** | ✅ Yes for multi-agent | **ZipperGen** — formal well-typedness checks, deadlock-free by construction | **Closes the MPST gap:** formal global specs + deterministic local projection |
-| **3. Deterministic runtime?** | ✅ Yes for multi-agent | **ZipperGen** — coordination structure enforced deterministically, independent of LLM nondeterminism | **Closes the multi-agent gap:** the only paper that guarantees correct multi-agent coordination regardless of LLM stochasticity |
+| Question | Status | Best Existing Work | What ZipperGen Changes | What Remains Open |
+|----------|--------|-------------------|----------------------|-------------------|
+| **1. Do skills affect behavior?** | ✅ Yes, empirically | BIV, SSL Survey, GovernSpec | ZipperGen does not directly address this, but its runtime planning extension shows LLMs can generate coordination structures that are formally guaranteed | Proving deterministic mandate from skill markdown alone — impossible without L3 enforcement |
+| **2. Static type checking?** | ✅ Yes for multi-agent | **ZipperGen** — formal well-typedness checks, deadlock-free by construction | **Closes the MPST gap:** formal global specs + deterministic local projection | Behavioral typing of LLM action content; skill-skill composition within single agent |
+| **3. Deterministic runtime?** | ✅ Yes for multi-agent | **ZipperGen** — coordination structure enforced deterministically, independent of LLM nondeterminism | **Closes the multi-agent gap:** the only paper that guarantees correct multi-agent coordination regardless of LLM stochasticity | Runtime enforcement of what LLMs do inside action blocks; blame assignment; automatic rollback |
+
+### The Three Questions — Layer Mapping
+
+| Question | Layer 0 (Spec) | Layer 1 (Runtime) | Layer 2 (Behavioral) |
+|----------|---------------|-------------------|----------------------|
+| **Q1: Do skills affect behavior?** | BIV, SSL, GovernSpec (empirical evidence) | ClawHavoc (incident data) | — |
+| **Q2: Static type checking?** | **ZipperGen** (global specs), SkillFortify (code analysis), GovernSpec (contracts) | — | — |
+| **Q3: Deterministic runtime?** | **ZipperGen** (projection) | **ZipperGen** (local programs), ACP (admission control), ABC (contracts) | AgentVerify (hybrid), Trace-Based (replay) |
 
 ### The MPST Opportunity — REVISED
 
@@ -325,7 +324,7 @@ Global Specification (ZipperGen MSC)
     ↓ Syntax-directed projection
 Local Agent Programs (deadlock-free by construction)
     ↓ Runtime execution
-    ├─ Message passing (deterministic, guaranteed)
+    ├─ Message passing (deterministic, guaranteed by ZipperGen)
     └─ Action blocks (opaque LLM calls)
          ↓ ABC/ACP enforcement inside each action
          Behavior contracts (pre/postconditions)
@@ -333,6 +332,41 @@ Local Agent Programs (deadlock-free by construction)
 ```
 
 ZipperGen is the **coordination layer**. ABC/ACP is the **behavioral layer**. Together they form the complete multi-agent governance stack.
+
+---
+
+## Conclusion
+
+### What We Know (2026)
+
+1. **Skills do affect behavior** — empirically proven by BIV (80% deviation means agents are trying to follow instructions), SSL (94% structure extraction), and ClawHavoc (1,200+ malicious skills show skills are a real threat vector). But this is probabilistic, not deterministic.
+
+2. **Formal static checking exists for multi-agent coordination** — ZipperGen provides deadlock-free-by-construction guarantees via syntax-directed projection from MSC-based global specs. This closes the MPST gap for coordination structure.
+
+3. **Deterministic runtime enforcement exists for both single-agent and multi-agent** — ACP (sub-microsecond, TLA+ verified), ABC/AgentAssert (<10ms, Drift Bounds Theorem), and ZipperGen (structural induction proof) all provide deterministic enforcement without LLM-as-judge.
+
+### What We Don't Know (The Open Frontier)
+
+1. **Behavioral typing of LLM action content** — ZipperGen treats actions as opaque. No paper verifies *what* LLMs compute inside action blocks.
+
+2. **Skill-skill composition within a single agent** — No static analysis of how multiple skills loaded by one agent interact.
+
+3. **Blame assignment in multi-agent violations** — When something goes wrong, who is responsible? ZipperGen provides no mechanism.
+
+4. **Automatic rollback** — ABC has Recovery (R) contracts for single-agent, but multi-agent rollback is unaddressed.
+
+5. **Formal guarantee that skill markdown alone determines behavior** — Impossible without L3 runtime enforcement. LLM internals, context truncation, system prompts, and user messages all contribute.
+
+### The Path Forward
+
+The user's intuition about MPST-style governance was prescient. ZipperGen (arXiv:2604.17612) proves that formal multi-agent coordination with guaranteed deadlock-freedom is not just theoretical — it is implementable, open-source, and compatible with LLM runtime planning. The next step is not to invent MPST for agents, but to **extend ZipperGen with behavioral typing, blame assignment, and rollback mechanisms**.
+
+The research agenda should focus on:
+- **Action-level contracts** inside ZipperGen's action blocks (integrating ABC/AgentAssert)
+- **Skill composition analysis** for single-agent multi-skill scenarios (applying ZipperGen's projection logic to intra-agent interactions)
+- **Blame and rollback** as first-class primitives in the coordination DSL (extending ZipperGen's owned control flow with violation handling)
+
+The Three-Layer Governance Stack is not a wishlist — it is a near-term engineering roadmap. The papers are already being written. The tools are already being built. The gap is closing.
 
 ---
 
