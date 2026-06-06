@@ -1,20 +1,21 @@
 # Agent Governance Research Scout — Tracking Log
 # Created: 2026-05-30
 # Tracks known papers, products, and benchmarks to identify new findings.
+# Format: Each entry includes discovery date (Found: YYMMDD)
 
 ## Known Papers (as of 2026-05-30)
-- BeSafe-Bench (arXiv:2603.25747) — Huawei RAMS Lab, 2026-01-30
-- ST-WebAgentBench (arXiv:2410.06703) — IBM Research, 2024-10 (ICLR 2026)
-- Layered Governance Architecture / LGA (arXiv:2603.07191) — 2026-03-05
-- Skilldex (arXiv:2604.16911) — 2026-04-18
-- GovernSpec / Contractual Skills (arXiv:2605.22634) — 2026-05-21
+- BeSafe-Bench (arXiv:2603.25747) — Huawei RAMS Lab, 2026-01-30. Found: 0530
+- ST-WebAgentBench (arXiv:2410.06703) — IBM Research, 2024-10 (ICLR 2026). Found: 0530
+- Layered Governance Architecture / LGA (arXiv:2603.07191) — 2026-03-05. Found: 0530
+- Skilldex (arXiv:2604.16911) — 2026-04-18. Found: 0530
+- GovernSpec / Contractual Skills (arXiv:2605.22634) — 2026-05-21. Found: 0530
 
-## Known Products/Frameworks
-- Microsoft Agent Governance Toolkit — MIT License, 2026-04-02
-- OWASP Top 10 for Agentic Applications — 2026 edition
-- Ruh AI Production Evaluation Guide — 2026-05-24
-- Anthropic SKILL.md validator
-- Skilldex MCP server / CLI
+## Known Products/Frameworks (as of 2026-05-30)
+- Microsoft Agent Governance Toolkit — MIT License, 2026-04-02. Found: 0530
+- OWASP Top 10 for Agentic Applications — 2026 edition. Found: 0530
+- Ruh AI Production Evaluation Guide — 2026-05-24. Found: 0530
+- Anthropic SKILL.md validator. Found: 0530
+- Skilldex MCP server / CLI. Found: 0530
 
 ## Key Search Queries
 - BeSafe-Bench agent safety benchmark
@@ -37,7 +38,7 @@
 Search queries: agent governance safety benchmark 2026, agent skill markdown specification validation governance 2026, OWASP agentic applications framework 2026
 Status: **NEW FINDINGS FOUND**
 
-### New Papers
+### New Papers (Found: 0531)
 1. **ClawBench** (arXiv:2604.08523) — UBC/Vector Institute/CMU/etc, 2026-04-09. Real-world web agent benchmark: 153 tasks across 144 live production websites. Layer 2.
 2. **MCP-38** (arXiv:2603.18063) — Comprehensive threat taxonomy for Model Context Protocol with 38 threat categories. Mapped to STRIDE, OWASP LLM Top 10, OWASP Agentic Top 10. Layer 1.
 3. **MCPThreatHive** (arXiv:2604.13849) — Automated threat intelligence platform for MCP ecosystems. GitHub: VulcanLab/MCPThreatHive. Layer 1.
@@ -46,7 +47,7 @@ Status: **NEW FINDINGS FOUND**
 6. **SkillAttack** (arXiv:2604.04989) — Automated red teaming of agent skills through attack path refinement. Layer 2.
 7. **TRUSTDESC** (arXiv:2604.07536) — Preventing tool poisoning via trusted description generation. Layer 1.
 
-### New Products/Frameworks
+### New Products/Frameworks (Found: 0531)
 1. **OWASP Top 10 for Agentic Skills (AST10)** — New OWASP project 2026 edition. 10 critical risks for agent skills across OpenClaw (SKILL.md), Claude Code, Cursor. Layer 0.
 2. **Tencent AI-Infra-Guard** — Full-stack AI red teaming platform with OpenClaw Security Scan, Agent Scan, Skills Scan, MCP scan, AI Infra scan. GitHub: Tencent/AI-Infra-Guard. Layer 1.
 3. **IBM Sovereign Core** — GA announced 2026-05-07. Embeds governance policy at infrastructure runtime for regulated, cross-border environments. Layer 1.
@@ -57,7 +58,7 @@ Status: **NEW FINDINGS FOUND**
 Search queries: agent governance safety benchmark 2026, agent skill markdown specification validation governance 2026, OWASP agentic applications framework 2026, agent specification validation markdown skill 2026 May
 Status: **NEW FINDINGS FOUND**
 
-### New Papers
+### New Papers (Found: 0601)
 1. **SkCC** (arXiv:2605.03353) — Portable and Secure Skill Compilation for Cross-Framework LLM Agents. May 5, 2026. Introduces SkIR, a strongly-typed intermediate representation that decouples skill semantics from framework-specific formatting. Static optimizer enforces security constraints, blocking vulnerabilities before deployment. Reduces adaptation complexity from O(m×n) to O(m+n). 94.8% proactive security trigger rate. URL: https://arxiv.org/abs/2605.03353 — **Layer 1/2** — Directly addresses SKILL.md portability and security across frameworks. This is the skill compilation/validation infrastructure we need.
 
 2. **LASM / Systematic Survey** (arXiv:2604.23338) — A Systematic Survey of Security Threats and Defenses in LLM-Based AI Agents: A Layered Attack Surface Framework. Apr 25, 2026. Seven-layer framework (Foundation, Cognitive, Memory, Tool Execution, Multi-Agent Coordination, Ecosystem, Governance). L7 Governance = accountability and observability layer spanning the stack. Attack temporality dimension (T1-T4). Most dangerous threats at L5-L7 + T3-T4 (covert collusion, memory poisoning, MCP supply-chain compromise). Only 7% of existing research covers this zone. Identifies AgentSafe (formal spec language), AgentIndex (governance maturity benchmark), and audit protocol benchmarks. URL: https://arxiv.org/abs/2604.23338 — **Layer 1/2/3** — The survey maps our exact problem space and identifies the governance gap as the most under-researched zone.
@@ -80,7 +81,7 @@ Status: **NEW FINDINGS FOUND**
 
 11. **Implicit Execution Tracing** (arXiv:2603.17445) — When Only the Final Text Survives: Implicit Execution Tracing for Multi-Agent Attribution. Mar 18, 2026. IET embeds agent-specific statistical signals into token generation, making output text a self-verifying execution record. Accurate attribution under identity removal, boundary corruption, privacy-preserving redaction. URL: https://arxiv.org/abs/2603.17445 — **Layer 1/2** — Provenance-by-design for multi-agent systems. Enables accountability when execution logs are unavailable.
 
-### New Products/Frameworks
+### New Products/Frameworks (Found: 0601)
 1. **Snyk Agent Scan** — Analyzes SKILL.md to detect known malicious patterns. 90-100% recall on confirmed malicious skills, 0% false positive rate on top 100 legitimate skills. Integrates with Skills.sh marketplace. URL: https://labs.snyk.io — **Layer 1** — Directly validates skill markdown security. This is the automated validation tool for the skill layer.
 
 2. **OWASP Practical Guide for Secure MCP Server Development** — Feb 2026. Practical guide for developers building MCP servers. URL: https://www.trydeepteam.com/docs/frameworks-owasp-top-10-for-agentic-applications — **Layer 1** — Fills the gap between OWASP Top 10 and actual implementation.
@@ -99,7 +100,7 @@ Status: **NEW FINDINGS FOUND**
 Search queries: agent governance safety benchmark 2026, agent skill markdown specification validation governance 2026, OWASP agentic applications framework 2026, agent behavioral contracts runtime enforcement 2026, agent skill supply chain formal verification 2026
 Status: **NEW FINDINGS FOUND**
 
-### New Papers
+### New Papers (Found: 0604)
 1. **Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents** (arXiv:2605.16282) — Apr 11, 2026. First systematic analysis of 40 behavioral agent-safety benchmarks (2023–2026). Six-axis taxonomy. Coverage matrix reveals no ranking concordance (Kendall's W = 0.10, p = 0.94). Benchmark choice can yield contradictory safety conclusions. URL: https://arxiv.org/abs/2605.16282 — **Layer 2/3** — Essential meta-evaluation: tells us which benchmarks to trust and why current safety conclusions may be inconsistent.
 
 2. **Governance by Construction for Generalist Agents / CUGA** (arXiv:2605.20874) — May 20, 2026. IBM Research. Policy-as-code layer composing with generalist LLM agents. Five structural checkpoints: Intent Guard, Playbook, Tool Guide, Tool Approvals, Output Formatter. Runtime governance architecture embedding interventions continuously. URL: https://arxiv.org/abs/2605.20874 — **Layer 1/2** — Direct implementation of "governance by construction" rather than governance as afterthought. Enterprise healthcare demo included.
@@ -120,7 +121,7 @@ Status: **NEW FINDINGS FOUND**
 
 10. **A Unified Review of Memory, Skills, Protocols and Harness Engineering** (arXiv:2604.08224) — Apr 9, 2026. Externalization framework: memory externalizes state, skills externalize procedural expertise, protocols externalize interaction structure, harness engineering coordinates them into governed execution. Historical progression from weights to context to harness. Self-evolving harnesses and shared agent infrastructure as emerging directions. URL: https://arxiv.org/abs/2604.08224 — **Layer 1/2/3** — Systems-level framework explaining why agent progress depends on externalized cognitive infrastructure. Skills as "reusable procedural artifacts" central to scalability and governance.
 
-### New Products/Frameworks
+### New Products/Frameworks (Found: 0604)
 1. **AgentAssert** — Runtime enforcement library implementing ABC (Agent Behavioral Contracts). Detects 5.2-6.8 soft violations per session that uncontracted baselines miss. 88-100% hard constraint compliance. <10 ms overhead per action. Part of Qualixar suite. — **Layer 1** — The runtime contract enforcement mechanism we need for skill/agent behavior validation.
 
 2. **SkillFortify (Open Source)** — pip install skillfortify. Formal verification framework for agent skill supply chains. 22 frameworks supported. SAT-based resolution, capability confinement, trust score algebra. MIT license. GitHub: https://github.com/varun369/skillfortify — **Layer 0/1** — The formal skill validation tool. Replaces heuristic scanning with mathematical guarantees.
@@ -131,7 +132,7 @@ Status: **NEW FINDINGS FOUND**
 
 5. **SkillsVote** — Skills engine for AI agents. Referenced in Comprehensive Survey. — **Layer 0/1** — Skill routing and governance infrastructure.
 
-## Key Search Queries Added
+## Key Search Queries Added (0604)
 - agent behavioral contracts runtime enforcement 2026
 - agent skill supply chain formal verification 2026
 - agent regression testing non-deterministic workflow 2026
@@ -140,16 +141,11 @@ Status: **NEW FINDINGS FOUND**
 - agent harness engineering memory skills protocols 2026
 - agent safety benchmark taxonomy consistency analysis 2026
 
-## Last Check
-- Date: 2026-06-04
-- Status: 10 new papers + 5 new products/frameworks discovered
-- Findings: Significant formal methods momentum — ABC, AgentVerify, SkillFortify, AgentAssay, ACP all provide mathematically grounded governance mechanisms. The shift from heuristic to formal guarantees is accelerating. Agent Governance Series (6 papers) by Marcelo Fernandez is a major emerging body of work.
-
 ## 2026-06-06 Scout Run — NEW FINDINGS DISCOVERED
 Search queries: agent behavioral integrity verification skill 2026, agent runtime governance path policy temporal 2026, skill structure representation markdown parsing 2026, FAccT 2026 agent governance alignment pluralistic, agent coordination message sequence charts formal 2026
 Status: **NEW FINDINGS FOUND**
 
-### New Papers
+### New Papers (Found: 0606)
 1. **BIV / Behavioral Integrity Verification** (arXiv:2605.11770) — May 12, 2026. Sun Yat-sen University. Verifies whether skill descriptions match actual code behavior. 80.0% deviation rate across 1,200 skills. 34.3% severe violations. URL: https://arxiv.org/abs/2605.11770 — **Layer 0** — Directly addresses "do skills do what they claim?" Essential for marketplace validation.
 
 2. **Runtime Governance / Policies on Paths** (arXiv:2603.16586) — Mar 17, 2026. Jheronimus Academy of Data Science. Formalizes compliance policies as temporal predicates over execution paths. Path-based policies express separation of duties, data minimization, audit trails that per-step checks cannot capture. Polynomial-time evaluation. URL: https://arxiv.org/abs/2603.16586 — **Layer 1** — The missing formal foundation for temporal governance requirements.
@@ -160,14 +156,15 @@ Status: **NEW FINDINGS FOUND**
 
 5. **ZipperGen / Provable Coordination for LLM Agents via MSCs** (arXiv:2604.17612) — Apr 19, 2026 (v2 Apr 29). Benedikt Bollig, Matthias Függer, Thomas Nowak, Université Paris-Saclay/CNRS/ENS Paris-Saclay. Domain-specific language for agent coordination based on Message Sequence Charts (MSCs). Syntax-directed projection generates deadlock-free local agent programs from global coordination specifications. Separates deterministic message-passing structure from stochastic LLM actions. Runtime planning extension: LLM dynamically generates coordination workflows with same structural guarantees. Open source: https://zippergen.io — **Cross-layer (Layer 0 + Layer 1)** — The closest existing work to MPST-style multi-agent governance. Formal global specs + guaranteed deadlock-free local programs + runtime workflow generation.
 
-### New Products/Frameworks
-- No new products/frameworks discovered today (search focused on academic papers)
+### New Products/Frameworks (Found: 0606)
+- No new products/frameworks discovered in this run (search focused on academic papers)
 
-## Key Search Queries Added
+## Key Search Queries Added (0606)
 - agent behavioral integrity verification skill 2026
 - agent runtime governance path policy temporal 2026
 - skill structure representation markdown parsing 2026
 - FAccT 2026 agent governance alignment pluralistic
+- agent coordination message sequence charts formal 2026
 
 ## Research Momentum Observations
 - **Skill integrity crisis:** BIV's 80% deviation rate + ClawHavoc's 1,200+ malicious skills = current validation is completely insufficient
@@ -176,6 +173,35 @@ Status: **NEW FINDINGS FOUND**
 - **FAccT governance focus:** Three-axis framework (objectives, information, principals) validates our multi-layer approach conceptually
 - **Formal methods dominance:** 4 new papers all use formal/mathematical approaches (integrity verification, temporal logic, structured decomposition, principal-agent theory) — heuristic governance is being replaced by formal guarantees
 
+## 2026-06-06 Evening Scout Run — NEW FINDINGS DISCOVERED
+Search queries: agent governance safety benchmark June 2026 arxiv, skill markdown verification agent behavior contract 2026, agent skill supply chain security formal verification June 2026, OWASP agentic applications agentic skills 2026 new, MCP runtime security governance framework 2026, agent behavioral contract formal specification runtime enforcement June 2026
+Status: **NEW FINDINGS FOUND**
+
+### New Papers (Found: 0606-evening)
+1. **SkillGuard** (arXiv:2606.03024) — June 1, 2026. Permission-based control framework for agent skill composition. Defines ACL-style governance for skill-to-skill and agent-to-skill interactions. Formalizes permission models that govern skill execution chains. Relevant to **Layer 2 (Skill)** — enables fine-grained capability governance for markdown-specified skills. **[Why recommended]** Represents a necessary architectural shift: skills are currently trusted by default; SkillGuard introduces explicit capability attenuation, which is exactly the security model needed for skill marketplace ecosystems. MIT License. URL: https://arxiv.org/abs/2606.03024
+
+2. **From Craft to Kernel: A Governance-First Execution Architecture for Agentic Computers** (arXiv:2604.18652) — Apr 20, 2026. Proposes a governance-first execution architecture and a semantic ISA (Instruction Set Architecture) for agentic computers. Defines skill lifecycle, privilege management, and capability boundary enforcement at the architectural level. Relevant to **All Layers (Spec/Skill/Agent)** — foundational governance primitives. **[Why recommended]** This is architectural-level thinking: instead of bolting governance on top, it embeds governance into the execution substrate. If agentic systems are the next OS, this is the SELinux equivalent. URL: https://arxiv.org/abs/2604.18652
+
+3. **TAIP: Trustworthy AI Posture — A Framework for Continuous Assurance of Agentic AI Systems** (arXiv:2603.03340) — Jan 2026. MITRE/SEI framework for continuous assurance. Defines a structured, measurable, and continuous assessment model for agentic AI trustworthiness. Relevant to **Layer 3 (Agent)** — operational monitoring and continuous compliance. **[Why recommended]** Fills a critical gap between "designed safe" and "operating safely." Most frameworks focus on build-time; this focuses on runtime assurance with measurable posture indicators. MITRE License. URL: https://arxiv.org/abs/2603.03340
+
+4. **AgentWarden: Learned Capability Governance for Autonomous AI Agents** (arXiv:2604.11839) — May 3, 2026. RL-based adaptive capability governance. Uses reinforcement learning to dynamically adjust agent capability boundaries based on runtime behavior and environmental risk assessment. Relevant to **Layer 3 (Agent)** — dynamic, context-aware capability governance. **[Why recommended]** Static capability models are brittle; this adapts to context. Bridges the gap between "what the agent can do" and "what the agent should be allowed to do right now." Apache 2.0. URL: https://arxiv.org/abs/2604.11839
+
+5. **ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents** (arXiv:2603.24414) — 2026. Safety framework for the OpenClaw agent ecosystem. Implements multi-layer protection through skills, plugins, and watchers. Provides runtime monitoring, policy enforcement, and incident response for OpenClaw agents. Relevant to **Layer 3 (Agent)** — platform-specific operational safety. **[Why recommended]** Platform-specific governance is pragmatic. If OpenClaw is a deployment target, this provides immediate operational value. Also demonstrates how governance frameworks can be implemented as pluggable skills rather than monolithic controls. Apache 2.0. URL: https://arxiv.org/abs/2603.24414
+
+### New Products/Frameworks (Found: 0606-evening)
+1. **DefenseClaw** (Cisco AI Defense) — Open-source security framework for OpenClaw. RSAC 2026, March 27, 2026. Runtime threat detection, policy enforcement, and compliance scanning for OpenClaw agents. 2.5k GitHub stars. Relevant to **Layer 3 (Agent)** — operational security. URL: https://blogs.cisco.com/security/introducing-defenseclaw
+
+2. **NemoClaw** (NVIDIA) — Secure agent runtime with OpenShell integration. GTC 2026, March 16, 2026. Sandboxed execution with GPU isolation and circuit breaker patterns. Enterprise customers include Shell. Relevant to **Layer 3 (Agent)** — secure execution environment. URL: https://blogs.nvidia.com/blog/nemoclaw-secure-agent-runtime
+
+3. **EnforceAuth** — AI runtime authorization platform. 2026. AUTHOR framework + Verdict Agentic Firewall. Integration with OpenClaw via plugins. EnforceAuth Governance 2.1 released in May 2026. Relevant to **Layer 2 (Skill)** and **Layer 3 (Agent)** — runtime authorization and access control. URL: https://enforceauth.dev
+
+### Notes (0606-evening)
+- SkillGuard's permission model is the missing link for skill marketplace security: without capability attenuation, any downloaded skill runs with full agent privileges.
+- From Craft to Kernel elevates the discussion from "how do we check agents?" to "what should the agent execution substrate look like?"
+- TAIP provides the operational measurement framework that most governance papers lack — it's not enough to define safe; we need to know if we're still safe in production.
+- AgentWarden's RL-based approach is novel but raises questions about the governance of the governance mechanism itself (who controls the RL policy?)
+- ClawKeeper demonstrates that governance can be implemented as skills rather than external controls, which is a promising pattern for OpenClaw ecosystems.
+
 ## Next Scout Run
 - Scheduled: June 12, 2026
-- Focus: FAccT 2026 conference proceedings (June 25-28), OWASP Top 10 adoption metrics, skill marketplace integrity implementations, ACP/AgentAssert production deployments
+- Focus: FAccT 2026 conference proceedings (June 25-28), OWASP Top 10 adoption metrics, skill marketplace integrity implementations, ACP/AgentAssert production deployments, SkillGuard/AgentWarden follow-up papers
