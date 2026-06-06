@@ -1,7 +1,4 @@
-
----
-
-## Appendix: The SOP-to-Workflow Reality Gap — A Practical Counterpoint to Formal Methods
+# Appendix: The SOP-to-Workflow Reality Gap — A Practical Counterpoint to Formal Methods
 
 > This section draws on widely circulated enterprise AI training methodology for converting human SOPs into agentic workflows. It highlights a critical gap that no formal-methods paper (including ZipperGen) addresses: the messy, iterative process of getting from a human SOP to a formal specification.
 
