@@ -1484,4 +1484,41 @@ The speaker invites viewers to subscribe, like, and share to support ongoing con
 ---
 
 *Updated by EvaPaper | June 6, 2026*  
+---
+
+## NEW FINDINGS — June 6, 2026 (Evening Scout)
+
+### Papers (Found: 0606-evening)
+
+| # | Paper | arXiv | Date | Layer | Found |
+|---|-------|-------|------|-------|-------|
+| 51 | **SkillGuard** — Permission-based control framework for agent skill composition. ACL-style governance for skill-to-skill and agent-to-skill interactions. | 2606.03024 | 2026-06-01 | 2 | 0606-evening |
+| 52 | **From Craft to Kernel** — Governance-first execution architecture and semantic ISA for agentic computers. Skill lifecycle, privilege management, capability boundary enforcement at architectural level. | 2604.18652 | 2026-04-20 | 0/1/2/3 | 0606-evening |
+| 53 | **TAIP** — Trustworthy AI Posture: Framework for continuous assurance of agentic AI systems. Structured, measurable, continuous assessment model. | 2603.03340 | 2026-01 | 3 | 0606-evening |
+| 54 | **AgentWarden** — Learned capability governance for autonomous AI agents. RL-based adaptive capability governance. | 2604.11839 | 2026-05-03 | 3 | 0606-evening |
+| 55 | **ClawKeeper** — Comprehensive safety protection for OpenClaw agents. Multi-layer protection through skills, plugins, and watchers. | 2603.24414 | 2026 | 3 | 0606-evening |
+
+### Products & Frameworks (Found: 0606-evening)
+
+| # | Product / Framework | Org | Date | Layer | Found |
+|---|---------------------|-----|------|-------|-------|
+| 29 | **DefenseClaw** — Open-source security framework for OpenClaw. Runtime threat detection, policy enforcement, compliance scanning. | Cisco | 2026-03-27 | 3 | 0606-evening |
+| 30 | **NemoClaw** — Secure agent runtime with OpenShell integration. Sandboxed execution with GPU isolation and circuit breaker patterns. | NVIDIA | 2026-03-16 | 3 | 0606-evening |
+| 31 | **EnforceAuth** — AI runtime authorization platform. AUTHOR framework + Verdict Agentic Firewall. OpenClaw integration. | — | 2026-05 | 2/3 | 0606-evening |
+
+### Why These Matter
+
+- **SkillGuard** — The missing link for skill marketplace security. Without capability attenuation, any downloaded skill runs with full agent privileges. This is the SELinux for skills.
+- **From Craft to Kernel** — Elevates the discussion from "how do we check agents?" to "what should the agent execution substrate look like?" Governance as architecture, not afterthought.
+- **TAIP** — Fills the critical gap between "designed safe" and "operating safely." Most frameworks focus on build-time; this focuses on runtime assurance with measurable posture indicators.
+- **AgentWarden** — Static capability models are brittle; this adapts to context. But raises a meta-question: who governs the RL policy that governs the agent?
+- **ClawKeeper** — Demonstrates that governance can be implemented as pluggable skills rather than monolithic external controls. This is a promising pattern for OpenClaw ecosystems.
+- **DefenseClaw** — Cisco's entry into agent security means enterprise-grade threat detection is now available for OpenClaw deployments.
+- **NemoClaw** — NVIDIA's GPU isolation + circuit breaker patterns bring hardware-level security boundaries to agent execution.
+- **EnforceAuth** — Runtime authorization with OpenClaw integration means skills can be gated by policy at execution time, not just at install time.
+
+---
+
+*Updated by EvaPaper | June 6, 2026*  
+*Repo: https://github.com/ginaecho/EvaPaper*
 *Repo: https://github.com/ginaecho/EvaPaper*
