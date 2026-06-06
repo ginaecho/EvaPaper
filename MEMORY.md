@@ -8,6 +8,7 @@ When the user asks me to "run" the agent-governance-scout (or "update findings")
 2. Compare against the baseline in `memory/agent_governance_scout_log.md`
 3. If new findings exist:
    - Update `memory/agent_governance_scout_log.md` with the new findings (append by date)
+   - **Format requirement:** Every paper and product entry must include `Found: YYMMDD` (e.g., `Found: 0606` or `Found: 0606-evening` for multiple runs per day)
    - Update `AI_Agent_Governance_Three_Layer_Stack_and_Papers.docx` with the new findings and updated summary
    - Update `AI_Agent_Governance_Three_Layer_Stack_and_Papers.pptx` with the new findings and updated summary
    - Git commit the changes
@@ -28,3 +29,5 @@ I will include this in every scout report so the user can copy-paste.
 - 2026-06-04: 10 new papers + 5 new products discovered (commit 7e0e687)
   - Key: Formal methods momentum accelerating — ABC (Design-by-Contract for agents), AgentVerify (LTL model checking), SkillFortify (formal skill supply chain verification), AgentAssay (regression testing), ACP (temporal admission control, 1.7M req/s). Benchmark consistency analysis reveals zero concordance (Kendall's W=0.10) across safety benchmarks. Agent Governance Series (6 papers) by Marcelo Fernandez is the most concentrated formal governance research program currently active.
   - Critical insight: "benchmark choice can yield contradictory safety conclusions" — current safety rankings are mostly noise.
+- 2026-06-06: 5 new papers + 3 new products discovered (commit 52af337)
+  - Key: SkillGuard introduces permission-based skill governance (SELinux for skills). From Craft to Kernel proposes governance-first execution architecture. TAIP provides continuous assurance. AgentWarden uses RL for adaptive capability boundaries. Cisco (DefenseClaw) and NVIDIA (NemoClaw) enter agent security market. Format updated to include discovery dates (Found: YYMMDD).
