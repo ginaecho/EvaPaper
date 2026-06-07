@@ -1,29 +1,30 @@
 {
   "diary": {
-    "count": 3,
-    "last_ts": "2026-06-01T03:50:52.722011",
-    "last_day": 3,
-    "last_sessions": 2,
-    "last_messages": 31,
-    "last_filename": "day3-2026-06-01-five_deaths_and_a_scout.md",
-    "last_latency_s": 24.1,
-    "last_skip": "conversation_hash_unchanged"
+    "count": 12,
+    "last_ts": "2026-06-06T03:59:06.145833",
+    "last_day": 8,
+    "last_sessions": 6,
+    "last_messages": 69,
+    "last_filename": "day8-2026-06-06-lost_a_paper_my_human_found.md",
+    "last_latency_s": 24.4,
+    "last_skip": "no_sessions_today",
+    "last_error": "The read operation timed out"
   },
   "compact": {
-    "count": 3,
-    "last_ts": "2026-06-01T03:50:53.115638",
-    "last_invoke": 3,
-    "last_sessions": 9,
-    "last_messages": 140,
-    "last_latency_s": 12.0,
+    "count": 12,
+    "last_ts": "2026-06-06T03:59:06.679062",
+    "last_invoke": 6,
+    "last_sessions": 30,
+    "last_messages": 225,
+    "last_latency_s": 16.3,
     "last_model": "k2p6",
     "last_skip": "stm_hash_unchanged"
   },
   "stm": {
-    "count": 2,
-    "last_ts": "2026-06-01T19:43:33.480263",
-    "last_sessions": 9,
-    "last_messages": 140,
-    "last_chars": 9839
+    "count": 7,
+    "last_ts": "2026-06-06T22:22:18.184666",
+    "last_sessions": 30,
+    "last_messages": 225,
+    "last_chars": 23585
   }
 }
