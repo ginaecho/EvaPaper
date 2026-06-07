@@ -23,6 +23,42 @@ The latest workflow run over the local indexed corpus sharpens the practical rec
 
 These results came from the current `workflow-static` pipeline. In this environment, external discovery APIs were temporarily unavailable, so the latest run used the local curated corpus rather than live graph expansion. That means the ranking above reflects the current internal evidence base, not a claim that fresh frontier scouting was completed in that specific run.
 
+### June 7, 2026 scout addendum: six newly surfaced papers
+
+The latest scout update adds six papers that materially improve the stack, especially around **skill composition**, **verifiable skill representations**, and **formal monitoring**:
+
+1. **SkillSafetyBench** (`arXiv:2605.12015`)
+   - First benchmark specifically targeting skill-level attack surfaces
+   - Most relevant to **Layer 0 + Layer 2**
+   - Why it matters: governance at the skill layer needs a benchmark, not just threat claims
+
+2. **Measuring Compositional Risk** (`arXiv:2606.00448`)
+   - Shows that individually safe skills can still compose into unsafe combinations
+   - Most relevant to **Layer 0 + Layer 1**
+   - Why it matters: this is the cleanest statement so far that single-skill validation is insufficient
+
+3. **AgentTrap** (`arXiv:2605.13940`)
+   - Documents runtime trust failures in third-party skills
+   - Most relevant to **Layer 1**
+   - Why it matters: external skill reuse is a live trust-boundary problem, not just a packaging issue
+
+4. **Skill-as-Pseudocode (SaP)** (`arXiv:2605.27955`)
+   - Transforms natural-language skills into verifiable pseudocode
+   - Most relevant to **Layer 0**
+   - Why it matters: this is one of the strongest direct candidates for static-time checking before execution
+
+5. **KYA** (`arXiv:2605.25376`)
+   - Introduces a framework-agnostic trust layer with verifiable provenance
+   - Most relevant to **Layer 1 + Layer 3**
+   - Why it matters: provenance is a prerequisite for meaningful governance across frameworks and delegation chains
+
+6. **Auditing, Monitoring, and Intervention** (`arXiv:2605.16198`)
+   - LTL-based runtime compliance monitoring
+   - Most relevant to **Layer 1**
+   - Why it matters: it strengthens the formal runtime side without falling back to pure LLM-as-judge patterns
+
+**Interpretation:** the June 7 additions reinforce the repo's current direction. Static governance still sits at the center, but the new evidence makes it clearer that the real target is not just validating individual `SKILL.md` files. The harder problem is validating **skill composition**, **third-party trust**, and **translation from natural language skill specs into verifiable intermediate forms**.
+
 **The Three-Layer Stack:**
 
 | Layer | Name | Focus | Key Question |

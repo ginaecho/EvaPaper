@@ -202,6 +202,29 @@ Status: **NEW FINDINGS FOUND**
 - AgentWarden's RL-based approach is novel but raises questions about the governance of the governance mechanism itself (who controls the RL policy?)
 - ClawKeeper demonstrates that governance can be implemented as skills rather than external controls, which is a promising pattern for OpenClaw ecosystems.
 
+## 2026-06-07 Scout Run — NEW FINDINGS DISCOVERED
+Search queries: skill benchmark attack surface 2026, compositional risk agent skills 2026, third-party skill trust runtime 2026, skill pseudocode verifiable 2026, verifiable provenance agent framework 2026, LTL runtime compliance monitoring agents 2026
+Status: **NEW FINDINGS FOUND**
+
+### New Papers (Found: 0607)
+1. **SkillSafetyBench** (arXiv:2605.12015) — First benchmark focused specifically on skill-level attack surfaces. Relevant to **Layer 0/Layer 2** because it turns skill security into an evaluable benchmark rather than an anecdotal security concern. **[Why recommended]** This gives us the missing benchmark for validating whether a skill governance scheme actually improves safety at the skill layer.
+
+2. **Measuring Compositional Risk** (arXiv:2606.00448) — Individually safe skills can compose into unsafe sets. Relevant to **Layer 0/Layer 1** because it moves the problem from single-skill validation to interaction risk across multiple skills. **[Why recommended]** This is exactly the failure mode static governance needs to catch: local validity does not imply safe composition.
+
+3. **AgentTrap** (arXiv:2605.13940) — Runtime trust failures in third-party skills. Relevant to **Layer 1** because it highlights the trust boundary between core agents and externally sourced skills. **[Why recommended]** It reinforces that skill marketplaces are not just a validation problem; they are an execution trust problem.
+
+4. **Skill-as-Pseudocode (SaP)** (arXiv:2605.27955) — Transforms natural-language skills into verifiable pseudocode. Relevant to **Layer 0** because it directly addresses the gap between informal markdown instructions and machine-checkable specifications. **[Why recommended]** This is one of the strongest candidates for static-time checking of skill behavior before execution.
+
+5. **KYA** (arXiv:2605.25376) — Framework-agnostic trust layer with verifiable provenance. Relevant to **Layer 1/Layer 3** because it introduces provenance guarantees that survive framework differences. **[Why recommended]** Governance without provenance collapses under delegation and third-party reuse; KYA attacks that foundation directly.
+
+6. **Auditing, Monitoring, and Intervention** (arXiv:2605.16198) — LTL-based runtime compliance monitoring. Relevant to **Layer 1** because it provides formal runtime compliance monitoring without reducing governance to an LLM-as-judge pattern. **[Why recommended]** This strengthens the formal runtime side of the stack and complements the static-first papers above.
+
+### Notes (0607)
+- The strongest June 7 theme is **composition**: safe skills do not stay safe when combined naively.
+- `Skill-as-Pseudocode (SaP)` is especially important for this repo because it points toward converting natural-language skill markdown into a verifiable intermediate form.
+- `SkillSafetyBench` and `Measuring Compositional Risk` together strengthen the argument that skill governance needs both **spec validation** and **interaction-level evaluation**.
+- `KYA` and `AgentTrap` reinforce that third-party skill trust is a first-class governance problem, not an edge case.
+
 ## Next Scout Run
 - Scheduled: June 12, 2026
 - Focus: FAccT 2026 conference proceedings (June 25-28), OWASP Top 10 adoption metrics, skill marketplace integrity implementations, ACP/AgentAssert production deployments, SkillGuard/AgentWarden follow-up papers
