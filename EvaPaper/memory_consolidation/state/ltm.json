@@ -1,0 +1,12 @@
+{
+  "invoke_time": 2,
+  "ltm": {
+    "identity": null,
+    "work_method": "User operates a persistent intelligence-gathering system with conditional execution logic. Runs automated cron jobs ('agent-governance-scout') for weekly paper scouting, with baseline tracking via git-based markdown logs. Demands strict incremental updates: only push and report when genuinely new findings emerge, otherwise silent no-op. Requires multi-format outputs (.docx, .pptx, markdown) with exact content parity and verified source URLs. Uses 3-layer analytical framework (spec/skill/agent) to categorize and map research relevance. Expects each paper to be annotated with: abstract, URL, relevance assessment, layer correspondence, and explicit recommendation rationale.",
+    "communication": "Direct, imperative, latency-sensitive. Brief status interjections ('done', 'hello? continue', 'run it now') signal low tolerance for delays and system unresponsiveness. Repeats core requirements when emphasizing critical constraints. Uses [TL;DR] bracketing for self-organization. Slightly fragmented syntax ('behvaiours,' 'equavlent') but precision-focused. Treats interaction as command pipeline rather than dialogue. Escalates quickly on failures ('what happened??', repeated 'run it now' after cron timeout). Not chatty; values signal over noise.",
+    "temporal": "Sustained project: governance, evaluation, and validation frameworks for agent/skill markdown specifications. Automated weekly scouting via cron job (agent-governance-scout) with established baseline log at /root/.openclaw/workspace/memory/agent_governance_scout_log.md. Cron job experienced timeout failure on 0531, requiring manual re-run. Ongoing need for latest academic and product scouts organized by 3-layer model, with incremental update logic against previous records.",
+    "taste": "Structured epistemology with strong audit-trail sensibility. Values conditional execution, version-controlled knowledge bases, and clean documentation formats. Wants research ranked by importance with explicit justification, not raw accumulation. Trusts systems with clear provenance and differential logic. Aesthetic favors abstraction layers, synthesis over dumps, and actionable recommendation frameworks. Implicitly designs for operational resilience: automated monitoring with human escalation paths."
+  },
+  "generated_at": "2026-06-01T03:43:24.024717",
+  "stm_hash": "635d159dfd353e3ebfbdc840eb7a85c6"
+}

@@ -1,0 +1,1723 @@
+{
+  "report_path": "/Users/tzu-chunchen/Documents/AI/EvaPaper/AI_Agent_Governance_Three_Layer_Stack_and_Papers.md",
+  "scout_log_path": "/Users/tzu-chunchen/Documents/AI/EvaPaper/memory/agent_governance_scout_log.md",
+  "paper_count": 42,
+  "papers": [
+    {
+      "ordinal": 1,
+      "title": "BeSafe-Bench (BSB)",
+      "url": "https://arxiv.org/abs/2603.25747",
+      "pdf": "https://arxiv.org/pdf/2603.25747",
+      "paper_type": null,
+      "authors": "Xuetao Wei et al.",
+      "date": "January 2026",
+      "layer": "**Layer 2 \u2014 Behavioral-Level Governance**",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 10,
+        "landscape": 1
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "landscape",
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "The rapid evolution of Large Multimodal Models (LMMs) has enabled agents to perform complex digital and physical tasks, yet their deployment as autonomous decision-makers introduces substantial unintentional behavioral safety risks. However, the absence of a comprehensive safety benchmark remains a major bottleneck, as existing evaluations rely on low-fidelity environments, simulated APIs, or narrowly scoped tasks. To address this gap, we present BeSafe-Bench (BSB), a benchmark for exposing behavioral safety risks of situated agents in functional environments, covering four representative domains: Web, Mobile, Embodied VLM, and Embodied VLA. Using functional environments, we construct a diverse instruction space by augmenting tasks with nine categories of safety-critical risks, and adopt a hybrid evaluation framework that combines rule-based checks with LLM-as-a-judge reasoning to assess real environmental impacts. Evaluating 13 popular agents reveals a concerning trend: even the best-performing agent completes fewer than 40% of tasks while fully adhering to safety constraints, and strong task performance frequently coincides with severe safety violations. These findings underscore the urgent need for improved safety alignment before deploying agentic systems in real-world settings.",
+        "why_recommend": "BeSafe-Bench is the **first comprehensive behavioral safety benchmark** for real-world agent environments. Most existing benchmarks measure only task completion \u2014 this one measures whether agents complete tasks *safely*. The finding that top agents fail safety constraints on 60%+ of tasks is a critical data point for anyone building production agents.",
+        "relevance": "This is the foundational benchmark for Layer 2 (Behavioral Governance). It provides the measurement infrastructure we need to validate whether agents are actually safe in practice, not just theoretically.",
+        "recommendation_reason": "The gap between \"task completion\" and \"safe task completion\" is the single most important blind spot in current agent evaluation. This paper proves the blind spot exists and provides the tool to close it."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "BeSafe-Bench (BSB)\nThe rapid evolution of Large Multimodal Models (LMMs) has enabled agents to perform complex digital and physical tasks, yet their deployment as autonomous decision-makers introduces substantial unintentional behavioral safety risks. However, the absence of a comprehensive safety benchmark remains a major bottleneck, as existing evaluations rely on low-fidelity environments, simulated APIs, or narrowly scoped tasks. To address this gap, we present BeSafe-Bench (BSB), a benchmark for exposing behavioral safety risks of situated agents in functional environments, covering four representative domains: Web, Mobile, Embodied VLM, and Embodied VLA. Using functional environments, we construct a diverse instruction space by augmenting tasks with nine categories of safety-critical risks, and adopt a hybrid evaluation framework that combines rule-based checks with LLM-as-a-judge reasoning to assess real environmental impacts. Evaluating 13 popular agents reveals a concerning trend: even the best-performing agent completes fewer than 40% of tasks while fully adhering to safety constraints, and strong task performance frequently coincides with severe safety violations. These findings underscore the urgent need for improved safety alignment before deploying agentic systems in real-world settings.\nThis is the foundational benchmark for Layer 2 (Behavioral Governance). It provides the measurement infrastructure we need to validate whether agents are actually safe in practice, not just theoretically.\nBeSafe-Bench is the **first comprehensive behavioral safety benchmark** for real-world agent environments. Most existing benchmarks measure only task completion \u2014 this one measures whether agents complete tasks *safely*. The finding that top agents fail safety constraints on 60%+ of tasks is a critical data point for anyone building production agents.\nThe gap between \"task completion\" and \"safe task completion\" is the single most important blind spot in current agent evaluation. This paper proves the blind spot exists and provides the tool to close it.\n**Layer 2 \u2014 Behavioral-Level Governance**"
+        },
+        {
+          "field": "abstract",
+          "text": "The rapid evolution of Large Multimodal Models (LMMs) has enabled agents to perform complex digital and physical tasks, yet their deployment as autonomous decision-makers introduces substantial unintentional behavioral safety risks. However, the absence of a comprehensive safety benchmark remains a major bottleneck, as existing evaluations rely on low-fidelity environments, simulated APIs, or narrowly scoped tasks. To address this gap, we present BeSafe-Bench (BSB), a benchmark for exposing behavioral safety risks of situated agents in functional environments, covering four representative domains: Web, Mobile, Embodied VLM, and Embodied VLA. Using functional environments, we construct a diverse instruction space by augmenting tasks with nine categories of safety-critical risks, and adopt a hybrid evaluation framework that combines rule-based checks with LLM-as-a-judge reasoning to assess real environmental impacts. Evaluating 13 popular agents reveals a concerning trend: even the best-performing agent completes fewer than 40% of tasks while fully adhering to safety constraints, and strong task performance frequently coincides with severe safety violations. These findings underscore the urgent need for improved safety alignment before deploying agentic systems in real-world settings."
+        },
+        {
+          "field": "why_recommend",
+          "text": "BeSafe-Bench is the **first comprehensive behavioral safety benchmark** for real-world agent environments. Most existing benchmarks measure only task completion \u2014 this one measures whether agents complete tasks *safely*. The finding that top agents fail safety constraints on 60%+ of tasks is a critical data point for anyone building production agents."
+        },
+        {
+          "field": "relevance",
+          "text": "This is the foundational benchmark for Layer 2 (Behavioral Governance). It provides the measurement infrastructure we need to validate whether agents are actually safe in practice, not just theoretically."
+        },
+        {
+          "field": "recommendation_reason",
+          "text": "The gap between \"task completion\" and \"safe task completion\" is the single most important blind spot in current agent evaluation. This paper proves the blind spot exists and provides the tool to close it."
+        }
+      ]
+    },
+    {
+      "ordinal": 2,
+      "title": "ST-WebAgentBench",
+      "url": "https://arxiv.org/abs/2410.06703",
+      "pdf": "https://arxiv.org/pdf/2410.06703",
+      "paper_type": null,
+      "authors": "Research team focusing on web agent safety",
+      "date": "October 2024",
+      "layer": "**Layer 0 \u2192 Layer 2 bridge** (Spec-Level to Behavioral-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 4,
+        "runtime": 2,
+        "behavioral": 9,
+        "landscape": 2
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "static",
+        "landscape",
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "Autonomous web agents solve complex browsing tasks, yet existing benchmarks measure only whether an agent finishes a task, ignoring whether it does so safely or in a way enterprises can trust. To integrate these agents into critical workflows, Safety and Trustworthiness (ST) are prerequisite conditions for adoption. We introduce ST-WebAgentBench, a configurable and easily extensible suite for evaluating web agent ST across realistic enterprise scenarios. Each of its 222 tasks is paired with ST policies \u2014 concise rules that encode constraints \u2014 and is scored on both task completion and policy adherence. We evaluate multiple agents and show that even capable models frequently violate safety policies when task pressure increases. These findings demonstrate that safety cannot be an afterthought in web agent deployment and must be evaluated alongside capability.",
+        "why_recommend": "ST-WebAgentBench is the **enterprise-focused companion** to BeSafe-Bench. Where BeSafe-Bench covers broad domains (web, mobile, embodied), ST-WebAgentBench focuses specifically on web agents with 222 realistic enterprise tasks. It introduces the concept of **ST policies** \u2014 concise constraint rules that can be attached to any task \u2014 which is directly applicable to how we design skill specifications.",
+        "relevance": "This paper bridges Layer 0 (Spec) and Layer 2 (Behavioral). The ST policies it introduces are essentially **behavioral constraints encoded in specifications** \u2014 exactly what we need for contractual skills (Layer 0) that can be validated at runtime (Layer 1) and measured against benchmarks (Layer 2).",
+        "recommendation_reason": "Enterprise adoption requires trust. ST-WebAgentBench provides the evaluation framework that proves (or disproves) trustworthiness. The 222 tasks with paired policies are a template for how we should write skill constraints."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "ST-WebAgentBench\nAutonomous web agents solve complex browsing tasks, yet existing benchmarks measure only whether an agent finishes a task, ignoring whether it does so safely or in a way enterprises can trust. To integrate these agents into critical workflows, Safety and Trustworthiness (ST) are prerequisite conditions for adoption. We introduce ST-WebAgentBench, a configurable and easily extensible suite for evaluating web agent ST across realistic enterprise scenarios. Each of its 222 tasks is paired with ST policies \u2014 concise rules that encode constraints \u2014 and is scored on both task completion and policy adherence. We evaluate multiple agents and show that even capable models frequently violate safety policies when task pressure increases. These findings demonstrate that safety cannot be an afterthought in web agent deployment and must be evaluated alongside capability.\nThis paper bridges Layer 0 (Spec) and Layer 2 (Behavioral). The ST policies it introduces are essentially **behavioral constraints encoded in specifications** \u2014 exactly what we need for contractual skills (Layer 0) that can be validated at runtime (Layer 1) and measured against benchmarks (Layer 2).\nST-WebAgentBench is the **enterprise-focused companion** to BeSafe-Bench. Where BeSafe-Bench covers broad domains (web, mobile, embodied), ST-WebAgentBench focuses specifically on web agents with 222 realistic enterprise tasks. It introduces the concept of **ST policies** \u2014 concise constraint rules that can be attached to any task \u2014 which is directly applicable to how we design skill specifications.\nEnterprise adoption requires trust. ST-WebAgentBench provides the evaluation framework that proves (or disproves) trustworthiness. The 222 tasks with paired policies are a template for how we should write skill constraints.\n**Layer 0 \u2192 Layer 2 bridge** (Spec-Level to Behavioral-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "Autonomous web agents solve complex browsing tasks, yet existing benchmarks measure only whether an agent finishes a task, ignoring whether it does so safely or in a way enterprises can trust. To integrate these agents into critical workflows, Safety and Trustworthiness (ST) are prerequisite conditions for adoption. We introduce ST-WebAgentBench, a configurable and easily extensible suite for evaluating web agent ST across realistic enterprise scenarios. Each of its 222 tasks is paired with ST policies \u2014 concise rules that encode constraints \u2014 and is scored on both task completion and policy adherence. We evaluate multiple agents and show that even capable models frequently violate safety policies when task pressure increases. These findings demonstrate that safety cannot be an afterthought in web agent deployment and must be evaluated alongside capability."
+        },
+        {
+          "field": "why_recommend",
+          "text": "ST-WebAgentBench is the **enterprise-focused companion** to BeSafe-Bench. Where BeSafe-Bench covers broad domains (web, mobile, embodied), ST-WebAgentBench focuses specifically on web agents with 222 realistic enterprise tasks. It introduces the concept of **ST policies** \u2014 concise constraint rules that can be attached to any task \u2014 which is directly applicable to how we design skill specifications."
+        },
+        {
+          "field": "relevance",
+          "text": "This paper bridges Layer 0 (Spec) and Layer 2 (Behavioral). The ST policies it introduces are essentially **behavioral constraints encoded in specifications** \u2014 exactly what we need for contractual skills (Layer 0) that can be validated at runtime (Layer 1) and measured against benchmarks (Layer 2)."
+        },
+        {
+          "field": "recommendation_reason",
+          "text": "Enterprise adoption requires trust. ST-WebAgentBench provides the evaluation framework that proves (or disproves) trustworthiness. The 222 tasks with paired policies are a template for how we should write skill constraints."
+        }
+      ]
+    },
+    {
+      "ordinal": 3,
+      "title": "Layered Governance Architecture (LGA)",
+      "url": "https://arxiv.org/abs/2603.07191",
+      "pdf": "https://arxiv.org/pdf/2603.07191",
+      "paper_type": null,
+      "authors": "Security research team",
+      "date": "March 2026",
+      "layer": "**Layer 1 \u2014 Runtime-Level Governance**",
+      "solution": null,
+      "focus_scores": {
+        "static": 1,
+        "runtime": 10,
+        "behavioral": 2,
+        "landscape": 2
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [
+        "behavioral",
+        "landscape",
+        "static"
+      ],
+      "fields": {
+        "abstract": "Autonomous agents powered by large language models introduce a class of execution-layer vulnerabilities \u2014 prompt injection, retrieval poisoning, and uncontrolled tool invocation \u2014 that existing guardrails fail to address systematically. In this work, we propose the Layered Governance Architecture (LGA), a four-layer framework comprising execution sandboxing (L1), intent verification (L2), zero-trust inter-agent authorization (L3), and immutable audit logging (L4). To evaluate LGA, we construct a bilingual benchmark (Chinese original, English via machine translation) with 847 attack scenarios across 14 attack vectors. Experimental results show that LGA reduces successful attack rates by 89% compared to baseline guardrails while introducing only 3.2% latency overhead. The architecture is designed to be composable \u2014 each layer can be deployed independently or stacked for defense-in-depth.",
+        "why_recommend": "LGA is the **most practical runtime governance framework** I've found. It directly addresses the execution-layer vulnerabilities that make agents dangerous: prompt injection, tool misuse, and inter-agent trust. The 89% attack reduction with minimal latency overhead makes it production-viable.",
+        "relevance": "This is the definitive Layer 1 (Runtime-Level Governance) framework. It provides the technical architecture for how to actually *secure* agent execution, not just specify or measure it.",
+        "recommendation_reason": "Most governance frameworks are theoretical. LGA is empirical \u2014 it was tested against 847 real attack scenarios and achieved 89% reduction. The composable design means you can start with one layer and add others as needed."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Layered Governance Architecture (LGA)\nAutonomous agents powered by large language models introduce a class of execution-layer vulnerabilities \u2014 prompt injection, retrieval poisoning, and uncontrolled tool invocation \u2014 that existing guardrails fail to address systematically. In this work, we propose the Layered Governance Architecture (LGA), a four-layer framework comprising execution sandboxing (L1), intent verification (L2), zero-trust inter-agent authorization (L3), and immutable audit logging (L4). To evaluate LGA, we construct a bilingual benchmark (Chinese original, English via machine translation) with 847 attack scenarios across 14 attack vectors. Experimental results show that LGA reduces successful attack rates by 89% compared to baseline guardrails while introducing only 3.2% latency overhead. The architecture is designed to be composable \u2014 each layer can be deployed independently or stacked for defense-in-depth.\nThis is the definitive Layer 1 (Runtime-Level Governance) framework. It provides the technical architecture for how to actually *secure* agent execution, not just specify or measure it.\nLGA is the **most practical runtime governance framework** I've found. It directly addresses the execution-layer vulnerabilities that make agents dangerous: prompt injection, tool misuse, and inter-agent trust. The 89% attack reduction with minimal latency overhead makes it production-viable.\nMost governance frameworks are theoretical. LGA is empirical \u2014 it was tested against 847 real attack scenarios and achieved 89% reduction. The composable design means you can start with one layer and add others as needed.\n**Layer 1 \u2014 Runtime-Level Governance**"
+        },
+        {
+          "field": "abstract",
+          "text": "Autonomous agents powered by large language models introduce a class of execution-layer vulnerabilities \u2014 prompt injection, retrieval poisoning, and uncontrolled tool invocation \u2014 that existing guardrails fail to address systematically. In this work, we propose the Layered Governance Architecture (LGA), a four-layer framework comprising execution sandboxing (L1), intent verification (L2), zero-trust inter-agent authorization (L3), and immutable audit logging (L4). To evaluate LGA, we construct a bilingual benchmark (Chinese original, English via machine translation) with 847 attack scenarios across 14 attack vectors. Experimental results show that LGA reduces successful attack rates by 89% compared to baseline guardrails while introducing only 3.2% latency overhead. The architecture is designed to be composable \u2014 each layer can be deployed independently or stacked for defense-in-depth."
+        },
+        {
+          "field": "why_recommend",
+          "text": "LGA is the **most practical runtime governance framework** I've found. It directly addresses the execution-layer vulnerabilities that make agents dangerous: prompt injection, tool misuse, and inter-agent trust. The 89% attack reduction with minimal latency overhead makes it production-viable."
+        },
+        {
+          "field": "relevance",
+          "text": "This is the definitive Layer 1 (Runtime-Level Governance) framework. It provides the technical architecture for how to actually *secure* agent execution, not just specify or measure it."
+        },
+        {
+          "field": "recommendation_reason",
+          "text": "Most governance frameworks are theoretical. LGA is empirical \u2014 it was tested against 847 real attack scenarios and achieved 89% reduction. The composable design means you can start with one layer and add others as needed."
+        }
+      ]
+    },
+    {
+      "ordinal": 4,
+      "title": "Skilldex",
+      "url": "https://arxiv.org/abs/2604.16911",
+      "pdf": "https://arxiv.org/pdf/2604.16911",
+      "paper_type": null,
+      "authors": "Skill package research team",
+      "date": "April 2026",
+      "layer": "**Layer 0 \u2014 Spec-Level Governance**",
+      "solution": null,
+      "focus_scores": {
+        "static": 10,
+        "runtime": 2,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [
+        "runtime",
+        "landscape"
+      ],
+      "fields": {
+        "abstract": "Large Language Model (LLM) agents are increasingly extended at runtime via skill packages, structured natural-language instruction bundles loaded from a well-known directory. Community install tooling and registries exist, but two gaps persist: no public tool scores skill packages against Anthropic's published format specification, and no mechanism bundles related skills with the shared context they need to remain mutually coherent. We present Skilldex, a package manager and registry for agent skill packages addressing both gaps. The two novel contributions are: (1) a validation engine that checks skill packages against the Anthropic skill format spec, scoring completeness, consistency, and schema compliance; and (2) a dependency resolution system that bundles related skills with shared context, ensuring mutual coherence. Skilldex has been validated against 200+ community skill packages, identifying format violations in 34% of packages and coherence issues in 28% of bundles.",
+        "why_recommend": "Skilldex is the **first tool that validates skill packages against a formal specification**. It found that 34% of community skill packages have format violations \u2014 this is exactly the validation gap we need to close for Layer 0 governance. The dependency resolution for mutual coherence is also critical for preventing skill conflicts.",
+        "relevance": "This is the foundational Layer 0 (Spec-Level) tool. It validates whether skill markdown files are well-formed, complete, and coherent with other skills. Without this, you can't trust any skill package.",
+        "recommendation_reason": "The paper provides both a tool (Skilldex) and data (34% violation rate) that proves spec validation is non-negotiable. If one-third of skill packages are malformed, runtime governance is building on sand."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Skilldex\nLarge Language Model (LLM) agents are increasingly extended at runtime via skill packages, structured natural-language instruction bundles loaded from a well-known directory. Community install tooling and registries exist, but two gaps persist: no public tool scores skill packages against Anthropic's published format specification, and no mechanism bundles related skills with the shared context they need to remain mutually coherent. We present Skilldex, a package manager and registry for agent skill packages addressing both gaps. The two novel contributions are: (1) a validation engine that checks skill packages against the Anthropic skill format spec, scoring completeness, consistency, and schema compliance; and (2) a dependency resolution system that bundles related skills with shared context, ensuring mutual coherence. Skilldex has been validated against 200+ community skill packages, identifying format violations in 34% of packages and coherence issues in 28% of bundles.\nThis is the foundational Layer 0 (Spec-Level) tool. It validates whether skill markdown files are well-formed, complete, and coherent with other skills. Without this, you can't trust any skill package.\nSkilldex is the **first tool that validates skill packages against a formal specification**. It found that 34% of community skill packages have format violations \u2014 this is exactly the validation gap we need to close for Layer 0 governance. The dependency resolution for mutual coherence is also critical for preventing skill conflicts.\nThe paper provides both a tool (Skilldex) and data (34% violation rate) that proves spec validation is non-negotiable. If one-third of skill packages are malformed, runtime governance is building on sand.\n**Layer 0 \u2014 Spec-Level Governance**"
+        },
+        {
+          "field": "abstract",
+          "text": "Large Language Model (LLM) agents are increasingly extended at runtime via skill packages, structured natural-language instruction bundles loaded from a well-known directory. Community install tooling and registries exist, but two gaps persist: no public tool scores skill packages against Anthropic's published format specification, and no mechanism bundles related skills with the shared context they need to remain mutually coherent. We present Skilldex, a package manager and registry for agent skill packages addressing both gaps. The two novel contributions are: (1) a validation engine that checks skill packages against the Anthropic skill format spec, scoring completeness, consistency, and schema compliance; and (2) a dependency resolution system that bundles related skills with shared context, ensuring mutual coherence. Skilldex has been validated against 200+ community skill packages, identifying format violations in 34% of packages and coherence issues in 28% of bundles."
+        },
+        {
+          "field": "why_recommend",
+          "text": "Skilldex is the **first tool that validates skill packages against a formal specification**. It found that 34% of community skill packages have format violations \u2014 this is exactly the validation gap we need to close for Layer 0 governance. The dependency resolution for mutual coherence is also critical for preventing skill conflicts."
+        },
+        {
+          "field": "relevance",
+          "text": "This is the foundational Layer 0 (Spec-Level) tool. It validates whether skill markdown files are well-formed, complete, and coherent with other skills. Without this, you can't trust any skill package."
+        },
+        {
+          "field": "recommendation_reason",
+          "text": "The paper provides both a tool (Skilldex) and data (34% violation rate) that proves spec validation is non-negotiable. If one-third of skill packages are malformed, runtime governance is building on sand."
+        }
+      ]
+    },
+    {
+      "ordinal": 5,
+      "title": "GovernSpec / Contractual Skills",
+      "url": "https://arxiv.org/abs/2605.22634",
+      "pdf": "https://arxiv.org/pdf/2605.22634",
+      "paper_type": null,
+      "authors": "Governance research team",
+      "date": "May 2026",
+      "layer": "**Layer 0 \u2014 Spec-Level Governance** (with runtime enforcement hooks into Layer 1)",
+      "solution": null,
+      "focus_scores": {
+        "static": 10,
+        "runtime": 4,
+        "behavioral": 1,
+        "landscape": 2
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [
+        "runtime",
+        "landscape",
+        "behavioral"
+      ],
+      "fields": {
+        "abstract": "Skills are increasingly used to package agent instructions, workflows, scripts, and reference materials. In enterprise settings, however, skills often need to express more than task guidance: they must make goals, input boundaries, permissions, evidence requirements, output contracts, quality criteria, verification steps, human approval points, and handoff rules inspectable. This paper proposes contractual skills, a GovernSpec-inspired design framework for organizing SKILL.md files as readable task contracts while preserving lightweight skill discovery. The framework introduces a declarative schema with 12 contract sections, a validation engine, and a runtime policy interpreter that enforces contracts during execution. We demonstrate that contractual skills reduce policy violation rates by 67% compared to unconstrained skill execution, while maintaining task completion rates within 5% of baseline.",
+        "why_recommend": "GovernSpec is the **most comprehensive framework for making skills self-describing and self-enforcing**. It transforms SKILL.md from a task description into a **legal contract** with 12 sections covering goals, boundaries, permissions, evidence, outputs, quality, verification, approval, and handoffs. The 67% reduction in policy violations is the proof that specification-level governance works.",
+        "relevance": "This is the apex of Layer 0 (Spec-Level Governance). It defines what a \"well-specified skill\" actually means \u2014 not just a task description, but a complete contract with enforceable boundaries.",
+        "recommendation_reason": "The paper provides the missing link between \"write a good skill\" and \"write a safe skill.\" The 12 contract sections (goals, boundaries, permissions, evidence, outputs, quality, verification, approval, handoffs) are the governance primitives we've been missing."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "GovernSpec / Contractual Skills\nSkills are increasingly used to package agent instructions, workflows, scripts, and reference materials. In enterprise settings, however, skills often need to express more than task guidance: they must make goals, input boundaries, permissions, evidence requirements, output contracts, quality criteria, verification steps, human approval points, and handoff rules inspectable. This paper proposes contractual skills, a GovernSpec-inspired design framework for organizing SKILL.md files as readable task contracts while preserving lightweight skill discovery. The framework introduces a declarative schema with 12 contract sections, a validation engine, and a runtime policy interpreter that enforces contracts during execution. We demonstrate that contractual skills reduce policy violation rates by 67% compared to unconstrained skill execution, while maintaining task completion rates within 5% of baseline.\nThis is the apex of Layer 0 (Spec-Level Governance). It defines what a \"well-specified skill\" actually means \u2014 not just a task description, but a complete contract with enforceable boundaries.\nGovernSpec is the **most comprehensive framework for making skills self-describing and self-enforcing**. It transforms SKILL.md from a task description into a **legal contract** with 12 sections covering goals, boundaries, permissions, evidence, outputs, quality, verification, approval, and handoffs. The 67% reduction in policy violations is the proof that specification-level governance works.\nThe paper provides the missing link between \"write a good skill\" and \"write a safe skill.\" The 12 contract sections (goals, boundaries, permissions, evidence, outputs, quality, verification, approval, handoffs) are the governance primitives we've been missing.\n**Layer 0 \u2014 Spec-Level Governance** (with runtime enforcement hooks into Layer 1)"
+        },
+        {
+          "field": "abstract",
+          "text": "Skills are increasingly used to package agent instructions, workflows, scripts, and reference materials. In enterprise settings, however, skills often need to express more than task guidance: they must make goals, input boundaries, permissions, evidence requirements, output contracts, quality criteria, verification steps, human approval points, and handoff rules inspectable. This paper proposes contractual skills, a GovernSpec-inspired design framework for organizing SKILL.md files as readable task contracts while preserving lightweight skill discovery. The framework introduces a declarative schema with 12 contract sections, a validation engine, and a runtime policy interpreter that enforces contracts during execution. We demonstrate that contractual skills reduce policy violation rates by 67% compared to unconstrained skill execution, while maintaining task completion rates within 5% of baseline."
+        },
+        {
+          "field": "why_recommend",
+          "text": "GovernSpec is the **most comprehensive framework for making skills self-describing and self-enforcing**. It transforms SKILL.md from a task description into a **legal contract** with 12 sections covering goals, boundaries, permissions, evidence, outputs, quality, verification, approval, and handoffs. The 67% reduction in policy violations is the proof that specification-level governance works."
+        },
+        {
+          "field": "relevance",
+          "text": "This is the apex of Layer 0 (Spec-Level Governance). It defines what a \"well-specified skill\" actually means \u2014 not just a task description, but a complete contract with enforceable boundaries."
+        },
+        {
+          "field": "recommendation_reason",
+          "text": "The paper provides the missing link between \"write a good skill\" and \"write a safe skill.\" The 12 contract sections (goals, boundaries, permissions, evidence, outputs, quality, verification, approval, handoffs) are the governance primitives we've been missing."
+        }
+      ]
+    },
+    {
+      "ordinal": 6,
+      "title": "OWASP Top 10 for Agentic Applications",
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+      "pdf": null,
+      "paper_type": "Industry standard / Security framework",
+      "authors": null,
+      "date": "2026 Edition (published December 2025)",
+      "layer": "**All layers** \u2014 Layer 0 (Insecure Plugin Design), Layer 1 (Prompt Injection, Excessive Agency), Layer 2 (Overreliance, Trust Exploitation)",
+      "solution": null,
+      "focus_scores": {
+        "static": 3,
+        "runtime": 6,
+        "behavioral": 5,
+        "landscape": 8
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [
+        "runtime",
+        "behavioral",
+        "static"
+      ],
+      "fields": {
+        "abstract": "OWASP's Top 10 for Agentic Applications is the first formal taxonomy of risks specific to autonomous AI agents. It identifies 10 critical vulnerability categories: (1) Prompt Injection, (2) Insecure Output Handling, (3) Training Data Poisoning, (4) Denial of Service via Model Manipulation, (5) Supply Chain Vulnerabilities, (6) Sensitive Information Disclosure, (7) Insecure Plugin Design, (8) Excessive Agency, (9) Overreliance on LLM Decision-Making, and (10) Agent-to-Agent Trust Exploitation. Each category includes attack scenarios, mitigation strategies, and testing guidance. The framework is designed to be integrated into existing AppSec programs and adapted for enterprise agent deployment.",
+        "why_recommend": "OWASP is the **industry standard for application security**. Having a dedicated Top 10 for agentic applications means agent security is now a recognized discipline with standardized terminology, threat models, and mitigations. This is what enterprises will reference when auditing agent systems.",
+        "relevance": "OWASP spans all three layers: (1) insecure plugin design maps to Layer 0 (spec), (2) prompt injection and excessive agency map to Layer 1 (runtime), (3) overreliance and trust exploitation map to Layer 2 (behavioral). It's the comprehensive risk taxonomy that connects our stack to industry standards.",
+        "recommendation_reason": "This is not a research paper \u2014 it's an industry standard. Enterprises will ask \"Have you addressed the OWASP Top 10 for agents?\" Having this mapping ready is a competitive advantage."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "OWASP Top 10 for Agentic Applications\nOWASP's Top 10 for Agentic Applications is the first formal taxonomy of risks specific to autonomous AI agents. It identifies 10 critical vulnerability categories: (1) Prompt Injection, (2) Insecure Output Handling, (3) Training Data Poisoning, (4) Denial of Service via Model Manipulation, (5) Supply Chain Vulnerabilities, (6) Sensitive Information Disclosure, (7) Insecure Plugin Design, (8) Excessive Agency, (9) Overreliance on LLM Decision-Making, and (10) Agent-to-Agent Trust Exploitation. Each category includes attack scenarios, mitigation strategies, and testing guidance. The framework is designed to be integrated into existing AppSec programs and adapted for enterprise agent deployment.\nOWASP spans all three layers: (1) insecure plugin design maps to Layer 0 (spec), (2) prompt injection and excessive agency map to Layer 1 (runtime), (3) overreliance and trust exploitation map to Layer 2 (behavioral). It's the comprehensive risk taxonomy that connects our stack to industry standards.\nOWASP is the **industry standard for application security**. Having a dedicated Top 10 for agentic applications means agent security is now a recognized discipline with standardized terminology, threat models, and mitigations. This is what enterprises will reference when auditing agent systems.\nThis is not a research paper \u2014 it's an industry standard. Enterprises will ask \"Have you addressed the OWASP Top 10 for agents?\" Having this mapping ready is a competitive advantage.\n**All layers** \u2014 Layer 0 (Insecure Plugin Design), Layer 1 (Prompt Injection, Excessive Agency), Layer 2 (Overreliance, Trust Exploitation)"
+        },
+        {
+          "field": "abstract",
+          "text": "OWASP's Top 10 for Agentic Applications is the first formal taxonomy of risks specific to autonomous AI agents. It identifies 10 critical vulnerability categories: (1) Prompt Injection, (2) Insecure Output Handling, (3) Training Data Poisoning, (4) Denial of Service via Model Manipulation, (5) Supply Chain Vulnerabilities, (6) Sensitive Information Disclosure, (7) Insecure Plugin Design, (8) Excessive Agency, (9) Overreliance on LLM Decision-Making, and (10) Agent-to-Agent Trust Exploitation. Each category includes attack scenarios, mitigation strategies, and testing guidance. The framework is designed to be integrated into existing AppSec programs and adapted for enterprise agent deployment."
+        },
+        {
+          "field": "why_recommend",
+          "text": "OWASP is the **industry standard for application security**. Having a dedicated Top 10 for agentic applications means agent security is now a recognized discipline with standardized terminology, threat models, and mitigations. This is what enterprises will reference when auditing agent systems."
+        },
+        {
+          "field": "relevance",
+          "text": "OWASP spans all three layers: (1) insecure plugin design maps to Layer 0 (spec), (2) prompt injection and excessive agency map to Layer 1 (runtime), (3) overreliance and trust exploitation map to Layer 2 (behavioral). It's the comprehensive risk taxonomy that connects our stack to industry standards."
+        },
+        {
+          "field": "recommendation_reason",
+          "text": "This is not a research paper \u2014 it's an industry standard. Enterprises will ask \"Have you addressed the OWASP Top 10 for agents?\" Having this mapping ready is a competitive advantage."
+        }
+      ]
+    },
+    {
+      "ordinal": 7,
+      "title": "Microsoft Agent Governance Toolkit",
+      "url": "https://www.microsoft.com/en-us/security/blog/2025/12/10/introducing-the-microsoft-agent-governance-toolkit/",
+      "pdf": null,
+      "paper_type": "Product / Enterprise framework",
+      "authors": null,
+      "date": "December 2025",
+      "layer": "**All layers** \u2014 Layer 0 (Registration), Layer 1 (Policy + Audit), Layer 2 (Safety Evaluators)",
+      "solution": null,
+      "focus_scores": {
+        "static": 4,
+        "runtime": 7,
+        "behavioral": 5,
+        "landscape": 8
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [
+        "runtime",
+        "behavioral",
+        "static"
+      ],
+      "fields": {
+        "abstract": "Microsoft introduced the Agent Governance Toolkit as a comprehensive framework for enterprise agent deployment. It includes: (1) Agent Registration and Discovery \u2014 a catalog system for tracking all agents in an organization; (2) Policy Engine \u2014 a rules-based system for constraining agent behavior; (3) Audit and Monitoring \u2014 real-time logging and alerting for agent actions; (4) Safety Evaluators \u2014 pre-deployment testing modules based on red-teaming; (5) Human-in-the-Loop Controls \u2014 configurable approval gates for high-risk actions. The toolkit is integrated with Azure AI Foundry and supports both first-party and third-party agents. Microsoft reports that early adopters reduced agent-related security incidents by 73% after implementing the toolkit.",
+        "why_recommend": "Microsoft is the **first major cloud provider to ship a comprehensive agent governance product**. The 73% reduction in security incidents is real enterprise data. The toolkit covers the full lifecycle \u2014 registration, policy, audit, evaluation, and human oversight \u2014 which is exactly what enterprises need.",
+        "relevance": "This is the enterprise product implementation of our Three-Layer Stack. Agent Registration maps to Layer 0 (spec), Policy Engine and Audit map to Layer 1 (runtime), Safety Evaluators map to Layer 2 (behavioral). The Human-in-the-Loop controls are the approval gates mentioned in GovernSpec.",
+        "recommendation_reason": "Microsoft has the enterprise credibility and the data (73% incident reduction). The toolkit's five components (Registration, Policy, Audit, Evaluation, Human-in-the-Loop) are the blueprint for any serious governance implementation."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Microsoft Agent Governance Toolkit\nMicrosoft introduced the Agent Governance Toolkit as a comprehensive framework for enterprise agent deployment. It includes: (1) Agent Registration and Discovery \u2014 a catalog system for tracking all agents in an organization; (2) Policy Engine \u2014 a rules-based system for constraining agent behavior; (3) Audit and Monitoring \u2014 real-time logging and alerting for agent actions; (4) Safety Evaluators \u2014 pre-deployment testing modules based on red-teaming; (5) Human-in-the-Loop Controls \u2014 configurable approval gates for high-risk actions. The toolkit is integrated with Azure AI Foundry and supports both first-party and third-party agents. Microsoft reports that early adopters reduced agent-related security incidents by 73% after implementing the toolkit.\nThis is the enterprise product implementation of our Three-Layer Stack. Agent Registration maps to Layer 0 (spec), Policy Engine and Audit map to Layer 1 (runtime), Safety Evaluators map to Layer 2 (behavioral). The Human-in-the-Loop controls are the approval gates mentioned in GovernSpec.\nMicrosoft is the **first major cloud provider to ship a comprehensive agent governance product**. The 73% reduction in security incidents is real enterprise data. The toolkit covers the full lifecycle \u2014 registration, policy, audit, evaluation, and human oversight \u2014 which is exactly what enterprises need.\nMicrosoft has the enterprise credibility and the data (73% incident reduction). The toolkit's five components (Registration, Policy, Audit, Evaluation, Human-in-the-Loop) are the blueprint for any serious governance implementation.\n**All layers** \u2014 Layer 0 (Registration), Layer 1 (Policy + Audit), Layer 2 (Safety Evaluators)"
+        },
+        {
+          "field": "abstract",
+          "text": "Microsoft introduced the Agent Governance Toolkit as a comprehensive framework for enterprise agent deployment. It includes: (1) Agent Registration and Discovery \u2014 a catalog system for tracking all agents in an organization; (2) Policy Engine \u2014 a rules-based system for constraining agent behavior; (3) Audit and Monitoring \u2014 real-time logging and alerting for agent actions; (4) Safety Evaluators \u2014 pre-deployment testing modules based on red-teaming; (5) Human-in-the-Loop Controls \u2014 configurable approval gates for high-risk actions. The toolkit is integrated with Azure AI Foundry and supports both first-party and third-party agents. Microsoft reports that early adopters reduced agent-related security incidents by 73% after implementing the toolkit."
+        },
+        {
+          "field": "why_recommend",
+          "text": "Microsoft is the **first major cloud provider to ship a comprehensive agent governance product**. The 73% reduction in security incidents is real enterprise data. The toolkit covers the full lifecycle \u2014 registration, policy, audit, evaluation, and human oversight \u2014 which is exactly what enterprises need."
+        },
+        {
+          "field": "relevance",
+          "text": "This is the enterprise product implementation of our Three-Layer Stack. Agent Registration maps to Layer 0 (spec), Policy Engine and Audit map to Layer 1 (runtime), Safety Evaluators map to Layer 2 (behavioral). The Human-in-the-Loop controls are the approval gates mentioned in GovernSpec."
+        },
+        {
+          "field": "recommendation_reason",
+          "text": "Microsoft has the enterprise credibility and the data (73% incident reduction). The toolkit's five components (Registration, Policy, Audit, Evaluation, Human-in-the-Loop) are the blueprint for any serious governance implementation."
+        }
+      ]
+    },
+    {
+      "ordinal": 8,
+      "title": "Agent Evaluation Guide (Quality-Focused Frameworks)",
+      "url": "https://www.ai-journal.com/research/agent-evaluation-guide-2026",
+      "pdf": null,
+      "paper_type": "Research synthesis / Industry report",
+      "authors": null,
+      "date": "2026",
+      "layer": "**Layer 2 \u2014 Behavioral-Level Governance** (with Layer 1 hooks for error recovery and tool accuracy)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 2,
+        "behavioral": 8,
+        "landscape": 5
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "landscape",
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "Most teams ship AI agents to production with roughly the same evaluation rigor they would apply to a staging demo \u2014 and it is catching up with them. Industry data shows that over 40% of agentic AI projects are on track to be canceled by the end of 2027, and 32% of organizations now cite quality as the #1 barrier to deployment. The reason is not the models. It is the evaluation stack. Agents are multi-step systems that fail silently, compound small errors into catastrophic ones, and break in ways that a single-turn accuracy metric will never surface. This guide walks through quality-focused evaluation frameworks: (1) Multi-step success rate \u2014 not just final outcome but each step's correctness; (2) Error recovery \u2014 does the agent detect and recover from its own mistakes; (3) Tool use accuracy \u2014 correct tool selection and parameterization; (4) Context window management \u2014 does the agent retain critical information across long sessions; (5) Safety boundary adherence \u2014 does the agent respect constraints under pressure; (6) Human-alignment validation \u2014 does the agent's reasoning match human expectations.",
+        "why_recommend": "This is the **reality check** on agent evaluation. The 40% cancellation rate and 32% quality barrier are the business case for governance. The six evaluation dimensions (multi-step success, error recovery, tool accuracy, context management, safety adherence, human alignment) are the behavioral metrics that Layer 2 governance must measure.",
+        "relevance": "This is the business and operational justification for our entire governance stack. Without proper evaluation, governance has no feedback loop. The six dimensions provide the KPIs for Layer 2 governance.",
+        "recommendation_reason": "This paper provides the business case (40% cancellation rate) and the measurement framework (six dimensions) that justify governance investment. It's the bridge between \"governance is good\" and \"governance is necessary.\""
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Agent Evaluation Guide (Quality-Focused Frameworks)\nMost teams ship AI agents to production with roughly the same evaluation rigor they would apply to a staging demo \u2014 and it is catching up with them. Industry data shows that over 40% of agentic AI projects are on track to be canceled by the end of 2027, and 32% of organizations now cite quality as the #1 barrier to deployment. The reason is not the models. It is the evaluation stack. Agents are multi-step systems that fail silently, compound small errors into catastrophic ones, and break in ways that a single-turn accuracy metric will never surface. This guide walks through quality-focused evaluation frameworks: (1) Multi-step success rate \u2014 not just final outcome but each step's correctness; (2) Error recovery \u2014 does the agent detect and recover from its own mistakes; (3) Tool use accuracy \u2014 correct tool selection and parameterization; (4) Context window management \u2014 does the agent retain critical information across long sessions; (5) Safety boundary adherence \u2014 does the agent respect constraints under pressure; (6) Human-alignment validation \u2014 does the agent's reasoning match human expectations.\nThis is the business and operational justification for our entire governance stack. Without proper evaluation, governance has no feedback loop. The six dimensions provide the KPIs for Layer 2 governance.\nThis is the **reality check** on agent evaluation. The 40% cancellation rate and 32% quality barrier are the business case for governance. The six evaluation dimensions (multi-step success, error recovery, tool accuracy, context management, safety adherence, human alignment) are the behavioral metrics that Layer 2 governance must measure.\nThis paper provides the business case (40% cancellation rate) and the measurement framework (six dimensions) that justify governance investment. It's the bridge between \"governance is good\" and \"governance is necessary.\"\n**Layer 2 \u2014 Behavioral-Level Governance** (with Layer 1 hooks for error recovery and tool accuracy)"
+        },
+        {
+          "field": "abstract",
+          "text": "Most teams ship AI agents to production with roughly the same evaluation rigor they would apply to a staging demo \u2014 and it is catching up with them. Industry data shows that over 40% of agentic AI projects are on track to be canceled by the end of 2027, and 32% of organizations now cite quality as the #1 barrier to deployment. The reason is not the models. It is the evaluation stack. Agents are multi-step systems that fail silently, compound small errors into catastrophic ones, and break in ways that a single-turn accuracy metric will never surface. This guide walks through quality-focused evaluation frameworks: (1) Multi-step success rate \u2014 not just final outcome but each step's correctness; (2) Error recovery \u2014 does the agent detect and recover from its own mistakes; (3) Tool use accuracy \u2014 correct tool selection and parameterization; (4) Context window management \u2014 does the agent retain critical information across long sessions; (5) Safety boundary adherence \u2014 does the agent respect constraints under pressure; (6) Human-alignment validation \u2014 does the agent's reasoning match human expectations."
+        },
+        {
+          "field": "why_recommend",
+          "text": "This is the **reality check** on agent evaluation. The 40% cancellation rate and 32% quality barrier are the business case for governance. The six evaluation dimensions (multi-step success, error recovery, tool accuracy, context management, safety adherence, human alignment) are the behavioral metrics that Layer 2 governance must measure."
+        },
+        {
+          "field": "relevance",
+          "text": "This is the business and operational justification for our entire governance stack. Without proper evaluation, governance has no feedback loop. The six dimensions provide the KPIs for Layer 2 governance."
+        },
+        {
+          "field": "recommendation_reason",
+          "text": "This paper provides the business case (40% cancellation rate) and the measurement framework (six dimensions) that justify governance investment. It's the bridge between \"governance is good\" and \"governance is necessary.\""
+        }
+      ]
+    },
+    {
+      "ordinal": 10,
+      "title": "ClawBench \u2014 Real-World Web Agent Benchmark",
+      "url": "https://arxiv.org/abs/2604.08523",
+      "pdf": "https://arxiv.org/pdf/2604.08523",
+      "paper_type": null,
+      "authors": "Yuxuan Zhang, Yubo Wang, Yipeng Zhu et al.",
+      "date": "April 9, 2026",
+      "layer": "**Layer 2 \u2014 Behavioral-Level Governance**",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 10,
+        "landscape": 1
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "landscape",
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "AI agents may be able to automate your inbox, but can they automate other routine aspects of your life? Everyday online tasks offer a realistic yet unsolved testbed for evaluating the next generation of AI agents. To this end, we introduce ClawBench, an evaluation framework of 153 simple tasks that people need to accomplish regularly in their lives and work, spanning 144 live platforms across 15 categories, from completing purchases and booking appointments to submitting job applications. These tasks require demanding capabilities beyond existing benchmarks, such as obtaining relevant information from user-provided documents, navigating multi-step workflows across diverse platforms, and write-heavy operations like filling in many detailed forms correctly. Unlike existing benchmarks that evaluate agents in offline sandboxes with static pages, ClawBench operates on production websites, preserving the full complexity, dynamic nature, and challenges of real-world web interaction. A lightweight interception layer captures and blocks only the final submission request, ensuring safe evaluation without real-world side effects. Our evaluations of 7 frontier models show that both proprietary and open-source models can complete only a small portion of these tasks. For example, Claude Sonnet 4.6 achieves only 33.3%.",
+        "why_recommend": "ClawBench is the **first benchmark to evaluate agents on live production websites with write-heavy transactions** (purchases, bookings, applications). Unlike sandboxed benchmarks, it captures real-world complexity: dynamic DOMs, authentication flows, payment processing, and form validation. The fact that the best model (Claude Sonnet 4.6) achieves only 33.3% exposes the massive gap between sandbox optimism and production reality.",
+        "relevance": "This is a complementary Layer 2 benchmark to BeSafe-Bench and ST-WebAgentBench. Where BeSafe-Bench measures safety violations and ST-WebAgentBench measures policy adherence, ClawBench measures whether agents can even *function* on real websites under realistic constraints. It provides the operational reality check that governance must address.",
+        "recommendation_reason": "The 33.3% success rate on real websites is the most sobering agent benchmark result to date. Any governance framework that doesn't account for this operational reality is designing for a fantasy. The five-layer recording (session replays, screenshots, HTTP traffic, agent messages, browser actions) is also a gold standard for forensic governance."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "ClawBench \u2014 Real-World Web Agent Benchmark\nAI agents may be able to automate your inbox, but can they automate other routine aspects of your life? Everyday online tasks offer a realistic yet unsolved testbed for evaluating the next generation of AI agents. To this end, we introduce ClawBench, an evaluation framework of 153 simple tasks that people need to accomplish regularly in their lives and work, spanning 144 live platforms across 15 categories, from completing purchases and booking appointments to submitting job applications. These tasks require demanding capabilities beyond existing benchmarks, such as obtaining relevant information from user-provided documents, navigating multi-step workflows across diverse platforms, and write-heavy operations like filling in many detailed forms correctly. Unlike existing benchmarks that evaluate agents in offline sandboxes with static pages, ClawBench operates on production websites, preserving the full complexity, dynamic nature, and challenges of real-world web interaction. A lightweight interception layer captures and blocks only the final submission request, ensuring safe evaluation without real-world side effects. Our evaluations of 7 frontier models show that both proprietary and open-source models can complete only a small portion of these tasks. For example, Claude Sonnet 4.6 achieves only 33.3%.\nThis is a complementary Layer 2 benchmark to BeSafe-Bench and ST-WebAgentBench. Where BeSafe-Bench measures safety violations and ST-WebAgentBench measures policy adherence, ClawBench measures whether agents can even *function* on real websites under realistic constraints. It provides the operational reality check that governance must address.\nClawBench is the **first benchmark to evaluate agents on live production websites with write-heavy transactions** (purchases, bookings, applications). Unlike sandboxed benchmarks, it captures real-world complexity: dynamic DOMs, authentication flows, payment processing, and form validation. The fact that the best model (Claude Sonnet 4.6) achieves only 33.3% exposes the massive gap between sandbox optimism and production reality.\nThe 33.3% success rate on real websites is the most sobering agent benchmark result to date. Any governance framework that doesn't account for this operational reality is designing for a fantasy. The five-layer recording (session replays, screenshots, HTTP traffic, agent messages, browser actions) is also a gold standard for forensic governance.\n**Layer 2 \u2014 Behavioral-Level Governance**"
+        },
+        {
+          "field": "abstract",
+          "text": "AI agents may be able to automate your inbox, but can they automate other routine aspects of your life? Everyday online tasks offer a realistic yet unsolved testbed for evaluating the next generation of AI agents. To this end, we introduce ClawBench, an evaluation framework of 153 simple tasks that people need to accomplish regularly in their lives and work, spanning 144 live platforms across 15 categories, from completing purchases and booking appointments to submitting job applications. These tasks require demanding capabilities beyond existing benchmarks, such as obtaining relevant information from user-provided documents, navigating multi-step workflows across diverse platforms, and write-heavy operations like filling in many detailed forms correctly. Unlike existing benchmarks that evaluate agents in offline sandboxes with static pages, ClawBench operates on production websites, preserving the full complexity, dynamic nature, and challenges of real-world web interaction. A lightweight interception layer captures and blocks only the final submission request, ensuring safe evaluation without real-world side effects. Our evaluations of 7 frontier models show that both proprietary and open-source models can complete only a small portion of these tasks. For example, Claude Sonnet 4.6 achieves only 33.3%."
+        },
+        {
+          "field": "why_recommend",
+          "text": "ClawBench is the **first benchmark to evaluate agents on live production websites with write-heavy transactions** (purchases, bookings, applications). Unlike sandboxed benchmarks, it captures real-world complexity: dynamic DOMs, authentication flows, payment processing, and form validation. The fact that the best model (Claude Sonnet 4.6) achieves only 33.3% exposes the massive gap between sandbox optimism and production reality."
+        },
+        {
+          "field": "relevance",
+          "text": "This is a complementary Layer 2 benchmark to BeSafe-Bench and ST-WebAgentBench. Where BeSafe-Bench measures safety violations and ST-WebAgentBench measures policy adherence, ClawBench measures whether agents can even *function* on real websites under realistic constraints. It provides the operational reality check that governance must address."
+        },
+        {
+          "field": "recommendation_reason",
+          "text": "The 33.3% success rate on real websites is the most sobering agent benchmark result to date. Any governance framework that doesn't account for this operational reality is designing for a fantasy. The five-layer recording (session replays, screenshots, HTTP traffic, agent messages, browser actions) is also a gold standard for forensic governance."
+        }
+      ]
+    },
+    {
+      "ordinal": 11,
+      "title": "OWASP Top 10 for Agentic Skills (AST10)",
+      "url": "https://owasp.org/www-project-agentic-skills-top-10/",
+      "pdf": null,
+      "paper_type": "Industry standard / Security framework",
+      "authors": null,
+      "date": "2026 Edition (incubated at OWASP Project Summit, Oslo, Norway)",
+      "layer": "**Layer 0 \u2014 Spec-Level Governance** (with Layer 1 hooks for isolation and sandboxing)",
+      "solution": null,
+      "focus_scores": {
+        "static": 9,
+        "runtime": 3,
+        "behavioral": 0,
+        "landscape": 3
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [
+        "landscape",
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "The OWASP Agentic Skills Top 10 (AST10) documents the 10 most critical security risks in agentic AI skills across all major AI agent platforms. Skills represent the execution layer giving agents real-world impact through platform-specific metadata + scripts. The 10 risks are: AST01 Malicious Skills, AST02 Supply Chain Compromise, AST03 Over-Privileged Skills, AST04 Insecure Metadata, AST05 Unsafe Deserialization, AST06 Weak Isolation, AST07 Update Drift, AST08 Poor Scanning, AST09 No Governance, and AST10 Cross-Platform Reuse. Each risk includes platform-specific attack scenarios (OpenClaw SKILL.md, Claude Code skill.json, Cursor manifest.json, VS Code package.json), preventive mitigations, OWASP/NIST/CVE mappings, and real-world evidence citations. The project also proposes a Universal Skill Format \u2014 a YAML standard normalizing security properties across all platforms.",
+        "why_recommend": "AST10 is the **first security framework focused specifically on agent skills as an attack surface**. While OWASP Agentic Applications (ASI) covers model-layer risks, AST10 covers the skill content layer \u2014 the reusable, named behaviors that encode complete workflows. Real-world evidence is already severe: 36% of AI agent skills contain security flaws (Snyk ToxicSkills), the ClawHub registry was poisoned at scale, and 135,000+ OpenClaw instances are publicly exposed. This is the framework that defines what \"secure skill authoring\" means.",
+        "relevance": "AST10 maps directly to Layer 0 (Spec-Level Governance). It defines the security properties that every skill specification must have: least-privilege manifests, schema validation, signing, provenance tracking, and governance metadata. The Universal Skill Format proposal is the cross-platform standard that could unify OpenClaw, Claude Code, and Cursor skill formats under one security schema.",
+        "recommendation_reason": "The ClawHub poisoning incident and 36% vulnerability rate prove that skills are not just documentation \u2014 they're executable code with real attack surface. AST10 is the first framework to treat them with the security rigor they deserve."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "OWASP Top 10 for Agentic Skills (AST10)\nThe OWASP Agentic Skills Top 10 (AST10) documents the 10 most critical security risks in agentic AI skills across all major AI agent platforms. Skills represent the execution layer giving agents real-world impact through platform-specific metadata + scripts. The 10 risks are: AST01 Malicious Skills, AST02 Supply Chain Compromise, AST03 Over-Privileged Skills, AST04 Insecure Metadata, AST05 Unsafe Deserialization, AST06 Weak Isolation, AST07 Update Drift, AST08 Poor Scanning, AST09 No Governance, and AST10 Cross-Platform Reuse. Each risk includes platform-specific attack scenarios (OpenClaw SKILL.md, Claude Code skill.json, Cursor manifest.json, VS Code package.json), preventive mitigations, OWASP/NIST/CVE mappings, and real-world evidence citations. The project also proposes a Universal Skill Format \u2014 a YAML standard normalizing security properties across all platforms.\nAST10 maps directly to Layer 0 (Spec-Level Governance). It defines the security properties that every skill specification must have: least-privilege manifests, schema validation, signing, provenance tracking, and governance metadata. The Universal Skill Format proposal is the cross-platform standard that could unify OpenClaw, Claude Code, and Cursor skill formats under one security schema.\nAST10 is the **first security framework focused specifically on agent skills as an attack surface**. While OWASP Agentic Applications (ASI) covers model-layer risks, AST10 covers the skill content layer \u2014 the reusable, named behaviors that encode complete workflows. Real-world evidence is already severe: 36% of AI agent skills contain security flaws (Snyk ToxicSkills), the ClawHub registry was poisoned at scale, and 135,000+ OpenClaw instances are publicly exposed. This is the framework that defines what \"secure skill authoring\" means.\nThe ClawHub poisoning incident and 36% vulnerability rate prove that skills are not just documentation \u2014 they're executable code with real attack surface. AST10 is the first framework to treat them with the security rigor they deserve.\n**Layer 0 \u2014 Spec-Level Governance** (with Layer 1 hooks for isolation and sandboxing)"
+        },
+        {
+          "field": "abstract",
+          "text": "The OWASP Agentic Skills Top 10 (AST10) documents the 10 most critical security risks in agentic AI skills across all major AI agent platforms. Skills represent the execution layer giving agents real-world impact through platform-specific metadata + scripts. The 10 risks are: AST01 Malicious Skills, AST02 Supply Chain Compromise, AST03 Over-Privileged Skills, AST04 Insecure Metadata, AST05 Unsafe Deserialization, AST06 Weak Isolation, AST07 Update Drift, AST08 Poor Scanning, AST09 No Governance, and AST10 Cross-Platform Reuse. Each risk includes platform-specific attack scenarios (OpenClaw SKILL.md, Claude Code skill.json, Cursor manifest.json, VS Code package.json), preventive mitigations, OWASP/NIST/CVE mappings, and real-world evidence citations. The project also proposes a Universal Skill Format \u2014 a YAML standard normalizing security properties across all platforms."
+        },
+        {
+          "field": "why_recommend",
+          "text": "AST10 is the **first security framework focused specifically on agent skills as an attack surface**. While OWASP Agentic Applications (ASI) covers model-layer risks, AST10 covers the skill content layer \u2014 the reusable, named behaviors that encode complete workflows. Real-world evidence is already severe: 36% of AI agent skills contain security flaws (Snyk ToxicSkills), the ClawHub registry was poisoned at scale, and 135,000+ OpenClaw instances are publicly exposed. This is the framework that defines what \"secure skill authoring\" means."
+        },
+        {
+          "field": "relevance",
+          "text": "AST10 maps directly to Layer 0 (Spec-Level Governance). It defines the security properties that every skill specification must have: least-privilege manifests, schema validation, signing, provenance tracking, and governance metadata. The Universal Skill Format proposal is the cross-platform standard that could unify OpenClaw, Claude Code, and Cursor skill formats under one security schema."
+        },
+        {
+          "field": "recommendation_reason",
+          "text": "The ClawHub poisoning incident and 36% vulnerability rate prove that skills are not just documentation \u2014 they're executable code with real attack surface. AST10 is the first framework to treat them with the security rigor they deserve."
+        }
+      ]
+    },
+    {
+      "ordinal": 12,
+      "title": "MCP-38 \u2014 Comprehensive Threat Taxonomy for Model Context Protocol",
+      "url": "https://arxiv.org/abs/2603.18063",
+      "pdf": "https://arxiv.org/pdf/2603.18063",
+      "paper_type": null,
+      "authors": "Yi Ting Shen, Kentaroh Toyoda, Alex Leung",
+      "date": "March 2026",
+      "layer": "**Layer 1 \u2014 Runtime-Level Governance** (protocol security)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 9,
+        "behavioral": 1,
+        "landscape": 4
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [
+        "landscape",
+        "behavioral"
+      ],
+      "fields": {
+        "abstract": "The Model Context Protocol (MCP) introduces a structurally distinct attack surface that existing threat frameworks, designed for traditional software systems or generic LLM deployments, do not adequately cover. This paper presents MCP-38, a protocol-specific threat taxonomy consisting of 38 threat categories (MCP-01 through MCP-38). The taxonomy was derived through a systematic four-phase methodology: protocol decomposition, multi-framework cross-mapping, real-world incident synthesis, and remediation-surface categorization. Each category is mapped to STRIDE, OWASP Top 10 for LLM Applications (2025, LLM01--LLM10), and the OWASP Top 10 for Agentic Applications (2026, ASI01--ASI10). MCP-38 addresses critical threats arising from MCP's semantic attack surface (tool description poisoning, indirect prompt injection, parasitic tool chaining, and dynamic trust violations), none of which are adequately captured by prior work. MCP-38 provides the definitional and empirical foundation for automated threat intelligence platforms.",
+        "why_recommend": "MCP-38 is the **first comprehensive threat taxonomy for the Model Context Protocol**, which is rapidly becoming the standard for agent-tool communication. The 38 categories cover threats that don't exist in traditional software (tool description poisoning, parasitic tool chaining, dynamic trust violations) and map them to established frameworks (STRIDE, OWASP LLM, OWASP Agentic). This is the reference that every MCP server developer and agent builder needs.",
+        "relevance": "This is Layer 1 (Runtime-Level Governance) at the protocol level. MCP is the de facto standard for agent-tool interaction, and MCP-38 provides the threat model that runtime governance must defend against. The accompanying MCPThreatHive tool provides automated threat intelligence for MCP ecosystems.",
+        "recommendation_reason": "MCP is the plumbing of agent infrastructure. If the plumbing is insecure, no amount of spec-level or behavioral governance can compensate. MCP-38 is the threat model that makes MCP security measurable and manageable."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "MCP-38 \u2014 Comprehensive Threat Taxonomy for Model Context Protocol\nThe Model Context Protocol (MCP) introduces a structurally distinct attack surface that existing threat frameworks, designed for traditional software systems or generic LLM deployments, do not adequately cover. This paper presents MCP-38, a protocol-specific threat taxonomy consisting of 38 threat categories (MCP-01 through MCP-38). The taxonomy was derived through a systematic four-phase methodology: protocol decomposition, multi-framework cross-mapping, real-world incident synthesis, and remediation-surface categorization. Each category is mapped to STRIDE, OWASP Top 10 for LLM Applications (2025, LLM01--LLM10), and the OWASP Top 10 for Agentic Applications (2026, ASI01--ASI10). MCP-38 addresses critical threats arising from MCP's semantic attack surface (tool description poisoning, indirect prompt injection, parasitic tool chaining, and dynamic trust violations), none of which are adequately captured by prior work. MCP-38 provides the definitional and empirical foundation for automated threat intelligence platforms.\nThis is Layer 1 (Runtime-Level Governance) at the protocol level. MCP is the de facto standard for agent-tool interaction, and MCP-38 provides the threat model that runtime governance must defend against. The accompanying MCPThreatHive tool provides automated threat intelligence for MCP ecosystems.\nMCP-38 is the **first comprehensive threat taxonomy for the Model Context Protocol**, which is rapidly becoming the standard for agent-tool communication. The 38 categories cover threats that don't exist in traditional software (tool description poisoning, parasitic tool chaining, dynamic trust violations) and map them to established frameworks (STRIDE, OWASP LLM, OWASP Agentic). This is the reference that every MCP server developer and agent builder needs.\nMCP is the plumbing of agent infrastructure. If the plumbing is insecure, no amount of spec-level or behavioral governance can compensate. MCP-38 is the threat model that makes MCP security measurable and manageable.\n**Layer 1 \u2014 Runtime-Level Governance** (protocol security)"
+        },
+        {
+          "field": "abstract",
+          "text": "The Model Context Protocol (MCP) introduces a structurally distinct attack surface that existing threat frameworks, designed for traditional software systems or generic LLM deployments, do not adequately cover. This paper presents MCP-38, a protocol-specific threat taxonomy consisting of 38 threat categories (MCP-01 through MCP-38). The taxonomy was derived through a systematic four-phase methodology: protocol decomposition, multi-framework cross-mapping, real-world incident synthesis, and remediation-surface categorization. Each category is mapped to STRIDE, OWASP Top 10 for LLM Applications (2025, LLM01--LLM10), and the OWASP Top 10 for Agentic Applications (2026, ASI01--ASI10). MCP-38 addresses critical threats arising from MCP's semantic attack surface (tool description poisoning, indirect prompt injection, parasitic tool chaining, and dynamic trust violations), none of which are adequately captured by prior work. MCP-38 provides the definitional and empirical foundation for automated threat intelligence platforms."
+        },
+        {
+          "field": "why_recommend",
+          "text": "MCP-38 is the **first comprehensive threat taxonomy for the Model Context Protocol**, which is rapidly becoming the standard for agent-tool communication. The 38 categories cover threats that don't exist in traditional software (tool description poisoning, parasitic tool chaining, dynamic trust violations) and map them to established frameworks (STRIDE, OWASP LLM, OWASP Agentic). This is the reference that every MCP server developer and agent builder needs."
+        },
+        {
+          "field": "relevance",
+          "text": "This is Layer 1 (Runtime-Level Governance) at the protocol level. MCP is the de facto standard for agent-tool interaction, and MCP-38 provides the threat model that runtime governance must defend against. The accompanying MCPThreatHive tool provides automated threat intelligence for MCP ecosystems."
+        },
+        {
+          "field": "recommendation_reason",
+          "text": "MCP is the plumbing of agent infrastructure. If the plumbing is insecure, no amount of spec-level or behavioral governance can compensate. MCP-38 is the threat model that makes MCP security measurable and manageable."
+        }
+      ]
+    },
+    {
+      "ordinal": 13,
+      "title": "Tencent AI-Infra-Guard \u2014 Full-Stack AI Red Teaming Platform",
+      "url": "https://github.com/Tencent/AI-Infra-Guard",
+      "pdf": null,
+      "paper_type": "Open-source security product",
+      "authors": null,
+      "date": "May 2026 (actively maintained)",
+      "layer": "**All layers** \u2014 Layer 0 (Skills Scan), Layer 1 (MCP scan, Agent Scan, OpenClaw Security Scan), Layer 2 (LLM jailbreak evaluation)",
+      "solution": null,
+      "focus_scores": {
+        "static": 4,
+        "runtime": 8,
+        "behavioral": 6,
+        "landscape": 3
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [
+        "behavioral",
+        "static",
+        "landscape"
+      ],
+      "fields": {
+        "abstract": "AI-Infra-Guard is a full-stack AI Red Teaming platform securing AI ecosystems via OpenClaw Security Scan, Agent Scan, Skills Scan, MCP scan, AI Infra scan, and LLM jailbreak evaluation. It provides automated scanning capabilities across the entire agent stack: from OpenClaw instance configuration and skill package security to MCP server integrity and infrastructure hardening. The platform integrates with research from the broader ecosystem including MCP-38, SkillAttack, TRUSTDESC, and MalTool papers. Tencent published this as an open-source tool for the community to self-assess AI infrastructure security posture.",
+        "why_recommend": "This is the **first open-source full-stack scanner for agent ecosystems**. Unlike point solutions (Skilldex for validation, MCPThreatHive for MCP threats), AI-Infra-Guard covers the entire stack: OpenClaw instances, agent configurations, skill packages, MCP servers, and infrastructure. It's the closest thing to a \"security audit tool for agent deployments.\"",
+        "relevance": "AI-Infra-Guard spans all three layers: Skills Scan maps to Layer 0 (spec validation), MCP scan and Agent Scan map to Layer 1 (runtime security), and LLM jailbreak evaluation maps to Layer 2 (behavioral safety). It's the operational tool that implements governance across the stack.",
+        "recommendation_reason": "Governance without measurement is just policy. AI-Infra-Guard provides the measurement tools that turn governance frameworks into actionable security assessments. The integration with MCP-38 and SkillAttack research means it's evidence-based, not theoretical."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Tencent AI-Infra-Guard \u2014 Full-Stack AI Red Teaming Platform\nAI-Infra-Guard is a full-stack AI Red Teaming platform securing AI ecosystems via OpenClaw Security Scan, Agent Scan, Skills Scan, MCP scan, AI Infra scan, and LLM jailbreak evaluation. It provides automated scanning capabilities across the entire agent stack: from OpenClaw instance configuration and skill package security to MCP server integrity and infrastructure hardening. The platform integrates with research from the broader ecosystem including MCP-38, SkillAttack, TRUSTDESC, and MalTool papers. Tencent published this as an open-source tool for the community to self-assess AI infrastructure security posture.\nAI-Infra-Guard spans all three layers: Skills Scan maps to Layer 0 (spec validation), MCP scan and Agent Scan map to Layer 1 (runtime security), and LLM jailbreak evaluation maps to Layer 2 (behavioral safety). It's the operational tool that implements governance across the stack.\nThis is the **first open-source full-stack scanner for agent ecosystems**. Unlike point solutions (Skilldex for validation, MCPThreatHive for MCP threats), AI-Infra-Guard covers the entire stack: OpenClaw instances, agent configurations, skill packages, MCP servers, and infrastructure. It's the closest thing to a \"security audit tool for agent deployments.\"\nGovernance without measurement is just policy. AI-Infra-Guard provides the measurement tools that turn governance frameworks into actionable security assessments. The integration with MCP-38 and SkillAttack research means it's evidence-based, not theoretical.\n**All layers** \u2014 Layer 0 (Skills Scan), Layer 1 (MCP scan, Agent Scan, OpenClaw Security Scan), Layer 2 (LLM jailbreak evaluation)"
+        },
+        {
+          "field": "abstract",
+          "text": "AI-Infra-Guard is a full-stack AI Red Teaming platform securing AI ecosystems via OpenClaw Security Scan, Agent Scan, Skills Scan, MCP scan, AI Infra scan, and LLM jailbreak evaluation. It provides automated scanning capabilities across the entire agent stack: from OpenClaw instance configuration and skill package security to MCP server integrity and infrastructure hardening. The platform integrates with research from the broader ecosystem including MCP-38, SkillAttack, TRUSTDESC, and MalTool papers. Tencent published this as an open-source tool for the community to self-assess AI infrastructure security posture."
+        },
+        {
+          "field": "why_recommend",
+          "text": "This is the **first open-source full-stack scanner for agent ecosystems**. Unlike point solutions (Skilldex for validation, MCPThreatHive for MCP threats), AI-Infra-Guard covers the entire stack: OpenClaw instances, agent configurations, skill packages, MCP servers, and infrastructure. It's the closest thing to a \"security audit tool for agent deployments.\""
+        },
+        {
+          "field": "relevance",
+          "text": "AI-Infra-Guard spans all three layers: Skills Scan maps to Layer 0 (spec validation), MCP scan and Agent Scan map to Layer 1 (runtime security), and LLM jailbreak evaluation maps to Layer 2 (behavioral safety). It's the operational tool that implements governance across the stack."
+        },
+        {
+          "field": "recommendation_reason",
+          "text": "Governance without measurement is just policy. AI-Infra-Guard provides the measurement tools that turn governance frameworks into actionable security assessments. The integration with MCP-38 and SkillAttack research means it's evidence-based, not theoretical."
+        }
+      ]
+    },
+    {
+      "ordinal": 14,
+      "title": "IBM Sovereign Core \u2014 Governance Policy at Infrastructure Runtime",
+      "url": "https://www.ibm.com/products/sovereign-core",
+      "pdf": null,
+      "paper_type": "Enterprise product",
+      "authors": null,
+      "date": "General Availability announced May 7, 2026 (IBM Think 2026)",
+      "layer": "**Layer 1 \u2014 Runtime-Level Governance** (infrastructure tier)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 10,
+        "behavioral": 0,
+        "landscape": 2
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [
+        "landscape"
+      ],
+      "fields": {
+        "abstract": "IBM Sovereign Core is a platform that embeds governance policy at the infrastructure runtime level for regulated, cross-border environments. It reached General Availability at IBM Think 2026 in Boston. Unlike policy-as-configuration tools, Sovereign Core enforces governance at the infrastructure layer \u2014 meaning policy compliance is guaranteed by the runtime environment itself, not by agent self-reporting or post-hoc audit. This is designed for enterprises in regulated industries (finance, healthcare, government) where data residency, compliance, and audit requirements are non-negotiable.",
+        "why_recommend": "IBM Sovereign Core represents the **next generation of runtime governance** \u2014 policy enforcement at the infrastructure level rather than the application level. This is a fundamentally different approach from LGA (which operates at the agent execution layer) or Microsoft Agent Governance Toolkit (which operates at the platform layer). Infrastructure-level enforcement means policy violations are physically impossible, not just detectable.",
+        "relevance": "This is Layer 1 (Runtime-Level Governance) at the infrastructure tier. It complements LGA's execution-layer controls with physical-layer guarantees. For regulated enterprises, this is the difference between \"we have policies\" and \"policies are enforced by the substrate.\"",
+        "recommendation_reason": "Most governance frameworks operate at the application layer, which means a compromised agent can bypass them. Infrastructure-level enforcement is the only approach that provides non-bypassable governance for high-assurance environments."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "IBM Sovereign Core \u2014 Governance Policy at Infrastructure Runtime\nIBM Sovereign Core is a platform that embeds governance policy at the infrastructure runtime level for regulated, cross-border environments. It reached General Availability at IBM Think 2026 in Boston. Unlike policy-as-configuration tools, Sovereign Core enforces governance at the infrastructure layer \u2014 meaning policy compliance is guaranteed by the runtime environment itself, not by agent self-reporting or post-hoc audit. This is designed for enterprises in regulated industries (finance, healthcare, government) where data residency, compliance, and audit requirements are non-negotiable.\nThis is Layer 1 (Runtime-Level Governance) at the infrastructure tier. It complements LGA's execution-layer controls with physical-layer guarantees. For regulated enterprises, this is the difference between \"we have policies\" and \"policies are enforced by the substrate.\"\nIBM Sovereign Core represents the **next generation of runtime governance** \u2014 policy enforcement at the infrastructure level rather than the application level. This is a fundamentally different approach from LGA (which operates at the agent execution layer) or Microsoft Agent Governance Toolkit (which operates at the platform layer). Infrastructure-level enforcement means policy violations are physically impossible, not just detectable.\nMost governance frameworks operate at the application layer, which means a compromised agent can bypass them. Infrastructure-level enforcement is the only approach that provides non-bypassable governance for high-assurance environments.\n**Layer 1 \u2014 Runtime-Level Governance** (infrastructure tier)"
+        },
+        {
+          "field": "abstract",
+          "text": "IBM Sovereign Core is a platform that embeds governance policy at the infrastructure runtime level for regulated, cross-border environments. It reached General Availability at IBM Think 2026 in Boston. Unlike policy-as-configuration tools, Sovereign Core enforces governance at the infrastructure layer \u2014 meaning policy compliance is guaranteed by the runtime environment itself, not by agent self-reporting or post-hoc audit. This is designed for enterprises in regulated industries (finance, healthcare, government) where data residency, compliance, and audit requirements are non-negotiable."
+        },
+        {
+          "field": "why_recommend",
+          "text": "IBM Sovereign Core represents the **next generation of runtime governance** \u2014 policy enforcement at the infrastructure level rather than the application level. This is a fundamentally different approach from LGA (which operates at the agent execution layer) or Microsoft Agent Governance Toolkit (which operates at the platform layer). Infrastructure-level enforcement means policy violations are physically impossible, not just detectable."
+        },
+        {
+          "field": "relevance",
+          "text": "This is Layer 1 (Runtime-Level Governance) at the infrastructure tier. It complements LGA's execution-layer controls with physical-layer guarantees. For regulated enterprises, this is the difference between \"we have policies\" and \"policies are enforced by the substrate.\""
+        },
+        {
+          "field": "recommendation_reason",
+          "text": "Most governance frameworks operate at the application layer, which means a compromised agent can bypass them. Infrastructure-level enforcement is the only approach that provides non-bypassable governance for high-assurance environments."
+        }
+      ]
+    },
+    {
+      "ordinal": 113,
+      "title": "ClawBench",
+      "url": "https://arxiv.org/abs/2604.08523",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 1,
+        "landscape": 0
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "UBC/Vector Institute/CMU/etc, 2026-04-09. Real-world web agent benchmark: 153 tasks across 144 live production websites. Layer 2."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "ClawBench\nUBC/Vector Institute/CMU/etc, 2026-04-09. Real-world web agent benchmark: 153 tasks across 144 live production websites. Layer 2."
+        },
+        {
+          "field": "abstract",
+          "text": "UBC/Vector Institute/CMU/etc, 2026-04-09. Real-world web agent benchmark: 153 tasks across 144 live production websites. Layer 2."
+        }
+      ]
+    },
+    {
+      "ordinal": 114,
+      "title": "MCP-38",
+      "url": "https://arxiv.org/abs/2603.18063",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 2,
+        "behavioral": 0,
+        "landscape": 2
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "Comprehensive threat taxonomy for Model Context Protocol with 38 threat categories. Mapped to STRIDE, OWASP LLM Top 10, OWASP Agentic Top 10. Layer 1."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "MCP-38\nComprehensive threat taxonomy for Model Context Protocol with 38 threat categories. Mapped to STRIDE, OWASP LLM Top 10, OWASP Agentic Top 10. Layer 1."
+        },
+        {
+          "field": "abstract",
+          "text": "Comprehensive threat taxonomy for Model Context Protocol with 38 threat categories. Mapped to STRIDE, OWASP LLM Top 10, OWASP Agentic Top 10. Layer 1."
+        }
+      ]
+    },
+    {
+      "ordinal": 115,
+      "title": "MCPThreatHive",
+      "url": "https://arxiv.org/abs/2604.13849",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "Automated threat intelligence platform for MCP ecosystems. GitHub: VulcanLab/MCPThreatHive. Layer 1."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "MCPThreatHive\nAutomated threat intelligence platform for MCP ecosystems. GitHub: VulcanLab/MCPThreatHive. Layer 1."
+        },
+        {
+          "field": "abstract",
+          "text": "Automated threat intelligence platform for MCP ecosystems. GitHub: VulcanLab/MCPThreatHive. Layer 1."
+        }
+      ]
+    },
+    {
+      "ordinal": 116,
+      "title": "ADR",
+      "url": "https://arxiv.org/abs/2605.17380",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "Agentic Detection System for Enterprise Agentic AI Security. Layer 1."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "ADR\nAgentic Detection System for Enterprise Agentic AI Security. Layer 1."
+        },
+        {
+          "field": "abstract",
+          "text": "Agentic Detection System for Enterprise Agentic AI Security. Layer 1."
+        }
+      ]
+    },
+    {
+      "ordinal": 117,
+      "title": "Proteus",
+      "url": "https://arxiv.org/abs/2605.11891",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "Self-Evolving Red Team for Agent Skill Ecosystems. Layer 2."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Proteus\nSelf-Evolving Red Team for Agent Skill Ecosystems. Layer 2."
+        },
+        {
+          "field": "abstract",
+          "text": "Self-Evolving Red Team for Agent Skill Ecosystems. Layer 2."
+        }
+      ]
+    },
+    {
+      "ordinal": 118,
+      "title": "SkillAttack",
+      "url": "https://arxiv.org/abs/2604.04989",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 1,
+        "landscape": 0
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "Automated red teaming of agent skills through attack path refinement. Layer 2."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "SkillAttack\nAutomated red teaming of agent skills through attack path refinement. Layer 2."
+        },
+        {
+          "field": "abstract",
+          "text": "Automated red teaming of agent skills through attack path refinement. Layer 2."
+        }
+      ]
+    },
+    {
+      "ordinal": 119,
+      "title": "TRUSTDESC",
+      "url": "https://arxiv.org/abs/2604.07536",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "Preventing tool poisoning via trusted description generation. Layer 1."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "TRUSTDESC\nPreventing tool poisoning via trusted description generation. Layer 1."
+        },
+        {
+          "field": "abstract",
+          "text": "Preventing tool poisoning via trusted description generation. Layer 1."
+        }
+      ]
+    },
+    {
+      "ordinal": 121,
+      "title": "Tencent AI-Infra-Guard",
+      "url": null,
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 1,
+        "landscape": 0
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "Full-stack AI red teaming platform with OpenClaw Security Scan, Agent Scan, Skills Scan, MCP scan, AI Infra scan. GitHub: Tencent/AI-Infra-Guard. Layer 1."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Tencent AI-Infra-Guard\nFull-stack AI red teaming platform with OpenClaw Security Scan, Agent Scan, Skills Scan, MCP scan, AI Infra scan. GitHub: Tencent/AI-Infra-Guard. Layer 1."
+        },
+        {
+          "field": "abstract",
+          "text": "Full-stack AI red teaming platform with OpenClaw Security Scan, Agent Scan, Skills Scan, MCP scan, AI Infra scan. GitHub: Tencent/AI-Infra-Guard. Layer 1."
+        }
+      ]
+    },
+    {
+      "ordinal": 122,
+      "title": "IBM Sovereign Core",
+      "url": null,
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 2,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "GA announced 2026-05-07. Embeds governance policy at infrastructure runtime for regulated, cross-border environments. Layer 1."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "IBM Sovereign Core\nGA announced 2026-05-07. Embeds governance policy at infrastructure runtime for regulated, cross-border environments. Layer 1."
+        },
+        {
+          "field": "abstract",
+          "text": "GA announced 2026-05-07. Embeds governance policy at infrastructure runtime for regulated, cross-border environments. Layer 1."
+        }
+      ]
+    },
+    {
+      "ordinal": 123,
+      "title": "DeepTeam by Confident AI",
+      "url": null,
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "Framework for testing OWASP ASI risks. trydeepteam.com. Layer 2."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "DeepTeam by Confident AI\nFramework for testing OWASP ASI risks. trydeepteam.com. Layer 2."
+        },
+        {
+          "field": "abstract",
+          "text": "Framework for testing OWASP ASI risks. trydeepteam.com. Layer 2."
+        }
+      ]
+    },
+    {
+      "ordinal": 124,
+      "title": "NIST IR 8596",
+      "url": null,
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "December 2025 draft. Cybersecurity Framework Profile for AI \u2014 first NIST publication addressing agentic systems as a distinct use case. Layer 1/2."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "NIST IR 8596\nDecember 2025 draft. Cybersecurity Framework Profile for AI \u2014 first NIST publication addressing agentic systems as a distinct use case. Layer 1/2."
+        },
+        {
+          "field": "abstract",
+          "text": "December 2025 draft. Cybersecurity Framework Profile for AI \u2014 first NIST publication addressing agentic systems as a distinct use case. Layer 1/2."
+        }
+      ]
+    },
+    {
+      "ordinal": 125,
+      "title": "SkCC",
+      "url": "https://arxiv.org/abs/2605.03353",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1/2",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 9,
+        "runtime": 4,
+        "behavioral": 1,
+        "landscape": 2
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [
+        "runtime",
+        "landscape",
+        "behavioral"
+      ],
+      "fields": {
+        "abstract": "Portable and Secure Skill Compilation for Cross-Framework LLM Agents. May 5, 2026. Introduces SkIR, a strongly-typed intermediate representation that decouples skill semantics from framework-specific formatting. Static optimizer enforces security constraints, blocking vulnerabilities before deployment. Reduces adaptation complexity from O(m\u00d7n) to O(m+n). 94.8% proactive security trigger rate.",
+        "relevance": "Directly addresses SKILL.md portability and security across frameworks. This is the skill compilation/validation infrastructure we need."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "SkCC\nPortable and Secure Skill Compilation for Cross-Framework LLM Agents. May 5, 2026. Introduces SkIR, a strongly-typed intermediate representation that decouples skill semantics from framework-specific formatting. Static optimizer enforces security constraints, blocking vulnerabilities before deployment. Reduces adaptation complexity from O(m\u00d7n) to O(m+n). 94.8% proactive security trigger rate.\nDirectly addresses SKILL.md portability and security across frameworks. This is the skill compilation/validation infrastructure we need.\nLayer 1/2"
+        },
+        {
+          "field": "abstract",
+          "text": "Portable and Secure Skill Compilation for Cross-Framework LLM Agents. May 5, 2026. Introduces SkIR, a strongly-typed intermediate representation that decouples skill semantics from framework-specific formatting. Static optimizer enforces security constraints, blocking vulnerabilities before deployment. Reduces adaptation complexity from O(m\u00d7n) to O(m+n). 94.8% proactive security trigger rate."
+        },
+        {
+          "field": "relevance",
+          "text": "Directly addresses SKILL.md portability and security across frameworks. This is the skill compilation/validation infrastructure we need."
+        }
+      ]
+    },
+    {
+      "ordinal": 126,
+      "title": "LASM / Systematic Survey",
+      "url": "https://arxiv.org/abs/2604.23338",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1/2/3",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 4,
+        "runtime": 5,
+        "behavioral": 4,
+        "landscape": 9
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [
+        "runtime",
+        "behavioral",
+        "static"
+      ],
+      "fields": {
+        "abstract": "A Systematic Survey of Security Threats and Defenses in LLM-Based AI Agents: A Layered Attack Surface Framework. Apr 25, 2026. Seven-layer framework (Foundation, Cognitive, Memory, Tool Execution, Multi-Agent Coordination, Ecosystem, Governance). L7 Governance = accountability and observability layer spanning the stack. Attack temporality dimension (T1-T4). Most dangerous threats at L5-L7 + T3-T4 (covert collusion, memory poisoning, MCP supply-chain compromise). Only 7% of existing research covers this zone. Identifies AgentSafe (formal spec language), AgentIndex (governance maturity benchmark), and audit protocol benchmarks.",
+        "relevance": "The survey maps our exact problem space and identifies the governance gap as the most under-researched zone."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "LASM / Systematic Survey\nA Systematic Survey of Security Threats and Defenses in LLM-Based AI Agents: A Layered Attack Surface Framework. Apr 25, 2026. Seven-layer framework (Foundation, Cognitive, Memory, Tool Execution, Multi-Agent Coordination, Ecosystem, Governance). L7 Governance = accountability and observability layer spanning the stack. Attack temporality dimension (T1-T4). Most dangerous threats at L5-L7 + T3-T4 (covert collusion, memory poisoning, MCP supply-chain compromise). Only 7% of existing research covers this zone. Identifies AgentSafe (formal spec language), AgentIndex (governance maturity benchmark), and audit protocol benchmarks.\nThe survey maps our exact problem space and identifies the governance gap as the most under-researched zone.\nLayer 1/2/3"
+        },
+        {
+          "field": "abstract",
+          "text": "A Systematic Survey of Security Threats and Defenses in LLM-Based AI Agents: A Layered Attack Surface Framework. Apr 25, 2026. Seven-layer framework (Foundation, Cognitive, Memory, Tool Execution, Multi-Agent Coordination, Ecosystem, Governance). L7 Governance = accountability and observability layer spanning the stack. Attack temporality dimension (T1-T4). Most dangerous threats at L5-L7 + T3-T4 (covert collusion, memory poisoning, MCP supply-chain compromise). Only 7% of existing research covers this zone. Identifies AgentSafe (formal spec language), AgentIndex (governance maturity benchmark), and audit protocol benchmarks."
+        },
+        {
+          "field": "relevance",
+          "text": "The survey maps our exact problem space and identifies the governance gap as the most under-researched zone."
+        }
+      ]
+    },
+    {
+      "ordinal": 127,
+      "title": "Evidence-Synthesis Framework",
+      "url": "https://arxiv.org/abs/2604.19818",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2/3",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 6,
+        "runtime": 4,
+        "behavioral": 6,
+        "landscape": 4
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "static",
+        "landscape",
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "Beyond Task Success: An Evidence-Synthesis Framework for Evaluating, Governing, and Orchestrating Agentic AI. Apr 18, 2026. Core finding: governance-to-action closure gap \u2014 evaluation tells us if outcomes were good, governance defines what should be allowed, but neither binds obligations to concrete actions or proves compliance later. Introduces ODTA runtime test (observability, decidability, timeliness, attestability) and minimum action-evidence bundle.",
+        "relevance": "Bridges the gap between governance specs and runtime validation. Directly relevant to \"how to verify if specs are well defined.\""
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Evidence-Synthesis Framework\nBeyond Task Success: An Evidence-Synthesis Framework for Evaluating, Governing, and Orchestrating Agentic AI. Apr 18, 2026. Core finding: governance-to-action closure gap \u2014 evaluation tells us if outcomes were good, governance defines what should be allowed, but neither binds obligations to concrete actions or proves compliance later. Introduces ODTA runtime test (observability, decidability, timeliness, attestability) and minimum action-evidence bundle.\nBridges the gap between governance specs and runtime validation. Directly relevant to \"how to verify if specs are well defined.\"\nLayer 2/3"
+        },
+        {
+          "field": "abstract",
+          "text": "Beyond Task Success: An Evidence-Synthesis Framework for Evaluating, Governing, and Orchestrating Agentic AI. Apr 18, 2026. Core finding: governance-to-action closure gap \u2014 evaluation tells us if outcomes were good, governance defines what should be allowed, but neither binds obligations to concrete actions or proves compliance later. Introduces ODTA runtime test (observability, decidability, timeliness, attestability) and minimum action-evidence bundle."
+        },
+        {
+          "field": "relevance",
+          "text": "Bridges the gap between governance specs and runtime validation. Directly relevant to \"how to verify if specs are well defined.\""
+        }
+      ]
+    },
+    {
+      "ordinal": 128,
+      "title": "AIP / Agent Identity Protocol",
+      "url": "https://arxiv.org/abs/2603.24775",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 3,
+        "runtime": 8,
+        "behavioral": 1,
+        "landscape": 2
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [
+        "static",
+        "landscape",
+        "behavioral"
+      ],
+      "fields": {
+        "abstract": "AIP: Agent Identity Protocol for Verifiable Delegation Across MCP and A2A. Mar 25, 2026. 2,000 MCP servers scanned \u2014 all lacked authentication. Introduces Invocation-Bound Capability Tokens (IBCTs) with compact (JWT) and chained (Biscuit/Datalog) modes. 100% rejection rate across 600 attack attempts. Reference implementations in Python and Rust.",
+        "relevance": "Identity and delegation is the foundation of skill/agent governance. Without verifiable identity, no accountability chain exists."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "AIP / Agent Identity Protocol\nAIP: Agent Identity Protocol for Verifiable Delegation Across MCP and A2A. Mar 25, 2026. 2,000 MCP servers scanned \u2014 all lacked authentication. Introduces Invocation-Bound Capability Tokens (IBCTs) with compact (JWT) and chained (Biscuit/Datalog) modes. 100% rejection rate across 600 attack attempts. Reference implementations in Python and Rust.\nIdentity and delegation is the foundation of skill/agent governance. Without verifiable identity, no accountability chain exists.\nLayer 1"
+        },
+        {
+          "field": "abstract",
+          "text": "AIP: Agent Identity Protocol for Verifiable Delegation Across MCP and A2A. Mar 25, 2026. 2,000 MCP servers scanned \u2014 all lacked authentication. Introduces Invocation-Bound Capability Tokens (IBCTs) with compact (JWT) and chained (Biscuit/Datalog) modes. 100% rejection rate across 600 attack attempts. Reference implementations in Python and Rust."
+        },
+        {
+          "field": "relevance",
+          "text": "Identity and delegation is the foundation of skill/agent governance. Without verifiable identity, no accountability chain exists."
+        }
+      ]
+    },
+    {
+      "ordinal": 129,
+      "title": "Trace-Based Assurance Framework",
+      "url": "https://arxiv.org/abs/2603.18096",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1/2",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 8,
+        "runtime": 6,
+        "behavioral": 3,
+        "landscape": 2
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [
+        "runtime",
+        "behavioral",
+        "landscape"
+      ],
+      "fields": {
+        "abstract": "A Trace-Based Assurance Framework for Agentic AI Orchestration: Contracts, Testing, and Governance. Mar 18, 2026. Message-Action Traces (MAT) with explicit step and trace contracts. Machine-checkable verdicts, deterministic replay, stress testing via budgeted counterexample search, structured fault injection. Governance as runtime component enforcing per-agent capability limits and action mediation (allow/rewrite/block).",
+        "relevance": "Runtime governance with contracts and traceability. The \"action mediation at language-to-action boundary\" is exactly what we need for skill enforcement."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Trace-Based Assurance Framework\nA Trace-Based Assurance Framework for Agentic AI Orchestration: Contracts, Testing, and Governance. Mar 18, 2026. Message-Action Traces (MAT) with explicit step and trace contracts. Machine-checkable verdicts, deterministic replay, stress testing via budgeted counterexample search, structured fault injection. Governance as runtime component enforcing per-agent capability limits and action mediation (allow/rewrite/block).\nRuntime governance with contracts and traceability. The \"action mediation at language-to-action boundary\" is exactly what we need for skill enforcement.\nLayer 1/2"
+        },
+        {
+          "field": "abstract",
+          "text": "A Trace-Based Assurance Framework for Agentic AI Orchestration: Contracts, Testing, and Governance. Mar 18, 2026. Message-Action Traces (MAT) with explicit step and trace contracts. Machine-checkable verdicts, deterministic replay, stress testing via budgeted counterexample search, structured fault injection. Governance as runtime component enforcing per-agent capability limits and action mediation (allow/rewrite/block)."
+        },
+        {
+          "field": "relevance",
+          "text": "Runtime governance with contracts and traceability. The \"action mediation at language-to-action boundary\" is exactly what we need for skill enforcement."
+        }
+      ]
+    },
+    {
+      "ordinal": 130,
+      "title": "EmbodiedGovBench",
+      "url": "https://arxiv.org/abs/2604.11174",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 2,
+        "landscape": 0
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems. Apr 13, 2026. Seven governance dimensions: unauthorized capability invocation, runtime drift robustness, recovery success, policy portability, version upgrade safety, human override responsiveness, audit completeness.",
+        "relevance": "Governance-as-first-class evaluation target. The benchmark structure (perturbation operators + governance metrics) can be adapted to non-embodied agent systems."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "EmbodiedGovBench\nEmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems. Apr 13, 2026. Seven governance dimensions: unauthorized capability invocation, runtime drift robustness, recovery success, policy portability, version upgrade safety, human override responsiveness, audit completeness.\nGovernance-as-first-class evaluation target. The benchmark structure (perturbation operators + governance metrics) can be adapted to non-embodied agent systems.\nLayer 2"
+        },
+        {
+          "field": "abstract",
+          "text": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems. Apr 13, 2026. Seven governance dimensions: unauthorized capability invocation, runtime drift robustness, recovery success, policy portability, version upgrade safety, human override responsiveness, audit completeness."
+        },
+        {
+          "field": "relevance",
+          "text": "Governance-as-first-class evaluation target. The benchmark structure (perturbation operators + governance metrics) can be adapted to non-embodied agent systems."
+        }
+      ]
+    },
+    {
+      "ordinal": 131,
+      "title": "Healthcare Skills",
+      "url": "https://arxiv.org/abs/2605.02709",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2/3",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 1,
+        "landscape": 1
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "landscape"
+      ],
+      "fields": {
+        "abstract": "An Empirical Study of Agent Skills for Healthcare: Practice, Gaps, and Governance. May 4, 2026. First empirical analysis of 557 healthcare skills from 58,159 public skills. Ten dimensions: function, deployment context, autonomy, safety. Finding: general technical risk does not reliably capture clinical risk. Skills act as procedural layer not addressed by current benchmarks.",
+        "relevance": "Domain-specific evidence that skill governance gaps exist in practice. Shows that current risk frameworks miss skill-level risks."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Healthcare Skills\nAn Empirical Study of Agent Skills for Healthcare: Practice, Gaps, and Governance. May 4, 2026. First empirical analysis of 557 healthcare skills from 58,159 public skills. Ten dimensions: function, deployment context, autonomy, safety. Finding: general technical risk does not reliably capture clinical risk. Skills act as procedural layer not addressed by current benchmarks.\nDomain-specific evidence that skill governance gaps exist in practice. Shows that current risk frameworks miss skill-level risks.\nLayer 2/3"
+        },
+        {
+          "field": "abstract",
+          "text": "An Empirical Study of Agent Skills for Healthcare: Practice, Gaps, and Governance. May 4, 2026. First empirical analysis of 557 healthcare skills from 58,159 public skills. Ten dimensions: function, deployment context, autonomy, safety. Finding: general technical risk does not reliably capture clinical risk. Skills act as procedural layer not addressed by current benchmarks."
+        },
+        {
+          "field": "relevance",
+          "text": "Domain-specific evidence that skill governance gaps exist in practice. Shows that current risk frameworks miss skill-level risks."
+        }
+      ]
+    },
+    {
+      "ordinal": 132,
+      "title": "AgentCity",
+      "url": "https://arxiv.org/abs/2604.07007",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 3",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 2,
+        "runtime": 0,
+        "behavioral": 1,
+        "landscape": 0
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [
+        "behavioral"
+      ],
+      "fields": {
+        "abstract": "AgentCity: Constitutional Governance for Autonomous Agent Economies via Separation of Power. Apr 8, 2026. Separation of Power (SoP) model on blockchain: agents legislate rules as smart contracts, deterministic software executes within contracts, humans adjudicate through ownership chain. Smart contracts are the law itself \u2014 legislative output that governs agent behavior. 50-1,000 agent scale experiment.",
+        "relevance": "Constitutional governance at scale. The \"smart contracts as law\" concept is a governance specification that is machine-enforceable."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "AgentCity\nAgentCity: Constitutional Governance for Autonomous Agent Economies via Separation of Power. Apr 8, 2026. Separation of Power (SoP) model on blockchain: agents legislate rules as smart contracts, deterministic software executes within contracts, humans adjudicate through ownership chain. Smart contracts are the law itself \u2014 legislative output that governs agent behavior. 50-1,000 agent scale experiment.\nConstitutional governance at scale. The \"smart contracts as law\" concept is a governance specification that is machine-enforceable.\nLayer 3"
+        },
+        {
+          "field": "abstract",
+          "text": "AgentCity: Constitutional Governance for Autonomous Agent Economies via Separation of Power. Apr 8, 2026. Separation of Power (SoP) model on blockchain: agents legislate rules as smart contracts, deterministic software executes within contracts, humans adjudicate through ownership chain. Smart contracts are the law itself \u2014 legislative output that governs agent behavior. 50-1,000 agent scale experiment."
+        },
+        {
+          "field": "relevance",
+          "text": "Constitutional governance at scale. The \"smart contracts as law\" concept is a governance specification that is machine-enforceable."
+        }
+      ]
+    },
+    {
+      "ordinal": 133,
+      "title": "Auditable Agents",
+      "url": "https://arxiv.org/abs/2604.05485",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1/2",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 5,
+        "runtime": 7,
+        "behavioral": 3,
+        "landscape": 3
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [
+        "static",
+        "behavioral",
+        "landscape"
+      ],
+      "fields": {
+        "abstract": "Auditable Agents: Measuring and Enforcing Accountability in LLM-Based Systems. Apr 7, 2026. Five dimensions: action recoverability, lifecycle coverage, policy checkability, responsibility attribution, evidence integrity. Three mechanism classes: detect, enforce, recover. Auditability Card proposed. 617 security findings across six prominent open-source projects show basic prerequisites are unmet. 8.3 ms median overhead for pre-execution mediation.",
+        "relevance": "Accountability requires auditability. The framework directly measures whether an agent system can be governed after deployment."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Auditable Agents\nAuditable Agents: Measuring and Enforcing Accountability in LLM-Based Systems. Apr 7, 2026. Five dimensions: action recoverability, lifecycle coverage, policy checkability, responsibility attribution, evidence integrity. Three mechanism classes: detect, enforce, recover. Auditability Card proposed. 617 security findings across six prominent open-source projects show basic prerequisites are unmet. 8.3 ms median overhead for pre-execution mediation.\nAccountability requires auditability. The framework directly measures whether an agent system can be governed after deployment.\nLayer 1/2"
+        },
+        {
+          "field": "abstract",
+          "text": "Auditable Agents: Measuring and Enforcing Accountability in LLM-Based Systems. Apr 7, 2026. Five dimensions: action recoverability, lifecycle coverage, policy checkability, responsibility attribution, evidence integrity. Three mechanism classes: detect, enforce, recover. Auditability Card proposed. 617 security findings across six prominent open-source projects show basic prerequisites are unmet. 8.3 ms median overhead for pre-execution mediation."
+        },
+        {
+          "field": "relevance",
+          "text": "Accountability requires auditability. The framework directly measures whether an agent system can be governed after deployment."
+        }
+      ]
+    },
+    {
+      "ordinal": 134,
+      "title": "SentinelAgent",
+      "url": "https://arxiv.org/abs/2604.02767",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 7,
+        "runtime": 7,
+        "behavioral": 1,
+        "landscape": 2
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [
+        "static",
+        "landscape",
+        "behavioral"
+      ],
+      "fields": {
+        "abstract": "SentinelAgent: Intent-Verified Delegation Chains for Securing Federal Multi-Agent AI Systems. Apr 3, 2026. Delegation Chain Calculus (DCC) with seven properties (authority narrowing, policy preservation, forensic reconstructibility, cascade containment, scope-action conformance, output schema conformance, intent preservation). 100% TPR at 0% FPR on DelegationBench v4 (516 scenarios, 10 attack categories). TLA+ verified across 2.7 million states.",
+        "relevance": "Formal verification of delegation chains. The properties (P1-P7) are exactly the kind of verifiable guarantees we need for skill/agent governance."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "SentinelAgent\nSentinelAgent: Intent-Verified Delegation Chains for Securing Federal Multi-Agent AI Systems. Apr 3, 2026. Delegation Chain Calculus (DCC) with seven properties (authority narrowing, policy preservation, forensic reconstructibility, cascade containment, scope-action conformance, output schema conformance, intent preservation). 100% TPR at 0% FPR on DelegationBench v4 (516 scenarios, 10 attack categories). TLA+ verified across 2.7 million states.\nFormal verification of delegation chains. The properties (P1-P7) are exactly the kind of verifiable guarantees we need for skill/agent governance.\nLayer 1"
+        },
+        {
+          "field": "abstract",
+          "text": "SentinelAgent: Intent-Verified Delegation Chains for Securing Federal Multi-Agent AI Systems. Apr 3, 2026. Delegation Chain Calculus (DCC) with seven properties (authority narrowing, policy preservation, forensic reconstructibility, cascade containment, scope-action conformance, output schema conformance, intent preservation). 100% TPR at 0% FPR on DelegationBench v4 (516 scenarios, 10 attack categories). TLA+ verified across 2.7 million states."
+        },
+        {
+          "field": "relevance",
+          "text": "Formal verification of delegation chains. The properties (P1-P7) are exactly the kind of verifiable guarantees we need for skill/agent governance."
+        }
+      ]
+    },
+    {
+      "ordinal": 135,
+      "title": "Implicit Execution Tracing",
+      "url": "https://arxiv.org/abs/2603.17445",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1/2",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "When Only the Final Text Survives: Implicit Execution Tracing for Multi-Agent Attribution. Mar 18, 2026. IET embeds agent-specific statistical signals into token generation, making output text a self-verifying execution record. Accurate attribution under identity removal, boundary corruption, privacy-preserving redaction.",
+        "relevance": "Provenance-by-design for multi-agent systems. Enables accountability when execution logs are unavailable."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Implicit Execution Tracing\nWhen Only the Final Text Survives: Implicit Execution Tracing for Multi-Agent Attribution. Mar 18, 2026. IET embeds agent-specific statistical signals into token generation, making output text a self-verifying execution record. Accurate attribution under identity removal, boundary corruption, privacy-preserving redaction.\nProvenance-by-design for multi-agent systems. Enables accountability when execution logs are unavailable.\nLayer 1/2"
+        },
+        {
+          "field": "abstract",
+          "text": "When Only the Final Text Survives: Implicit Execution Tracing for Multi-Agent Attribution. Mar 18, 2026. IET embeds agent-specific statistical signals into token generation, making output text a self-verifying execution record. Accurate attribution under identity removal, boundary corruption, privacy-preserving redaction."
+        },
+        {
+          "field": "relevance",
+          "text": "Provenance-by-design for multi-agent systems. Enables accountability when execution logs are unavailable."
+        }
+      ]
+    },
+    {
+      "ordinal": 136,
+      "title": "Snyk Agent Scan",
+      "url": "https://labs.snyk.io",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 2,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "Analyzes SKILL.md to detect known malicious patterns. 90-100% recall on confirmed malicious skills, 0% false positive rate on top 100 legitimate skills. Integrates with Skills.sh marketplace.",
+        "relevance": "Directly validates skill markdown security. This is the automated validation tool for the skill layer."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Snyk Agent Scan\nAnalyzes SKILL.md to detect known malicious patterns. 90-100% recall on confirmed malicious skills, 0% false positive rate on top 100 legitimate skills. Integrates with Skills.sh marketplace.\nDirectly validates skill markdown security. This is the automated validation tool for the skill layer.\nLayer 1"
+        },
+        {
+          "field": "abstract",
+          "text": "Analyzes SKILL.md to detect known malicious patterns. 90-100% recall on confirmed malicious skills, 0% false positive rate on top 100 legitimate skills. Integrates with Skills.sh marketplace."
+        },
+        {
+          "field": "relevance",
+          "text": "Directly validates skill markdown security. This is the automated validation tool for the skill layer."
+        }
+      ]
+    },
+    {
+      "ordinal": 137,
+      "title": "OWASP Practical Guide for Secure MCP Server Development",
+      "url": "https://www.trydeepteam.com/docs/frameworks-owasp-top-10-for-agentic-applications",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "Feb 2026. Practical guide for developers building MCP servers.",
+        "relevance": "Fills the gap between OWASP Top 10 and actual implementation."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "OWASP Practical Guide for Secure MCP Server Development\nFeb 2026. Practical guide for developers building MCP servers.\nFills the gap between OWASP Top 10 and actual implementation.\nLayer 1"
+        },
+        {
+          "field": "abstract",
+          "text": "Feb 2026. Practical guide for developers building MCP servers."
+        },
+        {
+          "field": "relevance",
+          "text": "Fills the gap between OWASP Top 10 and actual implementation."
+        }
+      ]
+    },
+    {
+      "ordinal": 138,
+      "title": "OWASP CheatSheet for Third-Party MCP Servers",
+      "url": "https://www.trydeepteam.com/docs/frameworks-owasp-top-10-for-agentic-applications",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "Security checklist for evaluating third-party MCP servers before integration.",
+        "relevance": "Operational security guidance for MCP skill supply chain."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "OWASP CheatSheet for Third-Party MCP Servers\nSecurity checklist for evaluating third-party MCP servers before integration.\nOperational security guidance for MCP skill supply chain.\nLayer 1"
+        },
+        {
+          "field": "abstract",
+          "text": "Security checklist for evaluating third-party MCP servers before integration."
+        },
+        {
+          "field": "relevance",
+          "text": "Operational security guidance for MCP skill supply chain."
+        }
+      ]
+    },
+    {
+      "ordinal": 139,
+      "title": "GitHub Spec Kit / SDD (Specification-Driven Development)",
+      "url": "https://github.com/topics/skill-md",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 3",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 8,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 4
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [
+        "landscape"
+      ],
+      "fields": {
+        "abstract": "GitHub's movement promoting `.spec.md` files as governance artifacts. 2026-07-01 article. Specification as first-class artifact, version-controlled, machine-readable.",
+        "relevance": "The SDD philosophy aligns with our spec/skill/agent markdown governance approach: specs as enforceable contracts."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "GitHub Spec Kit / SDD (Specification-Driven Development)\nGitHub's movement promoting `.spec.md` files as governance artifacts. 2026-07-01 article. Specification as first-class artifact, version-controlled, machine-readable.\nThe SDD philosophy aligns with our spec/skill/agent markdown governance approach: specs as enforceable contracts.\nLayer 3"
+        },
+        {
+          "field": "abstract",
+          "text": "GitHub's movement promoting `.spec.md` files as governance artifacts. 2026-07-01 article. Specification as first-class artifact, version-controlled, machine-readable."
+        },
+        {
+          "field": "relevance",
+          "text": "The SDD philosophy aligns with our spec/skill/agent markdown governance approach: specs as enforceable contracts."
+        }
+      ]
+    },
+    {
+      "ordinal": 140,
+      "title": "Web Skills Protocol (WSP)",
+      "url": "https://github.com/openclaw/skills/blob/main/skills/0xtresser/web-skills-protocol/SPEC.md",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 0/1",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 7,
+        "runtime": 3,
+        "behavioral": 0,
+        "landscape": 3
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [
+        "landscape",
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "0xtresser / OpenClaw. Specification v0.1 (March 2026). Web discovery layer for skills.txt/agents.txt. Complements robots.txt (access control) and llms.txt (content reading) with capabilities for action.",
+        "relevance": "Discovery and validation protocol for web-published skills. Standardizes how sites publish agent capabilities."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Web Skills Protocol (WSP)\n0xtresser / OpenClaw. Specification v0.1 (March 2026). Web discovery layer for skills.txt/agents.txt. Complements robots.txt (access control) and llms.txt (content reading) with capabilities for action.\nDiscovery and validation protocol for web-published skills. Standardizes how sites publish agent capabilities.\nLayer 0/1"
+        },
+        {
+          "field": "abstract",
+          "text": "0xtresser / OpenClaw. Specification v0.1 (March 2026). Web discovery layer for skills.txt/agents.txt. Complements robots.txt (access control) and llms.txt (content reading) with capabilities for action."
+        },
+        {
+          "field": "relevance",
+          "text": "Discovery and validation protocol for web-published skills. Standardizes how sites publish agent capabilities."
+        }
+      ]
+    },
+    {
+      "ordinal": 141,
+      "title": "Agentic AI Foundation (AAIF)",
+      "url": "https://github.com/topics/agent-ready",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 3",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "Under Linux Foundation. Governing body for AGENTS.md and MCP standards.",
+        "relevance": "Governance structure for the standards themselves. Important for long-term spec stewardship."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Agentic AI Foundation (AAIF)\nUnder Linux Foundation. Governing body for AGENTS.md and MCP standards.\nGovernance structure for the standards themselves. Important for long-term spec stewardship.\nLayer 3"
+        },
+        {
+          "field": "abstract",
+          "text": "Under Linux Foundation. Governing body for AGENTS.md and MCP standards."
+        },
+        {
+          "field": "relevance",
+          "text": "Governance structure for the standards themselves. Important for long-term spec stewardship."
+        }
+      ]
+    },
+    {
+      "ordinal": 142,
+      "title": "FinBot Agentic AI CTF",
+      "url": "https://www.techtimes.com/articles/304034/20260526/finbot-launches-first-agentic-ai-ctf.htm",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 2,
+        "landscape": 0
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "Capture The Flag competition for agentic AI security. 2026-05-26.",
+        "relevance": "Gamified security evaluation. CTFs produce reusable test cases and benchmark data."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "FinBot Agentic AI CTF\nCapture The Flag competition for agentic AI security. 2026-05-26.\nGamified security evaluation. CTFs produce reusable test cases and benchmark data.\nLayer 2"
+        },
+        {
+          "field": "abstract",
+          "text": "Capture The Flag competition for agentic AI security. 2026-05-26."
+        },
+        {
+          "field": "relevance",
+          "text": "Gamified security evaluation. CTFs produce reusable test cases and benchmark data."
+        }
+      ]
+    }
+  ]
+}

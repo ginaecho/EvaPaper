@@ -1,0 +1,697 @@
+{
+  "query": "agent governance skill markdown validation",
+  "question": "which papers are about static checking of agent interactions?",
+  "mode": "static",
+  "tasks": [
+    {
+      "role": "scout",
+      "objective": "Expand the paper graph for query: agent governance skill markdown validation",
+      "artifact": "graph_candidates.json"
+    },
+    {
+      "role": "librarian",
+      "objective": "Rebuild the local governance corpus and deduplicate records.",
+      "artifact": "paper_corpus.json"
+    },
+    {
+      "role": "static_analyst",
+      "objective": "Rank static-time governance papers and standards.",
+      "artifact": "static_sota.json"
+    },
+    {
+      "role": "synthesizer",
+      "objective": "Answer the question with paper evidence: which papers are about static checking of agent interactions?",
+      "artifact": "question_answer.json"
+    }
+  ],
+  "roles": {
+    "scout": "Expands seed queries through public paper graphs and proposes candidate papers.",
+    "librarian": "Maintains the normalized corpus, deduplicates records, and rebuilds evidence indexes.",
+    "static_analyst": "Focuses on pre-execution governance: specs, skills, contracts, and delegation chains.",
+    "runtime_analyst": "Tracks runtime controls such as sandboxing, intent verification, auditability, and protocol security.",
+    "behavioral_analyst": "Tracks benchmarks, trustworthiness evaluation, and post-build governance measurements.",
+    "synthesizer": "Combines role outputs into state-of-the-art summaries and evidence-backed answers."
+  },
+  "graph": {
+    "seed_count": 0,
+    "candidate_count": 0,
+    "top_candidates": []
+  },
+  "all_sota": {
+    "mode": "all",
+    "results": [
+      {
+        "title": "Microsoft Agent Governance Toolkit",
+        "ordinal": 7,
+        "url": "https://www.microsoft.com/en-us/security/blog/2025/12/10/introducing-the-microsoft-agent-governance-toolkit/",
+        "layer": "**All layers** \u2014 Layer 0 (Registration), Layer 1 (Policy + Audit), Layer 2 (Safety Evaluators)",
+        "primary_focus": "landscape",
+        "secondary_focuses": [
+          "runtime",
+          "behavioral",
+          "static"
+        ],
+        "focus_scores": {
+          "static": 4,
+          "runtime": 7,
+          "behavioral": 5,
+          "landscape": 8
+        },
+        "score": 24
+      },
+      {
+        "title": "OWASP Top 10 for Agentic Applications",
+        "ordinal": 6,
+        "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+        "layer": "**All layers** \u2014 Layer 0 (Insecure Plugin Design), Layer 1 (Prompt Injection, Excessive Agency), Layer 2 (Overreliance, Trust Exploitation)",
+        "primary_focus": "landscape",
+        "secondary_focuses": [
+          "runtime",
+          "behavioral",
+          "static"
+        ],
+        "focus_scores": {
+          "static": 3,
+          "runtime": 6,
+          "behavioral": 5,
+          "landscape": 8
+        },
+        "score": 22
+      },
+      {
+        "title": "LASM / Systematic Survey",
+        "ordinal": 126,
+        "url": "https://arxiv.org/abs/2604.23338",
+        "layer": "Layer 1/2/3",
+        "primary_focus": "landscape",
+        "secondary_focuses": [
+          "runtime",
+          "behavioral",
+          "static"
+        ],
+        "focus_scores": {
+          "static": 4,
+          "runtime": 5,
+          "behavioral": 4,
+          "landscape": 9
+        },
+        "score": 22
+      },
+      {
+        "title": "Tencent AI-Infra-Guard \u2014 Full-Stack AI Red Teaming Platform",
+        "ordinal": 13,
+        "url": "https://github.com/Tencent/AI-Infra-Guard",
+        "layer": "**All layers** \u2014 Layer 0 (Skills Scan), Layer 1 (MCP scan, Agent Scan, OpenClaw Security Scan), Layer 2 (LLM jailbreak evaluation)",
+        "primary_focus": "runtime",
+        "secondary_focuses": [
+          "behavioral",
+          "static",
+          "landscape"
+        ],
+        "focus_scores": {
+          "static": 4,
+          "runtime": 8,
+          "behavioral": 6,
+          "landscape": 3
+        },
+        "score": 21
+      },
+      {
+        "title": "Evidence-Synthesis Framework",
+        "ordinal": 127,
+        "url": "https://arxiv.org/abs/2604.19818",
+        "layer": "Layer 2/3",
+        "primary_focus": "behavioral",
+        "secondary_focuses": [
+          "static",
+          "landscape",
+          "runtime"
+        ],
+        "focus_scores": {
+          "static": 6,
+          "runtime": 4,
+          "behavioral": 6,
+          "landscape": 4
+        },
+        "score": 20
+      },
+      {
+        "title": "Trace-Based Assurance Framework",
+        "ordinal": 129,
+        "url": "https://arxiv.org/abs/2603.18096",
+        "layer": "Layer 1/2",
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "runtime",
+          "behavioral",
+          "landscape"
+        ],
+        "focus_scores": {
+          "static": 8,
+          "runtime": 6,
+          "behavioral": 3,
+          "landscape": 2
+        },
+        "score": 19
+      },
+      {
+        "title": "Auditable Agents",
+        "ordinal": 133,
+        "url": "https://arxiv.org/abs/2604.05485",
+        "layer": "Layer 1/2",
+        "primary_focus": "runtime",
+        "secondary_focuses": [
+          "static",
+          "behavioral",
+          "landscape"
+        ],
+        "focus_scores": {
+          "static": 5,
+          "runtime": 7,
+          "behavioral": 3,
+          "landscape": 3
+        },
+        "score": 18
+      },
+      {
+        "title": "ST-WebAgentBench",
+        "ordinal": 2,
+        "url": "https://arxiv.org/abs/2410.06703",
+        "layer": "**Layer 0 \u2192 Layer 2 bridge** (Spec-Level to Behavioral-Level)",
+        "primary_focus": "behavioral",
+        "secondary_focuses": [
+          "static",
+          "landscape",
+          "runtime"
+        ],
+        "focus_scores": {
+          "static": 4,
+          "runtime": 2,
+          "behavioral": 9,
+          "landscape": 2
+        },
+        "score": 17
+      }
+    ]
+  },
+  "graph_warning": "Discovery graph unavailable; fell back to local corpus only: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+  "static_sota": {
+    "mode": "static",
+    "results": [
+      {
+        "title": "Skilldex",
+        "ordinal": 4,
+        "url": "https://arxiv.org/abs/2604.16911",
+        "layer": "**Layer 0 \u2014 Spec-Level Governance**",
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "runtime",
+          "landscape"
+        ],
+        "focus_scores": {
+          "static": 10,
+          "runtime": 2,
+          "behavioral": 0,
+          "landscape": 1
+        },
+        "score": 105
+      },
+      {
+        "title": "GovernSpec / Contractual Skills",
+        "ordinal": 5,
+        "url": "https://arxiv.org/abs/2605.22634",
+        "layer": "**Layer 0 \u2014 Spec-Level Governance** (with runtime enforcement hooks into Layer 1)",
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "runtime",
+          "landscape",
+          "behavioral"
+        ],
+        "focus_scores": {
+          "static": 10,
+          "runtime": 4,
+          "behavioral": 1,
+          "landscape": 2
+        },
+        "score": 105
+      },
+      {
+        "title": "OWASP Top 10 for Agentic Skills (AST10)",
+        "ordinal": 11,
+        "url": "https://owasp.org/www-project-agentic-skills-top-10/",
+        "layer": "**Layer 0 \u2014 Spec-Level Governance** (with Layer 1 hooks for isolation and sandboxing)",
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "landscape",
+          "runtime"
+        ],
+        "focus_scores": {
+          "static": 9,
+          "runtime": 3,
+          "behavioral": 0,
+          "landscape": 3
+        },
+        "score": 95
+      },
+      {
+        "title": "SkCC",
+        "ordinal": 125,
+        "url": "https://arxiv.org/abs/2605.03353",
+        "layer": "Layer 1/2",
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "runtime",
+          "landscape",
+          "behavioral"
+        ],
+        "focus_scores": {
+          "static": 9,
+          "runtime": 4,
+          "behavioral": 1,
+          "landscape": 2
+        },
+        "score": 95
+      },
+      {
+        "title": "Trace-Based Assurance Framework",
+        "ordinal": 129,
+        "url": "https://arxiv.org/abs/2603.18096",
+        "layer": "Layer 1/2",
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "runtime",
+          "behavioral",
+          "landscape"
+        ],
+        "focus_scores": {
+          "static": 8,
+          "runtime": 6,
+          "behavioral": 3,
+          "landscape": 2
+        },
+        "score": 85
+      },
+      {
+        "title": "GitHub Spec Kit / SDD (Specification-Driven Development)",
+        "ordinal": 139,
+        "url": "https://github.com/topics/skill-md",
+        "layer": "Layer 3",
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "landscape"
+        ],
+        "focus_scores": {
+          "static": 8,
+          "runtime": 0,
+          "behavioral": 0,
+          "landscape": 4
+        },
+        "score": 85
+      },
+      {
+        "title": "Web Skills Protocol (WSP)",
+        "ordinal": 140,
+        "url": "https://github.com/openclaw/skills/blob/main/skills/0xtresser/web-skills-protocol/SPEC.md",
+        "layer": "Layer 0/1",
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "landscape",
+          "runtime"
+        ],
+        "focus_scores": {
+          "static": 7,
+          "runtime": 3,
+          "behavioral": 0,
+          "landscape": 3
+        },
+        "score": 75
+      },
+      {
+        "title": "SentinelAgent",
+        "ordinal": 134,
+        "url": "https://arxiv.org/abs/2604.02767",
+        "layer": "Layer 1",
+        "primary_focus": "runtime",
+        "secondary_focuses": [
+          "static",
+          "landscape",
+          "behavioral"
+        ],
+        "focus_scores": {
+          "static": 7,
+          "runtime": 7,
+          "behavioral": 1,
+          "landscape": 2
+        },
+        "score": 70
+      }
+    ]
+  },
+  "answer": {
+    "question": "which papers are about static checking of agent interactions?",
+    "mode": "static",
+    "query_tokens": [
+      "about",
+      "agent",
+      "check",
+      "interaction",
+      "static"
+    ],
+    "positive_tokens": [
+      "about",
+      "agent",
+      "check",
+      "interaction",
+      "static"
+    ],
+    "negative_tokens": [],
+    "results": [
+      {
+        "title": "Skilldex",
+        "ordinal": 4,
+        "url": "https://arxiv.org/abs/2604.16911",
+        "layer": "**Layer 0 \u2014 Spec-Level Governance**",
+        "solution": null,
+        "score": 55.4781,
+        "match_type": "direct",
+        "support_count": 2,
+        "positive_hits": 2,
+        "negative_hits": 0,
+        "focus_scores": {
+          "static": 10,
+          "runtime": 2,
+          "behavioral": 0,
+          "landscape": 1
+        },
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "runtime",
+          "landscape"
+        ],
+        "top_passages": [
+          {
+            "field": "paper_summary",
+            "score": 9.0224,
+            "matched_terms": [
+              "agent",
+              "check"
+            ],
+            "text": "Skilldex\nLarge Language Model (LLM) agents are increasingly extended at runtime via skill packages, structured natural-language instruction bundles loaded from a well-known directory. Community install tooling and registries exist, but two gaps persist: no public tool scores skill packages against Anthropic's published format specification, and no mechanism bundles related skills with the shared context they need to remain mutually coherent. We present Skilldex, a package manager and registry for agent skill packages addressing both gaps. The two novel contributions are: (1) a validation engine that checks skill packages against the Anthropic skill format spec, scoring completeness, consistency, and schema compliance; and (2) a dependency resolution system that bundles related skills with shared context, ensuring mutual coherence. Skilldex has been validated against 200+ community skill packages, identifying format violations in 34% of packages and coherence issues in 28% of bundles.\nThis is the foundational Layer 0 (Spec-Level) tool. It validates whether skill markdown files are well-formed, complete, and coherent with other skills. Without this, you can't trust any skill package.\nSkilldex is the **first tool that validates skill packages against a formal specification**. It found that 34% of community skill packages have format violations \u2014 this is exactly the validation gap we need to close for Layer 0 governance. The dependency resolution for mutual coherence is also critical for preventing skill conflicts.\nThe paper provides both a tool (Skilldex) and data (34% violation rate) that proves spec validation is non-negotiable. If one-third of skill packages are malformed, runtime governance is building on sand.\n**Layer 0 \u2014 Spec-Level Governance**"
+          },
+          {
+            "field": "abstract",
+            "score": 8.0557,
+            "matched_terms": [
+              "agent",
+              "check"
+            ],
+            "text": "Large Language Model (LLM) agents are increasingly extended at runtime via skill packages, structured natural-language instruction bundles loaded from a well-known directory. Community install tooling and registries exist, but two gaps persist: no public tool scores skill packages against Anthropic's published format specification, and no mechanism bundles related skills with the shared context they need to remain mutually coherent. We present Skilldex, a package manager and registry for agent skill packages addressing both gaps. The two novel contributions are: (1) a validation engine that checks skill packages against the Anthropic skill format spec, scoring completeness, consistency, and schema compliance; and (2) a dependency resolution system that bundles related skills with shared context, ensuring mutual coherence. Skilldex has been validated against 200+ community skill packages, identifying format violations in 34% of packages and coherence issues in 28% of bundles."
+          }
+        ]
+      },
+      {
+        "title": "GovernSpec / Contractual Skills",
+        "ordinal": 5,
+        "url": "https://arxiv.org/abs/2605.22634",
+        "layer": "**Layer 0 \u2014 Spec-Level Governance** (with runtime enforcement hooks into Layer 1)",
+        "solution": null,
+        "score": 40.4039,
+        "match_type": "direct",
+        "support_count": 2,
+        "positive_hits": 1,
+        "negative_hits": 0,
+        "focus_scores": {
+          "static": 10,
+          "runtime": 4,
+          "behavioral": 1,
+          "landscape": 2
+        },
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "runtime",
+          "landscape",
+          "behavioral"
+        ],
+        "top_passages": [
+          {
+            "field": "paper_summary",
+            "score": 2.2209,
+            "matched_terms": [
+              "agent"
+            ],
+            "text": "GovernSpec / Contractual Skills\nSkills are increasingly used to package agent instructions, workflows, scripts, and reference materials. In enterprise settings, however, skills often need to express more than task guidance: they must make goals, input boundaries, permissions, evidence requirements, output contracts, quality criteria, verification steps, human approval points, and handoff rules inspectable. This paper proposes contractual skills, a GovernSpec-inspired design framework for organizing SKILL.md files as readable task contracts while preserving lightweight skill discovery. The framework introduces a declarative schema with 12 contract sections, a validation engine, and a runtime policy interpreter that enforces contracts during execution. We demonstrate that contractual skills reduce policy violation rates by 67% compared to unconstrained skill execution, while maintaining task completion rates within 5% of baseline.\nThis is the apex of Layer 0 (Spec-Level Governance). It defines what a \"well-specified skill\" actually means \u2014 not just a task description, but a complete contract with enforceable boundaries.\nGovernSpec is the **most comprehensive framework for making skills self-describing and self-enforcing**. It transforms SKILL.md from a task description into a **legal contract** with 12 sections covering goals, boundaries, permissions, evidence, outputs, quality, verification, approval, and handoffs. The 67% reduction in policy violations is the proof that specification-level governance works.\nThe paper provides the missing link between \"write a good skill\" and \"write a safe skill.\" The 12 contract sections (goals, boundaries, permissions, evidence, outputs, quality, verification, approval, handoffs) are the governance primitives we've been missing.\n**Layer 0 \u2014 Spec-Level Governance** (with runtime enforcement hooks into Layer 1)"
+          },
+          {
+            "field": "abstract",
+            "score": 1.983,
+            "matched_terms": [
+              "agent"
+            ],
+            "text": "Skills are increasingly used to package agent instructions, workflows, scripts, and reference materials. In enterprise settings, however, skills often need to express more than task guidance: they must make goals, input boundaries, permissions, evidence requirements, output contracts, quality criteria, verification steps, human approval points, and handoff rules inspectable. This paper proposes contractual skills, a GovernSpec-inspired design framework for organizing SKILL.md files as readable task contracts while preserving lightweight skill discovery. The framework introduces a declarative schema with 12 contract sections, a validation engine, and a runtime policy interpreter that enforces contracts during execution. We demonstrate that contractual skills reduce policy violation rates by 67% compared to unconstrained skill execution, while maintaining task completion rates within 5% of baseline."
+          }
+        ]
+      },
+      {
+        "title": "SkCC",
+        "ordinal": 125,
+        "url": "https://arxiv.org/abs/2605.03353",
+        "layer": "Layer 1/2",
+        "solution": "Yes",
+        "score": 51.1219,
+        "match_type": "direct",
+        "support_count": 2,
+        "positive_hits": 2,
+        "negative_hits": 0,
+        "focus_scores": {
+          "static": 9,
+          "runtime": 4,
+          "behavioral": 1,
+          "landscape": 2
+        },
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "runtime",
+          "landscape",
+          "behavioral"
+        ],
+        "top_passages": [
+          {
+            "field": "paper_summary",
+            "score": 8.3059,
+            "matched_terms": [
+              "agent",
+              "static"
+            ],
+            "text": "SkCC\nPortable and Secure Skill Compilation for Cross-Framework LLM Agents. May 5, 2026. Introduces SkIR, a strongly-typed intermediate representation that decouples skill semantics from framework-specific formatting. Static optimizer enforces security constraints, blocking vulnerabilities before deployment. Reduces adaptation complexity from O(m\u00d7n) to O(m+n). 94.8% proactive security trigger rate.\nDirectly addresses SKILL.md portability and security across frameworks. This is the skill compilation/validation infrastructure we need.\nLayer 1/2"
+          },
+          {
+            "field": "abstract",
+            "score": 7.416,
+            "matched_terms": [
+              "agent",
+              "static"
+            ],
+            "text": "Portable and Secure Skill Compilation for Cross-Framework LLM Agents. May 5, 2026. Introduces SkIR, a strongly-typed intermediate representation that decouples skill semantics from framework-specific formatting. Static optimizer enforces security constraints, blocking vulnerabilities before deployment. Reduces adaptation complexity from O(m\u00d7n) to O(m+n). 94.8% proactive security trigger rate."
+          }
+        ]
+      },
+      {
+        "title": "OWASP Top 10 for Agentic Skills (AST10)",
+        "ordinal": 11,
+        "url": "https://owasp.org/www-project-agentic-skills-top-10/",
+        "layer": "**Layer 0 \u2014 Spec-Level Governance** (with Layer 1 hooks for isolation and sandboxing)",
+        "solution": null,
+        "score": 44.8119,
+        "match_type": "direct",
+        "support_count": 3,
+        "positive_hits": 1,
+        "negative_hits": 0,
+        "focus_scores": {
+          "static": 9,
+          "runtime": 3,
+          "behavioral": 0,
+          "landscape": 3
+        },
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "landscape",
+          "runtime"
+        ],
+        "top_passages": [
+          {
+            "field": "paper_summary",
+            "score": 5.2998,
+            "matched_terms": [
+              "agent"
+            ],
+            "text": "OWASP Top 10 for Agentic Skills (AST10)\nThe OWASP Agentic Skills Top 10 (AST10) documents the 10 most critical security risks in agentic AI skills across all major AI agent platforms. Skills represent the execution layer giving agents real-world impact through platform-specific metadata + scripts. The 10 risks are: AST01 Malicious Skills, AST02 Supply Chain Compromise, AST03 Over-Privileged Skills, AST04 Insecure Metadata, AST05 Unsafe Deserialization, AST06 Weak Isolation, AST07 Update Drift, AST08 Poor Scanning, AST09 No Governance, and AST10 Cross-Platform Reuse. Each risk includes platform-specific attack scenarios (OpenClaw SKILL.md, Claude Code skill.json, Cursor manifest.json, VS Code package.json), preventive mitigations, OWASP/NIST/CVE mappings, and real-world evidence citations. The project also proposes a Universal Skill Format \u2014 a YAML standard normalizing security properties across all platforms.\nAST10 maps directly to Layer 0 (Spec-Level Governance). It defines the security properties that every skill specification must have: least-privilege manifests, schema validation, signing, provenance tracking, and governance metadata. The Universal Skill Format proposal is the cross-platform standard that could unify OpenClaw, Claude Code, and Cursor skill formats under one security schema.\nAST10 is the **first security framework focused specifically on agent skills as an attack surface**. While OWASP Agentic Applications (ASI) covers model-layer risks, AST10 covers the skill content layer \u2014 the reusable, named behaviors that encode complete workflows. Real-world evidence is already severe: 36% of AI agent skills contain security flaws (Snyk ToxicSkills), the ClawHub registry was poisoned at scale, and 135,000+ OpenClaw instances are publicly exposed. This is the framework that defines what \"secure skill authoring\" means.\nThe ClawHub poisoning incident and 36% vulnerability rate prove that skills are not just documentation \u2014 they're executable code with real attack surface. AST10 is the first framework to treat them with the security rigor they deserve.\n**Layer 0 \u2014 Spec-Level Governance** (with Layer 1 hooks for isolation and sandboxing)"
+          },
+          {
+            "field": "abstract",
+            "score": 3.3575,
+            "matched_terms": [
+              "agent"
+            ],
+            "text": "The OWASP Agentic Skills Top 10 (AST10) documents the 10 most critical security risks in agentic AI skills across all major AI agent platforms. Skills represent the execution layer giving agents real-world impact through platform-specific metadata + scripts. The 10 risks are: AST01 Malicious Skills, AST02 Supply Chain Compromise, AST03 Over-Privileged Skills, AST04 Insecure Metadata, AST05 Unsafe Deserialization, AST06 Weak Isolation, AST07 Update Drift, AST08 Poor Scanning, AST09 No Governance, and AST10 Cross-Platform Reuse. Each risk includes platform-specific attack scenarios (OpenClaw SKILL.md, Claude Code skill.json, Cursor manifest.json, VS Code package.json), preventive mitigations, OWASP/NIST/CVE mappings, and real-world evidence citations. The project also proposes a Universal Skill Format \u2014 a YAML standard normalizing security properties across all platforms."
+          },
+          {
+            "field": "why_recommend",
+            "score": 2.9546,
+            "matched_terms": [
+              "agent"
+            ],
+            "text": "AST10 is the **first security framework focused specifically on agent skills as an attack surface**. While OWASP Agentic Applications (ASI) covers model-layer risks, AST10 covers the skill content layer \u2014 the reusable, named behaviors that encode complete workflows. Real-world evidence is already severe: 36% of AI agent skills contain security flaws (Snyk ToxicSkills), the ClawHub registry was poisoned at scale, and 135,000+ OpenClaw instances are publicly exposed. This is the framework that defines what \"secure skill authoring\" means."
+          }
+        ]
+      },
+      {
+        "title": "GitHub Spec Kit / SDD (Specification-Driven Development)",
+        "ordinal": 139,
+        "url": "https://github.com/topics/skill-md",
+        "layer": "Layer 3",
+        "solution": "Yes",
+        "score": 34.5625,
+        "match_type": "direct",
+        "support_count": 2,
+        "positive_hits": 1,
+        "negative_hits": 0,
+        "focus_scores": {
+          "static": 8,
+          "runtime": 0,
+          "behavioral": 0,
+          "landscape": 4
+        },
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "landscape"
+        ],
+        "top_passages": [
+          {
+            "field": "paper_summary",
+            "score": 2.2209,
+            "matched_terms": [
+              "agent"
+            ],
+            "text": "GitHub Spec Kit / SDD (Specification-Driven Development)\nGitHub's movement promoting `.spec.md` files as governance artifacts. 2026-07-01 article. Specification as first-class artifact, version-controlled, machine-readable.\nThe SDD philosophy aligns with our spec/skill/agent markdown governance approach: specs as enforceable contracts.\nLayer 3"
+          },
+          {
+            "field": "relevance",
+            "score": 2.1416,
+            "matched_terms": [
+              "agent"
+            ],
+            "text": "The SDD philosophy aligns with our spec/skill/agent markdown governance approach: specs as enforceable contracts."
+          }
+        ]
+      },
+      {
+        "title": "Trace-Based Assurance Framework",
+        "ordinal": 129,
+        "url": "https://arxiv.org/abs/2603.18096",
+        "layer": "Layer 1/2",
+        "solution": "Yes",
+        "score": 28.0,
+        "match_type": "direct",
+        "support_count": 0,
+        "positive_hits": 0,
+        "negative_hits": 0,
+        "focus_scores": {
+          "static": 8,
+          "runtime": 6,
+          "behavioral": 3,
+          "landscape": 2
+        },
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "runtime",
+          "behavioral",
+          "landscape"
+        ],
+        "top_passages": []
+      },
+      {
+        "title": "Web Skills Protocol (WSP)",
+        "ordinal": 140,
+        "url": "https://github.com/openclaw/skills/blob/main/skills/0xtresser/web-skills-protocol/SPEC.md",
+        "layer": "Layer 0/1",
+        "solution": "Yes",
+        "score": 31.5625,
+        "match_type": "direct",
+        "support_count": 2,
+        "positive_hits": 1,
+        "negative_hits": 0,
+        "focus_scores": {
+          "static": 7,
+          "runtime": 3,
+          "behavioral": 0,
+          "landscape": 3
+        },
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "landscape",
+          "runtime"
+        ],
+        "top_passages": [
+          {
+            "field": "paper_summary",
+            "score": 2.2209,
+            "matched_terms": [
+              "agent"
+            ],
+            "text": "Web Skills Protocol (WSP)\n0xtresser / OpenClaw. Specification v0.1 (March 2026). Web discovery layer for skills.txt/agents.txt. Complements robots.txt (access control) and llms.txt (content reading) with capabilities for action.\nDiscovery and validation protocol for web-published skills. Standardizes how sites publish agent capabilities.\nLayer 0/1"
+          },
+          {
+            "field": "relevance",
+            "score": 2.1416,
+            "matched_terms": [
+              "agent"
+            ],
+            "text": "Discovery and validation protocol for web-published skills. Standardizes how sites publish agent capabilities."
+          }
+        ]
+      },
+      {
+        "title": "SentinelAgent",
+        "ordinal": 134,
+        "url": "https://arxiv.org/abs/2604.02767",
+        "layer": "Layer 1",
+        "solution": "Yes",
+        "score": 27.5625,
+        "match_type": "direct",
+        "support_count": 2,
+        "positive_hits": 1,
+        "negative_hits": 0,
+        "focus_scores": {
+          "static": 7,
+          "runtime": 7,
+          "behavioral": 1,
+          "landscape": 2
+        },
+        "primary_focus": "runtime",
+        "secondary_focuses": [
+          "static",
+          "landscape",
+          "behavioral"
+        ],
+        "top_passages": [
+          {
+            "field": "paper_summary",
+            "score": 2.2209,
+            "matched_terms": [
+              "agent"
+            ],
+            "text": "SentinelAgent\nSentinelAgent: Intent-Verified Delegation Chains for Securing Federal Multi-Agent AI Systems. Apr 3, 2026. Delegation Chain Calculus (DCC) with seven properties (authority narrowing, policy preservation, forensic reconstructibility, cascade containment, scope-action conformance, output schema conformance, intent preservation). 100% TPR at 0% FPR on DelegationBench v4 (516 scenarios, 10 attack categories). TLA+ verified across 2.7 million states.\nFormal verification of delegation chains. The properties (P1-P7) are exactly the kind of verifiable guarantees we need for skill/agent governance.\nLayer 1"
+          },
+          {
+            "field": "relevance",
+            "score": 2.1416,
+            "matched_terms": [
+              "agent"
+            ],
+            "text": "Formal verification of delegation chains. The properties (P1-P7) are exactly the kind of verifiable guarantees we need for skill/agent governance."
+          }
+        ]
+      }
+    ]
+  }
+}
