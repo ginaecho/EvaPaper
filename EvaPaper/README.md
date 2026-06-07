@@ -215,6 +215,21 @@ Default behavior:
   - cost = `0`
   - note says the run used default local accounting
 
+Daily summary:
+
+```bash
+make costs
+python3 scripts/daily_cost_summary.py --date 2026-06-07
+```
+
+This reads the `## Workflow Run Log` section in `AI_Agent_Governance_Three_Layer_Stack_and_Papers.md` and totals:
+
+- runs
+- input tokens
+- output tokens
+- total tokens
+- total recorded USD cost
+
 ---
 
 *Last updated: 2026-05-31*  

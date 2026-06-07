@@ -8,7 +8,7 @@ OUTPUT_TOKENS ?=
 COST_USD ?=
 COST_NOTE ?=
 
-.PHONY: help index scout scout-json sota sota-static sota-runtime sota-behavioral sota-all ask ask-static ask-runtime ask-behavioral team team-static team-runtime team-behavioral team-all workflow-static workflow-runtime workflow-behavioral workflow-all docs
+.PHONY: help index scout scout-json sota sota-static sota-runtime sota-behavioral sota-all ask ask-static ask-runtime ask-behavioral team team-static team-runtime team-behavioral team-all workflow-static workflow-runtime workflow-behavioral workflow-all costs docs
 
 help:
 	@printf "%s\n" \
@@ -19,6 +19,7 @@ help:
 	"  make ask MODE=static QUESTION='...'        Map a question to papers with evidence" \
 	"  make team MODE=static QUERY='...'          Run the generic agent-team workflow" \
 	"  make workflow-static                       Run index + static team + static question mapping" \
+	"  make costs                                 Summarize daily workflow token/cost totals" \
 	"  make docs                                  Regenerate DOCX/PPTX artifacts" \
 	"" \
 	"Shortcuts:" \
@@ -93,6 +94,9 @@ workflow-behavioral:
 workflow-all:
 	$(MAKE) index
 	$(MAKE) team MODE=all
+
+costs:
+	$(PYTHON) scripts/daily_cost_summary.py
 
 docs:
 	$(PYTHON) generate_governance_docs.py
