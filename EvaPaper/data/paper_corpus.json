@@ -1,7 +1,7 @@
 {
   "report_path": "/Users/tzu-chunchen/Documents/AI/EvaPaper/AI_Agent_Governance_Three_Layer_Stack_and_Papers.md",
   "scout_log_path": "/Users/tzu-chunchen/Documents/AI/EvaPaper/memory/agent_governance_scout_log.md",
-  "paper_count": 42,
+  "paper_count": 70,
   "papers": [
     {
       "ordinal": 1,
@@ -1716,6 +1716,1030 @@
         {
           "field": "relevance",
           "text": "Gamified security evaluation. CTFs produce reusable test cases and benchmark data."
+        }
+      ]
+    },
+    {
+      "ordinal": 143,
+      "title": "Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents",
+      "url": "https://arxiv.org/abs/2605.16282",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2/3",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 2,
+        "landscape": 1
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "landscape"
+      ],
+      "fields": {
+        "abstract": "Apr 11, 2026. First systematic analysis of 40 behavioral agent-safety benchmarks (2023\u20132026). Six-axis taxonomy. Coverage matrix reveals no ranking concordance (Kendall's W = 0.10, p = 0.94). Benchmark choice can yield contradictory safety conclusions.",
+        "relevance": "Essential meta-evaluation: tells us which benchmarks to trust and why current safety conclusions may be inconsistent."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents\nApr 11, 2026. First systematic analysis of 40 behavioral agent-safety benchmarks (2023\u20132026). Six-axis taxonomy. Coverage matrix reveals no ranking concordance (Kendall's W = 0.10, p = 0.94). Benchmark choice can yield contradictory safety conclusions.\nEssential meta-evaluation: tells us which benchmarks to trust and why current safety conclusions may be inconsistent.\nLayer 2/3"
+        },
+        {
+          "field": "abstract",
+          "text": "Apr 11, 2026. First systematic analysis of 40 behavioral agent-safety benchmarks (2023\u20132026). Six-axis taxonomy. Coverage matrix reveals no ranking concordance (Kendall's W = 0.10, p = 0.94). Benchmark choice can yield contradictory safety conclusions."
+        },
+        {
+          "field": "relevance",
+          "text": "Essential meta-evaluation: tells us which benchmarks to trust and why current safety conclusions may be inconsistent."
+        }
+      ]
+    },
+    {
+      "ordinal": 144,
+      "title": "Governance by Construction for Generalist Agents / CUGA",
+      "url": "https://arxiv.org/abs/2605.20874",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1/2",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 1,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [
+        "static"
+      ],
+      "fields": {
+        "abstract": "May 20, 2026. IBM Research. Policy-as-code layer composing with generalist LLM agents. Five structural checkpoints: Intent Guard, Playbook, Tool Guide, Tool Approvals, Output Formatter. Runtime governance architecture embedding interventions continuously.",
+        "relevance": "Direct implementation of \"governance by construction\" rather than governance as afterthought. Enterprise healthcare demo included."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Governance by Construction for Generalist Agents / CUGA\nMay 20, 2026. IBM Research. Policy-as-code layer composing with generalist LLM agents. Five structural checkpoints: Intent Guard, Playbook, Tool Guide, Tool Approvals, Output Formatter. Runtime governance architecture embedding interventions continuously.\nDirect implementation of \"governance by construction\" rather than governance as afterthought. Enterprise healthcare demo included.\nLayer 1/2"
+        },
+        {
+          "field": "abstract",
+          "text": "May 20, 2026. IBM Research. Policy-as-code layer composing with generalist LLM agents. Five structural checkpoints: Intent Guard, Playbook, Tool Guide, Tool Approvals, Output Formatter. Runtime governance architecture embedding interventions continuously."
+        },
+        {
+          "field": "relevance",
+          "text": "Direct implementation of \"governance by construction\" rather than governance as afterthought. Enterprise healthcare demo included."
+        }
+      ]
+    },
+    {
+      "ordinal": 145,
+      "title": "Agent Behavioral Contracts (ABC)",
+      "url": "https://arxiv.org/abs/2602.22302",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1/2",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 2,
+        "runtime": 1,
+        "behavioral": 1,
+        "landscape": 1
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [
+        "behavioral",
+        "landscape",
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "Feb 25, 2026. Formal framework bringing Design-by-Contract to autonomous AI agents. Contract C = (P, I, G, R): Preconditions, Invariants, Governance policies, Recovery. (p, delta, k)-satisfaction for probabilistic compliance. Drift Bounds Theorem: contracts with recovery rate gamma > alpha bound drift to D* = alpha/gamma. AgentAssert runtime enforcement library. 200 scenarios, 1,980 sessions, 7 models.",
+        "relevance": "The formal specification and runtime enforcement mechanism we need. Directly addresses \"how to verify if specs are well defined\" via probabilistic contract compliance."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Agent Behavioral Contracts (ABC)\nFeb 25, 2026. Formal framework bringing Design-by-Contract to autonomous AI agents. Contract C = (P, I, G, R): Preconditions, Invariants, Governance policies, Recovery. (p, delta, k)-satisfaction for probabilistic compliance. Drift Bounds Theorem: contracts with recovery rate gamma > alpha bound drift to D* = alpha/gamma. AgentAssert runtime enforcement library. 200 scenarios, 1,980 sessions, 7 models.\nThe formal specification and runtime enforcement mechanism we need. Directly addresses \"how to verify if specs are well defined\" via probabilistic contract compliance.\nLayer 1/2"
+        },
+        {
+          "field": "abstract",
+          "text": "Feb 25, 2026. Formal framework bringing Design-by-Contract to autonomous AI agents. Contract C = (P, I, G, R): Preconditions, Invariants, Governance policies, Recovery. (p, delta, k)-satisfaction for probabilistic compliance. Drift Bounds Theorem: contracts with recovery rate gamma > alpha bound drift to D* = alpha/gamma. AgentAssert runtime enforcement library. 200 scenarios, 1,980 sessions, 7 models."
+        },
+        {
+          "field": "relevance",
+          "text": "The formal specification and runtime enforcement mechanism we need. Directly addresses \"how to verify if specs are well defined\" via probabilistic contract compliance."
+        }
+      ]
+    },
+    {
+      "ordinal": 146,
+      "title": "AgentVerify** (preprints.org, DOI: 10.20944/preprints202604.1029.v1) \u2014 Apr 14, 2026. Compositional formal verification of AI agent safety properties via LTL model checking. 23 temporal logic templates for memory integrity, tool call protocols, MCP/skill invocations, human-in-the-loop boundaries. Hybrid architecture: O(1) runtime monitor + post-hoc Kripke-structure analyser. 86.67% verification accuracy vs 80% contract baseline, 46.67% runtime baseline, 13.33% neural verifier. URL: https://www.preprints.org/manuscript/202604.1029/v1 \u2014 **Layer 1/2",
+      "url": null,
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 2,
+        "runtime": 2,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [
+        "static"
+      ],
+      "fields": {
+        "abstract": "Formal verification for agent observable control flow. Proves that compositional model checking is tractable for production agents."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "AgentVerify** (preprints.org, DOI: 10.20944/preprints202604.1029.v1) \u2014 Apr 14, 2026. Compositional formal verification of AI agent safety properties via LTL model checking. 23 temporal logic templates for memory integrity, tool call protocols, MCP/skill invocations, human-in-the-loop boundaries. Hybrid architecture: O(1) runtime monitor + post-hoc Kripke-structure analyser. 86.67% verification accuracy vs 80% contract baseline, 46.67% runtime baseline, 13.33% neural verifier. URL: https://www.preprints.org/manuscript/202604.1029/v1 \u2014 **Layer 1/2\nFormal verification for agent observable control flow. Proves that compositional model checking is tractable for production agents."
+        },
+        {
+          "field": "abstract",
+          "text": "Formal verification for agent observable control flow. Proves that compositional model checking is tractable for production agents."
+        }
+      ]
+    },
+    {
+      "ordinal": 147,
+      "title": "SkillFortify",
+      "url": "https://arxiv.org/abs/2603.00195",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 0/1",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 2,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [
+        "landscape",
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "Feb 27, 2026. First formal analysis framework for agent skill supply chain security. DY-Skill attacker model (Dolev-Yao adapted to five-phase skill lifecycle). Sound static analysis via abstract interpretation. Capability-based sandboxing with confinement proof. Agent Dependency Graph with SAT-based resolution. F1=96.95%, 0% false positive rate on 540 skills. GitHub: https://github.com/varun369/skillfortify.",
+        "relevance": "Directly validates SKILL.md security with formal guarantees, not heuristics. The skill supply chain validation tool we need."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "SkillFortify\nFeb 27, 2026. First formal analysis framework for agent skill supply chain security. DY-Skill attacker model (Dolev-Yao adapted to five-phase skill lifecycle). Sound static analysis via abstract interpretation. Capability-based sandboxing with confinement proof. Agent Dependency Graph with SAT-based resolution. F1=96.95%, 0% false positive rate on 540 skills. GitHub: https://github.com/varun369/skillfortify.\nDirectly validates SKILL.md security with formal guarantees, not heuristics. The skill supply chain validation tool we need.\nLayer 0/1"
+        },
+        {
+          "field": "abstract",
+          "text": "Feb 27, 2026. First formal analysis framework for agent skill supply chain security. DY-Skill attacker model (Dolev-Yao adapted to five-phase skill lifecycle). Sound static analysis via abstract interpretation. Capability-based sandboxing with confinement proof. Agent Dependency Graph with SAT-based resolution. F1=96.95%, 0% false positive rate on 540 skills. GitHub: https://github.com/varun369/skillfortify."
+        },
+        {
+          "field": "relevance",
+          "text": "Directly validates SKILL.md security with formal guarantees, not heuristics. The skill supply chain validation tool we need."
+        }
+      ]
+    },
+    {
+      "ordinal": 148,
+      "title": "AgentAssay",
+      "url": "https://arxiv.org/abs/2603.02601",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 1,
+        "landscape": 1
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "landscape"
+      ],
+      "fields": {
+        "abstract": "Mar 3, 2026. First token-efficient regression testing framework for non-deterministic AI agent workflows. Stochastic three-valued verdicts (PASS/FAIL/INCONCLUSIVE). Five-dimensional coverage metrics. Behavioral fingerprinting: 86% detection power where binary testing has 0%. SPRT reduces trials by 78%. Trace-first offline analysis = 100% cost savings. GitHub: https://github.com/qualixar/agentassay.",
+        "relevance": "Regression testing for agent behavior changes. Critical for CI/CD governance: ensures skill/agent updates don't break safety properties."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "AgentAssay\nMar 3, 2026. First token-efficient regression testing framework for non-deterministic AI agent workflows. Stochastic three-valued verdicts (PASS/FAIL/INCONCLUSIVE). Five-dimensional coverage metrics. Behavioral fingerprinting: 86% detection power where binary testing has 0%. SPRT reduces trials by 78%. Trace-first offline analysis = 100% cost savings. GitHub: https://github.com/qualixar/agentassay.\nRegression testing for agent behavior changes. Critical for CI/CD governance: ensures skill/agent updates don't break safety properties.\nLayer 2"
+        },
+        {
+          "field": "abstract",
+          "text": "Mar 3, 2026. First token-efficient regression testing framework for non-deterministic AI agent workflows. Stochastic three-valued verdicts (PASS/FAIL/INCONCLUSIVE). Five-dimensional coverage metrics. Behavioral fingerprinting: 86% detection power where binary testing has 0%. SPRT reduces trials by 78%. Trace-first offline analysis = 100% cost savings. GitHub: https://github.com/qualixar/agentassay."
+        },
+        {
+          "field": "relevance",
+          "text": "Regression testing for agent behavior changes. Critical for CI/CD governance: ensures skill/agent updates don't break safety properties."
+        }
+      ]
+    },
+    {
+      "ordinal": 149,
+      "title": "A Comprehensive Survey on Agent Skills",
+      "url": "https://arxiv.org/abs/2605.07358",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 0/1/2/3",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "May 8, 2026. Survey of agent skills lifecycle: representation, acquisition, retrieval, evolution. OpenClaw and Claude Code as exemplars. Four stages with methods, ecosystem resources, applications. Quality control, interoperability, safe updating, long-term capability management as open challenges.",
+        "relevance": "The definitive survey of the skill ecosystem. Organizes the entire research landscape we operate in."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "A Comprehensive Survey on Agent Skills\nMay 8, 2026. Survey of agent skills lifecycle: representation, acquisition, retrieval, evolution. OpenClaw and Claude Code as exemplars. Four stages with methods, ecosystem resources, applications. Quality control, interoperability, safe updating, long-term capability management as open challenges.\nThe definitive survey of the skill ecosystem. Organizes the entire research landscape we operate in.\nLayer 0/1/2/3"
+        },
+        {
+          "field": "abstract",
+          "text": "May 8, 2026. Survey of agent skills lifecycle: representation, acquisition, retrieval, evolution. OpenClaw and Claude Code as exemplars. Four stages with methods, ecosystem resources, applications. Quality control, interoperability, safe updating, long-term capability management as open challenges."
+        },
+        {
+          "field": "relevance",
+          "text": "The definitive survey of the skill ecosystem. Organizes the entire research landscape we operate in."
+        }
+      ]
+    },
+    {
+      "ordinal": 150,
+      "title": "Machine Identity Governance Taxonomy (MIGT)** / \"Who Governs the Machine?\" \u2014 Apr 7, 2026. Cloud Security Alliance. AI-Identity Risk Taxonomy: 37 risk sub-categories across 8 domains. Six-domain MIGT framework addressing technical governance gap, regulatory compliance gap, cross-jurisdictional coordination gap. Foreign state actor threat model (Silk Typhoon, Salt Typhoon, Volt Typhoon). Skill-level attestation as runtime admission control mechanism. URL: https://arxiv.org/abs/2604.06148 \u2014 **Layer 1/3",
+      "url": null,
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 3
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "Machine identity is the foundation of agent governance. Without governed machine identities, no accountability chain exists. Skill-level attestation proposal directly relevant."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Machine Identity Governance Taxonomy (MIGT)** / \"Who Governs the Machine?\" \u2014 Apr 7, 2026. Cloud Security Alliance. AI-Identity Risk Taxonomy: 37 risk sub-categories across 8 domains. Six-domain MIGT framework addressing technical governance gap, regulatory compliance gap, cross-jurisdictional coordination gap. Foreign state actor threat model (Silk Typhoon, Salt Typhoon, Volt Typhoon). Skill-level attestation as runtime admission control mechanism. URL: https://arxiv.org/abs/2604.06148 \u2014 **Layer 1/3\nMachine identity is the foundation of agent governance. Without governed machine identities, no accountability chain exists. Skill-level attestation proposal directly relevant."
+        },
+        {
+          "field": "abstract",
+          "text": "Machine identity is the foundation of agent governance. Without governed machine identities, no accountability chain exists. Skill-level attestation proposal directly relevant."
+        }
+      ]
+    },
+    {
+      "ordinal": 151,
+      "title": "Admission Control for Agent Actions (ACP)",
+      "url": "https://arxiv.org/abs/2603.18829",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 1,
+        "runtime": 1,
+        "behavioral": 1,
+        "landscape": 0
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "runtime",
+        "static"
+      ],
+      "fields": {
+        "abstract": "Apr 30, 2026. Temporal admission control protocol enforcing behavioral properties over execution traces. Static risk scoring + stateful signals (anomaly accumulation, cooldown) via LedgerQuerier. 500-request workload: stateless approves all 500; ACP limits autonomous execution to 2 (0.4%). Decision evaluation: 739-832 ns (p50); throughput 1,720,000 req/s. TLA+ verified across 4,294,930,695 states. Boundary Activation Rate (BAR) for deviation collapse detection. Paper 1 of 6-paper Agent Governance Series.",
+        "relevance": "Runtime admission control with formal verification. The performance (1.7M req/s) and formal verification make it production-viable."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Admission Control for Agent Actions (ACP)\nApr 30, 2026. Temporal admission control protocol enforcing behavioral properties over execution traces. Static risk scoring + stateful signals (anomaly accumulation, cooldown) via LedgerQuerier. 500-request workload: stateless approves all 500; ACP limits autonomous execution to 2 (0.4%). Decision evaluation: 739-832 ns (p50); throughput 1,720,000 req/s. TLA+ verified across 4,294,930,695 states. Boundary Activation Rate (BAR) for deviation collapse detection. Paper 1 of 6-paper Agent Governance Series.\nRuntime admission control with formal verification. The performance (1.7M req/s) and formal verification make it production-viable.\nLayer 1"
+        },
+        {
+          "field": "abstract",
+          "text": "Apr 30, 2026. Temporal admission control protocol enforcing behavioral properties over execution traces. Static risk scoring + stateful signals (anomaly accumulation, cooldown) via LedgerQuerier. 500-request workload: stateless approves all 500; ACP limits autonomous execution to 2 (0.4%). Decision evaluation: 739-832 ns (p50); throughput 1,720,000 req/s. TLA+ verified across 4,294,930,695 states. Boundary Activation Rate (BAR) for deviation collapse detection. Paper 1 of 6-paper Agent Governance Series."
+        },
+        {
+          "field": "relevance",
+          "text": "Runtime admission control with formal verification. The performance (1.7M req/s) and formal verification make it production-viable."
+        }
+      ]
+    },
+    {
+      "ordinal": 152,
+      "title": "A Unified Review of Memory, Skills, Protocols and Harness Engineering",
+      "url": "https://arxiv.org/abs/2604.08224",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1/2/3",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "Apr 9, 2026. Externalization framework: memory externalizes state, skills externalize procedural expertise, protocols externalize interaction structure, harness engineering coordinates them into governed execution. Historical progression from weights to context to harness. Self-evolving harnesses and shared agent infrastructure as emerging directions.",
+        "relevance": "Systems-level framework explaining why agent progress depends on externalized cognitive infrastructure. Skills as \"reusable procedural artifacts\" central to scalability and governance."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "A Unified Review of Memory, Skills, Protocols and Harness Engineering\nApr 9, 2026. Externalization framework: memory externalizes state, skills externalize procedural expertise, protocols externalize interaction structure, harness engineering coordinates them into governed execution. Historical progression from weights to context to harness. Self-evolving harnesses and shared agent infrastructure as emerging directions.\nSystems-level framework explaining why agent progress depends on externalized cognitive infrastructure. Skills as \"reusable procedural artifacts\" central to scalability and governance.\nLayer 1/2/3"
+        },
+        {
+          "field": "abstract",
+          "text": "Apr 9, 2026. Externalization framework: memory externalizes state, skills externalize procedural expertise, protocols externalize interaction structure, harness engineering coordinates them into governed execution. Historical progression from weights to context to harness. Self-evolving harnesses and shared agent infrastructure as emerging directions."
+        },
+        {
+          "field": "relevance",
+          "text": "Systems-level framework explaining why agent progress depends on externalized cognitive infrastructure. Skills as \"reusable procedural artifacts\" central to scalability and governance."
+        }
+      ]
+    },
+    {
+      "ordinal": 153,
+      "title": "AgentAssert",
+      "url": null,
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 2,
+        "runtime": 1,
+        "behavioral": 1,
+        "landscape": 0
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [
+        "behavioral",
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "Runtime enforcement library implementing ABC (Agent Behavioral Contracts). Detects 5.2-6.8 soft violations per session that uncontracted baselines miss. 88-100% hard constraint compliance. <10 ms overhead per action. Part of Qualixar suite.",
+        "relevance": "The runtime contract enforcement mechanism we need for skill/agent behavior validation."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "AgentAssert\nRuntime enforcement library implementing ABC (Agent Behavioral Contracts). Detects 5.2-6.8 soft violations per session that uncontracted baselines miss. 88-100% hard constraint compliance. <10 ms overhead per action. Part of Qualixar suite.\nThe runtime contract enforcement mechanism we need for skill/agent behavior validation.\nLayer 1"
+        },
+        {
+          "field": "abstract",
+          "text": "Runtime enforcement library implementing ABC (Agent Behavioral Contracts). Detects 5.2-6.8 soft violations per session that uncontracted baselines miss. 88-100% hard constraint compliance. <10 ms overhead per action. Part of Qualixar suite."
+        },
+        {
+          "field": "relevance",
+          "text": "The runtime contract enforcement mechanism we need for skill/agent behavior validation."
+        }
+      ]
+    },
+    {
+      "ordinal": 154,
+      "title": "SkillFortify (Open Source)",
+      "url": null,
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 0/1",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 1,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [
+        "static"
+      ],
+      "fields": {
+        "abstract": "pip install skillfortify. Formal verification framework for agent skill supply chains. 22 frameworks supported. SAT-based resolution, capability confinement, trust score algebra. MIT license. GitHub: https://github.com/varun369/skillfortify",
+        "relevance": "The formal skill validation tool. Replaces heuristic scanning with mathematical guarantees."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "SkillFortify (Open Source)\npip install skillfortify. Formal verification framework for agent skill supply chains. 22 frameworks supported. SAT-based resolution, capability confinement, trust score algebra. MIT license. GitHub: https://github.com/varun369/skillfortify\nThe formal skill validation tool. Replaces heuristic scanning with mathematical guarantees.\nLayer 0/1"
+        },
+        {
+          "field": "abstract",
+          "text": "pip install skillfortify. Formal verification framework for agent skill supply chains. 22 frameworks supported. SAT-based resolution, capability confinement, trust score algebra. MIT license. GitHub: https://github.com/varun369/skillfortify"
+        },
+        {
+          "field": "relevance",
+          "text": "The formal skill validation tool. Replaces heuristic scanning with mathematical guarantees."
+        }
+      ]
+    },
+    {
+      "ordinal": 155,
+      "title": "AgentAssay (Open Source)",
+      "url": null,
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 1,
+        "landscape": 1
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "landscape"
+      ],
+      "fields": {
+        "abstract": "pip install agentassay. Token-efficient stochastic testing for AI agents. pytest integration. 8 CLI commands. 10 framework adapters. MIT license. GitHub: https://github.com/qualixar/agentassay",
+        "relevance": "CI/CD regression testing for agent behavior. Ensures governance properties persist across updates."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "AgentAssay (Open Source)\npip install agentassay. Token-efficient stochastic testing for AI agents. pytest integration. 8 CLI commands. 10 framework adapters. MIT license. GitHub: https://github.com/qualixar/agentassay\nCI/CD regression testing for agent behavior. Ensures governance properties persist across updates.\nLayer 2"
+        },
+        {
+          "field": "abstract",
+          "text": "pip install agentassay. Token-efficient stochastic testing for AI agents. pytest integration. 8 CLI commands. 10 framework adapters. MIT license. GitHub: https://github.com/qualixar/agentassay"
+        },
+        {
+          "field": "relevance",
+          "text": "CI/CD regression testing for agent behavior. Ensures governance properties persist across updates."
+        }
+      ]
+    },
+    {
+      "ordinal": 156,
+      "title": "Agent Control Protocol (ACP)",
+      "url": "https://github.com/topics/agent-control-protocol",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "Reference implementation in Go. 38 documents, 23 packages, 138 conformance test vectors (73 signed + 65 unsigned). ACR-1.0 sequence compliance runner. Part of Agent Governance Series (6 papers).",
+        "relevance": "Production-ready admission control with formal verification backing."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Agent Control Protocol (ACP)\nReference implementation in Go. 38 documents, 23 packages, 138 conformance test vectors (73 signed + 65 unsigned). ACR-1.0 sequence compliance runner. Part of Agent Governance Series (6 papers).\nProduction-ready admission control with formal verification backing.\nLayer 1"
+        },
+        {
+          "field": "abstract",
+          "text": "Reference implementation in Go. 38 documents, 23 packages, 138 conformance test vectors (73 signed + 65 unsigned). ACR-1.0 sequence compliance runner. Part of Agent Governance Series (6 papers)."
+        },
+        {
+          "field": "relevance",
+          "text": "Production-ready admission control with formal verification backing."
+        }
+      ]
+    },
+    {
+      "ordinal": 157,
+      "title": "SkillsVote",
+      "url": null,
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 0/1",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "Skills engine for AI agents. Referenced in Comprehensive Survey.",
+        "relevance": "Skill routing and governance infrastructure."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "SkillsVote\nSkills engine for AI agents. Referenced in Comprehensive Survey.\nSkill routing and governance infrastructure.\nLayer 0/1"
+        },
+        {
+          "field": "abstract",
+          "text": "Skills engine for AI agents. Referenced in Comprehensive Survey."
+        },
+        {
+          "field": "relevance",
+          "text": "Skill routing and governance infrastructure."
+        }
+      ]
+    },
+    {
+      "ordinal": 158,
+      "title": "BIV / Behavioral Integrity Verification",
+      "url": "https://arxiv.org/abs/2605.11770",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 0",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 1,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "May 12, 2026. Sun Yat-sen University. Verifies whether skill descriptions match actual code behavior. 80.0% deviation rate across 1,200 skills. 34.3% severe violations.",
+        "relevance": "Directly addresses \"do skills do what they claim?\" Essential for marketplace validation."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "BIV / Behavioral Integrity Verification\nMay 12, 2026. Sun Yat-sen University. Verifies whether skill descriptions match actual code behavior. 80.0% deviation rate across 1,200 skills. 34.3% severe violations.\nDirectly addresses \"do skills do what they claim?\" Essential for marketplace validation.\nLayer 0"
+        },
+        {
+          "field": "abstract",
+          "text": "May 12, 2026. Sun Yat-sen University. Verifies whether skill descriptions match actual code behavior. 80.0% deviation rate across 1,200 skills. 34.3% severe violations."
+        },
+        {
+          "field": "relevance",
+          "text": "Directly addresses \"do skills do what they claim?\" Essential for marketplace validation."
+        }
+      ]
+    },
+    {
+      "ordinal": 159,
+      "title": "Runtime Governance / Policies on Paths",
+      "url": "https://arxiv.org/abs/2603.16586",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 1,
+        "landscape": 0
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "Mar 17, 2026. Jheronimus Academy of Data Science. Formalizes compliance policies as temporal predicates over execution paths. Path-based policies express separation of duties, data minimization, audit trails that per-step checks cannot capture. Polynomial-time evaluation.",
+        "relevance": "The missing formal foundation for temporal governance requirements."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Runtime Governance / Policies on Paths\nMar 17, 2026. Jheronimus Academy of Data Science. Formalizes compliance policies as temporal predicates over execution paths. Path-based policies express separation of duties, data minimization, audit trails that per-step checks cannot capture. Polynomial-time evaluation.\nThe missing formal foundation for temporal governance requirements.\nLayer 1"
+        },
+        {
+          "field": "abstract",
+          "text": "Mar 17, 2026. Jheronimus Academy of Data Science. Formalizes compliance policies as temporal predicates over execution paths. Path-based policies express separation of duties, data minimization, audit trails that per-step checks cannot capture. Polynomial-time evaluation."
+        },
+        {
+          "field": "relevance",
+          "text": "The missing formal foundation for temporal governance requirements."
+        }
+      ]
+    },
+    {
+      "ordinal": 160,
+      "title": "SSL Representation / Skill Text to Structure",
+      "url": "https://arxiv.org/abs/2604.24026",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 0",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "Apr 27, 2026. Scheduling-Structural-Logical representation for agent skills. 94% decomposition rate, 87% accuracy vs expert annotations. Machine-verifiable skill descriptions.",
+        "relevance": "Makes unstructured skill text governable by transforming into verifiable structures."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "SSL Representation / Skill Text to Structure\nApr 27, 2026. Scheduling-Structural-Logical representation for agent skills. 94% decomposition rate, 87% accuracy vs expert annotations. Machine-verifiable skill descriptions.\nMakes unstructured skill text governable by transforming into verifiable structures.\nLayer 0"
+        },
+        {
+          "field": "abstract",
+          "text": "Apr 27, 2026. Scheduling-Structural-Logical representation for agent skills. 94% decomposition rate, 87% accuracy vs expert annotations. Machine-verifiable skill descriptions."
+        },
+        {
+          "field": "relevance",
+          "text": "Makes unstructured skill text governable by transforming into verifiable structures."
+        }
+      ]
+    },
+    {
+      "ordinal": 161,
+      "title": "FAccT '26 / Relative Principals, Pluralistic Alignment",
+      "url": "https://arxiv.org/abs/2604.20805",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 1,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [
+        "static"
+      ],
+      "fields": {
+        "abstract": "Apr 22, 2026. Travis LaCroix, Durham University. FAccT '26 conference paper (June 25-28). Three-axis framework: objectives, information, principals. Alignment is fundamentally governance, not engineering alone."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "FAccT '26 / Relative Principals, Pluralistic Alignment\nApr 22, 2026. Travis LaCroix, Durham University. FAccT '26 conference paper (June 25-28). Three-axis framework: objectives, information, principals. Alignment is fundamentally governance, not engineering alone."
+        },
+        {
+          "field": "abstract",
+          "text": "Apr 22, 2026. Travis LaCroix, Durham University. FAccT '26 conference paper (June 25-28). Three-axis framework: objectives, information, principals. Alignment is fundamentally governance, not engineering alone."
+        }
+      ]
+    },
+    {
+      "ordinal": 162,
+      "title": "ZipperGen / Provable Coordination for LLM Agents via MSCs",
+      "url": "https://arxiv.org/abs/2604.17612",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 1,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [
+        "static"
+      ],
+      "fields": {
+        "abstract": "Apr 19, 2026 (v2 Apr 29). Benedikt Bollig, Matthias F\u00fcgger, Thomas Nowak, Universit\u00e9 Paris-Saclay/CNRS/ENS Paris-Saclay. Domain-specific language for agent coordination based on Message Sequence Charts (MSCs). Syntax-directed projection generates deadlock-free local agent programs from global coordination specifications. Separates deterministic message-passing structure from stochastic LLM actions. Runtime planning extension: LLM dynamically generates coordination workflows with same structural guarantees. Open source: https://zippergen.io \u2014 **Cross-layer (Layer 0 + Layer 1)** \u2014 The closest existing work to MPST-style multi-agent governance. Formal global specs + guaranteed deadlock-free local programs + runtime workflow generation."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "ZipperGen / Provable Coordination for LLM Agents via MSCs\nApr 19, 2026 (v2 Apr 29). Benedikt Bollig, Matthias F\u00fcgger, Thomas Nowak, Universit\u00e9 Paris-Saclay/CNRS/ENS Paris-Saclay. Domain-specific language for agent coordination based on Message Sequence Charts (MSCs). Syntax-directed projection generates deadlock-free local agent programs from global coordination specifications. Separates deterministic message-passing structure from stochastic LLM actions. Runtime planning extension: LLM dynamically generates coordination workflows with same structural guarantees. Open source: https://zippergen.io \u2014 **Cross-layer (Layer 0 + Layer 1)** \u2014 The closest existing work to MPST-style multi-agent governance. Formal global specs + guaranteed deadlock-free local programs + runtime workflow generation."
+        },
+        {
+          "field": "abstract",
+          "text": "Apr 19, 2026 (v2 Apr 29). Benedikt Bollig, Matthias F\u00fcgger, Thomas Nowak, Universit\u00e9 Paris-Saclay/CNRS/ENS Paris-Saclay. Domain-specific language for agent coordination based on Message Sequence Charts (MSCs). Syntax-directed projection generates deadlock-free local agent programs from global coordination specifications. Separates deterministic message-passing structure from stochastic LLM actions. Runtime planning extension: LLM dynamically generates coordination workflows with same structural guarantees. Open source: https://zippergen.io \u2014 **Cross-layer (Layer 0 + Layer 1)** \u2014 The closest existing work to MPST-style multi-agent governance. Formal global specs + guaranteed deadlock-free local programs + runtime workflow generation."
+        }
+      ]
+    },
+    {
+      "ordinal": 163,
+      "title": "SkillGuard",
+      "url": "https://arxiv.org/abs/2606.03024",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "June 1, 2026. Permission-based control framework for agent skill composition. Defines ACL-style governance for skill-to-skill and agent-to-skill interactions. Formalizes permission models that govern skill execution chains. Relevant to **Layer 2 (Skill)** \u2014 enables fine-grained capability governance for markdown-specified skills. **[Why recommended]** Represents a necessary architectural shift: skills are currently trusted by default; SkillGuard introduces explicit capability attenuation, which is exactly the security model needed for skill marketplace ecosystems. MIT License."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "SkillGuard\nJune 1, 2026. Permission-based control framework for agent skill composition. Defines ACL-style governance for skill-to-skill and agent-to-skill interactions. Formalizes permission models that govern skill execution chains. Relevant to **Layer 2 (Skill)** \u2014 enables fine-grained capability governance for markdown-specified skills. **[Why recommended]** Represents a necessary architectural shift: skills are currently trusted by default; SkillGuard introduces explicit capability attenuation, which is exactly the security model needed for skill marketplace ecosystems. MIT License."
+        },
+        {
+          "field": "abstract",
+          "text": "June 1, 2026. Permission-based control framework for agent skill composition. Defines ACL-style governance for skill-to-skill and agent-to-skill interactions. Formalizes permission models that govern skill execution chains. Relevant to **Layer 2 (Skill)** \u2014 enables fine-grained capability governance for markdown-specified skills. **[Why recommended]** Represents a necessary architectural shift: skills are currently trusted by default; SkillGuard introduces explicit capability attenuation, which is exactly the security model needed for skill marketplace ecosystems. MIT License."
+        }
+      ]
+    },
+    {
+      "ordinal": 164,
+      "title": "From Craft to Kernel: A Governance-First Execution Architecture for Agentic Computers",
+      "url": "https://arxiv.org/abs/2604.18652",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "Apr 20, 2026. Proposes a governance-first execution architecture and a semantic ISA (Instruction Set Architecture) for agentic computers. Defines skill lifecycle, privilege management, and capability boundary enforcement at the architectural level. Relevant to **All Layers (Spec/Skill/Agent)** \u2014 foundational governance primitives. **[Why recommended]** This is architectural-level thinking: instead of bolting governance on top, it embeds governance into the execution substrate. If agentic systems are the next OS, this is the SELinux equivalent."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "From Craft to Kernel: A Governance-First Execution Architecture for Agentic Computers\nApr 20, 2026. Proposes a governance-first execution architecture and a semantic ISA (Instruction Set Architecture) for agentic computers. Defines skill lifecycle, privilege management, and capability boundary enforcement at the architectural level. Relevant to **All Layers (Spec/Skill/Agent)** \u2014 foundational governance primitives. **[Why recommended]** This is architectural-level thinking: instead of bolting governance on top, it embeds governance into the execution substrate. If agentic systems are the next OS, this is the SELinux equivalent."
+        },
+        {
+          "field": "abstract",
+          "text": "Apr 20, 2026. Proposes a governance-first execution architecture and a semantic ISA (Instruction Set Architecture) for agentic computers. Defines skill lifecycle, privilege management, and capability boundary enforcement at the architectural level. Relevant to **All Layers (Spec/Skill/Agent)** \u2014 foundational governance primitives. **[Why recommended]** This is architectural-level thinking: instead of bolting governance on top, it embeds governance into the execution substrate. If agentic systems are the next OS, this is the SELinux equivalent."
+        }
+      ]
+    },
+    {
+      "ordinal": 165,
+      "title": "TAIP: Trustworthy AI Posture \u2014 A Framework for Continuous Assurance of Agentic AI Systems",
+      "url": "https://arxiv.org/abs/2603.03340",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 2,
+        "landscape": 1
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "landscape",
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "Jan 2026. MITRE/SEI framework for continuous assurance. Defines a structured, measurable, and continuous assessment model for agentic AI trustworthiness. Relevant to **Layer 3 (Agent)** \u2014 operational monitoring and continuous compliance. **[Why recommended]** Fills a critical gap between \"designed safe\" and \"operating safely.\" Most frameworks focus on build-time; this focuses on runtime assurance with measurable posture indicators. MITRE License."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "TAIP: Trustworthy AI Posture \u2014 A Framework for Continuous Assurance of Agentic AI Systems\nJan 2026. MITRE/SEI framework for continuous assurance. Defines a structured, measurable, and continuous assessment model for agentic AI trustworthiness. Relevant to **Layer 3 (Agent)** \u2014 operational monitoring and continuous compliance. **[Why recommended]** Fills a critical gap between \"designed safe\" and \"operating safely.\" Most frameworks focus on build-time; this focuses on runtime assurance with measurable posture indicators. MITRE License."
+        },
+        {
+          "field": "abstract",
+          "text": "Jan 2026. MITRE/SEI framework for continuous assurance. Defines a structured, measurable, and continuous assessment model for agentic AI trustworthiness. Relevant to **Layer 3 (Agent)** \u2014 operational monitoring and continuous compliance. **[Why recommended]** Fills a critical gap between \"designed safe\" and \"operating safely.\" Most frameworks focus on build-time; this focuses on runtime assurance with measurable posture indicators. MITRE License."
+        }
+      ]
+    },
+    {
+      "ordinal": 166,
+      "title": "AgentWarden: Learned Capability Governance for Autonomous AI Agents",
+      "url": "https://arxiv.org/abs/2604.11839",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 2,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "May 3, 2026. RL-based adaptive capability governance. Uses reinforcement learning to dynamically adjust agent capability boundaries based on runtime behavior and environmental risk assessment. Relevant to **Layer 3 (Agent)** \u2014 dynamic, context-aware capability governance. **[Why recommended]** Static capability models are brittle; this adapts to context. Bridges the gap between \"what the agent can do\" and \"what the agent should be allowed to do right now.\" Apache 2.0."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "AgentWarden: Learned Capability Governance for Autonomous AI Agents\nMay 3, 2026. RL-based adaptive capability governance. Uses reinforcement learning to dynamically adjust agent capability boundaries based on runtime behavior and environmental risk assessment. Relevant to **Layer 3 (Agent)** \u2014 dynamic, context-aware capability governance. **[Why recommended]** Static capability models are brittle; this adapts to context. Bridges the gap between \"what the agent can do\" and \"what the agent should be allowed to do right now.\" Apache 2.0."
+        },
+        {
+          "field": "abstract",
+          "text": "May 3, 2026. RL-based adaptive capability governance. Uses reinforcement learning to dynamically adjust agent capability boundaries based on runtime behavior and environmental risk assessment. Relevant to **Layer 3 (Agent)** \u2014 dynamic, context-aware capability governance. **[Why recommended]** Static capability models are brittle; this adapts to context. Bridges the gap between \"what the agent can do\" and \"what the agent should be allowed to do right now.\" Apache 2.0."
+        }
+      ]
+    },
+    {
+      "ordinal": 167,
+      "title": "ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents",
+      "url": "https://arxiv.org/abs/2603.24414",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 2,
+        "behavioral": 0,
+        "landscape": 2
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "2026. Safety framework for the OpenClaw agent ecosystem. Implements multi-layer protection through skills, plugins, and watchers. Provides runtime monitoring, policy enforcement, and incident response for OpenClaw agents. Relevant to **Layer 3 (Agent)** \u2014 platform-specific operational safety. **[Why recommended]** Platform-specific governance is pragmatic. If OpenClaw is a deployment target, this provides immediate operational value. Also demonstrates how governance frameworks can be implemented as pluggable skills rather than monolithic controls. Apache 2.0."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents\n2026. Safety framework for the OpenClaw agent ecosystem. Implements multi-layer protection through skills, plugins, and watchers. Provides runtime monitoring, policy enforcement, and incident response for OpenClaw agents. Relevant to **Layer 3 (Agent)** \u2014 platform-specific operational safety. **[Why recommended]** Platform-specific governance is pragmatic. If OpenClaw is a deployment target, this provides immediate operational value. Also demonstrates how governance frameworks can be implemented as pluggable skills rather than monolithic controls. Apache 2.0."
+        },
+        {
+          "field": "abstract",
+          "text": "2026. Safety framework for the OpenClaw agent ecosystem. Implements multi-layer protection through skills, plugins, and watchers. Provides runtime monitoring, policy enforcement, and incident response for OpenClaw agents. Relevant to **Layer 3 (Agent)** \u2014 platform-specific operational safety. **[Why recommended]** Platform-specific governance is pragmatic. If OpenClaw is a deployment target, this provides immediate operational value. Also demonstrates how governance frameworks can be implemented as pluggable skills rather than monolithic controls. Apache 2.0."
+        }
+      ]
+    },
+    {
+      "ordinal": 168,
+      "title": "DefenseClaw** (Cisco AI Defense) \u2014 Open-source security framework for OpenClaw. RSAC 2026, March 27, 2026. Runtime threat detection, policy enforcement, and compliance scanning for OpenClaw agents. 2.5k GitHub stars. Relevant to **Layer 3 (Agent)",
+      "url": "https://blogs.cisco.com/security/introducing-defenseclaw",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 2,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [
+        "landscape"
+      ],
+      "fields": {
+        "abstract": "operational security."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "DefenseClaw** (Cisco AI Defense) \u2014 Open-source security framework for OpenClaw. RSAC 2026, March 27, 2026. Runtime threat detection, policy enforcement, and compliance scanning for OpenClaw agents. 2.5k GitHub stars. Relevant to **Layer 3 (Agent)\noperational security."
+        },
+        {
+          "field": "abstract",
+          "text": "operational security."
+        }
+      ]
+    },
+    {
+      "ordinal": 169,
+      "title": "NemoClaw** (NVIDIA) \u2014 Secure agent runtime with OpenShell integration. GTC 2026, March 16, 2026. Sandboxed execution with GPU isolation and circuit breaker patterns. Enterprise customers include Shell. Relevant to **Layer 3 (Agent)",
+      "url": "https://blogs.nvidia.com/blog/nemoclaw-secure-agent-runtime",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 2,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "secure execution environment."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "NemoClaw** (NVIDIA) \u2014 Secure agent runtime with OpenShell integration. GTC 2026, March 16, 2026. Sandboxed execution with GPU isolation and circuit breaker patterns. Enterprise customers include Shell. Relevant to **Layer 3 (Agent)\nsecure execution environment."
+        },
+        {
+          "field": "abstract",
+          "text": "secure execution environment."
+        }
+      ]
+    },
+    {
+      "ordinal": 170,
+      "title": "EnforceAuth",
+      "url": "https://enforceauth.dev",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": null,
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 2,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [
+        "landscape"
+      ],
+      "fields": {
+        "abstract": "AI runtime authorization platform. 2026. AUTHOR framework + Verdict Agentic Firewall. Integration with OpenClaw via plugins. EnforceAuth Governance 2.1 released in May 2026. Relevant to **Layer 2 (Skill)** and **Layer 3 (Agent)** \u2014 runtime authorization and access control."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "EnforceAuth\nAI runtime authorization platform. 2026. AUTHOR framework + Verdict Agentic Firewall. Integration with OpenClaw via plugins. EnforceAuth Governance 2.1 released in May 2026. Relevant to **Layer 2 (Skill)** and **Layer 3 (Agent)** \u2014 runtime authorization and access control."
+        },
+        {
+          "field": "abstract",
+          "text": "AI runtime authorization platform. 2026. AUTHOR framework + Verdict Agentic Firewall. Integration with OpenClaw via plugins. EnforceAuth Governance 2.1 released in May 2026. Relevant to **Layer 2 (Skill)** and **Layer 3 (Agent)** \u2014 runtime authorization and access control."
         }
       ]
     }

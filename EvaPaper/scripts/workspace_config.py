@@ -23,6 +23,7 @@ class WorkspaceConfig:
     scout_log: Path = MEMORY_DIR / "agent_governance_scout_log.md"
     corpus_index: Path = DATA_DIR / "paper_corpus.json"
     team_dir: Path = DATA_DIR / "agent_team"
+    run_costs: Path = DATA_DIR / "run_costs.json"
 
 
 DEFAULT_WORKSPACE = WorkspaceConfig()

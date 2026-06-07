@@ -151,6 +151,7 @@ make sota-static
 make sota-all
 make ask-static QUESTION="which papers are about static checking of agent interactions?"
 make team-static QUERY="agent governance skill markdown validation"
+make workflow-static QUERY="agent governance skill markdown validation" QUESTION="which papers are about static checking of agent interactions?"
 ```
 
 Useful variables:
@@ -159,6 +160,10 @@ Useful variables:
 - `QUESTION`
 - `MODE`
 - `TOP_K`
+- `INPUT_TOKENS`
+- `OUTPUT_TOKENS`
+- `COST_USD`
+- `COST_NOTE`
 
 Examples:
 
@@ -166,7 +171,49 @@ Examples:
 make scout QUERY="agent governance skill markdown validation"
 make ask MODE=runtime QUESTION="which papers propose runtime enforcement?"
 make team MODE=all QUERY="agent governance skill markdown validation" QUESTION="which papers are about static checking of agent interactions?"
+make workflow-all QUERY="agent governance skill markdown validation" QUESTION="which papers are about static checking of agent interactions?"
+make workflow-static QUERY="agent governance skill markdown validation" QUESTION="which papers are about static checking of agent interactions?" INPUT_TOKENS=12000 OUTPUT_TOKENS=2300 COST_USD=0.184
 ```
+
+Automatic cost source:
+
+- `data/run_costs.json`
+
+Default format:
+
+```json
+{
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "cost_usd": 0.0,
+  "cost_note": "Default local workflow accounting. Update this file or pass CLI overrides when you have real API/model usage numbers."
+}
+```
+
+Every `make team...` and `make workflow...` run now appends a run entry to:
+
+- `AI_Agent_Governance_Three_Layer_Stack_and_Papers.md`
+
+The entry includes:
+
+- mode
+- query
+- question
+- graph coverage
+- input tokens
+- output tokens
+- total tokens
+- estimated USD cost
+- cost note
+
+Default behavior:
+
+- if `data/run_costs.json` exists, values are read from it automatically
+- CLI values override the file if both are provided
+- if neither is provided:
+  - tokens = `0`
+  - cost = `0`
+  - note says the run used default local accounting
 
 ---
 

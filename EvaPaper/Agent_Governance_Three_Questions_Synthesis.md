@@ -5,6 +5,32 @@
 
 ---
 
+## June 7, 2026 Static-First Update
+
+The latest local workflow run (`make workflow-static`) reinforces the earlier conclusion that the center of gravity for this project should remain **static governance before execution**, not runtime-only control.
+
+### What the current workflow surfaced
+
+For the question **"which papers are about static checking of agent interactions?"**, the top matches from the indexed corpus are:
+
+1. **Skilldex**
+2. **GovernSpec / Contractual Skills**
+3. **SkCC**
+4. **OWASP Top 10 for Agentic Skills (AST10)**
+5. **GitHub Spec Kit / SDD**
+
+### What changed in the interpretation
+
+- **Skill/package validation is now the practical starting point.** Skilldex, AST10, and GovernSpec consistently surface as the strongest evidence that malformed or weakly governed skill specifications are already a real failure mode.
+- **Static interaction checking should be treated as a pipeline problem, not just a schema problem.** Spec Kit / SDD and SkCC matter because they push governance toward structured interfaces, typed compilation targets, and explicit workflow decomposition.
+- **Runtime governance remains necessary, but secondary for this repo's main question.** The most useful retrieval path for the current corpus is still static-first: validate the specification, validate cross-skill coherence, then reason about runtime containment.
+
+### Important operational note
+
+In this environment, external graph APIs were unavailable during the latest run, so the system fell back to the **local indexed corpus**. That does not weaken the static-governance conclusion above; it only means this particular run validated prioritization over the existing collected literature rather than expanding the frontier through OpenAlex/Semantic Scholar.
+
+---
+
 ## Question 1: Do Skills / Agents Markdown Actually Affect Agent Behavior?
 
 ### Short Answer: **Yes, but not deterministically.**

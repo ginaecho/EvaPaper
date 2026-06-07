@@ -372,7 +372,7 @@
         "url": "https://arxiv.org/abs/2604.16911",
         "layer": "**Layer 0 \u2014 Spec-Level Governance**",
         "solution": null,
-        "score": 55.4781,
+        "score": 55.196,
         "match_type": "direct",
         "support_count": 2,
         "positive_hits": 2,
@@ -391,7 +391,7 @@
         "top_passages": [
           {
             "field": "paper_summary",
-            "score": 9.0224,
+            "score": 8.8734,
             "matched_terms": [
               "agent",
               "check"
@@ -400,7 +400,7 @@
           },
           {
             "field": "abstract",
-            "score": 8.0557,
+            "score": 7.9226,
             "matched_terms": [
               "agent",
               "check"
@@ -415,7 +415,7 @@
         "url": "https://arxiv.org/abs/2605.22634",
         "layer": "**Layer 0 \u2014 Spec-Level Governance** (with runtime enforcement hooks into Layer 1)",
         "solution": null,
-        "score": 40.4039,
+        "score": 40.1709,
         "match_type": "direct",
         "support_count": 2,
         "positive_hits": 1,
@@ -435,7 +435,7 @@
         "top_passages": [
           {
             "field": "paper_summary",
-            "score": 2.2209,
+            "score": 2.0978,
             "matched_terms": [
               "agent"
             ],
@@ -443,7 +443,7 @@
           },
           {
             "field": "abstract",
-            "score": 1.983,
+            "score": 1.8731,
             "matched_terms": [
               "agent"
             ],
@@ -457,7 +457,7 @@
         "url": "https://arxiv.org/abs/2605.03353",
         "layer": "Layer 1/2",
         "solution": "Yes",
-        "score": 51.1219,
+        "score": 49.8863,
         "match_type": "direct",
         "support_count": 2,
         "positive_hits": 2,
@@ -477,7 +477,7 @@
         "top_passages": [
           {
             "field": "paper_summary",
-            "score": 8.3059,
+            "score": 7.6531,
             "matched_terms": [
               "agent",
               "static"
@@ -486,7 +486,7 @@
           },
           {
             "field": "abstract",
-            "score": 7.416,
+            "score": 6.8332,
             "matched_terms": [
               "agent",
               "static"
@@ -501,7 +501,7 @@
         "url": "https://owasp.org/www-project-agentic-skills-top-10/",
         "layer": "**Layer 0 \u2014 Spec-Level Governance** (with Layer 1 hooks for isolation and sandboxing)",
         "solution": null,
-        "score": 44.8119,
+        "score": 44.1682,
         "match_type": "direct",
         "support_count": 3,
         "positive_hits": 1,
@@ -520,7 +520,7 @@
         "top_passages": [
           {
             "field": "paper_summary",
-            "score": 5.2998,
+            "score": 5.006,
             "matched_terms": [
               "agent"
             ],
@@ -528,7 +528,7 @@
           },
           {
             "field": "abstract",
-            "score": 3.3575,
+            "score": 3.1714,
             "matched_terms": [
               "agent"
             ],
@@ -536,7 +536,7 @@
           },
           {
             "field": "why_recommend",
-            "score": 2.9546,
+            "score": 2.7908,
             "matched_terms": [
               "agent"
             ],
@@ -550,7 +550,7 @@
         "url": "https://github.com/topics/skill-md",
         "layer": "Layer 3",
         "solution": "Yes",
-        "score": 34.5625,
+        "score": 34.3207,
         "match_type": "direct",
         "support_count": 2,
         "positive_hits": 1,
@@ -568,7 +568,7 @@
         "top_passages": [
           {
             "field": "paper_summary",
-            "score": 2.2209,
+            "score": 2.0978,
             "matched_terms": [
               "agent"
             ],
@@ -576,7 +576,7 @@
           },
           {
             "field": "relevance",
-            "score": 2.1416,
+            "score": 2.0229,
             "matched_terms": [
               "agent"
             ],
@@ -615,7 +615,7 @@
         "url": "https://github.com/openclaw/skills/blob/main/skills/0xtresser/web-skills-protocol/SPEC.md",
         "layer": "Layer 0/1",
         "solution": "Yes",
-        "score": 31.5625,
+        "score": 31.3207,
         "match_type": "direct",
         "support_count": 2,
         "positive_hits": 1,
@@ -634,7 +634,7 @@
         "top_passages": [
           {
             "field": "paper_summary",
-            "score": 2.2209,
+            "score": 2.0978,
             "matched_terms": [
               "agent"
             ],
@@ -642,7 +642,7 @@
           },
           {
             "field": "relevance",
-            "score": 2.1416,
+            "score": 2.0229,
             "matched_terms": [
               "agent"
             ],
@@ -656,7 +656,7 @@
         "url": "https://arxiv.org/abs/2604.02767",
         "layer": "Layer 1",
         "solution": "Yes",
-        "score": 27.5625,
+        "score": 27.3207,
         "match_type": "direct",
         "support_count": 2,
         "positive_hits": 1,
@@ -676,7 +676,7 @@
         "top_passages": [
           {
             "field": "paper_summary",
-            "score": 2.2209,
+            "score": 2.0978,
             "matched_terms": [
               "agent"
             ],
@@ -684,7 +684,7 @@
           },
           {
             "field": "relevance",
-            "score": 2.1416,
+            "score": 2.0229,
             "matched_terms": [
               "agent"
             ],

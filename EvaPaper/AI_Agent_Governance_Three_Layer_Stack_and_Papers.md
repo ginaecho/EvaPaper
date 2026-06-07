@@ -8,6 +8,21 @@
 
 This report consolidates research on **AI Agent Governance**, **Skill Markdown Validation**, and **Agent Behavior Evaluation**. It presents a **Three-Layer Governance Stack** as the organizing framework, with each paper/product mapped to the specific layer it addresses.
 
+### June 7, 2026 findings update
+
+The latest workflow run over the local indexed corpus sharpens the practical recommendation:
+
+- the repo's main focus should remain **static-time governance of skills, specs, and agent interactions**
+- runtime governance is still necessary, but it should be treated as a downstream control layer
+- the strongest current static-first set in the corpus is:
+  - **Skilldex**
+  - **GovernSpec / Contractual Skills**
+  - **SkCC**
+  - **OWASP Top 10 for Agentic Skills (AST10)**
+  - **GitHub Spec Kit / SDD**
+
+These results came from the current `workflow-static` pipeline. In this environment, external discovery APIs were temporarily unavailable, so the latest run used the local curated corpus rather than live graph expansion. That means the ranking above reflects the current internal evidence base, not a claim that fresh frontier scouting was completed in that specific run.
+
 **The Three-Layer Stack:**
 
 | Layer | Name | Focus | Key Question |
@@ -428,3 +443,58 @@ This is Layer 1 (Runtime-Level Governance) at the infrastructure tier. It comple
 
 *Compiled by EvaPaper | May 31, 2026*  
 *Repo: https://github.com/ginaecho/EvaPaper*
+## Workflow Run Log
+
+### Run 2026-06-07 13:33:31 UTC
+- **Mode:** static
+- **Query:** agent governance skill markdown validation
+- **Question:** which papers are about static checking of agent interactions?
+- **Discovery graph:** 0 seeds, 0 candidates
+- **Input tokens:** 1234
+- **Output tokens:** 567
+- **Total tokens:** 1801
+- **Estimated cost (USD):** 0.012340
+- **Cost note:** Test run for workflow accounting
+- **Graph warning:** Discovery graph unavailable; fell back to local corpus only: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+- **Top matched papers:**
+  - Skilldex (static, score=55.196)
+  - GovernSpec / Contractual Skills (static, score=40.1709)
+  - SkCC (static, score=49.8863)
+  - OWASP Top 10 for Agentic Skills (AST10) (static, score=44.1682)
+  - GitHub Spec Kit / SDD (Specification-Driven Development) (static, score=34.3207)
+
+### Run 2026-06-07 13:35:24 UTC
+- **Mode:** static
+- **Query:** agent governance skill markdown validation
+- **Question:** which papers are about static checking of agent interactions?
+- **Discovery graph:** 0 seeds, 0 candidates
+- **Input tokens:** 0
+- **Output tokens:** 0
+- **Total tokens:** 0
+- **Estimated cost (USD):** 0.000000
+- **Cost note:** Default local workflow accounting. Update this file or pass CLI overrides when you have real API/model usage numbers.
+- **Graph warning:** Discovery graph unavailable; fell back to local corpus only: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+- **Top matched papers:**
+  - Skilldex (static, score=55.196)
+  - GovernSpec / Contractual Skills (static, score=40.1709)
+  - SkCC (static, score=49.8863)
+  - OWASP Top 10 for Agentic Skills (AST10) (static, score=44.1682)
+  - GitHub Spec Kit / SDD (Specification-Driven Development) (static, score=34.3207)
+
+### Run 2026-06-07 13:52:47 UTC
+- **Mode:** static
+- **Query:** agent governance skill markdown validation
+- **Question:** which papers are about static checking of agent interactions?
+- **Discovery graph:** 0 seeds, 0 candidates
+- **Input tokens:** 0
+- **Output tokens:** 0
+- **Total tokens:** 0
+- **Estimated cost (USD):** 0.000000
+- **Cost note:** Default local workflow accounting. Update this file or pass CLI overrides when you have real API/model usage numbers.
+- **Graph warning:** Discovery graph unavailable; fell back to local corpus only: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+- **Top matched papers:**
+  - Skilldex (static, score=55.196)
+  - GovernSpec / Contractual Skills (static, score=40.1709)
+  - SkCC (static, score=49.8863)
+  - OWASP Top 10 for Agentic Skills (AST10) (static, score=44.1682)
+  - GitHub Spec Kit / SDD (Specification-Driven Development) (static, score=34.3207)

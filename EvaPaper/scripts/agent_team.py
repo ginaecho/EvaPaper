@@ -7,7 +7,9 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import datetime, timezone
 from dataclasses import asdict, dataclass
+from pathlib import Path
 from typing import List, Sequence
 from urllib.error import URLError
 
@@ -99,6 +101,77 @@ def run_team(query: str, question: str | None, mode: str, top_k: int) -> dict:
     return result
 
 
+def append_run_report(
+    report_path: Path,
+    result: dict,
+    input_tokens: int,
+    output_tokens: int,
+    cost_usd: float,
+    note: str,
+) -> None:
+    total_tokens = input_tokens + output_tokens
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    lines = [
+        f"### Run {timestamp}",
+        f"- **Mode:** {result['mode']}",
+        f"- **Query:** {result['query']}",
+        f"- **Question:** {result.get('question') or 'n/a'}",
+        f"- **Discovery graph:** {result['graph']['seed_count']} seeds, {result['graph']['candidate_count']} candidates",
+        f"- **Input tokens:** {input_tokens}",
+        f"- **Output tokens:** {output_tokens}",
+        f"- **Total tokens:** {total_tokens}",
+        f"- **Estimated cost (USD):** {cost_usd:.6f}",
+        f"- **Cost note:** {note}",
+    ]
+    if result.get("graph_warning"):
+        lines.append(f"- **Graph warning:** {result['graph_warning']}")
+    if "answer" in result and result["answer"].get("results"):
+        lines.append("- **Top matched papers:**")
+        for item in result["answer"]["results"][:5]:
+            lines.append(f"  - {item['title']} ({item.get('primary_focus') or 'n/a'}, score={item['score']})")
+
+    entry = "\n".join(lines) + "\n"
+    content = report_path.read_text(encoding="utf-8")
+    marker = "\n## Workflow Run Log\n"
+    if marker not in content:
+        content = content.rstrip() + marker + "\n" + entry
+    else:
+        content += "\n" + entry
+    report_path.write_text(content, encoding="utf-8")
+
+
+def load_cost_inputs(
+    input_tokens: int | None,
+    output_tokens: int | None,
+    cost_usd: float | None,
+    note: str | None,
+) -> tuple[int, int, float, str]:
+    default_note = "Local workflow run. No paid model/API usage was recorded by this script unless tokens/cost were provided explicitly."
+    resolved_input = input_tokens
+    resolved_output = output_tokens
+    resolved_cost = cost_usd
+    resolved_note = note
+
+    cost_file = DEFAULT_WORKSPACE.run_costs
+    if cost_file.exists():
+        payload = json.loads(cost_file.read_text(encoding="utf-8"))
+        if resolved_input is None:
+            resolved_input = int(payload.get("input_tokens", 0))
+        if resolved_output is None:
+            resolved_output = int(payload.get("output_tokens", 0))
+        if resolved_cost is None:
+            resolved_cost = float(payload.get("cost_usd", 0.0))
+        if resolved_note is None:
+            resolved_note = str(payload.get("cost_note", default_note))
+
+    return (
+        0 if resolved_input is None else resolved_input,
+        0 if resolved_output is None else resolved_output,
+        0.0 if resolved_cost is None else resolved_cost,
+        default_note if resolved_note is None else resolved_note,
+    )
+
+
 def format_report(result: dict) -> str:
     lines = [f"Query: {result['query']}", f"Mode: {result['mode']}", "", "Team plan:"]
     for task in result["tasks"]:
@@ -123,6 +196,14 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
     parser.add_argument("--question")
     parser.add_argument("--mode", default="all", choices=["all", "sota", "static", "static-first", "spec", "runtime", "behavioral", "landscape"])
     parser.add_argument("--top-k", type=int, default=8)
+    parser.add_argument("--input-tokens", type=int, default=None)
+    parser.add_argument("--output-tokens", type=int, default=None)
+    parser.add_argument("--cost-usd", type=float, default=None)
+    parser.add_argument(
+        "--cost-note",
+        default=None,
+    )
+    parser.add_argument("--write-report", action="store_true", help="Append run metrics to the markdown report")
     parser.add_argument("--json", action="store_true")
     return parser.parse_args(argv)
 
@@ -130,6 +211,21 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
 def main(argv: Sequence[str]) -> int:
     args = parse_args(argv)
     result = run_team(query=args.query, question=args.question, mode=args.mode, top_k=args.top_k)
+    if args.write_report:
+        input_tokens, output_tokens, cost_usd, note = load_cost_inputs(
+            input_tokens=args.input_tokens,
+            output_tokens=args.output_tokens,
+            cost_usd=args.cost_usd,
+            note=args.cost_note,
+        )
+        append_run_report(
+            report_path=DEFAULT_WORKSPACE.report_md,
+            result=result,
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+            cost_usd=cost_usd,
+            note=note,
+        )
     if args.json:
         print(json.dumps(result, indent=2))
     else:

@@ -1,0 +1,6 @@
+{
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "cost_usd": 0.0,
+  "cost_note": "Default local workflow accounting. Update this file or pass CLI overrides when you have real API/model usage numbers."
+}

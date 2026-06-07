@@ -3,8 +3,12 @@ QUERY ?= agent governance skill markdown validation
 QUESTION ?= which papers are about static checking of agent interactions?
 MODE ?= static
 TOP_K ?= 8
+INPUT_TOKENS ?=
+OUTPUT_TOKENS ?=
+COST_USD ?=
+COST_NOTE ?=
 
-.PHONY: help index scout scout-json sota sota-static sota-runtime sota-behavioral sota-all ask ask-static ask-runtime ask-behavioral team team-static team-runtime team-behavioral team-all docs
+.PHONY: help index scout scout-json sota sota-static sota-runtime sota-behavioral sota-all ask ask-static ask-runtime ask-behavioral team team-static team-runtime team-behavioral team-all workflow-static workflow-runtime workflow-behavioral workflow-all docs
 
 help:
 	@printf "%s\n" \
@@ -14,12 +18,14 @@ help:
 	"  make sota MODE=static                      Show state of the art for a focus mode" \
 	"  make ask MODE=static QUESTION='...'        Map a question to papers with evidence" \
 	"  make team MODE=static QUERY='...'          Run the generic agent-team workflow" \
+	"  make workflow-static                       Run index + static team + static question mapping" \
 	"  make docs                                  Regenerate DOCX/PPTX artifacts" \
 	"" \
 	"Shortcuts:" \
 	"  make sota-static | sota-runtime | sota-behavioral | sota-all" \
 	"  make ask-static | ask-runtime | ask-behavioral" \
-	"  make team-static | team-runtime | team-behavioral | team-all"
+	"  make team-static | team-runtime | team-behavioral | team-all" \
+	"  make workflow-static | workflow-runtime | workflow-behavioral | workflow-all"
 
 index:
 	$(PYTHON) scripts/paper_corpus.py
@@ -58,7 +64,7 @@ ask-behavioral:
 	$(MAKE) ask MODE=behavioral
 
 team:
-	$(PYTHON) scripts/agent_team.py --query "$(QUERY)" --question "$(QUESTION)" --mode "$(MODE)" --top-k $(TOP_K)
+	$(PYTHON) scripts/agent_team.py --query "$(QUERY)" --question "$(QUESTION)" --mode "$(MODE)" --top-k $(TOP_K) --write-report $(if $(INPUT_TOKENS),--input-tokens $(INPUT_TOKENS),) $(if $(OUTPUT_TOKENS),--output-tokens $(OUTPUT_TOKENS),) $(if $(COST_USD),--cost-usd $(COST_USD),) $(if $(COST_NOTE),--cost-note "$(COST_NOTE)",)
 
 team-static:
 	$(MAKE) team MODE=static
@@ -70,6 +76,22 @@ team-behavioral:
 	$(MAKE) team MODE=behavioral
 
 team-all:
+	$(MAKE) team MODE=all
+
+workflow-static:
+	$(MAKE) index
+	$(MAKE) team MODE=static
+
+workflow-runtime:
+	$(MAKE) index
+	$(MAKE) team MODE=runtime
+
+workflow-behavioral:
+	$(MAKE) index
+	$(MAKE) team MODE=behavioral
+
+workflow-all:
+	$(MAKE) index
 	$(MAKE) team MODE=all
 
 docs:
