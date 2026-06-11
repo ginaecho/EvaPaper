@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Governance Research Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --canvas: #F5F4F0;
+            --ink: #1A1A1A;
+            --muted: #6B6B6B;
+            --navy: #0B1D3A;
+            --ocean: #2C5F7C;
+            --steel: #B0B8C1;
+            --platinum: #D4DDE5;
+            --white: #FFFFFF;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--canvas);
+            color: var(--ink);
+            line-height: 1.65;
+            font-size: 16px;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-display { font-family: 'DM Serif Display', Georgia, serif; }
+        .font-mono { font-family: 'Space Mono', monospace; }
+        .font-body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+        /* ===== PARTICLE CANVAS ===== */
+        #particleCanvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            background: var(--navy);
+        }
+
+        /* ===== NAV ===== */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 clamp(24px, 5vw, 80px);
+            background: rgba(245,244,240,0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 100;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .nav.scrolled { border-bottom-color: rgba(0,0,0,0.06); }
+        .nav-logo {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none;
+        }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--ink);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .nav-links a:hover { opacity: 0.6; }
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 20px;
+            height: 1.5px;
+            background: var(--ink);
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .nav-mobile {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 99;
+            background: rgba(245,244,240,0.98);
+            backdrop-filter: blur(12px);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+        }
+        .nav-mobile a {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--ink);
+            text-decoration: none;
+        }
+        .nav-mobile.active { display: flex; }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 0 clamp(24px, 5vw, 80px);
+            padding-bottom: 10vh;
+            z-index: 1;
+        }
+        .hero-content { max-width: 700px; }
+        .hero-overline {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 24px;
+            opacity: 0;
+            transform: translateY(16px);
+        }
+        .hero-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(64px, 10vw, 120px);
+            line-height: 0.9;
+            color: var(--white);
+            text-shadow: 0 2px 30px rgba(0,0,0,0.4);
+            opacity: 0;
+            transform: translateY(32px);
+        }
+        .hero-title-faded {
+            color: rgba(255,255,255,0.45);
+        }
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: rgba(255,255,255,0.65);
+            max-width: 520px;
+            line-height: 1.65;
+            margin-top: 32px;
+            text-shadow: 0 2px 30px rgba(0,0,0,0.4);
+            opacity: 0;
+            transform: translateY(16px);
+        }
+        .hero-cta {
+            font-family: 'Space Mono', monospace;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--ink);
+            background: var(--white);
+            border: none;
+            padding: 14px 32px;
+            cursor: pointer;
+            margin-top: 32px;
+            transition: background 0.2s, color 0.2s;
+            opacity: 0;
+            transform: translateY(16px);
+        }
+        .hero-cta:hover { background: var(--ink); color: var(--white); }
+        .hero-scroll {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.3);
+            animation: scrollBounce 2s ease-in-out infinite;
+        }
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(6px); }
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            position: relative;
+            z-index: 2;
+            padding: 140px clamp(24px, 5vw, 80px);
+        }
+        .section-white { background: var(--white); }
+        .section-canvas { background: var(--canvas); }
+        .section-dark {
+            background: var(--ink);
+            color: var(--white);
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .overline {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .section-desc {
+            color: var(--muted);
+            max-width: 640px;
+            margin-bottom: 48px;
+        }
+
+        /* ===== ANIMATED ELEMENTS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* ===== QUESTION CARDS ===== */
+        .questions-grid {
+            display: flex;
+            flex-direction: column;
+        }
+        .question-card {
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .question-card:last-child { border-bottom: none; }
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+        .question-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 36px;
+            color: var(--muted);
+            flex-shrink: 0;
+            line-height: 1;
+        }
+        .question-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .question-badge {
+            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 4px 10px;
+            background: rgba(0,0,0,0.06);
+            margin-bottom: 16px;
+        }
+        .question-body {
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        /* ===== STACK LAYERS ===== */
+        .layer-stack { display: flex; flex-direction: column; gap: 0; }
+        .layer-card {
+            background: var(--white);
+            padding: 32px 40px;
+            transition: box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .layer-card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 4px;
+        }
+        .layer-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
+        .layer-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .layer-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .layer-question {
+            font-style: italic;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+        .layer-papers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .layer-pill {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            padding: 4px 12px;
+            background: var(--canvas);
+        }
+        .layer-stat {
+            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            padding: 6px 14px;
+            color: var(--white);
+        }
+        .layer-connector {
+            display: flex;
+            justify-content: center;
+            padding: 12px 0;
+        }
+        .layer-connector svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--muted);
+            stroke-width: 1;
+            fill: none;
+        }
+
+        /* ===== PAPER CARDS ===== */
+        .papers-scroll {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            padding-bottom: 16px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .papers-scroll::-webkit-scrollbar { display: none; }
+        .paper-card {
+            flex-shrink: 0;
+            width: 320px;
+            min-height: 320px;
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.08);
+            padding: 28px;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .paper-card:hover {
+            border-color: rgba(0,0,0,0.15);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        .paper-arxiv {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+        .paper-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 20px;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+        .paper-layer {
+            display: inline-block;
+            align-self: flex-start;
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            background: var(--navy);
+            color: var(--white);
+            padding: 2px 8px;
+            margin-bottom: 16px;
+        }
+        .paper-finding {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.55;
+            flex: 1;
+        }
+        .paper-opensource {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .paper-opensource-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--ocean);
+        }
+        .paper-opensource-text {
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--muted);
+        }
+
+        /* ===== DEEP DIVE PANELS ===== */
+        .dive-panels {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .dive-panel {
+            width: 100%;
+            padding: 80px clamp(24px, 5vw, 80px);
+            position: relative;
+        }
+        .dive-panel + .dive-panel {
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .dive-overline {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 24px;
+        }
+        .dive-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(28px, 3.5vw, 48px);
+            line-height: 1.1;
+            color: var(--white);
+            margin-bottom: 24px;
+            max-width: 800px;
+        }
+        .dive-badge {
+            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            background: var(--ocean);
+            color: var(--white);
+            padding: 6px 14px;
+            margin-bottom: 24px;
+        }
+        .dive-body {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+            max-width: 700px;
+            margin-bottom: 48px;
+        }
+        .dive-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 600px;
+        }
+        .dive-stat-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(36px, 4vw, 56px);
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .dive-stat-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 0.02em;
+        }
+
+        /* ===== METHODOLOGY ===== */
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .method-card {
+            background: var(--canvas);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .method-card:hover { transform: translateY(-2px); }
+        .method-number-watermark {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            font-family: 'Space Mono', monospace;
+            font-size: 48px;
+            color: rgba(0,0,0,0.06);
+            line-height: 1;
+        }
+        .method-step {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+        .method-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .method-body {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* ===== FRONTIER ===== */
+        .frontier-layout {
+            display: flex;
+            gap: 64px;
+        }
+        .frontier-left { width: 45%; }
+        .frontier-right { width: 55%; }
+        .frontier-left-sticky {
+            position: sticky;
+            top: 120px;
+        }
+        .gap-item {
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .gap-item:last-child { border-bottom: none; }
+        .gap-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 36px;
+            color: var(--muted);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .gap-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        .gap-desc {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-main {
+            padding: 100px clamp(24px, 5vw, 80px) 60px;
+        }
+        .footer-layout {
+            display: flex;
+            gap: 64px;
+        }
+        .footer-left { width: 60%; }
+        .footer-right { width: 40%; }
+        .footer-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 40px;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+        .footer-body {
+            color: rgba(255,255,255,0.6);
+            max-width: 480px;
+            line-height: 1.65;
+        }
+        .footer-meta-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 0.06em;
+            margin-bottom: 8px;
+        }
+        .footer-meta-value {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 24px;
+        }
+        .footer-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 80px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .footer-logo {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 0.04em;
+        }
+        .footer-tagline {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: rgba(255,255,255,0.2);
+            max-width: 400px;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+
+        /* ===== EVIDENCE TABLE ===== */
+        .evidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 32px 0;
+            font-size: 14px;
+        }
+        .evidence-table th {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
+            color: var(--muted);
+        }
+        .evidence-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            vertical-align: top;
+        }
+        .evidence-table tr:hover td { background: rgba(0,0,0,0.02); }
+
+        /* ===== COMPARISON TABLE ===== */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 13px;
+        }
+        .compare-table th {
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
+            color: var(--muted);
+        }
+        .compare-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .badge {
+            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            letter-spacing: 0.02em;
+        }
+        .badge-yes { background: #e8f5e9; color: #2e7d32; }
+        .badge-partial { background: #fff8e1; color: #f57f17; }
+        .badge-no { background: #ffebee; color: #c62828; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-toggle { display: flex; }
+            .method-grid { grid-template-columns: 1fr; }
+            .frontier-layout { flex-direction: column; gap: 32px; }
+            .frontier-left, .frontier-right { width: 100%; }
+            .footer-layout { flex-direction: column; }
+            .footer-left, .footer-right { width: 100%; }
+            .footer-bar { flex-direction: column; gap: 16px; align-items: flex-start; }
+            .footer-tagline { text-align: left; }
+            .dive-stats { grid-template-columns: 1fr; gap: 16px; }
+            .question-header { flex-direction: column; gap: 12px; }
+            .paper-card { width: 280px; }
+            .section { padding: 80px clamp(24px, 5vw, 80px); }
+            .evidence-table { font-size: 12px; }
+            .evidence-table th, .evidence-table td { padding: 8px 10px; }
+            .layer-card { padding: 24px; }
+        }
+        @media (max-width: 480px) {
+            .hero-title { font-size: 48px; }
+            .dive-title { font-size: 24px; }
+            .section-title { font-size: 28px; }
+            .method-card { padding: 28px; }
+            .footer-main { padding: 60px clamp(24px, 5vw, 80px) 40px; }
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="particleCanvas"></canvas>
+
+<!-- Navigation -->
+<nav class="nav" id="mainNav">
+    <a href="#" class="nav-logo">EVAPAPER</a>
+    <div class="nav-links">
+        <a href="#three-questions">Three Questions</a>
+        <a href="#the-stack">The Stack</a>
+        <a href="#papers">Papers</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#frontier">Insights</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+    <a href="#three-questions">Three Questions</a>
+    <a href="#the-stack">The Stack</a>
+    <a href="#papers">Papers</a>
+    <a href="#methodology">Methodology</a>
+    <a href="#frontier">Insights</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+    <div class="hero-content">
+        <div class="hero-overline">AI AGENT GOVERNANCE RESEARCH</div>
+        <h1 class="hero-title">Three Questions</h1>
+        <span class="hero-title hero-title-faded">32 Papers</span>
+        <p class="hero-subtitle">A comprehensive synthesis of empirical evidence across the Three-Layer Governance Stack &mdash; from skill specification to runtime enforcement to behavioral benchmarks.</p>
+        <button class="hero-cta" onclick="document.getElementById('three-questions').scrollIntoView({behavior:'smooth'})">EXPLORE THE STACK</button>
+    </div>
+    <div class="hero-scroll"></div>
+</section>
+
+<!-- THREE QUESTIONS -->
+<section class="section section-white" id="three-questions">
+    <div class="container">
+        <div class="overline reveal">THE SYNTHESIS</div>
+        <h2 class="section-title reveal reveal-delay-1">Three Critical Questions Answered</h2>
+        <div class="questions-grid" style="margin-top: 48px;">
+            <div class="question-card reveal reveal-delay-1">
+                <div class="question-header">
+                    <span class="question-number">Q1</span>
+                    <div>
+                        <h3 class="question-title">Do Skills Affect Behavior?</h3>
+                        <span class="question-badge">YES &mdash; EMPIRICALLY PROVEN</span>
+                        <p class="question-body">Eight papers provide a cumulative, multi-method evidence base. The effect is measurable, material, and causally demonstrated &mdash; not just anecdotal. Markdown formatting changes behavior by up to 40%. Agents show 50x compliance spikes with AGENTS.md instructions. Markdown Awareness correlates with instruction-following.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="question-card reveal reveal-delay-2">
+                <div class="question-header">
+                    <span class="question-number">Q2</span>
+                    <div>
+                        <h3 class="question-title">Can We Check Before Runtime?</h3>
+                        <span class="question-badge">YES &mdash; ZIPPERGEN BREAKTHROUGH</span>
+                        <p class="question-body">ZipperGen provides formal well-typedness checks, deadlock-free-by-construction guarantees, and syntax-directed projection &mdash; all before any agent runs. For single-agent skills, SkillFortify and SkCC provide formal static analysis. The remaining gap is behavioral typing of message content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="question-card reveal reveal-delay-3">
+                <div class="question-header">
+                    <span class="question-number">Q3</span>
+                    <div>
+                        <h3 class="question-title">Can We Enforce at Runtime?</h3>
+                        <span class="question-badge">YES &mdash; WITHOUT LLM-AS-JUDGE</span>
+                        <p class="question-body">Deterministic runtime enforcement exists at both single-agent (ACP at 739-832ns, ABC/AgentAssert at &lt;10ms) and multi-agent (ZipperGen with structural induction proof) levels. The coordination structure is guaranteed correct regardless of LLM nondeterminism.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GOVERNANCE STACK -->
+<section class="section section-canvas" id="the-stack">
+    <div class="container">
+        <div class="overline reveal">THE ARCHITECTURE</div>
+        <h2 class="section-title reveal reveal-delay-1">Three-Layer Governance Stack</h2>
+        <p class="section-desc reveal reveal-delay-2">Each layer answers a different governance question. Together they form a near-term engineering roadmap.</p>
+        <div class="layer-stack" style="margin-top: 24px;">
+            <!-- Layer 0 -->
+            <div class="layer-card reveal reveal-delay-1" style="border-left: 4px solid var(--navy);">
+                <div class="layer-label" style="color: var(--navy);">LAYER 0 &mdash; SPEC-LEVEL</div>
+                <div class="layer-title">Spec-Level Governance</div>
+                <div class="layer-question">Is the skill specification correct and complete?</div>
+                <div class="layer-papers">
+                    <span class="layer-pill">Skilldex</span>
+                    <span class="layer-pill">GovernSpec</span>
+                    <span class="layer-pill">SkCC</span>
+                    <span class="layer-pill">AST10</span>
+                    <span class="layer-pill">SSL Representation</span>
+                </div>
+                <span class="layer-stat" style="background: var(--navy);">34% of community skill packages are malformed</span>
+            </div>
+            <div class="layer-connector">
+                <svg viewBox="0 0 20 20"><path d="M5 8L10 13L15 8"/></svg>
+            </div>
+            <!-- Layer 1 -->
+            <div class="layer-card reveal reveal-delay-2" style="border-left: 4px solid var(--ocean);">
+                <div class="layer-label" style="color: var(--ocean);">LAYER 1 &mdash; RUNTIME-LEVEL</div>
+                <div class="layer-title">Runtime-Level Governance</div>
+                <div class="layer-question">Can the agent execute safely at runtime?</div>
+                <div class="layer-papers">
+                    <span class="layer-pill">LGA</span>
+                    <span class="layer-pill">ACP</span>
+                    <span class="layer-pill">ABC/AgentAssert</span>
+                    <span class="layer-pill">SentinelAgent</span>
+                    <span class="layer-pill">ZipperGen</span>
+                </div>
+                <span class="layer-stat" style="background: var(--ocean);">89% of attacks succeed against baseline guardrails</span>
+            </div>
+            <div class="layer-connector">
+                <svg viewBox="0 0 20 20"><path d="M5 8L10 13L15 8"/></svg>
+            </div>
+            <!-- Layer 2 -->
+            <div class="layer-card reveal reveal-delay-3" style="border-left: 4px solid var(--steel);">
+                <div class="layer-label" style="color: var(--muted);">LAYER 2 &mdash; BEHAVIORAL-LEVEL</div>
+                <div class="layer-title">Behavioral-Level Governance</div>
+                <div class="layer-question">Does the agent behave safely in real-world tasks?</div>
+                <div class="layer-papers">
+                    <span class="layer-pill">BeSafe-Bench</span>
+                    <span class="layer-pill">ST-WebAgentBench</span>
+                    <span class="layer-pill">ClawBench</span>
+                    <span class="layer-pill">Agent Evaluation Guide</span>
+                </div>
+                <span class="layer-stat" style="background: var(--muted);">60%+ of tasks have safety violations in top agents</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PAPERS GALLERY -->
+<section class="section section-white" id="papers">
+    <div class="container">
+        <div class="overline reveal">THE EVIDENCE</div>
+        <h2 class="section-title reveal reveal-delay-1">Key Papers Across the Stack</h2>
+        <p class="section-desc reveal reveal-delay-2">32 papers mapped to their governance layer. Here are the strongest findings.</p>
+    </div>
+    <div style="padding-left: clamp(24px, 5vw, 80px); padding-right: clamp(24px, 5vw, 80px);">
+        <div class="papers-scroll" style="margin-top: 32px;">
+            <div class="paper-card reveal reveal-delay-1">
+                <div class="paper-arxiv">arXiv:2604.17612</div>
+                <div class="paper-title">ZipperGen &mdash; Provable Coordination for LLM Agents via MSCs</div>
+                <span class="paper-layer">LAYER 0+1</span>
+                <div class="paper-finding">Deadlock-free multi-agent coordination by construction. Formal well-typedness checks before runtime.</div>
+                <div class="paper-opensource"><span class="paper-opensource-dot"></span><span class="paper-opensource-text">Open source</span></div>
+            </div>
+            <div class="paper-card reveal reveal-delay-2">
+                <div class="paper-arxiv">arXiv:2605.11770</div>
+                <div class="paper-title">BIV &mdash; Behavioral Integrity Verification</div>
+                <span class="paper-layer">LAYER 0</span>
+                <div class="paper-finding">80% of skills deviate from declared behavior &mdash; proving agents attempt to follow instructions.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-3">
+                <div class="paper-arxiv">arXiv:2603.18829</div>
+                <div class="paper-title">ACP &mdash; Admission Control Protocol</div>
+                <span class="paper-layer">LAYER 1</span>
+                <div class="paper-finding">739-832 ns decision latency. TLA+ verified across 4.2 billion states. 1.72M req/s throughput.</div>
+                <div class="paper-opensource"><span class="paper-opensource-dot"></span><span class="paper-opensource-text">Open source</span></div>
+            </div>
+            <div class="paper-card reveal reveal-delay-4">
+                <div class="paper-arxiv">arXiv:2602.22302</div>
+                <div class="paper-title">ABC / AgentAssert &mdash; Agent Behavioral Contracts</div>
+                <span class="paper-layer">LAYER 1/2</span>
+                <div class="paper-finding">88-100% hard constraint compliance. Behavioral drift bounded to D* &lt; 0.27. &lt;10ms overhead.</div>
+                <div class="paper-opensource"><span class="paper-opensource-dot"></span><span class="paper-opensource-text">Open source</span></div>
+            </div>
+            <div class="paper-card reveal reveal-delay-5">
+                <div class="paper-arxiv">arXiv:2603.00195</div>
+                <div class="paper-title">SkillFortify &mdash; Formal Analysis Framework</div>
+                <span class="paper-layer">LAYER 0/1</span>
+                <div class="paper-finding">F1=96.95%, 0% false positives on 540 skills. Abstract interpretation + SAT-based resolution.</div>
+                <div class="paper-opensource"><span class="paper-opensource-dot"></span><span class="paper-opensource-text">Open source</span></div>
+            </div>
+            <div class="paper-card reveal reveal-delay-1">
+                <div class="paper-arxiv">arXiv:2603.25747</div>
+                <div class="paper-title">BeSafe-Bench &mdash; Behavioral Safety Benchmark</div>
+                <span class="paper-layer">LAYER 2</span>
+                <div class="paper-finding">Best agents complete &lt;40% of tasks while fully adhering to safety constraints.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-2">
+                <div class="paper-arxiv">arXiv:2605.22634</div>
+                <div class="paper-title">GovernSpec &mdash; Contractual Skills</div>
+                <span class="paper-layer">LAYER 0</span>
+                <div class="paper-finding">12 contract sections reduce policy violations by 67%. Machine-parseable at load time.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-3">
+                <div class="paper-arxiv">arXiv:2604.16911</div>
+                <div class="paper-title">Skilldex &mdash; Skill Package Validation</div>
+                <span class="paper-layer">LAYER 0</span>
+                <div class="paper-finding">34% of community packages malformed. Format + coherence validation engine.</div>
+                <div class="paper-opensource"><span class="paper-opensource-dot"></span><span class="paper-opensource-text">Open source</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- QUESTION 1 DEEP DIVE -->
+<section class="section-dark" style="position: relative; z-index: 2;">
+    <div class="dive-panels">
+        <div class="dive-panel reveal">
+            <div class="container">
+                <div class="dive-overline">QUESTION 1</div>
+                <h2 class="dive-title">Do Skills / Agents Markdown Actually Affect Agent Behavior?</h2>
+                <span class="dive-badge">VERDICT: YES &mdash; CAUSALLY DEMONSTRATED</span>
+                <p class="dive-body">Skills markdown affects behavior at L1-L2 (probabilistic influence). The effect is measurable, material, and causally demonstrated. He et al. (2024) proves formatting changes behavior by up to 40%. Gloaguen et al. (2026) proves agents read and enforce AGENTS.md with 50x compliance spikes. Chen et al. (2025) proves Markdown Awareness is a learnable skill. No paper proves deterministic mandate without L3 runtime enforcement, but the evidence is now stronger than mere correlation.</p>
+                <div class="dive-stats">
+                    <div>
+                        <div class="dive-stat-number">40%</div>
+                        <div class="dive-stat-label">performance swing from format</div>
+                    </div>
+                    <div>
+                        <div class="dive-stat-number">50x</div>
+                        <div class="dive-stat-label">compliance spike with AGENTS.md</div>
+                    </div>
+                    <div>
+                        <div class="dive-stat-number">94%</div>
+                        <div class="dive-stat-label">skill descriptions decompose to structured reps</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dive-panel reveal">
+            <div class="container">
+                <div class="dive-overline">QUESTION 2</div>
+                <h2 class="dive-title">Formal Static Typing / Checking Before Runtime?</h2>
+                <span class="dive-badge">VERDICT: YES &mdash; ZIPPERGEN BREAKTHROUGH</span>
+                <p class="dive-body">ZipperGen is the breakthrough paper for multi-agent static coordination. It provides formal type checking (well-typedness), deadlock-free-by-construction guarantees, and syntax-directed projection &mdash; all before any agent runs. For single-agent skills, SkillFortify and SkCC provide formal static analysis. The remaining gap is behavioral typing of message content and automatic skill composition verification.</p>
+                <div class="dive-stats">
+                    <div>
+                        <div class="dive-stat-number">100%</div>
+                        <div class="dive-stat-label">deadlock-free by construction</div>
+                    </div>
+                    <div>
+                        <div class="dive-stat-number">96.95%</div>
+                        <div class="dive-stat-label">SkillFortify F1 on 540 skills</div>
+                    </div>
+                    <div>
+                        <div class="dive-stat-number">94.8%</div>
+                        <div class="dive-stat-label">SkCC proactive security trigger rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dive-panel reveal">
+            <div class="container">
+                <div class="dive-overline">QUESTION 3</div>
+                <h2 class="dive-title">Runtime Checking in a Deterministic Way?</h2>
+                <span class="dive-badge">VERDICT: YES &mdash; WITHOUT LLM-AS-JUDGE</span>
+                <p class="dive-body">Deterministic runtime enforcement exists at both single-agent and multi-agent levels. ACP achieves sub-microsecond decision latency (739-832 ns) with TLA+ verification across 4.2 billion states. ABC/AgentAssert enforces contracts with &lt;10ms overhead. ZipperGen guarantees deadlock-free coordination regardless of LLM nondeterminism. The remaining gap is runtime enforcement of what LLMs do inside action blocks.</p>
+                <div class="dive-stats">
+                    <div>
+                        <div class="dive-stat-number">739ns</div>
+                        <div class="dive-stat-label">ACP decision latency</div>
+                    </div>
+                    <div>
+                        <div class="dive-stat-number">4.2B</div>
+                        <div class="dive-stat-label">TLA+ verified states</div>
+                    </div>
+                    <div>
+                        <div class="dive-stat-number">&lt;10ms</div>
+                        <div class="dive-stat-label">ABC/AgentAssert per-action overhead</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="section section-white" id="methodology">
+    <div class="container">
+        <div class="overline reveal">THE METHODOLOGY</div>
+        <h2 class="section-title reveal reveal-delay-1">From Human SOP to Agentic Workflow</h2>
+        <p class="section-desc reveal reveal-delay-2">The four-step conversion process that bridges human intent and formal verification.</p>
+        <div class="method-grid" style="margin-top: 32px;">
+            <div class="method-card reveal reveal-delay-1">
+                <span class="method-number-watermark">01</span>
+                <div style="position: relative; z-index: 1;">
+                    <span class="method-step">STEP 01</span>
+                    <h3 class="method-title">Format Standardization</h3>
+                    <p class="method-body">Parameterize SOPs, apply MUST/SHOULD/MAY rules (RFC 2119), structure with Markdown for machine parseability. Transform unstructured prose into schemas agents can systematically interpret.</p>
+                </div>
+            </div>
+            <div class="method-card reveal reveal-delay-2">
+                <span class="method-number-watermark">02</span>
+                <div style="position: relative; z-index: 1;">
+                    <span class="method-step">STEP 02</span>
+                    <h3 class="method-title">Task Decomposition</h3>
+                    <p class="method-body">Split into independent pipeline steps with explicit inputs, outputs, and success criteria. Connect via structured artifacts (JSON) passed from one agent to another.</p>
+                </div>
+            </div>
+            <div class="method-card reveal reveal-delay-3">
+                <span class="method-number-watermark">03</span>
+                <div style="position: relative; z-index: 1;">
+                    <span class="method-step">STEP 03</span>
+                    <h3 class="method-title">Bidirectional Development</h3>
+                    <p class="method-body">Deploy, observe failures, refine SOP with new rules, iterate. Real-world failures expose tacit knowledge that was never documented. Each iteration builds robustness through feedback.</p>
+                </div>
+            </div>
+            <div class="method-card reveal reveal-delay-4">
+                <span class="method-number-watermark">04</span>
+                <div style="position: relative; z-index: 1;">
+                    <span class="method-step">STEP 04</span>
+                    <h3 class="method-title">Integration &amp; Execution</h3>
+                    <p class="method-body">Connect to real tools via MCP. Add human-in-the-loop for high-risk decisions. Enable production-ready automation with human oversight at critical checkpoints.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OPEN FRONTIER -->
+<section class="section section-canvas" id="frontier">
+    <div class="container">
+        <div class="frontier-layout">
+            <div class="frontier-left reveal">
+                <div class="frontier-left-sticky">
+                    <div class="overline">THE FRONTIER</div>
+                    <h2 class="section-title">What Remains Open</h2>
+                    <p style="color: var(--muted); line-height: 1.65;">The biggest gap is not formal verification &mdash; it is the formal specification process that precedes it. ZipperGen assumes you already have a formal global specification. But in practice, you start with a human SOP.</p>
+                </div>
+            </div>
+            <div class="frontier-right">
+                <div class="gap-item reveal reveal-delay-1">
+                    <div class="gap-number">01</div>
+                    <div class="gap-title">Behavioral typing of LLM action content</div>
+                    <div class="gap-desc">ZipperGen treats LLM actions as opaque. No paper verifies what LLMs compute inside action blocks.</div>
+                </div>
+                <div class="gap-item reveal reveal-delay-2">
+                    <div class="gap-number">02</div>
+                    <div class="gap-title">Skill-skill composition within a single agent</div>
+                    <div class="gap-desc">No static analysis of how multiple skills loaded by one agent interact.</div>
+                </div>
+                <div class="gap-item reveal reveal-delay-3">
+                    <div class="gap-number">03</div>
+                    <div class="gap-title">Blame assignment in multi-agent violations</div>
+                    <div class="gap-desc">When something goes wrong, who is responsible? ZipperGen provides no mechanism.</div>
+                </div>
+                <div class="gap-item reveal reveal-delay-4">
+                    <div class="gap-number">04</div>
+                    <div class="gap-title">Automatic rollback</div>
+                    <div class="gap-desc">ABC has Recovery contracts for single-agent, but multi-agent rollback is unaddressed.</div>
+                </div>
+                <div class="gap-item reveal reveal-delay-5">
+                    <div class="gap-number">05</div>
+                    <div class="gap-title">SOP-to-specification extraction</div>
+                    <div class="gap-desc">Tools that convert human SOPs into formal global workflows, iteratively refined from runtime failures.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-main" style="position: relative; z-index: 2; background: var(--ink);">
+    <div class="container">
+        <div class="footer-layout">
+            <div class="footer-left reveal">
+                <h2 class="footer-title">The Path Forward</h2>
+                <p class="footer-body">The Three-Layer Governance Stack is not a wishlist &mdash; it is a near-term engineering roadmap. The papers are already being written. The tools are already being built. The gap is closing.</p>
+            </div>
+            <div class="footer-right reveal reveal-delay-1">
+                <div class="footer-meta-label">COMPILED BY</div>
+                <div class="footer-meta-value">EvaPaper</div>
+                <div class="footer-meta-label">BASED ON</div>
+                <div class="footer-meta-value">32 papers across the Three-Layer Governance Stack</div>
+                <div class="footer-meta-label">DATE</div>
+                <div class="footer-meta-value">June 2026</div>
+            </div>
+        </div>
+        <div class="footer-bar">
+            <span class="footer-logo">EVAPAPER</span>
+            <span class="footer-tagline">GOVERNANCE IS NOT OPTIONAL. IT'S THE DIFFERENCE BETWEEN AGENTS THAT WORK AND AGENTS THAT ARE SAFE TO USE.</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ===== PARTICLE SYSTEM =====
+(function() {
+    const canvas = document.getElementById('particleCanvas');
+    const gl = canvas.getContext('webgl', { alpha: false, antialias: false });
+    if (!gl) return;
+
+    const PARTICLE_COUNT = 6000;
+    const COLORS = [
+        [11/255, 29/255, 58/255],
+        [44/255, 95/255, 124/255],
+        [176/255, 184/255, 193/255],
+        [212/255, 221/255, 229/255],
+        [26/255, 58/255, 92/255],
+    ];
+
+    const SPHERE_RADIUS = 1.4;
+    const BOX_SIZE = 1.8;
+    const GYROID_SCALE = 1.6;
+
+    // Helpers
+    function setP(arr, i, x, y, z) { arr[i*3]=x; arr[i*3+1]=y; arr[i*3+2]=z; }
+
+    function genCloud(n) {
+        const d = new Float32Array(n*3);
+        for (let i=0;i<n;i++){
+            const r=Math.cbrt(Math.random())*2.5;
+            const t=Math.random()*6.2831853;
+            const p=Math.acos(2*Math.random()-1);
+            setP(d,i,r*Math.sin(p)*Math.cos(t),r*Math.sin(p)*Math.sin(t),r*Math.cos(p));
+        }
+        return d;
+    }
+    function genSphere(n) {
+        const d = new Float32Array(n*3);
+        const gr=1.6180339, ai=6.2831853*gr;
+        for (let i=0;i<n;i++){
+            const t=i/(n-1);
+            const inc=Math.acos(1-2*t);
+            const az=ai*i;
+            setP(d,i,SPHERE_RADIUS*Math.sin(inc)*Math.cos(az),SPHERE_RADIUS*Math.sin(inc)*Math.sin(az),SPHERE_RADIUS*Math.cos(inc));
+        }
+        return d;
+    }
+    function genGyroid(n) {
+        const d=new Float32Array(n*3);
+        for(let i=0;i<n;i++){
+            let x,y,z,g;
+            do{
+                x=(Math.random()-0.5)*4.2; y=(Math.random()-0.5)*4.2; z=(Math.random()-0.5)*4.2;
+                g=Math.sin(GYROID_SCALE*x)*Math.cos(GYROID_SCALE*y)+Math.sin(GYROID_SCALE*y)*Math.cos(GYROID_SCALE*z)+Math.sin(GYROID_SCALE*z)*Math.cos(GYROID_SCALE*x);
+            }while(g<-0.2||g>0.2);
+            setP(d,i,x,y,z);
+        }
+        return d;
+    }
+    function genBox(n) {
+        const d=new Float32Array(n*3), s=BOX_SIZE;
+        for(let i=0;i<n;i++){
+            const f=Math.floor(Math.random()*6);
+            const u=Math.random()*s-s/2, v=Math.random()*s-s/2;
+            let x=0,y=0,z=0;
+            if(f===0){x=s/2;y=u;z=v}else if(f===1){x=-s/2;y=u;z=v}else if(f===2){x=u;y=s/2;z=v}else if(f===3){x=u;y=-s/2;z=v}else if(f===4){x=u;y=v;z=s/2}else{x=u;y=v;z=-s/2}
+            setP(d,i,x,y,z);
+        }
+        return d;
+    }
+    function genTetrahedron(n) {
+        const d=new Float32Array(n*3);
+        const v1=[1.6,1.6,1.6],v2=[1.6,-1.6,-1.6],v3=[-1.6,1.6,-1.6],v4=[-1.6,-1.6,1.6];
+        for(let i=0;i<n;i++){
+            let u=Math.random(),v=Math.random();
+            if(u+v>1){u=1-u;v=1-v}
+            const w=1-u-v;
+            const f=Math.floor(Math.random()*4);
+            const tri=f===0?[v1,v2,v3]:f===1?[v1,v2,v4]:f===2?[v1,v3,v4]:[v2,v3,v4];
+            setP(d,i,u*tri[0][0]+v*tri[1][0]+w*tri[2][0],u*tri[0][1]+v*tri[1][1]+w*tri[2][1],u*tri[0][2]+v*tri[1][2]+w*tri[2][2]);
+        }
+        return d;
+    }
+
+    // Matrix helpers
+    function perspectiveM(fov, aspect, near, far){
+        const f=1/Math.tan(fov/2);
+        const nf=1/(near-far);
+        return new Float32Array([f/aspect,0,0,0,0,f,0,0,0,0,(far+near)*nf,-1,0,0,2*far*near*nf,0]);
+    }
+    function rotX(a){const c=Math.cos(a),s=Math.sin(a);return new Float32Array([1,0,0,0,0,c,s,0,0,-s,c,0,0,0,0,1])}
+    function rotY(a){const c=Math.cos(a),s=Math.sin(a);return new Float32Array([c,0,-s,0,0,1,0,0,s,0,c,0,0,0,0,1])}
+    function multiply(a,b){const o=new Float32Array(16);for(let i=0;i<4;i++)for(let j=0;j<4;j++)o[i*4+j]=a[i*4]*b[j]+a[i*4+1]*b[4+j]+a[i*4+2]*b[8+j]+a[i*4+3]*b[12+j];return o}
+    function lookAt(eye,center,up){
+        let zx=eye[0]-center[0],zy=eye[1]-center[1],zz=eye[2]-center[2];
+        const zl=Math.sqrt(zx*zx+zy*zy+zz*zz);zx/=zl;zy/=zl;zz/=zl;
+        let xx=up[1]*zz-up[2]*zy,xy=up[2]*zx-up[0]*zz,xz=up[0]*zy-up[1]*zx;
+        const xl=Math.sqrt(xx*xx+xy*xy+xz*xz);xx/=xl;xy/=xl;xz/=xl;
+        return new Float32Array([xx,xy,xz,0,zy*zz-zz*xy,zz*xx-zx*xz,zx*xy-zy*xx,0,zx,zy,zz,0,-(xx*eye[0]+xy*eye[1]+xz*eye[2]),-(xy*eye[0]+xy*eye[1]+xz*eye[2]),-(zx*eye[0]+zy*eye[1]+zz*eye[2]),1]);
+    }
+
+    // Shaders
+    const VS=`
+    attribute vec3 aPosition;
+    attribute vec3 aTarget;
+    attribute vec3 aVelocity;
+    attribute vec3 aAttrib;
+    uniform float uTime;
+    uniform float uEnergy;
+    uniform float uMorphFactor;
+    uniform float uShapeSpeed;
+    uniform mat4 uProjectionMatrix;
+    uniform mat4 uModelViewMatrix;
+    varying float vPointSize;
+    varying vec3 vPosition;
+    varying float vDepth;
+    float sn(vec3 v){return sin(v.x*0.9+v.z*1.1)*cos(v.y*0.9+v.z*0.7)+sin(v.y*1.1+v.x*0.7)*cos(v.z*0.9+v.x*1.1);}
+    void main(){
+        vec3 morphPos=mix(aPosition,aTarget,uMorphFactor);
+        float noise=sn(vec3(morphPos.x*0.9,morphPos.y*0.9,morphPos.z*0.9+uTime*0.2*uShapeSpeed))*0.5;
+        float drift=sn(vec3(morphPos.xy*0.4+uTime*0.1,uTime*0.15))*0.12;
+        float d=length(morphPos);
+        float breathe=1.0+sin(uTime*0.3+d*1.2)*0.03*uEnergy;
+        morphPos*=breathe;
+        vec3 vDisp=aVelocity*0.8+drift;
+        vec3 displaced=morphPos+vDisp*(0.05+uMorphFactor*0.02);
+        displaced+=vec3(noise*0.03);
+        vec4 mv=uModelViewMatrix*vec4(displaced,1.0);
+        vPointSize=aAttrib.y*uEnergy*(180.0/-mv.z);
+        vPosition=displaced;
+        vDepth=-mv.z;
+        gl_Position=uProjectionMatrix*mv;
+        gl_PointSize=vPointSize;
+    }`;
+    const FS=`
+    precision mediump float;
+    uniform vec3 uPalette[5];
+    uniform float uEnergy;
+    uniform float uTime;
+    varying vec3 vPosition;
+    varying float vDepth;
+    void main(){
+        vec2 pt=gl_PointCoord-vec2(0.5);
+        float dist=length(pt);
+        if(dist>0.5)discard;
+        float t=sin(uTime*0.3)*0.5+0.5;
+        float idx=mod(floor(vPosition.x*2.0+t*5.0),5.0);
+        vec3 c1=uPalette[0];
+        if(idx<1.0)c1=uPalette[0];else if(idx<2.0)c1=uPalette[1];else if(idx<3.0)c1=uPalette[2];else if(idx<4.0)c1=uPalette[3];else c1=uPalette[4];
+        float blend=fract(vPosition.x*2.0+t*5.0);
+        vec3 color=mix(c1,uPalette[int(mod(idx+1.0,5.0))],blend);
+        float glow=1.0-smoothstep(0.0,0.5,dist);
+        glow=glow*1.2+0.1;
+        float alpha=glow*0.82;
+        float edge=smoothstep(0.5,0.35,dist);
+        alpha=alpha*edge;
+        float depthFade=clamp(2.5/(vDepth+0.1),0.15,1.0);
+        alpha*=depthFade;
+        vec3 finalColor=color*uEnergy*1.1;
+        gl_FragColor=vec4(finalColor,alpha);
+    }`;
+
+    function compileShader(src,type){
+        const s=gl.createShader(type);
+        gl.shaderSource(s,src);
+        gl.compileShader(s);
+        return s;
+    }
+    const prog=gl.createProgram();
+    gl.attachShader(prog,compileShader(VS,gl.VERTEX_SHADER));
+    gl.attachShader(prog,compileShader(FS,gl.FRAGMENT_SHADER));
+    gl.linkProgram(prog);
+    gl.useProgram(prog);
+
+    // Generate shapes
+    const shapes=[genCloud(PARTICLE_COUNT),genSphere(PARTICLE_COUNT),genGyroid(PARTICLE_COUNT),genBox(PARTICLE_COUNT),genTetrahedron(PARTICLE_COUNT)];
+
+    // Buffers
+    const positions=new Float32Array(PARTICLE_COUNT*3);
+    const velocities=new Float32Array(PARTICLE_COUNT*3);
+    const targets=new Float32Array(PARTICLE_COUNT*3);
+    const attribs=new Float32Array(PARTICLE_COUNT*3);
+    positions.set(shapes[0]);
+    targets.set(shapes[1]);
+    for(let i=0;i<PARTICLE_COUNT;i++){
+        attribs[i*3]=i;
+        attribs[i*3+1]=1.2+Math.random()*1.4;
+        attribs[i*3+2]=0.8+Math.random()*0.4;
+    }
+
+    const posB=gl.createBuffer(), velB=gl.createBuffer(), tgtB=gl.createBuffer(), attrB=gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER,posB);gl.bufferData(gl.ARRAY_BUFFER,positions,gl.DYNAMIC_DRAW);
+    gl.bindBuffer(gl.ARRAY_BUFFER,velB);gl.bufferData(gl.ARRAY_BUFFER,velocities,gl.STATIC_DRAW);
+    gl.bindBuffer(gl.ARRAY_BUFFER,tgtB);gl.bufferData(gl.ARRAY_BUFFER,targets,gl.STATIC_DRAW);
+    gl.bindBuffer(gl.ARRAY_BUFFER,attrB);gl.bufferData(gl.ARRAY_BUFFER,attribs,gl.STATIC_DRAW);
+
+    const aPos=gl.getAttribLocation(prog,'aPosition');
+    const aVel=gl.getAttribLocation(prog,'aVelocity');
+    const aTgt=gl.getAttribLocation(prog,'aTarget');
+    const aAttr=gl.getAttribLocation(prog,'aAttrib');
+    const uTime=gl.getUniformLocation(prog,'uTime');
+    const uEnergy=gl.getUniformLocation(prog,'uEnergy');
+    const uMorphFactor=gl.getUniformLocation(prog,'uMorphFactor');
+    const uShapeSpeed=gl.getUniformLocation(prog,'uShapeSpeed');
+    const uProj=gl.getUniformLocation(prog,'uProjectionMatrix');
+    const uMV=gl.getUniformLocation(prog,'uModelViewMatrix');
+    const uPal=gl.getUniformLocation(prog,'uPalette');
+
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.ONE,gl.ONE_MINUS_SRC_ALPHA);
+    gl.clearColor(0x0B/255,0x1D/255,0x3A/255,1);
+
+    // Animation state
+    let curShape=0, prevShape=0, morphing=false, mFactor=0, sTimer=0;
+    let rot={x:0,y:0}, tRot={x:0,y:0};
+    let lastTime=0, rafId=0;
+    const DURATIONS=[12,10,8,8,8];
+    const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function resize(){
+        const dpr=Math.min(window.devicePixelRatio||1,2);
+        canvas.width=window.innerWidth*dpr;
+        canvas.height=window.innerHeight*dpr;
+        gl.viewport(0,0,canvas.width,canvas.height);
+    }
+    resize();
+    window.addEventListener('resize',resize);
+
+    function render(time){
+        rafId=requestAnimationFrame(render);
+        const dt=prefersReducedMotion?0:Math.min((time-lastTime)*0.001,0.05);
+        lastTime=time;
+        const t=time*0.001;
+
+        sTimer+=dt;
+        if(sTimer>=DURATIONS[curShape%DURATIONS.length]-2.5&&!morphing){
+            morphing=true;prevShape=curShape;
+            curShape=(curShape+1)%shapes.length;
+            sTimer=0;mFactor=0;
+        }
+        if(morphing){mFactor+=dt*0.015;if(mFactor>=1){mFactor=1;morphing=false;}}
+
+        if(morphing){
+            const ps=shapes[prevShape],ts=shapes[curShape];
+            for(let i=0;i<PARTICLE_COUNT;i++){
+                const px=ps[i*3],py=ps[i*3+1],pz=ps[i*3+2];
+                const tx=ts[i*3],ty=ts[i*3+1],tz=ts[i*3+2];
+                const mx=px+(tx-px)*mFactor;
+                const my=py+(ty-py)*mFactor;
+                const mz=pz+(tz-pz)*mFactor;
+                const n=((Math.sin(mx*0.9+mz*1.1)*Math.cos(my*0.9+mz*0.7)+Math.sin(my*1.1+mx*0.7)*Math.cos(mz*0.9+mx*1.1))*0.5)*0.015;
+                positions[i*3]=mx+n;positions[i*3+1]=my+n;positions[i*3+2]=mz+n;
+            }
+            gl.bindBuffer(gl.ARRAY_BUFFER,posB);
+            gl.bufferSubData(gl.ARRAY_BUFFER,0,positions);
+        }
+        targets.set(shapes[curShape]);
+        gl.bindBuffer(gl.ARRAY_BUFFER,tgtB);gl.bufferSubData(gl.ARRAY_BUFFER,0,targets);
+
+        tRot.x=Math.sin(t*0.07)*0.25+Math.sin(t*0.13)*0.15;
+        tRot.y=t*0.3*0.15;
+        rot.x+=(tRot.x-rot.x)*0.04;
+        rot.y+=(tRot.y-rot.y)*0.04;
+
+        gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+
+        const aspect=canvas.width/canvas.height;
+        const proj=perspectiveM(60*Math.PI/180,aspect,0.1,100);
+        const view=lookAt([0,0,3.5],[0,0,0],[0,1,0]);
+        const model=multiply(rotY(rot.y),rotX(rot.x));
+        const mv=multiply(view,model);
+
+        gl.uniformMatrix4fv(uProj,false,proj);
+        gl.uniformMatrix4fv(uMV,false,mv);
+        gl.uniform1f(uTime,t);
+        gl.uniform1f(uEnergy,0.95);
+        gl.uniform1f(uMorphFactor,mFactor);
+        gl.uniform1f(uShapeSpeed,1);
+
+        const pal=new Float32Array(15);
+        for(let i=0;i<5;i++){pal[i*3]=COLORS[i][0];pal[i*3+1]=COLORS[i][1];pal[i*3+2]=COLORS[i][2];}
+        gl.uniform3fv(uPal,pal);
+
+        gl.bindBuffer(gl.ARRAY_BUFFER,posB);gl.enableVertexAttribArray(aPos);gl.vertexAttribPointer(aPos,3,gl.FLOAT,false,0,0);
+        gl.bindBuffer(gl.ARRAY_BUFFER,velB);gl.enableVertexAttribArray(aVel);gl.vertexAttribPointer(aVel,3,gl.FLOAT,false,0,0);
+        gl.bindBuffer(gl.ARRAY_BUFFER,tgtB);gl.enableVertexAttribArray(aTgt);gl.vertexAttribPointer(aTgt,3,gl.FLOAT,false,0,0);
+        gl.bindBuffer(gl.ARRAY_BUFFER,attrB);gl.enableVertexAttribArray(aAttr);gl.vertexAttribPointer(aAttr,3,gl.FLOAT,false,0,0);
+
+        gl.drawArrays(gl.POINTS,0,PARTICLE_COUNT);
+    }
+    rafId=requestAnimationFrame(render);
+})();
+
+// ===== NAV SCROLL BEHAVIOR =====
+(function(){
+    const nav=document.getElementById('mainNav');
+    const toggle=document.getElementById('navToggle');
+    const mobile=document.getElementById('navMobile');
+
+    window.addEventListener('scroll',function(){
+        nav.classList.toggle('scrolled',window.scrollY>window.innerHeight);
+    },{passive:true});
+
+    toggle.addEventListener('click',function(){
+        mobile.classList.toggle('active');
+    });
+
+    mobile.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click',function(){mobile.classList.remove('active');});
+    });
+})();
+
+// ===== SCROLL REVEAL =====
+(function(){
+    const observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+            }
+        });
+    },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+
+    document.querySelectorAll('.reveal').forEach(function(el){
+        observer.observe(el);
+    });
+})();
+
+// ===== HERO ANIMATIONS =====
+(function(){
+    const els=document.querySelectorAll('.hero-overline,.hero-title,.hero-subtitle,.hero-cta');
+    els.forEach(function(el,i){
+        setTimeout(function(){
+            el.style.opacity='1';
+            el.style.transform='translateY(0)';
+        },300+i*200);
+    });
+})();
+</script>
+</body>
+</html>
