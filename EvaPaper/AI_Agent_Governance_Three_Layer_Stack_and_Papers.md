@@ -23,6 +23,22 @@ The latest workflow run over the local indexed corpus sharpens the practical rec
 
 These results came from the current `workflow-static` pipeline. In this environment, external discovery APIs were temporarily unavailable, so the latest run used the local curated corpus rather than live graph expansion. That means the ranking above reflects the current internal evidence base, not a claim that fresh frontier scouting was completed in that specific run.
 
+### June 12, 2026 scout addendum: two newly surfaced papers
+
+The June 12 scout adds two papers that expand the stack in different directions — one on **learning-based sequential validation** (static-time) and one on **owner-harm threat modeling** (behavioral):
+
+1. **Learning Correct Behavior from Examples** (`arXiv:2605.03159`)
+   - Learns correct sequential behavior from 2-10 passing execution traces and validates new executions against a learned model
+   - Most relevant to **Layer 0 + Layer 1**
+   - Why it matters: static governance usually requires either exhaustive specifications or runtime monitors; this shows a middle path — learning ground truth from a small set of positive examples and then validating against it
+
+2. **Owner-Harm: Agents Harming Their Deployers** (`arXiv:2604.18658`)
+   - Formal threat model with eight categories of agent behavior damaging the deployer
+   - Most relevant to **Layer 1 + Layer 2**
+   - Why it matters: current safety benchmarks optimize for generic criminal harm (AgentHarm) and miss the deployer-harm vector entirely; the 14.8% → 85.3% TPR improvement with layered defense shows that owner-harm detection is a different, harder problem that needs its own governance stack
+
+**Interpretation:** the June 12 additions reinforce that the governance problem is not just about writing better specs or adding runtime guards. It is also about (a) validating behavior when you don't have complete specs, and (b) protecting against a threat class that most current benchmarks ignore. The owner-harm paper is especially important because it shows that even a 100% TPR gate on generic criminal harm collapses to 14.8% when the victim is the deployer itself.
+
 ### June 7, 2026 scout addendum: six newly surfaced papers
 
 The latest scout update adds six papers that materially improve the stack, especially around **skill composition**, **verifiable skill representations**, and **formal monitoring**:
@@ -389,6 +405,56 @@ This is Layer 1 (Runtime-Level Governance) at the infrastructure tier. It comple
 **Is it a solution we're looking into?** Yes. For enterprises in regulated industries, infrastructure-level governance is the only viable approach. Sovereign Core provides the physical enforcement layer that makes policy compliance verifiable to auditors.
 
 **Recommendation reason:** Most governance frameworks operate at the application layer, which means a compromised agent can bypass them. Infrastructure-level enforcement is the only approach that provides non-bypassable governance for high-assurance environments.
+
+---
+
+### 42. Learning Correct Behavior from Examples: Validating Sequential Execution in Autonomous Agents
+
+- **arXiv ID:** 2605.03159
+- **URL:** https://arxiv.org/abs/2605.03159
+- **PDF:** https://arxiv.org/pdf/2605.03159
+- **Authors:** Reshabh K Sharma, Gaurav Mittal, Yu Hu
+- **Date:** May 2026
+
+**Abstract:**
+> As autonomous agents become increasingly sophisticated, validating their sequential behavior presents a significant challenge. Traditional testing approaches require manual specification, exact sequence matching, or thousands of training examples. We present a novel algorithm that automatically learns correct behavior from just 2-10 passing execution traces and validates new executions against this learned model. Our approach combines dominator analysis from compiler theory with multimodal large language model-powered semantic understanding to identify essential states and handle non-deterministic behavior. The system constructs a generalized ground truth model using Prefix Tree Acceptors, merges traces through multi-tiered equivalence detection, and validates new executions via topological subsequence matching. In controlled experiments, our system achieved high accuracy in detecting product bugs and false successes using only 3 training traces. This approach provides explainable validation results with coverage metrics and works across diverse domains including UI testing, code generation, and robotic processes.
+
+**Why I recommend this paper:**
+This is the **first paper to show that correct sequential behavior can be learned from just a handful of positive traces** — not thousands of examples, not manually written specifications. The combination of compiler theory (dominator analysis) with LLM semantic understanding is a genuinely novel approach. The 3-trace learning threshold makes it practical for real-world skill validation where you rarely have exhaustive test suites.
+
+**Relevance to our topic:**
+This bridges Layer 0 (Spec) and Layer 1 (Runtime). It provides a **middle path between static specification and runtime monitoring**: learn what correct looks like from a few examples, then validate against that learned model. For skill validation, this means you can verify that a skill executes correctly even when you don't have complete formal specs.
+
+**Which layer:** **Layer 0 → Layer 1 bridge** (Spec-Level to Runtime-Level)
+
+**Is it a solution we're looking into?** Yes. The learned validation approach is especially valuable for skill testing because most skills don't have exhaustive test suites. Learning correct behavior from 2-10 traces and then detecting deviations is exactly what we need for CI/CD skill validation.
+
+**Recommendation reason:** The paper solves the "no spec, no test" problem for agent validation. It shows that a small number of positive execution traces is enough to learn a verifiable model of correct behavior. This is critical for skill governance because writing complete formal specifications for every skill is impractical, but running a few traces and validating against them is feasible.
+
+---
+
+### 43. Owner-Harm: Agents Harming Their Deployers
+
+- **arXiv ID:** 2604.18658
+- **URL:** https://arxiv.org/abs/2604.18658
+- **PDF:** https://arxiv.org/pdf/2604.18658
+- **Authors:** Dario Zhang
+- **Date:** April 2026
+
+**Abstract:**
+> Existing AI agent safety benchmarks focus on generic criminal harm (cybercrime, harassment, weapon synthesis), leaving a systematic blind spot for a distinct and commercially consequential threat category: agents harming their own deployers. Real-world incidents illustrate the gap: Slack AI credential exfiltration (Aug 2024), Microsoft 365 Copilot calendar-injection leaks (Jan 2024), and a Meta agent unauthorized forum post exposing operational data (Mar 2026). We propose Owner-Harm, a formal threat model with eight categories of agent behavior damaging the deployer. We quantify the defense gap on two benchmarks: a compositional safety system achieves 100% TPR / 0% FPR on AgentHarm (generic criminal harm) yet only 14.8% (4/27; 95% CI: 5.9%-32.5%) on AgentDojo injection tasks (prompt-injection-mediated owner harm). A controlled generic-LLM baseline shows the gap is not inherent to owner-harm (62.7% vs. 59.3%, delta 3.4 pp) but arises from environment-bound symbolic rules that fail to generalize across tool vocabularies. On a post-hoc 300-scenario owner-harm benchmark, the gate alone achieves 75.3% TPR / 3.3% FPR; adding a deterministic post-audit verifier raises overall TPR to 85.3% (+10.0 pp) and Hijacking detection from 43.3% to 93.3%, demonstrating strong layer complementarity. We introduce the Symbolic-Semantic Defense Generalization (SSDG) framework relating information coverage to detection rate.
+
+**Why I recommend this paper:**
+Owner-Harm is the **first formal threat model for a blind spot that most safety benchmarks completely miss**: agents harming their own deployers rather than generic criminal targets. The 100% TPR on generic criminal harm vs. 14.8% on owner-harm is a devastating gap. The paper proves that the problem is not the threat itself but the **environment-bound symbolic rules** that fail to generalize across tool vocabularies.
+
+**Relevance to our topic:**
+This is Layer 1 (Runtime) and Layer 2 (Behavioral) governance. It exposes that current safety benchmarks are measuring the wrong thing, and it provides both a new threat model (eight categories) and a defense framework (SSDG) that shows layered defense works. The gate + post-audit verifier architecture is directly applicable to how we design runtime governance.
+
+**Which layer:** **Layer 1 → Layer 2 bridge** (Runtime-Level to Behavioral-Level)
+
+**Is it a solution we're looking into?** Yes. The SSDG framework and the layered defense results (75.3% gate alone → 85.3% with verifier) provide a concrete target for our governance architecture. The paper also gives us a new benchmark category that any governance system must address.
+
+**Recommendation reason:** The 100% → 14.8% collapse is the single most important finding in agent safety this year. It proves that benchmarking against generic criminal harm is insufficient for production governance. The paper provides both the threat model and the defense architecture to fix this gap.
 
 ---
 

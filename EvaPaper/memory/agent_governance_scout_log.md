@@ -225,6 +225,20 @@ Status: **NEW FINDINGS FOUND**
 - `SkillSafetyBench` and `Measuring Compositional Risk` together strengthen the argument that skill governance needs both **spec validation** and **interaction-level evaluation**.
 - `KYA` and `AgentTrap` reinforce that third-party skill trust is a first-class governance problem, not an edge case.
 
+## 2026-06-12 Scout Run — NEW FINDINGS DISCOVERED
+Search queries: BeSafe-Bench agent safety benchmark 2026, ST-WebAgentBench web agent safety 2026, agent governance framework Microsoft NVIDIA OWASP 2026, agent skill markdown specification validation 2026, GovernSpec contractual skills 2026, agent behavior evaluation validation framework 2026, AI agent safety benchmark 2026, OWASP agentic applications 2026, OpenClaw agent governance 2026, agent governance toolkit open source 2026
+Status: **NEW FINDINGS FOUND**
+
+### New Papers (Found: 0612)
+1. **Learning Correct Behavior from Examples** (arXiv:2605.03159) — Reshabh K Sharma, Gaurav Mittal, Yu Hu, May 2026. Novel algorithm that learns correct behavior from 2-10 passing execution traces and validates new executions against a learned model. Combines dominator analysis from compiler theory with LLM-powered semantic understanding. Uses Prefix Tree Acceptors, multi-tiered equivalence detection, and topological subsequence matching. High accuracy detecting product bugs and false successes with only 3 training traces. URL: https://arxiv.org/abs/2605.03159 — **Layer 0/1** — Bridges static learning from execution traces to runtime validation. The approach is particularly relevant for skill validation because it learns ground truth from small positive samples rather than requiring exhaustive specifications.
+
+2. **Owner-Harm: Agents Harming Their Deployers** (arXiv:2604.18658) — Dario Zhang, April 2026. Formal threat model with eight categories of agent behavior damaging the deployer. Real-world incidents: Slack AI credential exfiltration, Microsoft 365 Copilot calendar-injection leaks, Meta agent unauthorized forum post. Compositional safety system achieves 100% TPR/0% FPR on generic criminal harm but only 14.8% on owner-harm injection tasks. Introduces SSDG (Symbolic-Semantic Defense Generalization) framework. Gate + deterministic post-audit verifier raises TPR to 85.3%. URL: https://arxiv.org/abs/2604.18658 — **Layer 1/2** — Identifies a critical blind spot in current safety benchmarks: agents harming their own deployers rather than generic criminal targets. The SSDG framework and the 85.3% TPR with layered defense provide a concrete measurement target for governance systems.
+
+### Notes (0612)
+- The graph discovery run surfaced 71 candidate papers from 5 seeds, but most were out-of-domain. The two new papers above were identified through direct search comparison against the known baseline.
+- **Learning Correct Behavior** is the strongest new paper for static governance: it learns correct sequential behavior from just a few traces, making it feasible to validate skill execution patterns without writing full formal specifications.
+- **Owner-Harm** exposes a governance gap that most benchmarks miss: safety systems optimized for generic criminal harm (AgentHarm) perform poorly against deployer-directed attacks. The 14.8% → 85.3% improvement shows that layered defense (gate + post-audit verifier) is the right architecture for this threat class.
+
 ## Next Scout Run
 - Scheduled: June 12, 2026
 - Focus: FAccT 2026 conference proceedings (June 25-28), OWASP Top 10 adoption metrics, skill marketplace integrity implementations, ACP/AgentAssert production deployments, SkillGuard/AgentWarden follow-up papers
