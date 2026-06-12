@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analyze Research Gaps"
+  short_description: "Find evidence-backed gaps and research opportunities"
+  default_prompt: "Use $analyze-research-gaps to reassess the EvaPaper corpus and update its ranked research opportunities."

@@ -131,6 +131,7 @@ def git_commit_and_push(repo_dir: Path = REPO_DIR, scout_log: Path = SCOUT_LOG, 
     subprocess.run(["git", "add", str(report_md)], capture_output=True)
     subprocess.run(["git", "add", str(DEFAULT_WORKSPACE.dashboard_data)], capture_output=True)
     subprocess.run(["git", "add", str(DEFAULT_WORKSPACE.dashboard_html)], capture_output=True)
+    subprocess.run(["git", "add", str(DEFAULT_WORKSPACE.research_opportunities)], capture_output=True)
     
     # Commit
     today = datetime.now().strftime("%Y-%m-%d")

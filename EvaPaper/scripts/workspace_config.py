@@ -24,6 +24,7 @@ class WorkspaceConfig:
     corpus_index: Path = DATA_DIR / "paper_corpus.json"
     dashboard_data: Path = DATA_DIR / "governance_dashboard.json"
     dashboard_html: Path = ROOT / "governance-dashboard.html"
+    research_opportunities: Path = DATA_DIR / "research_opportunities.json"
     team_dir: Path = DATA_DIR / "agent_team"
     run_costs: Path = DATA_DIR / "run_costs.json"
 

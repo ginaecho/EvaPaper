@@ -27,6 +27,7 @@ The core framework distilled from 8+ research papers and industry implementation
 - `AI_Agent_Governance_Three_Layer_Stack_and_Papers.pptx` — 22-slide deck with dark navy theme
 - `governance-dashboard.html` — Self-contained visual dashboard for topic ratios and scout trends
 - `data/governance_dashboard.json` — Machine-readable dashboard metrics
+- `data/research_opportunities.json` — Ranked LLM analysis of underexplored areas
 
 ### 📚 Papers Summarized
 | Paper | arXiv | Focus |
@@ -55,6 +56,7 @@ A cron job runs every **Sunday at 03:17 AM (Asia/Shanghai)** to search for new p
 - `scripts/scout.py --discover "..."` — generic scout entrypoint with configurable paths
 - `scripts/paper_corpus.py` — builds a structured local corpus index from the markdown report
 - `scripts/governance_dashboard.py` — classifies papers and regenerates dashboard data/HTML
+- `skills/analyze-research-gaps/SKILL.md` — sub-agent workflow for evidence-backed gap analysis
 - `scripts/question_map.py` — maps a user question to the papers in the local corpus with supporting evidence snippets
 - `scripts/agent_team.py` — generic multi-agent orchestration entrypoint for scouting, corpus maintenance, and synthesis
 
@@ -151,6 +153,7 @@ Common commands:
 make help
 make index
 make dashboard
+make opportunities-check
 make sota-static
 make sota-all
 make ask-static QUESTION="which papers are about static checking of agent interactions?"
@@ -172,11 +175,31 @@ The dashboard shows:
 - cumulative topic growth across scout discovery dates
 - multi-label coverage of governance Layers 0-3
 - topics gaining the most attention in the latest three scout windows
+- an interactive Obsidian-style association graph with search, filtering, pan, zoom, and paper details
+- a Karpathy-style in-HTML wiki with overview, topic, layer, and paper pages
+- ranked underexplored areas and research opportunities with explicit LLM reasoning
 - a linked evidence ledger for every indexed paper
 
 Each paper receives one primary topic so the topic ratio sums to 100%. Layer
 coverage remains multi-label. The scout workflow regenerates the dashboard only
 when new findings are written, preserving the existing no-change/no-update rule.
+
+The association graph uses arXiv/DOI identifiers as stable node IDs. Each paper
+keeps its strongest corpus neighbors based on shared primary topic, governance
+layers, and technical terms. Every edge exposes its reason in the paper detail
+panel. These conceptual links complement the OpenAlex citation graph used during
+discovery; they are not presented as direct citation claims.
+
+The wiki is compiled into the HTML from the authoritative report and scout log.
+It contains a searchable index, one page per paper, topic and governance layer,
+provenance, and cross-references. The graph links directly into those wiki pages.
+
+Research opportunities are not produced by fixed counting rules. After a scout
+finds accepted papers, a Claw sub-agent follows
+`skills/analyze-research-gaps/SKILL.md`, writes
+`data/research_opportunities.json`, validates it, and then regenerates the
+dashboard. The HTML labels these conclusions as LLM reasoning over the current
+corpus rather than proof that outside literature does not exist.
 
 Useful variables:
 

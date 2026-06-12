@@ -3,7 +3,7 @@
 ## Workflow Agreements
 
 ### Research Dashboard
-The user wants a visual dashboard updated after every scout run that produces new findings. It must summarize primary paper-topic ratios, governance-layer coverage, and topic growth over scout discovery dates. No-new-finding scout runs must not rewrite dashboard artifacts.
+The user wants a visual dashboard updated after every scout run that produces new findings. It must summarize primary paper-topic ratios, governance-layer coverage, topic growth over scout discovery dates, an Obsidian-style graph, a Karpathy-style in-HTML wiki, and ranked underexplored areas with explicit LLM reasoning. The Claw sub-agent must use `skills/analyze-research-gaps/SKILL.md` to write `data/research_opportunities.json` before dashboard regeneration. No-new-finding scout runs must not rewrite these artifacts.
 
 ### Agent-Governance-Scout Run Protocol
 When the user asks me to "run" the agent-governance-scout (or "update findings"):

@@ -1,0 +1,238 @@
+{
+  "generated_at": "2026-06-12",
+  "analysis_model": "GPT-5 Codex",
+  "corpus_snapshot": {
+    "source_record_count": 70,
+    "academic_paper_count": 52,
+    "scope_note": "paper_corpus.json contains mixed papers, products, standards, and title variants; the dashboard analyzes 52 deduplicated scholarly-ID papers.",
+    "scout_run_count": 8,
+    "latest_scout": "2026-06-13",
+    "graph_nodes": 52,
+    "graph_edges": 97
+  },
+  "summary": "The largest opportunities are not simply the smallest categories. The stronger pattern is a shortage of evidence at the intersections: multi-agent composition, post-deployment governance, and validation of adaptive controls remain weakly connected to the otherwise fast-growing work on specifications, runtime enforcement, and benchmarks.",
+  "opportunities": [
+    {
+      "rank": 1,
+      "title": "Compositional governance for interacting skills and agents",
+      "gap_type": "corpus_gap",
+      "priority_score": 94,
+      "confidence": "high",
+      "scope": "Methods that prove or test whether individually governed skills remain safe when composed into dynamic multi-agent workflows.",
+      "why_missing": "Coordination and composition is the smallest primary topic in the 52-paper dashboard subset at three papers. Existing work identifies compositional risk and offers coordination formalisms, but the current corpus does not contain an integrated evaluation stack combining specification, runtime admission, and behavioral outcomes for changing skill sets.",
+      "evidence": [
+        {
+          "observation": "Only 3 of 52 papers are primarily classified as coordination and composition.",
+          "source": "data/governance_dashboard.json"
+        },
+        {
+          "observation": "Measuring Compositional Risk shows that individually safe skills can form unsafe sets, while ZipperGen focuses on structural coordination guarantees.",
+          "source": "memory/agent_governance_scout_log.md"
+        },
+        {
+          "observation": "The three coordination nodes form three internal associations but only one cross-topic association in the generated conceptual graph.",
+          "source": "data/governance_dashboard.json"
+        }
+      ],
+      "llm_reasoning": "The corpus contains both the problem statement and partial formal machinery, but not a bridge that converts global workflow specifications into measurable end-to-end safety under runtime changes. This missing bridge can invalidate otherwise strong single-skill governance.",
+      "uncertainty": "The corpus may have missed multi-agent verification work published under distributed systems, protocol verification, or workflow synthesis terminology.",
+      "coverage_check": {
+        "query_terms": [
+          "compositional",
+          "coordination",
+          "multi-agent",
+          "global invariant",
+          "dynamic skill"
+        ],
+        "matched_titles": [
+          "AgentVerify",
+          "ZipperGen / Provable Coordination for LLM Agents via MSCs",
+          "Measuring Compositional Risk"
+        ],
+        "interpretation": "The local scholarly subset contains partial approaches but no record explicitly combining global specifications, dynamic runtime admission, and end-to-end behavioral evaluation. This is a bounded corpus claim, not a field-wide absence claim."
+      },
+      "research_questions": [
+        "Which local skill guarantees are compositional, and which require global invariants?",
+        "Can dynamic skill installation preserve safety without re-verifying the complete agent graph?",
+        "What benchmark detects unsafe emergent behavior that no individual skill exhibits?"
+      ],
+      "scout_queries": [
+        "compositional verification LLM agent skills global invariants",
+        "multi-agent workflow safety benchmark dynamic tool composition"
+      ],
+      "related_topics": [
+        "coordination",
+        "specification",
+        "runtime"
+      ],
+      "related_layers": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Longitudinal evidence for governance in production",
+      "gap_type": "evidence_gap",
+      "priority_score": 91,
+      "confidence": "high",
+      "scope": "Operational studies that measure governance drift, incidents, recovery, overrides, and policy effectiveness over months rather than benchmark sessions.",
+      "why_missing": "Layer 3 has only five represented papers, but scarcity alone is not the main issue. Most corpus evidence is based on benchmarks, simulated attacks, formal models, or short experiments; very little follows deployed systems through policy changes, model upgrades, and real incidents.",
+      "evidence": [
+        {
+          "observation": "The dashboard assigns only 5 papers to Layer 3 ecosystem governance versus 29 to Layer 1 runtime governance.",
+          "source": "data/governance_dashboard.json"
+        },
+        {
+          "observation": "TAIP argues for continuous assurance and EmbodiedGovBench includes upgrade and recovery safety, indicating that lifecycle evidence is recognized but not yet supplied by longitudinal deployment studies.",
+          "source": "memory/agent_governance_scout_log.md"
+        }
+      ],
+      "llm_reasoning": "A control can perform well in a fixed benchmark and still decay as tools, permissions, models, and organizations change. Without longitudinal evidence, the field cannot estimate maintenance cost, incident reduction, or whether governance mechanisms remain effective after deployment.",
+      "uncertainty": "Relevant production evidence may be proprietary, embedded in incident reports, or published as product telemetry rather than academic papers.",
+      "coverage_check": {
+        "query_terms": [
+          "longitudinal",
+          "production deployment",
+          "incident telemetry",
+          "policy drift",
+          "upgrade safety"
+        ],
+        "matched_titles": [
+          "TAIP: Trustworthy AI Posture",
+          "EmbodiedGovBench",
+          "ClawKeeper"
+        ],
+        "interpretation": "The matches define continuous assurance or lifecycle concerns, but their corpus summaries do not report months-long comparative deployment studies."
+      },
+      "research_questions": [
+        "How quickly do agent policies and behavioral contracts become stale after model or tool updates?",
+        "Which leading indicators predict governance failures before incidents occur?",
+        "What minimum audit dataset enables reproducible longitudinal governance research?"
+      ],
+      "scout_queries": [
+        "longitudinal production study AI agent governance incidents policy drift",
+        "agent governance post deployment telemetry upgrade safety"
+      ],
+      "related_topics": [
+        "policy",
+        "runtime",
+        "evaluation"
+      ],
+      "related_layers": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Governance and verification of adaptive safety controllers",
+      "gap_type": "corpus_gap",
+      "priority_score": 88,
+      "confidence": "medium",
+      "scope": "Assurance methods for learned or self-adjusting governance mechanisms that change capability boundaries or risk estimates at runtime.",
+      "why_missing": "AgentWarden and TRACES introduce learned capability governance and latent trajectory-risk estimation, but the corpus does not show how these adaptive controllers themselves are constrained, audited, calibrated, or safely updated.",
+      "evidence": [
+        {
+          "observation": "TRACES is the newest runtime-focused paper and detects proactive risk from learned hidden-state representations.",
+          "source": "AI_Agent_Governance_Three_Layer_Stack_and_Papers.md"
+        },
+        {
+          "observation": "The scout notes explicitly ask who governs AgentWarden's reinforcement-learning policy.",
+          "source": "memory/agent_governance_scout_log.md"
+        }
+      ],
+      "llm_reasoning": "Adaptive governance can address context that static policies miss, but it creates a second-order control problem: the safety boundary is now produced by another learned system. The field needs guarantees about calibration, monotonicity, rollback, and adversarial manipulation of the governor.",
+      "uncertainty": "General runtime assurance, control theory, and safe reinforcement-learning literature may already provide applicable methods that the agent-governance corpus has not connected.",
+      "coverage_check": {
+        "query_terms": [
+          "learned capability governance",
+          "adaptive controller",
+          "trajectory risk",
+          "calibration",
+          "policy update verification"
+        ],
+        "matched_titles": [
+          "AgentWarden: Learned Capability Governance for Autonomous AI Agents",
+          "TRACES: Proactive Safety Auditing for Multi-Turn LLM Agents via Trajectory-State Modeling"
+        ],
+        "interpretation": "The corpus contains learned governance mechanisms but no dedicated paper page whose primary contribution is assurance of the learned governor itself."
+      },
+      "research_questions": [
+        "What invariants must an adaptive capability governor never relax?",
+        "How can a learned risk monitor be calibrated under distribution shift and adversarial trajectories?",
+        "Can governance-policy updates be independently verified before activation?"
+      ],
+      "scout_queries": [
+        "verification adaptive AI safety controller runtime governance",
+        "learned guardrail calibration distribution shift autonomous agents"
+      ],
+      "related_topics": [
+        "runtime",
+        "evaluation",
+        "policy"
+      ],
+      "related_layers": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "A shared benchmark contract across inconsistent safety evaluations",
+      "gap_type": "translation_gap",
+      "priority_score": 84,
+      "confidence": "high",
+      "scope": "A benchmark interoperability layer that defines common threat assumptions, policy semantics, evidence formats, and comparable governance outcomes.",
+      "why_missing": "The corpus includes many evaluation frameworks, but its benchmark-consistency paper reports near-zero ranking concordance. Governance mechanisms therefore lack a stable way to demonstrate improvement across tasks and threat models.",
+      "evidence": [
+        {
+          "observation": "Evaluation and benchmarks accounts for 8 primary-topic papers, so the problem is not a simple lack of benchmarks.",
+          "source": "data/governance_dashboard.json"
+        },
+        {
+          "observation": "Taxonomy and Consistency Analysis reports Kendall's W = 0.10 and warns that benchmark choice can produce contradictory safety conclusions.",
+          "source": "memory/agent_governance_scout_log.md"
+        }
+      ],
+      "llm_reasoning": "Adding another benchmark may worsen fragmentation. The higher-value opportunity is a contract that makes assumptions and evidence portable, allowing governance claims to be compared or explaining precisely why they cannot be compared.",
+      "uncertainty": "A universal benchmark contract may be infeasible across embodied, web, enterprise, and multi-agent environments; domain-specific profiles may be necessary.",
+      "coverage_check": {
+        "query_terms": [
+          "benchmark consistency",
+          "interoperability",
+          "common evidence schema",
+          "ranking concordance",
+          "comparable safety evaluation"
+        ],
+        "matched_titles": [
+          "Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents",
+          "Evidence-Synthesis Framework"
+        ],
+        "interpretation": "The corpus diagnoses inconsistency and evidence closure, but it does not contain a shared benchmark-result contract adopted across the represented benchmark families."
+      },
+      "research_questions": [
+        "Which minimum metadata makes two agent-safety benchmark results meaningfully comparable?",
+        "Can policy adherence and real-world harm be represented in a shared evidence schema?",
+        "How should contradictory benchmark rankings affect deployment decisions?"
+      ],
+      "scout_queries": [
+        "agent safety benchmark interoperability common evaluation schema",
+        "meta evaluation benchmark concordance AI agents governance"
+      ],
+      "related_topics": [
+        "evaluation",
+        "policy",
+        "specification"
+      ],
+      "related_layers": [
+        0,
+        2,
+        3
+      ]
+    }
+  ]
+}

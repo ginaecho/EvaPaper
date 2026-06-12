@@ -8,13 +8,14 @@ OUTPUT_TOKENS ?=
 COST_USD ?=
 COST_NOTE ?=
 
-.PHONY: help index dashboard scout scout-json sota sota-static sota-runtime sota-behavioral sota-all ask ask-static ask-runtime ask-behavioral team team-static team-runtime team-behavioral team-all workflow-static workflow-runtime workflow-behavioral workflow-all costs docs test
+.PHONY: help index dashboard opportunities-check scout scout-json sota sota-static sota-runtime sota-behavioral sota-all ask ask-static ask-runtime ask-behavioral team team-static team-runtime team-behavioral team-all workflow-static workflow-runtime workflow-behavioral workflow-all costs docs test
 
 help:
 	@printf "%s\n" \
 	"Workflow targets:" \
 	"  make index                                 Build/rebuild the local paper corpus" \
 	"  make dashboard                             Refresh the visual research dashboard" \
+	"  make opportunities-check                   Validate LLM research-gap analysis" \
 	"  make scout QUERY='...'                     Run graph-backed discovery" \
 	"  make sota MODE=static                      Show state of the art for a focus mode" \
 	"  make ask MODE=static QUESTION='...'        Map a question to papers with evidence" \
@@ -34,6 +35,9 @@ index:
 
 dashboard:
 	$(PYTHON) scripts/governance_dashboard.py
+
+opportunities-check:
+	$(PYTHON) skills/analyze-research-gaps/scripts/validate_opportunities.py data/research_opportunities.json
 
 scout:
 	$(PYTHON) scripts/scout.py --discover "$(QUERY)" --from-year 2024
