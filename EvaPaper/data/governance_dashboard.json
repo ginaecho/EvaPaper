@@ -1,0 +1,828 @@
+{
+  "generated_from_latest_scout": "2026-06-13",
+  "paper_count": 52,
+  "scout_run_count": 8,
+  "topic_mix": [
+    {
+      "id": "specification",
+      "label": "Specification & validation",
+      "color": "#e4572e",
+      "count": 7,
+      "ratio": 0.1346153846153846
+    },
+    {
+      "id": "supply_chain",
+      "label": "Skill & tool security",
+      "color": "#963484",
+      "count": 8,
+      "ratio": 0.15384615384615385
+    },
+    {
+      "id": "identity",
+      "label": "Identity & provenance",
+      "color": "#4267ac",
+      "count": 5,
+      "ratio": 0.09615384615384616
+    },
+    {
+      "id": "coordination",
+      "label": "Coordination & composition",
+      "color": "#5b8e3e",
+      "count": 3,
+      "ratio": 0.057692307692307696
+    },
+    {
+      "id": "evaluation",
+      "label": "Evaluation & benchmarks",
+      "color": "#f3a712",
+      "count": 8,
+      "ratio": 0.15384615384615385
+    },
+    {
+      "id": "runtime",
+      "label": "Runtime enforcement",
+      "color": "#1d6f75",
+      "count": 7,
+      "ratio": 0.1346153846153846
+    },
+    {
+      "id": "policy",
+      "label": "Policy & governance landscape",
+      "color": "#636363",
+      "count": 14,
+      "ratio": 0.2692307692307692
+    }
+  ],
+  "layer_mix": [
+    {
+      "layer": 0,
+      "label": "Spec",
+      "count": 12
+    },
+    {
+      "layer": 1,
+      "label": "Runtime",
+      "count": 29
+    },
+    {
+      "layer": 2,
+      "label": "Behavior",
+      "count": 14
+    },
+    {
+      "layer": 3,
+      "label": "Ecosystem",
+      "count": 5
+    }
+  ],
+  "runs": [
+    {
+      "date": "2026-05-30",
+      "new_papers": 5,
+      "cumulative": 5,
+      "leading_topic": "Specification & validation",
+      "topics": {
+        "specification": 2,
+        "supply_chain": 0,
+        "identity": 0,
+        "coordination": 0,
+        "evaluation": 2,
+        "runtime": 1,
+        "policy": 0
+      },
+      "cumulative_topics": {
+        "specification": 2,
+        "supply_chain": 0,
+        "identity": 0,
+        "coordination": 0,
+        "evaluation": 2,
+        "runtime": 1,
+        "policy": 0
+      }
+    },
+    {
+      "date": "2026-05-31",
+      "new_papers": 7,
+      "cumulative": 12,
+      "leading_topic": "Skill & tool security",
+      "topics": {
+        "specification": 1,
+        "supply_chain": 4,
+        "identity": 0,
+        "coordination": 0,
+        "evaluation": 2,
+        "runtime": 0,
+        "policy": 0
+      },
+      "cumulative_topics": {
+        "specification": 3,
+        "supply_chain": 4,
+        "identity": 0,
+        "coordination": 0,
+        "evaluation": 4,
+        "runtime": 1,
+        "policy": 0
+      }
+    },
+    {
+      "date": "2026-06-01",
+      "new_papers": 11,
+      "cumulative": 23,
+      "leading_topic": "Policy & governance landscape",
+      "topics": {
+        "specification": 0,
+        "supply_chain": 0,
+        "identity": 3,
+        "coordination": 0,
+        "evaluation": 0,
+        "runtime": 1,
+        "policy": 7
+      },
+      "cumulative_topics": {
+        "specification": 3,
+        "supply_chain": 4,
+        "identity": 3,
+        "coordination": 0,
+        "evaluation": 4,
+        "runtime": 2,
+        "policy": 7
+      }
+    },
+    {
+      "date": "2026-06-04",
+      "new_papers": 10,
+      "cumulative": 33,
+      "leading_topic": "Policy & governance landscape",
+      "topics": {
+        "specification": 1,
+        "supply_chain": 1,
+        "identity": 1,
+        "coordination": 1,
+        "evaluation": 2,
+        "runtime": 1,
+        "policy": 3
+      },
+      "cumulative_topics": {
+        "specification": 4,
+        "supply_chain": 5,
+        "identity": 4,
+        "coordination": 1,
+        "evaluation": 6,
+        "runtime": 3,
+        "policy": 10
+      }
+    },
+    {
+      "date": "2026-06-06",
+      "new_papers": 10,
+      "cumulative": 43,
+      "leading_topic": "Policy & governance landscape",
+      "topics": {
+        "specification": 1,
+        "supply_chain": 2,
+        "identity": 0,
+        "coordination": 1,
+        "evaluation": 0,
+        "runtime": 2,
+        "policy": 4
+      },
+      "cumulative_topics": {
+        "specification": 5,
+        "supply_chain": 7,
+        "identity": 4,
+        "coordination": 2,
+        "evaluation": 6,
+        "runtime": 5,
+        "policy": 14
+      }
+    },
+    {
+      "date": "2026-06-07",
+      "new_papers": 6,
+      "cumulative": 49,
+      "leading_topic": "Specification & validation",
+      "topics": {
+        "specification": 1,
+        "supply_chain": 1,
+        "identity": 1,
+        "coordination": 1,
+        "evaluation": 1,
+        "runtime": 1,
+        "policy": 0
+      },
+      "cumulative_topics": {
+        "specification": 6,
+        "supply_chain": 8,
+        "identity": 5,
+        "coordination": 3,
+        "evaluation": 7,
+        "runtime": 6,
+        "policy": 14
+      }
+    },
+    {
+      "date": "2026-06-12",
+      "new_papers": 2,
+      "cumulative": 51,
+      "leading_topic": "Specification & validation",
+      "topics": {
+        "specification": 1,
+        "supply_chain": 0,
+        "identity": 0,
+        "coordination": 0,
+        "evaluation": 1,
+        "runtime": 0,
+        "policy": 0
+      },
+      "cumulative_topics": {
+        "specification": 7,
+        "supply_chain": 8,
+        "identity": 5,
+        "coordination": 3,
+        "evaluation": 8,
+        "runtime": 6,
+        "policy": 14
+      }
+    },
+    {
+      "date": "2026-06-13",
+      "new_papers": 1,
+      "cumulative": 52,
+      "leading_topic": "Runtime enforcement",
+      "topics": {
+        "specification": 0,
+        "supply_chain": 0,
+        "identity": 0,
+        "coordination": 0,
+        "evaluation": 0,
+        "runtime": 1,
+        "policy": 0
+      },
+      "cumulative_topics": {
+        "specification": 7,
+        "supply_chain": 8,
+        "identity": 5,
+        "coordination": 3,
+        "evaluation": 8,
+        "runtime": 7,
+        "policy": 14
+      }
+    }
+  ],
+  "trending_topics": [
+    {
+      "id": "evaluation",
+      "label": "Evaluation & benchmarks",
+      "recent_count": 2,
+      "total_count": 8,
+      "color": "#f3a712"
+    },
+    {
+      "id": "specification",
+      "label": "Specification & validation",
+      "recent_count": 2,
+      "total_count": 7,
+      "color": "#e4572e"
+    },
+    {
+      "id": "runtime",
+      "label": "Runtime enforcement",
+      "recent_count": 2,
+      "total_count": 7,
+      "color": "#1d6f75"
+    }
+  ],
+  "papers": [
+    {
+      "title": "BeSafe-Bench (BSB)",
+      "url": "https://arxiv.org/abs/2603.25747",
+      "discovered": "2026-05-30",
+      "topic": "evaluation",
+      "topic_label": "Evaluation & benchmarks",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "title": "GovernSpec / Contractual Skills",
+      "url": "https://arxiv.org/abs/2605.22634",
+      "discovered": "2026-05-30",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        0,
+        1
+      ]
+    },
+    {
+      "title": "Layered Governance Architecture (LGA)",
+      "url": "https://arxiv.org/abs/2603.07191",
+      "discovered": "2026-05-30",
+      "topic": "runtime",
+      "topic_label": "Runtime enforcement",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "Skilldex",
+      "url": "https://arxiv.org/abs/2604.16911",
+      "discovered": "2026-05-30",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        0
+      ]
+    },
+    {
+      "title": "ST-WebAgentBench",
+      "url": "https://arxiv.org/abs/2410.06703",
+      "discovered": "2026-05-30",
+      "topic": "evaluation",
+      "topic_label": "Evaluation & benchmarks",
+      "layers": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "title": "ADR",
+      "url": "https://arxiv.org/abs/2605.17380",
+      "discovered": "2026-05-31",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "ClawBench \u2014 Real-World Web Agent Benchmark",
+      "url": "https://arxiv.org/abs/2604.08523",
+      "discovered": "2026-05-31",
+      "topic": "evaluation",
+      "topic_label": "Evaluation & benchmarks",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "title": "MCP-38 \u2014 Comprehensive Threat Taxonomy for Model Context Protocol",
+      "url": "https://arxiv.org/abs/2603.18063",
+      "discovered": "2026-05-31",
+      "topic": "supply_chain",
+      "topic_label": "Skill & tool security",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "MCPThreatHive",
+      "url": "https://arxiv.org/abs/2604.13849",
+      "discovered": "2026-05-31",
+      "topic": "supply_chain",
+      "topic_label": "Skill & tool security",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "Proteus",
+      "url": "https://arxiv.org/abs/2605.11891",
+      "discovered": "2026-05-31",
+      "topic": "evaluation",
+      "topic_label": "Evaluation & benchmarks",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "title": "SkillAttack",
+      "url": "https://arxiv.org/abs/2604.04989",
+      "discovered": "2026-05-31",
+      "topic": "supply_chain",
+      "topic_label": "Skill & tool security",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "title": "TRUSTDESC",
+      "url": "https://arxiv.org/abs/2604.07536",
+      "discovered": "2026-05-31",
+      "topic": "supply_chain",
+      "topic_label": "Skill & tool security",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "AgentCity",
+      "url": "https://arxiv.org/abs/2604.07007",
+      "discovered": "2026-06-01",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        3
+      ]
+    },
+    {
+      "title": "AIP / Agent Identity Protocol",
+      "url": "https://arxiv.org/abs/2603.24775",
+      "discovered": "2026-06-01",
+      "topic": "identity",
+      "topic_label": "Identity & provenance",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "Auditable Agents",
+      "url": "https://arxiv.org/abs/2604.05485",
+      "discovered": "2026-06-01",
+      "topic": "runtime",
+      "topic_label": "Runtime enforcement",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "EmbodiedGovBench",
+      "url": "https://arxiv.org/abs/2604.11174",
+      "discovered": "2026-06-01",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "title": "Evidence-Synthesis Framework",
+      "url": "https://arxiv.org/abs/2604.19818",
+      "discovered": "2026-06-01",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "title": "Healthcare Skills",
+      "url": "https://arxiv.org/abs/2605.02709",
+      "discovered": "2026-06-01",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "title": "Implicit Execution Tracing",
+      "url": "https://arxiv.org/abs/2603.17445",
+      "discovered": "2026-06-01",
+      "topic": "identity",
+      "topic_label": "Identity & provenance",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "LASM / Systematic Survey",
+      "url": "https://arxiv.org/abs/2604.23338",
+      "discovered": "2026-06-01",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "SentinelAgent",
+      "url": "https://arxiv.org/abs/2604.02767",
+      "discovered": "2026-06-01",
+      "topic": "identity",
+      "topic_label": "Identity & provenance",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "SkCC",
+      "url": "https://arxiv.org/abs/2605.03353",
+      "discovered": "2026-06-01",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "Trace-Based Assurance Framework",
+      "url": "https://arxiv.org/abs/2603.18096",
+      "discovered": "2026-06-01",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "A Comprehensive Survey on Agent Skills",
+      "url": "https://arxiv.org/abs/2605.07358",
+      "discovered": "2026-06-04",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        0
+      ]
+    },
+    {
+      "title": "A Unified Review of Memory, Skills, Protocols and Harness Engineering",
+      "url": "https://arxiv.org/abs/2604.08224",
+      "discovered": "2026-06-04",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "Admission Control for Agent Actions (ACP)",
+      "url": "https://arxiv.org/abs/2603.18829",
+      "discovered": "2026-06-04",
+      "topic": "runtime",
+      "topic_label": "Runtime enforcement",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "Agent Behavioral Contracts (ABC)",
+      "url": "https://arxiv.org/abs/2602.22302",
+      "discovered": "2026-06-04",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "AgentAssay",
+      "url": "https://arxiv.org/abs/2603.02601",
+      "discovered": "2026-06-04",
+      "topic": "evaluation",
+      "topic_label": "Evaluation & benchmarks",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "title": "AgentVerify** (preprints.org, DOI: 10.20944/preprints202604.1029.v1) \u2014 Apr 14, 2026. Compositional formal verification of AI agent safety properties via LTL model checking. 23 temporal logic templates for memory integrity, tool call protocols, MCP/skill invocations, human-in-the-loop boundaries. Hybrid architecture: O(1) runtime monitor + post-hoc Kripke-structure analyser. 86.67% verification accuracy vs 80% contract baseline, 46.67% runtime baseline, 13.33% neural verifier. URL: https://www.preprints.org/manuscript/202604.1029/v1 \u2014 **Layer 1/2",
+      "url": null,
+      "discovered": "2026-06-04",
+      "topic": "coordination",
+      "topic_label": "Coordination & composition",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "Governance by Construction for Generalist Agents / CUGA",
+      "url": "https://arxiv.org/abs/2605.20874",
+      "discovered": "2026-06-04",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "Machine Identity Governance Taxonomy (MIGT)** / \"Who Governs the Machine?\" \u2014 Apr 7, 2026. Cloud Security Alliance. AI-Identity Risk Taxonomy: 37 risk sub-categories across 8 domains. Six-domain MIGT framework addressing technical governance gap, regulatory compliance gap, cross-jurisdictional coordination gap. Foreign state actor threat model (Silk Typhoon, Salt Typhoon, Volt Typhoon). Skill-level attestation as runtime admission control mechanism. URL: https://arxiv.org/abs/2604.06148 \u2014 **Layer 1/3",
+      "url": null,
+      "discovered": "2026-06-04",
+      "topic": "identity",
+      "topic_label": "Identity & provenance",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "SkillFortify",
+      "url": "https://arxiv.org/abs/2603.00195",
+      "discovered": "2026-06-04",
+      "topic": "supply_chain",
+      "topic_label": "Skill & tool security",
+      "layers": [
+        0
+      ]
+    },
+    {
+      "title": "Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents",
+      "url": "https://arxiv.org/abs/2605.16282",
+      "discovered": "2026-06-04",
+      "topic": "evaluation",
+      "topic_label": "Evaluation & benchmarks",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "title": "AgentWarden: Learned Capability Governance for Autonomous AI Agents",
+      "url": "https://arxiv.org/abs/2604.11839",
+      "discovered": "2026-06-06",
+      "topic": "runtime",
+      "topic_label": "Runtime enforcement",
+      "layers": [
+        3
+      ]
+    },
+    {
+      "title": "BIV / Behavioral Integrity Verification",
+      "url": "https://arxiv.org/abs/2605.11770",
+      "discovered": "2026-06-06",
+      "topic": "supply_chain",
+      "topic_label": "Skill & tool security",
+      "layers": [
+        0
+      ]
+    },
+    {
+      "title": "ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents",
+      "url": "https://arxiv.org/abs/2603.24414",
+      "discovered": "2026-06-06",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        3
+      ]
+    },
+    {
+      "title": "FAccT '26 / Relative Principals, Pluralistic Alignment",
+      "url": "https://arxiv.org/abs/2604.20805",
+      "discovered": "2026-06-06",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": []
+    },
+    {
+      "title": "From Craft to Kernel: A Governance-First Execution Architecture for Agentic Computers",
+      "url": "https://arxiv.org/abs/2604.18652",
+      "discovered": "2026-06-06",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": []
+    },
+    {
+      "title": "Runtime Governance / Policies on Paths",
+      "url": "https://arxiv.org/abs/2603.16586",
+      "discovered": "2026-06-06",
+      "topic": "runtime",
+      "topic_label": "Runtime enforcement",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "SkillGuard",
+      "url": "https://arxiv.org/abs/2606.03024",
+      "discovered": "2026-06-06",
+      "topic": "supply_chain",
+      "topic_label": "Skill & tool security",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "title": "SSL Representation / Skill Text to Structure",
+      "url": "https://arxiv.org/abs/2604.24026",
+      "discovered": "2026-06-06",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        0
+      ]
+    },
+    {
+      "title": "TAIP: Trustworthy AI Posture \u2014 A Framework for Continuous Assurance of Agentic AI Systems",
+      "url": "https://arxiv.org/abs/2603.03340",
+      "discovered": "2026-06-06",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        3
+      ]
+    },
+    {
+      "title": "ZipperGen / Provable Coordination for LLM Agents via MSCs",
+      "url": "https://arxiv.org/abs/2604.17612",
+      "discovered": "2026-06-06",
+      "topic": "coordination",
+      "topic_label": "Coordination & composition",
+      "layers": [
+        0,
+        1
+      ]
+    },
+    {
+      "title": "AgentTrap",
+      "url": "https://arxiv.org/abs/2605.13940",
+      "discovered": "2026-06-07",
+      "topic": "supply_chain",
+      "topic_label": "Skill & tool security",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "Auditing, Monitoring, and Intervention",
+      "url": "https://arxiv.org/abs/2605.16198",
+      "discovered": "2026-06-07",
+      "topic": "runtime",
+      "topic_label": "Runtime enforcement",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "title": "KYA",
+      "url": "https://arxiv.org/abs/2605.25376",
+      "discovered": "2026-06-07",
+      "topic": "identity",
+      "topic_label": "Identity & provenance",
+      "layers": [
+        1,
+        3
+      ]
+    },
+    {
+      "title": "Measuring Compositional Risk",
+      "url": "https://arxiv.org/abs/2606.00448",
+      "discovered": "2026-06-07",
+      "topic": "coordination",
+      "topic_label": "Coordination & composition",
+      "layers": [
+        0,
+        1
+      ]
+    },
+    {
+      "title": "Skill-as-Pseudocode (SaP)",
+      "url": "https://arxiv.org/abs/2605.27955",
+      "discovered": "2026-06-07",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        0
+      ]
+    },
+    {
+      "title": "SkillSafetyBench",
+      "url": "https://arxiv.org/abs/2605.12015",
+      "discovered": "2026-06-07",
+      "topic": "evaluation",
+      "topic_label": "Evaluation & benchmarks",
+      "layers": [
+        0,
+        2
+      ]
+    },
+    {
+      "title": "Learning Correct Behavior from Examples: Validating Sequential Execution in Autonomous Agents",
+      "url": "https://arxiv.org/abs/2605.03159",
+      "discovered": "2026-06-12",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        0,
+        1
+      ]
+    },
+    {
+      "title": "Owner-Harm: Agents Harming Their Deployers",
+      "url": "https://arxiv.org/abs/2604.18658",
+      "discovered": "2026-06-12",
+      "topic": "evaluation",
+      "topic_label": "Evaluation & benchmarks",
+      "layers": [
+        1,
+        2
+      ]
+    },
+    {
+      "title": "TRACES: Proactive Safety Auditing for Multi-Turn LLM Agents via Trajectory-State Modeling",
+      "url": "https://arxiv.org/abs/2605.27690",
+      "discovered": "2026-06-13",
+      "topic": "runtime",
+      "topic_label": "Runtime enforcement",
+      "layers": [
+        1,
+        2
+      ]
+    }
+  ],
+  "methodology": {
+    "ratio": "Each paper receives one primary topic so topic ratios sum to 100%.",
+    "layers": "Layer counts are multi-label and may exceed the total paper count.",
+    "trend": "Trend lines use discovery dates from scout runs, not publication dates."
+  }
+}

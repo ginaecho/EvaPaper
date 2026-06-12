@@ -25,6 +25,8 @@ The core framework distilled from 8+ research papers and industry implementation
 ### 📄 Reports
 - `AI_Agent_Governance_Three_Layer_Stack_and_Papers.docx` — Full report with all paper summaries
 - `AI_Agent_Governance_Three_Layer_Stack_and_Papers.pptx` — 22-slide deck with dark navy theme
+- `governance-dashboard.html` — Self-contained visual dashboard for topic ratios and scout trends
+- `data/governance_dashboard.json` — Machine-readable dashboard metrics
 
 ### 📚 Papers Summarized
 | Paper | arXiv | Focus |
@@ -52,6 +54,7 @@ A cron job runs every **Sunday at 03:17 AM (Asia/Shanghai)** to search for new p
 - `scripts/paper_graph.py` — graph-backed paper discovery using OpenAlex, with optional Semantic Scholar recommendations
 - `scripts/scout.py --discover "..."` — generic scout entrypoint with configurable paths
 - `scripts/paper_corpus.py` — builds a structured local corpus index from the markdown report
+- `scripts/governance_dashboard.py` — classifies papers and regenerates dashboard data/HTML
 - `scripts/question_map.py` — maps a user question to the papers in the local corpus with supporting evidence snippets
 - `scripts/agent_team.py` — generic multi-agent orchestration entrypoint for scouting, corpus maintenance, and synthesis
 
@@ -147,12 +150,33 @@ Common commands:
 ```bash
 make help
 make index
+make dashboard
 make sota-static
 make sota-all
 make ask-static QUESTION="which papers are about static checking of agent interactions?"
 make team-static QUERY="agent governance skill markdown validation"
 make workflow-static QUERY="agent governance skill markdown validation" QUESTION="which papers are about static checking of agent interactions?"
 ```
+
+## Research Dashboard
+
+Refresh the dashboard after editing the report or scout log:
+
+```bash
+make dashboard
+```
+
+The dashboard shows:
+
+- the percentage of papers in each primary research topic
+- cumulative topic growth across scout discovery dates
+- multi-label coverage of governance Layers 0-3
+- topics gaining the most attention in the latest three scout windows
+- a linked evidence ledger for every indexed paper
+
+Each paper receives one primary topic so the topic ratio sums to 100%. Layer
+coverage remains multi-label. The scout workflow regenerates the dashboard only
+when new findings are written, preserving the existing no-change/no-update rule.
 
 Useful variables:
 

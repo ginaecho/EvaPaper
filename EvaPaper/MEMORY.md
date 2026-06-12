@@ -2,6 +2,9 @@
 
 ## Workflow Agreements
 
+### Research Dashboard
+The user wants a visual dashboard updated after every scout run that produces new findings. It must summarize primary paper-topic ratios, governance-layer coverage, and topic growth over scout discovery dates. No-new-finding scout runs must not rewrite dashboard artifacts.
+
 ### Agent-Governance-Scout Run Protocol
 When the user asks me to "run" the agent-governance-scout (or "update findings"):
 1. Execute the search queries and identify new papers/products/frameworks

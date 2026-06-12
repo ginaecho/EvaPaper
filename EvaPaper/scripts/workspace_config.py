@@ -22,6 +22,8 @@ class WorkspaceConfig:
     report_pptx: Path = ROOT / "AI_Agent_Governance_Three_Layer_Stack_and_Papers.pptx"
     scout_log: Path = MEMORY_DIR / "agent_governance_scout_log.md"
     corpus_index: Path = DATA_DIR / "paper_corpus.json"
+    dashboard_data: Path = DATA_DIR / "governance_dashboard.json"
+    dashboard_html: Path = ROOT / "governance-dashboard.html"
     team_dir: Path = DATA_DIR / "agent_team"
     run_costs: Path = DATA_DIR / "run_costs.json"
 

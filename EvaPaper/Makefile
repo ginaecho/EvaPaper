@@ -8,12 +8,13 @@ OUTPUT_TOKENS ?=
 COST_USD ?=
 COST_NOTE ?=
 
-.PHONY: help index scout scout-json sota sota-static sota-runtime sota-behavioral sota-all ask ask-static ask-runtime ask-behavioral team team-static team-runtime team-behavioral team-all workflow-static workflow-runtime workflow-behavioral workflow-all costs docs
+.PHONY: help index dashboard scout scout-json sota sota-static sota-runtime sota-behavioral sota-all ask ask-static ask-runtime ask-behavioral team team-static team-runtime team-behavioral team-all workflow-static workflow-runtime workflow-behavioral workflow-all costs docs test
 
 help:
 	@printf "%s\n" \
 	"Workflow targets:" \
 	"  make index                                 Build/rebuild the local paper corpus" \
+	"  make dashboard                             Refresh the visual research dashboard" \
 	"  make scout QUERY='...'                     Run graph-backed discovery" \
 	"  make sota MODE=static                      Show state of the art for a focus mode" \
 	"  make ask MODE=static QUESTION='...'        Map a question to papers with evidence" \
@@ -30,6 +31,9 @@ help:
 
 index:
 	$(PYTHON) scripts/paper_corpus.py
+
+dashboard:
+	$(PYTHON) scripts/governance_dashboard.py
 
 scout:
 	$(PYTHON) scripts/scout.py --discover "$(QUERY)" --from-year 2024
@@ -81,18 +85,22 @@ team-all:
 
 workflow-static:
 	$(MAKE) index
+	$(MAKE) dashboard
 	$(MAKE) team MODE=static
 
 workflow-runtime:
 	$(MAKE) index
+	$(MAKE) dashboard
 	$(MAKE) team MODE=runtime
 
 workflow-behavioral:
 	$(MAKE) index
+	$(MAKE) dashboard
 	$(MAKE) team MODE=behavioral
 
 workflow-all:
 	$(MAKE) index
+	$(MAKE) dashboard
 	$(MAKE) team MODE=all
 
 costs:
@@ -101,3 +109,6 @@ costs:
 docs:
 	$(PYTHON) generate_governance_docs.py
 	$(PYTHON) generate_beautiful_pptx.py
+
+test:
+	$(PYTHON) -m unittest discover -s tests

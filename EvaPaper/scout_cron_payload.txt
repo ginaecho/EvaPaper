@@ -20,7 +20,8 @@ Compare each search result against the known list in the log.
 If and ONLY if you find NEW papers, products, or frameworks that are NOT in the known list:
 1. Update the scout log with the new findings
 2. Update the markdown report /root/.openclaw/workspace/AI_Agent_Governance_Three_Layer_Stack_and_Papers.md with the new paper summaries (following the same format as existing papers: URL, abstract, relevance, layer mapping, why recommended)
-3. Git commit and push the changes to https://github.com/ginaecho/EvaPaper (use git add, git commit, git push origin master)
-4. Report ONLY the new findings to the user with URLs, abstracts, and why they matter
+3. Run `python3 scripts/governance_dashboard.py` to refresh topic ratios and trend charts
+4. Git commit and push the changes to https://github.com/ginaecho/EvaPaper (use git add, git commit, git push origin master)
+5. Report ONLY the new findings to the user with URLs, abstracts, and why they matter
 
 If NO new findings: Reply with NO_REPLY. Do NOT report anything. Do NOT update git. Do NOT say 'nothing found' or 'no updates'. Just NO_REPLY.

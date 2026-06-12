@@ -14,6 +14,7 @@ from datetime import datetime
 from pathlib import Path
 
 from paper_graph import discover_from_query
+from governance_dashboard import write_dashboard
 from workspace_config import DEFAULT_WORKSPACE
 
 WORKSPACE = DEFAULT_WORKSPACE
@@ -128,6 +129,8 @@ def git_commit_and_push(repo_dir: Path = REPO_DIR, scout_log: Path = SCOUT_LOG, 
     # Add files
     subprocess.run(["git", "add", str(scout_log)], capture_output=True)
     subprocess.run(["git", "add", str(report_md)], capture_output=True)
+    subprocess.run(["git", "add", str(DEFAULT_WORKSPACE.dashboard_data)], capture_output=True)
+    subprocess.run(["git", "add", str(DEFAULT_WORKSPACE.dashboard_html)], capture_output=True)
     
     # Commit
     today = datetime.now().strftime("%Y-%m-%d")
@@ -210,6 +213,9 @@ def main():
     # Update report
     update_report(new_items, args.report_md)
     print("📄 Report updated")
+
+    write_dashboard(args.report_md, args.scout_log)
+    print("📊 Research dashboard updated")
     
     if args.commit:
         if git_commit_and_push(args.repo_dir, args.scout_log, args.report_md, push=args.push):
