@@ -23,6 +23,17 @@ The latest workflow run over the local indexed corpus sharpens the practical rec
 
 These results came from the current `workflow-static` pipeline. In this environment, external discovery APIs were temporarily unavailable, so the latest run used the local curated corpus rather than live graph expansion. That means the ranking above reflects the current internal evidence base, not a claim that fresh frontier scouting was completed in that specific run.
 
+### June 13, 2026 scout addendum: one newly surfaced paper
+
+The June 13 scout adds one paper on **proactive runtime safety auditing** that bridges Layer 1 and Layer 2:
+
+1. **TRACES** (`arXiv:2605.27690`)
+   - Learns prefix-level trajectory risk states from an observer LLM's hidden representations to proactively flag unsafe behavior before it fully manifests
+   - Most relevant to **Layer 1 + Layer 2**
+   - Why it matters: most safety systems are reactive (post-hoc diagnosis); TRACES is proactive — it catches risks while they are unfolding by modeling temporal evolution of latent risk features, trained with weak trajectory-level supervision rather than expensive step-level annotations
+
+**Interpretation:** the June 13 addition reinforces that the governance problem is not just about writing better specs or adding runtime guards. It is also about (c) detecting when an agent is *drifting* toward unsafe behavior before the damage is done, using signals embedded in the LLM's own hidden states. TRACES shows that proactive auditing is possible with weak supervision, making it practical for production deployment.
+
 ### June 12, 2026 scout addendum: two newly surfaced papers
 
 The June 12 scout adds two papers that expand the stack in different directions — one on **learning-based sequential validation** (static-time) and one on **owner-harm threat modeling** (behavioral):
@@ -455,6 +466,31 @@ This is Layer 1 (Runtime) and Layer 2 (Behavioral) governance. It exposes that c
 **Is it a solution we're looking into?** Yes. The SSDG framework and the layered defense results (75.3% gate alone → 85.3% with verifier) provide a concrete target for our governance architecture. The paper also gives us a new benchmark category that any governance system must address.
 
 **Recommendation reason:** The 100% → 14.8% collapse is the single most important finding in agent safety this year. It proves that benchmarking against generic criminal harm is insufficient for production governance. The paper provides both the threat model and the defense architecture to fix this gap.
+
+---
+
+### 44. TRACES: Proactive Safety Auditing for Multi-Turn LLM Agents via Trajectory-State Modeling
+
+- **arXiv ID:** 2605.27690
+- **URL:** https://arxiv.org/abs/2605.27690
+- **PDF:** https://arxiv.org/pdf/2605.27690
+- **Authors:** Jiaqian Li et al.
+- **Date:** May 2026
+
+**Abstract:**
+> LLM agents increasingly operate through multi-turn tool use and environment interaction, where safety risks often emerge from intermediate steps long before they surface in the final outcome. Reactive auditing is therefore insufficient: post-hoc diagnosis frequently misses the chance to flag risks while they are unfolding. We propose TRACES, a representation-based proactive auditor that learns prefix-level trajectory risk states from the hidden representations of an observer LLM. TRACES induces latent mechanism features from step representations and models their temporal evolution to estimate whether a partial trajectory is drifting toward unsafe behavior. To sidestep the cost and ambiguity of step-level risk annotation, TRACES is trained with weak trajectory-level supervision while still producing dense prefix-level risk estimates. Across multiple agent safety benchmarks, TRACES improves both full-trajectory safety prediction and proactive risk discrimination. Our analyses further suggest that these risk states can help train a safer agent, highlighting the broader potential of proactive auditing for long-horizon agent safety.
+
+**Why I recommend this paper:**
+TRACES is the **first proactive safety auditor for multi-turn agents** that catches risks *while they are unfolding* rather than after the fact. Most existing safety systems are reactive — they audit completed trajectories. TRACES learns latent risk states from an observer LLM's hidden representations and estimates whether a partial trajectory is drifting toward unsafe behavior. This is a fundamental shift from "did it go wrong?" to "is it going wrong right now?"
+
+**Relevance to our topic:**
+This is Layer 1 (Runtime-Level Governance) with a direct bridge to Layer 2 (Behavioral). It provides a **middle path between static specification and runtime monitoring**: instead of relying on pre-defined rules or post-hoc evaluation, it learns risk patterns from the agent's own representations during execution. The weak trajectory-level supervision approach makes it practical — no need for expensive step-level annotations.
+
+**Which layer:** **Layer 1 → Layer 2 bridge** (Runtime-Level to Behavioral-Level)
+
+**Is it a solution we're looking into?** Yes. The proactive auditing approach is especially valuable for long-horizon agent tasks where safety violations accumulate across steps. Learning risk states from hidden representations and using them to both audit and train safer agents is exactly the kind of dynamic governance we need for production systems.
+
+**Recommendation reason:** The paper shifts the paradigm from reactive to proactive safety auditing. The key insight is that safety risks in multi-turn agents are not binary events at the end — they are gradual drifts that can be detected early if you know where to look. TRACES shows that those signals exist in the LLM's own hidden states, and they can be learned with surprisingly weak supervision.
 
 ---
 
