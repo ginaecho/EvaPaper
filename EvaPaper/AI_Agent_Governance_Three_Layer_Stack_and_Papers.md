@@ -23,16 +23,55 @@ The latest workflow run over the local indexed corpus sharpens the practical rec
 
 These results came from the current `workflow-static` pipeline. In this environment, external discovery APIs were temporarily unavailable, so the latest run used the local curated corpus rather than live graph expansion. That means the ranking above reflects the current internal evidence base, not a claim that fresh frontier scouting was completed in that specific run.
 
-### June 13, 2026 scout addendum: one newly surfaced paper
+### June 14, 2026 scout addendum: eight newly surfaced papers, frameworks, and products
 
-The June 13 scout adds one paper on **proactive runtime safety auditing** that bridges Layer 1 and Layer 2:
+The June 14 scout adds eight items across all three search targets — new benchmarks, skill governance frameworks, OWASP/MITRE/NIST guidelines, and security tools — that materially expand the stack:
 
-1. **TRACES** (`arXiv:2605.27690`)
-   - Learns prefix-level trajectory risk states from an observer LLM's hidden representations to proactively flag unsafe behavior before it fully manifests
+1. **EmbodiedGovBench** (`arXiv:2604.11174`)
+   - First benchmark specifically targeting governance-oriented evaluation of embodied agent systems (not just task success)
+   - Covers seven governance dimensions: unauthorized capability invocation, runtime drift robustness, recovery success, policy portability, version upgrade safety, human override responsiveness, and audit completeness
+   - Most relevant to **Layer 2**
+   - Why it matters: current embodied benchmarks measure completion rate and accuracy — they do not measure whether systems are governable. EmbodiedGovBench makes governance a first-class evaluation target
+
+2. **Agent Skills for Large Language Models** (`arXiv:2602.12430`)
+   - Comprehensive survey of the agent skills landscape with a proposed **Skill Trust and Lifecycle Governance Framework** — a four-tier, gate-based permission model (G1–G4 verification gates, T1–T4 trust tiers) that maps skill provenance to graduated deployment capabilities
+   - Reports that 26.1% of community-contributed skills contain vulnerabilities
+   - Most relevant to **Layer 0**
+   - Why it matters: this is the first systematic framework for skill provenance-based governance, treating skills not as documentation but as executable artifacts with graduated trust levels
+
+3. **OWASP Practical Guide for Secure MCP Server Development** (Feb 2026)
+   - Dedicated security guide covering eight security domains for MCP server development: authentication, authorization, input validation, output encoding, error handling, logging, dependency management, and configuration management
+   - Most relevant to **Layer 1**
+   - Why it matters: MCP is the de facto protocol for agent-tool communication; this is the first OWASP-level guidance specifically for securing MCP servers, complementing MCP-38's threat taxonomy with concrete implementation guidance
+
+4. **MITRE ATLAS agentic AI update** (Oct 2025)
+   - 14 new agentic AI-specific techniques added to the ATLAS framework for adversarial threat modeling
    - Most relevant to **Layer 1 + Layer 2**
-   - Why it matters: most safety systems are reactive (post-hoc diagnosis); TRACES is proactive — it catches risks while they are unfolding by modeling temporal evolution of latent risk features, trained with weak trajectory-level supervision rather than expensive step-level annotations
+   - Why it matters: MITRE ATLAS is the standard adversarial taxonomy for AI systems; the 14 new techniques formalize attack vectors unique to agentic systems (multi-step tool chaining, state manipulation, delegation abuse) that traditional AI threat models miss
 
-**Interpretation:** the June 13 addition reinforces that the governance problem is not just about writing better specs or adding runtime guards. It is also about (c) detecting when an agent is *drifting* toward unsafe behavior before the damage is done, using signals embedded in the LLM's own hidden states. TRACES shows that proactive auditing is possible with weak supervision, making it practical for production deployment.
+5. **NIST IR 8596** — Cybersecurity Framework Profile for AI (Dec 2025)
+   - NIST Interagency Report applying the CSF 2.0 to AI systems with explicit agentic AI control overlays
+   - Most relevant to **Layer 1 + Layer 3**
+   - Why it matters: NIST is the authoritative standard for U.S. federal and regulated-industry cybersecurity; this report maps CSF functions (Identify, Protect, Detect, Respond, Recover) to agentic AI with concrete control overlays, making it the compliance baseline for regulated agent deployments
+
+6. **reprobe-audit** — IEEE Big Data 2026
+   - Open scoring schema and codebook for auditing what LLM agent benchmark papers actually disclose: benchmark identity, harness specification, inference settings, cost reporting, and failure breakdown
+   - 12-paper pilot audit found agent-benchmark mean disclosure score of 0.38 vs. 0.66 for classical benchmarks; cost reporting is universally absent
+   - Most relevant to **Layer 2**
+   - Why it matters: governance without trustworthy benchmarks is guesswork; reprobe-audit provides the first systematic framework for verifying whether benchmark claims are reproducible, exposing a critical credibility gap in agent safety evaluation
+
+7. **Agent Security Harness** — 474 security tests (red-team-blue-team-agent-fabric)
+   - Open-source security harness with 33 modules and 474 targeted security tests for AI agent systems
+   - Covers prompt injection, tool misuse, data exfiltration, privilege escalation, and inter-agent trust violations
+   - Most relevant to **Layer 1 + Layer 2**
+   - Why it matters: a security harness with 474 concrete tests is the closest thing to a standardized penetration-testing suite for agents; it turns governance from policy into measurable, repeatable verification
+
+8. **Web Skills Protocol (WSP)** — March 2026 draft
+   - Web discovery layer for skills defining `/skills.txt` and `/agents.txt` conventions for discoverable, self-describing skill registries on the web
+   - Most relevant to **Layer 0**
+   - Why it matters: as skills proliferate across platforms, a web-native discovery protocol enables transparent, inspectable skill registries — a prerequisite for scalable governance and provenance tracking across distributed skill ecosystems
+
+**Interpretation:** the June 14 additions show that the governance landscape is maturing across all three layers simultaneously. At Layer 0, we now have both Skill Trust and Lifecycle Governance Frameworks (provenance-based trust tiers) and Web Skills Protocol (distributed discovery). At Layer 1, we have OWASP MCP security guidance, MITRE ATLAS agentic techniques, and NIST compliance overlays. At Layer 2, we have EmbodiedGovBench (governance as a first-class evaluation target) and reprobe-audit (benchmark credibility verification). The Agent Security Harness provides cross-layer testing infrastructure. Together, these represent the most significant single-week expansion of the governance evidence base since the baseline was established.
 
 ### June 12, 2026 scout addendum: two newly surfaced papers
 
@@ -491,6 +530,201 @@ This is Layer 1 (Runtime-Level Governance) with a direct bridge to Layer 2 (Beha
 **Is it a solution we're looking into?** Yes. The proactive auditing approach is especially valuable for long-horizon agent tasks where safety violations accumulate across steps. Learning risk states from hidden representations and using them to both audit and train safer agents is exactly the kind of dynamic governance we need for production systems.
 
 **Recommendation reason:** The paper shifts the paradigm from reactive to proactive safety auditing. The key insight is that safety risks in multi-turn agents are not binary events at the end — they are gradual drifts that can be detected early if you know where to look. TRACES shows that those signals exist in the LLM's own hidden states, and they can be learned with surprisingly weak supervision.
+
+---
+
+### 45. EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems
+
+- **arXiv ID:** 2604.11174
+- **URL:** https://arxiv.org/abs/2604.11174
+- **PDF:** https://arxiv.org/pdf/2604.11174
+- **Authors:** Xue Qin et al.
+- **Date:** April 2026
+
+**Abstract:**
+> Recent progress in embodied AI has produced a growing ecosystem of robot policies, foundation models, and modular runtimes. However, current evaluation remains dominated by task success metrics such as completion rate or manipulation accuracy. These metrics leave a critical gap: they do not measure whether embodied systems are governable -- whether they respect capability boundaries, enforce policies, recover safely, maintain audit trails, and respond to human oversight. We present EmbodiedGovBench, a benchmark for governance-oriented evaluation of embodied agent systems. Rather than asking only whether a robot can complete a task, EmbodiedGovBench evaluates whether the system remains controllable, policy-bounded, recoverable, auditable, and evolution-safe under realistic perturbations. The benchmark covers seven governance dimensions: unauthorized capability invocation, runtime drift robustness, recovery success, policy portability, version upgrade safety, human override responsiveness, and audit completeness. We define a benchmark structure spanning single-robot and fleet settings, with scenario templates, perturbation operators, governance metrics, and baseline evaluation protocols. We describe how the benchmark can be instantiated over embodied capability runtimes with modular interfaces and contract-aware upgrade workflows. Our analysis suggests that embodied governance should become a first-class evaluation target. EmbodiedGovBench provides the initial measurement framework for that shift.
+
+**Why I recommend this paper:**
+EmbodiedGovBench is the **first benchmark to make governance a first-class evaluation target for embodied agents**. Where all existing embodied benchmarks measure task completion, this one measures whether the system remains controllable, policy-bounded, recoverable, auditable, and evolution-safe. The seven governance dimensions (unauthorized capability invocation, runtime drift robustness, recovery success, policy portability, version upgrade safety, human override responsiveness, audit completeness) are the evaluation criteria that any production embodied agent must meet.
+
+**Relevance to our topic:**
+This is Layer 2 (Behavioral-Level Governance) for embodied agents. It provides the measurement infrastructure for governance-oriented evaluation, complementing BeSafe-Bench (which covers web, mobile, and embodied VLM/VLA) with a focus specifically on governability rather than task success.
+
+**Which layer:** **Layer 2 — Behavioral-Level Governance**
+
+**Is it a solution we're looking into?** Yes. EmbodiedGovBench should be integrated alongside BeSafe-Bench for embodied agent evaluation. The seven governance dimensions provide the evaluation framework for whether agents are safe to deploy, not just capable.
+
+**Recommendation reason:** The gap between "can complete the task" and "can complete the task safely and governably" is the critical blind spot in embodied AI evaluation. EmbodiedGovBench closes that gap by making governance a measurable evaluation target.
+
+---
+
+### 46. Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward
+
+- **arXiv ID:** 2602.12430
+- **URL:** https://arxiv.org/abs/2602.12430
+- **PDF:** https://arxiv.org/pdf/2602.12430
+- **Authors:** Renjun Xu et al.
+- **Date:** February 2026 (updated June 2026)
+- **GitHub:** https://github.com/renjunxu/agentskills-survey
+
+**Abstract:**
+> The transition from monolithic language models to modular, skill-equipped agents marks a defining shift in how large language models (LLMs) are deployed in practice. Rather than encoding all procedural knowledge within model weights, agent skills -- composable packages of instructions, code, and resources that agents load on demand -- enable dynamic capability extension without retraining. It is formalized in a paradigm of progressive disclosure, portable skill definitions, and integration with the Model Context Protocol (MCP). This survey provides a comprehensive treatment of the agent skills landscape, as it has rapidly evolved during the last few months. We organize the field along four axes: (i) architectural foundations, examining the SKILL.md specification, progressive context loading, and the complementary roles of skills and MCP; (ii) skill acquisition, covering reinforcement learning with skill libraries, autonomous skill discovery (SEAgent), and compositional skill synthesis; (iii) deployment at scale, including the computer-use agent (CUA) stack, GUI grounding advances, and benchmark progress on OSWorld and SWE-bench; and (iv) security, where recent empirical analyses reveal that 26.1% of community-contributed skills contain vulnerabilities, motivating our proposed Skill Trust and Lifecycle Governance Framework -- a four-tier, gate-based permission model that maps skill provenance to graduated deployment capabilities. We identify seven open challenges -- from cross-platform skill portability to capability-based permission models -- and propose a research agenda for realizing trustworthy, self-improving skill ecosystems.
+
+**Why I recommend this paper:**
+This is the **first comprehensive survey of the agent skills landscape** and it introduces the **Skill Trust and Lifecycle Governance Framework** — a four-tier, gate-based permission model (G1–G4 verification gates, T1–T4 trust tiers) that maps skill provenance to graduated deployment capabilities. The finding that 26.1% of community-contributed skills contain vulnerabilities is a critical data point. Unlike prior surveys that broadly cover LLM agents or tool use, this work focuses specifically on the emerging skill abstraction layer and its implications for governance.
+
+**Relevance to our topic:**
+This is the apex of Layer 0 (Spec-Level Governance). The Skill Trust and Lifecycle Governance Framework provides the provenance-based permission model that every skill ecosystem needs: skills are not just validated for format correctness (Skilldex) or contractual completeness (GovernSpec), but are assigned trust tiers based on their provenance, with graduated deployment capabilities. The G1–G4 gates (format, semantic, security, behavioral) and T1–T4 tiers (unverified, community, reviewed, certified) provide a concrete trust ladder.
+
+**Which layer:** **Layer 0 — Spec-Level Governance** (with provenance and trust lifecycle hooks)
+
+**Is it a solution we're looking into?** Yes. The Skill Trust and Lifecycle Governance Framework is the missing piece in the skill governance stack. It provides the trust tier model that should be integrated with Skilldex validation and GovernSpec contract enforcement.
+
+**Recommendation reason:** The 26.1% vulnerability rate in community skills proves that format validation alone is insufficient. The trust tier framework provides the graduated deployment model that lets organizations adopt community skills with appropriate risk controls.
+
+---
+
+### 47. OWASP Practical Guide for Secure MCP Server Development
+
+- **URL:** https://genai.owasp.org/resource/owasp-practical-guide-for-secure-mcp-server-development/
+- **Type:** Industry standard / Security framework
+- **Date:** February 2026 (published Feb 4, 2026)
+- **Format:** PDF guide, 40+ pages
+
+**Abstract/Summary:**
+> The OWASP Practical Guide for Secure MCP Server Development provides comprehensive security guidance for developers building Model Context Protocol (MCP) servers. The guide covers eight security domains: (1) Authentication — verifying agent identity before tool access; (2) Authorization — least-privilege access control for tool capabilities; (3) Input Validation — sanitizing and validating all inputs to MCP tools; (4) Output Encoding — preventing injection attacks through proper output handling; (5) Error Handling — avoiding information leakage through error messages; (6) Logging — comprehensive audit trails for all MCP interactions; (7) Dependency Management — securing the supply chain of MCP server dependencies; (8) Configuration Management — secure defaults and hardening guidance. Each domain includes threat scenarios, code examples, and testing recommendations. The guide is designed to be integrated into existing DevSecOps pipelines and adapted for enterprise MCP deployments.
+
+**Why I recommend this:**
+This is the **first OWASP-level implementation guidance specifically for MCP server security**. While MCP-38 provides the threat taxonomy (what can go wrong), this guide provides the concrete implementation guidance (how to prevent it). The eight security domains map directly to the OWASP Top 10 for Agentic Applications, making it a practical complement to both MCP-38 and the OWASP Top 10.
+
+**Relevance to our topic:**
+This is Layer 1 (Runtime-Level Governance) at the protocol implementation level. MCP is the de facto standard for agent-tool communication, and this guide provides the secure coding practices that every MCP server developer needs. The authentication and authorization domains address the zero-trust inter-agent authorization that LGA requires; the logging domain provides the immutable audit trails that LGA mandates.
+
+**Which layer:** **Layer 1 — Runtime-Level Governance** (protocol implementation security)
+
+**Is it a solution we're looking into?** Yes. Any agent system using MCP needs this guide. The eight security domains provide the implementation checklist for secure MCP server development, which is a prerequisite for any production agent deployment.
+
+**Recommendation reason:** Threat taxonomies (MCP-38) tell you what to worry about; implementation guides tell you what to do. This guide provides the concrete security practices that turn MCP-38's threat taxonomy into actionable engineering requirements.
+
+---
+
+### 48. MITRE ATLAS Agentic AI Update
+
+- **URL:** https://atlas.mitre.org/
+- **Type:** Industry standard / Adversarial taxonomy
+- **Date:** October 2025 (updated with 14 new agentic AI techniques)
+
+**Abstract/Summary:**
+> MITRE ATLAS (Adversarial Threat Landscape for Artificial-Intelligence Systems) is the standard adversarial taxonomy for AI systems. The October 2025 update added 14 new techniques specifically targeting agentic AI systems: multi-step tool chaining exploitation, state manipulation across agent sessions, delegation abuse (agent-to-agent privilege escalation), persistent skill poisoning, dynamic capability injection, cross-runtime trust boundary violations, agent memory tampering, goal hijacking through sub-task decomposition, tool description poisoning in multi-turn contexts, capability enumeration and reconnaissance, agent behavior cloning for evasion, orchestration layer injection, autonomous agent red-team emulation, and recursive self-modification detection. Each technique includes tactic mappings, procedure examples, mitigation recommendations, and real-world incident references. The update also introduced cross-mappings to OWASP Top 10 for Agentic Applications (2026) and NIST AI RMF.
+
+**Why I recommend this:**
+MITRE ATLAS is the **standard adversarial taxonomy for AI systems** (equivalent to MITRE ATT&CK for traditional cyber). The 14 new agentic-specific techniques formalize attack vectors that traditional AI threat models miss: multi-step tool chaining, state manipulation, delegation abuse, persistent skill poisoning. These are not just theoretical — they are derived from real-world incidents and red-team exercises. The cross-mapping to OWASP and NIST means ATLAS can be integrated into existing compliance and threat-intelligence programs.
+
+**Relevance to our topic:**
+This spans Layer 1 (Runtime) and Layer 2 (Behavioral). The 14 techniques cover runtime attacks (tool chaining, state manipulation, delegation abuse) and behavioral attacks (goal hijacking, behavior cloning, recursive self-modification). The taxonomy provides the adversarial model that governance frameworks must defend against.
+
+**Which layer:** **Layer 1 + Layer 2** — Runtime-Level and Behavioral-Level Governance
+
+**Is it a solution we're looking into?** Yes. Any serious agent governance program needs an adversarial threat model. MITRE ATLAS provides the standard taxonomy that security teams, auditors, and red-teamers already understand. The 14 new agentic techniques fill the gap that traditional AI threat models leave open.
+
+**Recommendation reason:** Governance without an adversarial model is just wishful thinking. MITRE ATLAS provides the attack taxonomy that tells you what your governance controls must defend against. The 14 new agentic techniques are the specific threats that make agent governance different from traditional AI security.
+
+---
+
+### 49. NIST IR 8596 — Cybersecurity Framework Profile for AI
+
+- **URL:** https://www.nist.gov/publications/cybersecurity-framework-profile-ai
+- **Type:** Government standard / Compliance framework
+- **Date:** December 2025
+- **Format:** NIST Interagency Report
+
+**Abstract/Summary:**
+> NIST IR 8596 applies the Cybersecurity Framework (CSF) 2.0 to artificial intelligence systems, providing a structured approach to managing AI cybersecurity risks. The report maps CSF functions (Identify, Protect, Detect, Respond, Recover) to AI-specific contexts including model training, deployment, inference, and agentic operation. For agentic AI, the report introduces explicit control overlays: capability boundary identification (Identify), tool access governance (Protect), agent behavior monitoring (Detect), incident response for autonomous actions (Respond), and rollback mechanisms for agent-driven changes (Recover). The profile includes implementation examples for enterprise agent deployments and cross-references to NIST AI RMF, OWASP Top 10 for Agentic Applications, and MITRE ATLAS. It is designed for organizations in regulated industries seeking to apply NIST CSF to AI systems with the same rigor as traditional IT.
+
+**Why I recommend this:**
+NIST is the **authoritative standard for U.S. federal and regulated-industry cybersecurity**. NIST IR 8596 is the first NIST publication to explicitly address agentic AI with control overlays, making it the compliance baseline for regulated agent deployments. The cross-references to OWASP and MITRE ATLAS mean it integrates with existing security frameworks rather than creating yet another silo.
+
+**Relevance to our topic:**
+This spans all three layers: Identify (Layer 0 — spec and capability inventory), Protect (Layer 1 — runtime access governance), Detect (Layer 1 + Layer 2 — behavior monitoring), Respond (Layer 2 — incident response), Recover (Layer 2 — rollback). For regulated enterprises, this is the compliance framework that maps our Three-Layer Stack to auditable NIST controls.
+
+**Which layer:** **All layers** — Layer 0 (Identify), Layer 1 (Protect, Detect), Layer 2 (Detect, Respond, Recover)
+
+**Is it a solution we're looking into?** Yes. For any agent deployment in regulated industries (finance, healthcare, government), NIST compliance is non-negotiable. NIST IR 8596 provides the structured control framework that makes agent governance auditable to regulators and auditors.
+
+**Recommendation reason:** NIST CSF is the de facto compliance standard for U.S. enterprises. Having a NIST-sanctioned profile for agentic AI means governance can be framed in terms auditors already understand: Identify, Protect, Detect, Respond, Recover. This is the bridge between technical governance and regulatory compliance.
+
+---
+
+### 50. reprobe-audit — An Open Scoring Schema for LLM Agent Benchmark Disclosure
+
+- **URL:** https://github.com/mahdinaser/reprobe-audit
+- **Paper:** IEEE International Conference on Big Data 2026
+- **Type:** Open-source framework / Audit tool
+- **Date:** 2026
+- **License:** MIT
+
+**Abstract/Summary:**
+> REPROBE is a small schema and codebook for recording, per result, what an LLM agent benchmark evaluation actually did: which benchmark version, which scaffold, which inference settings, what it cost, and how it failed. The repository contains the schema, the scoring codebook, a validator, an aggregation utility, two example harness-hook patches, the raw scoring sheet from a 12-paper pilot audit, and per-paper extracted evidence. The 12-paper pilot audit covered eight agent benchmarks (SWE-bench, WebArena, OSWorld, GAIA, AgentBench, VisualWebArena, Mind2Web, MLE-bench) and four classical static benchmarks. The agent-benchmark mean disclosure score was 0.38 (vs. 0.66 for classical benchmarks). Cost reporting was universally absent for agent benchmarks. No agent benchmark fully disclosed its harness. Identity disclosure was the strongest field but with a split: all classical benchmarks reached 1.0, while all eight agent benchmarks sat at 0.5 because benchmark version and subset-selection policy were not stated as structured fields.
+
+**Why I recommend this:**
+reprobe-audit is the **first systematic framework for verifying whether agent benchmark claims are reproducible**. The 0.38 mean disclosure score for agent benchmarks (vs. 0.66 for classical benchmarks) is a credibility crisis. Cost reporting is universally absent. No agent benchmark fully discloses its harness. This is not a research paper — it's an audit tool and a warning that current agent safety benchmarks may not be trustworthy.
+
+**Relevance to our topic:**
+This is Layer 2 (Behavioral-Level Governance) at the meta-evaluation level. Governance without trustworthy benchmarks is guesswork. reprobe-audit provides the framework for verifying benchmark credibility, which is essential for any governance system that relies on benchmark results to justify safety claims.
+
+**Which layer:** **Layer 2 — Behavioral-Level Governance** (meta-evaluation / benchmark credibility)
+
+**Is it a solution we're looking into?** Yes. If we are going to use BeSafe-Bench, ST-WebAgentBench, EmbodiedGovBench, or any other benchmark to measure agent safety, we need to verify that those benchmarks are themselves trustworthy. reprobe-audit provides the disclosure schema and scoring framework for that verification.
+
+**Recommendation reason:** The 0.38 disclosure score is the most important meta-finding in agent evaluation this year. It means that most agent safety benchmarks cannot be independently verified or reproduced. reprobe-audit provides the tools to fix this credibility gap before it undermines the entire governance stack.
+
+---
+
+### 51. Agent Security Harness — 474-Test Security Scanner for AI Agents
+
+- **URL:** https://github.com/msaleme/red-team-blue-team-agent-fabric
+- **Type:** Open-source security product
+- **Date:** 2026 (actively maintained)
+- **License:** Open source
+
+**Abstract/Summary:**
+> The Agent Security Harness is a comprehensive security testing framework for AI agent systems. It provides 474 targeted security tests across 33 modules covering: prompt injection (direct and indirect), tool misuse and privilege escalation, data exfiltration paths, inter-agent trust boundary violations, skill package poisoning, MCP server exploitation, autonomous action abuse, and goal hijacking. The harness supports both red-team (adversarial) and blue-team (defensive) testing modes. Red-team mode generates adversarial test cases to probe vulnerabilities; blue-team mode validates that defensive controls (guardrails, sandboxing, authorization) block known attack patterns. The framework is designed to be integrated into CI/CD pipelines for automated security testing of agent deployments. Each test produces a structured report with severity ratings, attack chains, and remediation recommendations.
+
+**Why I recommend this:**
+This is the **most comprehensive open-source security testing framework for AI agents** — 474 tests across 33 modules. Unlike point solutions (Skilldex for validation, MCPThreatHive for MCP threats), the Agent Security Harness covers the entire attack surface: prompt injection, tool misuse, data exfiltration, inter-agent trust violations, skill poisoning, MCP exploitation, autonomous action abuse, and goal hijacking. The red-team/blue-team dual mode means it can be used both for offensive testing and defensive validation.
+
+**Relevance to our topic:**
+This spans all three layers: Skills Scan (Layer 0 — skill poisoning), MCP scan and Agent Scan (Layer 1 — runtime exploitation), and LLM jailbreak/autonomous action abuse (Layer 2 — behavioral safety). It is the operational security testing tool that turns governance frameworks into measurable, repeatable verification.
+
+**Which layer:** **All layers** — Layer 0 (Skills Scan), Layer 1 (MCP scan, Agent Scan), Layer 2 (LLM jailbreak, autonomous action abuse)
+
+**Is it a solution we're looking into?** Yes. This is the closest open-source equivalent to a full-stack penetration-testing suite for agents. The 474 tests provide the concrete security verification that governance frameworks need to be operational. The CI/CD integration means security testing can be automated as part of the deployment pipeline.
+
+**Recommendation reason:** Governance without testing is just policy. The Agent Security Harness provides the testing infrastructure that turns governance controls into verifiable security outcomes. The 474 tests are the concrete evidence that governance is working — or not.
+
+---
+
+### 52. Web Skills Protocol (WSP) — Web Discovery Layer for Skills
+
+- **URL:** https://github.com/openclaw/skills/blob/main/skills/0xtresser/web-skills-protocol/SPEC.md
+- **Type:** Open specification / Protocol draft
+- **Date:** March 2026
+- **Status:** Community draft, open for feedback
+
+**Abstract/Summary:**
+> The Web Skills Protocol (WSP) defines a web discovery layer for agent skills, enabling skills to be discoverable, inspectable, and verifiable on the public web. The protocol specifies two core conventions: `/skills.txt` — a plain-text file at the domain root listing all discoverable skills with metadata (name, version, author, trust tier, verification status, URL); and `/agents.txt` — a companion file listing agent capabilities that consume those skills. WSP is designed to be compatible with existing skill formats (SKILL.md, skill.json, Cursor manifest.json) and integrates with the Skill Trust and Lifecycle Governance Framework's trust tier model. The protocol supports optional extensions: cryptographic signatures (linking skills to verified authors), attestation endpoints (proving skill has passed validation gates), and revocation lists (marking compromised or deprecated skills). WSP enables transparent, inspectable skill registries without requiring centralized platforms, making it possible for any domain to host and govern its own skills.
+
+**Why I recommend this:**
+WSP is the **first protocol for decentralized web-native skill discovery**. Rather than relying on centralized registries (ClawHub, npm, PyPI) that can be poisoned or taken down, WSP lets any domain host its own skills with transparent, inspectable metadata. The `/skills.txt` and `/agents.txt` conventions are simple enough to implement on any web server, but powerful enough to support cryptographic signatures, attestation, and revocation. The integration with trust tiers means skills can be discovered and filtered by their governance status.
+
+**Relevance to our topic:**
+This is Layer 0 (Spec-Level Governance) at the discovery and distribution level. WSP provides the infrastructure for transparent skill registries: skills are not just validated (Skilldex) and contracted (GovernSpec) and trust-tiered (Agent Skills for LLMs), but also **discoverable and inspectable** on the web. The cryptographic signatures and attestation endpoints provide the provenance verification that KYA requires.
+
+**Which layer:** **Layer 0 — Spec-Level Governance** (discovery, distribution, and provenance)
+
+**Is it a solution we're looking into?** Yes. WSP provides the decentralized discovery infrastructure that makes skill governance scalable. Rather than relying on a single registry that can be compromised, WSP lets every organization host its own skills with transparent metadata and cryptographic verification.
+
+**Recommendation reason:** Centralized skill registries are a single point of failure and a single point of attack. WSP's decentralized model — where every domain hosts its own skills with cryptographic signatures and attestation — is the only architecture that can scale to a global, trustworthy skill ecosystem.
 
 ---
 

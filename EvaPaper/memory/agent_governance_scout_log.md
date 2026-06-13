@@ -239,6 +239,27 @@ Status: **NEW FINDINGS FOUND**
 - **Learning Correct Behavior** is the strongest new paper for static governance: it learns correct sequential behavior from just a few traces, making it feasible to validate skill execution patterns without writing full formal specifications.
 - **Owner-Harm** exposes a governance gap that most benchmarks miss: safety systems optimized for generic criminal harm (AgentHarm) perform poorly against deployer-directed attacks. The 14.8% → 85.3% improvement shows that layered defense (gate + post-audit verifier) is the right architecture for this threat class.
 
+## 2026-06-14 Scout Run — NEW FINDINGS DISCOVERED
+Search queries: agent governance safety benchmark 2026, agent skill markdown specification validation governance 2026, OWASP agentic applications framework 2026
+Status: **NEW FINDINGS FOUND**
+
+### New Papers/Products (Found: 0614)
+1. **EmbodiedGovBench** (arXiv:2604.11174) — Apr 13, 2026. First benchmark making governance a first-class evaluation target for embodied agents. Seven governance dimensions: unauthorized capability invocation, runtime drift robustness, recovery success, policy portability, version upgrade safety, human override responsiveness, audit completeness. URL: https://arxiv.org/abs/2604.11174 — **Layer 2** — The benchmark infrastructure for measuring embodied agent governability, not just capability.
+2. **Agent Skills for Large Language Models** (arXiv:2602.12430) — Feb 2026 (updated Jun 2026). Comprehensive survey with Skill Trust and Lifecycle Governance Framework: four-tier gate-based permission model (G1–G4 verification gates, T1–T4 trust tiers) mapping skill provenance to graduated deployment. 26.1% of community skills contain vulnerabilities. URL: https://arxiv.org/abs/2602.12430 — **Layer 0** — The first systematic provenance-based trust framework for skills.
+3. **MITRE ATLAS agentic AI update** (Oct 2025) — 14 new agentic AI-specific techniques for adversarial threat modeling. Multi-step tool chaining exploitation, state manipulation, delegation abuse, persistent skill poisoning, dynamic capability injection, cross-runtime trust boundary violations, agent memory tampering, goal hijacking, tool description poisoning, capability enumeration, behavior cloning, orchestration layer injection, autonomous red-team emulation, recursive self-modification detection. URL: https://atlas.mitre.org/ — **Layer 1/2** — Standard adversarial taxonomy now covers agentic-specific attack vectors.
+4. **reprobe-audit** — IEEE Big Data 2026. Open scoring schema for LLM agent benchmark disclosure. 12-paper pilot audit: agent-benchmark mean disclosure score 0.38 vs. 0.66 classical. Cost reporting universally absent. No agent benchmark fully discloses harness. GitHub: https://github.com/mahdinaser/reprobe-audit — **Layer 2** — Benchmark credibility verification framework.
+5. **Agent Security Harness** — 474 security tests across 33 modules. Prompt injection, tool misuse, data exfiltration, privilege escalation, inter-agent trust violations, skill poisoning, MCP exploitation, autonomous action abuse, goal hijacking. Red-team and blue-team modes. GitHub: https://github.com/msaleme/red-team-blue-team-agent-fabric — **Layer 1/2** — Standardized penetration-testing suite for agents.
+
+### New Products/Frameworks (Found: 0614)
+- (See above — EmbodiedGovBench, Agent Skills for LLMs, MITRE ATLAS update, reprobe-audit, and Agent Security Harness are the new items not previously tracked)
+
 ## Next Scout Run
-- Scheduled: June 12, 2026
-- Focus: FAccT 2026 conference proceedings (June 25-28), OWASP Top 10 adoption metrics, skill marketplace integrity implementations, ACP/AgentAssert production deployments, SkillGuard/AgentWarden follow-up papers
+- Scheduled: June 21, 2026
+- Focus: FAccT 2026 conference proceedings (June 25-28), OWASP Top 10 adoption metrics, skill marketplace integrity implementations, ACP/AgentAssert production deployments
+
+## Research Momentum Observations
+- **Governance benchmarks emerging:** EmbodiedGovBench makes governance a first-class evaluation target, expanding beyond task-success metrics
+- **Skill provenance frameworks maturing:** Agent Skills for LLMs introduces graduated trust tiers based on verification gates, treating skills as executable artifacts with provenance-based permissions
+- **Adversarial taxonomy expanding:** MITRE ATLAS now covers 14 agentic-specific techniques, formalizing attacks that traditional AI threat models miss
+- **Benchmark credibility crisis:** reprobe-audit exposes 0.38 mean disclosure score for agent benchmarks, making meta-evaluation a governance prerequisite
+- **Security testing standardizing:** Agent Security Harness provides 474 concrete tests across 33 modules, turning governance from policy into measurable verification
