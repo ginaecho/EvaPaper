@@ -1,63 +1,63 @@
 {
-  "generated_from_latest_scout": "2026-06-13",
-  "paper_count": 52,
-  "scout_run_count": 8,
+  "generated_from_latest_scout": "2026-06-12",
+  "paper_count": 53,
+  "scout_run_count": 7,
   "topic_mix": [
     {
       "id": "specification",
       "label": "Specification & validation",
       "color": "#e4572e",
       "count": 7,
-      "ratio": 0.1346153846153846
+      "ratio": 0.1320754716981132
     },
     {
       "id": "supply_chain",
       "label": "Skill & tool security",
       "color": "#963484",
       "count": 8,
-      "ratio": 0.15384615384615385
+      "ratio": 0.1509433962264151
     },
     {
       "id": "identity",
       "label": "Identity & provenance",
       "color": "#4267ac",
       "count": 5,
-      "ratio": 0.09615384615384616
+      "ratio": 0.09433962264150944
     },
     {
       "id": "coordination",
       "label": "Coordination & composition",
       "color": "#5b8e3e",
       "count": 3,
-      "ratio": 0.057692307692307696
+      "ratio": 0.05660377358490566
     },
     {
       "id": "evaluation",
       "label": "Evaluation & benchmarks",
       "color": "#f3a712",
-      "count": 8,
-      "ratio": 0.15384615384615385
+      "count": 9,
+      "ratio": 0.16981132075471697
     },
     {
       "id": "runtime",
       "label": "Runtime enforcement",
       "color": "#1d6f75",
       "count": 7,
-      "ratio": 0.1346153846153846
+      "ratio": 0.1320754716981132
     },
     {
       "id": "policy",
       "label": "Policy & governance landscape",
       "color": "#636363",
       "count": 14,
-      "ratio": 0.2692307692307692
+      "ratio": 0.2641509433962264
     }
   ],
   "layer_mix": [
     {
       "layer": 0,
       "label": "Spec",
-      "count": 12
+      "count": 13
     },
     {
       "layer": 1,
@@ -78,8 +78,8 @@
   "runs": [
     {
       "date": "2026-05-30",
-      "new_papers": 5,
-      "cumulative": 5,
+      "new_papers": 6,
+      "cumulative": 6,
       "leading_topic": "Specification & validation",
       "topics": {
         "specification": 2,
@@ -87,7 +87,7 @@
         "identity": 0,
         "coordination": 0,
         "evaluation": 2,
-        "runtime": 1,
+        "runtime": 2,
         "policy": 0
       },
       "cumulative_topics": {
@@ -96,14 +96,14 @@
         "identity": 0,
         "coordination": 0,
         "evaluation": 2,
-        "runtime": 1,
+        "runtime": 2,
         "policy": 0
       }
     },
     {
       "date": "2026-05-31",
       "new_papers": 7,
-      "cumulative": 12,
+      "cumulative": 13,
       "leading_topic": "Skill & tool security",
       "topics": {
         "specification": 1,
@@ -120,13 +120,13 @@
         "identity": 0,
         "coordination": 0,
         "evaluation": 4,
-        "runtime": 1,
+        "runtime": 2,
         "policy": 0
       }
     },
     {
       "date": "2026-06-01",
-      "new_papers": 11,
+      "new_papers": 10,
       "cumulative": 23,
       "leading_topic": "Policy & governance landscape",
       "topics": {
@@ -136,7 +136,7 @@
         "coordination": 0,
         "evaluation": 0,
         "runtime": 1,
-        "policy": 7
+        "policy": 6
       },
       "cumulative_topics": {
         "specification": 3,
@@ -144,8 +144,8 @@
         "identity": 3,
         "coordination": 0,
         "evaluation": 4,
-        "runtime": 2,
-        "policy": 7
+        "runtime": 3,
+        "policy": 6
       }
     },
     {
@@ -168,8 +168,8 @@
         "identity": 4,
         "coordination": 1,
         "evaluation": 6,
-        "runtime": 3,
-        "policy": 10
+        "runtime": 4,
+        "policy": 9
       }
     },
     {
@@ -192,8 +192,8 @@
         "identity": 4,
         "coordination": 2,
         "evaluation": 6,
-        "runtime": 5,
-        "policy": 14
+        "runtime": 6,
+        "policy": 13
       }
     },
     {
@@ -216,54 +216,30 @@
         "identity": 5,
         "coordination": 3,
         "evaluation": 7,
-        "runtime": 6,
-        "policy": 14
+        "runtime": 7,
+        "policy": 13
       }
     },
     {
       "date": "2026-06-12",
-      "new_papers": 2,
-      "cumulative": 51,
-      "leading_topic": "Specification & validation",
+      "new_papers": 4,
+      "cumulative": 53,
+      "leading_topic": "Evaluation & benchmarks",
       "topics": {
         "specification": 1,
         "supply_chain": 0,
         "identity": 0,
         "coordination": 0,
-        "evaluation": 1,
+        "evaluation": 2,
         "runtime": 0,
-        "policy": 0
+        "policy": 1
       },
       "cumulative_topics": {
         "specification": 7,
         "supply_chain": 8,
         "identity": 5,
         "coordination": 3,
-        "evaluation": 8,
-        "runtime": 6,
-        "policy": 14
-      }
-    },
-    {
-      "date": "2026-06-13",
-      "new_papers": 1,
-      "cumulative": 52,
-      "leading_topic": "Runtime enforcement",
-      "topics": {
-        "specification": 0,
-        "supply_chain": 0,
-        "identity": 0,
-        "coordination": 0,
-        "evaluation": 0,
-        "runtime": 1,
-        "policy": 0
-      },
-      "cumulative_topics": {
-        "specification": 7,
-        "supply_chain": 8,
-        "identity": 5,
-        "coordination": 3,
-        "evaluation": 8,
+        "evaluation": 9,
         "runtime": 7,
         "policy": 14
       }
@@ -271,25 +247,25 @@
   ],
   "trending_topics": [
     {
+      "id": "policy",
+      "label": "Policy & governance landscape",
+      "recent_count": 5,
+      "total_count": 14,
+      "color": "#636363"
+    },
+    {
       "id": "evaluation",
       "label": "Evaluation & benchmarks",
-      "recent_count": 2,
-      "total_count": 8,
+      "recent_count": 3,
+      "total_count": 9,
       "color": "#f3a712"
     },
     {
-      "id": "specification",
-      "label": "Specification & validation",
-      "recent_count": 2,
-      "total_count": 7,
-      "color": "#e4572e"
-    },
-    {
-      "id": "runtime",
-      "label": "Runtime enforcement",
-      "recent_count": 2,
-      "total_count": 7,
-      "color": "#1d6f75"
+      "id": "supply_chain",
+      "label": "Skill & tool security",
+      "recent_count": 3,
+      "total_count": 8,
+      "color": "#963484"
     }
   ],
   "association_graph": {
@@ -305,7 +281,7 @@
           2
         ],
         "discovered": "2026-05-30",
-        "degree": 7
+        "degree": 8
       },
       {
         "id": "arxiv:2605.22634",
@@ -361,6 +337,20 @@
         ],
         "discovered": "2026-05-30",
         "degree": 4
+      },
+      {
+        "id": "arxiv:2605.27690",
+        "title": "TRACES: Proactive Safety Auditing for Multi-Turn LLM Agents via Trajectory-State Modeling",
+        "url": "https://arxiv.org/abs/2605.27690",
+        "topic": "runtime",
+        "topic_label": "Runtime enforcement",
+        "color": "#1d6f75",
+        "layers": [
+          1,
+          2
+        ],
+        "discovered": "2026-05-30",
+        "degree": 3
       },
       {
         "id": "arxiv:2605.17380",
@@ -493,19 +483,6 @@
         "degree": 4
       },
       {
-        "id": "arxiv:2604.11174",
-        "title": "EmbodiedGovBench",
-        "url": "https://arxiv.org/abs/2604.11174",
-        "topic": "policy",
-        "topic_label": "Policy & governance landscape",
-        "color": "#636363",
-        "layers": [
-          2
-        ],
-        "discovered": "2026-06-01",
-        "degree": 4
-      },
-      {
         "id": "arxiv:2604.19818",
         "title": "Evidence-Synthesis Framework",
         "url": "https://arxiv.org/abs/2604.19818",
@@ -516,7 +493,7 @@
           2
         ],
         "discovered": "2026-06-01",
-        "degree": 4
+        "degree": 3
       },
       {
         "id": "arxiv:2605.02709",
@@ -555,7 +532,7 @@
           1
         ],
         "discovered": "2026-06-01",
-        "degree": 5
+        "degree": 4
       },
       {
         "id": "arxiv:2604.02767",
@@ -763,7 +740,7 @@
           3
         ],
         "discovered": "2026-06-06",
-        "degree": 3
+        "degree": 4
       },
       {
         "id": "arxiv:2604.20805",
@@ -785,7 +762,7 @@
         "color": "#636363",
         "layers": [],
         "discovered": "2026-06-06",
-        "degree": 3
+        "degree": 4
       },
       {
         "id": "arxiv:2603.16586",
@@ -935,6 +912,32 @@
         "degree": 3
       },
       {
+        "id": "arxiv:2602.12430",
+        "title": "Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward",
+        "url": "https://arxiv.org/abs/2602.12430",
+        "topic": "policy",
+        "topic_label": "Policy & governance landscape",
+        "color": "#636363",
+        "layers": [
+          0
+        ],
+        "discovered": "2026-06-12",
+        "degree": 4
+      },
+      {
+        "id": "arxiv:2604.11174",
+        "title": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems",
+        "url": "https://arxiv.org/abs/2604.11174",
+        "topic": "evaluation",
+        "topic_label": "Evaluation & benchmarks",
+        "color": "#f3a712",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-06-12",
+        "degree": 3
+      },
+      {
         "id": "arxiv:2605.03159",
         "title": "Learning Correct Behavior from Examples: Validating Sequential Execution in Autonomous Agents",
         "url": "https://arxiv.org/abs/2605.03159",
@@ -960,20 +963,6 @@
           2
         ],
         "discovered": "2026-06-12",
-        "degree": 3
-      },
-      {
-        "id": "arxiv:2605.27690",
-        "title": "TRACES: Proactive Safety Auditing for Multi-Turn LLM Agents via Trajectory-State Modeling",
-        "url": "https://arxiv.org/abs/2605.27690",
-        "topic": "runtime",
-        "topic_label": "Runtime enforcement",
-        "color": "#1d6f75",
-        "layers": [
-          1,
-          2
-        ],
-        "discovered": "2026-06-13",
         "degree": 3
       }
     ],
@@ -1021,6 +1010,52 @@
         "weight": 2.633,
         "reason": "same topic; shared L0/L2",
         "shared_terms": []
+      },
+      {
+        "source": "arxiv:2602.12430",
+        "target": "arxiv:2603.24414",
+        "kind": "conceptual",
+        "weight": 2.263,
+        "reason": "same topic; terms: comprehensive, deployment, provides",
+        "shared_terms": [
+          "comprehensive",
+          "deployment",
+          "provides"
+        ]
+      },
+      {
+        "source": "arxiv:2602.12430",
+        "target": "arxiv:2604.18652",
+        "kind": "conceptual",
+        "weight": 2.075,
+        "reason": "same topic; terms: architecture, lifecycle",
+        "shared_terms": [
+          "architecture",
+          "lifecycle"
+        ]
+      },
+      {
+        "source": "arxiv:2602.12430",
+        "target": "arxiv:2605.02709",
+        "kind": "conceptual",
+        "weight": 2.075,
+        "reason": "same topic; terms: context, deployment",
+        "shared_terms": [
+          "context",
+          "deployment"
+        ]
+      },
+      {
+        "source": "arxiv:2602.12430",
+        "target": "arxiv:2605.07358",
+        "kind": "conceptual",
+        "weight": 3.662,
+        "reason": "same topic; shared L0; terms: acquisition, comprehensive, lifecycle",
+        "shared_terms": [
+          "acquisition",
+          "comprehensive",
+          "lifecycle"
+        ]
       },
       {
         "source": "arxiv:2602.22302",
@@ -1093,11 +1128,14 @@
       },
       {
         "source": "arxiv:2603.02601",
-        "target": "arxiv:2604.08523",
+        "target": "arxiv:2604.11174",
         "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L2",
-        "shared_terms": []
+        "weight": 3.475,
+        "reason": "same topic; shared L2; terms: critical, metrics",
+        "shared_terms": [
+          "critical",
+          "metrics"
+        ]
       },
       {
         "source": "arxiv:2603.02601",
@@ -1473,6 +1511,20 @@
       },
       {
         "source": "arxiv:2603.25747",
+        "target": "arxiv:2604.11174",
+        "kind": "conceptual",
+        "weight": 4.037,
+        "reason": "same topic; shared L2; terms: benchmark, completion, embodied",
+        "shared_terms": [
+          "benchmark",
+          "completion",
+          "embodied",
+          "task",
+          "whether"
+        ]
+      },
+      {
+        "source": "arxiv:2603.25747",
         "target": "arxiv:2604.18658",
         "kind": "conceptual",
         "weight": 2.775,
@@ -1621,6 +1673,16 @@
       },
       {
         "source": "arxiv:2604.08523",
+        "target": "arxiv:2604.11174",
+        "kind": "conceptual",
+        "weight": 3.287,
+        "reason": "same topic; shared L2; terms: benchmark",
+        "shared_terms": [
+          "benchmark"
+        ]
+      },
+      {
+        "source": "arxiv:2604.08523",
         "target": "arxiv:2605.11891",
         "kind": "conceptual",
         "weight": 3.1,
@@ -1636,45 +1698,6 @@
         "shared_terms": [
           "benchmark",
           "benchmarks"
-        ]
-      },
-      {
-        "source": "arxiv:2604.11174",
-        "target": "arxiv:2604.19818",
-        "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L2",
-        "shared_terms": []
-      },
-      {
-        "source": "arxiv:2604.11174",
-        "target": "arxiv:2604.23338",
-        "kind": "conceptual",
-        "weight": 2.075,
-        "reason": "same topic; terms: audit, benchmark",
-        "shared_terms": [
-          "audit",
-          "benchmark"
-        ]
-      },
-      {
-        "source": "arxiv:2604.11174",
-        "target": "arxiv:2605.02709",
-        "kind": "conceptual",
-        "weight": 3.287,
-        "reason": "same topic; shared L2; terms: dimensions",
-        "shared_terms": [
-          "dimensions"
-        ]
-      },
-      {
-        "source": "arxiv:2604.11174",
-        "target": "arxiv:2605.07358",
-        "kind": "conceptual",
-        "weight": 1.887,
-        "reason": "same topic; terms: capability",
-        "shared_terms": [
-          "capability"
         ]
       },
       {
@@ -1943,17 +1966,17 @@
         ]
       }
     ],
-    "node_count": 52,
-    "edge_count": 97,
+    "node_count": 53,
+    "edge_count": 99,
     "hubs": [
-      {
-        "id": "arxiv:2603.18829",
-        "title": "Admission Control for Agent Actions (ACP)",
-        "degree": 7
-      },
       {
         "id": "arxiv:2603.25747",
         "title": "BeSafe-Bench (BSB)",
+        "degree": 8
+      },
+      {
+        "id": "arxiv:2603.18829",
+        "title": "Admission Control for Agent Actions (ACP)",
         "degree": 7
       },
       {
@@ -1975,13 +1998,13 @@
     "method": "Each paper keeps its three strongest corpus neighbors. Association strength combines primary topic, shared governance layers, and shared technical terms. These are conceptual associations, not claimed citations."
   },
   "knowledge_wiki": {
-    "page_count": 64,
+    "page_count": 65,
     "pages": [
       {
         "id": "overview",
         "type": "overview",
         "title": "Agent Governance Research Overview",
-        "subtitle": "52 papers compiled into a living research wiki",
+        "subtitle": "53 papers compiled into a living research wiki",
         "body": "EvaPaper compiles specification, runtime, behavioral, ecosystem, security, identity, and coordination research into maintained pages. Use topic and layer pages to browse the corpus, then follow explicit related-paper links to inspect local research trails.",
         "links": [
           "topic:specification",
@@ -2065,7 +2088,7 @@
         "id": "topic:evaluation",
         "type": "topic",
         "title": "Evaluation & benchmarks",
-        "subtitle": "8 papers in this primary topic",
+        "subtitle": "9 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "arxiv:2603.25747",
@@ -2075,6 +2098,7 @@
           "arxiv:2603.02601",
           "arxiv:2605.16282",
           "arxiv:2605.12015",
+          "arxiv:2604.11174",
           "arxiv:2604.18658"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
@@ -2087,12 +2111,12 @@
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "arxiv:2603.07191",
+          "arxiv:2605.27690",
           "arxiv:2604.05485",
           "arxiv:2603.18829",
           "arxiv:2604.11839",
           "arxiv:2603.16586",
-          "arxiv:2605.16198",
-          "arxiv:2605.27690"
+          "arxiv:2605.16198"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -2104,7 +2128,6 @@
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "arxiv:2604.07007",
-          "arxiv:2604.11174",
           "arxiv:2604.19818",
           "arxiv:2605.02709",
           "arxiv:2604.23338",
@@ -2116,7 +2139,8 @@
           "arxiv:2603.24414",
           "arxiv:2604.20805",
           "arxiv:2604.18652",
-          "arxiv:2603.03340"
+          "arxiv:2603.03340",
+          "arxiv:2602.12430"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -2124,7 +2148,7 @@
         "id": "layer:0",
         "type": "layer",
         "title": "Layer 0: Specification",
-        "subtitle": "12 papers mapped to this governance layer",
+        "subtitle": "13 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "arxiv:2605.22634",
@@ -2138,6 +2162,7 @@
           "arxiv:2606.00448",
           "arxiv:2605.27955",
           "arxiv:2605.12015",
+          "arxiv:2602.12430",
           "arxiv:2605.03159"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
@@ -2152,6 +2177,7 @@
           "arxiv:2605.22634",
           "arxiv:2603.07191",
           "arxiv:2410.06703",
+          "arxiv:2605.27690",
           "arxiv:2605.17380",
           "arxiv:2603.18063",
           "arxiv:2604.13849",
@@ -2176,8 +2202,7 @@
           "arxiv:2605.25376",
           "arxiv:2606.00448",
           "arxiv:2605.03159",
-          "arxiv:2604.18658",
-          "arxiv:2605.27690"
+          "arxiv:2604.18658"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
       },
@@ -2190,18 +2215,18 @@
         "links": [
           "arxiv:2603.25747",
           "arxiv:2410.06703",
+          "arxiv:2605.27690",
           "arxiv:2604.08523",
           "arxiv:2605.11891",
           "arxiv:2604.04989",
-          "arxiv:2604.11174",
           "arxiv:2604.19818",
           "arxiv:2605.02709",
           "arxiv:2603.02601",
           "arxiv:2605.16282",
           "arxiv:2606.03024",
           "arxiv:2605.12015",
-          "arxiv:2604.18658",
-          "arxiv:2605.27690"
+          "arxiv:2604.11174",
+          "arxiv:2604.18658"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
       },
@@ -2234,6 +2259,7 @@
           "topic:evaluation",
           "layer:2",
           "arxiv:2604.08523",
+          "arxiv:2604.11174",
           "arxiv:2605.16282",
           "arxiv:2410.06703",
           "arxiv:2603.02601",
@@ -2246,6 +2272,11 @@
             "id": "arxiv:2604.08523",
             "title": "ClawBench \u2014 Real-World Web Agent Benchmark",
             "reason": "same topic; shared L2; terms: benchmark, besafe-bench, existing"
+          },
+          {
+            "id": "arxiv:2604.11174",
+            "title": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems",
+            "reason": "same topic; shared L2; terms: benchmark, completion, embodied"
           },
           {
             "id": "arxiv:2605.16282",
@@ -2446,6 +2477,43 @@
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
       },
       {
+        "id": "arxiv:2605.27690",
+        "type": "paper",
+        "title": "TRACES: Proactive Safety Auditing for Multi-Turn LLM Agents via Trajectory-State Modeling",
+        "subtitle": "Runtime enforcement \u00b7 Layer 1 / Layer 2",
+        "body": "LLM agents increasingly operate through multi-turn tool use and environment interaction, where safety risks often emerge from intermediate steps long before they surface in the final outcome. Reactive auditing is therefore insufficient: post-hoc diagnosis frequently misses the chance to flag risks while they are unfolding. We propose TRACES, a representation-based proactive auditor that learns prefix-level trajectory risk states from the hidden representations of an observer LLM. TRACES induces latent mechanism features from step representations and models their temporal evolution to estimate whether a partial trajectory is drifting toward unsafe behavior. To sidestep the cost and ambiguity of step-level risk annotation, TRACES is trained with weak trajectory-level supervision while still producing dense prefix-level risk estimates. Across multiple agent safety benchmarks, TRACES improves both full-trajectory safety prediction and proactive risk discrimination. Our analyses further suggest that these risk states can help train a safer agent, highlighting the broader potential of proactive auditing for long-horizon agent safety.",
+        "relevance": "This is Layer 1 (Runtime-Level Governance) with a direct bridge to Layer 2 (Behavioral). It provides a **middle path between static specification and runtime monitoring**: instead of relying on pre-defined rules or post-hoc evaluation, it learns risk patterns from the agent's own representations during execution. The weak trajectory-level supervision approach makes it practical \u2014 no need for expensive step-level annotations.",
+        "recommendation": "TRACES is the **first proactive safety auditor for multi-turn agents** that catches risks *while they are unfolding* rather than after the fact. Most existing safety systems are reactive \u2014 they audit completed trajectories. TRACES learns latent risk states from an observer LLM's hidden representations and estimates whether a partial trajectory is drifting toward unsafe behavior. This is a fundamental shift from \"did it go wrong?\" to \"is it going wrong right now?\"",
+        "source_url": "https://arxiv.org/abs/2605.27690",
+        "discovered": "2026-05-30",
+        "links": [
+          "topic:runtime",
+          "layer:1",
+          "layer:2",
+          "arxiv:2605.16198",
+          "arxiv:2603.18829",
+          "arxiv:2604.05485"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2605.16198",
+            "title": "Auditing, Monitoring, and Intervention",
+            "reason": "same topic; shared L1; terms: auditing"
+          },
+          {
+            "id": "arxiv:2603.18829",
+            "title": "Admission Control for Agent Actions (ACP)",
+            "reason": "same topic; shared L1"
+          },
+          {
+            "id": "arxiv:2604.05485",
+            "title": "Auditable Agents",
+            "reason": "same topic; shared L1"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
         "id": "arxiv:2605.17380",
         "type": "paper",
         "title": "ADR",
@@ -2496,7 +2564,7 @@
           "layer:2",
           "arxiv:2603.25747",
           "arxiv:2605.16282",
-          "arxiv:2603.02601",
+          "arxiv:2604.11174",
           "arxiv:2605.11891",
           "arxiv:2410.06703"
         ],
@@ -2512,9 +2580,9 @@
             "reason": "same topic; shared L2; terms: benchmark, benchmarks"
           },
           {
-            "id": "arxiv:2603.02601",
-            "title": "AgentAssay",
-            "reason": "same topic; shared L2"
+            "id": "arxiv:2604.11174",
+            "title": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems",
+            "reason": "same topic; shared L2; terms: benchmark"
           },
           {
             "id": "arxiv:2605.11891",
@@ -2860,48 +2928,6 @@
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
       },
       {
-        "id": "arxiv:2604.11174",
-        "type": "paper",
-        "title": "EmbodiedGovBench",
-        "subtitle": "Policy & governance landscape \u00b7 Layer 2",
-        "body": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems. Apr 13, 2026. Seven governance dimensions: unauthorized capability invocation, runtime drift robustness, recovery success, policy portability, version upgrade safety, human override responsiveness, audit completeness.",
-        "relevance": "Governance-as-first-class evaluation target. The benchmark structure (perturbation operators + governance metrics) can be adapted to non-embodied agent systems.",
-        "recommendation": "Recommendation rationale pending corpus enrichment.",
-        "source_url": "https://arxiv.org/abs/2604.11174",
-        "discovered": "2026-06-01",
-        "links": [
-          "topic:policy",
-          "layer:2",
-          "arxiv:2605.02709",
-          "arxiv:2604.19818",
-          "arxiv:2604.23338",
-          "arxiv:2605.07358"
-        ],
-        "related": [
-          {
-            "id": "arxiv:2605.02709",
-            "title": "Healthcare Skills",
-            "reason": "same topic; shared L2; terms: dimensions"
-          },
-          {
-            "id": "arxiv:2604.19818",
-            "title": "Evidence-Synthesis Framework",
-            "reason": "same topic; shared L2"
-          },
-          {
-            "id": "arxiv:2604.23338",
-            "title": "LASM / Systematic Survey",
-            "reason": "same topic; terms: audit, benchmark"
-          },
-          {
-            "id": "arxiv:2605.07358",
-            "title": "A Comprehensive Survey on Agent Skills",
-            "reason": "same topic; terms: capability"
-          }
-        ],
-        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
-      },
-      {
         "id": "arxiv:2604.19818",
         "type": "paper",
         "title": "Evidence-Synthesis Framework",
@@ -2915,7 +2941,6 @@
           "topic:policy",
           "layer:2",
           "arxiv:2605.02709",
-          "arxiv:2604.11174",
           "arxiv:2603.03340",
           "arxiv:2604.18652"
         ],
@@ -2924,11 +2949,6 @@
             "id": "arxiv:2605.02709",
             "title": "Healthcare Skills",
             "reason": "same topic; shared L2; terms: finding"
-          },
-          {
-            "id": "arxiv:2604.11174",
-            "title": "EmbodiedGovBench",
-            "reason": "same topic; shared L2"
           },
           {
             "id": "arxiv:2603.03340",
@@ -2956,16 +2976,11 @@
         "links": [
           "topic:policy",
           "layer:2",
-          "arxiv:2604.11174",
           "arxiv:2604.19818",
-          "arxiv:2605.16282"
+          "arxiv:2605.16282",
+          "arxiv:2602.12430"
         ],
         "related": [
-          {
-            "id": "arxiv:2604.11174",
-            "title": "EmbodiedGovBench",
-            "reason": "same topic; shared L2; terms: dimensions"
-          },
           {
             "id": "arxiv:2604.19818",
             "title": "Evidence-Synthesis Framework",
@@ -2975,6 +2990,11 @@
             "id": "arxiv:2605.16282",
             "title": "Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents",
             "reason": "shared L2; terms: analysis, benchmarks, current"
+          },
+          {
+            "id": "arxiv:2602.12430",
+            "title": "Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward",
+            "reason": "same topic; terms: context, deployment"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -3037,8 +3057,7 @@
           "arxiv:2604.08224",
           "arxiv:2603.18096",
           "arxiv:2605.03353",
-          "arxiv:2605.20874",
-          "arxiv:2604.11174"
+          "arxiv:2605.20874"
         ],
         "related": [
           {
@@ -3060,11 +3079,6 @@
             "id": "arxiv:2605.20874",
             "title": "Governance by Construction for Generalist Agents / CUGA",
             "reason": "same topic; shared L1"
-          },
-          {
-            "id": "arxiv:2604.11174",
-            "title": "EmbodiedGovBench",
-            "reason": "same topic; terms: audit, benchmark"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -3208,11 +3222,16 @@
         "links": [
           "topic:policy",
           "layer:0",
+          "arxiv:2602.12430",
           "arxiv:2603.24414",
-          "arxiv:2604.18652",
-          "arxiv:2604.11174"
+          "arxiv:2604.18652"
         ],
         "related": [
+          {
+            "id": "arxiv:2602.12430",
+            "title": "Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward",
+            "reason": "same topic; shared L0; terms: acquisition, comprehensive, lifecycle"
+          },
           {
             "id": "arxiv:2603.24414",
             "title": "ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents",
@@ -3222,11 +3241,6 @@
             "id": "arxiv:2604.18652",
             "title": "From Craft to Kernel: A Governance-First Execution Architecture for Agentic Computers",
             "reason": "same topic; terms: capability, lifecycle, management"
-          },
-          {
-            "id": "arxiv:2604.11174",
-            "title": "EmbodiedGovBench",
-            "reason": "same topic; terms: capability"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -3395,8 +3409,8 @@
           "topic:evaluation",
           "layer:2",
           "arxiv:2605.16282",
+          "arxiv:2604.11174",
           "arxiv:2603.25747",
-          "arxiv:2604.08523",
           "arxiv:2605.11891",
           "arxiv:2604.18658"
         ],
@@ -3407,13 +3421,13 @@
             "reason": "same topic; shared L2; terms: analysis, coverage, first"
           },
           {
-            "id": "arxiv:2603.25747",
-            "title": "BeSafe-Bench (BSB)",
-            "reason": "same topic; shared L2"
+            "id": "arxiv:2604.11174",
+            "title": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems",
+            "reason": "same topic; shared L2; terms: critical, metrics"
           },
           {
-            "id": "arxiv:2604.08523",
-            "title": "ClawBench \u2014 Real-World Web Agent Benchmark",
+            "id": "arxiv:2603.25747",
+            "title": "BeSafe-Bench (BSB)",
             "reason": "same topic; shared L2"
           },
           {
@@ -3714,6 +3728,7 @@
           "layer:3",
           "arxiv:2603.03340",
           "arxiv:2604.07007",
+          "arxiv:2602.12430",
           "arxiv:2605.07358"
         ],
         "related": [
@@ -3726,6 +3741,11 @@
             "id": "arxiv:2604.07007",
             "title": "AgentCity",
             "reason": "same topic; shared L3"
+          },
+          {
+            "id": "arxiv:2602.12430",
+            "title": "Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward",
+            "reason": "same topic; terms: comprehensive, deployment, provides"
           },
           {
             "id": "arxiv:2605.07358",
@@ -3772,6 +3792,7 @@
           "topic:policy",
           "arxiv:2603.18096",
           "arxiv:2605.07358",
+          "arxiv:2602.12430",
           "arxiv:2604.19818"
         ],
         "related": [
@@ -3784,6 +3805,11 @@
             "id": "arxiv:2605.07358",
             "title": "A Comprehensive Survey on Agent Skills",
             "reason": "same topic; terms: capability, lifecycle, management"
+          },
+          {
+            "id": "arxiv:2602.12430",
+            "title": "Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward",
+            "reason": "same topic; terms: architecture, lifecycle"
           },
           {
             "id": "arxiv:2604.19818",
@@ -4218,6 +4244,84 @@
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
       },
       {
+        "id": "arxiv:2602.12430",
+        "type": "paper",
+        "title": "Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward",
+        "subtitle": "Policy & governance landscape \u00b7 Layer 0",
+        "body": "The transition from monolithic language models to modular, skill-equipped agents marks a defining shift in how large language models (LLMs) are deployed in practice. Rather than encoding all procedural knowledge within model weights, agent skills -- composable packages of instructions, code, and resources that agents load on demand -- enable dynamic capability extension without retraining. It is formalized in a paradigm of progressive disclosure, portable skill definitions, and integration with the Model Context Protocol (MCP). This survey provides a comprehensive treatment of the agent skills landscape, as it has rapidly evolved during the last few months. We organize the field along four axes: (i) architectural foundations, examining the SKILL.md specification, progressive context loading, and the complementary roles of skills and MCP; (ii) skill acquisition, covering reinforcement learning with skill libraries, autonomous skill discovery (SEAgent), and compositional skill synthesis; (iii) deployment at scale, including the computer-use agent (CUA) stack, GUI grounding advances, and benchmark progress on OSWorld and SWE-bench; and (iv) security, where recent empirical analyses reveal that 26.1% of community-contributed skills contain vulnerabilities, motivating our proposed Skill Trust and Lifecycle Governance Framework -- a four-tier, gate-based permission model that maps skill provenance to graduated deployment capabilities. We identify seven open challenges -- from cross-platform skill portability to capability-based permission models -- and propose a research agenda for realizing trustworthy, self-improving skill ecosystems.",
+        "relevance": "This is the apex of Layer 0 (Spec-Level Governance). The Skill Trust and Lifecycle Governance Framework provides the provenance-based permission model that every skill ecosystem needs: skills are not just validated for format correctness (Skilldex) or contractual completeness (GovernSpec), but are assigned trust tiers based on their provenance, with graduated deployment capabilities. The G1\u2013G4 gates (format, semantic, security, behavioral) and T1\u2013T4 tiers (unverified, community, reviewed, certified) provide a concrete trust ladder.",
+        "recommendation": "This is the **first comprehensive survey of the agent skills landscape** and it introduces the **Skill Trust and Lifecycle Governance Framework** \u2014 a four-tier, gate-based permission model (G1\u2013G4 verification gates, T1\u2013T4 trust tiers) that maps skill provenance to graduated deployment capabilities. The finding that 26.1% of community-contributed skills contain vulnerabilities is a critical data point. Unlike prior surveys that broadly cover LLM agents or tool use, this work focuses specifically on the emerging skill abstraction layer and its implications for governance.",
+        "source_url": "https://arxiv.org/abs/2602.12430",
+        "discovered": "2026-06-12",
+        "links": [
+          "topic:policy",
+          "layer:0",
+          "arxiv:2605.07358",
+          "arxiv:2603.24414",
+          "arxiv:2604.18652",
+          "arxiv:2605.02709"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2605.07358",
+            "title": "A Comprehensive Survey on Agent Skills",
+            "reason": "same topic; shared L0; terms: acquisition, comprehensive, lifecycle"
+          },
+          {
+            "id": "arxiv:2603.24414",
+            "title": "ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents",
+            "reason": "same topic; terms: comprehensive, deployment, provides"
+          },
+          {
+            "id": "arxiv:2604.18652",
+            "title": "From Craft to Kernel: A Governance-First Execution Architecture for Agentic Computers",
+            "reason": "same topic; terms: architecture, lifecycle"
+          },
+          {
+            "id": "arxiv:2605.02709",
+            "title": "Healthcare Skills",
+            "reason": "same topic; terms: context, deployment"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2604.11174",
+        "type": "paper",
+        "title": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems",
+        "subtitle": "Evaluation & benchmarks \u00b7 Layer 2",
+        "body": "Recent progress in embodied AI has produced a growing ecosystem of robot policies, foundation models, and modular runtimes. However, current evaluation remains dominated by task success metrics such as completion rate or manipulation accuracy. These metrics leave a critical gap: they do not measure whether embodied systems are governable -- whether they respect capability boundaries, enforce policies, recover safely, maintain audit trails, and respond to human oversight. We present EmbodiedGovBench, a benchmark for governance-oriented evaluation of embodied agent systems. Rather than asking only whether a robot can complete a task, EmbodiedGovBench evaluates whether the system remains controllable, policy-bounded, recoverable, auditable, and evolution-safe under realistic perturbations. The benchmark covers seven governance dimensions: unauthorized capability invocation, runtime drift robustness, recovery success, policy portability, version upgrade safety, human override responsiveness, and audit completeness. We define a benchmark structure spanning single-robot and fleet settings, with scenario templates, perturbation operators, governance metrics, and baseline evaluation protocols. We describe how the benchmark can be instantiated over embodied capability runtimes with modular interfaces and contract-aware upgrade workflows. Our analysis suggests that embodied governance should become a first-class evaluation target. EmbodiedGovBench provides the initial measurement framework for that shift.",
+        "relevance": "This is Layer 2 (Behavioral-Level Governance) for embodied agents. It provides the measurement infrastructure for governance-oriented evaluation, complementing BeSafe-Bench (which covers web, mobile, and embodied VLM/VLA) with a focus specifically on governability rather than task success.",
+        "recommendation": "EmbodiedGovBench is the **first benchmark to make governance a first-class evaluation target for embodied agents**. Where all existing embodied benchmarks measure task completion, this one measures whether the system remains controllable, policy-bounded, recoverable, auditable, and evolution-safe. The seven governance dimensions (unauthorized capability invocation, runtime drift robustness, recovery success, policy portability, version upgrade safety, human override responsiveness, audit completeness) are the evaluation criteria that any production embodied agent must meet.",
+        "source_url": "https://arxiv.org/abs/2604.11174",
+        "discovered": "2026-06-12",
+        "links": [
+          "topic:evaluation",
+          "layer:2",
+          "arxiv:2603.25747",
+          "arxiv:2603.02601",
+          "arxiv:2604.08523"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2603.25747",
+            "title": "BeSafe-Bench (BSB)",
+            "reason": "same topic; shared L2; terms: benchmark, completion, embodied"
+          },
+          {
+            "id": "arxiv:2603.02601",
+            "title": "AgentAssay",
+            "reason": "same topic; shared L2; terms: critical, metrics"
+          },
+          {
+            "id": "arxiv:2604.08523",
+            "title": "ClawBench \u2014 Real-World Web Agent Benchmark",
+            "reason": "same topic; shared L2; terms: benchmark"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
         "id": "arxiv:2605.03159",
         "type": "paper",
         "title": "Learning Correct Behavior from Examples: Validating Sequential Execution in Autonomous Agents",
@@ -4287,43 +4391,6 @@
             "id": "arxiv:2603.25747",
             "title": "BeSafe-Bench (BSB)",
             "reason": "same topic; shared L2; terms: blind, most"
-          }
-        ],
-        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
-      },
-      {
-        "id": "arxiv:2605.27690",
-        "type": "paper",
-        "title": "TRACES: Proactive Safety Auditing for Multi-Turn LLM Agents via Trajectory-State Modeling",
-        "subtitle": "Runtime enforcement \u00b7 Layer 1 / Layer 2",
-        "body": "LLM agents increasingly operate through multi-turn tool use and environment interaction, where safety risks often emerge from intermediate steps long before they surface in the final outcome. Reactive auditing is therefore insufficient: post-hoc diagnosis frequently misses the chance to flag risks while they are unfolding. We propose TRACES, a representation-based proactive auditor that learns prefix-level trajectory risk states from the hidden representations of an observer LLM. TRACES induces latent mechanism features from step representations and models their temporal evolution to estimate whether a partial trajectory is drifting toward unsafe behavior. To sidestep the cost and ambiguity of step-level risk annotation, TRACES is trained with weak trajectory-level supervision while still producing dense prefix-level risk estimates. Across multiple agent safety benchmarks, TRACES improves both full-trajectory safety prediction and proactive risk discrimination. Our analyses further suggest that these risk states can help train a safer agent, highlighting the broader potential of proactive auditing for long-horizon agent safety.",
-        "relevance": "This is Layer 1 (Runtime-Level Governance) with a direct bridge to Layer 2 (Behavioral). It provides a **middle path between static specification and runtime monitoring**: instead of relying on pre-defined rules or post-hoc evaluation, it learns risk patterns from the agent's own representations during execution. The weak trajectory-level supervision approach makes it practical \u2014 no need for expensive step-level annotations.",
-        "recommendation": "TRACES is the **first proactive safety auditor for multi-turn agents** that catches risks *while they are unfolding* rather than after the fact. Most existing safety systems are reactive \u2014 they audit completed trajectories. TRACES learns latent risk states from an observer LLM's hidden representations and estimates whether a partial trajectory is drifting toward unsafe behavior. This is a fundamental shift from \"did it go wrong?\" to \"is it going wrong right now?\"",
-        "source_url": "https://arxiv.org/abs/2605.27690",
-        "discovered": "2026-06-13",
-        "links": [
-          "topic:runtime",
-          "layer:1",
-          "layer:2",
-          "arxiv:2605.16198",
-          "arxiv:2603.18829",
-          "arxiv:2604.05485"
-        ],
-        "related": [
-          {
-            "id": "arxiv:2605.16198",
-            "title": "Auditing, Monitoring, and Intervention",
-            "reason": "same topic; shared L1; terms: auditing"
-          },
-          {
-            "id": "arxiv:2603.18829",
-            "title": "Admission Control for Agent Actions (ACP)",
-            "reason": "same topic; shared L1"
-          },
-          {
-            "id": "arxiv:2604.05485",
-            "title": "Auditable Agents",
-            "reason": "same topic; shared L1"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -4629,6 +4696,18 @@
       ]
     },
     {
+      "id": "arxiv:2605.27690",
+      "title": "TRACES: Proactive Safety Auditing for Multi-Turn LLM Agents via Trajectory-State Modeling",
+      "url": "https://arxiv.org/abs/2605.27690",
+      "discovered": "2026-05-30",
+      "topic": "runtime",
+      "topic_label": "Runtime enforcement",
+      "layers": [
+        1,
+        2
+      ]
+    },
+    {
       "id": "arxiv:2605.17380",
       "title": "ADR",
       "url": "https://arxiv.org/abs/2605.17380",
@@ -4736,17 +4815,6 @@
       "topic_label": "Runtime enforcement",
       "layers": [
         1
-      ]
-    },
-    {
-      "id": "arxiv:2604.11174",
-      "title": "EmbodiedGovBench",
-      "url": "https://arxiv.org/abs/2604.11174",
-      "discovered": "2026-06-01",
-      "topic": "policy",
-      "topic_label": "Policy & governance landscape",
-      "layers": [
-        2
       ]
     },
     {
@@ -5113,6 +5181,28 @@
       ]
     },
     {
+      "id": "arxiv:2602.12430",
+      "title": "Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward",
+      "url": "https://arxiv.org/abs/2602.12430",
+      "discovered": "2026-06-12",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        0
+      ]
+    },
+    {
+      "id": "arxiv:2604.11174",
+      "title": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems",
+      "url": "https://arxiv.org/abs/2604.11174",
+      "discovered": "2026-06-12",
+      "topic": "evaluation",
+      "topic_label": "Evaluation & benchmarks",
+      "layers": [
+        2
+      ]
+    },
+    {
       "id": "arxiv:2605.03159",
       "title": "Learning Correct Behavior from Examples: Validating Sequential Execution in Autonomous Agents",
       "url": "https://arxiv.org/abs/2605.03159",
@@ -5131,18 +5221,6 @@
       "discovered": "2026-06-12",
       "topic": "evaluation",
       "topic_label": "Evaluation & benchmarks",
-      "layers": [
-        1,
-        2
-      ]
-    },
-    {
-      "id": "arxiv:2605.27690",
-      "title": "TRACES: Proactive Safety Auditing for Multi-Turn LLM Agents via Trajectory-State Modeling",
-      "url": "https://arxiv.org/abs/2605.27690",
-      "discovered": "2026-06-13",
-      "topic": "runtime",
-      "topic_label": "Runtime enforcement",
       "layers": [
         1,
         2

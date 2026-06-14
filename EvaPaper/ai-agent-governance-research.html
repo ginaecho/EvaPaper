@@ -813,6 +813,8 @@
                     <span class="layer-pill">SkCC</span>
                     <span class="layer-pill">AST10</span>
                     <span class="layer-pill">SSL Representation</span>
+                    <span class="layer-pill">Skill Trust Framework</span>
+                    <span class="layer-pill">WSP</span>
                 </div>
                 <span class="layer-stat" style="background: var(--navy);">34% of community skill packages are malformed</span>
             </div>
@@ -830,6 +832,10 @@
                     <span class="layer-pill">ABC/AgentAssert</span>
                     <span class="layer-pill">SentinelAgent</span>
                     <span class="layer-pill">ZipperGen</span>
+                    <span class="layer-pill">OWASP MCP Guide</span>
+                    <span class="layer-pill">MITRE ATLAS</span>
+                    <span class="layer-pill">NIST IR 8596</span>
+                    <span class="layer-pill">Agent Security Harness</span>
                 </div>
                 <span class="layer-stat" style="background: var(--ocean);">89% of attacks succeed against baseline guardrails</span>
             </div>
@@ -846,6 +852,11 @@
                     <span class="layer-pill">ST-WebAgentBench</span>
                     <span class="layer-pill">ClawBench</span>
                     <span class="layer-pill">Agent Evaluation Guide</span>
+                    <span class="layer-pill">EmbodiedGovBench</span>
+                    <span class="layer-pill">reprobe-audit</span>
+                    <span class="layer-pill">MITRE ATLAS</span>
+                    <span class="layer-pill">NIST IR 8596</span>
+                    <span class="layer-pill">Agent Security Harness</span>
                 </div>
                 <span class="layer-stat" style="background: var(--muted);">60%+ of tasks have safety violations in top agents</span>
             </div>
@@ -858,7 +869,7 @@
     <div class="container">
         <div class="overline reveal">THE EVIDENCE</div>
         <h2 class="section-title reveal reveal-delay-1">Key Papers Across the Stack</h2>
-        <p class="section-desc reveal reveal-delay-2">32 papers mapped to their governance layer. Here are the strongest findings.</p>
+        <p class="section-desc reveal reveal-delay-2">40 papers mapped to their governance layer. Here are the strongest findings.</p>
     </div>
     <div style="padding-left: clamp(24px, 5vw, 80px); padding-right: clamp(24px, 5vw, 80px);">
         <div class="papers-scroll" style="margin-top: 32px;">
@@ -913,6 +924,56 @@
                 <div class="paper-title">Skilldex &mdash; Skill Package Validation</div>
                 <span class="paper-layer">LAYER 0</span>
                 <div class="paper-finding">34% of community packages malformed. Format + coherence validation engine.</div>
+                <div class="paper-opensource"><span class="paper-opensource-dot"></span><span class="paper-opensource-text">Open source</span></div>
+            </div>
+            <div class="paper-card reveal reveal-delay-4">
+                <div class="paper-arxiv">arXiv:2604.11174</div>
+                <div class="paper-title">EmbodiedGovBench &mdash; Governance Benchmark for Embodied Agents</div>
+                <span class="paper-layer">LAYER 2</span>
+                <div class="paper-finding">First benchmark making governance a first-class evaluation target. Seven dimensions: unauthorized invocation, drift robustness, recovery, policy portability, upgrade safety, override responsiveness, audit completeness.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-5">
+                <div class="paper-arxiv">arXiv:2602.12430</div>
+                <div class="paper-title">Agent Skills for LLMs &mdash; Skill Trust &amp; Lifecycle Governance Framework</div>
+                <span class="paper-layer">LAYER 0</span>
+                <div class="paper-finding">Four-tier gate-based permission model (G1&ndash;G4, T1&ndash;T4). 26.1% of community skills contain vulnerabilities. First systematic skill provenance governance.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-1">
+                <div class="paper-arxiv">OWASP Feb 2026</div>
+                <div class="paper-title">OWASP Practical Guide for Secure MCP Server Development</div>
+                <span class="paper-layer">LAYER 1</span>
+                <div class="paper-finding">Eight security domains: auth, authorization, input validation, output encoding, error handling, logging, dependency mgmt, configuration mgmt. First OWASP-level MCP secure coding guide.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-2">
+                <div class="paper-arxiv">MITRE ATLAS Oct 2025</div>
+                <div class="paper-title">MITRE ATLAS Agentic AI Update</div>
+                <span class="paper-layer">LAYER 1+2</span>
+                <div class="paper-finding">14 new agentic AI techniques: multi-step tool chaining exploitation, state manipulation, delegation abuse, persistent skill poisoning, dynamic capability injection, memory tampering, goal hijacking.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-3">
+                <div class="paper-arxiv">NIST Dec 2025</div>
+                <div class="paper-title">NIST IR 8596 &mdash; Cybersecurity Framework Profile for AI</div>
+                <span class="paper-layer">LAYER 1+2</span>
+                <div class="paper-finding">CSF 2.0 applied to AI with explicit agentic control overlays. Maps Identify, Protect, Detect, Respond, Recover to agent capability boundaries, tool access governance, behavior monitoring, rollback.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-4">
+                <div class="paper-arxiv">IEEE Big Data 2026</div>
+                <div class="paper-title">reprobe-audit &mdash; Benchmark Disclosure Scoring Schema</div>
+                <span class="paper-layer">LAYER 2</span>
+                <div class="paper-finding">Agent benchmark mean disclosure score 0.38 vs 0.66 for classical. Cost reporting universally absent. First systematic credibility verification for agent safety benchmarks.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-5">
+                <div class="paper-arxiv">GitHub 2026</div>
+                <div class="paper-title">Agent Security Harness &mdash; 474-Test Security Scanner</div>
+                <span class="paper-layer">ALL LAYERS</span>
+                <div class="paper-finding">474 tests across 33 modules: prompt injection, tool misuse, data exfiltration, privilege escalation, inter-agent trust violations, skill poisoning, MCP exploitation, autonomous action abuse.</div>
+                <div class="paper-opensource"><span class="paper-opensource-dot"></span><span class="paper-opensource-text">Open source</span></div>
+            </div>
+            <div class="paper-card reveal reveal-delay-1">
+                <div class="paper-arxiv">WSP Mar 2026</div>
+                <div class="paper-title">Web Skills Protocol (WSP) &mdash; Decentralized Skill Discovery</div>
+                <span class="paper-layer">LAYER 0</span>
+                <div class="paper-finding">/skills.txt and /agents.txt conventions for web-discoverable skill registries. Cryptographic signatures, attestation endpoints, revocation lists. Integrates with Skill Trust Framework.</div>
                 <div class="paper-opensource"><span class="paper-opensource-dot"></span><span class="paper-opensource-text">Open source</span></div>
             </div>
         </div>
@@ -1088,7 +1149,7 @@
                 <div class="footer-meta-label">COMPILED BY</div>
                 <div class="footer-meta-value">EvaPaper</div>
                 <div class="footer-meta-label">BASED ON</div>
-                <div class="footer-meta-value">32 papers across the Three-Layer Governance Stack</div>
+                <div class="footer-meta-value">40 papers across the Three-Layer Governance Stack</div>
                 <div class="footer-meta-label">DATE</div>
                 <div class="footer-meta-value">June 2026</div>
             </div>

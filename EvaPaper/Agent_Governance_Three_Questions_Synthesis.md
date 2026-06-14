@@ -299,7 +299,56 @@ Eight papers now provide a **cumulative, multi-method evidence base** that skill
 - **Deterministic:** Standards document, not implementation
 - **Gap:** Framework only, no runtime enforcement
 
----
+#### 11. **EmbodiedGovBench** (arXiv:2604.11174, Layer 2)
+- **Deterministic:** Benchmark, not enforcement — but measures governance as first-class evaluation target
+- **Coverage:** Seven governance dimensions: unauthorized capability invocation, runtime drift robustness, recovery success, policy portability, version upgrade safety, human override responsiveness, audit completeness
+- **Why it matters:** Current embodied benchmarks only measure task completion rate and accuracy. They do not measure whether systems are governable. EmbodiedGovBench closes this gap by evaluating whether embodied agents remain controllable, policy-bounded, recoverable, auditable, and evolution-safe under perturbations
+- **Gap:** Benchmark only — provides evaluation targets but not enforcement mechanisms
+
+#### 12. **Agent Skills for Large Language Models — Skill Trust & Lifecycle Governance Framework** (arXiv:2602.12430, Layer 0)
+- **Deterministic:** Framework for spec-level governance — four-tier gate-based permission model (G1–G4 verification gates, T1–T4 trust tiers)
+- **Coverage:** Comprehensive survey of agent skills landscape; maps skill provenance to graduated deployment capabilities based on verification history
+- **Key finding:** 26.1% of community-contributed skills contain vulnerabilities — format validation alone is insufficient
+- **Why it matters:** First systematic framework for skill provenance-based governance. Skills treated as executable artifacts with graduated trust levels, not just documentation
+- **Gap:** Framework and survey — requires implementation and enforcement layer below it
+
+#### 13. **OWASP Practical Guide for Secure MCP Server Development** (Feb 2026, Layer 1)
+- **Deterministic:** Security guide, not enforcement — but provides concrete implementation guidance
+- **Coverage:** Eight security domains: authentication, authorization, input validation, output encoding, error handling, logging, dependency management, configuration management
+- **Why it matters:** MCP is the de facto protocol for agent-tool communication. While MCP-38 provides the threat taxonomy (what can go wrong), this guide provides the concrete implementation guidance (how to prevent it). First OWASP-level secure coding guide specifically for MCP servers
+- **Gap:** Guide only — no automated enforcement
+
+#### 14. **MITRE ATLAS Agentic AI Update** (Oct 2025, Layer 1+2)
+- **Deterministic:** Adversarial taxonomy, not enforcement — but formalizes attack vectors
+- **Coverage:** 14 new agentic AI-specific techniques: multi-step tool chaining exploitation, state manipulation, delegation abuse, persistent skill poisoning, dynamic capability injection, cross-runtime trust boundary violations, agent memory tampering, goal hijacking, tool description poisoning, capability enumeration, behavior cloning, orchestration layer injection, autonomous red-team emulation, recursive self-modification detection
+- **Why it matters:** MITRE ATLAS is the standard adversarial taxonomy for AI systems (equivalent to ATT&CK for traditional cyber). The 14 new techniques formalize attack vectors unique to agentic systems that traditional AI threat models miss. Cross-mapped to OWASP Top 10 for Agentic Applications and NIST AI RMF
+- **Gap:** Taxonomy only — no built-in enforcement; useful for threat modeling and test design
+
+#### 15. **reprobe-audit** (IEEE Big Data 2026, Layer 2)
+- **Deterministic:** Audit schema, not enforcement — but provides credibility verification framework
+- **Coverage:** Open scoring schema and codebook for auditing what LLM agent benchmark papers actually disclose: benchmark identity, harness specification, inference settings, cost reporting, and failure breakdown
+- **Key finding:** 12-paper pilot audit found agent-benchmark mean disclosure score of 0.38 vs. 0.66 for classical benchmarks. Cost reporting is universally absent for agent benchmarks
+- **Why it matters:** Governance without trustworthy benchmarks is guesswork. The 0.38 disclosure score means most agent safety benchmarks cannot be independently verified or reproduced. reprobe-audit provides the first systematic framework for verifying benchmark credibility
+- **Gap:** Audit methodology only — does not improve benchmarks themselves
+
+#### 16. **Agent Security Harness** (GitHub 2026, Layer 0+1+2)
+- **Deterministic:** Testing framework — 474 targeted security tests across 33 modules
+- **Coverage:** Prompt injection, tool misuse, data exfiltration, privilege escalation, inter-agent trust violations, skill poisoning, MCP exploitation, autonomous action abuse, goal hijacking
+- **Modes:** Red-team and blue-team testing modes. CI/CD integration for automated security testing
+- **Why it matters:** Most comprehensive open-source security testing framework for AI agents. The 474 tests provide concrete security verification that turns governance from policy into measurable, repeatable outcomes
+- **Gap:** Testing framework — detects vulnerabilities but does not prevent them by construction
+
+#### 17. **Web Skills Protocol (WSP)** (Mar 2026 draft, Layer 0)
+- **Deterministic:** Discovery protocol, not enforcement — but enables transparent provenance tracking
+- **Coverage:** /skills.txt and /agents.txt conventions for discoverable, self-describing skill registries on the web. Supports cryptographic signatures, attestation endpoints, and revocation lists
+- **Why it matters:** Centralized skill registries are a single point of failure and attack. WSP enables decentralized, transparent, inspectable skill registries where any domain can host its own skills with cryptographic verification and governance metadata. Integrates with the Skill Trust and Lifecycle Governance Framework's trust tier model
+- **Gap:** Discovery layer only — does not validate or enforce skill behavior
+
+#### 18. **Owner-Harm: Agents Harming Their Deployers** (arXiv:2604.18658, Layer 1+2) — *added June 12*
+- **Deterministic:** Threat model paper, not enforcement — but exposes a critical gap in current benchmarks
+- **Coverage:** Eight categories of agent behavior damaging the deployer. 14.8% → 85.3% TPR improvement with layered defense
+- **Why it matters:** Current safety benchmarks optimize for generic criminal harm (AgentHarm) and miss the deployer-harm vector entirely. Even a 100% TPR gate on generic criminal harm collapses to 14.8% when the victim is the deployer itself
+- **Gap:** Threat model only — requires enforcement layer to mitigate
 
 ### Comparison: Deterministic vs LLM-as-Judge Runtime Checking
 
