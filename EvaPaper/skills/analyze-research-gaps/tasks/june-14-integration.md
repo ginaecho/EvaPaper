@@ -21,17 +21,30 @@
 - `Agent_Governance_Three_Questions_Synthesis.docx` — Regenerated from updated MD
 - `AI_Agent_Governance_Three_Layer_Stack_and_Papers.pptx` — Regenerated from updated MD
 - `Agent_Governance_Three_Questions_Synthesis.pptx` — Regenerated from updated MD
-- `governance-dashboard.html` — Refreshed with 53 papers across 7 scout runs
-- `data/governance_dashboard.json` — Updated dashboard data
+- `governance-dashboard.html` — **Updated to 59 papers across 8 scout runs** (was 53/7); added 6 new product/framework nodes (OWASP MCP, MITRE ATLAS, NIST IR 8596, reprobe-audit, Agent Security Harness, WSP)
+- `data/governance_dashboard.json` — **Updated dashboard data** with new nodes, edges, topic mix, layer mix, scout runs, trending topics, and wiki pages
+- `skills/analyze-research-gaps/SKILL.md` — **Added Section 4: Dashboard Integration** with detailed steps for adding nodes, edges, updating counts, and syncing to HTML
+- `scripts/patch_dashboard_june14.py` — **Created** as a reusable template for future dashboard patching
 
 ### Scripts Run
 - `make docs` — Regenerated DOCX and PPTX artifacts
-- `make dashboard` — Refreshed visual research dashboard
+- `make dashboard` — Refreshed visual research dashboard (initially 53/7, then manually patched to 59/8)
+- `scripts/patch_dashboard_june14.py` — Patched JSON and HTML with 6 new non-arXiv nodes, updated all counts and metrics
 
 ### Git Commit
-- Commit: `22dc711`
+- Commit: `22dc711` (initial integration) + `TBD` (dashboard patch + skill update)
 - Message: "June 14 integration: 8 new governance papers into HTML, Synthesis MD, DOCX, PPTX, and dashboard"
 - Pushed to: https://github.com/ginaecho/EvaPaper (master branch)
+
+### Dashboard Update Details
+The `governance_dashboard.html` has a self-contained JSON data model. The June 14 patch added:
+- **6 new nodes** to the association graph (vendor-scoped IDs: `owasp:mcp-guide`, `mitre:atlas-agentic`, `nist:ir-8596`, `ieee:reprobe-audit`, `github:agent-security-harness`, `wsp:draft`)
+- **6 new edges** connecting new nodes to same-topic existing nodes
+- **1 new scout run** (2026-06-14, 8 new papers, cumulative 59)
+- **Updated topic mix**: evaluation 10, policy 18, supply_chain 9, specification 8, runtime 7, identity 5, coordination 3
+- **Updated layer mix**: Layer 0: 14, Layer 1: 32, Layer 2: 16, Layer 3: 6
+- **Updated trending topics**: evaluation (5 recent), policy (4), specification (2)
+- **Updated wiki pages**: 6 new paper pages, updated topic/layer counts, updated overview subtitle to 59 papers
 
 ### Next Tasks (Pending)
 - [ ] Update the `AI_Agent_Governance_Three_Layer_Stack_and_Papers.md` with the June 14 findings (currently only in Executive Summary, may need full paper entries)
@@ -40,9 +53,11 @@
 - [ ] Update the Overall Assessment table in Synthesis MD with June 14 findings
 - [ ] Run `make workflow-static` for next scout cycle if new static-time papers are found
 - [ ] Consider adding cross-layer analysis for the Agent Security Harness (all layers testing)
+- [ ] **Future dashboard updates**: copy `scripts/patch_dashboard_june14.py` and modify the `JUNE_14_ITEMS` list for the next scout run
 
 ### Notes
 - The June 14 additions represent the most significant single-week expansion of the governance evidence base since baseline establishment
 - All three layers matured simultaneously: Layer 0 (Skill Trust Framework + WSP), Layer 1 (OWASP MCP + MITRE ATLAS + NIST), Layer 2 (EmbodiedGovBench + reprobe-audit)
 - Agent Security Harness provides cross-layer testing infrastructure
 - NIST IR 8596 was already in the Synthesis MD as #10; now fully contextualized with the other 7 new findings
+- **Dashboard integration is now codified in SKILL.md Section 4** with a reusable Python script template
