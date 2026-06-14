@@ -12,18 +12,19 @@ When the user asks me to "run" the agent-governance-scout (or "update findings")
 3. If new findings exist:
    - Update `memory/agent_governance_scout_log.md` with the new findings (append by date)
    - **Format requirement:** Every paper and product entry must include `Found: YYMMDD` (e.g., `Found: 0606` or `Found: 0606-evening` for multiple runs per day)
-   - Update `AI_Agent_Governance_Three_Layer_Stack_and_Papers.docx` with the new findings and updated summary
-   - Update `AI_Agent_Governance_Three_Layer_Stack_and_Papers.pptx` with the new findings and updated summary
-   - Git commit the changes
-   - Tell the user how to push to GitHub (since the workspace lacks auth credentials)
+   - **MANDATORY:** Integrate new findings into `ai-agent-governance-research.html` (add paper cards, update layer pills, update paper counts)
+   - **MANDATORY:** Integrate new findings into `Agent_Governance_Three_Questions_Synthesis.md` (add numbered entries, update comparison tables)
+   - **MANDATORY:** Regenerate DOCX and PPTX via `make docs`
+   - **MANDATORY:** Refresh dashboard via `make dashboard`
+   - Git commit and push all changes
+   - Tell the user the commit hash and push status
 4. If no new findings exist: do NOT update the files, do NOT report, finish silently
 
 ### Git Push Instructions (for this workspace)
-The workspace uses HTTPS with no stored credentials. The user must push from their terminal using one of these methods:
-- **SSH (recommended):** `git remote set-url origin git@github.com:ginaecho/EvaPaper.git` then `git push`
-- **Token via HTTPS:** `git push https://<token>@github.com/ginaecho/EvaPaper.git` (or set `GIT_ASKPASS` / `gh` CLI)
-
-I will include this in every scout report so the user can copy-paste.
+- The workspace has git credentials configured and can push directly via `git push`
+- Fallback methods if needed:
+  - **SSH:** `git remote set-url origin git@github.com:ginaecho/EvaPaper.git` then `git push`
+  - **Token via HTTPS:** `git push https://<token>@github.com/ginaecho/EvaPaper.git`
 
 ## Scout Findings History
 - 2026-05-30: Initial baseline established

@@ -1,69 +1,55 @@
----
-name: analyze-research-gaps
-description: Analyze the EvaPaper agent-governance corpus after a scout update and produce ranked, evidence-backed missing areas and research opportunities for the HTML dashboard. Use when a scout finds new papers, when the dashboard opportunity analysis is stale, or when asked what the corpus has not explored enough and what should be researched next.
----
+# Scout Integration Skill — Auto-Integrate New Governance Findings
+## Created: 2026-06-14
+## Trigger: When new agent governance findings arrive (scout, research, or manual discovery)
 
-# Analyze Research Gaps
+## Standing Rule
+> **When the Agent Governance Scout reports new findings, I MUST automatically integrate them into ALL deliverables — not just acknowledge them.**
 
-Produce LLM reasoning as structured data. Do not hard-code conclusions in the dashboard.
+## Integration Checklist (Run in Order)
 
-## Workflow
+### 1. HTML Page (`ai-agent-governance-research.html`)
+- [ ] Add new paper cards to the `papers-scroll` gallery section
+- [ ] Follow existing card structure: `paper-arxiv` → `paper-title` → `paper-layer` → `paper-finding` → optional `paper-opensource`
+- [ ] Use `&mdash;` for em-dashes, `&amp;` for ampersands, `&ndash;` for en-dashes
+- [ ] Stagger reveal delays: `reveal-delay-1` through `reveal-delay-5`, then loop
+- [ ] Update layer pills in each `layer-card` to include new items
+- [ ] Update paper count in the gallery header (e.g. "32 papers" → "40 papers")
+- [ ] Update paper count in footer meta
 
-1. Read:
-   - `data/governance_dashboard.json`
-   - `data/paper_corpus.json`
-   - `memory/agent_governance_scout_log.md`
-   - `AI_Agent_Governance_Three_Layer_Stack_and_Papers.md`
-2. Read [references/opportunity-schema.md](references/opportunity-schema.md).
-3. Assess gaps using all five signals:
-   - **Coverage scarcity:** low topic/layer counts or missing intersections.
-   - **Graph structure:** weakly connected clusters, orphan concerns, or missing bridges.
-   - **Evidence maturity:** conceptual proposals without benchmarks, replications, deployments, or longitudinal studies.
-   - **Contradictions:** papers or benchmarks that disagree without resolution.
-   - **Decision importance:** gaps that block trustworthy specification, deployment, evaluation, or governance.
-4. Distinguish:
-   - `corpus_gap`: relevant work may exist but EvaPaper has not captured it.
-   - `field_gap`: the reviewed literature itself lacks convincing solutions.
-   - `evidence_gap`: proposals exist but validation is weak.
-   - `translation_gap`: research exists but operational tooling or standards are missing.
-5. Rank 3-6 opportunities. A small category alone is not enough.
-6. For every opportunity:
-   - cite at least two corpus facts;
-   - explain the inference from those facts;
-   - state uncertainty and plausible counterevidence;
-   - propose falsifiable research questions;
-   - provide future scout search queries.
-   - include a reproducible `coverage_check` with corpus query terms and matched titles.
-7. Reconcile scope explicitly:
-   - `data/paper_corpus.json` may include papers, products, standards, and duplicate title variants.
-   - `data/governance_dashboard.json` is the deduplicated scholarly-ID paper subset.
-   - Record both totals and state which one supports each claim.
-8. Write `data/research_opportunities.json`.
-9. Run:
+### 2. Synthesis Markdown (`Agent_Governance_Three_Questions_Synthesis.md`)
+- [ ] Add numbered entries under the relevant Question section (typically Question 3 for enforcement mechanisms)
+- [ ] Include: deterministic status, coverage, mechanism, results, gap analysis
+- [ ] Update comparison tables (Deterministic vs LLM-as-Judge, Missing Capabilities)
+- [ ] Update Overall Assessment table if the finding changes any verdicts
 
-```bash
-python3 skills/analyze-research-gaps/scripts/validate_opportunities.py data/research_opportunities.json
-python3 scripts/governance_dashboard.py
-```
+### 3. Three-Layer Stack Markdown (`AI_Agent_Governance_Three_Layer_Stack_and_Papers.md`)
+- [ ] Add findings to the Executive Summary addendum section
+- [ ] Add full paper entries to the papers catalog section if this is the primary report
 
-## Reasoning Rules
+### 4. Regenerate Artifacts
+- [ ] Run `make docs` — regenerates DOCX and PPTX from updated MD files
+- [ ] Run `make dashboard` — refreshes `governance-dashboard.html`
+- [ ] Verify no import errors (python-docx, python-pptx must be installed)
 
-- Never claim exhaustive field coverage from this corpus.
-- Phrase absence as "the current corpus does not contain" unless external search establishes a field-wide absence.
-- Never treat discovery count as publication count.
-- Never describe conceptual association edges as citations.
-- Prefer specific missing intersections over vague topics.
-- Separate observed evidence from LLM inference.
-- Lower confidence when source summaries are thin or classifications are ambiguous.
-- Update the artifact only after a scout run with accepted new findings, unless explicitly asked for a manual reassessment.
-- If no ranking changes materially, refresh the snapshot date and explain why priorities stayed stable.
+### 5. Git Commit & Push
+- [ ] `cd /root/.openclaw/workspace/EvaPaper`
+- [ ] Stage only EvaPaper files (do NOT stage parent workspace files like AGENTS.md, SOUL.md, etc.)
+- [ ] Commit with descriptive message: "[Date] integration: N new governance papers into HTML, Synthesis MD, DOCX, PPTX, and dashboard"
+- [ ] Push to origin/master
 
-## Output Quality
+### 6. Documentation
+- [ ] Update `memory/agent_governance_scout_log.md` with integration status
+- [ ] Create or update task file in `skills/analyze-research-gaps/tasks/`
+- [ ] Note any pending follow-up tasks
 
-Good:
+## Quick Reference: Paper Count History
+- Baseline (Jun 7): ~24 papers
+- Jun 12 additions: +2 (Learning Correct Behavior, Owner-Harm)
+- Jun 14 additions: +8 (EmbodiedGovBench, Skill Trust Framework, OWASP MCP, MITRE ATLAS, NIST IR 8596, reprobe-audit, Agent Security Harness, WSP)
+- Current total: 40 papers
 
-- "Layer 3 has five papers, but the stronger signal is that none provides longitudinal post-deployment incident data; this is an evidence gap."
-
-Bad:
-
-- "Layer 3 is small, so more research is needed."
+## Automation Wishlist
+- [ ] Script to auto-generate paper cards from structured data
+- [ ] Script to auto-update paper counts across all files
+- [ ] Script to auto-sync layer pills between HTML and MD
+- [ ] Consider: make the HTML source data-driven (JSON → HTML templating) instead of hand-editing HTML
