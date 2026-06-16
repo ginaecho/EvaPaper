@@ -265,7 +265,7 @@ def parse_scout_log(log_path: Path = DEFAULT_SCOUT_LOG, starting_ordinal: int = 
     ordinal = starting_ordinal
 
     pattern = re.compile(
-        r"^\d+\.\s+\*\*(?P<title>.+?)\*\*(?:\s+\(arXiv:(?P<arxiv>[0-9.]+)\))?\s+—\s+(?P<body>.+)$",
+        r"^\d+\.\s+\*\*(?P<title>[^*]+?)\*\*.*?\s+—\s+(?P<body>.+)$",
         re.MULTILINE,
     )
 
@@ -273,7 +273,10 @@ def parse_scout_log(log_path: Path = DEFAULT_SCOUT_LOG, starting_ordinal: int = 
         raw_title = match.group("title").strip()
         title = _canonical_title(raw_title)
         body = match.group("body").strip()
-        arxiv_id = match.group("arxiv")
+        # Extract arXiv from the full matched line (title may contain it in subtitle)
+        full_text = match.group(0)
+        arxiv_match = re.search(r"\(arXiv:([0-9.]+)\)", full_text)
+        arxiv_id = arxiv_match.group(1) if arxiv_match else None
 
         url_match = re.search(r"URL:\s*(https?://\S+)", body)
         url = url_match.group(1).rstrip(" .") if url_match else (f"https://arxiv.org/abs/{arxiv_id}" if arxiv_id else None)

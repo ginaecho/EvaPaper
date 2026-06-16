@@ -130,13 +130,45 @@ def _parse_found_date(token: str, year: int = 2026) -> date:
     return date(year, int(match.group("month")), int(match.group("day")))
 
 
-def _paper_id(text: str) -> str | None:
+def _paper_id(text: str, title: str = "") -> str | None:
     arxiv = re.search(r"(?:arxiv\.org/(?:abs|pdf)/|arXiv:|arXiv ID:\s*)(\d{4}\.\d{4,5})", text, re.IGNORECASE)
     if arxiv:
         return f"arxiv:{arxiv.group(1)}"
     preprint = re.search(r"(10\.20944/preprints\d{6}\.\d+\.v\d+)", text, re.IGNORECASE)
     if preprint:
         return f"doi:{preprint.group(1).lower()}"
+
+    # Vendor-scoped IDs for known non-arXiv entries (sync with patch_dashboard_june14.py)
+    vendor_patterns = [
+        (r"OWASP\s+(?:Practical\s+Guide|CheatSheet|Top\s+10).*MCP", "owasp:mcp-guide"),
+        (r"OWASP\s+Top\s+10.*Agentic", "owasp:agentic-top10"),
+        (r"MITRE\s+ATLAS.*agentic", "mitre:atlas-agentic"),
+        (r"NIST\s+IR\s+8596", "nist:ir-8596"),
+        (r"reprobe-audit", "ieee:reprobe-audit"),
+        (r"Agent\s+Security\s+Harness", "github:agent-security-harness"),
+        (r"Web\s+Skills\s+Protocol", "wsp:draft"),
+        (r"DefenseClaw", "cisco:defenseclaw"),
+        (r"NemoClaw", "nvidia:nemoclaw"),
+        (r"Microsoft\s+Agent\s+Governance\s+Toolkit", "microsoft:agent-governance-toolkit"),
+        (r"Tencent\s+AI-Infra-Guard", "tencent:ai-infra-guard"),
+        (r"DeepTeam", "confident-ai:deep-team"),
+        (r"Ruh\s+AI.*Production\s+Evaluation", "ruh-ai:production-evaluation"),
+    ]
+    for pattern, vid in vendor_patterns:
+        if re.search(pattern, text, re.IGNORECASE):
+            return vid
+
+    # Fallback: generate slug from title for entries with a URL
+    if title:
+        url_match = re.search(r"https?://github\.com/([^/\s]+/[^/\s]+)", text)
+        if url_match:
+            return f"github:{url_match.group(1).lower().replace('/', '-')}"
+        url_match = re.search(r"https?://(?:www\.)?([^/\s]+)", text)
+        if url_match:
+            domain = url_match.group(1).lower().replace("www.", "").replace(".", "-")
+            slug = re.sub(r"[^a-z0-9-]+", "-", title.lower()).strip("-")
+            return f"{domain}:{slug[:40]}"
+
     return None
 
 
@@ -147,7 +179,7 @@ def _extract_discovery_dates(log_path: Path, report_path: Path) -> tuple[dict[st
 
     current_found: date | None = None
     for line in log.splitlines():
-        heading = re.match(r"### New Papers \(Found: ([^)]+)\)", line)
+        heading = re.match(r"### New Papers(?:/Products)?(?:/Frameworks)? \(Found: ([^)]+)\)", line)
         if heading:
             current_found = _parse_found_date(heading.group(1))
             continue
@@ -227,7 +259,7 @@ def collect_papers(report_path: Path, log_path: Path) -> list[DashboardPaper]:
         searchable = " ".join(
             [record.title, record.url or "", *record.fields.values()]
         )
-        identifier = _paper_id(searchable)
+        identifier = _paper_id(searchable, title=record.title)
         if identifier:
             records[identifier] = record
 
