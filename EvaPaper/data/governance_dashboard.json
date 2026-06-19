@@ -1,78 +1,78 @@
 {
   "generated_from_latest_scout": "2026-06-20",
-  "paper_count": 77,
+  "paper_count": 81,
   "scout_run_count": 9,
   "topic_mix": [
     {
       "id": "specification",
       "label": "Specification & validation",
       "color": "#e4572e",
-      "count": 9,
-      "ratio": 0.11688311688311688
+      "count": 11,
+      "ratio": 0.13580246913580246
     },
     {
       "id": "supply_chain",
       "label": "Skill & tool security",
       "color": "#963484",
       "count": 11,
-      "ratio": 0.14285714285714285
+      "ratio": 0.13580246913580246
     },
     {
       "id": "identity",
       "label": "Identity & provenance",
       "color": "#4267ac",
       "count": 6,
-      "ratio": 0.07792207792207792
+      "ratio": 0.07407407407407407
     },
     {
       "id": "coordination",
       "label": "Coordination & composition",
       "color": "#5b8e3e",
       "count": 3,
-      "ratio": 0.03896103896103896
+      "ratio": 0.037037037037037035
     },
     {
       "id": "evaluation",
       "label": "Evaluation & benchmarks",
       "color": "#f3a712",
       "count": 15,
-      "ratio": 0.19480519480519481
+      "ratio": 0.18518518518518517
     },
     {
       "id": "runtime",
       "label": "Runtime enforcement",
       "color": "#1d6f75",
       "count": 12,
-      "ratio": 0.15584415584415584
+      "ratio": 0.14814814814814814
     },
     {
       "id": "policy",
       "label": "Policy & governance landscape",
       "color": "#636363",
-      "count": 21,
-      "ratio": 0.2727272727272727
+      "count": 23,
+      "ratio": 0.2839506172839506
     }
   ],
   "layer_mix": [
     {
       "layer": 0,
       "label": "Spec",
-      "count": 19
+      "count": 21
     },
     {
       "layer": 1,
       "label": "Runtime",
-      "count": 40
+      "count": 42
     },
     {
       "layer": 2,
       "label": "Behavior",
-      "count": 25
+      "count": 26
     },
     {
       "layer": 3,
       "label": "Ecosystem",
-      "count": 12
+      "count": 13
     }
   ],
   "runs": [
@@ -270,26 +270,26 @@
     },
     {
       "date": "2026-06-20",
-      "new_papers": 3,
-      "cumulative": 77,
-      "leading_topic": "Evaluation & benchmarks",
+      "new_papers": 7,
+      "cumulative": 81,
+      "leading_topic": "Policy & governance landscape",
       "topics": {
-        "specification": 0,
+        "specification": 2,
         "supply_chain": 0,
         "identity": 0,
         "coordination": 0,
         "evaluation": 2,
         "runtime": 0,
-        "policy": 1
+        "policy": 3
       },
       "cumulative_topics": {
-        "specification": 9,
+        "specification": 11,
         "supply_chain": 11,
         "identity": 6,
         "coordination": 3,
         "evaluation": 15,
         "runtime": 12,
-        "policy": 21
+        "policy": 23
       }
     }
   ],
@@ -304,16 +304,16 @@
     {
       "id": "policy",
       "label": "Policy & governance landscape",
-      "recent_count": 2,
-      "total_count": 21,
+      "recent_count": 4,
+      "total_count": 23,
       "color": "#636363"
     },
     {
-      "id": "runtime",
-      "label": "Runtime enforcement",
-      "recent_count": 1,
-      "total_count": 12,
-      "color": "#1d6f75"
+      "id": "specification",
+      "label": "Specification & validation",
+      "recent_count": 3,
+      "total_count": 11,
+      "color": "#e4572e"
     }
   ],
   "association_graph": {
@@ -357,7 +357,7 @@
           1
         ],
         "discovered": "2026-05-30",
-        "degree": 6
+        "degree": 4
       },
       {
         "id": "microsoft:agent-governance-toolkit",
@@ -370,7 +370,7 @@
           1
         ],
         "discovered": "2026-05-30",
-        "degree": 7
+        "degree": 6
       },
       {
         "id": "arxiv:2603.07191",
@@ -806,7 +806,7 @@
           1
         ],
         "discovered": "2026-06-04",
-        "degree": 6
+        "degree": 7
       },
       {
         "id": "arxiv:2603.18829",
@@ -1211,7 +1211,7 @@
           1
         ],
         "discovered": "2026-06-12",
-        "degree": 3
+        "degree": 4
       },
       {
         "id": "arxiv:2604.18658",
@@ -1309,6 +1309,34 @@
         "degree": 3
       },
       {
+        "id": "arxiv:2606.04781",
+        "title": "AIP \u2014 Agent Instruction Protocol for Structured Skill Graphs",
+        "url": "https://arxiv.org/abs/2606.04781",
+        "topic": "specification",
+        "topic_label": "Specification & validation",
+        "color": "#e4572e",
+        "layers": [
+          0,
+          1
+        ],
+        "discovered": "2026-06-20",
+        "degree": 3
+      },
+      {
+        "id": "arxiv:2605.26112",
+        "title": "CheetahClaws \u2014 System Scaling Harness for Agentic AI",
+        "url": "https://arxiv.org/abs/2605.26112",
+        "topic": "policy",
+        "topic_label": "Policy & governance landscape",
+        "color": "#636363",
+        "layers": [
+          1,
+          2
+        ],
+        "discovered": "2026-06-20",
+        "degree": 4
+      },
+      {
         "id": "arxiv:2605.06933",
         "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
         "url": "https://arxiv.org/abs/2605.06933",
@@ -1320,7 +1348,20 @@
           3
         ],
         "discovered": "2026-06-20",
-        "degree": 6
+        "degree": 3
+      },
+      {
+        "id": "arxiv:2605.26870",
+        "title": "PARE-M \u2014 Persistent AI Agents in Academic Research",
+        "url": "https://arxiv.org/abs/2605.26870",
+        "topic": "policy",
+        "topic_label": "Policy & governance landscape",
+        "color": "#636363",
+        "layers": [
+          3
+        ],
+        "discovered": "2026-06-20",
+        "degree": 3
       },
       {
         "id": "arxiv:2606.15899",
@@ -1335,19 +1376,22 @@
         ],
         "discovered": "2026-06-20",
         "degree": 3
+      },
+      {
+        "id": "arxiv:2606.06893",
+        "title": "W2S \u2014 Workflow-to-Skill: Automatic Skill Construction from Traces",
+        "url": "https://arxiv.org/abs/2606.06893",
+        "topic": "specification",
+        "topic_label": "Specification & validation",
+        "color": "#e4572e",
+        "layers": [
+          0
+        ],
+        "discovered": "2026-06-20",
+        "degree": 4
       }
     ],
     "edges": [
-      {
-        "source": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
-        "target": "arxiv:2604.19818",
-        "kind": "conceptual",
-        "weight": 2.587,
-        "reason": "same topic; shared L2; terms: agentic",
-        "shared_terms": [
-          "agentic"
-        ]
-      },
       {
         "source": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
         "target": "arxiv:2604.20805",
@@ -1369,6 +1413,17 @@
           "dimensions",
           "does",
           "frameworks"
+        ]
+      },
+      {
+        "source": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
+        "target": "arxiv:2605.26112",
+        "kind": "conceptual",
+        "weight": 3.475,
+        "reason": "same topic; shared L1/L2; terms: agentic, context",
+        "shared_terms": [
+          "agentic",
+          "context"
         ]
       },
       {
@@ -1606,9 +1661,9 @@
       },
       {
         "source": "arxiv:2603.03340",
-        "target": "arxiv:2605.06933",
+        "target": "arxiv:2605.26870",
         "kind": "conceptual",
-        "weight": 2.587,
+        "weight": 3.287,
         "reason": "same topic; shared L3; terms: agentic",
         "shared_terms": [
           "agentic"
@@ -1892,14 +1947,11 @@
       },
       {
         "source": "arxiv:2603.24414",
-        "target": "arxiv:2605.06933",
+        "target": "arxiv:2605.26870",
         "kind": "conceptual",
-        "weight": 2.775,
-        "reason": "same topic; shared L3; terms: enforcement, provides",
-        "shared_terms": [
-          "enforcement",
-          "provides"
-        ]
+        "weight": 3.1,
+        "reason": "same topic; shared L3",
+        "shared_terms": []
       },
       {
         "source": "arxiv:2603.24775",
@@ -2107,9 +2159,9 @@
       },
       {
         "source": "arxiv:2604.07007",
-        "target": "arxiv:2605.06933",
+        "target": "arxiv:2605.26870",
         "kind": "conceptual",
-        "weight": 2.4,
+        "weight": 3.1,
         "reason": "same topic; shared L3",
         "shared_terms": []
       },
@@ -2171,6 +2223,18 @@
         "weight": 3.1,
         "reason": "same topic; shared L1",
         "shared_terms": []
+      },
+      {
+        "source": "arxiv:2604.08224",
+        "target": "arxiv:2605.26112",
+        "kind": "conceptual",
+        "weight": 2.962,
+        "reason": "same topic; shared L1; terms: context, harness, memory",
+        "shared_terms": [
+          "context",
+          "harness",
+          "memory"
+        ]
       },
       {
         "source": "arxiv:2604.08224",
@@ -2319,17 +2383,15 @@
       },
       {
         "source": "arxiv:2604.16911",
-        "target": "arxiv:2605.22634",
+        "target": "arxiv:2605.27955",
         "kind": "conceptual",
-        "weight": 2.587,
-        "reason": "same topic; shared L0; terms: spec-level",
-        "shared_terms": [
-          "spec-level"
-        ]
+        "weight": 3.1,
+        "reason": "same topic; shared L0",
+        "shared_terms": []
       },
       {
         "source": "arxiv:2604.16911",
-        "target": "arxiv:2605.27955",
+        "target": "arxiv:2606.06893",
         "kind": "conceptual",
         "weight": 3.1,
         "reason": "same topic; shared L0",
@@ -2424,6 +2486,18 @@
       },
       {
         "source": "arxiv:2604.19818",
+        "target": "arxiv:2605.26112",
+        "kind": "conceptual",
+        "weight": 2.962,
+        "reason": "same topic; shared L2; terms: agentic, concrete, core",
+        "shared_terms": [
+          "agentic",
+          "concrete",
+          "core"
+        ]
+      },
+      {
+        "source": "arxiv:2604.19818",
         "target": "confident-ai:deep-team",
         "kind": "conceptual",
         "weight": 3.1,
@@ -2450,20 +2524,22 @@
       },
       {
         "source": "arxiv:2604.24026",
-        "target": "arxiv:2605.22634",
-        "kind": "conceptual",
-        "weight": 2.4,
-        "reason": "same topic; shared L0",
-        "shared_terms": []
-      },
-      {
-        "source": "arxiv:2604.24026",
         "target": "arxiv:2605.27955",
         "kind": "conceptual",
         "weight": 3.365,
         "reason": "same topic; shared L0; terms: verifiable",
         "shared_terms": [
           "verifiable"
+        ]
+      },
+      {
+        "source": "arxiv:2604.24026",
+        "target": "arxiv:2606.06893",
+        "kind": "conceptual",
+        "weight": 3.365,
+        "reason": "same topic; shared L0; terms: representation",
+        "shared_terms": [
+          "representation"
         ]
       },
       {
@@ -2477,6 +2553,16 @@
       {
         "source": "arxiv:2605.03159",
         "target": "arxiv:2605.22634",
+        "kind": "conceptual",
+        "weight": 3.287,
+        "reason": "same topic; shared L0/L1; terms: execution",
+        "shared_terms": [
+          "execution"
+        ]
+      },
+      {
+        "source": "arxiv:2605.03159",
+        "target": "arxiv:2606.04781",
         "kind": "conceptual",
         "weight": 3.287,
         "reason": "same topic; shared L0/L1; terms: execution",
@@ -2710,10 +2796,10 @@
       },
       {
         "source": "arxiv:2605.22634",
-        "target": "arxiv:2605.27955",
+        "target": "arxiv:2606.04781",
         "kind": "conceptual",
-        "weight": 2.605,
-        "reason": "same topic; shared L0; terms: execution",
+        "weight": 3.287,
+        "reason": "same topic; shared L0/L1; terms: execution",
         "shared_terms": [
           "execution"
         ]
@@ -2740,12 +2826,32 @@
         ]
       },
       {
+        "source": "arxiv:2605.26112",
+        "target": "owasp:agentic-top10",
+        "kind": "conceptual",
+        "weight": 2.821,
+        "reason": "same topic; shared L1/L2; terms: agentic",
+        "shared_terms": [
+          "agentic"
+        ]
+      },
+      {
         "source": "arxiv:2605.27690",
         "target": "github:topics-agent-control-protocol",
         "kind": "conceptual",
         "weight": 2.4,
         "reason": "same topic; shared L1",
         "shared_terms": []
+      },
+      {
+        "source": "arxiv:2605.27955",
+        "target": "arxiv:2606.06893",
+        "kind": "conceptual",
+        "weight": 3.305,
+        "reason": "same topic; shared L0; terms: execution",
+        "shared_terms": [
+          "execution"
+        ]
       },
       {
         "source": "arxiv:2606.00448",
@@ -2765,6 +2871,17 @@
         "reason": "same topic; shared L2; terms: ecosystems",
         "shared_terms": [
           "ecosystems"
+        ]
+      },
+      {
+        "source": "arxiv:2606.04781",
+        "target": "arxiv:2606.06893",
+        "kind": "conceptual",
+        "weight": 2.775,
+        "reason": "same topic; shared L0; terms: creation, execution",
+        "shared_terms": [
+          "creation",
+          "execution"
         ]
       },
       {
@@ -2871,18 +2988,6 @@
         ]
       },
       {
-        "source": "microsoft:agent-governance-toolkit",
-        "target": "owasp:agentic-top10",
-        "kind": "conceptual",
-        "weight": 2.729,
-        "reason": "same topic; shared L1; terms: compliance, enterprises, regulated",
-        "shared_terms": [
-          "compliance",
-          "enterprises",
-          "regulated"
-        ]
-      },
-      {
         "source": "nist:ir-8596",
         "target": "owasp:agentic-top10",
         "kind": "conceptual",
@@ -2909,8 +3014,8 @@
         ]
       }
     ],
-    "node_count": 77,
-    "edge_count": 150,
+    "node_count": 81,
+    "edge_count": 155,
     "hubs": [
       {
         "id": "arxiv:2603.25747",
@@ -2918,13 +3023,13 @@
         "degree": 8
       },
       {
-        "id": "arxiv:2603.18829",
-        "title": "Admission Control for Agent Actions (ACP)",
+        "id": "arxiv:2604.08224",
+        "title": "A Unified Review of Memory, Skills, Protocols and Harness Engineering",
         "degree": 7
       },
       {
-        "id": "microsoft:agent-governance-toolkit",
-        "title": "IBM Sovereign Core \u2014 Governance Policy at Infrastructure Runtime",
+        "id": "arxiv:2603.18829",
+        "title": "Admission Control for Agent Actions (ACP)",
         "degree": 7
       },
       {
@@ -2933,21 +3038,21 @@
         "degree": 7
       },
       {
-        "id": "arxiv:2604.08224",
-        "title": "A Unified Review of Memory, Skills, Protocols and Harness Engineering",
+        "id": "github:topics-agent-control-protocol",
+        "title": "Agent Control Protocol (ACP)",
         "degree": 6
       }
     ],
     "method": "Each paper keeps its three strongest corpus neighbors. Association strength combines primary topic, shared governance layers, and shared technical terms. These are conceptual associations, not claimed citations."
   },
   "knowledge_wiki": {
-    "page_count": 89,
+    "page_count": 93,
     "pages": [
       {
         "id": "overview",
         "type": "overview",
         "title": "Agent Governance Research Overview",
-        "subtitle": "77 papers compiled into a living research wiki",
+        "subtitle": "81 papers compiled into a living research wiki",
         "body": "EvaPaper compiles specification, runtime, behavioral, ecosystem, security, identity, and coordination research into maintained pages. Use topic and layer pages to browse the corpus, then follow explicit related-paper links to inspect local research trails.",
         "links": [
           "topic:specification",
@@ -2968,7 +3073,7 @@
         "id": "topic:specification",
         "type": "topic",
         "title": "Specification & validation",
-        "subtitle": "9 papers in this primary topic",
+        "subtitle": "11 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "arxiv:2605.22634",
@@ -2979,7 +3084,9 @@
           "arxiv:2602.22302",
           "arxiv:2604.24026",
           "arxiv:2605.27955",
-          "arxiv:2605.03159"
+          "arxiv:2605.03159",
+          "arxiv:2606.04781",
+          "arxiv:2606.06893"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -3084,7 +3191,7 @@
         "id": "topic:policy",
         "type": "topic",
         "title": "Policy & governance landscape",
-        "subtitle": "21 papers in this primary topic",
+        "subtitle": "23 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "ai-journal-com:agent-evaluation-guide-quality-focused-f",
@@ -3107,7 +3214,9 @@
           "arxiv:2604.18652",
           "arxiv:2603.03340",
           "arxiv:2602.12430",
-          "arxiv:2605.06933"
+          "arxiv:2605.26112",
+          "arxiv:2605.06933",
+          "arxiv:2605.26870"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -3115,7 +3224,7 @@
         "id": "layer:0",
         "type": "layer",
         "title": "Layer 0: Specification",
-        "subtitle": "19 papers mapped to this governance layer",
+        "subtitle": "21 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "arxiv:2605.22634",
@@ -3136,7 +3245,9 @@
           "arxiv:2605.03159",
           "github:agent-security-harness",
           "arxiv:2602.12430",
-          "arxiv:2606.15899"
+          "arxiv:2606.04781",
+          "arxiv:2606.15899",
+          "arxiv:2606.06893"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
       },
@@ -3144,7 +3255,7 @@
         "id": "layer:1",
         "type": "layer",
         "title": "Layer 1: Runtime",
-        "subtitle": "40 papers mapped to this governance layer",
+        "subtitle": "42 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "ai-journal-com:agent-evaluation-guide-quality-focused-f",
@@ -3186,6 +3297,8 @@
           "arxiv:2604.18658",
           "github:agent-security-harness",
           "mitre:atlas-agentic",
+          "arxiv:2606.04781",
+          "arxiv:2605.26112",
           "arxiv:2605.06933"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
@@ -3194,7 +3307,7 @@
         "id": "layer:2",
         "type": "layer",
         "title": "Layer 2: Behavioral",
-        "subtitle": "25 papers mapped to this governance layer",
+        "subtitle": "26 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "ai-journal-com:agent-evaluation-guide-quality-focused-f",
@@ -3221,6 +3334,7 @@
           "arxiv:2604.11174",
           "ieee:reprobe-audit",
           "arxiv:2606.05405",
+          "arxiv:2605.26112",
           "arxiv:2606.15899"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
@@ -3229,7 +3343,7 @@
         "id": "layer:3",
         "type": "layer",
         "title": "Layer 3: Ecosystem",
-        "subtitle": "12 papers mapped to this governance layer",
+        "subtitle": "13 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "arxiv:2604.07007",
@@ -3243,7 +3357,8 @@
           "arxiv:2603.03340",
           "arxiv:2605.25376",
           "arxiv:2606.05405",
-          "arxiv:2605.06933"
+          "arxiv:2605.06933",
+          "arxiv:2605.26870"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
       },
@@ -3261,13 +3376,18 @@
           "topic:policy",
           "layer:1",
           "layer:2",
+          "arxiv:2605.26112",
           "nist:ir-8596",
           "arxiv:2605.02709",
           "owasp:agentic-top10",
-          "arxiv:2604.19818",
           "arxiv:2604.20805"
         ],
         "related": [
+          {
+            "id": "arxiv:2605.26112",
+            "title": "CheetahClaws \u2014 System Scaling Harness for Agentic AI",
+            "reason": "same topic; shared L1/L2; terms: agentic, context"
+          },
           {
             "id": "nist:ir-8596",
             "title": "NIST IR 8596",
@@ -3282,11 +3402,6 @@
             "id": "owasp:agentic-top10",
             "title": "NIST IR 8596 \u2014 Cybersecurity Framework Profile for AI",
             "reason": "same topic; shared L1/L2; terms: agentic"
-          },
-          {
-            "id": "arxiv:2604.19818",
-            "title": "Evidence-Synthesis Framework",
-            "reason": "same topic; shared L2; terms: agentic"
           },
           {
             "id": "arxiv:2604.20805",
@@ -3377,10 +3492,8 @@
           "layer:0",
           "layer:1",
           "arxiv:2605.03159",
+          "arxiv:2606.04781",
           "arxiv:2602.22302",
-          "arxiv:2605.27955",
-          "arxiv:2604.16911",
-          "arxiv:2604.24026",
           "github:topics-skill-md"
         ],
         "related": [
@@ -3390,24 +3503,14 @@
             "reason": "same topic; shared L0/L1; terms: execution"
           },
           {
+            "id": "arxiv:2606.04781",
+            "title": "AIP \u2014 Agent Instruction Protocol for Structured Skill Graphs",
+            "reason": "same topic; shared L0/L1; terms: execution"
+          },
+          {
             "id": "arxiv:2602.22302",
             "title": "Agent Behavioral Contracts (ABC)",
             "reason": "same topic; shared L1; terms: contract, contracts"
-          },
-          {
-            "id": "arxiv:2605.27955",
-            "title": "Skill-as-Pseudocode (SaP)",
-            "reason": "same topic; shared L0; terms: execution"
-          },
-          {
-            "id": "arxiv:2604.16911",
-            "title": "Skilldex",
-            "reason": "same topic; shared L0; terms: spec-level"
-          },
-          {
-            "id": "arxiv:2604.24026",
-            "title": "SSL Representation / Skill Text to Structure",
-            "reason": "same topic; shared L0"
           },
           {
             "id": "github:topics-skill-md",
@@ -3435,8 +3538,7 @@
           "arxiv:2604.23338",
           "arxiv:2605.03353",
           "arxiv:2605.20874",
-          "arxiv:2605.06933",
-          "owasp:agentic-top10"
+          "arxiv:2605.06933"
         ],
         "related": [
           {
@@ -3468,11 +3570,6 @@
             "id": "arxiv:2605.06933",
             "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
             "reason": "same topic; shared L1; terms: enforcement, policies, policy"
-          },
-          {
-            "id": "owasp:agentic-top10",
-            "title": "NIST IR 8596 \u2014 Cybersecurity Framework Profile for AI",
-            "reason": "same topic; shared L1; terms: compliance, enterprises, regulated"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -3528,7 +3625,7 @@
           "layer:0",
           "arxiv:2604.24026",
           "arxiv:2605.27955",
-          "arxiv:2605.22634",
+          "arxiv:2606.06893",
           "github:topics-skill-md"
         ],
         "related": [
@@ -3543,9 +3640,9 @@
             "reason": "same topic; shared L0"
           },
           {
-            "id": "arxiv:2605.22634",
-            "title": "GovernSpec / Contractual Skills",
-            "reason": "same topic; shared L0; terms: spec-level"
+            "id": "arxiv:2606.06893",
+            "title": "W2S \u2014 Workflow-to-Skill: Automatic Skill Construction from Traces",
+            "reason": "same topic; shared L0"
           },
           {
             "id": "github:topics-skill-md",
@@ -3911,7 +4008,7 @@
           "layer:2",
           "nist:ir-8596",
           "ai-journal-com:agent-evaluation-guide-quality-focused-f",
-          "microsoft:agent-governance-toolkit",
+          "arxiv:2605.26112",
           "arxiv:2605.07358",
           "arxiv:2604.18652"
         ],
@@ -3927,9 +4024,9 @@
             "reason": "same topic; shared L1/L2; terms: agentic"
           },
           {
-            "id": "microsoft:agent-governance-toolkit",
-            "title": "IBM Sovereign Core \u2014 Governance Policy at Infrastructure Runtime",
-            "reason": "same topic; shared L1; terms: compliance, enterprises, regulated"
+            "id": "arxiv:2605.26112",
+            "title": "CheetahClaws \u2014 System Scaling Harness for Agentic AI",
+            "reason": "same topic; shared L1/L2; terms: agentic"
           },
           {
             "id": "arxiv:2605.07358",
@@ -4129,7 +4226,7 @@
           "layer:3",
           "arxiv:2603.03340",
           "arxiv:2603.24414",
-          "arxiv:2605.06933"
+          "arxiv:2605.26870"
         ],
         "related": [
           {
@@ -4143,8 +4240,8 @@
             "reason": "same topic; shared L3"
           },
           {
-            "id": "arxiv:2605.06933",
-            "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
+            "id": "arxiv:2605.26870",
+            "title": "PARE-M \u2014 Persistent AI Agents in Academic Research",
             "reason": "same topic; shared L3"
           }
         ],
@@ -4273,7 +4370,7 @@
           "layer:2",
           "arxiv:2605.02709",
           "confident-ai:deep-team",
-          "ai-journal-com:agent-evaluation-guide-quality-focused-f"
+          "arxiv:2605.26112"
         ],
         "related": [
           {
@@ -4287,9 +4384,9 @@
             "reason": "same topic; shared L2"
           },
           {
-            "id": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
-            "title": "Agent Evaluation Guide (Quality-Focused Frameworks)",
-            "reason": "same topic; shared L2; terms: agentic"
+            "id": "arxiv:2605.26112",
+            "title": "CheetahClaws \u2014 System Scaling Harness for Agentic AI",
+            "reason": "same topic; shared L2; terms: agentic, concrete, core"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -4792,6 +4889,7 @@
           "microsoft:agent-governance-toolkit",
           "arxiv:2603.18096",
           "arxiv:2605.20874",
+          "arxiv:2605.26112",
           "arxiv:2604.20805"
         ],
         "related": [
@@ -4819,6 +4917,11 @@
             "id": "arxiv:2605.20874",
             "title": "Governance by Construction for Generalist Agents / CUGA",
             "reason": "same topic; shared L1"
+          },
+          {
+            "id": "arxiv:2605.26112",
+            "title": "CheetahClaws \u2014 System Scaling Harness for Agentic AI",
+            "reason": "same topic; shared L1; terms: context, harness, memory"
           },
           {
             "id": "arxiv:2604.20805",
@@ -5395,7 +5498,7 @@
           "layer:3",
           "arxiv:2603.03340",
           "arxiv:2604.07007",
-          "arxiv:2605.06933",
+          "arxiv:2605.26870",
           "arxiv:2602.12430"
         ],
         "related": [
@@ -5410,9 +5513,9 @@
             "reason": "same topic; shared L3"
           },
           {
-            "id": "arxiv:2605.06933",
-            "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
-            "reason": "same topic; shared L3; terms: enforcement, provides"
+            "id": "arxiv:2605.26870",
+            "title": "PARE-M \u2014 Persistent AI Agents in Academic Research",
+            "reason": "same topic; shared L3"
           },
           {
             "id": "arxiv:2602.12430",
@@ -5687,8 +5790,8 @@
           "topic:specification",
           "layer:0",
           "arxiv:2605.27955",
-          "arxiv:2604.16911",
-          "arxiv:2605.22634"
+          "arxiv:2606.06893",
+          "arxiv:2604.16911"
         ],
         "related": [
           {
@@ -5697,13 +5800,13 @@
             "reason": "same topic; shared L0; terms: verifiable"
           },
           {
-            "id": "arxiv:2604.16911",
-            "title": "Skilldex",
-            "reason": "same topic; shared L0"
+            "id": "arxiv:2606.06893",
+            "title": "W2S \u2014 Workflow-to-Skill: Automatic Skill Construction from Traces",
+            "reason": "same topic; shared L0; terms: representation"
           },
           {
-            "id": "arxiv:2605.22634",
-            "title": "GovernSpec / Contractual Skills",
+            "id": "arxiv:2604.16911",
+            "title": "Skilldex",
             "reason": "same topic; shared L0"
           }
         ],
@@ -5723,8 +5826,8 @@
           "topic:policy",
           "layer:3",
           "arxiv:2603.24414",
-          "arxiv:2604.07007",
-          "arxiv:2605.06933"
+          "arxiv:2605.26870",
+          "arxiv:2604.07007"
         ],
         "related": [
           {
@@ -5733,14 +5836,14 @@
             "reason": "same topic; shared L3; terms: frameworks, monitoring"
           },
           {
+            "id": "arxiv:2605.26870",
+            "title": "PARE-M \u2014 Persistent AI Agents in Academic Research",
+            "reason": "same topic; shared L3; terms: agentic"
+          },
+          {
             "id": "arxiv:2604.07007",
             "title": "AgentCity",
             "reason": "same topic; shared L3"
-          },
-          {
-            "id": "arxiv:2605.06933",
-            "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
-            "reason": "same topic; shared L3; terms: agentic"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -5960,8 +6063,8 @@
           "topic:specification",
           "layer:0",
           "arxiv:2604.24026",
-          "arxiv:2604.16911",
-          "arxiv:2605.22634"
+          "arxiv:2606.06893",
+          "arxiv:2604.16911"
         ],
         "related": [
           {
@@ -5970,14 +6073,14 @@
             "reason": "same topic; shared L0; terms: verifiable"
           },
           {
+            "id": "arxiv:2606.06893",
+            "title": "W2S \u2014 Workflow-to-Skill: Automatic Skill Construction from Traces",
+            "reason": "same topic; shared L0; terms: execution"
+          },
+          {
             "id": "arxiv:2604.16911",
             "title": "Skilldex",
             "reason": "same topic; shared L0"
-          },
-          {
-            "id": "arxiv:2605.22634",
-            "title": "GovernSpec / Contractual Skills",
-            "reason": "same topic; shared L0; terms: execution"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -6034,6 +6137,7 @@
           "layer:0",
           "layer:1",
           "arxiv:2605.22634",
+          "arxiv:2606.04781",
           "arxiv:2602.22302",
           "labs-snyk-io:snyk-agent-scan"
         ],
@@ -6041,6 +6145,11 @@
           {
             "id": "arxiv:2605.22634",
             "title": "GovernSpec / Contractual Skills",
+            "reason": "same topic; shared L0/L1; terms: execution"
+          },
+          {
+            "id": "arxiv:2606.04781",
+            "title": "AIP \u2014 Agent Instruction Protocol for Structured Skill Graphs",
             "reason": "same topic; shared L0/L1; terms: execution"
           },
           {
@@ -6361,6 +6470,86 @@
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
       },
       {
+        "id": "arxiv:2606.04781",
+        "type": "paper",
+        "title": "AIP \u2014 Agent Instruction Protocol for Structured Skill Graphs",
+        "subtitle": "Specification & validation \u00b7 Layer 0 / Layer 1",
+        "body": "Agent Skills today consist largely of free-form prose requiring the agent to read, interpret, and re-derive how to act in every session. This imposes two compounding costs: reduced reliability on implementation-heavy tasks, and difficulty in skill creation and improvement, since editing prose is a fragile process that both humans and agents struggle with. The Agent Instruction Protocol (AIP) addresses both by modeling a skill as a directed execution graph: discrete steps as nodes backed by deterministic scripts or natural-language descriptions, connected by explicit typed input/output edges, and governed by a schema-validated YAML specification. A compiler meta-skill translates existing human-written skills into this form. The benefits are twofold. First, compiling human-written skills to AIP raised Claude Sonnet's mean task reward from 0.60 to 0.71 and pass rate from 53% to 67% across 27 real agent tasks from SkillsBench \u2014 a statistically significant gain (Wilcoxon signed-rank p = 0.011). Second, on creation and improvement, because each skill is schema-validated, functionally testable, and addressable node-by-node, failures can be diagnosed and repaired precisely. Two authored-skill failures were traced to the script level. After adjusting the AIP spec and recompiling, both recovered with zero regressions (one task going from 0/5 to 5/5), turning skill improvement into a measurable tuning loop rather than a prose rewrite.",
+        "relevance": "This is **Layer 0 (Spec-Level Governance)** with **Layer 1 (Runtime)** implications. AIP provides the structured representation that makes static governance possible: schema validation, node-level testing, corpus-level introspection, and natural action space for RL over skills. The graph structure enables governance at the skill level \u2014 something impossible with prose skills.",
+        "recommendation": "AIP is the **first structured skill representation that makes skills machine-governable**. Free-form prose skills are fundamentally ungovernable \u2014 you can't type-check prose, can't diff semantic changes, can't pinpoint failure nodes. AIP's directed execution graph with typed I/O edges and schema-validated YAML makes skills into addressable, testable, versionable artifacts. The 53% \u2192 67% pass rate improvement proves that structure beats prose for reliability. The node-level addressability enables precise failure diagnosis and repair, turning skill maintenance from a rewrite into a tuning loop.",
+        "source_url": "https://arxiv.org/abs/2606.04781",
+        "discovered": "2026-06-20",
+        "links": [
+          "topic:specification",
+          "layer:0",
+          "layer:1",
+          "arxiv:2605.03159",
+          "arxiv:2605.22634",
+          "arxiv:2606.06893"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2605.03159",
+            "title": "Learning Correct Behavior from Examples: Validating Sequential Execution in Autonomous Agents",
+            "reason": "same topic; shared L0/L1; terms: execution"
+          },
+          {
+            "id": "arxiv:2605.22634",
+            "title": "GovernSpec / Contractual Skills",
+            "reason": "same topic; shared L0/L1; terms: execution"
+          },
+          {
+            "id": "arxiv:2606.06893",
+            "title": "W2S \u2014 Workflow-to-Skill: Automatic Skill Construction from Traces",
+            "reason": "same topic; shared L0; terms: creation, execution"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2605.26112",
+        "type": "paper",
+        "title": "CheetahClaws \u2014 System Scaling Harness for Agentic AI",
+        "subtitle": "Policy & governance landscape \u00b7 Layer 1 / Layer 2",
+        "body": "This paper studies the next major bottleneck in agentic AI as system scaling, not only model scaling: the design of auditable, persistent, modular, and verifiable architectures around foundation models. We refer to this shift as scaling the harness: treating the structured execution layer around a foundation model as a first-class object of design, evaluation, and optimization. Although recent large language models enable agents to use tools, retrieve information, maintain memory, and execute long-horizon workflows, evaluation remains largely model-centric, often reducing agents to final-task success while treating memory, retrieval, tool use, orchestration, verification, and governance as secondary implementation details. This framing is increasingly inadequate because agent performance emerges from the interaction among the foundation model, memory substrate, context constructor, skill-routing layer, orchestration loop, and verification-and-governance layer. Together, these components form the agent harness, which translates model capability into long-horizon agent behavior. We study scaling the harness through three core bottlenecks: context governance, trustworthy memory, and dynamic skill routing, together with the orchestration and governance mechanisms that coordinate and constrain them. We further outline a research agenda for harness-level benchmarks that go beyond one-shot task success to measure trajectory quality, memory hygiene, context efficiency, verification cost, and safe evolution over time. To make the discussion concrete, we develop CheetahClaws, a Python-native reference harness, and compare it with Claude Code and OpenClaw.",
+        "relevance": "This is **Layer 1 (Runtime-Level Governance)** and **Layer 2 (Behavioral)**. CheetahClaws treats governance as a core harness component, not an afterthought. The verification-and-governance layer is explicitly part of the harness architecture. The Python reference implementation enables empirical comparison with Claude Code and OpenClaw.",
+        "recommendation": "CheetahClaws is the **first paper to treat the agent harness \u2014 including governance \u2014 as a first-class design object**. Current evaluation is model-centric; this paper argues that agent performance emerges from the harness, not just the model. The three core bottlenecks (context governance, trustworthy memory, dynamic skill routing) are exactly the runtime governance concerns that Layer 1 and Layer 2 address. The proposed harness-level benchmarks (trajectory quality, memory hygiene, verification cost, safe evolution) are the metrics that matter for production deployment.",
+        "source_url": "https://arxiv.org/abs/2605.26112",
+        "discovered": "2026-06-20",
+        "links": [
+          "topic:policy",
+          "layer:1",
+          "layer:2",
+          "ai-journal-com:agent-evaluation-guide-quality-focused-f",
+          "arxiv:2604.08224",
+          "arxiv:2604.19818",
+          "owasp:agentic-top10"
+        ],
+        "related": [
+          {
+            "id": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
+            "title": "Agent Evaluation Guide (Quality-Focused Frameworks)",
+            "reason": "same topic; shared L1/L2; terms: agentic, context"
+          },
+          {
+            "id": "arxiv:2604.08224",
+            "title": "A Unified Review of Memory, Skills, Protocols and Harness Engineering",
+            "reason": "same topic; shared L1; terms: context, harness, memory"
+          },
+          {
+            "id": "arxiv:2604.19818",
+            "title": "Evidence-Synthesis Framework",
+            "reason": "same topic; shared L2; terms: agentic, concrete, core"
+          },
+          {
+            "id": "owasp:agentic-top10",
+            "title": "NIST IR 8596 \u2014 Cybersecurity Framework Profile for AI",
+            "reason": "same topic; shared L1/L2; terms: agentic"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
         "id": "arxiv:2605.06933",
         "type": "paper",
         "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
@@ -6376,10 +6565,7 @@
           "layer:3",
           "nist:ir-8596",
           "microsoft:agent-governance-toolkit",
-          "arxiv:2605.17380",
-          "arxiv:2603.24414",
-          "arxiv:2603.03340",
-          "arxiv:2604.07007"
+          "arxiv:2605.17380"
         ],
         "related": [
           {
@@ -6396,16 +6582,37 @@
             "id": "arxiv:2605.17380",
             "title": "ADR",
             "reason": "shared L1; terms: agentic, security"
-          },
-          {
-            "id": "arxiv:2603.24414",
-            "title": "ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents",
-            "reason": "same topic; shared L3; terms: enforcement, provides"
-          },
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2605.26870",
+        "type": "paper",
+        "title": "PARE-M \u2014 Persistent AI Agents in Academic Research",
+        "subtitle": "Policy & governance landscape \u00b7 Layer 3",
+        "body": "Large language models are typically evaluated as models, benchmarks, or short conversational episodes. Less is known about what happens when an agent is embedded persistently in a real academic research environment with durable memory, local files, external tools, scheduled routines, delegated roles, and explicit safety protocols. Methods: A structured self-observed implementation case study was conducted from January 31 to May 25, 2026. The unit of analysis was the persistent human-agent environment: researcher, agent runtime, memory layer, tools, repositories, scheduled jobs, specialized agent roles, and governance rules. Outcomes were organized using PARE-M (Persistent Agentic Research Environment Measurement), a measurement framework covering architecture, utilization, artifact production, resource use, reproducibility, and governance. Results: Recoverable main-agent telemetry contained 75,671 de-duplicated records across 96 active days, with 8,059 user-role and 23,710 assistant-role messages. The workspace included 502 memory-related files, 17 configured agent directories, and 57 skill files. Active system time was 579.7 hours. Memory-derived records identified 482 output-proxy events and 889 failure, verification, correction, or protocol-proxy events. A strict May 2026 trajectory subset captured 627 model-completed events and 73.95 million recorded tokens, of which 82.9% were cache reads. Conclusions: The workflow was cache-dominant, suggesting that persistent agentic environments may shift the economic unit from cost per token to cost per completed artifact. Future evaluations should use artifact-level denominators, reproducible parsing rules, correction taxonomies, and independent coding of governance events.",
+        "relevance": "This is **Layer 3 (Enterprise/Policy Governance)**. PARE-M demonstrates what governance looks like in a real persistent agent environment: scheduled routines, delegated roles, safety protocols, failure tracking, and verification. The measurement framework (architecture, utilization, artifact production, resource use, reproducibility, governance) is the first comprehensive tool for evaluating persistent agent deployments.",
+        "recommendation": "PARE-M is the **first systematic measurement of a persistent agent environment in real-world use**. The 889 governance/failure events out of 1,371 total non-output events (65%) shows that governance concerns dominate persistent agent operation. The 82.9% cache read ratio suggests that persistent environments are economically viable. The PARE-M framework provides a concrete measurement vocabulary for governance in practice.",
+        "source_url": "https://arxiv.org/abs/2605.26870",
+        "discovered": "2026-06-20",
+        "links": [
+          "topic:policy",
+          "layer:3",
+          "arxiv:2603.03340",
+          "arxiv:2603.24414",
+          "arxiv:2604.07007"
+        ],
+        "related": [
           {
             "id": "arxiv:2603.03340",
             "title": "TAIP: Trustworthy AI Posture \u2014 A Framework for Continuous Assurance of Agentic AI Systems",
             "reason": "same topic; shared L3; terms: agentic"
+          },
+          {
+            "id": "arxiv:2603.24414",
+            "title": "ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents",
+            "reason": "same topic; shared L3"
           },
           {
             "id": "arxiv:2604.07007",
@@ -6448,6 +6655,48 @@
             "id": "techtimes-com:finbot-agentic-ai-ctf",
             "title": "FinBot Agentic AI CTF",
             "reason": "same topic; shared L2; terms: data, security"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2606.06893",
+        "type": "paper",
+        "title": "W2S \u2014 Workflow-to-Skill: Automatic Skill Construction from Traces",
+        "subtitle": "Specification & validation \u00b7 Layer 0",
+        "body": "Large language model agents increasingly rely on Skills to encode procedural knowledge, yet high-quality Skills remain costly to hand-write. This paper studies automatic Skill construction from heterogeneous interaction evidence, including demonstrations, agent trajectories, tool traces, and execution logs. We argue that trace-to-skill construction is not simple summarization, because traces are fragmented, redundant, and may miss rare but safety-critical behaviors. To address this, we introduce RWSA, a workflow-oriented intermediate representation that decomposes Skills into Workflow structure, execution Semantics, and runtime Attachments, capturing task decomposition, control flow, verification, safety, rollback, and state management. Building on RWSA, we propose W2S, a framework that segments traces, induces local Skill drafts, aligns shared structures, reconciles branches, and compresses redundancy while preserving evidence and confidence annotations. Experiments on 70 Skills show that W2S improves behavioral replay consistency by 10.5% over summarization- and prompting-based baselines, highlighting the need to treat traces as executable runtime specifications rather than compressible text.",
+        "relevance": "This is **Layer 0 (Spec-Level Governance)**. W2S addresses the skill creation bottleneck by automatically generating structured skills from execution evidence. The safety-critical behavior preservation is particularly important \u2014 rare but critical behaviors (rollback, verification) must not be lost in compression. The RWSA representation is compatible with AIP's graph structure and SkCC's SkIR.",
+        "recommendation": "W2S is the **first systematic approach to automatic skill construction from execution traces** that treats traces as executable specifications rather than compressible text. The RWSA intermediate representation (Workflow + Semantics + Attachments) captures control flow, verification, safety, rollback, and state management \u2014 the governance-critical elements that simple summarization misses. The 10.5% improvement in behavioral replay consistency proves that structured trace-to-skill construction outperforms naive summarization.",
+        "source_url": "https://arxiv.org/abs/2606.06893",
+        "discovered": "2026-06-20",
+        "links": [
+          "topic:specification",
+          "layer:0",
+          "arxiv:2604.24026",
+          "arxiv:2605.27955",
+          "arxiv:2604.16911",
+          "arxiv:2606.04781"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2604.24026",
+            "title": "SSL Representation / Skill Text to Structure",
+            "reason": "same topic; shared L0; terms: representation"
+          },
+          {
+            "id": "arxiv:2605.27955",
+            "title": "Skill-as-Pseudocode (SaP)",
+            "reason": "same topic; shared L0; terms: execution"
+          },
+          {
+            "id": "arxiv:2604.16911",
+            "title": "Skilldex",
+            "reason": "same topic; shared L0"
+          },
+          {
+            "id": "arxiv:2606.04781",
+            "title": "AIP \u2014 Agent Instruction Protocol for Structured Skill Graphs",
+            "reason": "same topic; shared L0; terms: creation, execution"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -7535,6 +7784,30 @@
       ]
     },
     {
+      "id": "arxiv:2606.04781",
+      "title": "AIP \u2014 Agent Instruction Protocol for Structured Skill Graphs",
+      "url": "https://arxiv.org/abs/2606.04781",
+      "discovered": "2026-06-20",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "arxiv:2605.26112",
+      "title": "CheetahClaws \u2014 System Scaling Harness for Agentic AI",
+      "url": "https://arxiv.org/abs/2605.26112",
+      "discovered": "2026-06-20",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        1,
+        2
+      ]
+    },
+    {
       "id": "arxiv:2605.06933",
       "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
       "url": "https://arxiv.org/abs/2605.06933",
@@ -7543,6 +7816,17 @@
       "topic_label": "Policy & governance landscape",
       "layers": [
         1,
+        3
+      ]
+    },
+    {
+      "id": "arxiv:2605.26870",
+      "title": "PARE-M \u2014 Persistent AI Agents in Academic Research",
+      "url": "https://arxiv.org/abs/2605.26870",
+      "discovered": "2026-06-20",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
         3
       ]
     },
@@ -7556,6 +7840,17 @@
       "layers": [
         0,
         2
+      ]
+    },
+    {
+      "id": "arxiv:2606.06893",
+      "title": "W2S \u2014 Workflow-to-Skill: Automatic Skill Construction from Traces",
+      "url": "https://arxiv.org/abs/2606.06893",
+      "discovered": "2026-06-20",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        0
       ]
     }
   ],

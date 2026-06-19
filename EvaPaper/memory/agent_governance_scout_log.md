@@ -264,11 +264,20 @@ Status: **NEW FINDINGS FOUND**
 
 3. **MAGIQ** (arXiv:2605.06933v2) — May 7, 2026 (v2 May 18). Post-quantum multi-agentic AI governance with provable UC-security. Policy definition and enforcement using quantum-resistant cryptographic primitives (FIPS 203/204/205). Session-based enforcement for AA-sessions (one-to-one) and CC-sessions (one-to-many). Task-msg attribution for accountability. Evaluated overhead vs SAGA; practical for production. Relevant to **Layer 1/3** — Cryptographically secured agent governance with formal proofs. URL: https://arxiv.org/abs/2605.06933
 
+4. **AIP: Agent Instruction Protocol** (arXiv:2606.04781) — June 3, 2026. Directed execution graph for agent skills with schema-validated YAML, typed I/O edges, and compiler meta-skill. Compiles free-form prose skills to deterministic graph nodes (scripts + NL descriptions). Claude Sonnet pass rate: 53% → 67% on 27 real tasks. Node-level addressability enables precise failure diagnosis and repair (two failures traced to script level, recovered 0/5 → 5/5). Graph structure supports corpus-level governance and RL action space. Relevant to **Layer 0/1** — Structured skill representation enables governance and introspection. URL: https://arxiv.org/abs/2606.04781
+
+5. **CheetahClaws / System Scaling Harness** (arXiv:2605.26112) — May 25, 2026. Treats the agent harness (context constructor, skill router, orchestration, verification, governance) as a first-class design object. Three bottlenecks: context governance, trustworthy memory, dynamic skill routing. Proposes harness-level benchmarks: trajectory quality, memory hygiene, context efficiency, verification cost, safe evolution. Python reference harness comparing with Claude Code and OpenClaw. Relevant to **Layer 1/2** — Governance as core harness component, not afterthought. URL: https://arxiv.org/abs/2605.26112
+
+6. **Workflow-to-Skill (W2S)** (arXiv:2606.06893) — June 5, 2026. Automatic skill construction from heterogeneous traces (demonstrations, trajectories, tool traces, logs) via RWSA intermediate representation (Workflow + Semantics + Attachments). Segments, induces, aligns, reconciles branches, compresses redundancy while preserving evidence and confidence. 70-skill experiments: 10.5% improvement in behavioral replay consistency over baselines. Relevant to **Layer 0** — Skill creation from execution evidence. URL: https://arxiv.org/abs/2606.06893
+
+7. **PARE-M / Persistent AI Agents in Academic Research** (arXiv:2605.26870) — May 26, 2026. 115-day case study (Jan 31–May 25, 2026) of persistent agentic research environment with governance rules. PARE-M framework: architecture, utilization, artifact production, resource use, reproducibility, governance. 75,671 telemetry records, 482 output events, 889 governance/failure events. 82.9% cache reads. Relevant to **Layer 3** — Real-world governance measurement in practice. URL: https://arxiv.org/abs/2605.26870
+
 ### Notes (0620)
 - SkillVetBench closes the semantic gap in skill security: code scanners are structurally blind to instruction-layer attacks (prompt injection, memory poisoning). The SARS score is the first agentic-specific risk metric.
 - ALE is the first benchmark to measure economically valuable, long-horizon professional work rather than synthetic tasks. The 2.6% Last-Exam pass rate is a critical reality check for agent deployment claims.
 - MAGIQ provides the cryptographic foundation for post-quantum agent governance. Its UC-security proof and session-based policy enforcement make it suitable for high-assurance environments.
 - All three papers were published after the June 14 scout run, confirming the weekly scouting cadence is catching new research.
+- **Expanded search (second pass)** surfaced 4 additional papers: AIP (structured skill graphs for governance), CheetahClaws (harness-level governance benchmarks), W2S (automatic skill construction from traces), and PARE-M (real-world governance measurement in persistent environments). These span skill creation, system design, and operational governance — extending the corpus to 7 new papers total for this scout run.
 
 ## Next Scout Run
 - Scheduled: June 27, 2026

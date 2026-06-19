@@ -830,6 +830,106 @@ This is Layer 1 (Runtime-Level Governance) with Layer 3 (Policy/Cryptographic). 
 
 ---
 
+### 56. AIP — Agent Instruction Protocol for Structured Skill Graphs
+
+- **arXiv ID:** 2606.04781
+- **URL:** https://arxiv.org/abs/2606.04781
+- **PDF:** https://arxiv.org/pdf/2606.04781
+- **Authors:** Zachary Blumenfeld et al.
+- **Date:** June 3, 2026
+
+**Abstract:**
+> Agent Skills today consist largely of free-form prose requiring the agent to read, interpret, and re-derive how to act in every session. This imposes two compounding costs: reduced reliability on implementation-heavy tasks, and difficulty in skill creation and improvement, since editing prose is a fragile process that both humans and agents struggle with. The Agent Instruction Protocol (AIP) addresses both by modeling a skill as a directed execution graph: discrete steps as nodes backed by deterministic scripts or natural-language descriptions, connected by explicit typed input/output edges, and governed by a schema-validated YAML specification. A compiler meta-skill translates existing human-written skills into this form. The benefits are twofold. First, compiling human-written skills to AIP raised Claude Sonnet's mean task reward from 0.60 to 0.71 and pass rate from 53% to 67% across 27 real agent tasks from SkillsBench — a statistically significant gain (Wilcoxon signed-rank p = 0.011). Second, on creation and improvement, because each skill is schema-validated, functionally testable, and addressable node-by-node, failures can be diagnosed and repaired precisely. Two authored-skill failures were traced to the script level. After adjusting the AIP spec and recompiling, both recovered with zero regressions (one task going from 0/5 to 5/5), turning skill improvement into a measurable tuning loop rather than a prose rewrite.
+
+**Why I recommend this:**
+AIP is the **first structured skill representation that makes skills machine-governable**. Free-form prose skills are fundamentally ungovernable — you can't type-check prose, can't diff semantic changes, can't pinpoint failure nodes. AIP's directed execution graph with typed I/O edges and schema-validated YAML makes skills into addressable, testable, versionable artifacts. The 53% → 67% pass rate improvement proves that structure beats prose for reliability. The node-level addressability enables precise failure diagnosis and repair, turning skill maintenance from a rewrite into a tuning loop.
+
+**Relevance to our topic:**
+This is **Layer 0 (Spec-Level Governance)** with **Layer 1 (Runtime)** implications. AIP provides the structured representation that makes static governance possible: schema validation, node-level testing, corpus-level introspection, and natural action space for RL over skills. The graph structure enables governance at the skill level — something impossible with prose skills.
+
+**Which layer:** **Layer 0 + Layer 1**
+
+**Is it a solution we're looking into?** Yes. AIP is the missing structural layer that makes skill governance practical. It complements Skilldex (validation), GovernSpec (contracts), and SkCC (compilation) by providing a human-writable, machine-governable skill representation.
+
+**Recommendation reason:** Prose skills cannot be governed. AIP proves that compiling them to typed graphs with deterministic scripts and explicit edges raises reliability by 26% and makes failures precisely addressable. This is the structural foundation for skill-level governance.
+
+---
+
+### 57. CheetahClaws — System Scaling Harness for Agentic AI
+
+- **arXiv ID:** 2605.26112
+- **URL:** https://arxiv.org/abs/2605.26112
+- **PDF:** https://arxiv.org/pdf/2605.26112
+- **Authors:** Shangding Gu et al.
+- **Date:** May 25, 2026
+
+**Abstract:**
+> This paper studies the next major bottleneck in agentic AI as system scaling, not only model scaling: the design of auditable, persistent, modular, and verifiable architectures around foundation models. We refer to this shift as scaling the harness: treating the structured execution layer around a foundation model as a first-class object of design, evaluation, and optimization. Although recent large language models enable agents to use tools, retrieve information, maintain memory, and execute long-horizon workflows, evaluation remains largely model-centric, often reducing agents to final-task success while treating memory, retrieval, tool use, orchestration, verification, and governance as secondary implementation details. This framing is increasingly inadequate because agent performance emerges from the interaction among the foundation model, memory substrate, context constructor, skill-routing layer, orchestration loop, and verification-and-governance layer. Together, these components form the agent harness, which translates model capability into long-horizon agent behavior. We study scaling the harness through three core bottlenecks: context governance, trustworthy memory, and dynamic skill routing, together with the orchestration and governance mechanisms that coordinate and constrain them. We further outline a research agenda for harness-level benchmarks that go beyond one-shot task success to measure trajectory quality, memory hygiene, context efficiency, verification cost, and safe evolution over time. To make the discussion concrete, we develop CheetahClaws, a Python-native reference harness, and compare it with Claude Code and OpenClaw.
+
+**Why I recommend this:**
+CheetahClaws is the **first paper to treat the agent harness — including governance — as a first-class design object**. Current evaluation is model-centric; this paper argues that agent performance emerges from the harness, not just the model. The three core bottlenecks (context governance, trustworthy memory, dynamic skill routing) are exactly the runtime governance concerns that Layer 1 and Layer 2 address. The proposed harness-level benchmarks (trajectory quality, memory hygiene, verification cost, safe evolution) are the metrics that matter for production deployment.
+
+**Relevance to our topic:**
+This is **Layer 1 (Runtime-Level Governance)** and **Layer 2 (Behavioral)**. CheetahClaws treats governance as a core harness component, not an afterthought. The verification-and-governance layer is explicitly part of the harness architecture. The Python reference implementation enables empirical comparison with Claude Code and OpenClaw.
+
+**Which layer:** **Layer 1 + Layer 2**
+
+**Is it a solution we're looking into?** Yes. CheetahClaws provides the system-level framework that connects model capability to long-horizon behavior through structured governance. The harness-level benchmarks (trajectory quality, memory hygiene, safe evolution) are the evaluation targets that Layer 2 needs.
+
+**Recommendation reason:** Model-centric evaluation misses the governance problem. CheetahClaws proves that agent performance emerges from the harness, not just the model, and provides concrete benchmarks for the governance qualities that matter in production.
+
+---
+
+### 58. W2S — Workflow-to-Skill: Automatic Skill Construction from Traces
+
+- **arXiv ID:** 2606.06893
+- **URL:** https://arxiv.org/abs/2606.06893
+- **PDF:** https://arxiv.org/pdf/2606.06893
+- **Authors:** Yuyang Zhang et al.
+- **Date:** June 5, 2026
+
+**Abstract:**
+> Large language model agents increasingly rely on Skills to encode procedural knowledge, yet high-quality Skills remain costly to hand-write. This paper studies automatic Skill construction from heterogeneous interaction evidence, including demonstrations, agent trajectories, tool traces, and execution logs. We argue that trace-to-skill construction is not simple summarization, because traces are fragmented, redundant, and may miss rare but safety-critical behaviors. To address this, we introduce RWSA, a workflow-oriented intermediate representation that decomposes Skills into Workflow structure, execution Semantics, and runtime Attachments, capturing task decomposition, control flow, verification, safety, rollback, and state management. Building on RWSA, we propose W2S, a framework that segments traces, induces local Skill drafts, aligns shared structures, reconciles branches, and compresses redundancy while preserving evidence and confidence annotations. Experiments on 70 Skills show that W2S improves behavioral replay consistency by 10.5% over summarization- and prompting-based baselines, highlighting the need to treat traces as executable runtime specifications rather than compressible text.
+
+**Why I recommend this:**
+W2S is the **first systematic approach to automatic skill construction from execution traces** that treats traces as executable specifications rather than compressible text. The RWSA intermediate representation (Workflow + Semantics + Attachments) captures control flow, verification, safety, rollback, and state management — the governance-critical elements that simple summarization misses. The 10.5% improvement in behavioral replay consistency proves that structured trace-to-skill construction outperforms naive summarization.
+
+**Relevance to our topic:**
+This is **Layer 0 (Spec-Level Governance)**. W2S addresses the skill creation bottleneck by automatically generating structured skills from execution evidence. The safety-critical behavior preservation is particularly important — rare but critical behaviors (rollback, verification) must not be lost in compression. The RWSA representation is compatible with AIP's graph structure and SkCC's SkIR.
+
+**Which layer:** **Layer 0**
+
+**Is it a solution we're looking into?** Yes. W2S complements manual skill authoring (AIP) and static compilation (SkCC) by providing automatic skill construction from traces. The RWSA representation's inclusion of verification, safety, and rollback elements makes it governance-aware.
+
+**Recommendation reason:** Hand-writing skills is a bottleneck. W2S proves that automatic construction from traces can preserve safety-critical behaviors and improve replay consistency by 10.5%, making skill creation scalable without sacrificing governance-relevant elements.
+
+---
+
+### 59. PARE-M — Persistent AI Agents in Academic Research
+
+- **arXiv ID:** 2605.26870
+- **URL:** https://arxiv.org/abs/2605.26870
+- **PDF:** https://arxiv.org/pdf/2605.26870
+- **Authors:** Anas Alzahrani et al.
+- **Date:** May 26, 2026
+
+**Abstract:**
+> Large language models are typically evaluated as models, benchmarks, or short conversational episodes. Less is known about what happens when an agent is embedded persistently in a real academic research environment with durable memory, local files, external tools, scheduled routines, delegated roles, and explicit safety protocols. Methods: A structured self-observed implementation case study was conducted from January 31 to May 25, 2026. The unit of analysis was the persistent human-agent environment: researcher, agent runtime, memory layer, tools, repositories, scheduled jobs, specialized agent roles, and governance rules. Outcomes were organized using PARE-M (Persistent Agentic Research Environment Measurement), a measurement framework covering architecture, utilization, artifact production, resource use, reproducibility, and governance. Results: Recoverable main-agent telemetry contained 75,671 de-duplicated records across 96 active days, with 8,059 user-role and 23,710 assistant-role messages. The workspace included 502 memory-related files, 17 configured agent directories, and 57 skill files. Active system time was 579.7 hours. Memory-derived records identified 482 output-proxy events and 889 failure, verification, correction, or protocol-proxy events. A strict May 2026 trajectory subset captured 627 model-completed events and 73.95 million recorded tokens, of which 82.9% were cache reads. Conclusions: The workflow was cache-dominant, suggesting that persistent agentic environments may shift the economic unit from cost per token to cost per completed artifact. Future evaluations should use artifact-level denominators, reproducible parsing rules, correction taxonomies, and independent coding of governance events.
+
+**Why I recommend this:**
+PARE-M is the **first systematic measurement of a persistent agent environment in real-world use**. The 889 governance/failure events out of 1,371 total non-output events (65%) shows that governance concerns dominate persistent agent operation. The 82.9% cache read ratio suggests that persistent environments are economically viable. The PARE-M framework provides a concrete measurement vocabulary for governance in practice.
+
+**Relevance to our topic:**
+This is **Layer 3 (Enterprise/Policy Governance)**. PARE-M demonstrates what governance looks like in a real persistent agent environment: scheduled routines, delegated roles, safety protocols, failure tracking, and verification. The measurement framework (architecture, utilization, artifact production, resource use, reproducibility, governance) is the first comprehensive tool for evaluating persistent agent deployments.
+
+**Which layer:** **Layer 3**
+
+**Is it a solution we're looking into?** Yes. PARE-M provides the measurement framework for evaluating whether persistent agent environments are actually governable in practice. The 889 governance/failure events demonstrate that governance is not a theoretical concern — it is the dominant operational issue.
+
+**Recommendation reason:** Persistent agents are the future of agentic AI. PARE-M proves that governance concerns dominate persistent operation (65% of non-output events) and provides the measurement framework to evaluate whether these environments are actually controllable.
+
+---
+
 ## The Three-Layer Stack in Detail
 
 ### Layer 0: Spec-Level Governance
