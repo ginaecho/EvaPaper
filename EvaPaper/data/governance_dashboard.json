@@ -1,78 +1,78 @@
 {
-  "generated_from_latest_scout": "2026-06-14",
-  "paper_count": 74,
-  "scout_run_count": 8,
+  "generated_from_latest_scout": "2026-06-20",
+  "paper_count": 77,
+  "scout_run_count": 9,
   "topic_mix": [
     {
       "id": "specification",
       "label": "Specification & validation",
       "color": "#e4572e",
       "count": 9,
-      "ratio": 0.12162162162162163
+      "ratio": 0.11688311688311688
     },
     {
       "id": "supply_chain",
       "label": "Skill & tool security",
       "color": "#963484",
       "count": 11,
-      "ratio": 0.14864864864864866
+      "ratio": 0.14285714285714285
     },
     {
       "id": "identity",
       "label": "Identity & provenance",
       "color": "#4267ac",
       "count": 6,
-      "ratio": 0.08108108108108109
+      "ratio": 0.07792207792207792
     },
     {
       "id": "coordination",
       "label": "Coordination & composition",
       "color": "#5b8e3e",
       "count": 3,
-      "ratio": 0.04054054054054054
+      "ratio": 0.03896103896103896
     },
     {
       "id": "evaluation",
       "label": "Evaluation & benchmarks",
       "color": "#f3a712",
-      "count": 13,
-      "ratio": 0.17567567567567569
+      "count": 15,
+      "ratio": 0.19480519480519481
     },
     {
       "id": "runtime",
       "label": "Runtime enforcement",
       "color": "#1d6f75",
       "count": 12,
-      "ratio": 0.16216216216216217
+      "ratio": 0.15584415584415584
     },
     {
       "id": "policy",
       "label": "Policy & governance landscape",
       "color": "#636363",
-      "count": 20,
-      "ratio": 0.2702702702702703
+      "count": 21,
+      "ratio": 0.2727272727272727
     }
   ],
   "layer_mix": [
     {
       "layer": 0,
       "label": "Spec",
-      "count": 18
+      "count": 19
     },
     {
       "layer": 1,
       "label": "Runtime",
-      "count": 39
+      "count": 40
     },
     {
       "layer": 2,
       "label": "Behavior",
-      "count": 23
+      "count": 25
     },
     {
       "layer": 3,
       "label": "Ecosystem",
-      "count": 10
+      "count": 12
     }
   ],
   "runs": [
@@ -267,29 +267,53 @@
         "runtime": 12,
         "policy": 20
       }
+    },
+    {
+      "date": "2026-06-20",
+      "new_papers": 3,
+      "cumulative": 77,
+      "leading_topic": "Evaluation & benchmarks",
+      "topics": {
+        "specification": 0,
+        "supply_chain": 0,
+        "identity": 0,
+        "coordination": 0,
+        "evaluation": 2,
+        "runtime": 0,
+        "policy": 1
+      },
+      "cumulative_topics": {
+        "specification": 9,
+        "supply_chain": 11,
+        "identity": 6,
+        "coordination": 3,
+        "evaluation": 15,
+        "runtime": 12,
+        "policy": 21
+      }
     }
   ],
   "trending_topics": [
     {
       "id": "evaluation",
       "label": "Evaluation & benchmarks",
-      "recent_count": 5,
-      "total_count": 13,
+      "recent_count": 6,
+      "total_count": 15,
       "color": "#f3a712"
+    },
+    {
+      "id": "policy",
+      "label": "Policy & governance landscape",
+      "recent_count": 2,
+      "total_count": 21,
+      "color": "#636363"
     },
     {
       "id": "runtime",
       "label": "Runtime enforcement",
-      "recent_count": 2,
+      "recent_count": 1,
       "total_count": 12,
       "color": "#1d6f75"
-    },
-    {
-      "id": "specification",
-      "label": "Specification & validation",
-      "recent_count": 2,
-      "total_count": 9,
-      "color": "#e4572e"
     }
   ],
   "association_graph": {
@@ -346,7 +370,7 @@
           1
         ],
         "discovered": "2026-05-30",
-        "degree": 6
+        "degree": 7
       },
       {
         "id": "arxiv:2603.07191",
@@ -414,7 +438,7 @@
           1
         ],
         "discovered": "2026-05-31",
-        "degree": 3
+        "degree": 4
       },
       {
         "id": "arxiv:2604.08523",
@@ -427,7 +451,7 @@
           2
         ],
         "discovered": "2026-05-31",
-        "degree": 4
+        "degree": 5
       },
       {
         "id": "confident-ai:deep-team",
@@ -479,7 +503,7 @@
           1
         ],
         "discovered": "2026-05-31",
-        "degree": 3
+        "degree": 4
       },
       {
         "id": "owasp:agentic-top10",
@@ -613,7 +637,7 @@
           2
         ],
         "discovered": "2026-06-01",
-        "degree": 4
+        "degree": 3
       },
       {
         "id": "techtimes-com:finbot-agentic-ai-ctf",
@@ -626,7 +650,7 @@
           2
         ],
         "discovered": "2026-06-01",
-        "degree": 5
+        "degree": 6
       },
       {
         "id": "github:topics-skill-md",
@@ -743,7 +767,7 @@
           1
         ],
         "discovered": "2026-06-01",
-        "degree": 6
+        "degree": 5
       },
       {
         "id": "wsp:draft",
@@ -769,7 +793,7 @@
           0
         ],
         "discovered": "2026-06-04",
-        "degree": 5
+        "degree": 4
       },
       {
         "id": "arxiv:2604.08224",
@@ -1216,7 +1240,7 @@
           2
         ],
         "discovered": "2026-06-14",
-        "degree": 4
+        "degree": 5
       },
       {
         "id": "arxiv:2602.12430",
@@ -1268,7 +1292,49 @@
           2
         ],
         "discovered": "2026-06-14",
+        "degree": 7
+      },
+      {
+        "id": "arxiv:2606.05405",
+        "title": "Agents' Last Exam (ALE) \u2014 Real-World Agent Capability Benchmark",
+        "url": "https://arxiv.org/abs/2606.05405",
+        "topic": "evaluation",
+        "topic_label": "Evaluation & benchmarks",
+        "color": "#f3a712",
+        "layers": [
+          2,
+          3
+        ],
+        "discovered": "2026-06-20",
+        "degree": 3
+      },
+      {
+        "id": "arxiv:2605.06933",
+        "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
+        "url": "https://arxiv.org/abs/2605.06933",
+        "topic": "policy",
+        "topic_label": "Policy & governance landscape",
+        "color": "#636363",
+        "layers": [
+          1,
+          3
+        ],
+        "discovered": "2026-06-20",
         "degree": 6
+      },
+      {
+        "id": "arxiv:2606.15899",
+        "title": "SkillVetBench \u2014 LLM-as-Judge Security Evaluation for Agent Skills",
+        "url": "https://arxiv.org/abs/2606.15899",
+        "topic": "evaluation",
+        "topic_label": "Evaluation & benchmarks",
+        "color": "#f3a712",
+        "layers": [
+          0,
+          2
+        ],
+        "discovered": "2026-06-20",
+        "degree": 3
       }
     ],
     "edges": [
@@ -1540,15 +1606,12 @@
       },
       {
         "source": "arxiv:2603.03340",
-        "target": "arxiv:2604.19818",
+        "target": "arxiv:2605.06933",
         "kind": "conceptual",
-        "weight": 2.45,
-        "reason": "same topic; terms: agentic, between, compliance",
+        "weight": 2.587,
+        "reason": "same topic; shared L3; terms: agentic",
         "shared_terms": [
-          "agentic",
-          "between",
-          "compliance",
-          "defines"
+          "agentic"
         ]
       },
       {
@@ -1718,17 +1781,6 @@
       },
       {
         "source": "arxiv:2603.18096",
-        "target": "arxiv:2604.07007",
-        "kind": "conceptual",
-        "weight": 2.075,
-        "reason": "same topic; terms: contracts, deterministic",
-        "shared_terms": [
-          "contracts",
-          "deterministic"
-        ]
-      },
-      {
-        "source": "arxiv:2603.18096",
         "target": "arxiv:2604.08224",
         "kind": "conceptual",
         "weight": 3.1,
@@ -1840,14 +1892,13 @@
       },
       {
         "source": "arxiv:2603.24414",
-        "target": "arxiv:2605.07358",
+        "target": "arxiv:2605.06933",
         "kind": "conceptual",
-        "weight": 2.263,
-        "reason": "same topic; terms: comprehensive, ecosystem, openclaw",
+        "weight": 2.775,
+        "reason": "same topic; shared L3; terms: enforcement, provides",
         "shared_terms": [
-          "comprehensive",
-          "ecosystem",
-          "openclaw"
+          "enforcement",
+          "provides"
         ]
       },
       {
@@ -1936,13 +1987,16 @@
       },
       {
         "source": "arxiv:2603.25747",
-        "target": "arxiv:2605.12015",
+        "target": "arxiv:2606.05405",
         "kind": "conceptual",
-        "weight": 2.775,
-        "reason": "same topic; shared L2; terms: actually, benchmark",
+        "weight": 3.337,
+        "reason": "same topic; shared L2; terms: benchmark, most, provides",
         "shared_terms": [
-          "actually",
-          "benchmark"
+          "benchmark",
+          "most",
+          "provides",
+          "real-world",
+          "tasks"
         ]
       },
       {
@@ -2052,6 +2106,14 @@
         ]
       },
       {
+        "source": "arxiv:2604.07007",
+        "target": "arxiv:2605.06933",
+        "kind": "conceptual",
+        "weight": 2.4,
+        "reason": "same topic; shared L3",
+        "shared_terms": []
+      },
+      {
         "source": "arxiv:2604.07536",
         "target": "arxiv:2605.13940",
         "kind": "conceptual",
@@ -2129,6 +2191,20 @@
         "shared_terms": [
           "benchmark",
           "benchmarks"
+        ]
+      },
+      {
+        "source": "arxiv:2604.08523",
+        "target": "arxiv:2606.05405",
+        "kind": "conceptual",
+        "weight": 3.337,
+        "reason": "same topic; shared L2; terms: benchmark, benchmarks, evaluate",
+        "shared_terms": [
+          "benchmark",
+          "benchmarks",
+          "evaluate",
+          "real-world",
+          "tasks"
         ]
       },
       {
@@ -2437,6 +2513,40 @@
         ]
       },
       {
+        "source": "arxiv:2605.06933",
+        "target": "arxiv:2605.17380",
+        "kind": "conceptual",
+        "weight": 2.95,
+        "reason": "shared L1; terms: agentic, security",
+        "shared_terms": [
+          "agentic",
+          "security"
+        ]
+      },
+      {
+        "source": "arxiv:2605.06933",
+        "target": "microsoft:agent-governance-toolkit",
+        "kind": "conceptual",
+        "weight": 2.962,
+        "reason": "same topic; shared L1; terms: enforcement, policies, policy",
+        "shared_terms": [
+          "enforcement",
+          "policies",
+          "policy"
+        ]
+      },
+      {
+        "source": "arxiv:2605.06933",
+        "target": "nist:ir-8596",
+        "kind": "conceptual",
+        "weight": 3.218,
+        "reason": "same topic; shared L1; terms: agentic, first",
+        "shared_terms": [
+          "agentic",
+          "first"
+        ]
+      },
+      {
         "source": "arxiv:2605.07358",
         "target": "github:varun369-skillfortify",
         "kind": "conceptual",
@@ -2493,6 +2603,17 @@
         "weight": 3.1,
         "reason": "same topic; shared L2",
         "shared_terms": []
+      },
+      {
+        "source": "arxiv:2605.12015",
+        "target": "arxiv:2606.15899",
+        "kind": "conceptual",
+        "weight": 3.475,
+        "reason": "same topic; shared L0/L2; terms: first, security",
+        "shared_terms": [
+          "first",
+          "security"
+        ]
       },
       {
         "source": "arxiv:2605.12015",
@@ -2647,6 +2768,43 @@
         ]
       },
       {
+        "source": "arxiv:2606.05405",
+        "target": "ieee:reprobe-audit",
+        "kind": "conceptual",
+        "weight": 3.337,
+        "reason": "same topic; shared L2; terms: benchmark, benchmarks, harness",
+        "shared_terms": [
+          "benchmark",
+          "benchmarks",
+          "harness",
+          "most",
+          "provides"
+        ]
+      },
+      {
+        "source": "arxiv:2606.15899",
+        "target": "github:agent-security-harness",
+        "kind": "conceptual",
+        "weight": 3.196,
+        "reason": "same topic; shared L0/L2; terms: data, security, tool",
+        "shared_terms": [
+          "data",
+          "security",
+          "tool"
+        ]
+      },
+      {
+        "source": "arxiv:2606.15899",
+        "target": "techtimes-com:finbot-agentic-ai-ctf",
+        "kind": "conceptual",
+        "weight": 3.043,
+        "reason": "same topic; shared L2; terms: data, security",
+        "shared_terms": [
+          "data",
+          "security"
+        ]
+      },
+      {
         "source": "cisco:defenseclaw",
         "target": "enforceauth-dev:enforceauth",
         "kind": "conceptual",
@@ -2751,8 +2909,8 @@
         ]
       }
     ],
-    "node_count": 74,
-    "edge_count": 142,
+    "node_count": 77,
+    "edge_count": 150,
     "hubs": [
       {
         "id": "arxiv:2603.25747",
@@ -2765,31 +2923,31 @@
         "degree": 7
       },
       {
+        "id": "microsoft:agent-governance-toolkit",
+        "title": "IBM Sovereign Core \u2014 Governance Policy at Infrastructure Runtime",
+        "degree": 7
+      },
+      {
+        "id": "ieee:reprobe-audit",
+        "title": "reprobe-audit \u2014 An Open Scoring Schema for LLM Agent Benchmark Disclosure",
+        "degree": 7
+      },
+      {
         "id": "arxiv:2604.08224",
         "title": "A Unified Review of Memory, Skills, Protocols and Harness Engineering",
-        "degree": 6
-      },
-      {
-        "id": "github:topics-agent-control-protocol",
-        "title": "Agent Control Protocol (ACP)",
-        "degree": 6
-      },
-      {
-        "id": "arxiv:2605.22634",
-        "title": "GovernSpec / Contractual Skills",
         "degree": 6
       }
     ],
     "method": "Each paper keeps its three strongest corpus neighbors. Association strength combines primary topic, shared governance layers, and shared technical terms. These are conceptual associations, not claimed citations."
   },
   "knowledge_wiki": {
-    "page_count": 86,
+    "page_count": 89,
     "pages": [
       {
         "id": "overview",
         "type": "overview",
         "title": "Agent Governance Research Overview",
-        "subtitle": "74 papers compiled into a living research wiki",
+        "subtitle": "77 papers compiled into a living research wiki",
         "body": "EvaPaper compiles specification, runtime, behavioral, ecosystem, security, identity, and coordination research into maintained pages. Use topic and layer pages to browse the corpus, then follow explicit related-paper links to inspect local research trails.",
         "links": [
           "topic:specification",
@@ -2879,7 +3037,7 @@
         "id": "topic:evaluation",
         "type": "topic",
         "title": "Evaluation & benchmarks",
-        "subtitle": "13 papers in this primary topic",
+        "subtitle": "15 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "arxiv:2603.25747",
@@ -2894,7 +3052,9 @@
           "arxiv:2604.18658",
           "github:agent-security-harness",
           "arxiv:2604.11174",
-          "ieee:reprobe-audit"
+          "ieee:reprobe-audit",
+          "arxiv:2606.05405",
+          "arxiv:2606.15899"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -2924,7 +3084,7 @@
         "id": "topic:policy",
         "type": "topic",
         "title": "Policy & governance landscape",
-        "subtitle": "20 papers in this primary topic",
+        "subtitle": "21 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "ai-journal-com:agent-evaluation-guide-quality-focused-f",
@@ -2946,7 +3106,8 @@
           "arxiv:2604.20805",
           "arxiv:2604.18652",
           "arxiv:2603.03340",
-          "arxiv:2602.12430"
+          "arxiv:2602.12430",
+          "arxiv:2605.06933"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -2954,7 +3115,7 @@
         "id": "layer:0",
         "type": "layer",
         "title": "Layer 0: Specification",
-        "subtitle": "18 papers mapped to this governance layer",
+        "subtitle": "19 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "arxiv:2605.22634",
@@ -2974,7 +3135,8 @@
           "arxiv:2605.12015",
           "arxiv:2605.03159",
           "github:agent-security-harness",
-          "arxiv:2602.12430"
+          "arxiv:2602.12430",
+          "arxiv:2606.15899"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
       },
@@ -2982,7 +3144,7 @@
         "id": "layer:1",
         "type": "layer",
         "title": "Layer 1: Runtime",
-        "subtitle": "39 papers mapped to this governance layer",
+        "subtitle": "40 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "ai-journal-com:agent-evaluation-guide-quality-focused-f",
@@ -3023,7 +3185,8 @@
           "arxiv:2605.03159",
           "arxiv:2604.18658",
           "github:agent-security-harness",
-          "mitre:atlas-agentic"
+          "mitre:atlas-agentic",
+          "arxiv:2605.06933"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
       },
@@ -3031,7 +3194,7 @@
         "id": "layer:2",
         "type": "layer",
         "title": "Layer 2: Behavioral",
-        "subtitle": "23 papers mapped to this governance layer",
+        "subtitle": "25 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "ai-journal-com:agent-evaluation-guide-quality-focused-f",
@@ -3056,7 +3219,9 @@
           "arxiv:2604.18658",
           "github:agent-security-harness",
           "arxiv:2604.11174",
-          "ieee:reprobe-audit"
+          "ieee:reprobe-audit",
+          "arxiv:2606.05405",
+          "arxiv:2606.15899"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
       },
@@ -3064,7 +3229,7 @@
         "id": "layer:3",
         "type": "layer",
         "title": "Layer 3: Ecosystem",
-        "subtitle": "10 papers mapped to this governance layer",
+        "subtitle": "12 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "arxiv:2604.07007",
@@ -3076,7 +3241,9 @@
           "enforceauth-dev:enforceauth",
           "nvidia:nemoclaw",
           "arxiv:2603.03340",
-          "arxiv:2605.25376"
+          "arxiv:2605.25376",
+          "arxiv:2606.05405",
+          "arxiv:2605.06933"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
       },
@@ -3146,10 +3313,10 @@
           "arxiv:2604.11174",
           "ieee:reprobe-audit",
           "techtimes-com:finbot-agentic-ai-ctf",
+          "arxiv:2606.05405",
           "arxiv:2410.06703",
           "arxiv:2605.11891",
-          "github:qualixar-agentassay",
-          "arxiv:2605.12015"
+          "github:qualixar-agentassay"
         ],
         "related": [
           {
@@ -3173,6 +3340,11 @@
             "reason": "same topic; shared L2; terms: benchmark"
           },
           {
+            "id": "arxiv:2606.05405",
+            "title": "Agents' Last Exam (ALE) \u2014 Real-World Agent Capability Benchmark",
+            "reason": "same topic; shared L2; terms: benchmark, most, provides"
+          },
+          {
             "id": "arxiv:2410.06703",
             "title": "ST-WebAgentBench",
             "reason": "same topic; shared L2; terms: besafe-bench, constraints, task"
@@ -3186,11 +3358,6 @@
             "id": "github:qualixar-agentassay",
             "title": "AgentAssay (Open Source)",
             "reason": "same topic; shared L2"
-          },
-          {
-            "id": "arxiv:2605.12015",
-            "title": "SkillSafetyBench",
-            "reason": "same topic; shared L2; terms: actually, benchmark"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -3268,6 +3435,7 @@
           "arxiv:2604.23338",
           "arxiv:2605.03353",
           "arxiv:2605.20874",
+          "arxiv:2605.06933",
           "owasp:agentic-top10"
         ],
         "related": [
@@ -3295,6 +3463,11 @@
             "id": "arxiv:2605.20874",
             "title": "Governance by Construction for Generalist Agents / CUGA",
             "reason": "same topic; shared L1"
+          },
+          {
+            "id": "arxiv:2605.06933",
+            "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
+            "reason": "same topic; shared L1; terms: enforcement, policies, policy"
           },
           {
             "id": "owasp:agentic-top10",
@@ -3472,7 +3645,8 @@
           "layer:1",
           "labs-snyk-io:snyk-agent-scan",
           "mitre:atlas-agentic",
-          "arxiv:2602.22302"
+          "arxiv:2602.22302",
+          "arxiv:2605.06933"
         ],
         "related": [
           {
@@ -3489,6 +3663,11 @@
             "id": "arxiv:2602.22302",
             "title": "Agent Behavioral Contracts (ABC)",
             "reason": "same topic; shared L1"
+          },
+          {
+            "id": "arxiv:2605.06933",
+            "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
+            "reason": "shared L1; terms: agentic, security"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -3509,7 +3688,8 @@
           "arxiv:2603.25747",
           "arxiv:2605.16282",
           "ieee:reprobe-audit",
-          "techtimes-com:finbot-agentic-ai-ctf"
+          "techtimes-com:finbot-agentic-ai-ctf",
+          "arxiv:2606.05405"
         ],
         "related": [
           {
@@ -3531,6 +3711,11 @@
             "id": "techtimes-com:finbot-agentic-ai-ctf",
             "title": "FinBot Agentic AI CTF",
             "reason": "same topic; shared L2; terms: benchmark"
+          },
+          {
+            "id": "arxiv:2606.05405",
+            "title": "Agents' Last Exam (ALE) \u2014 Real-World Agent Capability Benchmark",
+            "reason": "same topic; shared L2; terms: benchmark, benchmarks, evaluate"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -3682,7 +3867,8 @@
           "layer:1",
           "owasp:agentic-top10",
           "arxiv:2603.18096",
-          "ai-journal-com:agent-evaluation-guide-quality-focused-f"
+          "ai-journal-com:agent-evaluation-guide-quality-focused-f",
+          "arxiv:2605.06933"
         ],
         "related": [
           {
@@ -3699,6 +3885,11 @@
             "id": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
             "title": "Agent Evaluation Guide (Quality-Focused Frameworks)",
             "reason": "same topic; shared L1; terms: agentic, case"
+          },
+          {
+            "id": "arxiv:2605.06933",
+            "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
+            "reason": "same topic; shared L1; terms: agentic, first"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -3938,7 +4129,7 @@
           "layer:3",
           "arxiv:2603.03340",
           "arxiv:2603.24414",
-          "arxiv:2603.18096"
+          "arxiv:2605.06933"
         ],
         "related": [
           {
@@ -3952,9 +4143,9 @@
             "reason": "same topic; shared L3"
           },
           {
-            "id": "arxiv:2603.18096",
-            "title": "Trace-Based Assurance Framework",
-            "reason": "same topic; terms: contracts, deterministic"
+            "id": "arxiv:2605.06933",
+            "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
+            "reason": "same topic; shared L3"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -4082,8 +4273,7 @@
           "layer:2",
           "arxiv:2605.02709",
           "confident-ai:deep-team",
-          "ai-journal-com:agent-evaluation-guide-quality-focused-f",
-          "arxiv:2603.03340"
+          "ai-journal-com:agent-evaluation-guide-quality-focused-f"
         ],
         "related": [
           {
@@ -4100,11 +4290,6 @@
             "id": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
             "title": "Agent Evaluation Guide (Quality-Focused Frameworks)",
             "reason": "same topic; shared L2; terms: agentic"
-          },
-          {
-            "id": "arxiv:2603.03340",
-            "title": "TAIP: Trustworthy AI Posture \u2014 A Framework for Continuous Assurance of Agentic AI Systems",
-            "reason": "same topic; terms: agentic, between, compliance"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -4126,7 +4311,8 @@
           "arxiv:2604.08523",
           "arxiv:2604.11174",
           "github:agent-security-harness",
-          "arxiv:2605.12015"
+          "arxiv:2605.12015",
+          "arxiv:2606.15899"
         ],
         "related": [
           {
@@ -4153,6 +4339,11 @@
             "id": "arxiv:2605.12015",
             "title": "SkillSafetyBench",
             "reason": "same topic; shared L2; terms: benchmark, security"
+          },
+          {
+            "id": "arxiv:2606.15899",
+            "title": "SkillVetBench \u2014 LLM-as-Judge Security Evaluation for Agent Skills",
+            "reason": "same topic; shared L2; terms: data, security"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -4474,8 +4665,7 @@
           "microsoft:agent-governance-toolkit",
           "arxiv:2604.08224",
           "arxiv:2604.18652",
-          "confident-ai:deep-team",
-          "arxiv:2604.07007"
+          "confident-ai:deep-team"
         ],
         "related": [
           {
@@ -4502,11 +4692,6 @@
             "id": "confident-ai:deep-team",
             "title": "DeepTeam by Confident AI",
             "reason": "same topic; terms: testing"
-          },
-          {
-            "id": "arxiv:2604.07007",
-            "title": "AgentCity",
-            "reason": "same topic; terms: contracts, deterministic"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -4563,7 +4748,6 @@
           "arxiv:2602.12430",
           "github:varun369-skillfortify",
           "owasp:agentic-top10",
-          "arxiv:2603.24414",
           "arxiv:2604.18652"
         ],
         "related": [
@@ -4581,11 +4765,6 @@
             "id": "owasp:agentic-top10",
             "title": "NIST IR 8596 \u2014 Cybersecurity Framework Profile for AI",
             "reason": "same topic; shared L0; terms: capability, control"
-          },
-          {
-            "id": "arxiv:2603.24414",
-            "title": "ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents",
-            "reason": "same topic; terms: comprehensive, ecosystem, openclaw"
           },
           {
             "id": "arxiv:2604.18652",
@@ -5216,8 +5395,8 @@
           "layer:3",
           "arxiv:2603.03340",
           "arxiv:2604.07007",
-          "arxiv:2602.12430",
-          "arxiv:2605.07358"
+          "arxiv:2605.06933",
+          "arxiv:2602.12430"
         ],
         "related": [
           {
@@ -5231,14 +5410,14 @@
             "reason": "same topic; shared L3"
           },
           {
+            "id": "arxiv:2605.06933",
+            "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
+            "reason": "same topic; shared L3; terms: enforcement, provides"
+          },
+          {
             "id": "arxiv:2602.12430",
             "title": "Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward",
             "reason": "same topic; terms: comprehensive, deployment, provides"
-          },
-          {
-            "id": "arxiv:2605.07358",
-            "title": "A Comprehensive Survey on Agent Skills",
-            "reason": "same topic; terms: comprehensive, ecosystem, openclaw"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -5545,7 +5724,7 @@
           "layer:3",
           "arxiv:2603.24414",
           "arxiv:2604.07007",
-          "arxiv:2604.19818"
+          "arxiv:2605.06933"
         ],
         "related": [
           {
@@ -5559,9 +5738,9 @@
             "reason": "same topic; shared L3"
           },
           {
-            "id": "arxiv:2604.19818",
-            "title": "Evidence-Synthesis Framework",
-            "reason": "same topic; terms: agentic, between, compliance"
+            "id": "arxiv:2605.06933",
+            "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
+            "reason": "same topic; shared L3; terms: agentic"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -5817,11 +5996,16 @@
           "topic:evaluation",
           "layer:0",
           "layer:2",
+          "arxiv:2606.15899",
           "techtimes-com:finbot-agentic-ai-ctf",
-          "github:agent-security-harness",
-          "arxiv:2603.25747"
+          "github:agent-security-harness"
         ],
         "related": [
+          {
+            "id": "arxiv:2606.15899",
+            "title": "SkillVetBench \u2014 LLM-as-Judge Security Evaluation for Agent Skills",
+            "reason": "same topic; shared L0/L2; terms: first, security"
+          },
           {
             "id": "techtimes-com:finbot-agentic-ai-ctf",
             "title": "FinBot Agentic AI CTF",
@@ -5831,11 +6015,6 @@
             "id": "github:agent-security-harness",
             "title": "Agent Security Harness \u2014 474-Test Security Scanner for AI Agents",
             "reason": "same topic; shared L0/L2; terms: attack, security"
-          },
-          {
-            "id": "arxiv:2603.25747",
-            "title": "BeSafe-Bench (BSB)",
-            "reason": "same topic; shared L2; terms: actually, benchmark"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -5929,12 +6108,18 @@
           "layer:0",
           "layer:1",
           "layer:2",
+          "arxiv:2606.15899",
           "techtimes-com:finbot-agentic-ai-ctf",
           "arxiv:2410.06703",
           "arxiv:2605.12015",
           "arxiv:2604.18658"
         ],
         "related": [
+          {
+            "id": "arxiv:2606.15899",
+            "title": "SkillVetBench \u2014 LLM-as-Judge Security Evaluation for Agent Skills",
+            "reason": "same topic; shared L0/L2; terms: data, security, tool"
+          },
           {
             "id": "techtimes-com:finbot-agentic-ai-ctf",
             "title": "FinBot Agentic AI CTF",
@@ -6095,6 +6280,7 @@
           "arxiv:2604.11174",
           "arxiv:2605.16282",
           "arxiv:2604.08523",
+          "arxiv:2606.05405",
           "github:qualixar-agentassay",
           "arxiv:2604.18658"
         ],
@@ -6120,6 +6306,11 @@
             "reason": "same topic; shared L2; terms: benchmark, benchmarks"
           },
           {
+            "id": "arxiv:2606.05405",
+            "title": "Agents' Last Exam (ALE) \u2014 Real-World Agent Capability Benchmark",
+            "reason": "same topic; shared L2; terms: benchmark, benchmarks, harness"
+          },
+          {
             "id": "github:qualixar-agentassay",
             "title": "AgentAssay (Open Source)",
             "reason": "same topic; shared L2; terms: open"
@@ -6128,6 +6319,135 @@
             "id": "arxiv:2604.18658",
             "title": "Owner-Harm: Agents Harming Their Deployers",
             "reason": "same topic; shared L2; terms: benchmarks, eight, most"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2606.05405",
+        "type": "paper",
+        "title": "Agents' Last Exam (ALE) \u2014 Real-World Agent Capability Benchmark",
+        "subtitle": "Evaluation & benchmarks \u00b7 Layer 2 / Layer 3",
+        "body": "Recent AI systems have achieved strong results on a wide range of benchmarks, yet these gains have not translated into economically meaningful deployment across many professional domains. We argue that this gap is largely an evaluation problem: widely used benchmarks lack sustained performance measurement on real and economically valuable workflows. This paper introduces Agents' Last Exam (ALE), a benchmark designed to evaluate AI agents on long horizon, economically valuable, real world tasks with verifiable outcomes. Developed in collaboration with 250+ industry experts, ALE covers non-physical industries defined with reference to O*NET / SOC 2018 (the U.S. federal occupational taxonomy). It is organized around a task taxonomy with 55 sub fields grouped into 13 industry clusters covering 1K+ tasks. Current results show that the hardest tier remains far from saturated: across mainstream harness and backbone configurations, the average full pass rate is below 1%. ALE is designed as a living benchmark: its task pool grows continuously as new workflows and industries are onboarded. More broadly, ALE is intended not merely as another leaderboard, but as an instrument for closing the gap between benchmark success and GDP relevant impact.",
+        "relevance": "This is primarily Layer 2 (Behavioral-Level Governance) and Layer 3 (Enterprise/Policy). ALE provides the measurement infrastructure for whether agents are ready for real-world deployment. The three-tier structure (Near-Term, Full-Spectrum, Last-Exam) lets organizations choose evaluation intensity based on their risk tolerance. The ALE-Claw reference implementation (derived from OpenClaw) provides a concrete harness for testing.",
+        "recommendation": "ALE is the **most serious attempt yet to evaluate AI agents on economically valuable, long-horizon, real professional work**. Unlike synthetic benchmarks (Terminal-Bench, SWE-bench) that measure narrow capabilities, ALE tests whether agents can actually do the work that humans are paid to do. The 2.6% pass rate on the hardest tier \u2014 despite Codex + GPT-5.5 scoring 82% on Terminal-Bench \u2014 is the single most important reality check in agent evaluation.",
+        "source_url": "https://arxiv.org/abs/2606.05405",
+        "discovered": "2026-06-20",
+        "links": [
+          "topic:evaluation",
+          "layer:2",
+          "layer:3",
+          "arxiv:2603.25747",
+          "arxiv:2604.08523",
+          "ieee:reprobe-audit"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2603.25747",
+            "title": "BeSafe-Bench (BSB)",
+            "reason": "same topic; shared L2; terms: benchmark, most, provides"
+          },
+          {
+            "id": "arxiv:2604.08523",
+            "title": "ClawBench \u2014 Real-World Web Agent Benchmark",
+            "reason": "same topic; shared L2; terms: benchmark, benchmarks, evaluate"
+          },
+          {
+            "id": "ieee:reprobe-audit",
+            "title": "reprobe-audit \u2014 An Open Scoring Schema for LLM Agent Benchmark Disclosure",
+            "reason": "same topic; shared L2; terms: benchmark, benchmarks, harness"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2605.06933",
+        "type": "paper",
+        "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
+        "subtitle": "Policy & governance landscape \u00b7 Layer 1 / Layer 3",
+        "body": "Our computing ecosystem is being transformed by two emerging paradigms: the increased deployment of agentic AI systems and advancements in quantum computing. With respect to agentic AI systems, one of the most critical problems is creating secure governing architectures that ensure agents follow their owners' communication and interaction policies and can be held accountable for the messages they exchange with other agents. With respect to quantum computing, existing systems must be retrofitted and new cryptographic mechanisms must be designed to ensure long-term security and quantum resistance. In fact, NIST recommends that standard public-key cryptographic algorithms, including RSA, Diffie-Hellman (DH), and elliptic-curve constructions (ECC), be deprecated starting in 2030 and disallowed after 2035. In this paper, we present MAGIQ, a framework for policy definition and enforcement in multi-agent AI systems using novel, highly efficient, quantum-resistant cryptographic protocols with proven security guarantees. MAGIQ (i) allows users to define rich communication and access-control policy budgets for agent-to-agent sessions and tasks, including global budgets for one-to-many agent sessions; (ii) enforces such policies using post-quantum cryptographic primitives; (iii) supports session-based enforcement of policies for agent-to-agent and one-to-many agent sessions; and (iv) provides accountability of agents to their users through message attribution. We formally model and prove the correctness and security of the system using the Universal Composability (UC) framework. We evaluate the computation and communication overhead of our framework and compare it with the state-of-the-art agentic AI framework SAGA. MAGIQ is a first step toward post-quantum-secure solutions for agentic AI systems.",
+        "relevance": "This is Layer 1 (Runtime-Level Governance) with Layer 3 (Policy/Cryptographic). MAGIQ provides the cryptographic infrastructure that underpins trust in multi-agent systems: agents can prove their identity, enforce policy budgets, and attribute messages \u2014 all with quantum-resistant security. The overhead is comparable to SAGA (which uses classical cryptography), proving that post-quantum security is practical today.",
+        "recommendation": "MAGIQ is the **first post-quantum-secure agent governance framework with formal UC-security proofs**. It replaces classical cryptography (RSA, ECDSA, EdDSA, DH, ECDH) with NIST-standardized post-quantum primitives (ML-KEM, ML-DSA, SLH-DSA) and proves security in the Universal Composability framework. The session-based enforcement (AA-sessions for one-to-one, CC-sessions for one-to-many) with hash-chain policy budgets and digitally signed session-authorization tokens provides a rigorous cryptographic foundation for agent policy enforcement.",
+        "source_url": "https://arxiv.org/abs/2605.06933",
+        "discovered": "2026-06-20",
+        "links": [
+          "topic:policy",
+          "layer:1",
+          "layer:3",
+          "nist:ir-8596",
+          "microsoft:agent-governance-toolkit",
+          "arxiv:2605.17380",
+          "arxiv:2603.24414",
+          "arxiv:2603.03340",
+          "arxiv:2604.07007"
+        ],
+        "related": [
+          {
+            "id": "nist:ir-8596",
+            "title": "NIST IR 8596",
+            "reason": "same topic; shared L1; terms: agentic, first"
+          },
+          {
+            "id": "microsoft:agent-governance-toolkit",
+            "title": "IBM Sovereign Core \u2014 Governance Policy at Infrastructure Runtime",
+            "reason": "same topic; shared L1; terms: enforcement, policies, policy"
+          },
+          {
+            "id": "arxiv:2605.17380",
+            "title": "ADR",
+            "reason": "shared L1; terms: agentic, security"
+          },
+          {
+            "id": "arxiv:2603.24414",
+            "title": "ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents",
+            "reason": "same topic; shared L3; terms: enforcement, provides"
+          },
+          {
+            "id": "arxiv:2603.03340",
+            "title": "TAIP: Trustworthy AI Posture \u2014 A Framework for Continuous Assurance of Agentic AI Systems",
+            "reason": "same topic; shared L3; terms: agentic"
+          },
+          {
+            "id": "arxiv:2604.07007",
+            "title": "AgentCity",
+            "reason": "same topic; shared L3"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2606.15899",
+        "type": "paper",
+        "title": "SkillVetBench \u2014 LLM-as-Judge Security Evaluation for Agent Skills",
+        "subtitle": "Evaluation & benchmarks \u00b7 Layer 0 / Layer 2",
+        "body": "Open-source LLM agent ecosystems are growing rapidly, yet the security of community-contributed skills \u2014 modular tool definitions that extend agent capabilities \u2014 remains largely unvetted. The gap we fill: existing scanners operate at the code layer and are structurally blind to instruction-layer and multi-agent risk \u2014 natural-language directives that hijack an agent, exfiltrate data through encoded side channels, or chain harm across pipelines \u2014 so what is needed is a semantic, multi-dimensional vetting system rather than another signature matcher. We present SKILLVETBENCH, a live public leaderboard on Hugging Face that uses an LLM-as-Judge to vet agent skills. What is new: SARS (Skill Agentic Risk Score), a five-dimensional agentic-risk metric with a principled weighted formula for instruction-following systems. What is integrated: full CVSS v4.0 vector decomposition and a ClawHub dual-view that places our LLM-generated review beside the official marketplace verdict. What is demonstrated: drawing on our companion benchmark paper, the LLM-as-Judge stage achieves zero false negatives across 78 confirmed-malicious skills and zero false positives across 22 benign controls, while the best static baseline (SKILLSIEVE) still misses 15%; for instruction-layer categories such as Prompt Injection and Memory Poisoning, conventional tools miss between 89% and 100% of threats (e.g., CODEBERT detects none of nine memory-poisoning skills). Detection rates vary from 35% to 95% across four LLM evaluators, motivating ensemble scoring in production deployments.",
+        "relevance": "This is Layer 0 (Spec-Level Governance) with Layer 2 (Behavioral) measurement. It validates skills at the semantic level \u2014 reading instructions, tool declarations, and permission grants as a coherent behavioral contract. The CVSS v4.0 integration provides a standard security vocabulary; the ClawHub dual-view exposes marketplace detection gaps.",
+        "recommendation": "SkillVetBench is the **first semantic skill security evaluation system** that looks at what skills *declare* they will do, not just what code they contain. The SARS score is the first agentic-specific risk metric \u2014 it captures instruction fidelity risk, data gravity, action irreversibility, blast radius, and chain amplification in a single 0\u201310 score. The zero false negatives on 78 malicious skills (vs. 15% miss rate for the best static tool) proves that code-level scanning is structurally insufficient for agent security.",
+        "source_url": "https://arxiv.org/abs/2606.15899",
+        "discovered": "2026-06-20",
+        "links": [
+          "topic:evaluation",
+          "layer:0",
+          "layer:2",
+          "arxiv:2605.12015",
+          "github:agent-security-harness",
+          "techtimes-com:finbot-agentic-ai-ctf"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2605.12015",
+            "title": "SkillSafetyBench",
+            "reason": "same topic; shared L0/L2; terms: first, security"
+          },
+          {
+            "id": "github:agent-security-harness",
+            "title": "Agent Security Harness \u2014 474-Test Security Scanner for AI Agents",
+            "reason": "same topic; shared L0/L2; terms: data, security, tool"
+          },
+          {
+            "id": "techtimes-com:finbot-agentic-ai-ctf",
+            "title": "FinBot Agentic AI CTF",
+            "reason": "same topic; shared L2; terms: data, security"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -7199,6 +7519,42 @@
       "topic": "evaluation",
       "topic_label": "Evaluation & benchmarks",
       "layers": [
+        2
+      ]
+    },
+    {
+      "id": "arxiv:2606.05405",
+      "title": "Agents' Last Exam (ALE) \u2014 Real-World Agent Capability Benchmark",
+      "url": "https://arxiv.org/abs/2606.05405",
+      "discovered": "2026-06-20",
+      "topic": "evaluation",
+      "topic_label": "Evaluation & benchmarks",
+      "layers": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "arxiv:2605.06933",
+      "title": "MAGIQ \u2014 Post-Quantum Multi-Agentic AI Governance",
+      "url": "https://arxiv.org/abs/2605.06933",
+      "discovered": "2026-06-20",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": "arxiv:2606.15899",
+      "title": "SkillVetBench \u2014 LLM-as-Judge Security Evaluation for Agent Skills",
+      "url": "https://arxiv.org/abs/2606.15899",
+      "discovered": "2026-06-20",
+      "topic": "evaluation",
+      "topic_label": "Evaluation & benchmarks",
+      "layers": [
+        0,
         2
       ]
     }

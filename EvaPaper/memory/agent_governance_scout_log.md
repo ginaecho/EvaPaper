@@ -253,13 +253,30 @@ Status: **NEW FINDINGS FOUND**
 ### New Products/Frameworks (Found: 0614)
 - (See above — EmbodiedGovBench, Agent Skills for LLMs, MITRE ATLAS update, reprobe-audit, and Agent Security Harness are the new items not previously tracked)
 
-## Next Scout Run
-- Scheduled: June 21, 2026
-- Focus: FAccT 2026 conference proceedings (June 25-28), OWASP Top 10 adoption metrics, skill marketplace integrity implementations, ACP/AgentAssert production deployments
+## 2026-06-20 Scout Run — NEW FINDINGS DISCOVERED
+Search queries: arXiv agent governance skill security June 2026, arXiv agent benchmark June 2026, arXiv multi-agent governance post-quantum 2026
+Status: **NEW FINDINGS FOUND**
 
-## Research Momentum Observations
-- **Governance benchmarks emerging:** EmbodiedGovBench makes governance a first-class evaluation target, expanding beyond task-success metrics
-- **Skill provenance frameworks maturing:** Agent Skills for LLMs introduces graduated trust tiers based on verification gates, treating skills as executable artifacts with provenance-based permissions
-- **Adversarial taxonomy expanding:** MITRE ATLAS now covers 14 agentic-specific techniques, formalizing attacks that traditional AI threat models miss
-- **Benchmark credibility crisis:** reprobe-audit exposes 0.38 mean disclosure score for agent benchmarks, making meta-evaluation a governance prerequisite
-- **Security testing standardizing:** Agent Security Harness provides 474 concrete tests across 33 modules, turning governance from policy into measurable verification
+### New Papers (Found: 0620)
+1. **SkillVetBench** (arXiv:2606.00925 / 2606.15899) — June 14, 2026. UTEP SUPREME Lab. LLM-as-Judge security evaluation for open-source agent skills. Introduces SARS (Skill Agentic Risk Score): five-dimensional metric (IFR, DG, AI, BR, CA) with CVSS v4.0 vector. Evaluated 1,200 skills on Hugging Face leaderboard. Zero false negatives on 78 malicious skills; conventional tools miss 89-100% of instruction-layer threats. Detection rate varies 35-95% across LLM evaluators, motivating ensemble scoring. Relevant to **Layer 0/1** — Semantic skill vetting that code-level scanners cannot perform. URL: https://arxiv.org/abs/2606.15899
+
+2. **Agents' Last Exam (ALE)** (arXiv:2606.05405) — June 3, 2026 (v2 June 11). UC Berkeley RDI / Dawn Song group. 250+ industry experts, 1,490 task instances across 55 subfields and 13 industry clusters. Evaluates Generalist Computer-Use Agents (GCUA) on real professional workflows with deterministic deliverable-based scoring. Three tiers: Near-Term (67 tasks, ~40% pass), Full-Spectrum (55 tasks), Last-Exam (38 tasks, 2.6% pass). Codex + GPT-5.5 scores 0% on Last-Exam despite 82% on Terminal-Bench. ALE-Claw reference implementation derived from OpenClaw. Living benchmark with public leaderboard. URL: https://arxiv.org/abs/2606.05405
+
+3. **MAGIQ** (arXiv:2605.06933v2) — May 7, 2026 (v2 May 18). Post-quantum multi-agentic AI governance with provable UC-security. Policy definition and enforcement using quantum-resistant cryptographic primitives (FIPS 203/204/205). Session-based enforcement for AA-sessions (one-to-one) and CC-sessions (one-to-many). Task-msg attribution for accountability. Evaluated overhead vs SAGA; practical for production. Relevant to **Layer 1/3** — Cryptographically secured agent governance with formal proofs. URL: https://arxiv.org/abs/2605.06933
+
+### Notes (0620)
+- SkillVetBench closes the semantic gap in skill security: code scanners are structurally blind to instruction-layer attacks (prompt injection, memory poisoning). The SARS score is the first agentic-specific risk metric.
+- ALE is the first benchmark to measure economically valuable, long-horizon professional work rather than synthetic tasks. The 2.6% Last-Exam pass rate is a critical reality check for agent deployment claims.
+- MAGIQ provides the cryptographic foundation for post-quantum agent governance. Its UC-security proof and session-based policy enforcement make it suitable for high-assurance environments.
+- All three papers were published after the June 14 scout run, confirming the weekly scouting cadence is catching new research.
+
+## Next Scout Run
+- Scheduled: June 27, 2026
+- Focus: FAccT 2026 proceedings (June 25-28), NeurIPS 2026 submissions, summer benchmark releases, OWASP agentic skills adoption metrics
+
+## Research Momentum Observations (Updated 0620)
+- **Semantic skill evaluation is now measurable:** SkillVetBench's SARS score provides an actionable metric for skill marketplace security, complementing static code analysis.
+- **Real-world capability gap is quantified:** ALE's 2.6% pass rate on professional workflows exposes the chasm between benchmark saturation and GDP-relevant deployment.
+- **Post-quantum governance is formalized:** MAGIQ's UC-secure framework proves that agent governance can be cryptographically grounded, not just policy-based.
+- **Convergence:** The three papers collectively span skill security (Layer 0), agent capability evaluation (Layer 2/3), and infrastructure governance (Layer 1) — confirming the three-layer stack covers the active research frontier.
+

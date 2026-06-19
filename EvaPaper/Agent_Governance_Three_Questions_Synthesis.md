@@ -1,7 +1,7 @@
 # Agent Governance Research Summary: Three Critical Questions
 
-> Compiled by EvaPaper | June 6, 2026
-> Based on 32 papers across the Three-Layer Governance Stack
+> Compiled by EvaPaper | June 20, 2026
+> Based on 35 papers across the Three-Layer Governance Stack
 
 ---
 
@@ -117,6 +117,7 @@ Eight papers now provide a **cumulative, multi-method evidence base** that skill
 | **BIV 2026** | Deviation measurement against declared behavior | **80% of skills deviate** from declared behavior | ✅ Yes (implies attempted compliance) | Layer 0 |
 | **SSL Representation 2026** | Structural decomposition | **94% of skill descriptions** decompose into structured representations | ✅ Yes (structure implies parsing) | Layer 0 |
 | **Comprehensive Survey 2026** | Architecture analysis | Skills are treated as **operational constraints**, not documentation | ⚠️ Architecture inference | Cross-layer |
+| **SkillVetBench 2026** | Semantic security evaluation | **SARS score** — 5-dimensional agentic-risk metric for instruction-layer threats; 0 FN / 0 FP on 78 malicious skills | ✅ Yes (implied causal) | Layer 0+2 |
 | **GovernSpec 2026** | Specification framework | **12 contract sections** define obligations, permissions, prohibitions | ⚠️ Framework design | Layer 0 |
 | **ClawHavoc 2026** | Security incident analysis | **1,200+ malicious skills** infiltrated marketplace | ✅ Yes (implied causal) | Layer 1 |
 
@@ -199,6 +200,13 @@ Eight papers now provide a **cumulative, multi-method evidence base** that skill
 - **What it does:** Skill-level attestation as runtime admission control
 - **Static checking:** Attestation binds skill to verified identity before execution
 - **Gap:** Identity verification, not behavioral type checking; single-agent only
+
+#### 9. **SkillVetBench** (arXiv:2606.00925 / 2606.15899, Layer 0+2) — **Semantic Static Evaluation for Skills**
+- **What it does:** LLM-as-Judge security evaluation for open-source agent skills with SARS (Skill Agentic Risk Score)
+- **Static analysis:** Evaluates skill artifacts at the instruction layer — natural language directives, tool declarations, permission grants — not just code
+- **Results:** Zero false negatives on 78 confirmed-malicious skills; zero false positives on 22 benign controls; conventional static tools miss 89–100% of instruction-layer threats
+- **Key insight:** Code scanners are structurally blind to instruction-layer attacks (prompt injection, memory poisoning, encoded side channels). Semantic evaluation via LLM-as-Judge ensemble detects what code analysis cannot.
+- **Gap:** LLM-based evaluation is not deterministic; detection rates vary 35–95% across evaluators, requiring ensemble scoring for production
 
 ---
 
@@ -350,11 +358,20 @@ Eight papers now provide a **cumulative, multi-method evidence base** that skill
 - **Why it matters:** Current safety benchmarks optimize for generic criminal harm (AgentHarm) and miss the deployer-harm vector entirely. Even a 100% TPR gate on generic criminal harm collapses to 14.8% when the victim is the deployer itself
 - **Gap:** Threat model only — requires enforcement layer to mitigate
 
+#### 19. **MAGIQ** (arXiv:2605.06933v2, Layer 1+3) — *added June 20*
+- **Deterministic:** Yes — policy enforcement is cryptographic, not LLM-based
+- **Mechanism:** NIST PQC primitives (ML-KEM, ML-DSA, SLH-DSA) for session-authorization tokens and hash-chain policy budgets. AA-sessions (one-to-one) and CC-sessions (one-to-many) with digitally signed task-msg attribution.
+- **Verification:** UC-security proof in the global random-oracle model
+- **Results:** Overhead comparable to SAGA (classical cryptography) despite post-quantum primitives
+- **Why it matters:** As NIST deprecates RSA/ECDSA by 2030, agent-to-agent authorization must migrate to quantum-resistant primitives. MAGIQ proves this is practical today with formal security guarantees
+- **Gap:** Cryptographic policy enforcement, not behavioral content verification; assumes trusted Provider
+
 ### Comparison: Deterministic vs LLM-as-Judge Runtime Checking
 
 | Mechanism | Scope | Deterministic? | Speed | Formal Verification | Production Ready |
 |-----------|-------|---------------|-------|---------------------|------------------|
 | **ZipperGen** | **Multi-agent** | ✅ Yes (coordination structure) | — | Structural induction proof | ✅ Python impl |
+| **MAGIQ** | **Multi-agent** | ✅ Yes (cryptographic) | — | UC-security (random oracle) | ⚠️ Research |
 | **ACP** | Single-agent | ✅ Yes | 739-832 ns | TLA+ (4.2B states) | ✅ Go impl |
 | **ABC / AgentAssert** | Single-agent | ✅ Mostly | <10 ms | Drift Bounds Theorem | ✅ Library |
 | **Runtime Governance** | Single-agent | ✅ Yes | Polynomial | Framework | ⚠️ Proposed |
@@ -394,9 +411,9 @@ Eight papers now provide a **cumulative, multi-method evidence base** that skill
 
 | Question | Status | Best Existing Work | What ZipperGen Changes | What Remains Open |
 |----------|--------|-------------------|----------------------|-------------------|
-| **1. Do skills affect behavior?** | ✅ Yes, empirically | **He et al. 2024** (40% swing from format), **Gloaguen et al. 2026** (50x compliance spike), **Chen et al. 2025** (Markdown Awareness correlates with instruction-following), BIV, SSL Survey, GovernSpec | ZipperGen does not directly address this, but its runtime planning extension shows LLMs can generate coordination structures that are formally guaranteed | Proving deterministic mandate from skill markdown alone — impossible without L3 enforcement |
-| **2. Static type checking?** | ✅ Yes for multi-agent | **ZipperGen** — formal well-typedness checks, deadlock-free by construction | **Closes the MPST gap:** formal global specs + deterministic local projection | Behavioral typing of LLM action content; skill-skill composition within single agent |
-| **3. Deterministic runtime?** | ✅ Yes for multi-agent | **ZipperGen** — coordination structure enforced deterministically, independent of LLM nondeterminism | **Closes the multi-agent gap:** the only paper that guarantees correct multi-agent coordination regardless of LLM stochasticity | Runtime enforcement of what LLMs do inside action blocks; blame assignment; automatic rollback |
+| **1. Do skills affect behavior?** | ✅ Yes, empirically | **He et al. 2024** (40% swing from format), **Gloaguen et al. 2026** (50x compliance spike), **Chen et al. 2025** (Markdown Awareness correlates with instruction-following), **SkillVetBench 2026** (zero FN on 78 malicious skills; instruction-layer attacks missed by code scanners), BIV, SSL Survey, GovernSpec | ZipperGen does not directly address this, but its runtime planning extension shows LLMs can generate coordination structures that are formally guaranteed | Proving deterministic mandate from skill markdown alone — impossible without L3 enforcement |
+| **2. Static type checking?** | ✅ Yes for multi-agent | **ZipperGen** — formal well-typedness checks, deadlock-free by construction; **SkillVetBench** — semantic static evaluation at instruction layer (SARS score) | **Closes the MPST gap:** formal global specs + deterministic local projection | Behavioral typing of LLM action content; skill-skill composition within single agent |
+| **3. Deterministic runtime?** | ✅ Yes for multi-agent | **ZipperGen** — coordination structure enforced deterministically; **MAGIQ** — cryptographic policy enforcement with UC-security proofs; **ACP** — sub-microsecond admission control | **Closes the multi-agent gap:** formal coordination + cryptographic identity and policy enforcement | Runtime enforcement of what LLMs do inside action blocks; blame assignment; automatic rollback; **real-world capability gap (ALE: 2.6% pass rate on professional tasks)** |
 
 ### The Three Questions — Layer Mapping
 

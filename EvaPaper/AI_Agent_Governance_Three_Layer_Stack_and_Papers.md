@@ -73,6 +73,33 @@ The June 14 scout adds eight items across all three search targets — new bench
 
 **Interpretation:** the June 14 additions show that the governance landscape is maturing across all three layers simultaneously. At Layer 0, we now have both Skill Trust and Lifecycle Governance Frameworks (provenance-based trust tiers) and Web Skills Protocol (distributed discovery). At Layer 1, we have OWASP MCP security guidance, MITRE ATLAS agentic techniques, and NIST compliance overlays. At Layer 2, we have EmbodiedGovBench (governance as a first-class evaluation target) and reprobe-audit (benchmark credibility verification). The Agent Security Harness provides cross-layer testing infrastructure. Together, these represent the most significant single-week expansion of the governance evidence base since the baseline was established.
 
+### June 20, 2026 scout addendum: three newly surfaced papers
+
+The June 20 scout adds three papers that advance the stack across **semantic skill evaluation**, **real-world capability benchmarking**, and **post-quantum cryptographic governance**:
+
+1. **SkillVetBench** (`arXiv:2606.00925` / `arXiv:2606.15899`)
+   - LLM-as-Judge security evaluation for open-source agent skills with SARS (Skill Agentic Risk Score): five-dimensional metric (IFR, DG, AI, BR, CA) weighted for instruction-following systems, plus full CVSS v4.0 vector decomposition
+   - Evaluated 1,200 skills on a live Hugging Face leaderboard; zero false negatives on 78 confirmed-malicious skills, zero false positives on 22 benign controls
+   - Conventional static tools miss 89–100% of instruction-layer threats (prompt injection, memory poisoning); detection rate varies 35–95% across LLM evaluators, motivating ensemble scoring
+   - Most relevant to **Layer 0 + Layer 2**
+   - Why it matters: code-level scanners are structurally blind to instruction-layer attacks. SkillVetBench closes the semantic gap by evaluating what skills *declare* they will do, not just what code they contain. The SARS score is the first agentic-specific risk metric designed for skill marketplaces.
+
+2. **Agents' Last Exam (ALE)** (`arXiv:2606.05405`)
+   - UC Berkeley RDI / Dawn Song group. 250+ industry experts, 1,490 task instances across 55 subfields and 13 industry clusters, grounded in O*NET / SOC 2018 occupational taxonomy
+   - Evaluates Generalist Computer-Use Agents (GCUA) on real professional workflows with deterministic deliverable-based scoring. Three tiers: Near-Term (67 tasks, ~40% pass), Full-Spectrum (55 tasks), Last-Exam (38 tasks, 2.6% pass)
+   - Codex + GPT-5.5 scores 0% on Last-Exam despite 82% on Terminal-Bench. ALE-Claw reference implementation derived from OpenClaw.
+   - Most relevant to **Layer 2 + Layer 3**
+   - Why it matters: ALE is the first benchmark to measure economically valuable, long-horizon professional work rather than synthetic tasks. The 2.6% Last-Exam pass rate is a critical reality check: benchmark saturation elsewhere has not translated into professional workflow mastery. It exposes the gap between "agent can do tasks" and "agent can do GDP-relevant work."
+
+3. **MAGIQ** (`arXiv:2605.06933v2`)
+   - Post-quantum multi-agentic AI governance with provable UC-security. Policy definition and enforcement using NIST PQC standards (FIPS 203/204/205) — ML-KEM, ML-DSA, SLH-DSA.
+   - Session-based enforcement for AA-sessions (one-to-one agent communication) and CC-sessions (one-to-many orchestration). Task-msg attribution for accountability. Hash-chain policy budgets with digitally signed session-authorization tokens.
+   - Formal UC proof in the global random-oracle model. Overhead comparable to SAGA (classical cryptography) despite post-quantum primitives.
+   - Most relevant to **Layer 1 + Layer 3**
+   - Why it matters: MAGIQ is the first post-quantum-secure agent governance framework with formal security proofs. As NIST deprecates RSA/ECDSA by 2030, agent-to-agent authorization and policy enforcement must migrate to quantum-resistant primitives. MAGIQ proves this is practical today, not a future problem.
+
+**Interpretation:** the June 20 additions reveal three converging frontiers. First, **semantic evaluation** (SkillVetBench) shows that static code analysis is insufficient for skill security — the instruction layer is where attacks hide, and LLM-as-Judge ensemble scoring is the current best detection mechanism. Second, **real-world benchmarking** (ALE) quantifies the capability gap between synthetic benchmarks and professional deployment, providing a north-star metric for when agents are actually ready for GDP-relevant work. Third, **cryptographic governance** (MAGIQ) demonstrates that agent policy enforcement can be formally proved secure, even against quantum adversaries. Together, these papers span Layer 0 (SkillVetBench), Layer 1 (MAGIQ), and Layer 2/3 (ALE), confirming that agent governance research is advancing on all fronts simultaneously.
+
 ### June 12, 2026 scout addendum: two newly surfaced papers
 
 The June 12 scout adds two papers that expand the stack in different directions — one on **learning-based sequential validation** (static-time) and one on **owner-harm threat modeling** (behavioral):
@@ -725,6 +752,81 @@ This is Layer 0 (Spec-Level Governance) at the discovery and distribution level.
 **Is it a solution we're looking into?** Yes. WSP provides the decentralized discovery infrastructure that makes skill governance scalable. Rather than relying on a single registry that can be compromised, WSP lets every organization host its own skills with transparent metadata and cryptographic verification.
 
 **Recommendation reason:** Centralized skill registries are a single point of failure and a single point of attack. WSP's decentralized model — where every domain hosts its own skills with cryptographic signatures and attestation — is the only architecture that can scale to a global, trustworthy skill ecosystem.
+
+---
+
+### 53. SkillVetBench — LLM-as-Judge Security Evaluation for Agent Skills
+
+- **arXiv ID:** 2606.00925 (benchmark) / 2606.15899 (LLM-as-Judge leaderboard)
+- **URL:** https://arxiv.org/abs/2606.15899
+- **PDF:** https://arxiv.org/pdf/2606.15899
+- **Authors:** Ismail Hossain, Sai Puppala, Md Jahangir Alam, Tanzim Ahad, Sajedul Talukder (UTEP SUPREME Lab)
+- **Date:** June 14, 2026
+
+**Abstract:**
+> Open-source LLM agent ecosystems are growing rapidly, yet the security of community-contributed skills — modular tool definitions that extend agent capabilities — remains largely unvetted. The gap we fill: existing scanners operate at the code layer and are structurally blind to instruction-layer and multi-agent risk — natural-language directives that hijack an agent, exfiltrate data through encoded side channels, or chain harm across pipelines — so what is needed is a semantic, multi-dimensional vetting system rather than another signature matcher. We present SKILLVETBENCH, a live public leaderboard on Hugging Face that uses an LLM-as-Judge to vet agent skills. What is new: SARS (Skill Agentic Risk Score), a five-dimensional agentic-risk metric with a principled weighted formula for instruction-following systems. What is integrated: full CVSS v4.0 vector decomposition and a ClawHub dual-view that places our LLM-generated review beside the official marketplace verdict. What is demonstrated: drawing on our companion benchmark paper, the LLM-as-Judge stage achieves zero false negatives across 78 confirmed-malicious skills and zero false positives across 22 benign controls, while the best static baseline (SKILLSIEVE) still misses 15%; for instruction-layer categories such as Prompt Injection and Memory Poisoning, conventional tools miss between 89% and 100% of threats (e.g., CODEBERT detects none of nine memory-poisoning skills). Detection rates vary from 35% to 95% across four LLM evaluators, motivating ensemble scoring in production deployments.
+
+**Why I recommend this:**
+SkillVetBench is the **first semantic skill security evaluation system** that looks at what skills *declare* they will do, not just what code they contain. The SARS score is the first agentic-specific risk metric — it captures instruction fidelity risk, data gravity, action irreversibility, blast radius, and chain amplification in a single 0–10 score. The zero false negatives on 78 malicious skills (vs. 15% miss rate for the best static tool) proves that code-level scanning is structurally insufficient for agent security.
+
+**Relevance to our topic:**
+This is Layer 0 (Spec-Level Governance) with Layer 2 (Behavioral) measurement. It validates skills at the semantic level — reading instructions, tool declarations, and permission grants as a coherent behavioral contract. The CVSS v4.0 integration provides a standard security vocabulary; the ClawHub dual-view exposes marketplace detection gaps.
+
+**Which layer:** **Layer 0 + Layer 2**
+
+**Is it a solution we're looking into?** Yes. SkillVetBench provides the semantic evaluation layer that complements static validation (Skilldex) and contractual enforcement (GovernSpec). The SARS score should be integrated into skill marketplace admission pipelines.
+
+**Recommendation reason:** Code scanners are blind to instruction-layer attacks. SkillVetBench proves that LLM-as-Judge ensemble scoring can detect these attacks with zero false negatives, making it an essential component of any skill governance pipeline.
+
+---
+
+### 54. Agents' Last Exam (ALE) — Real-World Agent Capability Benchmark
+
+- **arXiv ID:** 2606.05405
+- **URL:** https://arxiv.org/abs/2606.05405
+- **PDF:** https://arxiv.org/pdf/2606.05405
+- **Authors:** Yiyou Sun et al. (UC Berkeley RDI / Dawn Song group, 210+ additional authors)
+- **Date:** June 3, 2026 (v1) / June 11, 2026 (v2)
+
+**Abstract:**
+> Recent AI systems have achieved strong results on a wide range of benchmarks, yet these gains have not translated into economically meaningful deployment across many professional domains. We argue that this gap is largely an evaluation problem: widely used benchmarks lack sustained performance measurement on real and economically valuable workflows. This paper introduces Agents' Last Exam (ALE), a benchmark designed to evaluate AI agents on long horizon, economically valuable, real world tasks with verifiable outcomes. Developed in collaboration with 250+ industry experts, ALE covers non-physical industries defined with reference to O*NET / SOC 2018 (the U.S. federal occupational taxonomy). It is organized around a task taxonomy with 55 sub fields grouped into 13 industry clusters covering 1K+ tasks. Current results show that the hardest tier remains far from saturated: across mainstream harness and backbone configurations, the average full pass rate is below 1%. ALE is designed as a living benchmark: its task pool grows continuously as new workflows and industries are onboarded. More broadly, ALE is intended not merely as another leaderboard, but as an instrument for closing the gap between benchmark success and GDP relevant impact.
+
+**Why I recommend this:**
+ALE is the **most serious attempt yet to evaluate AI agents on economically valuable, long-horizon, real professional work**. Unlike synthetic benchmarks (Terminal-Bench, SWE-bench) that measure narrow capabilities, ALE tests whether agents can actually do the work that humans are paid to do. The 2.6% pass rate on the hardest tier — despite Codex + GPT-5.5 scoring 82% on Terminal-Bench — is the single most important reality check in agent evaluation.
+
+**Relevance to our topic:**
+This is primarily Layer 2 (Behavioral-Level Governance) and Layer 3 (Enterprise/Policy). ALE provides the measurement infrastructure for whether agents are ready for real-world deployment. The three-tier structure (Near-Term, Full-Spectrum, Last-Exam) lets organizations choose evaluation intensity based on their risk tolerance. The ALE-Claw reference implementation (derived from OpenClaw) provides a concrete harness for testing.
+
+**Which layer:** **Layer 2 + Layer 3**
+
+**Is it a solution we're looking into?** Yes. ALE should be the benchmark of record for evaluating agent readiness for professional deployment. The 2.6% Last-Exam pass rate is the metric that matters: until agents pass this tier, claims of "agentic automation" in professional contexts are premature.
+
+**Recommendation reason:** Benchmark saturation on synthetic tasks has created a false sense of progress. ALE exposes the real capability gap — agents can solve coding puzzles but cannot complete professional workflows. This is the benchmark that keeps governance honest.
+
+---
+
+### 55. MAGIQ — Post-Quantum Multi-Agentic AI Governance
+
+- **arXiv ID:** 2605.06933v2
+- **URL:** https://arxiv.org/abs/2605.06933
+- **PDF:** https://arxiv.org/pdf/2605.06933
+- **Authors:** S. Avizeh et al.
+- **Date:** May 7, 2026 (v1) / May 18, 2026 (v2)
+
+**Abstract:**
+> Our computing ecosystem is being transformed by two emerging paradigms: the increased deployment of agentic AI systems and advancements in quantum computing. With respect to agentic AI systems, one of the most critical problems is creating secure governing architectures that ensure agents follow their owners' communication and interaction policies and can be held accountable for the messages they exchange with other agents. With respect to quantum computing, existing systems must be retrofitted and new cryptographic mechanisms must be designed to ensure long-term security and quantum resistance. In fact, NIST recommends that standard public-key cryptographic algorithms, including RSA, Diffie-Hellman (DH), and elliptic-curve constructions (ECC), be deprecated starting in 2030 and disallowed after 2035. In this paper, we present MAGIQ, a framework for policy definition and enforcement in multi-agent AI systems using novel, highly efficient, quantum-resistant cryptographic protocols with proven security guarantees. MAGIQ (i) allows users to define rich communication and access-control policy budgets for agent-to-agent sessions and tasks, including global budgets for one-to-many agent sessions; (ii) enforces such policies using post-quantum cryptographic primitives; (iii) supports session-based enforcement of policies for agent-to-agent and one-to-many agent sessions; and (iv) provides accountability of agents to their users through message attribution. We formally model and prove the correctness and security of the system using the Universal Composability (UC) framework. We evaluate the computation and communication overhead of our framework and compare it with the state-of-the-art agentic AI framework SAGA. MAGIQ is a first step toward post-quantum-secure solutions for agentic AI systems.
+
+**Why I recommend this:**
+MAGIQ is the **first post-quantum-secure agent governance framework with formal UC-security proofs**. It replaces classical cryptography (RSA, ECDSA, EdDSA, DH, ECDH) with NIST-standardized post-quantum primitives (ML-KEM, ML-DSA, SLH-DSA) and proves security in the Universal Composability framework. The session-based enforcement (AA-sessions for one-to-one, CC-sessions for one-to-many) with hash-chain policy budgets and digitally signed session-authorization tokens provides a rigorous cryptographic foundation for agent policy enforcement.
+
+**Relevance to our topic:**
+This is Layer 1 (Runtime-Level Governance) with Layer 3 (Policy/Cryptographic). MAGIQ provides the cryptographic infrastructure that underpins trust in multi-agent systems: agents can prove their identity, enforce policy budgets, and attribute messages — all with quantum-resistant security. The overhead is comparable to SAGA (which uses classical cryptography), proving that post-quantum security is practical today.
+
+**Which layer:** **Layer 1 + Layer 3**
+
+**Is it a solution we're looking into?** Yes. As NIST deprecates classical public-key algorithms by 2030, any long-lived agent governance infrastructure must be post-quantum. MAGIQ provides the cryptographic foundation for agent identity, authorization, and policy enforcement in a quantum-safe manner.
+
+**Recommendation reason:** Agent governance without cryptographic foundations is just policy. MAGIQ proves that policy enforcement can be formally secure, even against quantum adversaries. This is the infrastructure layer that makes agent governance trustworthy at scale.
 
 ---
 
