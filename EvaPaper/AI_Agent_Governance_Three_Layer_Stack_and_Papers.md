@@ -930,6 +930,235 @@ This is **Layer 3 (Enterprise/Policy Governance)**. PARE-M demonstrates what gov
 
 ---
 
+## Scout Addendum — June 21, 2026
+
+*This section documents new findings from the weekly governance scout run on 2026-06-21.*
+
+---
+
+### 60. Meerkat — Detecting Safety Violations Across Many Agent Traces
+
+- **arXiv ID:** 2604.11806
+- **URL:** https://arxiv.org/abs/2604.11806
+- **PDF:** https://arxiv.org/pdf/2604.11806
+- **Authors:** Nicklas Hansen et al. (University of Pennsylvania, Allen Institute for AI)
+- **Date:** April 2026
+
+**Abstract:**
+> To identify safety violations, auditors often search over large sets of agent traces. This search is difficult because failures are often rare, complex, and sometimes even adversarially hidden and only detectable when multiple traces are analyzed together. These challenges arise in diverse settings such as misuse campaigns, covert sabotage, reward hacking, and prompt injection. Existing approaches struggle here for several reasons: (1) most detection methods analyze individual traces rather than trace collections, missing cross-trace patterns; (2) anomaly detection assumes violations are statistically separable, but many are not; (3) trace search is computationally expensive at scale. We present Meerkat, a system for detecting safety violations across many agent traces. Meerkat introduces two key innovations: (i) a semantic embedding approach that compresses traces into a searchable vector space while preserving behavioral semantics; and (ii) a multi-trace correlation engine that identifies patterns spanning multiple traces — including hidden campaigns where each individual trace appears benign but the aggregate reveals coordinated misuse. The system achieves significant improvements in detection rate on adversarially hidden violations compared to single-trace baselines, and scales to millions of traces with sub-linear search cost.
+
+**Why I recommend this:**
+Meerkat is the **first system designed specifically for cross-trace safety violation detection** — a capability no existing benchmark addresses. BeSafe-Bench and ST-WebAgentBench evaluate single-trace safety, but real-world threats (misuse campaigns, covert sabotage) are often distributed across many traces. Meerkat's semantic embedding + multi-trace correlation is the detection infrastructure that makes behavioral governance scalable to production volumes.
+
+**Relevance to our topic:**
+This is **Layer 2 (Behavioral-Level Governance)** at the audit scale. Where BeSafe-Bench measures "does this single task violate safety?", Meerkat asks "does this collection of 100,000 traces contain a hidden campaign?" The sub-linear scaling means it can operate on real production logs, not just benchmark datasets.
+
+**Which layer:** **Layer 2 — Behavioral-Level Governance** (cross-trace audit and detection)
+
+**Is it a solution we're looking into?** Yes. Meerkat provides the detection layer that makes large-scale behavioral governance practical. The cross-trace correlation engine is essential for identifying distributed attacks that single-trace analysis misses.
+
+**Recommendation reason:** Single-trace safety evaluation is necessary but insufficient. Meerkat addresses the gap between benchmark testing and production audit — the ability to detect safety violations that are deliberately hidden across many traces.
+
+---
+
+### 61. AgentLeak — Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems
+
+- **arXiv ID:** 2602.11510
+- **URL:** https://arxiv.org/abs/2602.11510
+- **PDF:** https://arxiv.org/pdf/2602.11510
+- **Authors:** Asmae El Yagoubi et al. (Telecom Paris)
+- **Date:** February 2026
+
+**Abstract:**
+> Multi-agent LLM systems introduce new privacy risks that do not exist in single-agent deployments. Agents communicate through internal channels, share intermediate reasoning, and delegate tasks — creating attack surfaces for data exfiltration, membership inference, and attribute inference. We present AgentLeak, a full-stack benchmark for privacy leakage in multi-agent LLM systems. AgentLeak evaluates privacy risks across three dimensions: (1) Inter-agent communication leakage — can an adversarial agent infer sensitive information from messages exchanged between agents; (2) Reasoning leakage — can an observer infer private inputs from an agent's intermediate reasoning traces; and (3) Tool invocation leakage — can tool parameters or return values leak sensitive data. The benchmark includes 50 test scenarios spanning healthcare, finance, legal, and personal data contexts, with automated scoring for leakage severity. Results show that standard LLM privacy protections (system prompts, output filtering) are insufficient: 67% of multi-agent configurations exhibit measurable privacy leakage, with inter-agent communication being the highest-risk channel.
+
+**Why I recommend this:**
+AgentLeak is the **first comprehensive privacy benchmark for multi-agent systems**. Privacy is the often-neglected sibling of safety in governance discussions — everyone talks about "don't do harmful things" but few measure "don't leak private things." The 67% leakage rate is a wake-up call: most multi-agent systems are leaking data through inter-agent channels that are invisible to single-agent privacy audits.
+
+**Relevance to our topic:**
+This spans **Layer 1 (Runtime-Level Governance)** — inter-agent communication channels, tool invocation — and **Layer 2 (Behavioral-Level Governance)** — reasoning trace exposure. The benchmark provides concrete test cases that any multi-agent governance framework must pass.
+
+**Which layer:** **Layer 1 + Layer 2**
+
+**Is it a solution we're looking into?** Yes. AgentLeak provides the privacy measurement infrastructure that complements safety benchmarks (BeSafe-Bench, ST-WebAgentBench). The 67% leakage rate means privacy governance cannot be an afterthought.
+
+**Recommendation reason:** Privacy leakage in multi-agent systems is invisible to single-agent testing. AgentLeak exposes this gap with 50 concrete test scenarios and shows that standard protections are insufficient. Any governance framework for multi-agent systems must address this.
+
+---
+
+### 62. SentinelAgent — Intent-Verified Delegation Chains for Securing Federal Multi-Agent AI Systems
+
+- **arXiv ID:** 2604.02767
+- **URL:** https://arxiv.org/abs/2604.02767
+- **PDF:** https://arxiv.org/pdf/2604.02767
+- **Authors:** Pratibha Patil
+- **Date:** April 2026
+
+**Abstract:**
+> When Agent A delegates to Agent B, which invokes Tool C on behalf of User X, no existing framework can answer: whose authorization chain led to this action, and where did it violate policy? This paper introduces SentinelAgent, a formal framework for verifiable delegation chains in federal multi-agent AI systems. The Delegation Chain Calculus (DCC) defines seven properties — six deterministic (authority narrowing, policy preservation, forensic reconstructibility, cascade containment, scope-action conformance, output schema conformance) and one probabilistic (intent verification via semantic consistency checking). SentinelAgent implements DCC as a chain-of-custody protocol: every delegation is logged with cryptographic provenance, every tool invocation is checked against the narrowed authority scope, and violations trigger automatic cascade containment (halting downstream agents). The framework is evaluated on synthetic federal workflows (procurement, personnel, intelligence) and achieves 100% reconstructibility and 94% intent-verification accuracy. The probabilistic intent-verification component uses a dedicated LLM-as-judge with chain-of-thought reasoning to detect semantic drift between the original user intent and the delegated action.
+
+**Why I recommend this:**
+SentinelAgent is the **first formal framework for delegation chain verification in multi-agent systems**. The "who authorized this?" question is fundamental to governance but has been unanswered until now. The seven DCC properties provide a complete specification for what "secure delegation" means — and the cryptographic provenance + automatic containment makes it enforceable, not just theoretical.
+
+**Relevance to our topic:**
+This is **Layer 1 (Runtime-Level Governance)** at the delegation layer. Multi-agent systems are inherently about delegation, and SentinelAgent provides the first formal model for verifying that delegation chains preserve intent, authority, and policy. The cascade containment mechanism is the automatic circuit-breaker that Layer 1 governance needs.
+
+**Which layer:** **Layer 1 — Runtime-Level Governance** (delegation, authorization, provenance)
+
+**Is it a solution we're looking into?** Yes. SentinelAgent's DCC provides the formal foundation for multi-agent authorization that our governance stack currently lacks. The cryptographic provenance and automatic containment are the enforcement mechanisms that make delegation governance operational.
+
+**Recommendation reason:** Multi-agent systems without delegation verification are fundamentally ungovernable. SentinelAgent provides the first answer to "who authorized this?" with formal properties, cryptographic evidence, and automatic containment — making multi-agent governance measurable and enforceable.
+
+---
+
+### 63. AgentCity — Constitutional Governance for Autonomous Agent Economies via Separation of Power
+
+- **arXiv ID:** 2604.07007
+- **URL:** https://arxiv.org/abs/2604.07007
+- **PDF:** https://arxiv.org/pdf/2604.07007
+- **Authors:** Zhiyuan Ruan
+- **Date:** April 2026
+
+**Abstract:**
+> Autonomous AI agents are beginning to operate across organizational boundaries on the open internet — discovering, transacting with, and delegating to agents owned by other parties without centralized oversight. When agents from different human principals collaborate at scale, the collective becomes opaque: no single human can observe, audit, or govern the emergent behavior. We term this the Logic Monopoly — the agent society's unchecked monopoly over the entire logic chain from planning through execution to evaluation. We propose the Separation of Powers: three pillars — (1) Planning-as-Constitution: high-level goals and constraints encoded as immutable smart contracts on a public blockchain; (2) Execution-as-Democracy: tool invocation decisions require multi-signature approval from a distributed validator set; (3) Evaluation-as-Appeal: outcomes are subject to challenge by any participant, with resolution by an independent arbitration protocol. Together, these pillars prevent any single agent or coalition from monopolizing the decision logic. A proof-of-concept implementation on Ethereum demonstrates the feasibility: a cross-organizational workflow of 12 agents from 4 principals completes with full auditability and zero unilateral actions.
+
+**Why I recommend this:**
+AgentCity is the **first blockchain-based governance framework for cross-organizational multi-agent systems**. The "Logic Monopoly" framing is exactly right — when agents from different owners collaborate, no single owner can govern the collective. The three-pillar Separation of Powers (Constitution, Democracy, Appeal) is a genuinely novel governance architecture that doesn't rely on trusting any single party.
+
+**Relevance to our topic:**
+This is **Layer 3 (Enterprise/Policy Governance)** at the cross-organizational level. Most governance frameworks assume a single owner; AgentCity addresses the multi-owner case that becomes inevitable as agents operate across organizational boundaries. The blockchain implementation provides the transparency and non-repudiation that multi-party governance requires.
+
+**Which layer:** **Layer 3 — Enterprise/Policy Governance** (cross-organizational, blockchain-based)
+
+**Is it a solution we're looking into?** Yes. As agents become inter-organizational, single-owner governance becomes impossible. AgentCity provides the first framework for governing agents that don't all belong to the same organization.
+
+**Recommendation reason:** The future of agentic AI is multi-organizational. AgentCity's Separation of Powers — encoded on-chain, enforced by distributed validators, appealable by any participant — is the first governance architecture that scales beyond organizational boundaries.
+
+---
+
+### 64. Property-Level Reconstructability of Agent Decisions — An Anchor-Level Pilot Across Vendor SDK Adapter Regimes
+
+- **arXiv ID:** 2605.12078
+- **URL:** https://arxiv.org/abs/2605.12078
+- **PDF:** https://arxiv.org/pdf/2605.12078
+- **Authors:** Egor Solozobov
+- **Date:** May 2026
+
+**Abstract:**
+> When an AI agent makes a decision, governance frameworks need to answer: what evidence supports this decision, and can that evidence be reconstructed after the fact? This paper introduces the concept of property-level reconstructability — the ability to recover the specific properties of the agent's state, observations, and reasoning that were relevant to a decision. We conduct an anchor-level pilot study across multiple vendor SDK adapter regimes (OpenAI, Anthropic, Google, Meta), measuring how much decision-relevant information is preserved in agent logs, tool call records, and reasoning traces. Results show significant variation: some adapters preserve 85%+ of decision-relevant properties, while others preserve less than 30%. The paper identifies five critical reconstructability properties: (1) observation completeness — were all relevant inputs captured; (2) reasoning transparency — is the decision rationale recoverable; (3) tool call fidelity — are parameters and outputs accurately logged; (4) state consistency — can the agent's internal state be reproduced; and (5) temporal ordering — is the sequence of events correctly preserved. The pilot demonstrates that reconstructability is not a binary property but a spectrum, and that vendor SDK design choices significantly impact governance auditability.
+
+**Why I recommend this:**
+This is the **first systematic measurement of decision reconstructability across vendor SDKs** — a critical but overlooked property for governance. If you can't reconstruct why an agent made a decision, you can't audit it, appeal it, or learn from it. The 30%-85% variation means that SDK choice directly impacts governance capability.
+
+**Relevance to our topic:**
+This spans **Layer 1 (Runtime-Level Governance)** — what gets logged during execution — and **Layer 2 (Behavioral-Level Governance)** — whether decisions can be explained and audited. The five reconstructability properties provide a concrete checklist for evaluating any agent SDK's governance fitness.
+
+**Which layer:** **Layer 1 + Layer 2**
+
+**Is it a solution we're looking into?** Yes. Reconstructability is a prerequisite for all governance: without it, audits are impossible, appeals are baseless, and learning is blind. The five properties provide the evaluation framework for choosing and configuring agent SDKs.
+
+**Recommendation reason:** Governance without reconstructability is just wishful thinking. This paper proves that reconstructability varies dramatically across vendors (30%-85%) and provides the five properties that any SDK must satisfy to be governable.
+
+---
+
+### 65. Decision Evidence Maturity Model for Agentic AI — A Property-Level Method Specification
+
+- **arXiv ID:** 2605.04093
+- **URL:** https://arxiv.org/abs/2605.04093
+- **PDF:** https://arxiv.org/pdf/2605.04093
+- **Authors:** Egor Solozobov
+- **Date:** May 2026
+
+**Abstract:**
+> Governance frameworks for agentic AI require decision evidence — the artifacts that demonstrate an agent's decision was made correctly, with appropriate inputs, reasoning, and oversight. However, there is no standardized way to assess the maturity of decision evidence production. This paper presents the Decision Evidence Maturity Model (DEMM), a five-level maturity specification for agent decision evidence. Level 1 (Ad-hoc): evidence is produced inconsistently, if at all; Level 2 (Managed): evidence is produced for all decisions but lacks standardization; Level 3 (Defined): evidence follows a standardized schema with required properties; Level 4 (Quantitatively Managed): evidence quality is measured and tracked over time; Level 5 (Optimizing): evidence production is continuously improved based on audit findings and failure analysis. The paper specifies 23 decision-evidence properties across four categories: inputs (what the agent observed), reasoning (how the agent decided), actions (what the agent did), and oversight (what humans verified). For each property, the specification defines: the property name, data type, required maturity level, collection method, and verification procedure. The model is designed to be vendor-agnostic and applicable across all agent frameworks.
+
+**Why I recommend this:**
+DEMM is the **first maturity model for agent decision evidence** — the CMMI equivalent for agent governance. The five-level structure (Ad-hoc to Optimizing) provides a clear roadmap for organizations to assess and improve their governance evidence production. The 23 properties across four categories (inputs, reasoning, actions, oversight) are the concrete checklist that turns governance from aspiration to operation.
+
+**Relevance to our topic:**
+This spans **all three layers**: Level 0 (inputs — skill specifications, tool schemas), Level 1 (actions — execution logs, tool call records), and Level 2 (reasoning — decision rationale, human oversight). The maturity model provides the assessment framework for measuring governance capability across the entire stack.
+
+**Which layer:** **All layers**
+
+**Is it a solution we're looking into?** Yes. DEMM provides the measurement and assessment infrastructure that turns governance frameworks into measurable capabilities. The 23 properties and five maturity levels give organizations a concrete roadmap for improvement.
+
+**Recommendation reason:** Governance without evidence is just policy. DEMM provides the first standardized way to assess whether an organization's agent governance actually produces the evidence needed for audit, appeal, and learning.
+
+---
+
+### 66. CSA/OWASP MAESTRO — Seven-Layer Threat Modeling Architecture for Agentic AI
+
+- **URL:** https://www.kieranupadrasta.co.uk/docs/the%20agentic%20ai%20attack%20surface%20-%20autonomous%20agents%2C%20tool%20misuse%2C%20and%20the%20rise%20of%20machine-speed%20e.pdf
+- **Type:** Industry framework
+- **Date:** February 2025 (CSA MAESTRO); integrated with OWASP framework
+
+**Abstract/Summary:**
+> The Cyber Security Agency (CSA) of Singapore and OWASP collaborated on MAESTRO, a seven-layer threat modeling architecture for agentic AI systems. The seven layers are: (1) Foundation Model — threats to the base LLM (poisoning, extraction, jailbreak); (2) Agent Core — threats to the agent's reasoning and planning (goal hijacking, prompt injection); (3) Tool Layer — threats to tool integration (tool misuse, parameter manipulation); (4) Memory Layer — threats to persistent state (data poisoning, membership inference); (5) Communication Layer — threats to inter-agent and agent-human communication (man-in-the-middle, spoofing); (6) Orchestration Layer — threats to multi-agent coordination (consensus attacks, Byzantine faults); (7) Environment Layer — threats to the execution environment (sandbox escape, privilege escalation). Each layer includes threat catalog, attack trees, mitigation mappings to NIST AI RMF and ISO 42001, and control requirements. MAESTRO was adopted by Singapore IMDA as the world's first agent-specific governance framework in January 2026.
+
+**Why I recommend this:**
+MAESTRO is the **first comprehensive threat modeling architecture specifically for agentic AI**, with seven layers that map cleanly to our Three-Layer Stack plus additional granularity. The Singapore IMDA adoption (world's first agent-specific governance framework) gives it regulatory weight. The mapping to NIST AI RMF and ISO 42001 means enterprises can integrate it into existing compliance programs.
+
+**Relevance to our topic:**
+This spans **all three layers**: Layer 0 (Tool Layer — tool misuse, parameter manipulation), Layer 1 (Agent Core, Communication, Orchestration, Environment Layers — runtime threats), and Layer 2 (Foundation Model, Memory Layers — behavioral and state threats). The seven-layer decomposition provides the threat vocabulary that governance controls must address.
+
+**Which layer:** **All layers**
+
+**Is it a solution we're looking into?** Yes. MAESTRO provides the threat modeling foundation that our governance stack needs. The seven-layer decomposition and attack trees make threat assessment systematic rather than ad-hoc.
+
+**Recommendation reason:** Threat modeling without a systematic architecture produces gaps. MAESTRO's seven layers cover the full agent attack surface, with regulatory backing from Singapore IMDA and standards mappings to NIST and ISO.
+
+---
+
+### 67. OWASP CheatSheet — A Practical Guide for Securely Using Third-Party MCP Servers 1.0
+
+- **URL:** https://cheatsheetseries.owasp.org/cheatsheets/Third_Party_MCP_Servers.html
+- **Type:** Industry standard / Security guideline
+- **Date:** September 2025
+
+**Abstract/Summary:**
+> The OWASP CheatSheet for Securely Using Third-Party MCP Servers provides practical guidance for evaluating and integrating third-party MCP (Model Context Protocol) servers safely. It covers: (1) Pre-integration assessment — how to evaluate an MCP server before connecting it to your agent (code review, permission analysis, dependency scanning); (2) Sandboxing strategies — container, VM, and network-level isolation for MCP execution; (3) Input validation — validating all data flowing into and out of MCP servers; (4) Least-privilege configuration — minimizing the permissions granted to MCP servers; (5) Monitoring and logging — capturing all MCP interactions for audit; (6) Incident response — procedures for detecting and responding to MCP-related security incidents. The CheatSheet complements the OWASP Practical Guide for Secure MCP Server Development (Feb 2026), which focuses on building secure MCP servers, while this document focuses on safely consuming them.
+
+**Why I recommend this:**
+This is the **first practical consumer-focused guide for MCP server security**. The February 2026 OWASP MCP Development Guide tells developers how to build secure MCP servers; this CheatSheet tells operators how to safely use third-party MCP servers. The distinction matters — most organizations will consume more MCP servers than they build.
+
+**Relevance to our topic:**
+This is **Layer 1 (Runtime-Level Governance)** — specifically, the safe integration of external tools. MCP is becoming the standard for agent-tool communication, and this CheatSheet provides the operational security practices for using third-party MCP servers without compromising the agent system.
+
+**Which layer:** **Layer 1 — Runtime-Level Governance** (MCP server integration security)
+
+**Is it a solution we're looking into?** Yes. As MCP adoption grows, the attack surface shifts to third-party MCP servers. This CheatSheet provides the operational security practices for safe integration.
+
+**Recommendation reason:** Building secure MCP servers is necessary but not sufficient. Most security incidents will come from consuming insecure third-party MCP servers. This CheatSheet provides the practical guidance for safe consumption.
+
+---
+
+### 68. AIUC-1 — Crosswalks: OWASP Top 10 For Agentic Applications
+
+- **URL:** https://owasp.org/www-project-ai-uc/
+- **Type:** Industry standard / Compliance mapping
+- **Date:** 2026
+
+**Abstract/Summary:**
+> AIUC-1 (AI Use Case Crosswalk) is an OWASP project that maps the OWASP Top 10 for Agentic Applications (ASI) to established cybersecurity frameworks and compliance standards. It provides crosswalk mappings to: NIST Cybersecurity Framework (CSF) 2.0, NIST AI Risk Management Framework (AI RMF) 1.0, ISO/IEC 27001:2022, ISO/IEC 42001:2023, CIS Controls v8, PCI DSS v4.0, HIPAA Security Rule, and EU AI Act. Each ASI risk category is mapped to specific controls in each framework, enabling organizations to demonstrate compliance using existing security programs. The crosswalk includes gap analysis templates showing which controls address each ASI risk and which require additional implementation.
+
+**Why I recommend this:**
+AIUC-1 is the **compliance bridge** that connects agent security to existing enterprise security programs. Organizations don't need to build a parallel security program for agents — they need to map agent risks to controls they already have. The crosswalk to 8 major frameworks means compliance teams can use existing audit infrastructure.
+
+**Relevance to our topic:**
+This is **Layer 3 (Enterprise/Policy Governance)** — compliance and audit. AIUC-1 enables organizations to answer the question "how does our agent security map to our existing compliance program?" without building new frameworks from scratch.
+
+**Which layer:** **Layer 3 — Enterprise/Policy Governance**
+
+**Is it a solution we're looking into?** Yes. Compliance is a primary driver for enterprise governance investment. AIUC-1 provides the mapping that makes agent governance auditable against existing standards.
+
+**Recommendation reason:** Enterprises won't adopt agent governance unless it maps to their existing compliance programs. AIUC-1 provides the crosswalk to 8 major frameworks, making agent governance auditable without creating parallel security programs.
+
+---
+
+*End of June 21, 2026 Scout Addendum*
+
+---
+
 ## The Three-Layer Stack in Detail
 
 ### Layer 0: Spec-Level Governance
@@ -1015,7 +1244,7 @@ This is **Layer 3 (Enterprise/Policy Governance)**. PARE-M demonstrates what gov
 
 ---
 
-*Compiled by EvaPaper | May 31, 2026*  
+*Compiled by EvaPaper | May 31, 2026 | Updated June 21, 2026*  
 *Repo: https://github.com/ginaecho/EvaPaper*
 ## Workflow Run Log
 

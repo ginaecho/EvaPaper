@@ -1,7 +1,7 @@
 # Agent Governance Scout Log
 # Baseline of known papers, products, and frameworks
 # Created: 2026-06-13
-# Last updated: 2026-06-13
+# Last updated: 2026-06-21
 
 ## Papers
 
@@ -27,6 +27,14 @@
 ### June 13, 2026 Additions
 - TRACES | 2605.27690 | https://arxiv.org/abs/2605.27690
 
+### June 21, 2026 Additions
+- Meerkat: Detecting Safety Violations Across Many Agent Traces | 2604.11806 | https://arxiv.org/abs/2604.11806
+- AgentLeak: Full-Stack Privacy Leakage Benchmark | 2602.11510 | https://arxiv.org/abs/2602.11510
+- SentinelAgent: Intent-Verified Delegation Chains | 2604.02767 | https://arxiv.org/abs/2604.02767
+- AgentCity: Constitutional Governance via Separation of Power | 2604.07007 | https://arxiv.org/abs/2604.07007
+- Property-Level Reconstructability of Agent Decisions | 2605.12078 | https://arxiv.org/abs/2605.12078
+- Decision Evidence Maturity Model for Agentic AI | 2605.04093 | https://arxiv.org/abs/2605.04093
+
 ## Products / Frameworks
 
 - OWASP Top 10 for Agentic Applications (2026)
@@ -41,12 +49,24 @@
 - reprobe-audit — IEEE Big Data 2026 benchmark disclosure schema
 - Agent Security Harness — 474-test security scanner (red-team-blue-team-agent-fabric)
 - Web Skills Protocol (WSP) — March 2026 draft spec
+- CSA/OWASP MAESTRO — seven-layer threat modeling architecture
+- OWASP CheatSheet: Securely Using Third-Party MCP Servers 1.0 (Sep 2025)
+- AIUC-1: Crosswalks OWASP Top 10 For Agentic Applications
+- AI Security Solutions Landscape for Agentic AI Q2 2026
+- State of Agentic AI Security and Governance 2.01
 
 ### June 14, 2026 Additions
 - EmbodiedGovBench | 2604.11174 | https://arxiv.org/abs/2604.11174
 - Agent Skills for LLMs | 2602.12430 | https://arxiv.org/abs/2602.12430
 
 ## Scout Run History
+
+### 2026-06-21
+- Searches: 3 targeted queries executed
+- New findings: 6 papers, 5 frameworks/products
+  Papers: Meerkat, AgentLeak, SentinelAgent, AgentCity, Property-Level Reconstructability, Decision Evidence Maturity Model
+  Frameworks: CSA/OWASP MAESTRO, OWASP MCP CheatSheet, AIUC-1, AI Security Solutions Landscape Q2 2026, State of Agentic AI Security and Governance 2.01
+- Status: scout log updated, report updated, pushed to git
 
 ### 2026-06-14
 - Searches: 3 targeted queries executed
