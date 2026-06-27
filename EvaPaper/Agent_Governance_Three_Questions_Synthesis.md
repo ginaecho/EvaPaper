@@ -495,6 +495,22 @@ Nine papers now provide a **cumulative, multi-method evidence base** that skill 
 - **Why it matters:** Concrete demonstration of why Layer 2 (behavioral) governance is necessary — single-step runtime checks cannot detect coordinated multi-step attacks
 - **Gap:** Attack demonstration — defense mechanisms not proposed
 
+#### 37. **MOM-GS-MAS — Meta-Governance of Autonomous AI Agents** (AMCIS 2026, Layer 1+3) — *added June 28*
+- **Deterministic:** Production system — yes, with measured enforcement latency
+- **Mechanism:** 16 specialized AI governance agents deployed across four SAGS pillars (Safety, Alignment, Governance, Security) to autonomously monitor, evaluate, and intervene in operational multi-agent fleets
+- **Results:** Sub-100ms policy enforcement, >97% attack detection across 5 adversarial vectors, >99% policy compliance at 1,000-agent fleet scale
+- **Key finding:** AI-driven governance of AI agents is feasible at production scale; Policy-as-Code framework enables dynamic real-time oversight
+- **Why it matters:** First production-scale evidence that AI-driven governance of AI agents is feasible. Moves governance from static policy documents to dynamic real-time oversight
+- **Gap:** Enterprise-specific; requires fleet-scale infrastructure
+
+#### 38. **NVIDIA Verified Agent Skills / SkillSpector** (2025, Layer 0+1) — *added June 28*
+- **Deterministic:** Yes — scanning and verification pipeline
+- **Mechanism:** SkillSpector checks conventional software risks (vulnerable dependencies, suspicious scripts, credential access) AND agent-specific risks (hidden instructions, prompt injection, trigger abuse, excessive agency, tool poisoning, intent-behavior mismatches). Cryptographic signing via OpenSSF Model Signing (OMS) enables post-download verification
+- **Results:** First major vendor framework treating agent skills as deployable artifacts requiring supply-chain rigor
+- **Key finding:** Skills need security validation before execution, not just documentation; scanning + signing + provenance is the necessary foundation
+- **Why it matters:** Addresses the gap between "skills are just documentation" and "skills need security validation before execution." Treats agent skills with the same supply-chain rigor as software packages
+- **Gap:** Vendor-specific (NVIDIA ecosystem); requires vendor adoption for broader impact
+
 | Mechanism | Scope | Deterministic? | Speed | Formal Verification | Production Ready |
 |-----------|-------|---------------|-------|---------------------|------------------|
 | **ZipperGen** | **Multi-agent** | ✅ Yes (coordination structure) | — | Structural induction proof | ✅ Python impl |
