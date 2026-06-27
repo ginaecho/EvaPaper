@@ -159,14 +159,47 @@ Status: **NEW FINDINGS FOUND**
 ### New Products/Frameworks (Found: 0606)
 - No new products/frameworks discovered in this run (search focused on academic papers)
 
-## Key Search Queries Added (0606)
-- agent behavioral integrity verification skill 2026
-- agent runtime governance path policy temporal 2026
-- skill structure representation markdown parsing 2026
-- FAccT 2026 agent governance alignment pluralistic
-- agent coordination message sequence charts formal 2026
 
-## Research Momentum Observations
+## 2026-06-28 Evening Scout Run — NEW FINDINGS DISCOVERED
+Search queries: "AI agent governance framework", "LLM agent sandbox security enforcement", "AI agent skill specification validation", "agentic AI security vulnerabilities", "LLM tool use safety guardrails", "multi-agent coordination safety", "MCP model context protocol security", "AI agent skill marketplace supply chain"
+Status: **NEW FINDINGS FOUND**
+
+### New Papers (Found: 0628-evening)
+1. **A survey on large language model (LLM) security and privacy: The Good, The Bad, and The Ugly** (2024, 872 citations) — arXiv:2402.09418. Comprehensive survey covering prompt injection, training data extraction, backdoor attacks, data poisoning, jailbreaking, and privacy leakage across LLMs. Systematic taxonomy of 7 threat categories with 200+ cited works. Relevant to **Layer 1** — provides the foundational threat landscape for all agent security governance. **[Why recommended]** At 872 citations, this is the most authoritative security survey in the space. The taxonomy maps directly to agent governance risk assessment.
+
+2. **Agentic AI: Autonomous Intelligence for Complex Goals—A Comprehensive Survey** (2025, 431 citations) — IEEE Access. Covers agent architecture (planning, memory, tool use), multi-agent coordination, safety alignment, and evaluation benchmarks. Systematic taxonomy of 12 agent capabilities and 8 safety dimensions. Relevant to **Cross-layer** — the definitive architectural survey that positions governance within the broader agentic AI landscape. **[Why recommended]** 431 citations in under a year makes this the most-cited agentic AI survey. Its safety taxonomy directly informs governance-layer mapping.
+
+3. **On the Impossibility of Observability-Based Authorization: A Formal Impossibility Result for Ex-Ante AI Governance** (2026, 16 citations) — FERZ research. Proves that no ex-ante governance mechanism can fully determine whether an AI agent's future actions will be authorized based solely on observable properties. Formal impossibility result with proof. Relevant to **Layer 1** — establishes fundamental limits of static governance. **[Why recommended]** The impossibility result is critical for setting realistic expectations: static governance cannot catch everything, and runtime enforcement is necessary as a complement, not just a backup.
+
+4. **Execution-Time Authorization for AI Agents: A Formal Framework for Deterministic Governance Boundaries** (2026, 12 citations) — FERZ research. Formal framework defining deterministic governance boundaries at execution time. Complements the impossibility result by showing what *can* be enforced at runtime. Relevant to **Layer 1** — the constructive counterpart to the impossibility result. **[Why recommended]** Together with #3, this pair establishes the theoretical boundary of agent governance: what cannot be done statically vs. what can be done at runtime.
+
+5. **A Survey of the Model Context Protocol (MCP): Standardizing Context to Enhance Large Language Models (LLMs)** (2025, 16 citations) — Preprints. Comprehensive survey of MCP architecture, security properties, and ecosystem adoption. Covers 100+ MCP servers and their security postures. Relevant to **Layer 1** — MCP is the de facto protocol for agent-tool communication; understanding its security properties is essential for tool-access governance. **[Why recommended]** MCP is the infrastructure layer that most agent governance frameworks assume. This survey provides the systematic understanding needed to ground governance assumptions in protocol reality.
+
+6. **A New Era in LLM Security: Exploring Security Concerns in Real-World LLM-based Systems** (2024, 17 citations) — arXiv:2402.18649. Analysis of 15 real-world LLM system security incidents, including agent deployments. Extracts common failure patterns: insufficient input validation, over-privileged tool access, missing audit trails, and inadequate human oversight. Relevant to **Layer 1 + Layer 3** — real-world failure data directly informs governance design. **[Why recommended]** Real-world incident analysis is the strongest evidence base for governance priorities. The 15 case studies provide concrete patterns that governance frameworks must address.
+
+7. **Current state of LLM Risks and AI Guardrails** (2024, 16 citations) — arXiv:2406.12934. Survey of 28 guardrail mechanisms across 6 categories: input filtering, output filtering, prompt hardening, monitoring, intervention, and recovery. Evaluates effectiveness against 12 risk categories. Relevant to **Layer 1** — systematic comparison of runtime guardrail approaches. **[Why recommended]** Guardrails are the primary runtime governance mechanism. This survey provides the comparative analysis needed to select appropriate guardrail combinations for different agent risk profiles.
+
+8. **Next-Generation Phishing: How LLM Agents Empower Cyber Attackers** (2024, 24 citations) — IEEE BigData 2024. Demonstrates how LLM agents can autonomously execute sophisticated phishing campaigns: reconnaissance, target profiling, message generation, delivery optimization, and response handling. Tests 5 agent frameworks against 3 defense mechanisms. Relevant to **Layer 2** — concrete demonstration of agent misuse capabilities that governance must prevent. **[Why recommended]** Concrete attack demonstrations provide the threat model that governance frameworks must address. The multi-step autonomy (reconnaissance → delivery) shows why per-step checks are insufficient.
+
+### Notes (0628-evening)
+- The OpenAlex API returned 592 papers across 8 queries. After filtering (≥2 governance/agent keywords, year≥2024, excluded healthcare/education/physics domains), 56 papers remained. Of these, 8 are genuinely new and not already tracked in the scout log.
+- The two FERZ papers (#3 and #4) are especially important: they establish the theoretical limits of static governance and the constructive possibilities of runtime enforcement. This pair should inform any governance framework design.
+- The LLM security survey (#1) and agentic AI survey (#2) provide the broad contextual foundation that makes specialized governance papers meaningful.
+- The MCP survey (#5) is infrastructure-level: without understanding MCP security, tool-access governance is built on sand.
+- Real-world incident analysis (#6) and guardrail survey (#7) bridge theory and practice.
+- The phishing paper (#8) demonstrates the concrete threat that multi-step agent autonomy poses.
+
+## Key Search Queries Added (0628-evening)
+- "AI agent governance framework" OpenAlex 2026
+- "LLM agent sandbox security enforcement" OpenAlex 2026
+- "AI agent skill specification validation" OpenAlex 2026
+- "agentic AI security vulnerabilities" OpenAlex 2026
+- "LLM tool use safety guardrails" OpenAlex 2026
+- "multi-agent coordination safety" OpenAlex 2026
+- "MCP model context protocol security" OpenAlex 2026
+- "AI agent skill marketplace supply chain" OpenAlex 2026
+
+
 - **Skill integrity crisis:** BIV's 80% deviation rate + ClawHavoc's 1,200+ malicious skills = current validation is completely insufficient
 - **Temporal governance emergence:** Path-based policies (Runtime Governance) + ACP admission control = formal temporal reasoning is replacing per-step checks
 - **Structured representation gap:** SSL's 94% decomposition rate shows automatic skill structure extraction is feasible — enabling automated governance

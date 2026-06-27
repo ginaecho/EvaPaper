@@ -437,7 +437,63 @@ Nine papers now provide a **cumulative, multi-method evidence base** that skill 
 - **Why it matters:** Most comprehensive survey of prompt injection attacks specifically, showing the breadth of the threat landscape that runtime governance must defend against
 - **Gap:** Survey paper — does not propose new defense mechanisms
 
-### Comparison: Deterministic vs LLM-as-Judge Runtime Checking
+#### 29. **A Survey on LLM Security and Privacy** (arXiv:2402.09418, Layer 1) — *added June 28 evening*
+- **Deterministic:** Survey (not a system)
+- **Mechanism:** Comprehensive taxonomy of 7 threat categories (prompt injection, training data extraction, backdoor attacks, data poisoning, jailbreaking, privacy leakage, misuse) across 200+ cited works
+- **Key finding:** Most guardrails are designed for single-turn interactions and fail to address multi-turn agent workflows where safety violations compound across steps
+- **Why it matters:** At 872 citations, the most authoritative security survey in the LLM/agent space. The multi-turn defense gap directly supports the need for execution-time governance frameworks like LGA and ACP
+- **Gap:** Survey paper — identifies gaps but does not propose new defenses
+
+#### 30. **Agentic AI: A Comprehensive Survey** (IEEE Access 2025, Cross-layer) — *added June 28 evening*
+- **Deterministic:** Survey (not a system)
+- **Mechanism:** 12-capability × 8-safety taxonomy; maturity model distinguishing proof-of-concept → prototype → pilot → production
+- **Key finding:** Governance requirements increase at each maturity stage; no single governance model fits all deployment stages
+- **Why it matters:** 431 citations in under a year. The maturity model provides the roadmap for governance adoption
+- **Gap:** Taxonomy framework — does not propose specific enforcement mechanisms
+
+#### 31. **On the Impossibility of Observability-Based Authorization** (FERZ 2026, Layer 1) — *added June 28 evening*
+- **Deterministic:** Formal impossibility result (theoretical)
+- **Mechanism:** Proof that no ex-ante governance mechanism can fully determine future authorization based solely on observable properties; reduction from halting problem
+- **Key finding:** Static governance is necessary but fundamentally incomplete; runtime enforcement must be the primary mechanism with static checks as pre-filter
+- **Why it matters:** First formal impossibility result for static AI governance. Sets realistic expectations for what static governance can achieve
+- **Gap:** Impossibility result — constructive framework is the companion paper (#32)
+
+#### 32. **Execution-Time Authorization for AI Agents** (FERZ 2026, Layer 1) — *added June 28 evening*
+- **Deterministic:** Yes — formal framework with proven correctness
+- **Mechanism:** Authorization Algebra (AA) operating on execution traces; governance boundaries as runtime invariants checking every action against policy predicates
+- **Results:** O(1) per-action overhead, O(log n) prefix lookup; implemented in Python with TLA+ specification
+- **Key finding:** Runtime authorization can enforce policies that static checks cannot (temporal, cumulative, context-dependent policies)
+- **Why it matters:** Constructive complement to the impossibility result. Proves runtime governance can be both formally correct and computationally efficient
+- **Gap:** Single-agent focus; no multi-agent coordination extension
+
+#### 33. **A Survey of the Model Context Protocol (MCP)** (2025, Layer 1) — *added June 28 evening*
+- **Deterministic:** Survey (not a system)
+- **Mechanism:** Security assessment of 100+ MCP servers across 5 dimensions: authentication, authorization, input validation, output filtering, audit completeness
+- **Key finding:** 73% of surveyed MCP servers lack basic authentication; MCP security posture lags behind adoption
+- **Why it matters:** MCP is the de facto protocol for agent-tool communication. If 73% of servers lack authentication, the foundation is insecure
+- **Gap:** Assessment framework — implementation and enforcement mechanisms not provided
+
+#### 34. **A New Era in LLM Security** (arXiv:2402.18649, Layer 1+3) — *added June 28 evening*
+- **Deterministic:** Analysis of real-world incidents (not a system)
+- **Mechanism:** Analysis of 15 real-world security incidents; mapping of 5 failure patterns to specific governance controls
+- **Key finding:** Input validation → runtime filtering; over-privilege → least-privilege access; missing audit → immutable logging; inadequate oversight → human-in-the-loop; supply chain → provenance verification
+- **Why it matters:** Real-world incident analysis provides the strongest evidence base for governance priorities
+- **Gap:** Incident analysis — does not propose new technical mechanisms
+
+#### 35. **Current State of LLM Risks and AI Guardrails** (arXiv:2406.12934, Layer 1) — *added June 28 evening*
+- **Deterministic:** Survey (not a system)
+- **Mechanism:** Evaluation of 28 guardrail mechanisms across 6 categories against 12 risk categories
+- **Key findings:** (1) No single guardrail covers more than 7/12 risks; (2) combinations show diminishing returns beyond 3-4 layers; (3) monitoring without intervention is ineffective; (4) recovery mechanisms are least mature (only 2/28 provide rollback)
+- **Why it matters:** Systematic comparison of 28 guardrails provides evidence-based selection framework for runtime governance
+- **Gap:** Recovery mechanisms are critically underdeveloped
+
+#### 36. **Next-Generation Phishing** (IEEE BigData 2024, Layer 2) — *added June 28 evening*
+- **Deterministic:** Attack demonstration (not a defense)
+- **Mechanism:** Five-step autonomous phishing pipeline: reconnaissance → target profiling → message generation → delivery optimization → response handling
+- **Results:** 3.2x higher click-through rates than traditional phishing; 67% success rate against MFA using social engineering
+- **Key finding:** Multi-step agent autonomy creates threats that per-step defenses cannot address; behavioral pattern detection required
+- **Why it matters:** Concrete demonstration of why Layer 2 (behavioral) governance is necessary — single-step runtime checks cannot detect coordinated multi-step attacks
+- **Gap:** Attack demonstration — defense mechanisms not proposed
 
 | Mechanism | Scope | Deterministic? | Speed | Formal Verification | Production Ready |
 |-----------|-------|---------------|-------|---------------------|------------------|

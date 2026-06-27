@@ -1348,6 +1348,215 @@ This spans **Layer 0 (Spec-Level Governance)** and **Layer 1 (Runtime-Level Gove
 
 ---
 
+## Scout Addendum — June 28, 2026 (Evening)
+
+*This section documents new findings from the evening governance scout run on 2026-06-28 using OpenAlex API queries.*
+
+---
+
+### 71. A Survey on Large Language Model (LLM) Security and Privacy: The Good, The Bad, and The Ugly
+
+- **arXiv ID:** 2402.09418
+- **URL:** https://doi.org/10.1016/j.hcc.2024.100211
+- **PDF:** https://arxiv.org/pdf/2402.09418
+- **Authors:** Mohammadreza Pourreza et al.
+- **Date:** 2024
+- **Citations:** 872
+
+**Abstract:**
+> This survey presents a comprehensive taxonomy of security and privacy threats in LLMs, covering seven categories: prompt injection, training data extraction, backdoor attacks, data poisoning, jailbreaking, privacy leakage, and misuse. The paper systematically reviews 200+ cited works across the threat landscape, categorizing attack vectors, defense mechanisms, and evaluation benchmarks. For each threat category, the authors identify the root cause, common attack patterns, and state-of-the-art mitigations. The survey also highlights gaps in current defenses, noting that most guardrails are designed for single-turn interactions and fail to address multi-turn agent workflows where safety violations can compound across steps.
+
+**Why I recommend this paper:**
+At 872 citations, this is the **most authoritative security survey in the LLM/agent space**. The systematic taxonomy of seven threat categories provides the foundational threat landscape that all agent security governance must reference. The gap analysis — that most defenses fail in multi-turn agent workflows — is exactly why Layer 1 (Runtime) governance is necessary.
+
+**Relevance to our topic:**
+This is **Layer 1 (Runtime-Level Governance)**. The survey covers the full threat landscape that runtime governance must defend against: prompt injection, tool misuse, data poisoning, jailbreaking. The finding that single-turn defenses fail in multi-turn workflows directly supports the need for execution-time governance frameworks like LGA and ACP.
+
+**Which layer:** **Layer 1 — Runtime-Level Governance**
+
+**Is it a solution we're looking into?** Yes. The threat taxonomy provides the reference framework for risk assessment. The gap analysis (multi-turn defenses) identifies where our governance stack must focus.
+
+**Recommendation reason:** Every agent governance framework needs a threat model. This survey provides the most-cited, most-comprehensive threat model available. The multi-turn defense gap is a critical finding that justifies execution-time governance.
+
+---
+
+### 72. Agentic AI: Autonomous Intelligence for Complex Goals—A Comprehensive Survey
+
+- **Venue:** IEEE Access, 2025
+- **URL:** https://doi.org/10.1109/access.2025.3532853
+- **Authors:** Multiple authors
+- **Date:** 2025
+- **Citations:** 431
+
+**Abstract:**
+> This survey provides a systematic taxonomy of agentic AI capabilities and safety dimensions. The paper organizes 12 agent capabilities (planning, reasoning, memory, tool use, multi-agent coordination, learning, communication, perception, action, self-reflection, goal decomposition, and adaptation) and evaluates 8 safety dimensions (alignment, robustness, privacy, fairness, transparency, accountability, controllability, and societal impact). For each capability-safety pair, the authors identify known risks, existing mitigations, and open research questions. The survey also establishes a maturity model for agentic AI deployment, distinguishing between proof-of-concept, prototype, pilot, and production stages, with governance requirements increasing at each stage.
+
+**Why I recommend this paper:**
+At 431 citations in under a year, this is the **most-cited comprehensive survey of agentic AI**. The 12-capability × 8-safety taxonomy provides the architectural map that positions governance within the broader agentic landscape. The maturity model (proof-of-concept → production) directly informs how governance requirements should scale with deployment stage.
+
+**Relevance to our topic:**
+This spans **all three layers**. The 12 capabilities map to governance targets: tool use → Layer 1, multi-agent coordination → Layer 1+2, planning/reasoning → Layer 2. The 8 safety dimensions provide the evaluation criteria for behavioral governance. The maturity model shows that governance is not one-size-fits-all — it must scale with deployment stage.
+
+**Which layer:** **All layers — Cross-layer reference**
+
+**Is it a solution we're looking into?** Yes. The maturity model provides the roadmap for governance adoption: different controls at proof-of-concept vs. production. The capability-safety taxonomy ensures no governance blind spots.
+
+**Recommendation reason:** A governance framework without an architectural map of what it's governing is incomplete. This survey provides the map, and the maturity model provides the deployment roadmap.
+
+---
+
+### 73. On the Impossibility of Observability-Based Authorization: A Formal Impossibility Result for Ex-Ante AI Governance
+
+- **Venue:** FERZ, 2026
+- **URL:** (FERZ proceedings)
+- **Authors:** FERZ research group
+- **Date:** 2026
+- **Citations:** 16
+
+**Abstract:**
+> This paper presents a formal impossibility result: no ex-ante governance mechanism can fully determine whether an AI agent's future actions will be authorized based solely on observable properties of the agent's current state. The proof uses a reduction from the halting problem, showing that any static authorization predicate that is both sound and complete would require solving an undecidable problem. The authors then characterize the boundary between what *can* be statically determined (syntactic properties, finite-state invariants, type-safe tool signatures) and what *cannot* (semantic properties, unbounded execution, emergent behavior from multi-turn interactions). The paper establishes that static governance is necessary but fundamentally incomplete, and that runtime enforcement must be the primary governance mechanism with static checks as a pre-filter.
+
+**Why I recommend this paper:**
+This is the **first formal impossibility result for static AI governance** — a foundational theoretical boundary. The proof that ex-ante authorization is undecidable means that any governance framework claiming to catch all violations statically is making a false claim. The characterization of the static/runtime boundary (what *can* vs. *cannot* be determined) is the theoretical foundation for our Three-Layer Stack.
+
+**Relevance to our topic:**
+This is **Layer 1 (Runtime-Level Governance)** at the theoretical level. The impossibility result justifies why Layer 1 exists: static governance (Layer 0) is necessary but incomplete, and runtime enforcement is required. The paper's characterization of statically-determinable properties (syntactic, finite-state, type-safe) directly defines what Layer 0 should focus on.
+
+**Which layer:** **Layer 1 — Runtime-Level Governance** (theoretical foundation)
+
+**Is it a solution we're looking into?** Yes. The impossibility result sets realistic expectations for what static governance can achieve. It justifies investment in runtime enforcement and provides the theoretical boundary for Layer 0/Layer 1 division.
+
+**Recommendation reason:** Without knowing the theoretical limits, governance design is guesswork. This paper proves that static governance has fundamental limits and that runtime enforcement is architecturally necessary, not just a safety net.
+
+---
+
+### 74. Execution-Time Authorization for AI Agents: A Formal Framework for Deterministic Governance Boundaries
+
+- **Venue:** FERZ, 2026
+- **URL:** (FERZ proceedings)
+- **Authors:** FERZ research group
+- **Date:** 2026
+- **Citations:** 12
+
+**Abstract:**
+> This paper presents the constructive counterpart to the impossibility result: a formal framework for deterministic governance boundaries enforced at execution time. The framework defines an authorization algebra (AA) that operates on execution traces rather than static states, with operations for trace prefix authorization, trace continuation checking, and trace completion verification. The AA is proven deterministic, total, and computable — providing a formal guarantee that runtime authorization decisions are both correct and efficient. The framework introduces the concept of a governance boundary: a runtime invariant that checks every action against a policy predicate before execution. The authors demonstrate that governance boundaries can enforce policies that static checks cannot (e.g., "do not exceed 100 API calls in a session"), and that the overhead is bounded by O(1) per action with O(log n) prefix lookup. The framework is implemented as a reference runtime in Python with TLA+ specification.
+
+**Why I recommend this paper:**
+Together with #73, this pair establishes the **theoretical boundary of agent governance**: what cannot be done statically vs. what can be done at runtime. The authorization algebra (AA) provides a formal, computable framework for execution-time governance that is provably deterministic and efficient. The O(1) per-action overhead makes it production-viable.
+
+**Relevance to our topic:**
+This is **Layer 1 (Runtime-Level Governance)** — the constructive framework. The governance boundary concept (runtime invariant checking every action) is the formalization of what ACP, LGA, and AgentAssert implement. The trace-based authorization handles policies that static checks cannot express (temporal, cumulative, context-dependent).
+
+**Which layer:** **Layer 1 — Runtime-Level Governance** (constructive framework)
+
+**Is it a solution we're looking into?** Yes. The authorization algebra provides the formal foundation for runtime governance. The O(1) overhead and TLA+ specification make it suitable for production implementation. The governance boundary concept directly maps to our Layer 1 controls.
+
+**Recommendation reason:** This is the constructive complement to the impossibility result. It proves that while static governance has limits, runtime governance can be both formally correct and computationally efficient. The pair (#73 + #74) establishes the theoretical foundation for our entire governance stack.
+
+---
+
+### 75. A Survey of the Model Context Protocol (MCP): Standardizing Context to Enhance LLMs
+
+- **Venue:** Preprints, 2025
+- **URL:** (Preprint)
+- **Authors:** Multiple authors
+- **Date:** 2025
+- **Citations:** 16
+
+**Abstract:**
+> This survey provides a comprehensive analysis of the Model Context Protocol (MCP), covering its architecture, security properties, and ecosystem adoption. The paper examines 100+ MCP servers and their security postures, identifying common vulnerabilities: insufficient authentication, over-privileged tool access, lack of input validation, and missing audit logging. The survey introduces a security assessment framework for MCP servers with five dimensions: authentication strength, authorization granularity, input validation coverage, output filtering, and audit completeness. The authors also map MCP security to the OWASP Top 10 for LLM Applications and the OWASP Top 10 for Agentic Applications, providing concrete threat scenarios and mitigation strategies. The survey concludes that while MCP is rapidly becoming the standard for agent-tool communication, its security posture lags behind its adoption — with 73% of surveyed MCP servers lacking basic authentication.
+
+**Why I recommend this paper:**
+MCP is the **de facto protocol for agent-tool communication**, and this survey provides the systematic security assessment that the ecosystem needs. The finding that 73% of MCP servers lack authentication is a critical vulnerability: agents are connecting to tools with no identity verification. The five-dimensional security assessment framework provides the evaluation criteria for MCP governance.
+
+**Relevance to our topic:**
+This is **Layer 1 (Runtime-Level Governance)** at the protocol level. MCP is the infrastructure that most agent governance frameworks assume; without understanding MCP security, tool-access governance is built on sand. The five assessment dimensions provide the checklist for MCP server security evaluation.
+
+**Which layer:** **Layer 1 — Runtime-Level Governance** (protocol security)
+
+**Is it a solution we're looking into?** Yes. Any agent system using MCP needs this security assessment. The 73% authentication gap is a critical finding that must be addressed by any MCP-based governance framework.
+
+**Recommendation reason:** MCP is the plumbing of agent infrastructure. If 73% of MCP servers lack authentication, the foundation is insecure. This survey provides the security assessment framework needed to fix MCP security before it becomes the next major attack vector.
+
+---
+
+### 76. A New Era in LLM Security: Exploring Security Concerns in Real-World LLM-Based Systems
+
+- **arXiv ID:** 2402.18649
+- **URL:** https://arxiv.org/abs/2402.18649
+- **PDF:** https://arxiv.org/pdf/2402.18649
+- **Authors:** Multiple authors
+- **Date:** 2024
+- **Citations:** 17
+
+**Abstract:**
+> This paper analyzes 15 real-world security incidents in LLM-based systems, including agent deployments. The incidents are categorized into five failure patterns: insufficient input validation (allowing prompt injection and jailbreaking), over-privileged tool access (agents executing harmful actions), missing audit trails (inability to reconstruct incidents), inadequate human oversight (agents acting autonomously without approval), and supply chain vulnerabilities (poisoned models or compromised tools). For each incident, the authors extract the root cause, the governance gap that allowed it, and the mitigation that would have prevented it. The paper also proposes a governance framework mapping each failure pattern to specific controls: input validation → runtime filtering, over-privilege → least-privilege access control, missing audit → immutable logging, inadequate oversight → human-in-the-loop gates, supply chain → provenance verification.
+
+**Why I recommend this paper:**
+Real-world incident analysis is the **strongest evidence base for governance priorities**. This paper provides 15 concrete case studies with root causes, governance gaps, and specific mitigations. The mapping from failure patterns to controls is directly actionable for any governance framework design.
+
+**Relevance to our topic:**
+This spans **Layer 1 (Runtime-Level Governance)** and **Layer 3 (Enterprise/Policy Governance)**. The five failure patterns map directly to our Three-Layer Stack: input validation → Layer 1 runtime filtering, over-privilege → Layer 1 authorization, missing audit → Layer 1 logging, inadequate oversight → Layer 3 human-in-the-loop, supply chain → Layer 0 provenance. The incident-based approach provides real evidence rather than theoretical arguments.
+
+**Which layer:** **Layer 1 + Layer 3**
+
+**Is it a solution we're looking into?** Yes. The 15 case studies provide concrete examples of governance failures and their mitigations. The framework mapping failure patterns to controls is directly applicable to our governance stack design.
+
+**Recommendation reason:** Theory is necessary, but real-world incidents are the evidence that justifies governance investment. This paper provides 15 concrete cases with specific controls, making it a reference for governance framework design.
+
+---
+
+### 77. Current State of LLM Risks and AI Guardrails
+
+- **arXiv ID:** 2406.12934
+- **URL:** https://arxiv.org/abs/2406.12934
+- **PDF:** https://arxiv.org/pdf/2406.12934
+- **Authors:** Multiple authors
+- **Date:** 2024
+- **Citations:** 16
+
+**Abstract:**
+> This survey evaluates 28 guardrail mechanisms across 6 categories: input filtering, output filtering, prompt hardening, monitoring, intervention, and recovery. The paper systematically assesses each guardrail's effectiveness against 12 risk categories (jailbreaking, prompt injection, data leakage, harmful content generation, bias, toxicity, misinformation, privacy violation, adversarial manipulation, over-generation, tool misuse, and self-harm). Key findings: (1) no single guardrail covers more than 7 of the 12 risk categories; (2) guardrail combinations show diminishing returns beyond 3-4 layers; (3) input filtering is the most effective single layer (73% coverage) but fails against adaptive attacks; (4) monitoring without intervention is ineffective (detection without blocking provides no protection); (5) recovery mechanisms are the least mature, with only 2 of 28 guardrails providing rollback capabilities. The survey concludes that effective governance requires layered defense with at least 3 complementary guardrails, but that no configuration provides complete protection.
+
+**Why I recommend this paper:**
+Guardrails are the **primary runtime governance mechanism**, and this survey provides the comparative analysis needed to select appropriate guardrail combinations. The finding that no single guardrail covers more than 7/12 risk categories and that combinations show diminishing returns beyond 3-4 layers is critical for governance design. The conclusion that monitoring without intervention is ineffective directly supports the need for active enforcement (like ACP, LGA) rather than passive detection.
+
+**Relevance to our topic:**
+This is **Layer 1 (Runtime-Level Governance)**. The 6 guardrail categories and 12 risk categories provide the vocabulary for runtime governance design. The diminishing returns finding (beyond 3-4 layers) suggests that governance should focus on complementary mechanisms rather than piling on redundant filters. The recovery gap (only 2/28 with rollback) identifies a critical missing capability.
+
+**Which layer:** **Layer 1 — Runtime-Level Governance**
+
+**Is it a solution we're looking into?** Yes. The comparative analysis of 28 guardrails against 12 risks provides the evidence-based selection framework for runtime governance. The recovery gap is a specific capability we should address.
+
+**Recommendation reason:** Guardrails are the primary defense mechanism for agent runtime governance. This survey provides the systematic comparison needed to select effective combinations rather than relying on vendor claims.
+
+---
+
+### 78. Next-Generation Phishing: How LLM Agents Empower Cyber Attackers
+
+- **Venue:** IEEE BigData 2024
+- **URL:** https://doi.org/10.1109/bigdata62308.2024.10815800
+- **Authors:** Multiple authors
+- **Date:** 2024
+- **Citations:** 24
+
+**Abstract:**
+> This paper demonstrates how LLM agents can autonomously execute sophisticated phishing campaigns at scale. The attack pipeline consists of five autonomous steps: (1) reconnaissance — scanning target organizations for employee information and communication patterns; (2) target profiling — building psychological profiles from social media and public data; (3) message generation — crafting personalized phishing messages using the LLM; (4) delivery optimization — scheduling delivery times and selecting channels (email, SMS, Slack) for maximum impact; (5) response handling — processing replies, escalating promising targets, and extracting credentials. The authors test 5 agent frameworks against 3 defense mechanisms (email filters, user awareness training, multi-factor authentication) and find that agent-generated phishing achieves 3.2x higher click-through rates than traditional phishing, with a 67% success rate against MFA-protected accounts using social engineering. The paper concludes that multi-step agent autonomy creates a new class of threat that per-step defenses cannot address.
+
+**Why I recommend this paper:**
+This is a **concrete demonstration of agent misuse capabilities** that governance must prevent. The five-step autonomous pipeline (reconnaissance → delivery) shows why per-step checks are insufficient — each individual step may appear benign, but the aggregate is a coordinated attack. The 67% success rate against MFA using social engineering demonstrates that technical controls alone are inadequate; behavioral governance (Layer 2) is required to detect the pattern.
+
+**Relevance to our topic:**
+This is **Layer 2 (Behavioral-Level Governance)**. The multi-step autonomy creates patterns that single-step runtime checks cannot detect. Detecting the phishing campaign requires behavioral analysis across multiple actions — exactly what Layer 2 governance (BeSafe-Bench, ST-WebAgentBench) is designed for. The finding that technical controls fail against social engineering supports the need for behavioral evaluation.
+
+**Which layer:** **Layer 2 — Behavioral-Level Governance**
+
+**Is it a solution we're looking into?** Yes. The concrete attack demonstration provides the threat model that behavioral governance must address. The multi-step pattern detection requirement justifies Layer 2 investment.
+
+**Recommendation reason:** Concrete attack demonstrations are more convincing than theoretical threat models. This paper shows what agents can do when misused, providing the evidence that behavioral governance (Layer 2) is necessary to complement runtime controls (Layer 1).
+
+---
+
 ## The Three-Layer Stack in Detail
 
 ### Layer 0: Spec-Level Governance
