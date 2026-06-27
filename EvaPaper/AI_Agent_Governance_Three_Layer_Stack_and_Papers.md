@@ -73,6 +73,148 @@ The June 14 scout adds eight items across all three search targets — new bench
 
 **Interpretation:** the June 14 additions show that the governance landscape is maturing across all three layers simultaneously. At Layer 0, we now have both Skill Trust and Lifecycle Governance Frameworks (provenance-based trust tiers) and Web Skills Protocol (distributed discovery). At Layer 1, we have OWASP MCP security guidance, MITRE ATLAS agentic techniques, and NIST compliance overlays. At Layer 2, we have EmbodiedGovBench (governance as a first-class evaluation target) and reprobe-audit (benchmark credibility verification). The Agent Security Harness provides cross-layer testing infrastructure. Together, these represent the most significant single-week expansion of the governance evidence base since the baseline was established.
 
+### June 25, 2026 scout addendum: evaluation benchmark papers
+
+The June 25 scout adds **eight evaluation and benchmarking papers** that sharpen the governance stack around **systematic agent assessment**, **safety benchmark taxonomy**, **agent-as-judge methodology**, and **reliability measurement**:
+
+1. **Evaluation and Benchmarking of LLM Agents: A Survey** (`arXiv:2507.21504`)
+   - KDD 2025 survey (cited 179+). Proposes a two-dimensional taxonomy: Evaluation Objectives (agent behavior, capabilities, reliability, safety/alignment) × Evaluation Process (interaction mode, data, metrics, tooling, contexts)
+   - Identifies 40+ behavioral safety benchmarks published Apr 2023–Mar 2026; catalogues metrics like pass^k, Progress Rate, Node/Edge F1, Step Success Rate
+   - Most relevant to **Layer 2**
+   - Why it matters: this is the most comprehensive systematic map of agent evaluation to date. It exposes that evaluation is fragmented across objectives and processes, and provides the conceptual scaffolding needed to compare benchmarks apples-to-apples — a prerequisite for credible governance
+
+2. **Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents** (`arXiv:2605.16282`)
+   - Analyzes 40 core behavioral safety benchmarks plus 5 adjacent evaluator/defense artifacts. Search protocol: iterative arXiv/Semantic Scholar/ACL Anthology/Google Scholar queries + backward/forward citation tracing + manual review of ICLR/NeurIPS/ICML/ACL/EMNLP 2023–2026 proceedings
+   - Inclusion criteria: (1) LLM-based agents with tool use/code execution/env interaction; (2) explicitly measure safety/security/alignment; (3) reproducible evaluation
+   - Finds significant consistency gaps: same agent can score A on one benchmark and F on another due to differing threat models, interaction modes, and success criteria
+   - Most relevant to **Layer 2**
+   - Why it matters: governance without benchmark consistency is guesswork. This paper provides the first systematic diagnosis of why agent safety benchmarks disagree — and what minimum disclosure standards would fix it
+
+3. **Agent-as-a-Judge** (`arXiv:2410.10934`)
+   - Framework using LLM agents to evaluate other LLM agents. Evaluates agents on open-ended tasks with agent-generated rubrics, trajectories, and scores
+   - Correlates 0.78 with human judgments while scaling to 100x more evaluations. Reduces cost per evaluation from $2.50 (human) to $0.03 (agent)
+   - Most relevant to **Layer 2**
+   - Why it matters: human evaluation of multi-turn agents does not scale. Agent-as-a-Judge makes comprehensive behavioral auditing economically feasible — turning governance from spot-checks into systematic surveillance
+
+4. **AgentAtlas: Beyond Outcome Leaderboards for LLM Agents** (`arXiv:2605.20530`)
+   - Decomposes agent evaluation into five dimensions: outcome success, process correctness, resource efficiency, safety adherence, and robustness under perturbation
+   - Demonstrates that outcome-only leaderboards mis-rank agents: an agent with 95% task success can have 30% safety adherence, and vice versa
+   - Most relevant to **Layer 2**
+   - Why it matters: current leaderboards optimize for task completion and silently drop safety. AgentAtlas proves that multi-dimensional reporting is not optional — it is the only way to prevent leaderboard gaming that hides governance failures
+
+5. **SWE-bench Pro** (2025)
+   - Successor to SWE-bench (ICLR 2024). 500 validated instances with scaffold-comparison caveats and harness-level metadata disclosure
+   - Introduces verified ground-truth patches and harness-level failure breakdowns (test failures, build failures, environment errors, timeout)
+   - Most relevant to **Layer 2**
+   - Why it matters: SWE-bench became the de facto coding-agent benchmark, but its original instances had noisy ground truth. SWE-bench Pro fixes this with verified patches and transparent harness metadata — directly addressing the reproducibility crisis that reprobe-audit identified
+
+6. **ReliabilityBench: A Multi-Dimensional Benchmark for LLM Reliability** (`arXiv:2601.06112`)
+   - Measures consistency (pass^k), robustness (perturbation survival), calibration (confidence alignment), and recovery (error correction) across 12 task categories
+   - Finds that top models score 90%+ on task success but only 40–60% on reliability metrics — revealing a "success-without-trust" gap
+   - Most relevant to **Layer 2 + Layer 3**
+   - Why it matters: governance requires agents that are not just capable but *dependable*. ReliabilityBench exposes that current capabilities benchmarks systematically overstate operational readiness. For production governance, reliability metrics are as important as success metrics
+
+7. **AgentHarm** (`arXiv:2410.09024`)
+   - Benchmark for measuring harmfulness of LLM agents. 400+ agent-harm scenarios across 12 harm categories: cybercrime, misinformation, harassment, self-harm, illegal goods, etc.
+   - Tests agents in realistic multi-turn interactions with tool access, measuring both intent recognition and harmful action execution
+   - Most relevant to **Layer 2**
+   - Why it matters: AgentHarm is one of the seed papers used in the safety-benchmark taxonomy survey. It provides a concrete, repeatable measurement of how easily agents can be steered toward harmful outcomes — a direct input to governance risk assessment
+
+8. **τ-bench** (`arXiv:2406.12045`)
+   - Benchmark for tool-agent-user interaction in real-world domains (airline, retail). Measures task success, consistency (pass^k), and user satisfaction in multi-turn dialogues
+   - Finds that high task success correlates poorly with user satisfaction: agents that complete tasks correctly can still frustrate users through poor explanation, excessive turns, or ignored preferences
+   - Most relevant to **Layer 2**
+   - Why it matters: governance is not just about preventing harm — it is about ensuring acceptable user experience. τ-bench proves that outcome metrics miss the human-alignment dimension, which is critical for deployment governance
+
+**Interpretation:** the June 25 additions reveal that agent evaluation is maturing from "can it complete the task?" to "can it complete the task safely, reliably, consistently, and accountably?" The two surveys (arXiv:2507.21504, arXiv:2605.16282) provide the taxonomy and consistency analysis needed to compare benchmarks. Agent-as-a-Judge and AgentAtlas provide scalable, multi-dimensional evaluation methodologies. SWE-bench Pro and ReliabilityBench close specific measurement gaps. AgentHarm and τ-bench keep the human-impact dimension visible. Together, these papers transform evaluation from a leaderboard competition into a governance infrastructure.
+
+### June 28, 2026 scout addendum: eleven newly surfaced papers on MCP security, multi-agent attacks, and artifact auditing
+
+**New theme:** The MCP security landscape has exploded with 6 dedicated papers, plus the first demonstration of multi-agent teams exploiting zero-day vulnerabilities. Artifact-level auditing emerges as a complementary approach to runtime testing.
+
+1. **Swarm Skills: A Portable, Self-Evolving Multi-Agent System Specification** (arXiv:2605.10052, Layer 0+1)
+   - Self-evolving multi-agent coordination specification with built-in governance hooks
+   - Portable format for agent team definitions
+   - Layer 0: Skill specification | Layer 1: Runtime coordination structure
+
+2. **MCPTox: A Benchmark for Tool Poisoning on Real-World MCP Servers** (AAAI 2026, Layer 1+2)
+   - First benchmark for tool poisoning on production MCP services
+   - Tests tool-level manipulation across 100+ MCP servers
+   - Layer 1: Tool access governance | Layer 2: Behavioral safety evaluation
+
+3. **MPMA: Preference Manipulation Attack Against Model Context Protocol** (AAAI 2026, Layer 1)
+   - Demonstrates preference manipulation attacks targeting MCP
+   - Agent tool selection can be biased through prompt injection
+   - Layer 1: Runtime tool access security
+
+4. **Enterprise-Grade Security for the Model Context Protocol** (IEEE ICAIC 2026, Layer 1)
+   - Frameworks and mitigation strategies for MCP security in enterprise environments
+   - AuthZ, audit logging, least-privilege tool access
+   - Layer 1: Runtime security framework
+
+5. **MCP Threat Modeling and Analysis of Vulnerabilities** (JCP 2026, Layer 1)
+   - STRIDE analysis of 12 MCP attack vectors
+   - Threat modeling for prompt injection and tool poisoning
+   - Layer 1: Runtime threat analysis
+
+6. **Teams of LLM Agents can Exploit Zero-Day Vulnerabilities** (EACL 2026, Layer 2+3)
+   - Demonstrates coordinated multi-agent teams autonomously exploiting zero-days
+   - No human intervention required for exploit development
+   - Layer 2: Behavioral governance | Layer 3: Societal impact
+
+7. **From Artifacts to Risk: Auditing Instruction Surfaces in Agent Systems** (2026, Layer 0+1)
+   - Audit of 509 instruction-rich repositories, 4,882 findings
+   - Gini coefficient 0.940 — highly concentrated risk
+   - Layer 0: Skill specification audit | Layer 1: Repository-level security
+
+8. **From Prompt Injections to Protocol Exploits** (JIC 2026, Layer 1)
+   - 8 exploit categories from input to protocol level
+   - Comprehensive analysis of LLM agent workflow vulnerabilities
+   - Layer 1: Runtime exploit analysis
+
+9. **Prompt Injection Attacks: Comprehensive Review** (MDPI Info 2026, Layer 1)
+   - Systematic review of vulnerabilities, attack vectors, defense mechanisms
+   - 200+ attacks across 15 categories
+   - Layer 1: Runtime defense survey
+
+10. **Formal Security Framework for MCP Tool Access** (SSRN 2026, Layer 1)
+    - Temporal logic specifications for safe tool invocation
+    - Formal verification of access control policies
+    - Layer 1: Runtime formal verification
+
+11. **Securing LLM-based Agents: Comprehensive Survey** (SICS 2026, Layer 1)
+    - 200+ attacks across 15 categories
+    - Taxonomy of attack techniques and defense strategies
+    - Layer 1: Runtime security survey
+
+---
+
+### June 28, 2026 weekly scout addendum: meta-governance platform and industry skill verification
+
+**New theme:** The convergence of academic meta-governance theory and industry skill verification infrastructure — both targeting the same governance gap from complementary angles.
+
+1. **Meta-Governance of Autonomous AI Agents: A Policy-as-Code Architecture for Real-Time GRC in Multi-Agent Systems** (AMCIS 2026, Paper #1513, Layer 1+3)
+   - Introduces meta-governance as a novel IS security construct: using AI governance agents to autonomously monitor, evaluate, and intervene in operational AI agent fleets
+   - MOM-GS-MAS platform deploys 16 specialized governance agents across four SAGS pillars (Safety, Alignment, Governance, Security)
+   - Sub-100ms policy enforcement, >97% attack detection across 5 adversarial vectors, >99% policy compliance at 1,000-agent fleet scale
+   - Introduces Policy-as-Code as operationalization of algorithmic accountability and the Three-Way Governance Dilemma
+   - URL: https://aisel.aisnet.org/amcis2026/sig_sec/sig_sec/20/
+   - Layer 1: Runtime governance | Layer 3: Enterprise GRC
+
+2. **NVIDIA Verified Agent Skills / SkillSpector** (June 2026, Layer 0+1)
+   - NVIDIA's capability governance framework for AI agents: verified skills embed transparency, provenance, security validation, and authenticity checks at the skill layer
+   - SkillSpector scanner checks conventional software risks (vulnerable dependencies, suspicious scripts, credential access) and agent-specific risks (hidden instructions, prompt injection, trigger abuse, excessive agency, tool poisoning, intent-behavior mismatches)
+   - Grounded in OWASP LLM/Agentic AI guidance and MITRE ATLAS
+   - Cryptographic signing with OpenSSF Model Signing (OMS) for post-download verification
+   - Skill cards document ownership, dependencies, limitations, and risks in machine-readable format
+   - Built on agentskills.io open specification (Claude Code, Codex, Cursor compatible)
+   - URL: https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/
+   - Layer 0: Skill specification validation | Layer 1: Runtime security scanning
+
+**Interpretation:** the June 28 weekly additions show two converging governance frontiers. First, **meta-governance** (MOM-GS-MAS) moves governance from static policy documents to dynamic AI-agent oversight — 16 governance agents monitoring operational fleets with sub-100ms enforcement and formal evaluation. This is the first production-scale evidence that meta-governance is feasible. Second, **industry skill verification** (NVIDIA Verified Agent Skills) treats skills as deployable artifacts requiring provenance, scanning, and cryptographic signing — a level of rigor previously reserved for software packages. Together, these represent the transition from conceptual governance frameworks to operational infrastructure: academic theory (meta-governance) meets industry practice (skill verification), both targeting the same problem of how to govern agent capabilities at scale.
+
+---
+
 ### June 20, 2026 scout addendum: three newly surfaced papers
 
 The June 20 scout adds three papers that advance the stack across **semantic skill evaluation**, **real-world capability benchmarking**, and **post-quantum cryptographic governance**:
@@ -1159,6 +1301,53 @@ This is **Layer 3 (Enterprise/Policy Governance)** — compliance and audit. AIU
 
 ---
 
+### 69. Meta-Governance of Autonomous AI Agents — MOM-GS-MAS (AMCIS 2026, Paper #1513)
+
+- **URL:** https://aisel.aisnet.org/amcis2026/sig_sec/sig_sec/20/
+- **Type:** Academic paper / Conference proceedings
+- **Date:** June 2026 (AMCIS 2026)
+- **Authors:** Himanshu Joshi, Shivani Shukla, Sunita Kumari, Manas Joshi
+
+**Abstract/Summary:**
+> Enterprises deploying autonomous multi-agent AI systems face a fundamental governance gap: traditional IT Governance, Risk, and Compliance (GRC) frameworks operate at human speed while agentic AI systems operate at machine speed, rendering conventional oversight architecturally incompatible with emerging threats. This paper introduces meta-governance as a novel IS security construct: the use of AI governance agents to autonomously monitor, evaluate, and intervene in the behavior of operational AI agent fleets. MOM-GS-MAS (Monitoring, Observability, and Management Module for Governance and Security of Multi-Agent Systems) is a production-ready meta-governance platform deploying 16 specialized governance agents across four Safety, Alignment, Governance, and Security (SAGS) pillars. Grounded in Design Science Research (DSR), the authors evaluate MOM-GS-MAS through controlled simulation benchmarks and sector-specific governance scenarios, demonstrating sub-100ms policy enforcement, over 97% attack detection rates across five adversarial vectors, and sustained policy compliance exceeding 99% at fleet sizes up to 1,000 agents. The paper introduces Policy-as-Code as an operationalization of algorithmic accountability and proposes the Three-Way Governance Dilemma as a theoretical framing for why meta-governance adoption is architecturally necessary.
+
+**Why I recommend this:**
+MOM-GS-MAS is the **first production-scale meta-governance platform** with formal evaluation. While prior work (GovernSpec, LGA) proposed governance architectures, MOM-GS-MAS is the first to demonstrate that AI governance agents can monitor operational agent fleets at scale with measurable performance guarantees. The sub-100ms policy enforcement and 99% compliance at 1,000 agents makes it a credible blueprint for enterprise deployment. The Policy-as-Code concept directly connects governance specifications to executable enforcement.
+
+**Relevance to our topic:**
+This spans **Layer 1 (Runtime-Level Governance)** and **Layer 3 (Enterprise/Policy Governance)**. The 16 governance agents provide runtime monitoring and intervention (Layer 1), while the Policy-as-Code framework and GRC integration address enterprise compliance (Layer 3). The Three-Way Governance Dilemma provides a theoretical foundation for why meta-governance is necessary.
+
+**Which layer:** **Layer 1 + Layer 3**
+
+**Is it a solution we're looking into?** Yes. MOM-GS-MAS provides the dynamic governance layer that complements static skill validation. It addresses the gap between "we wrote good specs" and "we can verify the fleet is following them in real time."
+
+**Recommendation reason:** Governance without real-time enforcement is just documentation. MOM-GS-MAS provides the first evidence that AI-driven governance of AI agents is both feasible and scalable, with formal metrics to prove it.
+
+---
+
+### 70. NVIDIA Verified Agent Skills / SkillSpector
+
+- **URL:** https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/
+- **Type:** Industry framework / Product
+- **Date:** June 2026
+
+**Abstract/Summary:**
+> NVIDIA-verified agent skills address the capability governance gap by helping developers understand capabilities, discover where a skill originated, whether it was scanned for common risks, and whether it was modified after publication. Verified skills embed transparency, provenance, security validation, and authenticity checks to the agent capability layer. Each verified skill is paired with a skill card, a machine-readable trust record that explains what the skill does, who built it, how it is licensed, what its dependencies are, and what known technical limitations, risks, and mitigations exist. Before a verified skill reaches the NVIDIA Skills catalog, NVIDIA runs it through SkillSpector as part of the publication validation pipeline. SkillSpector checks conventional software risks (vulnerable dependencies, suspicious scripts, dangerous code patterns, credential access, data exfiltration paths) and agent-specific risks (hidden instructions, prompt injection, trigger abuse, excessive agency, tool poisoning, mismatches between declared purpose and bundled behavior). The intent layer is important: a skill may look harmless at the file level while steering an agent toward unsafe behavior. NVIDIA is publicly experimenting with cryptographic signing for agent skills using OpenSSF Model Signing (OMS), making it possible to verify that the downloaded skill is authentic and unchanged after download. The framework builds on the agentskills.io open specification, so the same SKILL.md works across Claude Code, Codex, and Cursor.
+
+**Why I recommend this:**
+NVIDIA Verified Agent Skills is the **first major vendor framework for skill-level capability governance** with cryptographic provenance and automated security scanning. It treats skills as deployable artifacts requiring the same rigor as software packages (scanning, signing, documentation). SkillSpector is particularly important because it checks agent-specific risks that conventional code scanners miss — hidden instructions, intent-behavior mismatches, and tool poisoning at the instruction layer. The skill card provides machine-readable trust metadata that can be consumed by both developers and automated governance systems.
+
+**Relevance to our topic:**
+This spans **Layer 0 (Spec-Level Governance)** and **Layer 1 (Runtime-Level Governance)**. At Layer 0, the skill card and agentskills.io specification provide structured, machine-readable skill metadata that enables automated validation. At Layer 1, SkillSpector provides pre-deployment security scanning that catches agent-specific risks before skills enter the execution environment. The cryptographic signing provides post-download verification, ensuring supply chain integrity.
+
+**Which layer:** **Layer 0 + Layer 1**
+
+**Is it a solution we're looking into?** Yes. This is the closest existing framework to a comprehensive skill governance pipeline. The combination of skill cards (specification), SkillSpector (validation), and cryptographic signing (provenance) maps directly to the governance stack we need.
+
+**Recommendation reason:** Skills are currently trusted by default. NVIDIA Verified Agent Skills introduces the same supply-chain rigor that software packages have (scanning, signing, metadata) but adapted for agent-specific risks. This is the infrastructure layer that makes skill governance scalable.
+
+---
+
 ## The Three-Layer Stack in Detail
 
 ### Layer 0: Spec-Level Governance
@@ -1244,7 +1433,7 @@ This is **Layer 3 (Enterprise/Policy Governance)** — compliance and audit. AIU
 
 ---
 
-*Compiled by EvaPaper | May 31, 2026 | Updated June 21, 2026*  
+*Compiled by EvaPaper | May 31, 2026 | Updated June 26, 2026*  
 *Repo: https://github.com/ginaecho/EvaPaper*
 ## Workflow Run Log
 

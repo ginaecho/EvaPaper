@@ -279,13 +279,63 @@ Status: **NEW FINDINGS FOUND**
 - All three papers were published after the June 14 scout run, confirming the weekly scouting cadence is catching new research.
 - **Expanded search (second pass)** surfaced 4 additional papers: AIP (structured skill graphs for governance), CheetahClaws (harness-level governance benchmarks), W2S (automatic skill construction from traces), and PARE-M (real-world governance measurement in persistent environments). These span skill creation, system design, and operational governance — extending the corpus to 7 new papers total for this scout run.
 
+## 2026-06-28 Scout Run (Weekly) — NEW FINDINGS DISCOVERED
+Search queries: agent governance safety benchmark 2026, agent skill markdown specification validation governance 2026, OWASP agentic applications framework 2026
+Status: **NEW FINDINGS FOUND**
+
+### New Papers (Found: 0628-weekly)
+1. **Meta-Governance of Autonomous AI Agents: A Policy-as-Code Architecture for Real-Time GRC in Multi-Agent Systems** (AMCIS 2026, Paper #1513) — Himanshu Joshi, Shivani Shukla, Sunita Kumari, Manas Joshi. June 2026. Introduces meta-governance as a novel IS security construct: using AI governance agents to autonomously monitor, evaluate, and intervene in operational AI agent fleets. MOM-GS-MAS platform deploys 16 specialized governance agents across four SAGS pillars (Safety, Alignment, Governance, Security). Sub-100ms policy enforcement, >97% attack detection across 5 adversarial vectors, >99% policy compliance at 1,000-agent fleet scale. Introduces Policy-as-Code as operationalization of algorithmic accountability and the Three-Way Governance Dilemma. URL: https://aisel.aisnet.org/amcis2026/sig_sec/sig_sec/20/ — **Layer 1/3** — First production-ready meta-governance platform with real-time GRC for multi-agent systems. Directly addresses the gap between human-speed GRC and machine-speed agent operations.
+
+### New Products/Frameworks (Found: 0628-weekly)
+1. **NVIDIA Verified Agent Skills / SkillSpector** — June 2026 (blog). NVIDIA's capability governance framework for AI agents. Verified skills embed transparency, provenance, security validation, and authenticity checks at the skill layer. SkillSpector scanner checks conventional software risks (vulnerable dependencies, suspicious scripts, credential access) and agent-specific risks (hidden instructions, prompt injection, trigger abuse, excessive agency, tool poisoning, intent-behavior mismatches). Grounded in OWASP LLM/Agentic AI guidance and MITRE ATLAS. Cryptographic signing with OpenSSF Model Signing (OMS) for post-download verification. Skill cards document ownership, dependencies, limitations, and risks. Built on agentskills.io open specification (Claude Code, Codex, Cursor compatible). URL: https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/ — **Layer 0/1** — The first major vendor framework for skill-level capability governance with cryptographic provenance and automated security scanning. Bridges the gap between skill specification and production trust.
+
+### Notes (0628-weekly)
+- MOM-GS-MAS is the first academic paper to propose meta-governance (governance agents monitoring operational agents) with production-scale evaluation. The 16-governance-agent architecture and 99% compliance at 1,000 agents makes it a credible blueprint for enterprise deployment.
+- NVIDIA Verified Agent Skills addresses the skill supply chain at the industry level: cryptographic signing, automated scanning, and machine-readable skill cards. This is a critical infrastructure layer that the academic community has not yet addressed at scale.
+- Together, these findings show convergence between academic meta-governance theory and industry skill verification infrastructure — both targeting the same governance gap from different angles.
+
 ## Next Scout Run
-- Scheduled: June 27, 2026
-- Focus: FAccT 2026 proceedings (June 25-28), NeurIPS 2026 submissions, summer benchmark releases, OWASP agentic skills adoption metrics
+- Scheduled: July 5, 2026
+- Focus: NeurIPS 2026 submissions, FAccT 2026 proceedings (June 25-28), summer benchmark releases, post-June governance framework adoption
 
-## Research Momentum Observations (Updated 0620)
-- **Semantic skill evaluation is now measurable:** SkillVetBench's SARS score provides an actionable metric for skill marketplace security, complementing static code analysis.
-- **Real-world capability gap is quantified:** ALE's 2.6% pass rate on professional workflows exposes the chasm between benchmark saturation and GDP-relevant deployment.
-- **Post-quantum governance is formalized:** MAGIQ's UC-secure framework proves that agent governance can be cryptographically grounded, not just policy-based.
-- **Convergence:** The three papers collectively span skill security (Layer 0), agent capability evaluation (Layer 2/3), and infrastructure governance (Layer 1) — confirming the three-layer stack covers the active research frontier.
+## Research Momentum Observations (Updated 0628-weekly)
+- **Meta-governance emergence:** Academic research is now proposing governance agents that monitor other agents, moving from static policy to dynamic oversight. MOM-GS-MAS provides the first production-scale evidence that this is feasible.
+- **Industry skill verification:** NVIDIA's framework treats skills as deployable artifacts requiring provenance, scanning, and signing — a level of rigor previously reserved for software packages. This validates the skill-layer governance hypothesis.
+- **Convergence:** Both findings target the same problem (how to govern agent capabilities at scale) with complementary approaches (academic meta-governance + industry skill verification). The stack is maturing from conceptual to operational.
 
+
+## 2026-06-28 Scout Run — NEW FINDINGS DISCOVERED
+Search queries: agent governance safety benchmark 2026, agent skill markdown specification validation governance 2026, OWASP agentic applications framework 2026
+Status: **NEW FINDINGS FOUND**
+
+### New Papers (Found: 0628)
+1. **From prompt injections to protocol exploits: Threats in LLM-powered AI agents workflows** (2026) — Comprehensive analysis of prompt injection to protocol-level exploits in LLM agent workflows. Layer 1.
+2. **Prompt Injection Attacks in LLMs and AI Agent Systems: A Comprehensive Review** (2026) — Systematic review of vulnerabilities, attack vectors, and defense mechanisms. Layer 1.
+3. **Enterprise-Grade Security for the Model Context Protocol (MCP)** (2026) — Frameworks and mitigation strategies for MCP security in enterprise environments. Layer 1.
+4. **MPMA: Preference Manipulation Attack Against Model Context Protocol** (2026, AAAI) — Preference manipulation attacks targeting MCP. Layer 1.
+5. **MCP Threat Modeling and Analysis of Vulnerabilities to Prompt Injection with Tool Poisoning** (2026) — Threat modeling for MCP with focus on prompt injection and tool poisoning. Layer 1.
+6. **MCPTox: A Benchmark for Tool Poisoning on Real-World MCP Servers** (2026, AAAI) — First benchmark for tool poisoning on real-world MCP servers. Layer 1/2.
+7. **Teams of LLM Agents can Exploit Zero-Day Vulnerabilities** (2026, EACL) — Demonstrates multi-agent teams exploiting zero-day vulnerabilities. Layer 2/3.
+8. **Swarm Skills: A Portable, Self-Evolving Multi-Agent System Specification** (arXiv:2605.10052) — Multi-agent coordination specification with self-evolving capabilities. Layer 0/1.
+9. **From Artifacts to Risk: Auditing Instruction Surfaces in Agent Systems** (2026) — Audit of 509 instruction-rich repositories, 4,882 findings. Artifact-level security analysis. Layer 0/1.
+10. **Securing LLM-based agents against cyberattacks: a comprehensive survey** (2026) — Comprehensive survey on attack techniques and defense strategies for LLM agents. Layer 1.
+11. **A Formal Security Framework for MCP-Based Tool Access in Agentic AI Systems** (2026) — Formal security framework for MCP tool access control. Layer 1.
+
+### Additional Notable Papers
+- EvalHack: Answer-Side Prompt Injection for Probing LLM Exam-Grading (2026)
+- A Context-Aware LLM-Based Action Safety Evaluator for Automation Agents (2025)
+- Open Challenges in Multi-Agent Security (2025, arXiv:2505.02077)
+- From REST to MCP: An Empirical Study of API Wrapping (2025)
+- A Large-Scale Evolvable Dataset for MCP Ecosystem and Security Analysis (2025)
+
+## Key Themes (0628)
+- **MCP security explosion**: 6 new papers focused on MCP security (Enterprise-Grade Security, MPMA, MCPTox, Threat Modeling, Formal Framework, REST-to-MCP study)
+- **Multi-agent attack surface**: Teams of LLM agents can exploit zero-days; Swarm Skills introduces portable multi-agent specs
+- **Artifact-level auditing**: "From Artifacts to Risk" shows repository-level instruction surface scanning is necessary
+- **Comprehensive surveys**: Multiple 2026 surveys covering prompt injection, cyberattacks, and LLM agent security
+
+## Research Momentum Observations (Updated 0628)
+- MCP is now a critical attack surface with dedicated benchmarks (MCPTox) and formal frameworks
+- Multi-agent security is transitioning from theoretical to demonstrated exploits (zero-day exploitation)
+- Artifact-level auditing (repository scanning) complements runtime testing
+- Skill specifications are evolving toward portable, self-evolving formats (Swarm Skills)

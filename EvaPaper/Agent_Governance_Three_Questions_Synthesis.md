@@ -1,7 +1,7 @@
 # Agent Governance Research Summary: Three Critical Questions
 
-> Compiled by EvaPaper | June 20, 2026
-> Based on 35 papers across the Three-Layer Governance Stack
+> Compiled by EvaPaper | June 28, 2026
+> Based on 45 papers across the Three-Layer Governance Stack
 
 ---
 
@@ -103,11 +103,18 @@ BIV studies **L1-L2**. The 80% deviation rate actually *proves* agents are tryin
 - **Why it matters:** This paper explains **why** Markdown works as a skill format. It's not just convention — it's because LLMs have **learned structural parsing** from their training data, and Markdown's explicit syntax (headers, lists, code blocks) aligns with how models internally segment context. MDEval provides a **measurable metric** for skill format quality: models with higher Markdown Awareness follow structured instructions better.
 - **Governance implication:** If a model has low MDEval scores, its skill-following capability will be unreliable regardless of how well the skill is written. This suggests **model selection** is part of governance: you need models that can parse Markdown structure to reliably follow skill instructions.
 
+#### 9. **Swarm Skills: A Portable, Self-Evolving Multi-Agent System Specification** (arXiv:2605.10052, Layer 0+1) — *added June 28*
+- **Key finding:** Self-evolving multi-agent coordination specification with built-in governance hooks. Portable format for agent team definitions enables structured skill sharing across agent ecosystems.
+- **Evidence:** Demonstrates that skill specifications can encode not just single-agent behavior but multi-agent coordination protocols
+- **Proof type:** Specification framework with runtime validation
+- **Why it matters:** Extends skill markdown from single-agent instructions to multi-agent coordination contracts, showing that structured specifications can govern emergent team behavior
+- **Gap:** Self-evolving aspect introduces dynamic specification changes that static validation cannot fully capture
+
 ---
 
 ### Summary of Evidence for Question 1
 
-Eight papers now provide a **cumulative, multi-method evidence base** that skill markdown affects agent behavior. The evidence is not merely correlational — it is **causal, controlled, and replicated** across different research groups, models, and tasks.
+Nine papers now provide a **cumulative, multi-method evidence base** that skill markdown affects agent behavior. The evidence is not merely correlational — it is **causal, controlled, and replicated** across different research groups, models, and tasks.
 
 | Paper | Method | Key Finding | Causal? | Layer |
 |-------|--------|-------------|---------|-------|
@@ -208,6 +215,12 @@ Eight papers now provide a **cumulative, multi-method evidence base** that skill
 - **Key insight:** Code scanners are structurally blind to instruction-layer attacks (prompt injection, memory poisoning, encoded side channels). Semantic evaluation via LLM-as-Judge ensemble detects what code analysis cannot.
 - **Gap:** LLM-based evaluation is not deterministic; detection rates vary 35–95% across evaluators, requiring ensemble scoring for production
 
+#### 10. **MCP Threat Modeling and Vulnerability Analysis** (JCP 2026, Layer 1) — *added June 28*
+- **What it does:** STRIDE analysis of 12 MCP attack vectors with threat modeling for prompt injection and tool poisoning
+- **Static checking:** Systematic threat modeling methodology for Model Context Protocol implementations
+- **Results:** Identifies 12 distinct attack vectors in MCP ecosystems
+- **Gap:** Threat modeling framework, not automated static analysis; requires manual application
+
 ---
 
 ### What Is **Missing** (The Gap) — UPDATED with ZipperGen
@@ -279,92 +292,150 @@ Eight papers now provide a **cumulative, multi-method evidence base** that skill
 - **Results:** 86.67% verification accuracy vs 46.67% runtime baseline
 - **Gap:** Hybrid architecture, not purely deterministic runtime; single-agent only
 
-#### 6. **SentinelAgent** (arXiv:2604.02767, Layer 1)
+#### 6. **From Artifacts to Risk: Auditing Instruction Surfaces** (2026, Layer 0+1) — **Repository-Level Security Scanning**
+- **Deterministic:** Yes — static analysis signatures are deterministic
+- **Mechanism:** Artifact-centric audit of 509 instruction-rich repositories containing agent guidance files, skills, plugin manifests, and MCP-related artifacts. Integrates heterogeneous signature sources, correlates raw detections into artifact-level issue instances.
+- **Results:** 4,882 medium-or-higher raw findings and 4,637 clustered issue instances. Top 6 repositories (1.2% of corpus) account for 63.2% of findings. Gini coefficient 0.940.
+- **Key innovation:** Positions instruction surfaces as repository-level control-plane artifacts. ASAMM-aligned agent-security interpretation layer.
+- **Gap:** Detector outputs are candidate evidence, not proof of exploitability. No runtime enforcement.
+
+#### 7. **MCPTox: Tool Poisoning Benchmark** (AAAI 2026, Layer 1+2) — **First MCP Tool Poisoning Benchmark**
+- **Deterministic:** Benchmark framework (not enforcement)
+- **Mechanism:** Tests tool poisoning on real-world MCP servers. Standardized interface for evaluating tool-level manipulation.
+- **Results:** First benchmark demonstrating tool poisoning in production MCP services.
+- **Gap:** Benchmark only — does not provide defense mechanisms.
+
+#### 8. **Formal Security Framework for MCP Tool Access** (SSRN 2026, Layer 1)
+- **Deterministic:** Yes — formal framework with temporal logic specifications
+- **Mechanism:** Temporal logic specifications for safe tool invocation in MCP. Formal verification of access control policies.
+- **Gap:** Framework proposal — implementation and evaluation pending.
+
+#### 9. **Teams of LLM Agents Exploit Zero-Day Vulnerabilities** (EACL 2026, Layer 2+3)
+- **Deterministic:** N/A — demonstrates attack capability, not defense
+- **Mechanism:** Coordinated multi-agent teams autonomously develop exploits for zero-day vulnerabilities without human intervention.
+- **Results:** Successful exploitation of real-world zero-days by agent teams.
+- **Implication:** Governance must account for multi-agent attack scenarios, not just single-agent behavior.
+- **Gap:** No defense mechanism proposed.
+
+#### 10. **Securing LLM-based Agents: Comprehensive Survey** (SICS 2026, Layer 1)
+- **Deterministic:** Survey (not a system)
+- **Mechanism:** Comprehensive survey covering 200+ attacks across 15 categories. Taxonomy of attack techniques and defense strategies.
+- **Key finding:** LLM agents face unique security challenges beyond traditional cybersecurity and AI safety frameworks.
+- **Gap:** Survey paper — does not propose new defense mechanisms.
+
+#### 11. **SentinelAgent** (arXiv:2604.02767, Layer 1)
 - **Deterministic:** Yes — Delegation Chain Calculus with 7 formal properties
 - **Mechanism:** DCC (Delegation Chain Calculus) — authority narrowing, policy preservation, forensic reconstructibility, cascade containment, scope-action conformance, output schema conformance, intent preservation
 - **Verification:** TLA+ verified across 2.7 million states
 - **Results:** 100% TPR at 0% FPR on DelegationBench v4 (516 scenarios, 10 attack categories)
 - **Gap:** Focused on delegation chains, not general skill execution; single-agent only
 
-#### 7. **Trace-Based Assurance Framework** (arXiv:2603.18096, Layer 1/2)
+#### 12. **Trace-Based Assurance Framework** (arXiv:2603.18096, Layer 1/2)
 - **Deterministic:** Yes — Message-Action Traces (MAT) with explicit contracts
 - **Mechanism:** Machine-checkable verdicts, deterministic replay, structured fault injection
 - **Governance:** Runtime component enforcing per-agent capability limits and action mediation (allow/rewrite/block)
 - **Gap:** Complex to implement; requires trace instrumentation; single-agent only
 
-#### 8. **LGA / Layered Governance Architecture** (arXiv:2603.07191, Layer 1)
+#### 13. **LGA / Layered Governance Architecture** (arXiv:2603.07191, Layer 1)
 - **Deterministic:** Yes — sandboxing, intent verification, zero-trust authorization, audit logging
 - **Mechanism:** Four layers of runtime governance
 - **Results:** 89% of attacks succeed against baseline guardrails — showing LGA's enforcement is needed
 - **Gap:** Architectural framework, not a specific implementation; single-agent only
 
-#### 9. **MCP-38 / Threat Taxonomy** (arXiv:2603.18063, Layer 1)
+#### 14. **MCP-38 / Threat Taxonomy** (arXiv:2603.18063, Layer 1)
 - **Deterministic:** N/A — taxonomy paper, not enforcement
 - **Contribution:** 38 threat categories mapped to STRIDE, OWASP LLM Top 10, OWASP Agentic Top 10
 - **Gap:** No runtime enforcement mechanism
 
-#### 10. **NIST IR 8596** (Dec 2025, Layer 1/2)
+#### 15. **NIST IR 8596** (Dec 2025, Layer 1/2)
 - **Deterministic:** Standards document, not implementation
 - **Gap:** Framework only, no runtime enforcement
 
-#### 11. **EmbodiedGovBench** (arXiv:2604.11174, Layer 2)
+#### 16. **EmbodiedGovBench** (arXiv:2604.11174, Layer 2)
 - **Deterministic:** Benchmark, not enforcement — but measures governance as first-class evaluation target
 - **Coverage:** Seven governance dimensions: unauthorized capability invocation, runtime drift robustness, recovery success, policy portability, version upgrade safety, human override responsiveness, audit completeness
 - **Why it matters:** Current embodied benchmarks only measure task completion rate and accuracy. They do not measure whether systems are governable. EmbodiedGovBench closes this gap by evaluating whether embodied agents remain controllable, policy-bounded, recoverable, auditable, and evolution-safe under perturbations
 - **Gap:** Benchmark only — provides evaluation targets but not enforcement mechanisms
 
-#### 12. **Agent Skills for Large Language Models — Skill Trust & Lifecycle Governance Framework** (arXiv:2602.12430, Layer 0)
+#### 17. **Agent Skills for Large Language Models — Skill Trust & Lifecycle Governance Framework** (arXiv:2602.12430, Layer 0)
 - **Deterministic:** Framework for spec-level governance — four-tier gate-based permission model (G1–G4 verification gates, T1–T4 trust tiers)
 - **Coverage:** Comprehensive survey of agent skills landscape; maps skill provenance to graduated deployment capabilities based on verification history
 - **Key finding:** 26.1% of community-contributed skills contain vulnerabilities — format validation alone is insufficient
 - **Why it matters:** First systematic framework for skill provenance-based governance. Skills treated as executable artifacts with graduated trust levels, not just documentation
 - **Gap:** Framework and survey — requires implementation and enforcement layer below it
 
-#### 13. **OWASP Practical Guide for Secure MCP Server Development** (Feb 2026, Layer 1)
+#### 18. **OWASP Practical Guide for Secure MCP Server Development** (Feb 2026, Layer 1)
 - **Deterministic:** Security guide, not enforcement — but provides concrete implementation guidance
 - **Coverage:** Eight security domains: authentication, authorization, input validation, output encoding, error handling, logging, dependency management, configuration management
 - **Why it matters:** MCP is the de facto protocol for agent-tool communication. While MCP-38 provides the threat taxonomy (what can go wrong), this guide provides the concrete implementation guidance (how to prevent it). First OWASP-level secure coding guide specifically for MCP servers
 - **Gap:** Guide only — no automated enforcement
 
-#### 14. **MITRE ATLAS Agentic AI Update** (Oct 2025, Layer 1+2)
+#### 19. **MITRE ATLAS Agentic AI Update** (Oct 2025, Layer 1+2)
 - **Deterministic:** Adversarial taxonomy, not enforcement — but formalizes attack vectors
 - **Coverage:** 14 new agentic AI-specific techniques: multi-step tool chaining exploitation, state manipulation, delegation abuse, persistent skill poisoning, dynamic capability injection, cross-runtime trust boundary violations, agent memory tampering, goal hijacking, tool description poisoning, capability enumeration, behavior cloning, orchestration layer injection, autonomous red-team emulation, recursive self-modification detection
 - **Why it matters:** MITRE ATLAS is the standard adversarial taxonomy for AI systems (equivalent to ATT&CK for traditional cyber). The 14 new techniques formalize attack vectors unique to agentic systems that traditional AI threat models miss. Cross-mapped to OWASP Top 10 for Agentic Applications and NIST AI RMF
 - **Gap:** Taxonomy only — no built-in enforcement; useful for threat modeling and test design
 
-#### 15. **reprobe-audit** (IEEE Big Data 2026, Layer 2)
+#### 20. **reprobe-audit** (IEEE Big Data 2026, Layer 2)
 - **Deterministic:** Audit schema, not enforcement — but provides credibility verification framework
 - **Coverage:** Open scoring schema and codebook for auditing what LLM agent benchmark papers actually disclose: benchmark identity, harness specification, inference settings, cost reporting, and failure breakdown
 - **Key finding:** 12-paper pilot audit found agent-benchmark mean disclosure score of 0.38 vs. 0.66 for classical benchmarks. Cost reporting is universally absent for agent benchmarks
 - **Why it matters:** Governance without trustworthy benchmarks is guesswork. The 0.38 disclosure score means most agent safety benchmarks cannot be independently verified or reproduced. reprobe-audit provides the first systematic framework for verifying benchmark credibility
 - **Gap:** Audit methodology only — does not improve benchmarks themselves
 
-#### 16. **Agent Security Harness** (GitHub 2026, Layer 0+1+2)
+#### 21. **Agent Security Harness** (GitHub 2026, Layer 0+1+2)
 - **Deterministic:** Testing framework — 474 targeted security tests across 33 modules
 - **Coverage:** Prompt injection, tool misuse, data exfiltration, privilege escalation, inter-agent trust violations, skill poisoning, MCP exploitation, autonomous action abuse, goal hijacking
 - **Modes:** Red-team and blue-team testing modes. CI/CD integration for automated security testing
 - **Why it matters:** Most comprehensive open-source security testing framework for AI agents. The 474 tests provide concrete security verification that turns governance from policy into measurable, repeatable outcomes
 - **Gap:** Testing framework — detects vulnerabilities but does not prevent them by construction
 
-#### 17. **Web Skills Protocol (WSP)** (Mar 2026 draft, Layer 0)
+#### 22. **Web Skills Protocol (WSP)** (Mar 2026 draft, Layer 0)
 - **Deterministic:** Discovery protocol, not enforcement — but enables transparent provenance tracking
 - **Coverage:** /skills.txt and /agents.txt conventions for discoverable, self-describing skill registries on the web. Supports cryptographic signatures, attestation endpoints, and revocation lists
 - **Why it matters:** Centralized skill registries are a single point of failure and attack. WSP enables decentralized, transparent, inspectable skill registries where any domain can host its own skills with cryptographic verification and governance metadata. Integrates with the Skill Trust and Lifecycle Governance Framework's trust tier model
 - **Gap:** Discovery layer only — does not validate or enforce skill behavior
 
-#### 18. **Owner-Harm: Agents Harming Their Deployers** (arXiv:2604.18658, Layer 1+2) — *added June 12*
+#### 23. **Owner-Harm: Agents Harming Their Deployers** (arXiv:2604.18658, Layer 1+2) — *added June 12*
 - **Deterministic:** Threat model paper, not enforcement — but exposes a critical gap in current benchmarks
 - **Coverage:** Eight categories of agent behavior damaging the deployer. 14.8% → 85.3% TPR improvement with layered defense
 - **Why it matters:** Current safety benchmarks optimize for generic criminal harm (AgentHarm) and miss the deployer-harm vector entirely. Even a 100% TPR gate on generic criminal harm collapses to 14.8% when the victim is the deployer itself
 - **Gap:** Threat model only — requires enforcement layer to mitigate
 
-#### 19. **MAGIQ** (arXiv:2605.06933v2, Layer 1+3) — *added June 20*
+#### 24. **MAGIQ** (arXiv:2605.06933v2, Layer 1+3) — *added June 20*
 - **Deterministic:** Yes — policy enforcement is cryptographic, not LLM-based
 - **Mechanism:** NIST PQC primitives (ML-KEM, ML-DSA, SLH-DSA) for session-authorization tokens and hash-chain policy budgets. AA-sessions (one-to-one) and CC-sessions (one-to-many) with digitally signed task-msg attribution.
 - **Verification:** UC-security proof in the global random-oracle model
 - **Results:** Overhead comparable to SAGA (classical cryptography) despite post-quantum primitives
 - **Why it matters:** As NIST deprecates RSA/ECDSA by 2030, agent-to-agent authorization must migrate to quantum-resistant primitives. MAGIQ proves this is practical today with formal security guarantees
 - **Gap:** Cryptographic policy enforcement, not behavioral content verification; assumes trusted Provider
+
+#### 25. **MPMA: Preference Manipulation Attack Against Model Context Protocol** (AAAI 2026, Layer 1) — *added June 28*
+- **Deterministic:** Attack demonstration, not defense
+- **Mechanism:** Demonstrates preference manipulation attacks targeting MCP. Agent tool selection can be biased through prompt injection.
+- **Results:** Shows MCP tool selection is vulnerable to preference manipulation
+- **Implication:** Runtime governance must include tool-selection integrity verification
+- **Gap:** No defense mechanism proposed
+
+#### 26. **Enterprise-Grade Security for the Model Context Protocol** (IEEE ICAIC 2026, Layer 1) — *added June 28*
+- **Deterministic:** Framework (not enforcement)
+- **Mechanism:** AuthZ, audit logging, least-privilege tool access frameworks for MCP security in enterprise environments
+- **Coverage:** Mitigation strategies for MCP security in production deployments
+- **Gap:** Framework proposal — implementation and evaluation pending
+
+#### 27. **From Prompt Injections to Protocol Exploits** (JIC 2026, Layer 1) — *added June 28*
+- **Deterministic:** Attack taxonomy (not enforcement)
+- **Mechanism:** 8 exploit categories from input-level prompt injection to protocol-level attacks
+- **Results:** Comprehensive analysis of LLM agent workflow vulnerabilities
+- **Implication:** Governance must address the full attack chain from input to protocol
+- **Gap:** No defense mechanism proposed
+
+#### 28. **Prompt Injection Attacks: Comprehensive Review** (MDPI Info 2026, Layer 1) — *added June 28*
+- **Deterministic:** Survey (not a system)
+- **Mechanism:** Systematic review of vulnerabilities, attack vectors, defense mechanisms
+- **Results:** 200+ attacks across 15 categories
+- **Why it matters:** Most comprehensive survey of prompt injection attacks specifically, showing the breadth of the threat landscape that runtime governance must defend against
+- **Gap:** Survey paper — does not propose new defense mechanisms
 
 ### Comparison: Deterministic vs LLM-as-Judge Runtime Checking
 

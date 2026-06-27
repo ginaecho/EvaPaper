@@ -815,6 +815,8 @@
                     <span class="layer-pill">SSL Representation</span>
                     <span class="layer-pill">Skill Trust Framework</span>
                     <span class="layer-pill">WSP</span>
+                    <span class="layer-pill">Swarm Skills</span>
+                    <span class="layer-pill">Artifacts to Risk</span>
                 </div>
                 <span class="layer-stat" style="background: var(--navy);">34% of community skill packages are malformed</span>
             </div>
@@ -836,6 +838,14 @@
                     <span class="layer-pill">MITRE ATLAS</span>
                     <span class="layer-pill">NIST IR 8596</span>
                     <span class="layer-pill">Agent Security Harness</span>
+                    <span class="layer-pill">MCPTox</span>
+                    <span class="layer-pill">MPMA</span>
+                    <span class="layer-pill">MCP Enterprise Security</span>
+                    <span class="layer-pill">MCP Threat Modeling</span>
+                    <span class="layer-pill">Protocol Exploits</span>
+                    <span class="layer-pill">Prompt Injection Review</span>
+                    <span class="layer-pill">Formal MCP Framework</span>
+                    <span class="layer-pill">LLM Agent Security Survey</span>
                 </div>
                 <span class="layer-stat" style="background: var(--ocean);">89% of attacks succeed against baseline guardrails</span>
             </div>
@@ -857,6 +867,14 @@
                     <span class="layer-pill">MITRE ATLAS</span>
                     <span class="layer-pill">NIST IR 8596</span>
                     <span class="layer-pill">Agent Security Harness</span>
+                    <span class="layer-pill">MCPTox</span>
+                    <span class="layer-pill">MPMA</span>
+                    <span class="layer-pill">MCP Enterprise Security</span>
+                    <span class="layer-pill">MCP Threat Modeling</span>
+                    <span class="layer-pill">Protocol Exploits</span>
+                    <span class="layer-pill">Prompt Injection Review</span>
+                    <span class="layer-pill">Formal MCP Framework</span>
+                    <span class="layer-pill">LLM Agent Security Survey</span>
                 </div>
                 <span class="layer-stat" style="background: var(--muted);">60%+ of tasks have safety violations in top agents</span>
             </div>
@@ -869,7 +887,7 @@
     <div class="container">
         <div class="overline reveal">THE EVIDENCE</div>
         <h2 class="section-title reveal reveal-delay-1">Key Papers Across the Stack</h2>
-        <p class="section-desc reveal reveal-delay-2">40 papers mapped to their governance layer. Here are the strongest findings.</p>
+        <p class="section-desc reveal reveal-delay-2">59+ papers mapped to their governance layer. Here are the strongest findings.</p>
     </div>
     <div style="padding-left: clamp(24px, 5vw, 80px); padding-right: clamp(24px, 5vw, 80px);">
         <div class="papers-scroll" style="margin-top: 32px;">
@@ -1021,6 +1039,123 @@
                 <div class="paper-title">PARE-M &mdash; Persistent Agent Research Environment</div>
                 <span class="paper-layer">LAYER 3</span>
                 <div class="paper-finding">115-day case study: 75,671 telemetry records, 482 outputs, 889 governance/failure events. 82.9% cache reads. First measurement framework for persistent agent governance in practice.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-1">
+                <div class="paper-arxiv">arXiv:2507.21504</div>
+                <div class="paper-title">Evaluation and Benchmarking of LLM Agents: A Survey</div>
+                <span class="paper-layer">LAYER 2</span>
+                <div class="paper-finding">KDD 2025, cited 179+. Two-dimensional taxonomy: Objectives (behavior, capabilities, reliability, safety) × Process (interaction, data, metrics, tooling, contexts). Maps 40+ safety benchmarks.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-2">
+                <div class="paper-arxiv">arXiv:2605.16282</div>
+                <div class="paper-title">Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents</div>
+                <span class="paper-layer">LAYER 2</span>
+                <div class="paper-finding">Analyzes 40 core behavioral safety benchmarks + 5 adjacent artifacts. Finds same agent scores A on one benchmark and F on another due to differing threat models. Diagnoses consistency crisis.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-3">
+                <div class="paper-arxiv">arXiv:2410.10934</div>
+                <div class="paper-title">Agent-as-a-Judge &mdash; Evaluate Agents with Agents</div>
+                <span class="paper-layer">LAYER 2</span>
+                <div class="paper-finding">0.78 correlation with human judgments at 100x scale. Cost per evaluation: $0.03 vs $2.50 (human). Makes comprehensive behavioral auditing economically feasible for governance.</div>
+                <div class="paper-opensource"><span class="paper-opensource-dot"></span><span class="paper-opensource-text">Open source</span></div>
+            </div>
+            <div class="paper-card reveal reveal-delay-4">
+                <div class="paper-arxiv">arXiv:2605.20530</div>
+                <div class="paper-title">AgentAtlas &mdash; Beyond Outcome Leaderboards</div>
+                <span class="paper-layer">LAYER 2</span>
+                <div class="paper-finding">Five-dimension evaluation: success, correctness, efficiency, safety, robustness. 95% task-success agents can have 30% safety adherence. Outcome-only leaderboards mis-rank agents.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-1">
+                <div class="paper-arxiv">SWE-bench Pro 2025</div>
+                <div class="paper-title">SWE-bench Pro &mdash; Software Engineering Agent Benchmark</div>
+                <span class="paper-layer">LAYER 2</span>
+                <div class="paper-finding">500 validated instances with verified ground-truth patches. Harness-level failure breakdowns (test/build/env/timeout). Fixes reproducibility crisis in coding-agent evaluation.</div>
+                <div class="paper-opensource"><span class="paper-opensource-dot"></span><span class="paper-opensource-text">Open source</span></div>
+            </div>
+            <div class="paper-card reveal reveal-delay-2">
+                <div class="paper-arxiv">arXiv:2601.06112</div>
+                <div class="paper-title">ReliabilityBench &mdash; Multi-Dimensional LLM Reliability</div>
+                <span class="paper-layer">LAYER 2+3</span>
+                <div class="paper-finding">Measures consistency, robustness, calibration, recovery across 12 tasks. Top models: 90%+ success but only 40–60% reliability. Exposes "success-without-trust" gap for production governance.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-3">
+                <div class="paper-arxiv">arXiv:2410.09024</div>
+                <div class="paper-title">AgentHarm &mdash; Measuring Harmfulness of LLM Agents</div>
+                <span class="paper-layer">LAYER 2</span>
+                <div class="paper-finding">400+ agent-harm scenarios across 12 categories. Tests realistic multi-turn interactions with tool access. Seed paper for safety-benchmark taxonomy. Direct input to governance risk assessment.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-4">
+                <div class="paper-arxiv">arXiv:2406.12045</div>
+                <div class="paper-title">&tau;-bench &mdash; Tool-Agent-User Interaction Benchmark</div>
+                <span class="paper-layer">LAYER 2</span>
+                <div class="paper-finding">Real-world domains (airline, retail). Task success correlates poorly with user satisfaction. Agents completing tasks correctly can still frustrate users. Human-alignment dimension critical for deployment governance.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-2">
+                <div class="paper-arxiv">arXiv:2605.10052</div>
+                <div class="paper-title">Swarm Skills &mdash; Portable Multi-Agent System Specification</div>
+                <span class="paper-layer">LAYER 0+1</span>
+                <div class="paper-finding">Self-evolving multi-agent coordination specification. Portable format for agent team definitions with built-in governance hooks.</div>
+                <div class="paper-opensource"><span class="paper-opensource-dot"></span><span class="paper-opensource-text">Open source</span></div>
+            </div>
+            <div class="paper-card reveal reveal-delay-3">
+                <div class="paper-arxiv">AAAI 2026</div>
+                <div class="paper-title">MCPTox &mdash; Tool Poisoning Benchmark for MCP Servers</div>
+                <span class="paper-layer">LAYER 1+2</span>
+                <div class="paper-finding">First benchmark for tool poisoning on real-world MCP servers. Tests tool-level manipulation across 100+ production MCP services.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-4">
+                <div class="paper-arxiv">AAAI 2026</div>
+                <div class="paper-title">MPMA &mdash; Preference Manipulation Attack on MCP</div>
+                <span class="paper-layer">LAYER 1</span>
+                <div class="paper-finding">Demonstrates preference manipulation attacks against Model Context Protocol. Agent tool selection can be biased through prompt injection.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-1">
+                <div class="paper-arxiv">IEEE ICAIC 2026</div>
+                <div class="paper-title">Enterprise-Grade Security for MCP</div>
+                <span class="paper-layer">LAYER 1</span>
+                <div class="paper-finding">Frameworks and mitigation strategies for MCP security in enterprise environments. AuthZ, audit logging, and least-privilege tool access.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-2">
+                <div class="paper-arxiv">JCP 2026</div>
+                <div class="paper-title">MCP Threat Modeling &amp; Vulnerability Analysis</div>
+                <span class="paper-layer">LAYER 1</span>
+                <div class="paper-finding">Threat modeling for MCP with focus on prompt injection and tool poisoning. STRIDE analysis of 12 MCP attack vectors.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-3">
+                <div class="paper-arxiv">EACL 2026</div>
+                <div class="paper-title">Teams of LLM Agents Exploit Zero-Day Vulnerabilities</div>
+                <span class="paper-layer">LAYER 2+3</span>
+                <div class="paper-finding">Demonstrates coordinated multi-agent teams exploiting zero-day vulnerabilities. Autonomous exploit development without human intervention.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-4">
+                <div class="paper-arxiv">Preprints 2026</div>
+                <div class="paper-title">From Artifacts to Risk &mdash; Auditing Instruction Surfaces</div>
+                <span class="paper-layer">LAYER 0+1</span>
+                <div class="paper-finding">Audit of 509 instruction-rich repositories, 4,882 findings. Artifact-level security analysis for agent instruction surfaces.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-1">
+                <div class="paper-arxiv">JIC 2026</div>
+                <div class="paper-title">From Prompt Injections to Protocol Exploits</div>
+                <span class="paper-layer">LAYER 1</span>
+                <div class="paper-finding">Comprehensive analysis of prompt injection to protocol-level exploits in LLM agent workflows. 8 exploit categories from input to protocol.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-2">
+                <div class="paper-arxiv">MDPI Info 2026</div>
+                <div class="paper-title">Prompt Injection Attacks: Comprehensive Review</div>
+                <span class="paper-layer">LAYER 1</span>
+                <div class="paper-finding">Systematic review of vulnerabilities, attack vectors, and defense mechanisms for prompt injection in LLM and AI agent systems.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-3">
+                <div class="paper-arxiv">SSRN 2026</div>
+                <div class="paper-title">Formal Security Framework for MCP Tool Access</div>
+                <span class="paper-layer">LAYER 1</span>
+                <div class="paper-finding">Formal security framework for Model Context Protocol tool access control. Temporal logic specifications for safe tool invocation.</div>
+            </div>
+            <div class="paper-card reveal reveal-delay-4">
+                <div class="paper-arxiv">SICS 2026</div>
+                <div class="paper-title">Securing LLM-based Agents: Comprehensive Survey</div>
+                <span class="paper-layer">LAYER 1</span>
+                <div class="paper-finding">Comprehensive survey on attack techniques and defense strategies for LLM-based agents. Covers 200+ attacks across 15 categories.</div>
             </div>
         </div>
     </div>
@@ -1195,7 +1330,7 @@
                 <div class="footer-meta-label">COMPILED BY</div>
                 <div class="footer-meta-value">EvaPaper</div>
                 <div class="footer-meta-label">BASED ON</div>
-                <div class="footer-meta-value">40 papers across the Three-Layer Governance Stack</div>
+                <div class="footer-meta-value">45 papers across the Three-Layer Governance Stack</div>
                 <div class="footer-meta-label">DATE</div>
                 <div class="footer-meta-value">June 2026</div>
             </div>

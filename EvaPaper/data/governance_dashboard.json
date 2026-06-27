@@ -4,76 +4,46 @@
   "scout_run_count": 9,
   "topic_mix": [
     {
-      "id": "specification",
-      "label": "Specification & validation",
-      "color": "#e4572e",
-      "count": 11,
-      "ratio": 0.13580246913580246
+      "topic": "policy",
+      "count": 25,
+      "ratio": 0.272
     },
     {
-      "id": "supply_chain",
-      "label": "Skill & tool security",
-      "color": "#963484",
-      "count": 11,
-      "ratio": 0.13580246913580246
+      "topic": "evaluation",
+      "count": 16,
+      "ratio": 0.174
     },
     {
-      "id": "identity",
-      "label": "Identity & provenance",
-      "color": "#4267ac",
-      "count": 6,
-      "ratio": 0.07407407407407407
-    },
-    {
-      "id": "coordination",
-      "label": "Coordination & composition",
-      "color": "#5b8e3e",
-      "count": 3,
-      "ratio": 0.037037037037037035
-    },
-    {
-      "id": "evaluation",
-      "label": "Evaluation & benchmarks",
-      "color": "#f3a712",
-      "count": 15,
-      "ratio": 0.18518518518518517
-    },
-    {
-      "id": "runtime",
-      "label": "Runtime enforcement",
-      "color": "#1d6f75",
+      "topic": "specification",
       "count": 12,
-      "ratio": 0.14814814814814814
+      "ratio": 0.13
     },
     {
-      "id": "policy",
-      "label": "Policy & governance landscape",
-      "color": "#636363",
-      "count": 23,
-      "ratio": 0.2839506172839506
+      "topic": "runtime",
+      "count": 18,
+      "ratio": 0.196
+    },
+    {
+      "topic": "supply_chain",
+      "count": 12,
+      "ratio": 0.13
+    },
+    {
+      "topic": "identity",
+      "count": 6,
+      "ratio": 0.065
+    },
+    {
+      "topic": "coordination",
+      "count": 3,
+      "ratio": 0.033
     }
   ],
   "layer_mix": [
-    {
-      "layer": 0,
-      "label": "Spec",
-      "count": 21
-    },
-    {
-      "layer": 1,
-      "label": "Runtime",
-      "count": 42
-    },
-    {
-      "layer": 2,
-      "label": "Behavior",
-      "count": 26
-    },
-    {
-      "layer": 3,
-      "label": "Ecosystem",
-      "count": 13
-    }
+    23,
+    52,
+    28,
+    14
   ],
   "runs": [
     {
@@ -290,6 +260,30 @@
         "evaluation": 15,
         "runtime": 12,
         "policy": 23
+      }
+    },
+    {
+      "date": "2026-06-28",
+      "new_papers": 11,
+      "cumulative": 92,
+      "leading_topic": "Runtime monitoring",
+      "topics": {
+        "specification": 1,
+        "supply_chain": 1,
+        "identity": 0,
+        "coordination": 0,
+        "evaluation": 1,
+        "runtime": 6,
+        "policy": 2
+      },
+      "cumulative_topics": {
+        "specification": 12,
+        "supply_chain": 12,
+        "identity": 6,
+        "coordination": 3,
+        "evaluation": 16,
+        "runtime": 18,
+        "policy": 25
       }
     }
   ],
@@ -1389,6 +1383,153 @@
         ],
         "discovered": "2026-06-20",
         "degree": 4
+      },
+      {
+        "id": "arxiv:2605.10052",
+        "title": "Swarm Skills: Portable Multi-Agent System Specification",
+        "url": null,
+        "topic": "specification",
+        "topic_label": "Specification & skill design",
+        "color": "#4CAF50",
+        "layers": [
+          0,
+          1
+        ],
+        "discovered": "2026-06-28",
+        "degree": 1
+      },
+      {
+        "id": "doi:10.1609/aaai.v40i42.40895",
+        "title": "MCPTox: Tool Poisoning Benchmark for MCP Servers",
+        "url": null,
+        "topic": "evaluation",
+        "topic_label": "Evaluation & testing",
+        "color": "#2196F3",
+        "layers": [
+          1,
+          2
+        ],
+        "discovered": "2026-06-28",
+        "degree": 1
+      },
+      {
+        "id": "doi:10.1609/aaai.v40i42.40898",
+        "title": "MPMA: Preference Manipulation Attack on MCP",
+        "url": null,
+        "topic": "runtime",
+        "topic_label": "Runtime monitoring",
+        "color": "#FF9800",
+        "layers": [
+          1
+        ],
+        "discovered": "2026-06-28",
+        "degree": 1
+      },
+      {
+        "id": "doi:10.1109/icaic67076.2026.11395723",
+        "title": "Enterprise-Grade Security for MCP",
+        "url": null,
+        "topic": "runtime",
+        "topic_label": "Runtime monitoring",
+        "color": "#FF9800",
+        "layers": [
+          1
+        ],
+        "discovered": "2026-06-28",
+        "degree": 1
+      },
+      {
+        "id": "doi:10.3390/jcp6030084",
+        "title": "MCP Threat Modeling: Prompt Injection & Tool Poisoning",
+        "url": null,
+        "topic": "runtime",
+        "topic_label": "Runtime monitoring",
+        "color": "#FF9800",
+        "layers": [
+          1
+        ],
+        "discovered": "2026-06-28",
+        "degree": 1
+      },
+      {
+        "id": "doi:10.18653/v1/2026.eacl-long.2",
+        "title": "Teams of LLM Agents Exploit Zero-Day Vulnerabilities",
+        "url": null,
+        "topic": "policy",
+        "topic_label": "Policy & governance landscape",
+        "color": "#9C27B0",
+        "layers": [
+          2,
+          3
+        ],
+        "discovered": "2026-06-28",
+        "degree": 1
+      },
+      {
+        "id": "doi:10.24108/preprints-3115116",
+        "title": "From Artifacts to Risk: Auditing Instruction Surfaces",
+        "url": null,
+        "topic": "supply_chain",
+        "topic_label": "Supply chain & dependencies",
+        "color": "#F44336",
+        "layers": [
+          0,
+          1
+        ],
+        "discovered": "2026-06-28",
+        "degree": 1
+      },
+      {
+        "id": "doi:10.1007/s11416-026-00622-3",
+        "title": "Securing LLM-based Agents: Comprehensive Survey",
+        "url": null,
+        "topic": "policy",
+        "topic_label": "Policy & governance landscape",
+        "color": "#9C27B0",
+        "layers": [
+          1
+        ],
+        "discovered": "2026-06-28",
+        "degree": 1
+      },
+      {
+        "id": "doi:10.2139/ssrn.6891368",
+        "title": "Formal Security Framework for MCP Tool Access",
+        "url": null,
+        "topic": "runtime",
+        "topic_label": "Runtime monitoring",
+        "color": "#FF9800",
+        "layers": [
+          1
+        ],
+        "discovered": "2026-06-28",
+        "degree": 1
+      },
+      {
+        "id": "doi:10.1016/j.icte.2025.12.001",
+        "title": "From Prompt Injections to Protocol Exploits",
+        "url": null,
+        "topic": "runtime",
+        "topic_label": "Runtime monitoring",
+        "color": "#FF9800",
+        "layers": [
+          1
+        ],
+        "discovered": "2026-06-28",
+        "degree": 1
+      },
+      {
+        "id": "doi:10.3390/info17010054",
+        "title": "Prompt Injection Attacks: Comprehensive Review",
+        "url": null,
+        "topic": "runtime",
+        "topic_label": "Runtime monitoring",
+        "color": "#FF9800",
+        "layers": [
+          1
+        ],
+        "discovered": "2026-06-28",
+        "degree": 1
       }
     ],
     "edges": [
@@ -3012,6 +3153,94 @@
           "provides",
           "security"
         ]
+      },
+      {
+        "source": "arxiv:2605.10052",
+        "target": "arxiv:2605.22634",
+        "kind": "conceptual",
+        "weight": 2.5,
+        "reason": "same topic (specification); shared Layer 0",
+        "shared_terms": []
+      },
+      {
+        "source": "doi:10.1609/aaai.v40i42.40895",
+        "target": "arxiv:2603.25747",
+        "kind": "conceptual",
+        "weight": 2.5,
+        "reason": "same topic (evaluation); shared Layer 1",
+        "shared_terms": []
+      },
+      {
+        "source": "doi:10.1609/aaai.v40i42.40898",
+        "target": "arxiv:2603.07191",
+        "kind": "conceptual",
+        "weight": 2.5,
+        "reason": "same topic (runtime); shared Layer 1",
+        "shared_terms": []
+      },
+      {
+        "source": "doi:10.1109/icaic67076.2026.11395723",
+        "target": "arxiv:2603.07191",
+        "kind": "conceptual",
+        "weight": 2.5,
+        "reason": "same topic (runtime); shared Layer 1",
+        "shared_terms": []
+      },
+      {
+        "source": "doi:10.3390/jcp6030084",
+        "target": "arxiv:2603.07191",
+        "kind": "conceptual",
+        "weight": 2.5,
+        "reason": "same topic (runtime); shared Layer 1",
+        "shared_terms": []
+      },
+      {
+        "source": "doi:10.18653/v1/2026.eacl-long.2",
+        "target": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
+        "kind": "conceptual",
+        "weight": 2.5,
+        "reason": "same topic (policy); shared Layer 2",
+        "shared_terms": []
+      },
+      {
+        "source": "doi:10.24108/preprints-3115116",
+        "target": "arxiv:2603.18063",
+        "kind": "conceptual",
+        "weight": 2.5,
+        "reason": "same topic (supply_chain); shared Layer 0",
+        "shared_terms": []
+      },
+      {
+        "source": "doi:10.1007/s11416-026-00622-3",
+        "target": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
+        "kind": "conceptual",
+        "weight": 2.5,
+        "reason": "same topic (policy); shared Layer 1",
+        "shared_terms": []
+      },
+      {
+        "source": "doi:10.2139/ssrn.6891368",
+        "target": "arxiv:2603.07191",
+        "kind": "conceptual",
+        "weight": 2.5,
+        "reason": "same topic (runtime); shared Layer 1",
+        "shared_terms": []
+      },
+      {
+        "source": "doi:10.1016/j.icte.2025.12.001",
+        "target": "arxiv:2603.07191",
+        "kind": "conceptual",
+        "weight": 2.5,
+        "reason": "same topic (runtime); shared Layer 1",
+        "shared_terms": []
+      },
+      {
+        "source": "doi:10.3390/info17010054",
+        "target": "arxiv:2603.07191",
+        "kind": "conceptual",
+        "weight": 2.5,
+        "reason": "same topic (runtime); shared Layer 1",
+        "shared_terms": []
       }
     ],
     "node_count": 81,
@@ -3052,7 +3281,7 @@
         "id": "overview",
         "type": "overview",
         "title": "Agent Governance Research Overview",
-        "subtitle": "81 papers compiled into a living research wiki",
+        "subtitle": "92 papers, 10 scout runs, 4 governance layers",
         "body": "EvaPaper compiles specification, runtime, behavioral, ecosystem, security, identity, and coordination research into maintained pages. Use topic and layer pages to browse the corpus, then follow explicit related-paper links to inspect local research trails.",
         "links": [
           "topic:specification",
