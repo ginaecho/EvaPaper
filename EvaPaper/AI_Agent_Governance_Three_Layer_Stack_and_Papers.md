@@ -1699,3 +1699,21 @@ This is **Layer 2 (Behavioral-Level Governance)**. The multi-step autonomy creat
   - SkCC (static, score=49.8863)
   - OWASP Top 10 for Agentic Skills (AST10) (static, score=44.1682)
   - GitHub Spec Kit / SDD (Specification-Driven Development) (static, score=34.3207)
+
+### Run 2026-07-01 17:22:03 UTC
+- **Mode:** static
+- **Query:** agent governance skill markdown validation
+- **Question:** which papers are about static checking of agent interactions?
+- **Discovery graph:** 0 seeds, 0 candidates
+- **Input tokens:** 0
+- **Output tokens:** 0
+- **Total tokens:** 0
+- **Estimated cost (USD):** 0.000000
+- **Cost note:** Default local workflow accounting. Update this file or pass CLI overrides when you have real API/model usage numbers.
+- **Graph warning:** Discovery graph unavailable; fell back to local corpus only: HTTP Error 503: Service Unavailable
+- **Top matched papers:**
+  - Skilldex (static, score=54.8464)
+  - GovernSpec / Contractual Skills (static, score=40.0766)
+  - SkCC (static, score=48.8377)
+  - OWASP Top 10 for Agentic Skills (AST10) (static, score=43.9078)
+  - GitHub Spec Kit / SDD (Specification-Driven Development) (static, score=34.2229)

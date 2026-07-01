@@ -33,9 +33,191 @@
     "synthesizer": "Combines role outputs into state-of-the-art summaries and evidence-backed answers."
   },
   "graph": {
-    "seed_count": 0,
-    "candidate_count": 0,
-    "top_candidates": []
+    "seed_count": 5,
+    "candidate_count": 10,
+    "top_candidates": [
+      {
+        "paper_id": "arXiv:2606.31272v1",
+        "title": "The Decomposition Is the Fingerprint: Per-Component Identity for Agent Skills",
+        "year": 2026,
+        "url": "http://arxiv.org/abs/2606.31272v1",
+        "abstract": "AI agents increasingly acquire and execute skills at runtime: bundles of prompt instructions, executable code, and tool declarations fetched from marketplaces and other agents. Governing them needs a stable notion of skill identity, yet cryptographic hashing is engineered to destroy the very similarity we need, as a one-character edit scrambles the digest. We present a compact, locality-sensitive fingerprint that embeds each component of a skill and projects it to bits with a multi-bank SimHash, giving a fixed 120-byte signature compared in constant time by Hamming distance. Our central claim is that keeping the fingerprint as a per-component triple (prompt, code, tools), rather than a single score, is what makes it useful: the triple recovers skill-family identity through paraphrase, renaming, refactoring, and controlled code translation when another component remains shared, while independent multilingual reimplementation is not recovered; it also localizes which component carries the reuse. We claim lineage, not behavioral equivalence: identity supplies the structural axis of a registry and leaves safety to behavioral verification. The fingerprint reaches an area under the ROC curve (AUC) of 0.974 (95% CI [0.956, 0.994]) over 4,950 pairwise comparisons while using 77x fewer bits than the embedding it approximates, with ranking preserved in expectation and finite-bit concentration; the per-component split turns one number into relationship classification, families, novelty, and a portable \"SkillBOM\" for a skill registry. On a 906-skill injection benchmark the fingerprint recognizes injected skills as tampered copies of a known base and localizes the change, but recognition is not trust: it remains, by design, an identity signal complementary to behavioral verification rather than a safety verdict.",
+        "citation_count": 0,
+        "source": "arxiv",
+        "seed_distance": 1,
+        "matched_edges": [
+          "arxiv_live_search"
+        ],
+        "topics": [
+          "cs.CR",
+          "cs.CL",
+          "cs.LG"
+        ],
+        "score": 1.8
+      },
+      {
+        "paper_id": "arXiv:2606.28791v1",
+        "title": "From Determinism to Delegation: AI-Native Software Engineering and the Evolution of the Agentic Engineer",
+        "year": 2026,
+        "url": "http://arxiv.org/abs/2606.28791v1",
+        "abstract": "Software engineering is experiencing its most significant transformation since the emergence of high-level programming languages. As large language models (LLMs) increasingly enable sustained, multi-step, tool-mediated execution, engineering value is shifting from writing deterministic code to supervising probabilistic and autonomous behavior. This paper argues that AI-Native Software Engineering is a paradigm shift rather than a mere tooling advance, creating a new professional archetype: the Agentic Engineer, whose primary artifact is the agentic system rather than the program. We characterize this transition through three changes: (i) the unit of work shifts from functions to supervised agent workflows, (ii) correctness shifts from binary assertions to statistical evaluation under uncertainty, and (iii) accountability shifts from code authorship to outcome ownership. Drawing on post-2022 research, we compare traditional and agentic engineering roles and define core mechanisms of autonomous agents, including reasoning-acting loops, context engineering, tool use, memory, behavioral drift, and compositional error. We place human-AI collaboration within socio-technical frameworks and examine mixed empirical evidence. While some studies report productivity gains, others show slowdowns among experienced developers, highlighting disciplined oversight rather than automation as the critical competency. Using established governance frameworks, we identify required skills and risks, including indirect prompt injection. We conclude that the future is one of symbiosis rather than substitution: agentic engineering builds upon and depends on classical software engineering principles.",
+        "citation_count": 0,
+        "source": "arxiv",
+        "seed_distance": 1,
+        "matched_edges": [
+          "arxiv_live_search"
+        ],
+        "topics": [
+          "cs.SE"
+        ],
+        "score": 1.8
+      },
+      {
+        "paper_id": "arXiv:2606.28592v1",
+        "title": "Embodiment Meets Environment: Toward Context-Aware, Safe Physical Caregiving Robots",
+        "year": 2026,
+        "url": "http://arxiv.org/abs/2606.28592v1",
+        "abstract": "Physical caregiving robots need to assist different users with different tasks in diverse environments, and they come in many embodiments. While substantial progress has been made on individual caregiving tasks, most existing systems remain tightly coupled to specific environments and robot embodiments, and often do not explicitly model or constrain interactions around people, despite humans being special agents in the environment. This motivates a focus on adapting to context that emerges from the joint interaction between the environment and the robot's embodiment. We propose $E^2$-CARE, a framework that enables context-aware adaptation by representing primitive caregiving skills as interaction templates whose execution is reshaped online. $E^2$-CARE represents the environment, the robot, and the human within a unified 3D dynamic scene graph that models these interaction contexts explicitly, and synthesizes task-specific constraints to govern how each skill is executed. By enforcing these constraints at runtime, the same skill templates can be reused zero-shot and safely across diverse environments and robot embodiments. We evaluate $E^2$-CARE across four activities of daily living in hundreds of simulated household environments, including assistive home settings, and across diverse robot embodiments, and validate it through user studies on two caregiving tasks with two robots in various real-world environments. Results demonstrate consistent and successful adaptation across these environments and embodiments. Website: https://emprise.cs.cornell.edu/e2care",
+        "citation_count": 0,
+        "source": "arxiv",
+        "seed_distance": 1,
+        "matched_edges": [
+          "arxiv_live_search"
+        ],
+        "topics": [
+          "cs.RO"
+        ],
+        "score": 1.8
+      },
+      {
+        "paper_id": "arXiv:2606.26494v2",
+        "title": "Clinical Harness for Governable Medical AI Skill Ecosystems",
+        "year": 2026,
+        "url": "http://arxiv.org/abs/2606.26494v2",
+        "abstract": "Medical AI remains organized around isolated models, whereas care requires accountable capabilities that persist across time. We define clinical AI skills and propose the Clinical Harness, a runtime governance architecture that registers, orchestrates, constrains and monitors them. Using osteoporosis as an exemplar, we show how knowledge-driven, data-driven and physics-enhanced skills can support lifecycle care and provide a governed substrate for future medical agents.",
+        "citation_count": 0,
+        "source": "arxiv",
+        "seed_distance": 1,
+        "matched_edges": [
+          "arxiv_live_search"
+        ],
+        "topics": [
+          "cs.AI"
+        ],
+        "score": 1.8
+      },
+      {
+        "paper_id": "arXiv:2606.23768v1",
+        "title": "Cryptographic certificates of validity for trustworthy AI",
+        "year": 2026,
+        "url": "http://arxiv.org/abs/2606.23768v1",
+        "abstract": "We propose cryptographic certificates of validity for agentic AI systems. The core idea is to formally specify a correctness or policy condition as a logical predicate, compile this predicate to a witness-checking problem over polynomial constraints, and use a succinct cryptographic proof system (and optionally zero-knowledge) to certify that the condition holds. This offers a middle ground between formal verification of source code, and cryptographic authentication. An agent's action can be accompanied by an independently checkable proof that it satisfies an agreed formal policy, without requiring the verifier to trust the agent or to re-execute computation. We outline the approach at a high level, give the core mathematical translation, relate the proposal to proof-carrying code, zkVMs, formal methods, and agent governance, and note the specification, auditing, and deployment questions that a full implementation must answer.",
+        "citation_count": 0,
+        "source": "arxiv",
+        "seed_distance": 1,
+        "matched_edges": [
+          "arxiv_live_search"
+        ],
+        "topics": [
+          "cs.CR",
+          "cs.AI",
+          "cs.LO"
+        ],
+        "score": 1.8
+      },
+      {
+        "paper_id": "arXiv:2606.17591v1",
+        "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning",
+        "year": 2026,
+        "url": "http://arxiv.org/abs/2606.17591v1",
+        "abstract": "Training-free verbal reinforcement learning enables LLM agents to learn from world feedback -- objective signals such as dynamic task outcomes, market returns, or demand forecasts -- by extracting verbal rules from experience and injecting them as context, updating the agent's behavior without parameter changes. However, in non-stationary environments these agents face a retention-forgetting dilemma: retaining stale insights causes negative transfer, while discarding them causes catastrophic forgetting when conditions recur. We identify four requirements for navigating this dilemma -- outcome-driven evaluation, persistent structured evidence, non-monotonic knowledge lifecycle, and compositional governance -- and show that existing methods invest heavily in experience extraction while underinvesting in insight governance. We propose a three-layer architecture -- rules, evidence, and skills -- connected by a feedback-driven curation loop that closes the governance gap. Rules capture distilled experience from world outcomes; evidence logs track each rule's reliability across episodes; skills govern which rules to apply, how to resolve conflicts, and when to abstain. On financial forecasting as a case study, where world feedback is naturally abundant, noisy, and non-stationary, we show that the same accumulated experience either degrades performance below the zero-shot baseline or dramatically improves accuracy and risk-adjusted returns, depending on whether the curation loop is present.",
+        "citation_count": 0,
+        "source": "arxiv",
+        "seed_distance": 1,
+        "matched_edges": [
+          "arxiv_live_search"
+        ],
+        "topics": [
+          "cs.AI"
+        ],
+        "score": 1.8
+      },
+      {
+        "paper_id": "arXiv:2606.16523v1",
+        "title": "SkillWiki: A Living Knowledge Infrastructure for Agent Skills",
+        "year": 2026,
+        "url": "http://arxiv.org/abs/2606.16523v1",
+        "abstract": "While knowledge is managed through Wikipedia and software through GitHub, agent skills still lack an infrastructure for large-scale production, governance, and evolution. SkillWiki is a living knowledge infrastructure that supports the organization, grounding, and continuous evolution of agent skills by transforming heterogeneous knowledge into reusable skill assets linked to their originating evidence. Our demonstration presents the complete skill lifecycle, from knowledge ingestion and skill production to provenance-aware exploration, governance, and execution-driven evolution. SkillWiki highlights a future in which knowledge, skills, and execution experience co-evolve within a shared infrastructure. The live demonstration and source code are publicly available at https://github.com/Huangdingcheng/SkillWiki.",
+        "citation_count": 0,
+        "source": "arxiv",
+        "seed_distance": 1,
+        "matched_edges": [
+          "arxiv_live_search"
+        ],
+        "topics": [
+          "cs.CL"
+        ],
+        "score": 1.8
+      },
+      {
+        "paper_id": "arXiv:2606.14502v1",
+        "title": "From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI",
+        "year": 2026,
+        "url": "http://arxiv.org/abs/2606.14502v1",
+        "abstract": "Large Language Models (LLMs) are undergoing a fundamental transformation from conversational generators into integrated AI systems capable of reasoning, action, memory, and self-improvement. We conceptualize this transition as a shift from Chatbot to Digital Colleague: from conversational answers to persistent work. We organize this transition along two tightly coupled dimensions. First, at the cognitive core level, LLMs are advancing from Chatbot-era \"fast thinking\" systems driven by next-token prediction toward Thinking LLMs that leverage inference-time computation, Chain-of-Thought reasoning, reflection, process supervision, and reinforcement learning to support more deliberate and reliable cognition. Second, at the tool-augmented task execution level, LLMs are progressing from tool-calling Agents that invoke external resources in an ad hoc manner toward OpenClaw-style workstation systems (OpenClaw) equipped with persistent Workspaces, skills, verification loops, and governance. The \"Workspace + Skill\" paradigm makes episodic tool use colleague-like via state persistence, reusable procedures, task closure, and experience reuse. We examine data construction shifts from instruction-response pairs to State-Action-Observation trajectories and evaluation from static benchmarks to sandboxed, auditable, self-evolving AI ecosystems.",
+        "citation_count": 0,
+        "source": "arxiv",
+        "seed_distance": 1,
+        "matched_edges": [
+          "arxiv_live_search"
+        ],
+        "topics": [
+          "cs.AI"
+        ],
+        "score": 1.8
+      },
+      {
+        "paper_id": "arXiv:2606.20669v1",
+        "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
+        "year": 2026,
+        "url": "http://arxiv.org/abs/2606.20669v1",
+        "abstract": "As organizations increasingly deploy generative AI agents to automate business processes, they face a governance dilemma: although these agents can increase operational flexibility, their non-deterministic nature challenges the control and standardization that Business Process Management seeks to enforce. This paper addresses this \\emph{invisible autonomy risk} by introducing \\emph{Agent Behavior Mining}, a governance capability that enables the application of process mining techniques to render generative AI agent decision-making observable and traceable. We (1) improve the understanding of generative AI agent behavior through an event data model that translates granular agent activities -- including reasoning traces, tool usage, and token costs -- into standardized process logs; (2) instantiate the data model in a multi-agent order-to-cash implementation, demonstrating how process managers can leverage agent logs to detect policy deviations and quantify operational variability; and (3) evaluate the perceived practical utility of the approach in an exploratory study with 18 industry practitioners. The results indicate that practitioners view behavioral transparency as a prerequisite for trust and consider the ability to examine agent reasoning as an important governance requirement for the next generation of AI-driven business processes.",
+        "citation_count": 0,
+        "source": "arxiv",
+        "seed_distance": 1,
+        "matched_edges": [
+          "arxiv_live_search"
+        ],
+        "topics": [
+          "cs.AI",
+          "cs.SE"
+        ],
+        "score": 1.8
+      },
+      {
+        "paper_id": "arXiv:2606.09365v3",
+        "title": "Experience Makes Skillful: Enabling Generalizable Medical Agent Reasoning via Self-Evolving Skill Memory",
+        "year": 2026,
+        "url": "http://arxiv.org/abs/2606.09365v3",
+        "abstract": "Medical agent systems are increasingly expected to support interactive clinical decision making rather than only static question answering. In such settings, effective agents must reuse prior experience across evolving cases, yet existing memory mechanisms often retain raw historical traces that are redundant, noisy, and difficult to govern. More importantly, they rarely distinguish which memories are truly useful for future reasoning. This limits their ability to accumulate compact and reliable experience for long-horizon clinical reasoning. To close this gap, we propose SkeMex, a post-deployment self-evolution framework that improves medical agents through a skill-based memory without updating model weights. SkeMex distills informative interaction trajectories into structured skills that encode reusable procedural knowledge, and organizes them into a multi-branch repository spanning general, task-specific, and action-level experience. To determine which memories should be reused and retained, SkeMex estimates context-dependent utility from environment feedback and uses it to guide value-aware retrieval and repository governance. A closed-loop ``Read--Write--Assess--Govern\" lifecycle further supports continual evolution by writing new skills, updating utilities, promoting useful memories, and removing harmful entries. Experiments across diverse clinical tasks show that SkeMex consistently outperforms representative memory-based agents in both offline and online settings. It also generalizes across model backbones and supports transferable skill memory. All data and code will be released publicly.",
+        "citation_count": 0,
+        "source": "arxiv",
+        "seed_distance": 1,
+        "matched_edges": [
+          "arxiv_live_search"
+        ],
+        "topics": [
+          "cs.AI",
+          "cs.CL"
+        ],
+        "score": 1.8
+      }
+    ],
+    "provider_errors": [
+      "openalex search failed: HTTPError: HTTP Error 503: Service Unavailable",
+      "semantic scholar search failed: HTTPError: HTTP Error 429: "
+    ],
+    "artifact": "/Users/tzu-chunchen/Documents/AI/EvaPaper/data/agent_team/graph_candidates.json"
   },
   "all_sota": {
     "mode": "all",
@@ -80,7 +262,7 @@
       },
       {
         "title": "LASM / Systematic Survey",
-        "ordinal": 126,
+        "ordinal": 163,
         "url": "https://arxiv.org/abs/2604.23338",
         "layer": "Layer 1/2/3",
         "primary_focus": "landscape",
@@ -118,7 +300,7 @@
       },
       {
         "title": "Evidence-Synthesis Framework",
-        "ordinal": 127,
+        "ordinal": 164,
         "url": "https://arxiv.org/abs/2604.19818",
         "layer": "Layer 2/3",
         "primary_focus": "behavioral",
@@ -137,7 +319,7 @@
       },
       {
         "title": "Trace-Based Assurance Framework",
-        "ordinal": 129,
+        "ordinal": 166,
         "url": "https://arxiv.org/abs/2603.18096",
         "layer": "Layer 1/2",
         "primary_focus": "static",
@@ -156,7 +338,7 @@
       },
       {
         "title": "Auditable Agents",
-        "ordinal": 133,
+        "ordinal": 170,
         "url": "https://arxiv.org/abs/2604.05485",
         "layer": "Layer 1/2",
         "primary_focus": "runtime",
@@ -191,10 +373,48 @@
           "landscape": 2
         },
         "score": 17
+      },
+      {
+        "title": "GovernSpec / Contractual Skills",
+        "ordinal": 5,
+        "url": "https://arxiv.org/abs/2605.22634",
+        "layer": "**Layer 0 \u2014 Spec-Level Governance** (with runtime enforcement hooks into Layer 1)",
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "runtime",
+          "landscape",
+          "behavioral"
+        ],
+        "focus_scores": {
+          "static": 10,
+          "runtime": 4,
+          "behavioral": 1,
+          "landscape": 2
+        },
+        "score": 17
+      },
+      {
+        "title": "SentinelAgent",
+        "ordinal": 171,
+        "url": "https://arxiv.org/abs/2604.02767",
+        "layer": "Layer 1",
+        "primary_focus": "runtime",
+        "secondary_focuses": [
+          "static",
+          "landscape",
+          "behavioral"
+        ],
+        "focus_scores": {
+          "static": 7,
+          "runtime": 7,
+          "behavioral": 1,
+          "landscape": 2
+        },
+        "score": 17
       }
     ]
   },
-  "graph_warning": "Discovery graph unavailable; fell back to local corpus only: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+  "graph_warning": "Discovery graph used degraded live providers: openalex search failed: HTTPError: HTTP Error 503: Service Unavailable; semantic scholar search failed: HTTPError: HTTP Error 429: ",
   "static_sota": {
     "mode": "static",
     "results": [
@@ -255,7 +475,7 @@
       },
       {
         "title": "SkCC",
-        "ordinal": 125,
+        "ordinal": 162,
         "url": "https://arxiv.org/abs/2605.03353",
         "layer": "Layer 1/2",
         "primary_focus": "static",
@@ -274,7 +494,7 @@
       },
       {
         "title": "Trace-Based Assurance Framework",
-        "ordinal": 129,
+        "ordinal": 166,
         "url": "https://arxiv.org/abs/2603.18096",
         "layer": "Layer 1/2",
         "primary_focus": "static",
@@ -293,7 +513,7 @@
       },
       {
         "title": "GitHub Spec Kit / SDD (Specification-Driven Development)",
-        "ordinal": 139,
+        "ordinal": 176,
         "url": "https://github.com/topics/skill-md",
         "layer": "Layer 3",
         "primary_focus": "static",
@@ -310,7 +530,7 @@
       },
       {
         "title": "Web Skills Protocol (WSP)",
-        "ordinal": 140,
+        "ordinal": 177,
         "url": "https://github.com/openclaw/skills/blob/main/skills/0xtresser/web-skills-protocol/SPEC.md",
         "layer": "Layer 0/1",
         "primary_focus": "static",
@@ -328,7 +548,7 @@
       },
       {
         "title": "SentinelAgent",
-        "ordinal": 134,
+        "ordinal": 171,
         "url": "https://arxiv.org/abs/2604.02767",
         "layer": "Layer 1",
         "primary_focus": "runtime",
@@ -344,6 +564,44 @@
           "landscape": 2
         },
         "score": 70
+      },
+      {
+        "title": "Evidence-Synthesis Framework",
+        "ordinal": 164,
+        "url": "https://arxiv.org/abs/2604.19818",
+        "layer": "Layer 2/3",
+        "primary_focus": "behavioral",
+        "secondary_focuses": [
+          "static",
+          "landscape",
+          "runtime"
+        ],
+        "focus_scores": {
+          "static": 6,
+          "runtime": 4,
+          "behavioral": 6,
+          "landscape": 4
+        },
+        "score": 60
+      },
+      {
+        "title": "Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward",
+        "ordinal": 46,
+        "url": "https://arxiv.org/abs/2602.12430",
+        "layer": "**Layer 0 \u2014 Spec-Level Governance** (with provenance and trust lifecycle hooks)",
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "landscape",
+          "behavioral",
+          "runtime"
+        ],
+        "focus_scores": {
+          "static": 5,
+          "runtime": 1,
+          "behavioral": 1,
+          "landscape": 2
+        },
+        "score": 55
       }
     ]
   },
@@ -372,7 +630,7 @@
         "url": "https://arxiv.org/abs/2604.16911",
         "layer": "**Layer 0 \u2014 Spec-Level Governance**",
         "solution": null,
-        "score": 55.196,
+        "score": 54.8917,
         "match_type": "direct",
         "support_count": 2,
         "positive_hits": 2,
@@ -391,7 +649,7 @@
         "top_passages": [
           {
             "field": "paper_summary",
-            "score": 8.8734,
+            "score": 8.7126,
             "matched_terms": [
               "agent",
               "check"
@@ -400,7 +658,7 @@
           },
           {
             "field": "abstract",
-            "score": 7.9226,
+            "score": 7.7791,
             "matched_terms": [
               "agent",
               "check"
@@ -415,7 +673,7 @@
         "url": "https://arxiv.org/abs/2605.22634",
         "layer": "**Layer 0 \u2014 Spec-Level Governance** (with runtime enforcement hooks into Layer 1)",
         "solution": null,
-        "score": 40.1709,
+        "score": 40.0548,
         "match_type": "direct",
         "support_count": 2,
         "positive_hits": 1,
@@ -435,7 +693,7 @@
         "top_passages": [
           {
             "field": "paper_summary",
-            "score": 2.0978,
+            "score": 2.0365,
             "matched_terms": [
               "agent"
             ],
@@ -443,7 +701,7 @@
           },
           {
             "field": "abstract",
-            "score": 1.8731,
+            "score": 1.8183,
             "matched_terms": [
               "agent"
             ],
@@ -453,11 +711,11 @@
       },
       {
         "title": "SkCC",
-        "ordinal": 125,
+        "ordinal": 162,
         "url": "https://arxiv.org/abs/2605.03353",
         "layer": "Layer 1/2",
         "solution": "Yes",
-        "score": 49.8863,
+        "score": 48.8982,
         "match_type": "direct",
         "support_count": 2,
         "positive_hits": 2,
@@ -477,7 +735,7 @@
         "top_passages": [
           {
             "field": "paper_summary",
-            "score": 7.6531,
+            "score": 7.1311,
             "matched_terms": [
               "agent",
               "static"
@@ -486,7 +744,7 @@
           },
           {
             "field": "abstract",
-            "score": 6.8332,
+            "score": 6.3671,
             "matched_terms": [
               "agent",
               "static"
@@ -501,7 +759,7 @@
         "url": "https://owasp.org/www-project-agentic-skills-top-10/",
         "layer": "**Layer 0 \u2014 Spec-Level Governance** (with Layer 1 hooks for isolation and sandboxing)",
         "solution": null,
-        "score": 44.1682,
+        "score": 43.8474,
         "match_type": "direct",
         "support_count": 3,
         "positive_hits": 1,
@@ -520,7 +778,7 @@
         "top_passages": [
           {
             "field": "paper_summary",
-            "score": 5.006,
+            "score": 4.8596,
             "matched_terms": [
               "agent"
             ],
@@ -528,7 +786,7 @@
           },
           {
             "field": "abstract",
-            "score": 3.1714,
+            "score": 3.0786,
             "matched_terms": [
               "agent"
             ],
@@ -536,7 +794,7 @@
           },
           {
             "field": "why_recommend",
-            "score": 2.7908,
+            "score": 2.7092,
             "matched_terms": [
               "agent"
             ],
@@ -546,11 +804,11 @@
       },
       {
         "title": "GitHub Spec Kit / SDD (Specification-Driven Development)",
-        "ordinal": 139,
+        "ordinal": 176,
         "url": "https://github.com/topics/skill-md",
         "layer": "Layer 3",
         "solution": "Yes",
-        "score": 34.3207,
+        "score": 34.2002,
         "match_type": "direct",
         "support_count": 2,
         "positive_hits": 1,
@@ -568,7 +826,7 @@
         "top_passages": [
           {
             "field": "paper_summary",
-            "score": 2.0978,
+            "score": 2.0365,
             "matched_terms": [
               "agent"
             ],
@@ -576,7 +834,7 @@
           },
           {
             "field": "relevance",
-            "score": 2.0229,
+            "score": 1.9637,
             "matched_terms": [
               "agent"
             ],
@@ -586,7 +844,7 @@
       },
       {
         "title": "Trace-Based Assurance Framework",
-        "ordinal": 129,
+        "ordinal": 166,
         "url": "https://arxiv.org/abs/2603.18096",
         "layer": "Layer 1/2",
         "solution": "Yes",
@@ -611,11 +869,11 @@
       },
       {
         "title": "Web Skills Protocol (WSP)",
-        "ordinal": 140,
+        "ordinal": 177,
         "url": "https://github.com/openclaw/skills/blob/main/skills/0xtresser/web-skills-protocol/SPEC.md",
         "layer": "Layer 0/1",
         "solution": "Yes",
-        "score": 31.3207,
+        "score": 31.2002,
         "match_type": "direct",
         "support_count": 2,
         "positive_hits": 1,
@@ -634,7 +892,7 @@
         "top_passages": [
           {
             "field": "paper_summary",
-            "score": 2.0978,
+            "score": 2.0365,
             "matched_terms": [
               "agent"
             ],
@@ -642,7 +900,7 @@
           },
           {
             "field": "relevance",
-            "score": 2.0229,
+            "score": 1.9637,
             "matched_terms": [
               "agent"
             ],
@@ -652,11 +910,11 @@
       },
       {
         "title": "SentinelAgent",
-        "ordinal": 134,
+        "ordinal": 171,
         "url": "https://arxiv.org/abs/2604.02767",
         "layer": "Layer 1",
         "solution": "Yes",
-        "score": 27.3207,
+        "score": 27.2002,
         "match_type": "direct",
         "support_count": 2,
         "positive_hits": 1,
@@ -676,7 +934,7 @@
         "top_passages": [
           {
             "field": "paper_summary",
-            "score": 2.0978,
+            "score": 2.0365,
             "matched_terms": [
               "agent"
             ],
@@ -684,11 +942,85 @@
           },
           {
             "field": "relevance",
-            "score": 2.0229,
+            "score": 1.9637,
             "matched_terms": [
               "agent"
             ],
             "text": "Formal verification of delegation chains. The properties (P1-P7) are exactly the kind of verifiable guarantees we need for skill/agent governance."
+          }
+        ]
+      },
+      {
+        "title": "Evidence-Synthesis Framework",
+        "ordinal": 164,
+        "url": "https://arxiv.org/abs/2604.19818",
+        "layer": "Layer 2/3",
+        "solution": "Yes",
+        "score": 18.0,
+        "match_type": "direct",
+        "support_count": 0,
+        "positive_hits": 0,
+        "negative_hits": 0,
+        "focus_scores": {
+          "static": 6,
+          "runtime": 4,
+          "behavioral": 6,
+          "landscape": 4
+        },
+        "primary_focus": "behavioral",
+        "secondary_focuses": [
+          "static",
+          "landscape",
+          "runtime"
+        ],
+        "top_passages": []
+      },
+      {
+        "title": "AIP \u2014 Agent Instruction Protocol for Structured Skill Graphs",
+        "ordinal": 56,
+        "url": "https://arxiv.org/abs/2606.04781",
+        "layer": "**Layer 0 + Layer 1**",
+        "solution": null,
+        "score": 45.6374,
+        "match_type": "direct",
+        "support_count": 3,
+        "positive_hits": 2,
+        "negative_hits": 0,
+        "focus_scores": {
+          "static": 5,
+          "runtime": 1,
+          "behavioral": 0,
+          "landscape": 0
+        },
+        "primary_focus": "static",
+        "secondary_focuses": [
+          "runtime"
+        ],
+        "top_passages": [
+          {
+            "field": "paper_summary",
+            "score": 10.78,
+            "matched_terms": [
+              "agent",
+              "static"
+            ],
+            "text": "AIP \u2014 Agent Instruction Protocol for Structured Skill Graphs\nAgent Skills today consist largely of free-form prose requiring the agent to read, interpret, and re-derive how to act in every session. This imposes two compounding costs: reduced reliability on implementation-heavy tasks, and difficulty in skill creation and improvement, since editing prose is a fragile process that both humans and agents struggle with. The Agent Instruction Protocol (AIP) addresses both by modeling a skill as a directed execution graph: discrete steps as nodes backed by deterministic scripts or natural-language descriptions, connected by explicit typed input/output edges, and governed by a schema-validated YAML specification. A compiler meta-skill translates existing human-written skills into this form. The benefits are twofold. First, compiling human-written skills to AIP raised Claude Sonnet's mean task reward from 0.60 to 0.71 and pass rate from 53% to 67% across 27 real agent tasks from SkillsBench \u2014 a statistically significant gain (Wilcoxon signed-rank p = 0.011). Second, on creation and improvement, because each skill is schema-validated, functionally testable, and addressable node-by-node, failures can be diagnosed and repaired precisely. Two authored-skill failures were traced to the script level. After adjusting the AIP spec and recompiling, both recovered with zero regressions (one task going from 0/5 to 5/5), turning skill improvement into a measurable tuning loop rather than a prose rewrite.\nThis is **Layer 0 (Spec-Level Governance)** with **Layer 1 (Runtime)** implications. AIP provides the structured representation that makes static governance possible: schema validation, node-level testing, corpus-level introspection, and natural action space for RL over skills. The graph structure enables governance at the skill level \u2014 something impossible with prose skills.\nAIP is the **first structured skill representation that makes skills machine-governable**. Free-form prose skills are fundamentally ungovernable \u2014 you can't type-check prose, can't diff semantic changes, can't pinpoint failure nodes. AIP's directed execution graph with typed I/O edges and schema-validated YAML makes skills into addressable, testable, versionable artifacts. The 53% \u2192 67% pass rate improvement proves that structure beats prose for reliability. The node-level addressability enables precise failure diagnosis and repair, turning skill maintenance from a rewrite into a tuning loop.\nProse skills cannot be governed. AIP proves that compiling them to typed graphs with deterministic scripts and explicit edges raises reliability by 26% and makes failures precisely addressable. This is the structural foundation for skill-level governance.\n**Layer 0 + Layer 1**"
+          },
+          {
+            "field": "relevance",
+            "score": 4.9127,
+            "matched_terms": [
+              "static"
+            ],
+            "text": "This is **Layer 0 (Spec-Level Governance)** with **Layer 1 (Runtime)** implications. AIP provides the structured representation that makes static governance possible: schema validation, node-level testing, corpus-level introspection, and natural action space for RL over skills. The graph structure enables governance at the skill level \u2014 something impossible with prose skills."
+          },
+          {
+            "field": "abstract",
+            "score": 4.7447,
+            "matched_terms": [
+              "agent"
+            ],
+            "text": "Agent Skills today consist largely of free-form prose requiring the agent to read, interpret, and re-derive how to act in every session. This imposes two compounding costs: reduced reliability on implementation-heavy tasks, and difficulty in skill creation and improvement, since editing prose is a fragile process that both humans and agents struggle with. The Agent Instruction Protocol (AIP) addresses both by modeling a skill as a directed execution graph: discrete steps as nodes backed by deterministic scripts or natural-language descriptions, connected by explicit typed input/output edges, and governed by a schema-validated YAML specification. A compiler meta-skill translates existing human-written skills into this form. The benefits are twofold. First, compiling human-written skills to AIP raised Claude Sonnet's mean task reward from 0.60 to 0.71 and pass rate from 53% to 67% across 27 real agent tasks from SkillsBench \u2014 a statistically significant gain (Wilcoxon signed-rank p = 0.011). Second, on creation and improvement, because each skill is schema-validated, functionally testable, and addressable node-by-node, failures can be diagnosed and repaired precisely. Two authored-skill failures were traced to the script level. After adjusting the AIP spec and recompiling, both recovered with zero regressions (one task going from 0/5 to 5/5), turning skill improvement into a measurable tuning loop rather than a prose rewrite."
           }
         ]
       }

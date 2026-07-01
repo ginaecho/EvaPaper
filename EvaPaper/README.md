@@ -52,7 +52,7 @@ A cron job runs every **Sunday at 03:17 AM (Asia/Shanghai)** to search for new p
 - `generate_governance_docs.py` — DOCX/PPTX generation script
 - `generate_beautiful_pptx.py` — PPTX design template
 - `scripts/workspace_config.py` — repo-relative shared paths and workspace config
-- `scripts/paper_graph.py` — graph-backed paper discovery using OpenAlex, with optional Semantic Scholar recommendations
+- `scripts/paper_graph.py` — graph-backed paper discovery using OpenAlex, arXiv fallback search, and optional Semantic Scholar enrichment
 - `scripts/scout.py --discover "..."` — generic scout entrypoint with configurable paths
 - `scripts/paper_corpus.py` — builds a structured local corpus index from the markdown report
 - `scripts/governance_dashboard.py` — classifies papers and regenerates dashboard data/HTML
@@ -62,15 +62,20 @@ A cron job runs every **Sunday at 03:17 AM (Asia/Shanghai)** to search for new p
 
 ## Graph-Backed Discovery
 
-The repo did not have a paper graph layer before. It now has a small discovery path built around public scholarly graphs:
+The repo did not have a paper graph layer before. It now has a small discovery path built around public scholarly graphs and live scholarly feeds:
 
 - `OpenAlex` as the default graph backend:
   - open data
   - works, references, citing works, and algorithmic related works
   - no SDK dependency required in this repo
+- `arXiv` as the no-key live fallback:
+  - used when OpenAlex search is degraded or unavailable
+  - returns recent seed/candidate papers with abstracts, URLs, and subject categories
+  - keeps scout runs useful instead of silently falling back to only the local corpus
 - `Semantic Scholar` as an optional second signal:
-  - recommendations API
+  - search and recommendations API
   - enable by setting `SEMANTIC_SCHOLAR_API_KEY`
+  - no-key access is rate-limited, so the scout reports provider degradation instead of blocking indefinitely
 
 Example:
 

@@ -179,6 +179,8 @@ def main():
             print(f"📡 Graph discovery for: {args.discover}")
             print(f"🌱 Seed papers: {len(result['seeds'])}")
             print(f"🕸️ Candidate papers: {len(result['candidates'])}")
+            for provider_error in result.get("provider_errors", []):
+                print(f"⚠️ Provider degraded: {provider_error}")
             for candidate in result["candidates"][:10]:
                 print(
                     f"- {candidate['title']} ({candidate.get('year')}) "

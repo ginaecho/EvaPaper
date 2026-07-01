@@ -1,73 +1,73 @@
 {
-  "generated_from_latest_scout": "2026-06-28",
-  "paper_count": 95,
-  "scout_run_count": 10,
+  "generated_from_latest_scout": "2026-07-01",
+  "paper_count": 105,
+  "scout_run_count": 11,
   "topic_mix": [
     {
       "id": "specification",
       "label": "Specification & validation",
       "color": "#e4572e",
-      "count": 11,
-      "ratio": 0.11578947368421053
+      "count": 12,
+      "ratio": 0.11428571428571428
     },
     {
       "id": "supply_chain",
       "label": "Skill & tool security",
       "color": "#963484",
       "count": 10,
-      "ratio": 0.10526315789473684
+      "ratio": 0.09523809523809523
     },
     {
       "id": "identity",
       "label": "Identity & provenance",
       "color": "#4267ac",
-      "count": 6,
-      "ratio": 0.06315789473684211
+      "count": 8,
+      "ratio": 0.0761904761904762
     },
     {
       "id": "coordination",
       "label": "Coordination & composition",
       "color": "#5b8e3e",
       "count": 5,
-      "ratio": 0.05263157894736842
+      "ratio": 0.047619047619047616
     },
     {
       "id": "evaluation",
       "label": "Evaluation & benchmarks",
       "color": "#f3a712",
-      "count": 16,
-      "ratio": 0.16842105263157894
+      "count": 17,
+      "ratio": 0.1619047619047619
     },
     {
       "id": "runtime",
       "label": "Runtime enforcement",
       "color": "#1d6f75",
-      "count": 13,
-      "ratio": 0.1368421052631579
+      "count": 14,
+      "ratio": 0.13333333333333333
     },
     {
       "id": "policy",
       "label": "Policy & governance landscape",
       "color": "#636363",
-      "count": 34,
-      "ratio": 0.35789473684210527
+      "count": 39,
+      "ratio": 0.37142857142857144
     }
   ],
   "layer_mix": [
     {
       "layer": 0,
       "label": "Spec",
-      "count": 24
+      "count": 26
     },
     {
       "layer": 1,
       "label": "Runtime",
-      "count": 52
+      "count": 55
     },
     {
       "layer": 2,
       "label": "Behavior",
-      "count": 31
+      "count": 36
     },
     {
       "layer": 3,
@@ -315,29 +315,53 @@
         "runtime": 13,
         "policy": 34
       }
+    },
+    {
+      "date": "2026-07-01",
+      "new_papers": 10,
+      "cumulative": 105,
+      "leading_topic": "Policy & governance landscape",
+      "topics": {
+        "specification": 1,
+        "supply_chain": 0,
+        "identity": 2,
+        "coordination": 0,
+        "evaluation": 1,
+        "runtime": 1,
+        "policy": 5
+      },
+      "cumulative_topics": {
+        "specification": 12,
+        "supply_chain": 10,
+        "identity": 8,
+        "coordination": 5,
+        "evaluation": 17,
+        "runtime": 14,
+        "policy": 39
+      }
     }
   ],
   "trending_topics": [
     {
       "id": "policy",
       "label": "Policy & governance landscape",
-      "recent_count": 9,
-      "total_count": 34,
+      "recent_count": 13,
+      "total_count": 39,
       "color": "#636363"
     },
     {
       "id": "evaluation",
       "label": "Evaluation & benchmarks",
-      "recent_count": 5,
-      "total_count": 16,
+      "recent_count": 3,
+      "total_count": 17,
       "color": "#f3a712"
     },
     {
-      "id": "runtime",
-      "label": "Runtime enforcement",
-      "recent_count": 2,
-      "total_count": 13,
-      "color": "#1d6f75"
+      "id": "specification",
+      "label": "Specification & validation",
+      "recent_count": 3,
+      "total_count": 12,
+      "color": "#e4572e"
     }
   ],
   "association_graph": {
@@ -353,7 +377,7 @@
           1
         ],
         "discovered": "2026-05-30",
-        "degree": 6
+        "degree": 5
       },
       {
         "id": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
@@ -367,7 +391,7 @@
           2
         ],
         "discovered": "2026-05-30",
-        "degree": 8
+        "degree": 7
       },
       {
         "id": "arxiv:2602.11510",
@@ -394,7 +418,7 @@
           2
         ],
         "discovered": "2026-05-30",
-        "degree": 8
+        "degree": 9
       },
       {
         "id": "kieranupadrasta-co-uk:csa-owasp-maestro-seven-layer-threat-mod",
@@ -409,7 +433,7 @@
           2
         ],
         "discovered": "2026-05-30",
-        "degree": 5
+        "degree": 4
       },
       {
         "id": "arxiv:2605.04093",
@@ -434,7 +458,7 @@
           1
         ],
         "discovered": "2026-05-30",
-        "degree": 4
+        "degree": 3
       },
       {
         "id": "microsoft:agent-governance-toolkit",
@@ -460,7 +484,7 @@
           1
         ],
         "discovered": "2026-05-30",
-        "degree": 4
+        "degree": 5
       },
       {
         "id": "arxiv:2604.11806",
@@ -582,7 +606,7 @@
           2
         ],
         "discovered": "2026-05-31",
-        "degree": 6
+        "degree": 7
       },
       {
         "id": "confident-ai:deep-team",
@@ -701,7 +725,7 @@
           1
         ],
         "discovered": "2026-06-01",
-        "degree": 8
+        "degree": 9
       },
       {
         "id": "arxiv:2604.07007",
@@ -740,7 +764,7 @@
           1
         ],
         "discovered": "2026-06-01",
-        "degree": 5
+        "degree": 6
       },
       {
         "id": "arxiv:2604.05485",
@@ -766,7 +790,7 @@
           2
         ],
         "discovered": "2026-06-01",
-        "degree": 3
+        "degree": 4
       },
       {
         "id": "techtimes-com:finbot-agentic-ai-ctf",
@@ -805,7 +829,7 @@
           2
         ],
         "discovered": "2026-06-01",
-        "degree": 3
+        "degree": 5
       },
       {
         "id": "arxiv:2603.17445",
@@ -818,7 +842,7 @@
           1
         ],
         "discovered": "2026-06-01",
-        "degree": 3
+        "degree": 4
       },
       {
         "id": "arxiv:2604.23338",
@@ -831,7 +855,7 @@
           1
         ],
         "discovered": "2026-06-01",
-        "degree": 4
+        "degree": 3
       },
       {
         "id": "arxiv:2604.02767",
@@ -935,7 +959,7 @@
           1
         ],
         "discovered": "2026-06-04",
-        "degree": 7
+        "degree": 8
       },
       {
         "id": "arxiv:2602.22302",
@@ -1026,7 +1050,7 @@
           1
         ],
         "discovered": "2026-06-04",
-        "degree": 4
+        "degree": 5
       },
       {
         "id": "arxiv:2603.00195",
@@ -1205,7 +1229,7 @@
           0
         ],
         "discovered": "2026-06-06",
-        "degree": 3
+        "degree": 4
       },
       {
         "id": "arxiv:2603.03340",
@@ -1258,7 +1282,7 @@
           1
         ],
         "discovered": "2026-06-07",
-        "degree": 5
+        "degree": 4
       },
       {
         "id": "arxiv:2605.25376",
@@ -1272,7 +1296,7 @@
           3
         ],
         "discovered": "2026-06-07",
-        "degree": 4
+        "degree": 5
       },
       {
         "id": "arxiv:2606.00448",
@@ -1299,7 +1323,7 @@
           0
         ],
         "discovered": "2026-06-07",
-        "degree": 3
+        "degree": 4
       },
       {
         "id": "arxiv:2605.12015",
@@ -1382,7 +1406,7 @@
           2
         ],
         "discovered": "2026-06-14",
-        "degree": 5
+        "degree": 6
       },
       {
         "id": "mitre:atlas-agentic",
@@ -1450,7 +1474,7 @@
           2
         ],
         "discovered": "2026-06-20",
-        "degree": 6
+        "degree": 5
       },
       {
         "id": "arxiv:2605.06933",
@@ -1573,7 +1597,7 @@
           2
         ],
         "discovered": "2026-06-28",
-        "degree": 4
+        "degree": 3
       },
       {
         "id": "developer-nvidia-com:nvidia-verified-agent-skills-skillspecto",
@@ -1601,6 +1625,136 @@
         ],
         "discovered": "2026-06-28",
         "degree": 3
+      },
+      {
+        "id": "arxiv:2606.20669",
+        "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
+        "url": "https://arxiv.org/abs/2606.20669",
+        "topic": "policy",
+        "topic_label": "Policy & governance landscape",
+        "color": "#636363",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-07-01",
+        "degree": 6
+      },
+      {
+        "id": "arxiv:2606.26494",
+        "title": "Clinical Harness for Governable Medical AI Skill Ecosystems",
+        "url": "https://arxiv.org/abs/2606.26494",
+        "topic": "runtime",
+        "topic_label": "Runtime enforcement",
+        "color": "#1d6f75",
+        "layers": [
+          1
+        ],
+        "discovered": "2026-07-01",
+        "degree": 3
+      },
+      {
+        "id": "arxiv:2606.17591",
+        "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2606.17591",
+        "topic": "policy",
+        "topic_label": "Policy & governance landscape",
+        "color": "#636363",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-07-01",
+        "degree": 4
+      },
+      {
+        "id": "arxiv:2606.23768",
+        "title": "Cryptographic certificates of validity for trustworthy AI",
+        "url": "https://arxiv.org/abs/2606.23768",
+        "topic": "specification",
+        "topic_label": "Specification & validation",
+        "color": "#e4572e",
+        "layers": [
+          0
+        ],
+        "discovered": "2026-07-01",
+        "degree": 5
+      },
+      {
+        "id": "arxiv:2606.28592",
+        "title": "Embodiment Meets Environment: Toward Context-Aware, Safe Physical Caregiving Robots",
+        "url": "https://arxiv.org/abs/2606.28592",
+        "topic": "policy",
+        "topic_label": "Policy & governance landscape",
+        "color": "#636363",
+        "layers": [
+          1
+        ],
+        "discovered": "2026-07-01",
+        "degree": 3
+      },
+      {
+        "id": "arxiv:2606.09365",
+        "title": "Experience Makes Skillful: Enabling Generalizable Medical Agent Reasoning via Self-Evolving Skill Memory",
+        "url": "https://arxiv.org/abs/2606.09365",
+        "topic": "policy",
+        "topic_label": "Policy & governance landscape",
+        "color": "#636363",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-07-01",
+        "degree": 3
+      },
+      {
+        "id": "arxiv:2606.14502",
+        "title": "From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI",
+        "url": "https://arxiv.org/abs/2606.14502",
+        "topic": "evaluation",
+        "topic_label": "Evaluation & benchmarks",
+        "color": "#f3a712",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-07-01",
+        "degree": 3
+      },
+      {
+        "id": "arxiv:2606.28791",
+        "title": "From Determinism to Delegation: AI-Native Software Engineering and the Evolution of the Agentic Engineer",
+        "url": "https://arxiv.org/abs/2606.28791",
+        "topic": "policy",
+        "topic_label": "Policy & governance landscape",
+        "color": "#636363",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-07-01",
+        "degree": 4
+      },
+      {
+        "id": "arxiv:2606.16523",
+        "title": "SkillWiki: A Living Knowledge Infrastructure for Agent Skills",
+        "url": "https://arxiv.org/abs/2606.16523",
+        "topic": "identity",
+        "topic_label": "Identity & provenance",
+        "color": "#4267ac",
+        "layers": [
+          1
+        ],
+        "discovered": "2026-07-01",
+        "degree": 3
+      },
+      {
+        "id": "arxiv:2606.31272",
+        "title": "The Decomposition Is the Fingerprint: Per-Component Identity for Agent Skills",
+        "url": "https://arxiv.org/abs/2606.31272",
+        "topic": "identity",
+        "topic_label": "Identity & provenance",
+        "color": "#4267ac",
+        "layers": [
+          0
+        ],
+        "discovered": "2026-07-01",
+        "degree": 3
       }
     ],
     "edges": [
@@ -1612,19 +1766,6 @@
         "reason": "same topic; terms: alignment",
         "shared_terms": [
           "alignment"
-        ]
-      },
-      {
-        "source": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
-        "target": "arxiv:2605.02709",
-        "kind": "conceptual",
-        "weight": 3.15,
-        "reason": "same topic; shared L2; terms: context, dimensions, does",
-        "shared_terms": [
-          "context",
-          "dimensions",
-          "does",
-          "frameworks"
         ]
       },
       {
@@ -2135,6 +2276,16 @@
       },
       {
         "source": "arxiv:2603.07191",
+        "target": "arxiv:2606.26494",
+        "kind": "conceptual",
+        "weight": 3.287,
+        "reason": "same topic; shared L1; terms: architecture",
+        "shared_terms": [
+          "architecture"
+        ]
+      },
+      {
+        "source": "arxiv:2603.07191",
         "target": "mitre:atlas-agentic",
         "kind": "conceptual",
         "weight": 3.662,
@@ -2209,6 +2360,16 @@
         "shared_terms": [
           "accountability",
           "identity"
+        ]
+      },
+      {
+        "source": "arxiv:2603.17445",
+        "target": "arxiv:2606.16523",
+        "kind": "conceptual",
+        "weight": 3.287,
+        "reason": "same topic; shared L1; terms: execution",
+        "shared_terms": [
+          "execution"
         ]
       },
       {
@@ -2316,6 +2477,14 @@
       },
       {
         "source": "arxiv:2603.18829",
+        "target": "arxiv:2606.26494",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L1",
+        "shared_terms": []
+      },
+      {
+        "source": "arxiv:2603.18829",
         "target": "github:topics-agent-control-protocol",
         "kind": "conceptual",
         "weight": 3.714,
@@ -2396,12 +2565,20 @@
       },
       {
         "source": "arxiv:2603.24775",
-        "target": "wsp:draft",
+        "target": "arxiv:2606.16523",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L1",
+        "shared_terms": []
+      },
+      {
+        "source": "arxiv:2603.24775",
+        "target": "arxiv:2606.31272",
         "kind": "conceptual",
         "weight": 1.887,
-        "reason": "same topic; terms: protocol",
+        "reason": "same topic; terms: identity",
         "shared_terms": [
-          "protocol"
+          "identity"
         ]
       },
       {
@@ -2452,6 +2629,16 @@
           "provides",
           "real-world",
           "tasks"
+        ]
+      },
+      {
+        "source": "arxiv:2603.25747",
+        "target": "arxiv:2606.14502",
+        "kind": "conceptual",
+        "weight": 3.287,
+        "reason": "same topic; shared L2; terms: task",
+        "shared_terms": [
+          "task"
         ]
       },
       {
@@ -2537,11 +2724,14 @@
       },
       {
         "source": "arxiv:2604.05485",
-        "target": "arxiv:2605.16198",
+        "target": "arxiv:2606.26494",
         "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L1",
-        "shared_terms": []
+        "weight": 3.475,
+        "reason": "same topic; shared L1; terms: governed, lifecycle",
+        "shared_terms": [
+          "governed",
+          "lifecycle"
+        ]
       },
       {
         "source": "arxiv:2604.05485",
@@ -2560,6 +2750,14 @@
         "shared_terms": [
           "directly"
         ]
+      },
+      {
+        "source": "arxiv:2604.06148",
+        "target": "arxiv:2606.16523",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L1",
+        "shared_terms": []
       },
       {
         "source": "arxiv:2604.07007",
@@ -2693,6 +2891,16 @@
       },
       {
         "source": "arxiv:2604.08523",
+        "target": "arxiv:2606.14502",
+        "kind": "conceptual",
+        "weight": 3.287,
+        "reason": "same topic; shared L2; terms: benchmarks",
+        "shared_terms": [
+          "benchmarks"
+        ]
+      },
+      {
+        "source": "arxiv:2604.08523",
         "target": "ieee:reprobe-audit",
         "kind": "conceptual",
         "weight": 3.475,
@@ -2722,6 +2930,17 @@
           "audit",
           "behavioral-level",
           "benchmark"
+        ]
+      },
+      {
+        "source": "arxiv:2604.11174",
+        "target": "arxiv:2606.14502",
+        "kind": "conceptual",
+        "weight": 3.475,
+        "reason": "same topic; shared L2; terms: auditable, task",
+        "shared_terms": [
+          "auditable",
+          "task"
         ]
       },
       {
@@ -2825,7 +3044,7 @@
       },
       {
         "source": "arxiv:2604.16911",
-        "target": "arxiv:2606.06893",
+        "target": "arxiv:2606.23768",
         "kind": "conceptual",
         "weight": 3.1,
         "reason": "same topic; shared L0",
@@ -2930,14 +3149,20 @@
       },
       {
         "source": "arxiv:2604.19818",
-        "target": "arxiv:2605.26112",
+        "target": "arxiv:2606.20669",
         "kind": "conceptual",
-        "weight": 2.962,
-        "reason": "same topic; shared L2; terms: agentic, concrete, core",
+        "weight": 3.1,
+        "reason": "same topic; shared L2",
+        "shared_terms": []
+      },
+      {
+        "source": "arxiv:2604.19818",
+        "target": "arxiv:2606.28791",
+        "kind": "conceptual",
+        "weight": 3.287,
+        "reason": "same topic; shared L2; terms: agentic",
         "shared_terms": [
-          "agentic",
-          "concrete",
-          "core"
+          "agentic"
         ]
       },
       {
@@ -2950,7 +3175,7 @@
       },
       {
         "source": "arxiv:2604.20805",
-        "target": "doi-org:next-generation-phishing-how-llm-agents-",
+        "target": "arxiv:2606.28791",
         "kind": "conceptual",
         "weight": 1.965,
         "reason": "same topic; terms: engineering",
@@ -2969,16 +3194,6 @@
           "defenses",
           "most",
           "survey"
-        ]
-      },
-      {
-        "source": "arxiv:2604.23338",
-        "target": "microsoft:agent-governance-toolkit",
-        "kind": "conceptual",
-        "weight": 3.287,
-        "reason": "same topic; shared L1; terms: audit",
-        "shared_terms": [
-          "audit"
         ]
       },
       {
@@ -3013,12 +3228,52 @@
         ]
       },
       {
-        "source": "arxiv:2605.02709",
-        "target": "confident-ai:deep-team",
+        "source": "arxiv:2604.24026",
+        "target": "arxiv:2606.23768",
         "kind": "conceptual",
         "weight": 3.1,
-        "reason": "same topic; shared L2",
+        "reason": "same topic; shared L0",
         "shared_terms": []
+      },
+      {
+        "source": "arxiv:2605.02709",
+        "target": "arxiv:2606.09365",
+        "kind": "conceptual",
+        "weight": 3.287,
+        "reason": "same topic; shared L2; terms: clinical",
+        "shared_terms": [
+          "clinical"
+        ]
+      },
+      {
+        "source": "arxiv:2605.02709",
+        "target": "arxiv:2606.17591",
+        "kind": "conceptual",
+        "weight": 3.287,
+        "reason": "same topic; shared L2; terms: evidence",
+        "shared_terms": [
+          "evidence"
+        ]
+      },
+      {
+        "source": "arxiv:2605.02709",
+        "target": "arxiv:2606.20669",
+        "kind": "conceptual",
+        "weight": 3.287,
+        "reason": "same topic; shared L2; terms: autonomy",
+        "shared_terms": [
+          "autonomy"
+        ]
+      },
+      {
+        "source": "arxiv:2605.02709",
+        "target": "arxiv:2606.28791",
+        "kind": "conceptual",
+        "weight": 3.287,
+        "reason": "same topic; shared L2; terms: frameworks",
+        "shared_terms": [
+          "frameworks"
+        ]
       },
       {
         "source": "arxiv:2605.03159",
@@ -3052,12 +3307,13 @@
       },
       {
         "source": "arxiv:2605.03353",
-        "target": "doi-org:a-survey-on-large-language-model-llm-sec",
+        "target": "arxiv:2606.28592",
         "kind": "conceptual",
-        "weight": 3.287,
-        "reason": "same topic; shared L1; terms: security",
+        "weight": 3.475,
+        "reason": "same topic; shared L1; terms: adaptation, constraints",
         "shared_terms": [
-          "security"
+          "adaptation",
+          "constraints"
         ]
       },
       {
@@ -3334,13 +3590,13 @@
         ]
       },
       {
-        "source": "arxiv:2605.22634",
-        "target": "github:topics-skill-md",
+        "source": "arxiv:2605.25376",
+        "target": "arxiv:2606.31272",
         "kind": "conceptual",
-        "weight": 1.914,
-        "reason": "same topic; terms: contracts",
+        "weight": 1.925,
+        "reason": "same topic; terms: trust",
         "shared_terms": [
-          "contracts"
+          "trust"
         ]
       },
       {
@@ -3408,6 +3664,16 @@
         ]
       },
       {
+        "source": "arxiv:2605.27955",
+        "target": "arxiv:2606.23768",
+        "kind": "conceptual",
+        "weight": 3.305,
+        "reason": "same topic; shared L0; terms: between",
+        "shared_terms": [
+          "between"
+        ]
+      },
+      {
         "source": "arxiv:2606.00448",
         "target": "preprints-org:agentverify",
         "kind": "conceptual",
@@ -3453,6 +3719,35 @@
         ]
       },
       {
+        "source": "arxiv:2606.06893",
+        "target": "arxiv:2606.23768",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L0",
+        "shared_terms": []
+      },
+      {
+        "source": "arxiv:2606.09365",
+        "target": "arxiv:2606.17591",
+        "kind": "conceptual",
+        "weight": 3.287,
+        "reason": "same topic; shared L2; terms: experience",
+        "shared_terms": [
+          "experience"
+        ]
+      },
+      {
+        "source": "arxiv:2606.09365",
+        "target": "arxiv:2606.20669",
+        "kind": "conceptual",
+        "weight": 3.475,
+        "reason": "same topic; shared L2; terms: ability, reasoning",
+        "shared_terms": [
+          "ability",
+          "reasoning"
+        ]
+      },
+      {
         "source": "arxiv:2606.15899",
         "target": "github:agent-security-harness",
         "kind": "conceptual",
@@ -3476,6 +3771,77 @@
         ]
       },
       {
+        "source": "arxiv:2606.17591",
+        "target": "arxiv:2606.20669",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L2",
+        "shared_terms": []
+      },
+      {
+        "source": "arxiv:2606.17591",
+        "target": "confident-ai:deep-team",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L2",
+        "shared_terms": []
+      },
+      {
+        "source": "arxiv:2606.20669",
+        "target": "arxiv:2606.28791",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L2",
+        "shared_terms": []
+      },
+      {
+        "source": "arxiv:2606.20669",
+        "target": "confident-ai:deep-team",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L2",
+        "shared_terms": []
+      },
+      {
+        "source": "arxiv:2606.23768",
+        "target": "github:topics-skill-md",
+        "kind": "conceptual",
+        "weight": 2.129,
+        "reason": "same topic; terms: approach, artifacts",
+        "shared_terms": [
+          "approach",
+          "artifacts"
+        ]
+      },
+      {
+        "source": "arxiv:2606.28592",
+        "target": "microsoft:agent-governance-toolkit",
+        "kind": "conceptual",
+        "weight": 3.287,
+        "reason": "same topic; shared L1; terms: environments",
+        "shared_terms": [
+          "environments"
+        ]
+      },
+      {
+        "source": "arxiv:2606.28592",
+        "target": "owasp:mcp-guide",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L1",
+        "shared_terms": []
+      },
+      {
+        "source": "arxiv:2606.31272",
+        "target": "wsp:draft",
+        "kind": "conceptual",
+        "weight": 3.287,
+        "reason": "same topic; shared L0; terms: trust",
+        "shared_terms": [
+          "trust"
+        ]
+      },
+      {
         "source": "cisco:defenseclaw",
         "target": "enforceauth-dev:enforceauth",
         "kind": "conceptual",
@@ -3495,16 +3861,6 @@
         "shared_terms": [
           "march",
           "relevant"
-        ]
-      },
-      {
-        "source": "confident-ai:deep-team",
-        "target": "kieranupadrasta-co-uk:csa-owasp-maestro-seven-layer-threat-mod",
-        "kind": "conceptual",
-        "weight": 2.917,
-        "reason": "same topic; shared L2; terms: owasp",
-        "shared_terms": [
-          "owasp"
         ]
       },
       {
@@ -3607,22 +3963,22 @@
         ]
       }
     ],
-    "node_count": 95,
-    "edge_count": 188,
+    "node_count": 105,
+    "edge_count": 210,
     "hubs": [
       {
         "id": "owasp:mcp-guide",
         "title": "A Survey of the Model Context Protocol (MCP): Standardizing Context to Enhance LLMs",
-        "degree": 8
-      },
-      {
-        "id": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
-        "title": "Agent Evaluation Guide (Quality-Focused Frameworks)",
-        "degree": 8
+        "degree": 9
       },
       {
         "id": "arxiv:2603.25747",
         "title": "BeSafe-Bench (BSB)",
+        "degree": 9
+      },
+      {
+        "id": "arxiv:2603.18829",
+        "title": "Admission Control for Agent Actions (ACP)",
         "degree": 8
       },
       {
@@ -3631,21 +3987,21 @@
         "degree": 8
       },
       {
-        "id": "arxiv:2603.18829",
-        "title": "Admission Control for Agent Actions (ACP)",
+        "id": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
+        "title": "Agent Evaluation Guide (Quality-Focused Frameworks)",
         "degree": 7
       }
     ],
     "method": "Each paper keeps its three strongest corpus neighbors. Association strength combines primary topic, shared governance layers, and shared technical terms. These are conceptual associations, not claimed citations."
   },
   "knowledge_wiki": {
-    "page_count": 107,
+    "page_count": 117,
     "pages": [
       {
         "id": "overview",
         "type": "overview",
         "title": "Agent Governance Research Overview",
-        "subtitle": "95 papers compiled into a living research wiki",
+        "subtitle": "105 papers compiled into a living research wiki",
         "body": "EvaPaper compiles specification, runtime, behavioral, ecosystem, security, identity, and coordination research into maintained pages. Use topic and layer pages to browse the corpus, then follow explicit related-paper links to inspect local research trails.",
         "links": [
           "topic:specification",
@@ -3666,7 +4022,7 @@
         "id": "topic:specification",
         "type": "topic",
         "title": "Specification & validation",
-        "subtitle": "11 papers in this primary topic",
+        "subtitle": "12 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "arxiv:2605.22634",
@@ -3679,7 +4035,8 @@
           "arxiv:2605.27955",
           "arxiv:2605.03159",
           "arxiv:2606.04781",
-          "arxiv:2606.06893"
+          "arxiv:2606.06893",
+          "arxiv:2606.23768"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -3707,7 +4064,7 @@
         "id": "topic:identity",
         "type": "topic",
         "title": "Identity & provenance",
-        "subtitle": "6 papers in this primary topic",
+        "subtitle": "8 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "arxiv:2603.24775",
@@ -3715,7 +4072,9 @@
           "arxiv:2604.02767",
           "wsp:draft",
           "arxiv:2604.06148",
-          "arxiv:2605.25376"
+          "arxiv:2605.25376",
+          "arxiv:2606.16523",
+          "arxiv:2606.31272"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -3738,7 +4097,7 @@
         "id": "topic:evaluation",
         "type": "topic",
         "title": "Evaluation & benchmarks",
-        "subtitle": "16 papers in this primary topic",
+        "subtitle": "17 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "arxiv:2603.25747",
@@ -3756,7 +4115,8 @@
           "arxiv:2604.11174",
           "ieee:reprobe-audit",
           "arxiv:2606.05405",
-          "arxiv:2606.15899"
+          "arxiv:2606.15899",
+          "arxiv:2606.14502"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -3764,7 +4124,7 @@
         "id": "topic:runtime",
         "type": "topic",
         "title": "Runtime enforcement",
-        "subtitle": "13 papers in this primary topic",
+        "subtitle": "14 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "arxiv:2603.07191",
@@ -3779,7 +4139,8 @@
           "arxiv:2603.16586",
           "arxiv:2605.16198",
           "mitre:atlas-agentic",
-          "arxiv:2406.12934"
+          "arxiv:2406.12934",
+          "arxiv:2606.26494"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -3787,7 +4148,7 @@
         "id": "topic:policy",
         "type": "topic",
         "title": "Policy & governance landscape",
-        "subtitle": "34 papers in this primary topic",
+        "subtitle": "39 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "doi-org:a-survey-on-large-language-model-llm-sec",
@@ -3823,7 +4184,12 @@
           "arxiv:2402.09418",
           "doi-org:agentic-ai-autonomous-intelligence-for-c",
           "doi-org:next-generation-phishing-how-llm-agents-",
-          "developer-nvidia-com:nvidia-verified-agent-skills-skillspecto"
+          "developer-nvidia-com:nvidia-verified-agent-skills-skillspecto",
+          "arxiv:2606.20669",
+          "arxiv:2606.17591",
+          "arxiv:2606.28592",
+          "arxiv:2606.09365",
+          "arxiv:2606.28791"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -3831,7 +4197,7 @@
         "id": "layer:0",
         "type": "layer",
         "title": "Layer 0: Specification",
-        "subtitle": "24 papers mapped to this governance layer",
+        "subtitle": "26 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "kieranupadrasta-co-uk:csa-owasp-maestro-seven-layer-threat-mod",
@@ -3857,7 +4223,9 @@
           "arxiv:2606.06893",
           "arxiv:2402.18649",
           "developer-nvidia-com:nvidia-verified-agent-skills-skillspecto",
-          "arxiv:2605.10052"
+          "arxiv:2605.10052",
+          "arxiv:2606.23768",
+          "arxiv:2606.31272"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
       },
@@ -3865,7 +4233,7 @@
         "id": "layer:1",
         "type": "layer",
         "title": "Layer 1: Runtime",
-        "subtitle": "52 papers mapped to this governance layer",
+        "subtitle": "55 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "doi-org:a-survey-on-large-language-model-llm-sec",
@@ -3919,7 +4287,10 @@
           "doi-org:agentic-ai-autonomous-intelligence-for-c",
           "arxiv:2406.12934",
           "doi-org:next-generation-phishing-how-llm-agents-",
-          "developer-nvidia-com:nvidia-verified-agent-skills-skillspecto"
+          "developer-nvidia-com:nvidia-verified-agent-skills-skillspecto",
+          "arxiv:2606.26494",
+          "arxiv:2606.28592",
+          "arxiv:2606.16523"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
       },
@@ -3927,7 +4298,7 @@
         "id": "layer:2",
         "type": "layer",
         "title": "Layer 2: Behavioral",
-        "subtitle": "31 papers mapped to this governance layer",
+        "subtitle": "36 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "ai-journal-com:agent-evaluation-guide-quality-focused-f",
@@ -3960,7 +4331,12 @@
           "arxiv:2605.26112",
           "arxiv:2606.15899",
           "doi-org:agentic-ai-autonomous-intelligence-for-c",
-          "doi-org:next-generation-phishing-how-llm-agents-"
+          "doi-org:next-generation-phishing-how-llm-agents-",
+          "arxiv:2606.20669",
+          "arxiv:2606.17591",
+          "arxiv:2606.09365",
+          "arxiv:2606.14502",
+          "arxiv:2606.28791"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
       },
@@ -4007,7 +4383,6 @@
           "arxiv:2604.23338",
           "owasp:mcp-guide",
           "arxiv:2603.18096",
-          "arxiv:2605.03353",
           "arxiv:2605.20874"
         ],
         "related": [
@@ -4030,11 +4405,6 @@
             "id": "arxiv:2603.18096",
             "title": "Trace-Based Assurance Framework",
             "reason": "same topic; shared L1; terms: injection"
-          },
-          {
-            "id": "arxiv:2605.03353",
-            "title": "SkCC",
-            "reason": "same topic; shared L1; terms: security"
           },
           {
             "id": "arxiv:2605.20874",
@@ -4063,7 +4433,6 @@
           "arxiv:2605.12078",
           "doi-org:next-generation-phishing-how-llm-agents-",
           "nist:ir-8596",
-          "arxiv:2605.02709",
           "kieranupadrasta-co-uk:csa-owasp-maestro-seven-layer-threat-mod",
           "arxiv:2604.20805"
         ],
@@ -4092,11 +4461,6 @@
             "id": "nist:ir-8596",
             "title": "NIST IR 8596",
             "reason": "same topic; shared L1; terms: agentic, case"
-          },
-          {
-            "id": "arxiv:2605.02709",
-            "title": "Healthcare Skills",
-            "reason": "same topic; shared L2; terms: context, dimensions, does"
           },
           {
             "id": "kieranupadrasta-co-uk:csa-owasp-maestro-seven-layer-threat-mod",
@@ -4166,6 +4530,7 @@
           "ieee:reprobe-audit",
           "techtimes-com:finbot-agentic-ai-ctf",
           "arxiv:2606.05405",
+          "arxiv:2606.14502",
           "arxiv:2410.06703",
           "arxiv:2605.11891",
           "github:qualixar-agentassay"
@@ -4195,6 +4560,11 @@
             "id": "arxiv:2606.05405",
             "title": "Agents' Last Exam (ALE) \u2014 Real-World Agent Capability Benchmark",
             "reason": "same topic; shared L2; terms: benchmark, most, provides"
+          },
+          {
+            "id": "arxiv:2606.14502",
+            "title": "From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI",
+            "reason": "same topic; shared L2; terms: task"
           },
           {
             "id": "arxiv:2410.06703",
@@ -4232,7 +4602,6 @@
           "nist:ir-8596",
           "arxiv:2605.26112",
           "ai-journal-com:agent-evaluation-guide-quality-focused-f",
-          "confident-ai:deep-team",
           "developer-nvidia-com:nvidia-verified-agent-skills-skillspecto"
         ],
         "related": [
@@ -4250,11 +4619,6 @@
             "id": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
             "title": "Agent Evaluation Guide (Quality-Focused Frameworks)",
             "reason": "same topic; shared L1/L2; terms: agentic, tool"
-          },
-          {
-            "id": "confident-ai:deep-team",
-            "title": "DeepTeam by Confident AI",
-            "reason": "same topic; shared L2; terms: owasp"
           },
           {
             "id": "developer-nvidia-com:nvidia-verified-agent-skills-skillspecto",
@@ -4315,8 +4679,7 @@
           "layer:1",
           "arxiv:2605.03159",
           "arxiv:2606.04781",
-          "arxiv:2602.22302",
-          "github:topics-skill-md"
+          "arxiv:2602.22302"
         ],
         "related": [
           {
@@ -4333,11 +4696,6 @@
             "id": "arxiv:2602.22302",
             "title": "Agent Behavioral Contracts (ABC)",
             "reason": "same topic; shared L1; terms: contract, contracts"
-          },
-          {
-            "id": "github:topics-skill-md",
-            "title": "GitHub Spec Kit / SDD (Specification-Driven Development)",
-            "reason": "same topic; terms: contracts"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -4357,7 +4715,7 @@
           "layer:1",
           "owasp:mcp-guide",
           "arxiv:2604.08224",
-          "arxiv:2604.23338"
+          "arxiv:2606.28592"
         ],
         "related": [
           {
@@ -4371,9 +4729,9 @@
             "reason": "same topic; shared L1; terms: infrastructure"
           },
           {
-            "id": "arxiv:2604.23338",
-            "title": "LASM / Systematic Survey",
-            "reason": "same topic; shared L1; terms: audit"
+            "id": "arxiv:2606.28592",
+            "title": "Embodiment Meets Environment: Toward Context-Aware, Safe Physical Caregiving Robots",
+            "reason": "same topic; shared L1; terms: environments"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -4394,7 +4752,8 @@
           "mitre:atlas-agentic",
           "arxiv:2603.16586",
           "arxiv:2406.12934",
-          "arxiv:2603.18829"
+          "arxiv:2603.18829",
+          "arxiv:2606.26494"
         ],
         "related": [
           {
@@ -4416,6 +4775,11 @@
             "id": "arxiv:2603.18829",
             "title": "Admission Control for Agent Actions (ACP)",
             "reason": "same topic; shared L1; terms: execution"
+          },
+          {
+            "id": "arxiv:2606.26494",
+            "title": "Clinical Harness for Governable Medical AI Skill Ecosystems",
+            "reason": "same topic; shared L1; terms: architecture"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -4551,7 +4915,7 @@
           "layer:0",
           "arxiv:2604.24026",
           "arxiv:2605.27955",
-          "arxiv:2606.06893",
+          "arxiv:2606.23768",
           "github:topics-skill-md"
         ],
         "related": [
@@ -4566,8 +4930,8 @@
             "reason": "same topic; shared L0"
           },
           {
-            "id": "arxiv:2606.06893",
-            "title": "W2S \u2014 Workflow-to-Skill: Automatic Skill Construction from Traces",
+            "id": "arxiv:2606.23768",
+            "title": "Cryptographic certificates of validity for trustworthy AI",
             "reason": "same topic; shared L0"
           },
           {
@@ -4767,7 +5131,8 @@
           "arxiv:2605.16282",
           "ieee:reprobe-audit",
           "techtimes-com:finbot-agentic-ai-ctf",
-          "arxiv:2606.05405"
+          "arxiv:2606.05405",
+          "arxiv:2606.14502"
         ],
         "related": [
           {
@@ -4799,6 +5164,11 @@
             "id": "arxiv:2606.05405",
             "title": "Agents' Last Exam (ALE) \u2014 Real-World Agent Capability Benchmark",
             "reason": "same topic; shared L2; terms: benchmark, benchmarks, evaluate"
+          },
+          {
+            "id": "arxiv:2606.14502",
+            "title": "From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI",
+            "reason": "same topic; shared L2; terms: benchmarks"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -4817,8 +5187,8 @@
           "topic:policy",
           "layer:2",
           "arxiv:2604.19818",
-          "arxiv:2605.02709",
-          "kieranupadrasta-co-uk:csa-owasp-maestro-seven-layer-threat-mod"
+          "arxiv:2606.17591",
+          "arxiv:2606.20669"
         ],
         "related": [
           {
@@ -4827,14 +5197,14 @@
             "reason": "same topic; shared L2"
           },
           {
-            "id": "arxiv:2605.02709",
-            "title": "Healthcare Skills",
+            "id": "arxiv:2606.17591",
+            "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning",
             "reason": "same topic; shared L2"
           },
           {
-            "id": "kieranupadrasta-co-uk:csa-owasp-maestro-seven-layer-threat-mod",
-            "title": "CSA/OWASP MAESTRO \u2014 Seven-Layer Threat Modeling Architecture for Agentic AI",
-            "reason": "same topic; shared L2; terms: owasp"
+            "id": "arxiv:2606.20669",
+            "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
+            "reason": "same topic; shared L2"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -5167,6 +5537,7 @@
           "arxiv:2605.03353",
           "doi-org:a-survey-on-large-language-model-llm-sec",
           "arxiv:2605.20874",
+          "arxiv:2606.28592",
           "arxiv:2402.18649"
         ],
         "related": [
@@ -5204,6 +5575,11 @@
             "id": "arxiv:2605.20874",
             "title": "Governance by Construction for Generalist Agents / CUGA",
             "reason": "same topic; shared L1; terms: five"
+          },
+          {
+            "id": "arxiv:2606.28592",
+            "title": "Embodiment Meets Environment: Toward Context-Aware, Safe Physical Caregiving Robots",
+            "reason": "same topic; shared L1"
           },
           {
             "id": "arxiv:2402.18649",
@@ -5296,7 +5672,8 @@
           "arxiv:2603.17445",
           "arxiv:2604.02767",
           "arxiv:2605.25376",
-          "wsp:draft"
+          "arxiv:2606.16523",
+          "arxiv:2606.31272"
         ],
         "related": [
           {
@@ -5320,9 +5697,14 @@
             "reason": "same topic; shared L1; terms: delegation, foundation, introduces"
           },
           {
-            "id": "wsp:draft",
-            "title": "Web Skills Protocol (WSP) \u2014 Web Discovery Layer for Skills",
-            "reason": "same topic; terms: protocol"
+            "id": "arxiv:2606.16523",
+            "title": "SkillWiki: A Living Knowledge Infrastructure for Agent Skills",
+            "reason": "same topic; shared L1"
+          },
+          {
+            "id": "arxiv:2606.31272",
+            "title": "The Decomposition Is the Fingerprint: Per-Component Identity for Agent Skills",
+            "reason": "same topic; terms: identity"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -5340,20 +5722,20 @@
         "links": [
           "topic:runtime",
           "layer:1",
+          "arxiv:2606.26494",
           "arxiv:2603.18829",
-          "arxiv:2605.16198",
           "github:topics-agent-control-protocol"
         ],
         "related": [
           {
+            "id": "arxiv:2606.26494",
+            "title": "Clinical Harness for Governable Medical AI Skill Ecosystems",
+            "reason": "same topic; shared L1; terms: governed, lifecycle"
+          },
+          {
             "id": "arxiv:2603.18829",
             "title": "Admission Control for Agent Actions (ACP)",
             "reason": "same topic; shared L1; terms: enforcing"
-          },
-          {
-            "id": "arxiv:2605.16198",
-            "title": "Auditing, Monitoring, and Intervention",
-            "reason": "same topic; shared L1"
           },
           {
             "id": "github:topics-agent-control-protocol",
@@ -5377,8 +5759,9 @@
           "topic:policy",
           "layer:2",
           "arxiv:2605.02709",
-          "confident-ai:deep-team",
-          "arxiv:2605.26112"
+          "arxiv:2606.28791",
+          "arxiv:2606.20669",
+          "confident-ai:deep-team"
         ],
         "related": [
           {
@@ -5387,14 +5770,19 @@
             "reason": "same topic; shared L2; terms: finding"
           },
           {
-            "id": "confident-ai:deep-team",
-            "title": "DeepTeam by Confident AI",
+            "id": "arxiv:2606.28791",
+            "title": "From Determinism to Delegation: AI-Native Software Engineering and the Evolution of the Agentic Engineer",
+            "reason": "same topic; shared L2; terms: agentic"
+          },
+          {
+            "id": "arxiv:2606.20669",
+            "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
             "reason": "same topic; shared L2"
           },
           {
-            "id": "arxiv:2605.26112",
-            "title": "CheetahClaws \u2014 System Scaling Harness for Agentic AI",
-            "reason": "same topic; shared L2; terms: agentic, concrete, core"
+            "id": "confident-ai:deep-team",
+            "title": "DeepTeam by Confident AI",
+            "reason": "same topic; shared L2"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -5467,8 +5855,8 @@
           "topic:specification",
           "layer:3",
           "arxiv:2604.16911",
-          "arxiv:2602.22302",
-          "arxiv:2605.22634"
+          "arxiv:2606.23768",
+          "arxiv:2602.22302"
         ],
         "related": [
           {
@@ -5477,13 +5865,13 @@
             "reason": "same topic; terms: spec, specification"
           },
           {
-            "id": "arxiv:2602.22302",
-            "title": "Agent Behavioral Contracts (ABC)",
-            "reason": "same topic; terms: contracts"
+            "id": "arxiv:2606.23768",
+            "title": "Cryptographic certificates of validity for trustworthy AI",
+            "reason": "same topic; terms: approach, artifacts"
           },
           {
-            "id": "arxiv:2605.22634",
-            "title": "GovernSpec / Contractual Skills",
+            "id": "arxiv:2602.22302",
+            "title": "Agent Behavioral Contracts (ABC)",
             "reason": "same topic; terms: contracts"
           }
         ],
@@ -5503,8 +5891,10 @@
           "topic:policy",
           "layer:2",
           "arxiv:2604.19818",
-          "ai-journal-com:agent-evaluation-guide-quality-focused-f",
-          "confident-ai:deep-team"
+          "arxiv:2606.09365",
+          "arxiv:2606.17591",
+          "arxiv:2606.20669",
+          "arxiv:2606.28791"
         ],
         "related": [
           {
@@ -5513,14 +5903,24 @@
             "reason": "same topic; shared L2; terms: finding"
           },
           {
-            "id": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
-            "title": "Agent Evaluation Guide (Quality-Focused Frameworks)",
-            "reason": "same topic; shared L2; terms: context, dimensions, does"
+            "id": "arxiv:2606.09365",
+            "title": "Experience Makes Skillful: Enabling Generalizable Medical Agent Reasoning via Self-Evolving Skill Memory",
+            "reason": "same topic; shared L2; terms: clinical"
           },
           {
-            "id": "confident-ai:deep-team",
-            "title": "DeepTeam by Confident AI",
-            "reason": "same topic; shared L2"
+            "id": "arxiv:2606.17591",
+            "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning",
+            "reason": "same topic; shared L2; terms: evidence"
+          },
+          {
+            "id": "arxiv:2606.20669",
+            "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
+            "reason": "same topic; shared L2; terms: autonomy"
+          },
+          {
+            "id": "arxiv:2606.28791",
+            "title": "From Determinism to Delegation: AI-Native Software Engineering and the Evolution of the Agentic Engineer",
+            "reason": "same topic; shared L2; terms: frameworks"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -5540,7 +5940,8 @@
           "layer:1",
           "arxiv:2603.24775",
           "arxiv:2604.06148",
-          "arxiv:2604.02767"
+          "arxiv:2604.02767",
+          "arxiv:2606.16523"
         ],
         "related": [
           {
@@ -5557,6 +5958,11 @@
             "id": "arxiv:2604.02767",
             "title": "SentinelAgent \u2014 Intent-Verified Delegation Chains for Securing Federal Multi-Agent AI Systems",
             "reason": "same topic; shared L1; terms: multi-agent"
+          },
+          {
+            "id": "arxiv:2606.16523",
+            "title": "SkillWiki: A Living Knowledge Infrastructure for Agent Skills",
+            "reason": "same topic; shared L1; terms: execution"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -5576,8 +5982,7 @@
           "layer:1",
           "doi-org:a-survey-on-large-language-model-llm-sec",
           "arxiv:2604.08224",
-          "owasp:mcp-guide",
-          "microsoft:agent-governance-toolkit"
+          "owasp:mcp-guide"
         ],
         "related": [
           {
@@ -5594,11 +5999,6 @@
             "id": "owasp:mcp-guide",
             "title": "A Survey of the Model Context Protocol (MCP): Standardizing Context to Enhance LLMs",
             "reason": "same topic; shared L1; terms: audit, survey"
-          },
-          {
-            "id": "microsoft:agent-governance-toolkit",
-            "title": "IBM Sovereign Core \u2014 Governance Policy at Infrastructure Runtime",
-            "reason": "same topic; shared L1; terms: audit"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -5665,8 +6065,8 @@
           "topic:policy",
           "layer:1",
           "arxiv:2402.09418",
-          "owasp:mcp-guide",
-          "doi-org:a-survey-on-large-language-model-llm-sec"
+          "arxiv:2606.28592",
+          "owasp:mcp-guide"
         ],
         "related": [
           {
@@ -5675,14 +6075,14 @@
             "reason": "same topic; shared L1; terms: directly, security"
           },
           {
+            "id": "arxiv:2606.28592",
+            "title": "Embodiment Meets Environment: Toward Context-Aware, Safe Physical Caregiving Robots",
+            "reason": "same topic; shared L1; terms: adaptation, constraints"
+          },
+          {
             "id": "owasp:mcp-guide",
             "title": "A Survey of the Model Context Protocol (MCP): Standardizing Context to Enhance LLMs",
             "reason": "same topic; shared L1; terms: infrastructure, security"
-          },
-          {
-            "id": "doi-org:a-survey-on-large-language-model-llm-sec",
-            "title": "A Survey on Large Language Model (LLM) Security and Privacy: The Good, The Bad, and The Ugly",
-            "reason": "same topic; shared L1; terms: security"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -5778,11 +6178,16 @@
         "links": [
           "topic:identity",
           "layer:0",
+          "arxiv:2606.31272",
           "arxiv:2605.25376",
-          "arxiv:2604.02767",
-          "arxiv:2603.24775"
+          "arxiv:2604.02767"
         ],
         "related": [
+          {
+            "id": "arxiv:2606.31272",
+            "title": "The Decomposition Is the Fingerprint: Per-Component Identity for Agent Skills",
+            "reason": "same topic; shared L0; terms: trust"
+          },
           {
             "id": "arxiv:2605.25376",
             "title": "KYA",
@@ -5792,11 +6197,6 @@
             "id": "arxiv:2604.02767",
             "title": "SentinelAgent \u2014 Intent-Verified Delegation Chains for Securing Federal Multi-Agent AI Systems",
             "reason": "same topic; terms: cryptographic, provenance"
-          },
-          {
-            "id": "arxiv:2603.24775",
-            "title": "AIP / Agent Identity Protocol",
-            "reason": "same topic; terms: protocol"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -5904,6 +6304,7 @@
           "arxiv:2603.07191",
           "arxiv:2604.05485",
           "arxiv:2406.12934",
+          "arxiv:2606.26494",
           "arxiv:2605.27690"
         ],
         "related": [
@@ -5935,6 +6336,11 @@
           {
             "id": "arxiv:2406.12934",
             "title": "Current State of LLM Risks and AI Guardrails",
+            "reason": "same topic; shared L1"
+          },
+          {
+            "id": "arxiv:2606.26494",
+            "title": "Clinical Harness for Governable Medical AI Skill Ecosystems",
             "reason": "same topic; shared L1"
           },
           {
@@ -6207,6 +6613,7 @@
           "arxiv:2603.24775",
           "arxiv:2603.17445",
           "arxiv:2604.02767",
+          "arxiv:2606.16523",
           "arxiv:2605.25376"
         ],
         "related": [
@@ -6224,6 +6631,11 @@
             "id": "arxiv:2604.02767",
             "title": "SentinelAgent \u2014 Intent-Verified Delegation Chains for Securing Federal Multi-Agent AI Systems",
             "reason": "same topic; shared L1; terms: chain"
+          },
+          {
+            "id": "arxiv:2606.16523",
+            "title": "SkillWiki: A Living Knowledge Infrastructure for Agent Skills",
+            "reason": "same topic; shared L1"
           },
           {
             "id": "arxiv:2605.25376",
@@ -6542,7 +6954,7 @@
           "topic:policy",
           "ai-journal-com:agent-evaluation-guide-quality-focused-f",
           "arxiv:2604.08224",
-          "doi-org:next-generation-phishing-how-llm-agents-"
+          "arxiv:2606.28791"
         ],
         "related": [
           {
@@ -6556,8 +6968,8 @@
             "reason": "same topic; terms: engineering"
           },
           {
-            "id": "doi-org:next-generation-phishing-how-llm-agents-",
-            "title": "Next-Generation Phishing: How LLM Agents Empower Cyber Attackers",
+            "id": "arxiv:2606.28791",
+            "title": "From Determinism to Delegation: AI-Native Software Engineering and the Evolution of the Agentic Engineer",
             "reason": "same topic; terms: engineering"
           }
         ],
@@ -6727,7 +7139,8 @@
           "layer:0",
           "arxiv:2605.27955",
           "arxiv:2606.06893",
-          "arxiv:2604.16911"
+          "arxiv:2604.16911",
+          "arxiv:2606.23768"
         ],
         "related": [
           {
@@ -6743,6 +7156,11 @@
           {
             "id": "arxiv:2604.16911",
             "title": "Skilldex",
+            "reason": "same topic; shared L0"
+          },
+          {
+            "id": "arxiv:2606.23768",
+            "title": "Cryptographic certificates of validity for trustworthy AI",
             "reason": "same topic; shared L0"
           }
         ],
@@ -6879,7 +7297,6 @@
           "arxiv:2406.12934",
           "github:topics-agent-control-protocol",
           "arxiv:2603.16586",
-          "arxiv:2604.05485",
           "arxiv:2605.27690"
         ],
         "related": [
@@ -6897,11 +7314,6 @@
             "id": "arxiv:2603.16586",
             "title": "Runtime Governance / Policies on Paths",
             "reason": "same topic; shared L1; terms: compliance, formal"
-          },
-          {
-            "id": "arxiv:2604.05485",
-            "title": "Auditable Agents",
-            "reason": "same topic; shared L1"
           },
           {
             "id": "arxiv:2605.27690",
@@ -6928,7 +7340,8 @@
           "arxiv:2603.24775",
           "arxiv:2604.02767",
           "arxiv:2604.06148",
-          "wsp:draft"
+          "wsp:draft",
+          "arxiv:2606.31272"
         ],
         "related": [
           {
@@ -6950,6 +7363,11 @@
             "id": "wsp:draft",
             "title": "Web Skills Protocol (WSP) \u2014 Web Discovery Layer for Skills",
             "reason": "same topic; terms: provenance, trust"
+          },
+          {
+            "id": "arxiv:2606.31272",
+            "title": "The Decomposition Is the Fingerprint: Per-Component Identity for Agent Skills",
+            "reason": "same topic; terms: trust"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -7012,6 +7430,7 @@
           "layer:0",
           "arxiv:2604.24026",
           "arxiv:2606.06893",
+          "arxiv:2606.23768",
           "arxiv:2604.16911"
         ],
         "related": [
@@ -7024,6 +7443,11 @@
             "id": "arxiv:2606.06893",
             "title": "W2S \u2014 Workflow-to-Skill: Automatic Skill Construction from Traces",
             "reason": "same topic; shared L0; terms: execution"
+          },
+          {
+            "id": "arxiv:2606.23768",
+            "title": "Cryptographic certificates of validity for trustworthy AI",
+            "reason": "same topic; shared L0; terms: between"
           },
           {
             "id": "arxiv:2604.16911",
@@ -7253,6 +7677,7 @@
           "arxiv:2604.11806",
           "ieee:reprobe-audit",
           "arxiv:2603.02601",
+          "arxiv:2606.14502",
           "techtimes-com:finbot-agentic-ai-ctf"
         ],
         "related": [
@@ -7275,6 +7700,11 @@
             "id": "arxiv:2603.02601",
             "title": "AgentAssay",
             "reason": "same topic; shared L2; terms: critical, metrics"
+          },
+          {
+            "id": "arxiv:2606.14502",
+            "title": "From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI",
+            "reason": "same topic; shared L2; terms: auditable, task"
           },
           {
             "id": "techtimes-com:finbot-agentic-ai-ctf",
@@ -7484,8 +7914,7 @@
           "kieranupadrasta-co-uk:csa-owasp-maestro-seven-layer-threat-mod",
           "doi-org:agentic-ai-autonomous-intelligence-for-c",
           "doi-org:next-generation-phishing-how-llm-agents-",
-          "arxiv:2605.12078",
-          "arxiv:2604.19818"
+          "arxiv:2605.12078"
         ],
         "related": [
           {
@@ -7512,11 +7941,6 @@
             "id": "arxiv:2605.12078",
             "title": "Property-Level Reconstructability of Agent Decisions \u2014 An Anchor-Level Pilot Across Vendor SDK Adapter Regimes",
             "reason": "same topic; shared L1/L2"
-          },
-          {
-            "id": "arxiv:2604.19818",
-            "title": "Evidence-Synthesis Framework",
-            "reason": "same topic; shared L2; terms: agentic, concrete, core"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -7646,7 +8070,7 @@
           "layer:0",
           "arxiv:2604.24026",
           "arxiv:2605.27955",
-          "arxiv:2604.16911",
+          "arxiv:2606.23768",
           "arxiv:2606.04781"
         ],
         "related": [
@@ -7661,8 +8085,8 @@
             "reason": "same topic; shared L0; terms: execution"
           },
           {
-            "id": "arxiv:2604.16911",
-            "title": "Skilldex",
+            "id": "arxiv:2606.23768",
+            "title": "Cryptographic certificates of validity for trustworthy AI",
             "reason": "same topic; shared L0"
           },
           {
@@ -7872,8 +8296,7 @@
           "layer:2",
           "ai-journal-com:agent-evaluation-guide-quality-focused-f",
           "arxiv:2605.26112",
-          "doi-org:agentic-ai-autonomous-intelligence-for-c",
-          "arxiv:2604.20805"
+          "doi-org:agentic-ai-autonomous-intelligence-for-c"
         ],
         "related": [
           {
@@ -7890,11 +8313,6 @@
             "id": "doi-org:agentic-ai-autonomous-intelligence-for-c",
             "title": "Agentic AI: Autonomous Intelligence for Complex Goals\u2014A Comprehensive Survey",
             "reason": "same topic; shared L1/L2; terms: autonomous"
-          },
-          {
-            "id": "arxiv:2604.20805",
-            "title": "FAccT '26 / Relative Principals, Pluralistic Alignment",
-            "reason": "same topic; terms: engineering"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -7980,6 +8398,408 @@
             "id": "arxiv:2602.11510",
             "title": "AgentLeak \u2014 Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems",
             "reason": "same topic; terms: multi-agent"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2606.20669",
+        "type": "paper",
+        "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
+        "subtitle": "Policy & governance landscape \u00b7 Layer 2",
+        "body": "2026. As organizations increasingly deploy generative AI agents to automate business processes, they face a governance dilemma: although these agents can increase operational flexibility, their non-deterministic nature challenges the control and standardization that Business Process Management seeks to enforce. This paper addresses this \\emph{invisible autonomy risk} by introducing \\emph{Agent Behavior Mining}, a governance capability that enables the application of process mining techniques to render generative AI agent decision-making observable and traceable. We (1) improve the understanding of generative AI agent behavior through an event data model that translates granular agent activities -- including reasoning traces, tool usage, and token costs -- into standardized process logs; (2) instantiate the data model in a multi-agent order-to-cash implementation, demonstrating how process managers can leverage agent logs to detect policy deviations and quantify operational variability; and (3) evaluate the perceived practical utility of the approach in an exploratory study with 18 industry practitioners. The results indicate that practitioners view behavioral transparency as a prerequisite for trust and consider the ability to examine agent reasoning as an important governance requirement for the next generation of AI-driven business processes.",
+        "relevance": "Makes agent behavior observable through process logs, supporting audit and policy-deviation detection.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://arxiv.org/abs/2606.20669",
+        "discovered": "2026-07-01",
+        "links": [
+          "topic:policy",
+          "layer:2",
+          "arxiv:2606.09365",
+          "arxiv:2605.02709",
+          "arxiv:2604.19818",
+          "arxiv:2606.17591",
+          "arxiv:2606.28791",
+          "confident-ai:deep-team"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2606.09365",
+            "title": "Experience Makes Skillful: Enabling Generalizable Medical Agent Reasoning via Self-Evolving Skill Memory",
+            "reason": "same topic; shared L2; terms: ability, reasoning"
+          },
+          {
+            "id": "arxiv:2605.02709",
+            "title": "Healthcare Skills",
+            "reason": "same topic; shared L2; terms: autonomy"
+          },
+          {
+            "id": "arxiv:2604.19818",
+            "title": "Evidence-Synthesis Framework",
+            "reason": "same topic; shared L2"
+          },
+          {
+            "id": "arxiv:2606.17591",
+            "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning",
+            "reason": "same topic; shared L2"
+          },
+          {
+            "id": "arxiv:2606.28791",
+            "title": "From Determinism to Delegation: AI-Native Software Engineering and the Evolution of the Agentic Engineer",
+            "reason": "same topic; shared L2"
+          },
+          {
+            "id": "confident-ai:deep-team",
+            "title": "DeepTeam by Confident AI",
+            "reason": "same topic; shared L2"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2606.26494",
+        "type": "paper",
+        "title": "Clinical Harness for Governable Medical AI Skill Ecosystems",
+        "subtitle": "Runtime enforcement \u00b7 Layer 1",
+        "body": "2026. Medical AI remains organized around isolated models, whereas care requires accountable capabilities that persist across time. We define clinical AI skills and propose the Clinical Harness, a runtime governance architecture that registers, orchestrates, constrains and monitors them. Using osteoporosis as an exemplar, we show how knowledge-driven, data-driven and physics-enhanced skills can support lifecycle care and provide a governed substrate for future medical agents.",
+        "relevance": "Frames skills as governable runtime assets that must be registered, orchestrated, constrained, and monitored.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://arxiv.org/abs/2606.26494",
+        "discovered": "2026-07-01",
+        "links": [
+          "topic:runtime",
+          "layer:1",
+          "arxiv:2604.05485",
+          "arxiv:2603.07191",
+          "arxiv:2603.18829"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2604.05485",
+            "title": "Auditable Agents",
+            "reason": "same topic; shared L1; terms: governed, lifecycle"
+          },
+          {
+            "id": "arxiv:2603.07191",
+            "title": "Layered Governance Architecture (LGA)",
+            "reason": "same topic; shared L1; terms: architecture"
+          },
+          {
+            "id": "arxiv:2603.18829",
+            "title": "Admission Control for Agent Actions (ACP)",
+            "reason": "same topic; shared L1"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2606.17591",
+        "type": "paper",
+        "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning",
+        "subtitle": "Policy & governance landscape \u00b7 Layer 2",
+        "body": "2026. Training-free verbal reinforcement learning enables LLM agents to learn from world feedback -- objective signals such as dynamic task outcomes, market returns, or demand forecasts -- by extracting verbal rules from experience and injecting them as context, updating the agent's behavior without parameter changes. However, in non-stationary environments these agents face a retention-forgetting dilemma: retaining stale insights causes negative transfer, while discarding them causes catastrophic forgetting when conditions recur. We identify four requirements for navigating this dilemma -- outcome-driven evaluation, persistent structured evidence, non-monotonic knowledge lifecycle, and compositional governance -- and show that existing methods invest heavily in experience extraction while underinvesting in insight governance. We propose a three-layer architecture -- rules, evidence, and skills -- connected by a feedback-driven curation loop that closes the governance gap. Rules capture distilled experience from world outcomes; evidence logs track each rule's reliability across episodes; skills govern which rules to apply, how to resolve conflicts, and when to abstain. On financial forecasting as a case study, where world feedback is naturally abundant, noisy, and non-stationary, we show that the same accumulated experience either degrades performance below the zero-shot baseline or dramatically improves accuracy and risk-adjusted returns, depending on whether the curation loop is present.",
+        "relevance": "Live graph candidate relevant to Layer 2 governance for agent skills, specifications, or behavior.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://arxiv.org/abs/2606.17591",
+        "discovered": "2026-07-01",
+        "links": [
+          "topic:policy",
+          "layer:2",
+          "arxiv:2605.02709",
+          "arxiv:2606.09365",
+          "arxiv:2606.20669",
+          "confident-ai:deep-team"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2605.02709",
+            "title": "Healthcare Skills",
+            "reason": "same topic; shared L2; terms: evidence"
+          },
+          {
+            "id": "arxiv:2606.09365",
+            "title": "Experience Makes Skillful: Enabling Generalizable Medical Agent Reasoning via Self-Evolving Skill Memory",
+            "reason": "same topic; shared L2; terms: experience"
+          },
+          {
+            "id": "arxiv:2606.20669",
+            "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
+            "reason": "same topic; shared L2"
+          },
+          {
+            "id": "confident-ai:deep-team",
+            "title": "DeepTeam by Confident AI",
+            "reason": "same topic; shared L2"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2606.23768",
+        "type": "paper",
+        "title": "Cryptographic certificates of validity for trustworthy AI",
+        "subtitle": "Specification & validation \u00b7 Layer 0",
+        "body": "2026. We propose cryptographic certificates of validity for agentic AI systems. The core idea is to formally specify a correctness or policy condition as a logical predicate, compile this predicate to a witness-checking problem over polynomial constraints, and use a succinct cryptographic proof system (and optionally zero-knowledge) to certify that the condition holds. This offers a middle ground between formal verification of source code, and cryptographic authentication. An agent's action can be accompanied by an independently checkable proof that it satisfies an agreed formal policy, without requiring the verifier to trust the agent or to re-execute computation. We outline the approach at a high level, give the core mathematical translation, relate the proposal to proof-carrying code, zkVMs, formal methods, and agent governance, and note the specification, auditing, and deployment questions that a full implementation must answer.",
+        "relevance": "Turns policy satisfaction into independently checkable proof artifacts, directly relevant to enforceable agent-governance specifications.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://arxiv.org/abs/2606.23768",
+        "discovered": "2026-07-01",
+        "links": [
+          "topic:specification",
+          "layer:0",
+          "arxiv:2605.27955",
+          "arxiv:2604.16911",
+          "arxiv:2604.24026",
+          "arxiv:2606.06893",
+          "github:topics-skill-md"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2605.27955",
+            "title": "Skill-as-Pseudocode (SaP)",
+            "reason": "same topic; shared L0; terms: between"
+          },
+          {
+            "id": "arxiv:2604.16911",
+            "title": "Skilldex",
+            "reason": "same topic; shared L0"
+          },
+          {
+            "id": "arxiv:2604.24026",
+            "title": "SSL Representation / Skill Text to Structure",
+            "reason": "same topic; shared L0"
+          },
+          {
+            "id": "arxiv:2606.06893",
+            "title": "W2S \u2014 Workflow-to-Skill: Automatic Skill Construction from Traces",
+            "reason": "same topic; shared L0"
+          },
+          {
+            "id": "github:topics-skill-md",
+            "title": "GitHub Spec Kit / SDD (Specification-Driven Development)",
+            "reason": "same topic; terms: approach, artifacts"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2606.28592",
+        "type": "paper",
+        "title": "Embodiment Meets Environment: Toward Context-Aware, Safe Physical Caregiving Robots",
+        "subtitle": "Policy & governance landscape \u00b7 Layer 1",
+        "body": "2026. Physical caregiving robots need to assist different users with different tasks in diverse environments, and they come in many embodiments. While substantial progress has been made on individual caregiving tasks, most existing systems remain tightly coupled to specific environments and robot embodiments, and often do not explicitly model or constrain interactions around people, despite humans being special agents in the environment. This motivates a focus on adapting to context that emerges from the joint interaction between the environment and the robot's embodiment. We propose $E^2$-CARE, a framework that enables context-aware adaptation by representing primitive caregiving skills as interaction templates whose execution is reshaped online. $E^2$-CARE represents the environment, the robot, and the human within a unified 3D dynamic scene graph that models these interaction contexts explicitly, and synthesizes task-specific constraints to govern how each skill is executed. By enforcing these constraints at runtime, the same skill templates can be reused zero-shot and safely across diverse environments and robot embodiments. We evaluate $E^2$-CARE across four activities of daily living in hundreds of simulated household environments, including assistive home settings, and across diverse robot embodiments, and validate it through user studies on two caregiving tasks with two robots in various real-world environments. Results demonstrate consistent and successful adaptation across these environments and embodiments. Website: https://emprise.cs.cornell.edu/e2care",
+        "relevance": "Live graph candidate relevant to Layer 1 governance for agent skills, specifications, or behavior.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://arxiv.org/abs/2606.28592",
+        "discovered": "2026-07-01",
+        "links": [
+          "topic:policy",
+          "layer:1",
+          "arxiv:2605.03353",
+          "microsoft:agent-governance-toolkit",
+          "owasp:mcp-guide"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2605.03353",
+            "title": "SkCC",
+            "reason": "same topic; shared L1; terms: adaptation, constraints"
+          },
+          {
+            "id": "microsoft:agent-governance-toolkit",
+            "title": "IBM Sovereign Core \u2014 Governance Policy at Infrastructure Runtime",
+            "reason": "same topic; shared L1; terms: environments"
+          },
+          {
+            "id": "owasp:mcp-guide",
+            "title": "A Survey of the Model Context Protocol (MCP): Standardizing Context to Enhance LLMs",
+            "reason": "same topic; shared L1"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2606.09365",
+        "type": "paper",
+        "title": "Experience Makes Skillful: Enabling Generalizable Medical Agent Reasoning via Self-Evolving Skill Memory",
+        "subtitle": "Policy & governance landscape \u00b7 Layer 2",
+        "body": "2026. Medical agent systems are increasingly expected to support interactive clinical decision making rather than only static question answering. In such settings, effective agents must reuse prior experience across evolving cases, yet existing memory mechanisms often retain raw historical traces that are redundant, noisy, and difficult to govern. More importantly, they rarely distinguish which memories are truly useful for future reasoning. This limits their ability to accumulate compact and reliable experience for long-horizon clinical reasoning. To close this gap, we propose SkeMex, a post-deployment self-evolution framework that improves medical agents through a skill-based memory without updating model weights. SkeMex distills informative interaction trajectories into structured skills that encode reusable procedural knowledge, and organizes them into a multi-branch repository spanning general, task-specific, and action-level experience. To determine which memories should be reused and retained, SkeMex estimates context-dependent utility from environment feedback and uses it to guide value-aware retrieval and repository governance. A closed-loop ``Read--Write--Assess--Govern\" lifecycle further supports continual evolution by writing new skills, updating utilities, promoting useful memories, and removing harmful entries. Experiments across diverse clinical tasks show that SkeMex consistently outperforms representative memory-based agents in both offline and online settings. It also generalizes across model backbones and supports transferable skill memory. All data and code will be released publicly.",
+        "relevance": "Live graph candidate relevant to Layer 2 governance for agent skills, specifications, or behavior.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://arxiv.org/abs/2606.09365",
+        "discovered": "2026-07-01",
+        "links": [
+          "topic:policy",
+          "layer:2",
+          "arxiv:2606.20669",
+          "arxiv:2605.02709",
+          "arxiv:2606.17591"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2606.20669",
+            "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
+            "reason": "same topic; shared L2; terms: ability, reasoning"
+          },
+          {
+            "id": "arxiv:2605.02709",
+            "title": "Healthcare Skills",
+            "reason": "same topic; shared L2; terms: clinical"
+          },
+          {
+            "id": "arxiv:2606.17591",
+            "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning",
+            "reason": "same topic; shared L2; terms: experience"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2606.14502",
+        "type": "paper",
+        "title": "From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI",
+        "subtitle": "Evaluation & benchmarks \u00b7 Layer 2",
+        "body": "2026. Large Language Models (LLMs) are undergoing a fundamental transformation from conversational generators into integrated AI systems capable of reasoning, action, memory, and self-improvement. We conceptualize this transition as a shift from Chatbot to Digital Colleague: from conversational answers to persistent work. We organize this transition along two tightly coupled dimensions. First, at the cognitive core level, LLMs are advancing from Chatbot-era \"fast thinking\" systems driven by next-token prediction toward Thinking LLMs that leverage inference-time computation, Chain-of-Thought reasoning, reflection, process supervision, and reinforcement learning to support more deliberate and reliable cognition. Second, at the tool-augmented task execution level, LLMs are progressing from tool-calling Agents that invoke external resources in an ad hoc manner toward OpenClaw-style workstation systems (OpenClaw) equipped with persistent Workspaces, skills, verification loops, and governance. The \"Workspace + Skill\" paradigm makes episodic tool use colleague-like via state persistence, reusable procedures, task closure, and experience reuse. We examine data construction shifts from instruction-response pairs to State-Action-Observation trajectories and evaluation from static benchmarks to sandboxed, auditable, self-evolving AI ecosystems.",
+        "relevance": "Directly analyzes the OpenClaw-style workspace plus skill paradigm as a governed persistent-agent system.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://arxiv.org/abs/2606.14502",
+        "discovered": "2026-07-01",
+        "links": [
+          "topic:evaluation",
+          "layer:2",
+          "arxiv:2604.11174",
+          "arxiv:2603.25747",
+          "arxiv:2604.08523"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2604.11174",
+            "title": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems",
+            "reason": "same topic; shared L2; terms: auditable, task"
+          },
+          {
+            "id": "arxiv:2603.25747",
+            "title": "BeSafe-Bench (BSB)",
+            "reason": "same topic; shared L2; terms: task"
+          },
+          {
+            "id": "arxiv:2604.08523",
+            "title": "ClawBench \u2014 Real-World Web Agent Benchmark",
+            "reason": "same topic; shared L2; terms: benchmarks"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2606.28791",
+        "type": "paper",
+        "title": "From Determinism to Delegation: AI-Native Software Engineering and the Evolution of the Agentic Engineer",
+        "subtitle": "Policy & governance landscape \u00b7 Layer 2",
+        "body": "2026. Software engineering is experiencing its most significant transformation since the emergence of high-level programming languages. As large language models (LLMs) increasingly enable sustained, multi-step, tool-mediated execution, engineering value is shifting from writing deterministic code to supervising probabilistic and autonomous behavior. This paper argues that AI-Native Software Engineering is a paradigm shift rather than a mere tooling advance, creating a new professional archetype: the Agentic Engineer, whose primary artifact is the agentic system rather than the program. We characterize this transition through three changes: (i) the unit of work shifts from functions to supervised agent workflows, (ii) correctness shifts from binary assertions to statistical evaluation under uncertainty, and (iii) accountability shifts from code authorship to outcome ownership. Drawing on post-2022 research, we compare traditional and agentic engineering roles and define core mechanisms of autonomous agents, including reasoning-acting loops, context engineering, tool use, memory, behavioral drift, and compositional error. We place human-AI collaboration within socio-technical frameworks and examine mixed empirical evidence. While some studies report productivity gains, others show slowdowns among experienced developers, highlighting disciplined oversight rather than automation as the critical competency. Using established governance frameworks, we identify required skills and risks, including indirect prompt injection. We conclude that the future is one of symbiosis rather than substitution: agentic engineering builds upon and depends on classical software engineering principles.",
+        "relevance": "Live graph candidate relevant to Layer 2 governance for agent skills, specifications, or behavior.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://arxiv.org/abs/2606.28791",
+        "discovered": "2026-07-01",
+        "links": [
+          "topic:policy",
+          "layer:2",
+          "arxiv:2604.19818",
+          "arxiv:2605.02709",
+          "arxiv:2606.20669",
+          "arxiv:2604.20805"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2604.19818",
+            "title": "Evidence-Synthesis Framework",
+            "reason": "same topic; shared L2; terms: agentic"
+          },
+          {
+            "id": "arxiv:2605.02709",
+            "title": "Healthcare Skills",
+            "reason": "same topic; shared L2; terms: frameworks"
+          },
+          {
+            "id": "arxiv:2606.20669",
+            "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
+            "reason": "same topic; shared L2"
+          },
+          {
+            "id": "arxiv:2604.20805",
+            "title": "FAccT '26 / Relative Principals, Pluralistic Alignment",
+            "reason": "same topic; terms: engineering"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2606.16523",
+        "type": "paper",
+        "title": "SkillWiki: A Living Knowledge Infrastructure for Agent Skills",
+        "subtitle": "Identity & provenance \u00b7 Layer 1",
+        "body": "2026. While knowledge is managed through Wikipedia and software through GitHub, agent skills still lack an infrastructure for large-scale production, governance, and evolution. SkillWiki is a living knowledge infrastructure that supports the organization, grounding, and continuous evolution of agent skills by transforming heterogeneous knowledge into reusable skill assets linked to their originating evidence. Our demonstration presents the complete skill lifecycle, from knowledge ingestion and skill production to provenance-aware exploration, governance, and execution-driven evolution. SkillWiki highlights a future in which knowledge, skills, and execution experience co-evolve within a shared infrastructure. The live demonstration and source code are publicly available at https://github.com/Huangdingcheng/SkillWiki.",
+        "relevance": "Treats agent skills as governed knowledge assets with provenance, lifecycle management, and execution-driven evolution.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://arxiv.org/abs/2606.16523",
+        "discovered": "2026-07-01",
+        "links": [
+          "topic:identity",
+          "layer:1",
+          "arxiv:2603.17445",
+          "arxiv:2603.24775",
+          "arxiv:2604.06148"
+        ],
+        "related": [
+          {
+            "id": "arxiv:2603.17445",
+            "title": "Implicit Execution Tracing",
+            "reason": "same topic; shared L1; terms: execution"
+          },
+          {
+            "id": "arxiv:2603.24775",
+            "title": "AIP / Agent Identity Protocol",
+            "reason": "same topic; shared L1"
+          },
+          {
+            "id": "arxiv:2604.06148",
+            "title": "Machine Identity Governance Taxonomy (MIGT)",
+            "reason": "same topic; shared L1"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "arxiv:2606.31272",
+        "type": "paper",
+        "title": "The Decomposition Is the Fingerprint: Per-Component Identity for Agent Skills",
+        "subtitle": "Identity & provenance \u00b7 Layer 0",
+        "body": "2026. AI agents increasingly acquire and execute skills at runtime: bundles of prompt instructions, executable code, and tool declarations fetched from marketplaces and other agents. Governing them needs a stable notion of skill identity, yet cryptographic hashing is engineered to destroy the very similarity we need, as a one-character edit scrambles the digest. We present a compact, locality-sensitive fingerprint that embeds each component of a skill and projects it to bits with a multi-bank SimHash, giving a fixed 120-byte signature compared in constant time by Hamming distance. Our central claim is that keeping the fingerprint as a per-component triple (prompt, code, tools), rather than a single score, is what makes it useful: the triple recovers skill-family identity through paraphrase, renaming, refactoring, and controlled code translation when another component remains shared, while independent multilingual reimplementation is not recovered; it also localizes which component carries the reuse. We claim lineage, not behavioral equivalence: identity supplies the structural axis of a registry and leaves safety to behavioral verification. The fingerprint reaches an area under the ROC curve (AUC) of 0.974 (95% CI [0.956, 0.994]) over 4,950 pairwise comparisons while using 77x fewer bits than the embedding it approximates, with ranking preserved in expectation and finite-bit concentration; the per-component split turns one number into relationship classification, families, novelty, and a portable \"SkillBOM\" for a skill registry. On a 906-skill injection benchmark the fingerprint recognizes injected skills as tampered copies of a known base and localizes the change, but recognition is not trust: it remains, by design, an identity signal complementary to behavioral verification rather than a safety verdict.",
+        "relevance": "Provides a structural identity signal for skill registries, useful for detecting tampered or reused skills before runtime trust decisions.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://arxiv.org/abs/2606.31272",
+        "discovered": "2026-07-01",
+        "links": [
+          "topic:identity",
+          "layer:0",
+          "wsp:draft",
+          "arxiv:2605.25376",
+          "arxiv:2603.24775"
+        ],
+        "related": [
+          {
+            "id": "wsp:draft",
+            "title": "Web Skills Protocol (WSP) \u2014 Web Discovery Layer for Skills",
+            "reason": "same topic; shared L0; terms: trust"
+          },
+          {
+            "id": "arxiv:2605.25376",
+            "title": "KYA",
+            "reason": "same topic; terms: trust"
+          },
+          {
+            "id": "arxiv:2603.24775",
+            "title": "AIP / Agent Identity Protocol",
+            "reason": "same topic; terms: identity"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -9292,6 +10112,116 @@
       "discovered": "2026-06-28",
       "topic": "coordination",
       "topic_label": "Coordination & composition",
+      "layers": [
+        0
+      ]
+    },
+    {
+      "id": "arxiv:2606.20669",
+      "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
+      "url": "https://arxiv.org/abs/2606.20669",
+      "discovered": "2026-07-01",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "id": "arxiv:2606.26494",
+      "title": "Clinical Harness for Governable Medical AI Skill Ecosystems",
+      "url": "https://arxiv.org/abs/2606.26494",
+      "discovered": "2026-07-01",
+      "topic": "runtime",
+      "topic_label": "Runtime enforcement",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "id": "arxiv:2606.17591",
+      "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2606.17591",
+      "discovered": "2026-07-01",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "id": "arxiv:2606.23768",
+      "title": "Cryptographic certificates of validity for trustworthy AI",
+      "url": "https://arxiv.org/abs/2606.23768",
+      "discovered": "2026-07-01",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        0
+      ]
+    },
+    {
+      "id": "arxiv:2606.28592",
+      "title": "Embodiment Meets Environment: Toward Context-Aware, Safe Physical Caregiving Robots",
+      "url": "https://arxiv.org/abs/2606.28592",
+      "discovered": "2026-07-01",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "id": "arxiv:2606.09365",
+      "title": "Experience Makes Skillful: Enabling Generalizable Medical Agent Reasoning via Self-Evolving Skill Memory",
+      "url": "https://arxiv.org/abs/2606.09365",
+      "discovered": "2026-07-01",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "id": "arxiv:2606.14502",
+      "title": "From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI",
+      "url": "https://arxiv.org/abs/2606.14502",
+      "discovered": "2026-07-01",
+      "topic": "evaluation",
+      "topic_label": "Evaluation & benchmarks",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "id": "arxiv:2606.28791",
+      "title": "From Determinism to Delegation: AI-Native Software Engineering and the Evolution of the Agentic Engineer",
+      "url": "https://arxiv.org/abs/2606.28791",
+      "discovered": "2026-07-01",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "id": "arxiv:2606.16523",
+      "title": "SkillWiki: A Living Knowledge Infrastructure for Agent Skills",
+      "url": "https://arxiv.org/abs/2606.16523",
+      "discovered": "2026-07-01",
+      "topic": "identity",
+      "topic_label": "Identity & provenance",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "id": "arxiv:2606.31272",
+      "title": "The Decomposition Is the Fingerprint: Per-Component Identity for Agent Skills",
+      "url": "https://arxiv.org/abs/2606.31272",
+      "discovered": "2026-07-01",
+      "topic": "identity",
+      "topic_label": "Identity & provenance",
       "layers": [
         0
       ]

@@ -8,6 +8,9 @@ The user wants a visual dashboard updated after every scout run that produces ne
 ### Agent-Governance-Scout Run Protocol
 When the user asks me to "run" the agent-governance-scout (or "update findings"):
 1. Execute the search queries and identify new papers/products/frameworks
+   - Do not rely on `make` alone. Validate that live graph discovery produced seeds/candidates.
+   - If OpenAlex or Semantic Scholar is degraded, use the arXiv live fallback path and report provider degradation explicitly.
+   - If graph candidates exist in `data/agent_team/graph_candidates.json` or `data/agent_team/last_team_run.json`, promote them with `python3 scripts/integrate_graph_candidates.py --dashboard`; `make dashboard` alone does not read agent-team JSON.
 2. Compare against the baseline in `memory/agent_governance_scout_log.md`
 3. If new findings exist:
    - Update `memory/agent_governance_scout_log.md` with the new findings (append by date)

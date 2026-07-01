@@ -15,23 +15,97 @@ import argparse
 import json
 import math
 import os
+import re
 import sys
 import time
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
+from urllib.error import HTTPError, URLError
 
 
 OPENALEX_BASE = "https://api.openalex.org"
 S2_BASE = "https://api.semanticscholar.org/graph/v1"
+ARXIV_BASE = "https://export.arxiv.org/api/query"
 DEFAULT_MAILTO = os.environ.get("OPENALEX_MAILTO", "evapaper@example.com")
+DEFAULT_USER_AGENT = os.environ.get(
+    "EVAPAPER_USER_AGENT",
+    f"EvaPaper/1.0 (mailto:{DEFAULT_MAILTO})",
+)
 
 
-def _http_json(url: str, headers: Optional[Dict[str, str]] = None, timeout: int = 30) -> dict:
-    request = urllib.request.Request(url, headers=headers or {})
-    with urllib.request.urlopen(request, timeout=timeout) as response:
-        return json.loads(response.read().decode("utf-8"))
+def _http_json(
+    url: str,
+    headers: Optional[Dict[str, str]] = None,
+    timeout: int = 30,
+    retries: int = 2,
+    backoff: float = 1.0,
+    max_delay: float = 5.0,
+) -> dict:
+    request_headers = {"User-Agent": DEFAULT_USER_AGENT}
+    request_headers.update(headers or {})
+    last_error: Exception | None = None
+
+    for attempt in range(retries):
+        request = urllib.request.Request(url, headers=request_headers)
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except HTTPError as exc:
+            last_error = exc
+            if exc.code not in {408, 429, 500, 502, 503, 504} or attempt == retries - 1:
+                raise
+            retry_after = exc.headers.get("Retry-After")
+            delay = float(retry_after) if retry_after and retry_after.isdigit() else backoff * (2**attempt)
+            delay = min(delay, max_delay)
+            time.sleep(delay)
+        except URLError as exc:
+            last_error = exc
+            if attempt == retries - 1:
+                raise
+            time.sleep(backoff * (2**attempt))
+
+    if last_error:
+        raise last_error
+    raise RuntimeError(f"Request failed without an exception: {url}")
+
+
+def _http_text(
+    url: str,
+    headers: Optional[Dict[str, str]] = None,
+    timeout: int = 30,
+    retries: int = 2,
+    backoff: float = 1.0,
+    max_delay: float = 5.0,
+) -> str:
+    request_headers = {"User-Agent": DEFAULT_USER_AGENT}
+    request_headers.update(headers or {})
+    last_error: Exception | None = None
+
+    for attempt in range(retries):
+        request = urllib.request.Request(url, headers=request_headers)
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                return response.read().decode("utf-8")
+        except HTTPError as exc:
+            last_error = exc
+            if exc.code not in {408, 429, 500, 502, 503, 504} or attempt == retries - 1:
+                raise
+            retry_after = exc.headers.get("Retry-After")
+            delay = float(retry_after) if retry_after and retry_after.isdigit() else backoff * (2**attempt)
+            delay = min(delay, max_delay)
+            time.sleep(delay)
+        except URLError as exc:
+            last_error = exc
+            if attempt == retries - 1:
+                raise
+            time.sleep(backoff * (2**attempt))
+
+    if last_error:
+        raise last_error
+    raise RuntimeError(f"Request failed without an exception: {url}")
 
 
 def _safe_get(dct: dict, path: Sequence[str], default=None):
@@ -145,6 +219,75 @@ class SemanticScholarClient:
         payload = _http_json(url, headers={"x-api-key": self.api_key})
         return payload.get("recommendedPapers", [])
 
+    def search_papers(self, query: str, limit: int = 10, from_year: Optional[int] = None) -> List[dict]:
+        fields = "paperId,title,year,abstract,citationCount,url,externalIds"
+        params = {"query": query, "limit": str(limit), "fields": fields}
+        if from_year is not None:
+            params["year"] = f"{from_year}-"
+        headers = {"x-api-key": self.api_key} if self.api_key else {}
+        payload = _http_json(
+            f"{S2_BASE}/paper/search?{urllib.parse.urlencode(params)}",
+            headers=headers,
+            retries=2 if self.api_key else 1,
+            backoff=2.0,
+        )
+        return payload.get("data", [])
+
+
+class ArxivClient:
+    def search_papers(self, query: str, limit: int = 10, from_year: Optional[int] = None) -> List[dict]:
+        params = {
+            "search_query": self._query_syntax(query),
+            "start": "0",
+            "max_results": str(limit),
+            "sortBy": "submittedDate",
+            "sortOrder": "descending",
+        }
+        xml_text = _http_text(f"{ARXIV_BASE}?{urllib.parse.urlencode(params)}", retries=3, backoff=1.0)
+        root = ET.fromstring(xml_text)
+        ns = {"atom": "http://www.w3.org/2005/Atom"}
+        papers: List[dict] = []
+        for entry in root.findall("atom:entry", ns):
+            paper = self._entry_to_paper(entry, ns)
+            if from_year is not None and paper.get("year") and paper["year"] < from_year:
+                continue
+            papers.append(paper)
+        return papers
+
+    @staticmethod
+    def _query_syntax(query: str) -> str:
+        tokens = [token.lower() for token in re.findall(r"[A-Za-z0-9][A-Za-z0-9-]{2,}", query)]
+        clauses: List[str] = []
+        if query.strip():
+            clauses.append(f'all:"{query.strip()}"')
+        for left, right in zip(tokens, tokens[1:]):
+            clauses.append(f'all:"{left} {right}"')
+        if tokens:
+            clauses.append(" AND ".join(f"all:{token}" for token in tokens[: min(3, len(tokens))]))
+        return " OR ".join(dict.fromkeys(clauses[:8])) or "all:agent"
+
+    @staticmethod
+    def _entry_to_paper(entry: ET.Element, ns: dict) -> dict:
+        def text(path: str) -> str:
+            node = entry.find(path, ns)
+            return "" if node is None or node.text is None else " ".join(node.text.split())
+
+        url = text("atom:id")
+        arxiv_id = url.rsplit("/", 1)[-1] if url else ""
+        published = text("atom:published")
+        year = int(published[:4]) if published[:4].isdigit() else None
+        topics = [category.attrib.get("term", "") for category in entry.findall("atom:category", ns)]
+        return {
+            "paperId": f"arXiv:{arxiv_id}",
+            "title": text("atom:title"),
+            "year": year,
+            "abstract": text("atom:summary"),
+            "citationCount": 0,
+            "url": url,
+            "externalIds": {"ArXiv": arxiv_id},
+            "topics": topics,
+        }
+
 
 def openalex_to_node(work: dict, source: str, seed_distance: int, edge_label: str) -> PaperNode:
     doi = _safe_get(work, ["doi"])
@@ -176,6 +319,21 @@ def s2_to_node(work: dict, edge_label: str) -> PaperNode:
         seed_distance=1,
         matched_edges=[edge_label],
         topics=[],
+    )
+
+
+def arxiv_to_node(work: dict, seed_distance: int, edge_label: str) -> PaperNode:
+    return PaperNode(
+        paper_id=work.get("paperId", ""),
+        title=work.get("title", "").strip(),
+        year=work.get("year"),
+        url=work.get("url"),
+        abstract=work.get("abstract"),
+        citation_count=work.get("citationCount", 0),
+        source="arxiv",
+        seed_distance=seed_distance,
+        matched_edges=[edge_label],
+        topics=work.get("topics", []),
     )
 
 
@@ -226,10 +384,14 @@ def discover_from_query(
 ) -> Dict[str, object]:
     openalex = OpenAlexClient()
     s2 = SemanticScholarClient()
+    arxiv = ArxivClient()
+    provider_errors: List[str] = []
 
-    seed_works = openalex.search_works(query, per_page=seed_limit, from_year=from_year)
-    if not seed_works:
-        return {"query": query, "seeds": [], "candidates": []}
+    try:
+        seed_works = openalex.search_works(query, per_page=seed_limit, from_year=from_year)
+    except Exception as exc:
+        seed_works = []
+        provider_errors.append(f"openalex search failed: {type(exc).__name__}: {exc}")
 
     seeds = [openalex_to_node(work, "openalex", 0, "query_seed") for work in seed_works]
     candidates: Dict[str, PaperNode] = {}
@@ -240,21 +402,36 @@ def discover_from_query(
         referenced_ids = seed_work.get("referenced_works", [])[:neighbors_per_seed]
         related_ids = seed_work.get("related_works", [])[:neighbors_per_seed]
 
-        for work in openalex.get_works_by_ids(referenced_ids):
+        try:
+            referenced_works = openalex.get_works_by_ids(referenced_ids)
+        except Exception as exc:
+            referenced_works = []
+            provider_errors.append(f"openalex references failed for {seed_node.paper_id}: {type(exc).__name__}: {exc}")
+        for work in referenced_works:
             node = openalex_to_node(work, "openalex", 1, f"references:{seed_node.paper_id}")
             node.score = compute_score(node)
             candidates.setdefault(node.paper_id, node)
             if candidates[node.paper_id] is not node:
                 merge_node(candidates[node.paper_id], node)
 
-        for work in openalex.get_works_by_ids(related_ids):
+        try:
+            related_works = openalex.get_works_by_ids(related_ids)
+        except Exception as exc:
+            related_works = []
+            provider_errors.append(f"openalex related failed for {seed_node.paper_id}: {type(exc).__name__}: {exc}")
+        for work in related_works:
             node = openalex_to_node(work, "openalex", 1, f"related:{seed_node.paper_id}")
             node.score = compute_score(node)
             candidates.setdefault(node.paper_id, node)
             if candidates[node.paper_id] is not node:
                 merge_node(candidates[node.paper_id], node)
 
-        for work in openalex.get_citing_works(seed_work["id"].rsplit("/", 1)[-1], per_page=neighbors_per_seed):
+        try:
+            citing_works = openalex.get_citing_works(seed_work["id"].rsplit("/", 1)[-1], per_page=neighbors_per_seed)
+        except Exception as exc:
+            citing_works = []
+            provider_errors.append(f"openalex citations failed for {seed_node.paper_id}: {type(exc).__name__}: {exc}")
+        for work in citing_works:
             node = openalex_to_node(work, "openalex", 1, f"cites_seed:{seed_node.paper_id}")
             node.score = compute_score(node)
             candidates.setdefault(node.paper_id, node)
@@ -263,12 +440,44 @@ def discover_from_query(
 
         if include_semantic_scholar:
             identifier = seed_work.get("doi") or seed_work["id"].rsplit("/", 1)[-1]
-            for work in s2.recommendations(identifier, limit=neighbors_per_seed):
+            try:
+                recommended_works = s2.recommendations(identifier, limit=neighbors_per_seed)
+            except Exception as exc:
+                recommended_works = []
+                provider_errors.append(f"semantic scholar recommendations failed for {seed_node.paper_id}: {type(exc).__name__}: {exc}")
+            for work in recommended_works:
                 node = s2_to_node(work, f"s2_recommendation:{seed_node.paper_id}")
                 node.score = compute_score(node)
                 candidates.setdefault(node.paper_id, node)
                 if candidates[node.paper_id] is not node:
                     merge_node(candidates[node.paper_id], node)
+
+    if not seed_works:
+        try:
+            arxiv_works = arxiv.search_papers(query, limit=max(seed_limit, neighbors_per_seed), from_year=from_year)
+        except Exception as exc:
+            arxiv_works = []
+            provider_errors.append(f"arxiv search failed: {type(exc).__name__}: {exc}")
+
+        seeds = [arxiv_to_node(work, 0, "arxiv_query_seed") for work in arxiv_works[:seed_limit]]
+        for work in arxiv_works:
+            node = arxiv_to_node(work, 1, "arxiv_live_search")
+            node.score = compute_score(node)
+            candidates.setdefault(node.paper_id, node)
+            if candidates[node.paper_id] is not node:
+                merge_node(candidates[node.paper_id], node)
+
+        try:
+            s2_works = s2.search_papers(query, limit=neighbors_per_seed, from_year=from_year)
+        except Exception as exc:
+            s2_works = []
+            provider_errors.append(f"semantic scholar search failed: {type(exc).__name__}: {exc}")
+        for work in s2_works:
+            node = s2_to_node(work, "s2_live_search")
+            node.score = compute_score(node)
+            candidates.setdefault(node.paper_id, node)
+            if candidates[node.paper_id] is not node:
+                merge_node(candidates[node.paper_id], node)
 
     for node in candidates.values():
         node.score = compute_score(node)
@@ -282,6 +491,7 @@ def discover_from_query(
         "query": query,
         "seeds": [node.__dict__ for node in seeds],
         "candidates": [node.__dict__ for node in ranked],
+        "provider_errors": provider_errors,
     }
 
 

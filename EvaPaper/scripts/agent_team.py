@@ -11,7 +11,6 @@ from datetime import datetime, timezone
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import List, Sequence
-from urllib.error import URLError
 
 from paper_corpus import build_index
 from paper_graph import discover_from_query
@@ -63,9 +62,11 @@ def run_team(query: str, question: str | None, mode: str, top_k: int) -> dict:
     graph_error = None
     try:
         graph = discover_from_query(query=query, from_year=2024)
-    except URLError as exc:
+    except Exception as exc:
         graph = {"query": query, "seeds": [], "candidates": []}
         graph_error = str(exc)
+    graph_candidates_path = workspace.team_dir / "graph_candidates.json"
+    graph_candidates_path.write_text(json.dumps(graph, indent=2), encoding="utf-8")
     build_index(workspace.report_md, workspace.corpus_index, workspace.scout_log)
 
     result = {
@@ -78,11 +79,15 @@ def run_team(query: str, question: str | None, mode: str, top_k: int) -> dict:
             "seed_count": len(graph["seeds"]),
             "candidate_count": len(graph["candidates"]),
             "top_candidates": graph["candidates"][:top_k],
+            "provider_errors": graph.get("provider_errors", []),
+            "artifact": str(graph_candidates_path),
         },
         "all_sota": summarize_state_of_art(mode="all", top_k=top_k),
     }
     if graph_error:
         result["graph_warning"] = f"Discovery graph unavailable; fell back to local corpus only: {graph_error}"
+    elif graph.get("provider_errors"):
+        result["graph_warning"] = "Discovery graph used degraded live providers: " + "; ".join(graph["provider_errors"])
 
     if normalized_mode in ("static", "all"):
         result["static_sota"] = summarize_state_of_art(mode="static", top_k=top_k)

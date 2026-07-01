@@ -31,6 +31,14 @@ The dashboard is a self-contained HTML file with embedded JSON data. It has two 
 1. **JSON data** (`data/governance-dashboard.json`) — the source of truth
 2. **Embedded JSON** in the HTML `<script id="dashboard-data">` tag — what the browser reads
 
+Before dashboard regeneration, check whether the latest scout was run through the agent-team graph workflow. If `data/agent_team/last_team_run.json` contains graph candidates that are not yet in `memory/agent_governance_scout_log.md`, run:
+
+```bash
+python3 scripts/integrate_graph_candidates.py --dashboard
+```
+
+The dashboard generator reads the markdown report and scout log, not `last_team_run.json` directly. Do not assume `make dashboard` will include graph candidates unless they have first been promoted into the scout log or report.
+
 **Integration Steps:**
 1. **Check if items are already in the dashboard** — the June 12 run may have already added some arXiv papers. Run:
    ```bash

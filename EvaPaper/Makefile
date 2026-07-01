@@ -8,7 +8,7 @@ OUTPUT_TOKENS ?=
 COST_USD ?=
 COST_NOTE ?=
 
-.PHONY: help index dashboard opportunities-check scout scout-json sota sota-static sota-runtime sota-behavioral sota-all ask ask-static ask-runtime ask-behavioral team team-static team-runtime team-behavioral team-all workflow-static workflow-runtime workflow-behavioral workflow-all costs docs test
+.PHONY: help index dashboard opportunities-check scout scout-json integrate-graph sota sota-static sota-runtime sota-behavioral sota-all ask ask-static ask-runtime ask-behavioral team team-static team-runtime team-behavioral team-all workflow-static workflow-runtime workflow-behavioral workflow-all costs docs test
 
 help:
 	@printf "%s\n" \
@@ -17,6 +17,7 @@ help:
 	"  make dashboard                             Refresh the visual research dashboard" \
 	"  make opportunities-check                   Validate LLM research-gap analysis" \
 	"  make scout QUERY='...'                     Run graph-backed discovery" \
+	"  make integrate-graph                       Promote latest graph candidates into scout log + dashboard" \
 	"  make sota MODE=static                      Show state of the art for a focus mode" \
 	"  make ask MODE=static QUESTION='...'        Map a question to papers with evidence" \
 	"  make team MODE=static QUERY='...'          Run the generic agent-team workflow" \
@@ -44,6 +45,9 @@ scout:
 
 scout-json:
 	$(PYTHON) scripts/scout.py --discover "$(QUERY)" --from-year 2024 --json
+
+integrate-graph:
+	$(PYTHON) scripts/integrate_graph_candidates.py --dashboard
 
 sota:
 	$(PYTHON) scripts/question_map.py --sota --mode "$(MODE)" --top-k $(TOP_K)
