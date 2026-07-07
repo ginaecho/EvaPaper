@@ -5,6 +5,17 @@
 
 ---
 
+#### Table of Contents
+
+- [**June 7, 2026** — Static-First Update](#june-7-2026-static-first-update)
+- [Question 1: Do Skills/Agents Markdown Actually Affect Agent Behavior?](#question-1-do-skillsagents-markdown-actually-affect-agent-behavior)
+- [Question 2: Formal Static Typing/Checking Before Runtime?](#question-2-formal-static-typing--checking-before-runtime)
+- [Question 3: Runtime Checking in a Deterministic Way?](#question-3-runtime-checking-in-a-deterministic-way-not-llm-as-judge)
+- [Overall Assessment](#overall-assessment)
+- [Conclusion](#conclusion)
+- [The SOP-to-Workflow Reality Gap](#the-sop-to-workflow-reality-gap-what-zippergen-and-all-formal-mps-papers-leave-out)
+- [Appendix B: Full Source Transcript](#appendix-b-full-source-transcript--agentic-workflow-methodology)
+
 ## June 7, 2026 Static-First Update
 
 The latest local workflow run (`make workflow-static`) reinforces the earlier conclusion that the center of gravity for this project should remain **static governance before execution**, not runtime-only control.

@@ -39,13 +39,24 @@ Newly discovered **relevant** papers must be added to **all four** deliverables:
 1. Finish paper scouting (source: arXiv, Google Scholar, Semantic Scholar, etc.).
 2. For each new paper, extract: title, authors, year, venue, abstract, key contributions, and governance relevance.
 3. Update **all four files above** — do not stop after updating only one or two.
-4. Regenerate derived assets (`.docx`, `.pptx`) if they are tracked; otherwise update source Markdown/HTML only.
-5. Commit with a clear message: `feat: integrate N new papers from scouting run YYYY-MM-DD`.
+4. **Every paper entry MUST have a clickable URL** (DOI or arXiv link in markdown format).
+5. **Every date-based section MUST be linked from the TOC** at the top of each document.
+6. Date sections must be in **descending order** (newest first).
+7. Regenerate derived assets (`.docx`, `.pptx`) if they are tracked; otherwise update source Markdown/HTML only.
+8. Commit with a clear message: `feat: integrate N new papers from scouting run YYYY-MM-DD`.
+
+## Link Requirements
+- **TOC entries**: `- [**Date** — description](#anchor-to-heading)`
+- **Paper arXiv**: `[arXiv:NNNN.NNNNN](https://arxiv.org/abs/NNNN.NNNNN)`
+- **Paper DOI**: `[DOI](https://doi.org/...)`
+- **Never fake arXiv IDs** from DOI numbers. Only use IDs from actual arxiv.org URLs.
 
 ## Checklist
-- [ ] `AI_Agent_Governance_Three_Layer_Stack_and_Papers.md` updated
-- [ ] `Agent_Governance_Three_Questions_Synthesis.md` updated
-- [ ] `ai-agent-governance-research.html` updated
-- [ ] `governance-dashboard.html` updated
-- [ ] (Optional) `.docx` / `.pptx` regenerated if needed
+- [ ] `AI_Agent_Governance_Three_Layer_Stack_and_Papers.md` updated (TOC + section + links)
+- [ ] `Agent_Governance_Three_Questions_Synthesis.md` updated (TOC + section + links)
+- [ ] `ai-agent-governance-research.html` updated (paper cards with correct URLs)
+- [ ] `governance-dashboard.html` regenerated
+- [ ] All TOC entries link to corresponding sections
+- [ ] All papers have clickable URLs (DOI or arXiv)
+- [ ] Date sections in descending order (newest first)
 - [ ] Changes committed and pushed

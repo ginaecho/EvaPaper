@@ -11,14 +11,14 @@ This report consolidates research on **AI Agent Governance**, **Skill Markdown V
 
 #### Scout History (newest first)
 
-- **July 7, 2026** - 17 papers: agentic AI trust, security, multi-agent systems
-- **June 28, 2026** - 11 papers: MCP security, multi-agent attacks, artifact auditing
-- **June 28, 2026** - Meta-governance platform and industry skill verification
-- **June 25, 2026** - 8 papers: evaluation benchmarks
-- **June 20, 2026** - 3 papers: behavioral governance
-- **June 14, 2026** - 8 papers, frameworks, and products
-- **June 12, 2026** - 2 papers: skill governance
-- **June 7, 2026** - 6 papers (initial scout)
+- [**July 7, 2026** — 17 papers: agentic AI trust, security, multi-agent systems](#july-7-2026-scout-addendum-17-papers-on-agentic-ai-trust-security-and-multi-agent-systems)
+- [**June 28, 2026** — 11 papers: MCP security, multi-agent attacks, artifact auditing](#june-28-2026-scout-addendum-eleven-newly-surfaced-papers-on-mcp-security-multi-agent-attacks-and-artifact-auditing)
+- [**June 28, 2026** — Meta-governance platform and skill verification](#june-28-2026-weekly-scout-addendum-meta-governance-platform-and-industry-skill-verification)
+- [**June 25, 2026** — 8 evaluation benchmark papers](#june-25-2026-scout-addendum-evaluation-benchmark-papers)
+- [**June 20, 2026** — 3 papers on behavioral governance](#june-20-2026-scout-addendum-three-newly-surfaced-papers)
+- [**June 14, 2026** — 8 papers, frameworks, and products](#june-14-2026-scout-addendum-eight-newly-surfaced-papers-frameworks-and-products)
+- [**June 12, 2026** — 2 papers on skill governance](#june-12-2026-scout-addendum-two-newly-surfaced-papers)
+- [**June 7, 2026** — 6 papers (initial scout)](#june-7-2026-scout-addendum-six-newly-surfaced-papers)
 
 ### July 7, 2026 scout addendum: 17 papers on agentic AI trust, security, and multi-agent systems
 

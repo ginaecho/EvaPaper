@@ -390,7 +390,8 @@ def integrate_into_three_questions(papers: list[dict]):
         print("[integrate] WARNING: Three Questions Synthesis not found, skipping")
         return
 
-    date_str = datetime.now().strftime("%Y-%m-%d")
+    now = datetime.now()
+    date_str = now.strftime("%B %d, %Y")
     content = three_q.read_text(encoding="utf-8")
 
     # Group papers by layer
@@ -399,11 +400,12 @@ def integrate_into_three_questions(papers: list[dict]):
         layer = _infer_layer(paper)
         by_layer[layer].append(paper)
 
+    heading = f"## {date_str} Scout Update"
     section_lines = [
         "",
         "---",
         "",
-        f"## {date_str} Daily Scout Update",
+        heading,
         "",
         f"New papers discovered: **{len(papers)}** across governance layers.",
         "",
@@ -418,9 +420,28 @@ def integrate_into_three_questions(papers: list[dict]):
             title = p.get("title", "Unknown")
             arxiv_id = _extract_arxiv_id(p)
             year = p.get("year", "n.d.")
-            ref = f" (arXiv:{arxiv_id})" if arxiv_id else ""
-            section_lines.append(f"- **{title}**{ref} - {year}")
+            url = p.get("url", "")
+            if arxiv_id:
+                ref = f" — [arXiv:{arxiv_id}](https://arxiv.org/abs/{arxiv_id})"
+            elif url:
+                label = "DOI" if "doi.org" in url else "Link"
+                ref = f" — [{label}]({url})"
+            else:
+                ref = ""
+            section_lines.append(f"- **{title}** ({year}){ref}")
         section_lines.append("")
+
+    # Add TOC entry if TOC exists
+    import re as _re
+    anchor = _re.sub(r"[^a-z0-9\s-]", "", heading.lstrip("# ").lower())
+    anchor = _re.sub(r"\s+", "-", anchor.strip())
+    toc_marker = "#### Table of Contents"
+    toc_idx = content.find(toc_marker)
+    if toc_idx > 0:
+        # Find end of TOC (next blank line after entries)
+        toc_end = content.index("\n\n", toc_idx + len(toc_marker))
+        toc_entry = f"\n- [**{date_str}** — Scout Update: {len(papers)} papers](#{anchor})"
+        content = content[:toc_end] + toc_entry + content[toc_end:]
 
     section_lines.append(
         "*These papers were auto-discovered by the daily scout and classified by keyword-based layer inference. "

@@ -2,6 +2,21 @@
 
 > This section draws on widely circulated enterprise AI training methodology for converting human SOPs into agentic workflows. It highlights a critical gap that no formal-methods paper (including ZipperGen) addresses: the messy, iterative process of getting from a human SOP to a formal specification.
 
+#### Table of Contents
+
+- [The Problem: ZipperGen Assumes You Already Have a Formal Spec](#the-problem-zippergen-assumes-you-already-have-a-formal-spec)
+- [The Four-Step Process That No Formal Paper Addresses](#the-four-step-process-that-no-formal-paper-addresses)
+  - [Step 1: Format Standardization](#step-1-format-standardization)
+  - [Step 2: Task Decomposition](#step-2-task-decomposition)
+  - [Step 3: Bidirectional Development](#step-3-bidirectional-development-iterative-refinement)
+  - [Step 4: Integration and Execution](#step-4-integration--execution)
+- [The Verdict](#the-verdict-zippergen-is-a-coordination-compiler-not-a-workflow-designer)
+- [Implications for the Three-Layer Stack](#implications-for-the-three-layer-stack)
+- [Appendix B: Full Source Transcript](#appendix-b-full-source-transcript--agentic-workflow-methodology)
+- [Key Terms Defined](#key-terms-defined)
+- [Core Insights](#core-insights)
+
+
 ### The Problem: ZipperGen Assumes You Already Have a Formal Spec
 
 ZipperGen ([arXiv:2604.17612](https://arxiv.org/abs/2604.17612)) provides a remarkable guarantee: **given a formal global workflow specification**, it generates deadlock-free local agent programs via syntax-directed projection. The paper's contribution is valid and important.
