@@ -4,7 +4,7 @@
 
 ### The Problem: ZipperGen Assumes You Already Have a Formal Spec
 
-ZipperGen (arXiv:2604.17612) provides a remarkable guarantee: **given a formal global workflow specification**, it generates deadlock-free local agent programs via syntax-directed projection. The paper's contribution is valid and important.
+ZipperGen ([arXiv:2604.17612](https://arxiv.org/abs/2604.17612)) provides a remarkable guarantee: **given a formal global workflow specification**, it generates deadlock-free local agent programs via syntax-directed projection. The paper's contribution is valid and important.
 
 But in practice, **nobody starts with a formal global workflow specification**. They start with a human SOP — a Word document, a slide deck, or an email that says "here's how we handle customer tickets." That SOP is:
 - Full of implicit assumptions (e.g., "check for VIP status" assumes everyone knows what VIP means)

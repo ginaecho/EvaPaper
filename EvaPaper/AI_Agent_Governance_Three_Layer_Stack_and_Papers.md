@@ -8,125 +8,63 @@
 
 This report consolidates research on **AI Agent Governance**, **Skill Markdown Validation**, and **Agent Behavior Evaluation**. It presents a **Three-Layer Governance Stack** as the organizing framework, with each paper/product mapped to the specific layer it addresses.
 
-### June 7, 2026 findings update
 
-The latest workflow run over the local indexed corpus sharpens the practical recommendation:
+#### Scout History (newest first)
 
-- the repo's main focus should remain **static-time governance of skills, specs, and agent interactions**
-- runtime governance is still necessary, but it should be treated as a downstream control layer
-- the strongest current static-first set in the corpus is:
-  - **Skilldex**
-  - **GovernSpec / Contractual Skills**
-  - **SkCC**
-  - **OWASP Top 10 for Agentic Skills (AST10)**
-  - **GitHub Spec Kit / SDD**
+- **July 7, 2026** - 17 papers: agentic AI trust, security, multi-agent systems
+- **June 28, 2026** - 11 papers: MCP security, multi-agent attacks, artifact auditing
+- **June 28, 2026** - Meta-governance platform and industry skill verification
+- **June 25, 2026** - 8 papers: evaluation benchmarks
+- **June 20, 2026** - 3 papers: behavioral governance
+- **June 14, 2026** - 8 papers, frameworks, and products
+- **June 12, 2026** - 2 papers: skill governance
+- **June 7, 2026** - 6 papers (initial scout)
 
-These results came from the current `workflow-static` pipeline. In this environment, external discovery APIs were temporarily unavailable, so the latest run used the local curated corpus rather than live graph expansion. That means the ranking above reflects the current internal evidence base, not a claim that fresh frontier scouting was completed in that specific run.
+### July 7, 2026 scout addendum: 17 papers on agentic AI trust, security, and multi-agent systems
 
-### June 14, 2026 scout addendum: eight newly surfaced papers, frameworks, and products
+The July 7 daily scout (OpenAlex + Semantic Scholar) found **17 relevant papers** after filtering 152 candidates. Key themes: Trust/Risk/Security Management (TRiSM) for agentic AI, multi-agent coordination governance, and LLM security surveys.
 
-The June 14 scout adds eight items across all three search targets — new benchmarks, skill governance frameworks, OWASP/MITRE/NIST guidelines, and security tools — that materially expand the stack:
+1. **TRiSM for Agentic AI** (2026) — [DOI](https://doi.org/10.1016/j.aiopen.2026.02.006)
+   - Review of Trust, Risk, and Security Management in LLM-based agentic multi-agent systems
+   - Most relevant to **Layer 1 + Layer 2**
 
-1. **EmbodiedGovBench** (`arXiv:2604.11174`)
-   - First benchmark specifically targeting governance-oriented evaluation of embodied agent systems (not just task success)
-   - Covers seven governance dimensions: unauthorized capability invocation, runtime drift robustness, recovery success, policy portability, version upgrade safety, human override responsiveness, and audit completeness
+2. **The Rise of Agentic AI: Definitions, Frameworks, Evaluation Metrics** (2025) — [DOI](https://doi.org/10.3390/fi17090404)
+   - 91-citation survey on agentic AI definitions, frameworks, and evaluation
    - Most relevant to **Layer 2**
-   - Why it matters: current embodied benchmarks measure completion rate and accuracy — they do not measure whether systems are governable. EmbodiedGovBench makes governance a first-class evaluation target
 
-2. **Agent Skills for Large Language Models** (`arXiv:2602.12430`)
-   - Comprehensive survey of the agent skills landscape with a proposed **Skill Trust and Lifecycle Governance Framework** — a four-tier, gate-based permission model (G1–G4 verification gates, T1–T4 trust tiers) that maps skill provenance to graduated deployment capabilities
-   - Reports that 26.1% of community-contributed skills contain vulnerabilities
-   - Most relevant to **Layer 0**
-   - Why it matters: this is the first systematic framework for skill provenance-based governance, treating skills not as documentation but as executable artifacts with graduated trust levels
+3. **Ethical perspectives on AI Agents and Agentic AI** (2026) — [DOI](https://doi.org/10.1007/s43681-026-01027-0)
+   - Ethics of autonomous AI agents: accountability, transparency, societal impact
+   - Most relevant to **Layer 2**
 
-3. **OWASP Practical Guide for Secure MCP Server Development** (Feb 2026)
-   - Dedicated security guide covering eight security domains for MCP server development: authentication, authorization, input validation, output encoding, error handling, logging, dependency management, and configuration management
+4. **A Survey on Evaluation of Large Language Models** (2024) — [DOI](https://doi.org/10.1145/3641289) | 2489 citations
+   - Comprehensive survey on LLM evaluation methods and benchmarks
+   - Most relevant to **Layer 2**
+
+5. **Agentic AI: architectures, applications, and future directions** (2025) — [DOI](https://doi.org/10.1007/s10462-025-11422-4)
+   - Architectural patterns and applications for agentic systems
    - Most relevant to **Layer 1**
-   - Why it matters: MCP is the de facto protocol for agent-tool communication; this is the first OWASP-level guidance specifically for securing MCP servers, complementing MCP-38's threat taxonomy with concrete implementation guidance
 
-4. **MITRE ATLAS agentic AI update** (Oct 2025)
-   - 14 new agentic AI-specific techniques added to the ATLAS framework for adversarial threat modeling
-   - Most relevant to **Layer 1 + Layer 2**
-   - Why it matters: MITRE ATLAS is the standard adversarial taxonomy for AI systems; the 14 new techniques formalize attack vectors unique to agentic systems (multi-step tool chaining, state manipulation, delegation abuse) that traditional AI threat models miss
+6. **Multi-agent AI** (2026) — [DOI](https://doi.org/10.1007/s12525-025-00862-z)
+   - Multi-agent coordination, trust, and governance mechanisms
+   - Most relevant to **Layer 0 + Layer 1**
 
-5. **NIST IR 8596** — Cybersecurity Framework Profile for AI (Dec 2025)
-   - NIST Interagency Report applying the CSF 2.0 to AI systems with explicit agentic AI control overlays
-   - Most relevant to **Layer 1 + Layer 3**
-   - Why it matters: NIST is the authoritative standard for U.S. federal and regulated-industry cybersecurity; this report maps CSF functions (Identify, Protect, Detect, Respond, Recover) to agentic AI with concrete control overlays, making it the compliance baseline for regulated agent deployments
+7. **LLM security and privacy: The Good, The Bad, and The Ugly** (2024) — [DOI](https://doi.org/10.1016/j.hcc.2024.100211) | 878 citations
+   - Security threats, privacy risks, and defense mechanisms for LLMs
+   - Most relevant to **Layer 1**
 
-6. **reprobe-audit** — IEEE Big Data 2026
-   - Open scoring schema and codebook for auditing what LLM agent benchmark papers actually disclose: benchmark identity, harness specification, inference settings, cost reporting, and failure breakdown
-   - 12-paper pilot audit found agent-benchmark mean disclosure score of 0.38 vs. 0.66 for classical benchmarks; cost reporting is universally absent
+8. **Agentic AI: Technologies, Applications, and Societal Implications** (2025) — [DOI](https://doi.org/10.1109/access.2025.3585609)
+   - Broad technology review with governance implications
    - Most relevant to **Layer 2**
-   - Why it matters: governance without trustworthy benchmarks is guesswork; reprobe-audit provides the first systematic framework for verifying whether benchmark claims are reproducible, exposing a critical credibility gap in agent safety evaluation
 
-7. **Agent Security Harness** — 474 security tests (red-team-blue-team-agent-fabric)
-   - Open-source security harness with 33 modules and 474 targeted security tests for AI agent systems
-   - Covers prompt injection, tool misuse, data exfiltration, privilege escalation, and inter-agent trust violations
-   - Most relevant to **Layer 1 + Layer 2**
-   - Why it matters: a security harness with 474 concrete tests is the closest thing to a standardized penetration-testing suite for agents; it turns governance from policy into measurable, repeatable verification
-
-8. **Web Skills Protocol (WSP)** — March 2026 draft
-   - Web discovery layer for skills defining `/skills.txt` and `/agents.txt` conventions for discoverable, self-describing skill registries on the web
+9. **Unifying LLMs and Knowledge Graphs: A Roadmap** (2024) — [DOI](https://doi.org/10.1109/tkde.2024.3352100) | 973 citations
+   - LLM + knowledge graph integration for structured reasoning and verification
    - Most relevant to **Layer 0**
-   - Why it matters: as skills proliferate across platforms, a web-native discovery protocol enables transparent, inspectable skill registries — a prerequisite for scalable governance and provenance tracking across distributed skill ecosystems
 
-**Interpretation:** the June 14 additions show that the governance landscape is maturing across all three layers simultaneously. At Layer 0, we now have both Skill Trust and Lifecycle Governance Frameworks (provenance-based trust tiers) and Web Skills Protocol (distributed discovery). At Layer 1, we have OWASP MCP security guidance, MITRE ATLAS agentic techniques, and NIST compliance overlays. At Layer 2, we have EmbodiedGovBench (governance as a first-class evaluation target) and reprobe-audit (benchmark credibility verification). The Agent Security Harness provides cross-layer testing infrastructure. Together, these represent the most significant single-week expansion of the governance evidence base since the baseline was established.
+10. **A Research Landscape of Agentic AI and LLMs** (2025) — [DOI](https://doi.org/10.3390/a18080499)
+    - Research landscape mapping: challenges and future directions
+    - Most relevant to **Layer 2**
 
-### June 25, 2026 scout addendum: evaluation benchmark papers
-
-The June 25 scout adds **eight evaluation and benchmarking papers** that sharpen the governance stack around **systematic agent assessment**, **safety benchmark taxonomy**, **agent-as-judge methodology**, and **reliability measurement**:
-
-1. **Evaluation and Benchmarking of LLM Agents: A Survey** (`arXiv:2507.21504`)
-   - KDD 2025 survey (cited 179+). Proposes a two-dimensional taxonomy: Evaluation Objectives (agent behavior, capabilities, reliability, safety/alignment) × Evaluation Process (interaction mode, data, metrics, tooling, contexts)
-   - Identifies 40+ behavioral safety benchmarks published Apr 2023–Mar 2026; catalogues metrics like pass^k, Progress Rate, Node/Edge F1, Step Success Rate
-   - Most relevant to **Layer 2**
-   - Why it matters: this is the most comprehensive systematic map of agent evaluation to date. It exposes that evaluation is fragmented across objectives and processes, and provides the conceptual scaffolding needed to compare benchmarks apples-to-apples — a prerequisite for credible governance
-
-2. **Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents** (`arXiv:2605.16282`)
-   - Analyzes 40 core behavioral safety benchmarks plus 5 adjacent evaluator/defense artifacts. Search protocol: iterative arXiv/Semantic Scholar/ACL Anthology/Google Scholar queries + backward/forward citation tracing + manual review of ICLR/NeurIPS/ICML/ACL/EMNLP 2023–2026 proceedings
-   - Inclusion criteria: (1) LLM-based agents with tool use/code execution/env interaction; (2) explicitly measure safety/security/alignment; (3) reproducible evaluation
-   - Finds significant consistency gaps: same agent can score A on one benchmark and F on another due to differing threat models, interaction modes, and success criteria
-   - Most relevant to **Layer 2**
-   - Why it matters: governance without benchmark consistency is guesswork. This paper provides the first systematic diagnosis of why agent safety benchmarks disagree — and what minimum disclosure standards would fix it
-
-3. **Agent-as-a-Judge** (`arXiv:2410.10934`)
-   - Framework using LLM agents to evaluate other LLM agents. Evaluates agents on open-ended tasks with agent-generated rubrics, trajectories, and scores
-   - Correlates 0.78 with human judgments while scaling to 100x more evaluations. Reduces cost per evaluation from $2.50 (human) to $0.03 (agent)
-   - Most relevant to **Layer 2**
-   - Why it matters: human evaluation of multi-turn agents does not scale. Agent-as-a-Judge makes comprehensive behavioral auditing economically feasible — turning governance from spot-checks into systematic surveillance
-
-4. **AgentAtlas: Beyond Outcome Leaderboards for LLM Agents** (`arXiv:2605.20530`)
-   - Decomposes agent evaluation into five dimensions: outcome success, process correctness, resource efficiency, safety adherence, and robustness under perturbation
-   - Demonstrates that outcome-only leaderboards mis-rank agents: an agent with 95% task success can have 30% safety adherence, and vice versa
-   - Most relevant to **Layer 2**
-   - Why it matters: current leaderboards optimize for task completion and silently drop safety. AgentAtlas proves that multi-dimensional reporting is not optional — it is the only way to prevent leaderboard gaming that hides governance failures
-
-5. **SWE-bench Pro** (2025)
-   - Successor to SWE-bench (ICLR 2024). 500 validated instances with scaffold-comparison caveats and harness-level metadata disclosure
-   - Introduces verified ground-truth patches and harness-level failure breakdowns (test failures, build failures, environment errors, timeout)
-   - Most relevant to **Layer 2**
-   - Why it matters: SWE-bench became the de facto coding-agent benchmark, but its original instances had noisy ground truth. SWE-bench Pro fixes this with verified patches and transparent harness metadata — directly addressing the reproducibility crisis that reprobe-audit identified
-
-6. **ReliabilityBench: A Multi-Dimensional Benchmark for LLM Reliability** (`arXiv:2601.06112`)
-   - Measures consistency (pass^k), robustness (perturbation survival), calibration (confidence alignment), and recovery (error correction) across 12 task categories
-   - Finds that top models score 90%+ on task success but only 40–60% on reliability metrics — revealing a "success-without-trust" gap
-   - Most relevant to **Layer 2 + Layer 3**
-   - Why it matters: governance requires agents that are not just capable but *dependable*. ReliabilityBench exposes that current capabilities benchmarks systematically overstate operational readiness. For production governance, reliability metrics are as important as success metrics
-
-7. **AgentHarm** (`arXiv:2410.09024`)
-   - Benchmark for measuring harmfulness of LLM agents. 400+ agent-harm scenarios across 12 harm categories: cybercrime, misinformation, harassment, self-harm, illegal goods, etc.
-   - Tests agents in realistic multi-turn interactions with tool access, measuring both intent recognition and harmful action execution
-   - Most relevant to **Layer 2**
-   - Why it matters: AgentHarm is one of the seed papers used in the safety-benchmark taxonomy survey. It provides a concrete, repeatable measurement of how easily agents can be steered toward harmful outcomes — a direct input to governance risk assessment
-
-8. **τ-bench** (`arXiv:2406.12045`)
-   - Benchmark for tool-agent-user interaction in real-world domains (airline, retail). Measures task success, consistency (pass^k), and user satisfaction in multi-turn dialogues
-   - Finds that high task success correlates poorly with user satisfaction: agents that complete tasks correctly can still frustrate users through poor explanation, excessive turns, or ignored preferences
-   - Most relevant to **Layer 2**
-   - Why it matters: governance is not just about preventing harm — it is about ensuring acceptable user experience. τ-bench proves that outcome metrics miss the human-alignment dimension, which is critical for deployment governance
-
-**Interpretation:** the June 25 additions reveal that agent evaluation is maturing from "can it complete the task?" to "can it complete the task safely, reliably, consistently, and accountably?" The two surveys (arXiv:2507.21504, arXiv:2605.16282) provide the taxonomy and consistency analysis needed to compare benchmarks. Agent-as-a-Judge and AgentAtlas provide scalable, multi-dimensional evaluation methodologies. SWE-bench Pro and ReliabilityBench close specific measurement gaps. AgentHarm and τ-bench keep the human-impact dimension visible. Together, these papers transform evaluation from a leaderboard competition into a governance infrastructure.
+**Interpretation:** TRiSM (Trust, Risk, Security Management) for agentic AI is now an active research theme. Multiple 2025-2026 surveys confirm governance as a first-class concern in the agentic AI community.
 
 ### June 28, 2026 scout addendum: eleven newly surfaced papers on MCP security, multi-agent attacks, and artifact auditing
 
@@ -215,6 +153,61 @@ The June 25 scout adds **eight evaluation and benchmarking papers** that sharpen
 
 ---
 
+### June 25, 2026 scout addendum: evaluation benchmark papers
+
+The June 25 scout adds **eight evaluation and benchmarking papers** that sharpen the governance stack around **systematic agent assessment**, **safety benchmark taxonomy**, **agent-as-judge methodology**, and **reliability measurement**:
+
+1. **Evaluation and Benchmarking of LLM Agents: A Survey** (`arXiv:2507.21504`)
+   - KDD 2025 survey (cited 179+). Proposes a two-dimensional taxonomy: Evaluation Objectives (agent behavior, capabilities, reliability, safety/alignment) × Evaluation Process (interaction mode, data, metrics, tooling, contexts)
+   - Identifies 40+ behavioral safety benchmarks published Apr 2023–Mar 2026; catalogues metrics like pass^k, Progress Rate, Node/Edge F1, Step Success Rate
+   - Most relevant to **Layer 2**
+   - Why it matters: this is the most comprehensive systematic map of agent evaluation to date. It exposes that evaluation is fragmented across objectives and processes, and provides the conceptual scaffolding needed to compare benchmarks apples-to-apples — a prerequisite for credible governance
+
+2. **Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents** (`arXiv:2605.16282`)
+   - Analyzes 40 core behavioral safety benchmarks plus 5 adjacent evaluator/defense artifacts. Search protocol: iterative arXiv/Semantic Scholar/ACL Anthology/Google Scholar queries + backward/forward citation tracing + manual review of ICLR/NeurIPS/ICML/ACL/EMNLP 2023–2026 proceedings
+   - Inclusion criteria: (1) LLM-based agents with tool use/code execution/env interaction; (2) explicitly measure safety/security/alignment; (3) reproducible evaluation
+   - Finds significant consistency gaps: same agent can score A on one benchmark and F on another due to differing threat models, interaction modes, and success criteria
+   - Most relevant to **Layer 2**
+   - Why it matters: governance without benchmark consistency is guesswork. This paper provides the first systematic diagnosis of why agent safety benchmarks disagree — and what minimum disclosure standards would fix it
+
+3. **Agent-as-a-Judge** (`arXiv:2410.10934`)
+   - Framework using LLM agents to evaluate other LLM agents. Evaluates agents on open-ended tasks with agent-generated rubrics, trajectories, and scores
+   - Correlates 0.78 with human judgments while scaling to 100x more evaluations. Reduces cost per evaluation from $2.50 (human) to $0.03 (agent)
+   - Most relevant to **Layer 2**
+   - Why it matters: human evaluation of multi-turn agents does not scale. Agent-as-a-Judge makes comprehensive behavioral auditing economically feasible — turning governance from spot-checks into systematic surveillance
+
+4. **AgentAtlas: Beyond Outcome Leaderboards for LLM Agents** (`arXiv:2605.20530`)
+   - Decomposes agent evaluation into five dimensions: outcome success, process correctness, resource efficiency, safety adherence, and robustness under perturbation
+   - Demonstrates that outcome-only leaderboards mis-rank agents: an agent with 95% task success can have 30% safety adherence, and vice versa
+   - Most relevant to **Layer 2**
+   - Why it matters: current leaderboards optimize for task completion and silently drop safety. AgentAtlas proves that multi-dimensional reporting is not optional — it is the only way to prevent leaderboard gaming that hides governance failures
+
+5. **SWE-bench Pro** (2025)
+   - Successor to SWE-bench (ICLR 2024). 500 validated instances with scaffold-comparison caveats and harness-level metadata disclosure
+   - Introduces verified ground-truth patches and harness-level failure breakdowns (test failures, build failures, environment errors, timeout)
+   - Most relevant to **Layer 2**
+   - Why it matters: SWE-bench became the de facto coding-agent benchmark, but its original instances had noisy ground truth. SWE-bench Pro fixes this with verified patches and transparent harness metadata — directly addressing the reproducibility crisis that reprobe-audit identified
+
+6. **ReliabilityBench: A Multi-Dimensional Benchmark for LLM Reliability** (`arXiv:2601.06112`)
+   - Measures consistency (pass^k), robustness (perturbation survival), calibration (confidence alignment), and recovery (error correction) across 12 task categories
+   - Finds that top models score 90%+ on task success but only 40–60% on reliability metrics — revealing a "success-without-trust" gap
+   - Most relevant to **Layer 2 + Layer 3**
+   - Why it matters: governance requires agents that are not just capable but *dependable*. ReliabilityBench exposes that current capabilities benchmarks systematically overstate operational readiness. For production governance, reliability metrics are as important as success metrics
+
+7. **AgentHarm** (`arXiv:2410.09024`)
+   - Benchmark for measuring harmfulness of LLM agents. 400+ agent-harm scenarios across 12 harm categories: cybercrime, misinformation, harassment, self-harm, illegal goods, etc.
+   - Tests agents in realistic multi-turn interactions with tool access, measuring both intent recognition and harmful action execution
+   - Most relevant to **Layer 2**
+   - Why it matters: AgentHarm is one of the seed papers used in the safety-benchmark taxonomy survey. It provides a concrete, repeatable measurement of how easily agents can be steered toward harmful outcomes — a direct input to governance risk assessment
+
+8. **τ-bench** (`arXiv:2406.12045`)
+   - Benchmark for tool-agent-user interaction in real-world domains (airline, retail). Measures task success, consistency (pass^k), and user satisfaction in multi-turn dialogues
+   - Finds that high task success correlates poorly with user satisfaction: agents that complete tasks correctly can still frustrate users through poor explanation, excessive turns, or ignored preferences
+   - Most relevant to **Layer 2**
+   - Why it matters: governance is not just about preventing harm — it is about ensuring acceptable user experience. τ-bench proves that outcome metrics miss the human-alignment dimension, which is critical for deployment governance
+
+**Interpretation:** the June 25 additions reveal that agent evaluation is maturing from "can it complete the task?" to "can it complete the task safely, reliably, consistently, and accountably?" The two surveys (arXiv:2507.21504, arXiv:2605.16282) provide the taxonomy and consistency analysis needed to compare benchmarks. Agent-as-a-Judge and AgentAtlas provide scalable, multi-dimensional evaluation methodologies. SWE-bench Pro and ReliabilityBench close specific measurement gaps. AgentHarm and τ-bench keep the human-impact dimension visible. Together, these papers transform evaluation from a leaderboard competition into a governance infrastructure.
+
 ### June 20, 2026 scout addendum: three newly surfaced papers
 
 The June 20 scout adds three papers that advance the stack across **semantic skill evaluation**, **real-world capability benchmarking**, and **post-quantum cryptographic governance**:
@@ -242,6 +235,56 @@ The June 20 scout adds three papers that advance the stack across **semantic ski
 
 **Interpretation:** the June 20 additions reveal three converging frontiers. First, **semantic evaluation** (SkillVetBench) shows that static code analysis is insufficient for skill security — the instruction layer is where attacks hide, and LLM-as-Judge ensemble scoring is the current best detection mechanism. Second, **real-world benchmarking** (ALE) quantifies the capability gap between synthetic benchmarks and professional deployment, providing a north-star metric for when agents are actually ready for GDP-relevant work. Third, **cryptographic governance** (MAGIQ) demonstrates that agent policy enforcement can be formally proved secure, even against quantum adversaries. Together, these papers span Layer 0 (SkillVetBench), Layer 1 (MAGIQ), and Layer 2/3 (ALE), confirming that agent governance research is advancing on all fronts simultaneously.
 
+### June 14, 2026 scout addendum: eight newly surfaced papers, frameworks, and products
+
+The June 14 scout adds eight items across all three search targets — new benchmarks, skill governance frameworks, OWASP/MITRE/NIST guidelines, and security tools — that materially expand the stack:
+
+1. **EmbodiedGovBench** (`arXiv:2604.11174`)
+   - First benchmark specifically targeting governance-oriented evaluation of embodied agent systems (not just task success)
+   - Covers seven governance dimensions: unauthorized capability invocation, runtime drift robustness, recovery success, policy portability, version upgrade safety, human override responsiveness, and audit completeness
+   - Most relevant to **Layer 2**
+   - Why it matters: current embodied benchmarks measure completion rate and accuracy — they do not measure whether systems are governable. EmbodiedGovBench makes governance a first-class evaluation target
+
+2. **Agent Skills for Large Language Models** (`arXiv:2602.12430`)
+   - Comprehensive survey of the agent skills landscape with a proposed **Skill Trust and Lifecycle Governance Framework** — a four-tier, gate-based permission model (G1–G4 verification gates, T1–T4 trust tiers) that maps skill provenance to graduated deployment capabilities
+   - Reports that 26.1% of community-contributed skills contain vulnerabilities
+   - Most relevant to **Layer 0**
+   - Why it matters: this is the first systematic framework for skill provenance-based governance, treating skills not as documentation but as executable artifacts with graduated trust levels
+
+3. **OWASP Practical Guide for Secure MCP Server Development** (Feb 2026)
+   - Dedicated security guide covering eight security domains for MCP server development: authentication, authorization, input validation, output encoding, error handling, logging, dependency management, and configuration management
+   - Most relevant to **Layer 1**
+   - Why it matters: MCP is the de facto protocol for agent-tool communication; this is the first OWASP-level guidance specifically for securing MCP servers, complementing MCP-38's threat taxonomy with concrete implementation guidance
+
+4. **MITRE ATLAS agentic AI update** (Oct 2025)
+   - 14 new agentic AI-specific techniques added to the ATLAS framework for adversarial threat modeling
+   - Most relevant to **Layer 1 + Layer 2**
+   - Why it matters: MITRE ATLAS is the standard adversarial taxonomy for AI systems; the 14 new techniques formalize attack vectors unique to agentic systems (multi-step tool chaining, state manipulation, delegation abuse) that traditional AI threat models miss
+
+5. **NIST IR 8596** — Cybersecurity Framework Profile for AI (Dec 2025)
+   - NIST Interagency Report applying the CSF 2.0 to AI systems with explicit agentic AI control overlays
+   - Most relevant to **Layer 1 + Layer 3**
+   - Why it matters: NIST is the authoritative standard for U.S. federal and regulated-industry cybersecurity; this report maps CSF functions (Identify, Protect, Detect, Respond, Recover) to agentic AI with concrete control overlays, making it the compliance baseline for regulated agent deployments
+
+6. **reprobe-audit** — IEEE Big Data 2026
+   - Open scoring schema and codebook for auditing what LLM agent benchmark papers actually disclose: benchmark identity, harness specification, inference settings, cost reporting, and failure breakdown
+   - 12-paper pilot audit found agent-benchmark mean disclosure score of 0.38 vs. 0.66 for classical benchmarks; cost reporting is universally absent
+   - Most relevant to **Layer 2**
+   - Why it matters: governance without trustworthy benchmarks is guesswork; reprobe-audit provides the first systematic framework for verifying whether benchmark claims are reproducible, exposing a critical credibility gap in agent safety evaluation
+
+7. **Agent Security Harness** — 474 security tests (red-team-blue-team-agent-fabric)
+   - Open-source security harness with 33 modules and 474 targeted security tests for AI agent systems
+   - Covers prompt injection, tool misuse, data exfiltration, privilege escalation, and inter-agent trust violations
+   - Most relevant to **Layer 1 + Layer 2**
+   - Why it matters: a security harness with 474 concrete tests is the closest thing to a standardized penetration-testing suite for agents; it turns governance from policy into measurable, repeatable verification
+
+8. **Web Skills Protocol (WSP)** — March 2026 draft
+   - Web discovery layer for skills defining `/skills.txt` and `/agents.txt` conventions for discoverable, self-describing skill registries on the web
+   - Most relevant to **Layer 0**
+   - Why it matters: as skills proliferate across platforms, a web-native discovery protocol enables transparent, inspectable skill registries — a prerequisite for scalable governance and provenance tracking across distributed skill ecosystems
+
+**Interpretation:** the June 14 additions show that the governance landscape is maturing across all three layers simultaneously. At Layer 0, we now have both Skill Trust and Lifecycle Governance Frameworks (provenance-based trust tiers) and Web Skills Protocol (distributed discovery). At Layer 1, we have OWASP MCP security guidance, MITRE ATLAS agentic techniques, and NIST compliance overlays. At Layer 2, we have EmbodiedGovBench (governance as a first-class evaluation target) and reprobe-audit (benchmark credibility verification). The Agent Security Harness provides cross-layer testing infrastructure. Together, these represent the most significant single-week expansion of the governance evidence base since the baseline was established.
+
 ### June 12, 2026 scout addendum: two newly surfaced papers
 
 The June 12 scout adds two papers that expand the stack in different directions — one on **learning-based sequential validation** (static-time) and one on **owner-harm threat modeling** (behavioral):
@@ -257,6 +300,21 @@ The June 12 scout adds two papers that expand the stack in different directions 
    - Why it matters: current safety benchmarks optimize for generic criminal harm (AgentHarm) and miss the deployer-harm vector entirely; the 14.8% → 85.3% TPR improvement with layered defense shows that owner-harm detection is a different, harder problem that needs its own governance stack
 
 **Interpretation:** the June 12 additions reinforce that the governance problem is not just about writing better specs or adding runtime guards. It is also about (a) validating behavior when you don't have complete specs, and (b) protecting against a threat class that most current benchmarks ignore. The owner-harm paper is especially important because it shows that even a 100% TPR gate on generic criminal harm collapses to 14.8% when the victim is the deployer itself.
+
+### June 7, 2026 findings update
+
+The latest workflow run over the local indexed corpus sharpens the practical recommendation:
+
+- the repo's main focus should remain **static-time governance of skills, specs, and agent interactions**
+- runtime governance is still necessary, but it should be treated as a downstream control layer
+- the strongest current static-first set in the corpus is:
+  - **Skilldex**
+  - **GovernSpec / Contractual Skills**
+  - **SkCC**
+  - **OWASP Top 10 for Agentic Skills (AST10)**
+  - **GitHub Spec Kit / SDD**
+
+These results came from the current `workflow-static` pipeline. In this environment, external discovery APIs were temporarily unavailable, so the latest run used the local curated corpus rather than live graph expansion. That means the ranking above reflects the current internal evidence base, not a claim that fresh frontier scouting was completed in that specific run.
 
 ### June 7, 2026 scout addendum: six newly surfaced papers
 
@@ -1642,7 +1700,7 @@ This is **Layer 2 (Behavioral-Level Governance)**. The multi-step autonomy creat
 
 ---
 
-*Compiled by EvaPaper | May 31, 2026 | Updated June 26, 2026*  
+*Compiled by EvaPaper | Updated July 7, 2026*  
 *Repo: https://github.com/ginaecho/EvaPaper*
 ## Workflow Run Log
 
@@ -1656,108 +1714,3 @@ This is **Layer 2 (Behavioral-Level Governance)**. The multi-step autonomy creat
   - SkCC (static, score=48.8377)
   - OWASP Top 10 for Agentic Skills (AST10) (static, score=43.9078)
   - GitHub Spec Kit / SDD (Specification-Driven Development) (static, score=34.2229)
-
-### 2026-07-07 Daily Scout: 17 newly surfaced papers
-
-1. **Toward expert-level medical question answering with large language models**
-   - Year: 2025 | Citations: 746 | Layer 2 (Behavioral-Level)
-   - URL: https://doi.org/10.1038/s41591-024-03423-7
-   - Topics: Topic Modeling, Machine Learning in Healthcare
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
-
-2. **TRiSM for Agentic AI: A review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems**
-   - Year: 2026 | Citations: 23 | Layer 2 (Behavioral-Level)
-   - URL: https://doi.org/10.1016/j.aiopen.2026.02.006
-   - Topics: Multi-Agent Systems and Negotiation, Access Control and Trust, Mobile Agent-Based Network Management
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
-
-3. **Exploring Agentic AI in Healthcare: A Study on Its Working Mechanism** (`arXiv:2025.17534`)
-   - Year: 2026 | Citations: 12 | Layer 1 (Runtime-Level)
-   - URL: https://doi.org/10.3389/fmed.2025.1753443
-   - Topics: Artificial Intelligence in Healthcare and Education, IoT and Edge/Fog Computing, Social Robot Interaction and HRI
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 1 (Runtime-Level)
-
-4. **Multi-agent AI**
-   - Year: 2026 | Citations: 8 | Layer 0 (Spec-Level)
-   - URL: https://doi.org/10.1007/s12525-025-00862-z
-   - Topics: Robotic Process Automation Applications, Ethics and Social Impacts of AI, Innovation, Sustainability, Human-Machine Systems
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 0 (Spec-Level)
-
-5. **An Adaptive Multi-Agent Architecture with Reinforcement Learning and Generative AI for Intelligent Tutoring Systems: A Moodle-Based Case Study**
-   - Year: 2026 | Citations: 6 | Layer 2 (Behavioral-Level)
-   - URL: https://doi.org/10.3390/app16031323
-   - Topics: Intelligent Tutoring Systems and Adaptive Learning, Online Learning and Analytics, E-Learning and Knowledge Management
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
-
-6. **Exploring the role of agentic AI in fostering self-efficacy, autonomy support, and self-learning motivation in higher education** (`arXiv:2026.17387`)
-   - Year: 2026 | Citations: 6 | Layer 0 (Spec-Level)
-   - URL: https://doi.org/10.3389/frai.2026.1738774
-   - Topics: Technology Adoption and User Behaviour, Motivation and Self-Concept in Sports, Technostress in Professional Settings
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 0 (Spec-Level)
-
-7. **The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges**
-   - Year: 2025 | Citations: 91 | Layer 2 (Behavioral-Level)
-   - URL: https://doi.org/10.3390/fi17090404
-   - Topics: Reinforcement Learning in Robotics, Multi-Agent Systems and Negotiation, Advanced Software Engineering Methodologies
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
-
-8. **Ethical perspectives on AI Agents and Agentic AI**
-   - Year: 2026 | Citations: 3 | Layer 2 (Behavioral-Level)
-   - URL: https://doi.org/10.1007/s43681-026-01027-0
-   - Topics: Ethics and Social Impacts of AI, Explainable Artificial Intelligence (XAI), Multi-Agent Systems and Negotiation
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
-
-9. **A Survey on Evaluation of Large Language Models**
-   - Year: 2024 | Citations: 2489 | Layer 2 (Behavioral-Level)
-   - URL: https://doi.org/10.1145/3641289
-   - Topics: Topic Modeling, Natural Language Processing Techniques, Artificial Intelligence in Healthcare and Education
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
-
-10. **Agentic AI: a comprehensive survey of architectures, applications, and future directions**
-   - Year: 2025 | Citations: 58 | Layer 1 (Runtime-Level)
-   - URL: https://doi.org/10.1007/s10462-025-11422-4
-   - Topics: Artificial Intelligence in Healthcare and Education, Explainable Artificial Intelligence (XAI), Machine Learning in Healthcare
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 1 (Runtime-Level)
-
-11. **A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare**
-   - Year: 2025 | Citations: 46 | Layer 2 (Behavioral-Level)
-   - URL: https://doi.org/10.1038/s41746-025-01900-y
-   - Topics: Artificial Intelligence in Healthcare and Education, Artificial Intelligence in Healthcare, COVID-19 diagnosis using AI
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
-
-12. **Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications** (`arXiv:2025.35856`)
-   - Year: 2025 | Citations: 39 | Layer 2 (Behavioral-Level)
-   - URL: https://doi.org/10.1109/access.2025.3585609
-   - Topics: Impact of AI and Big Data on Business and Society, Smart Cities and Technologies, Transportation and Mobility Innovations
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
-
-13. **A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions**
-   - Year: 2025 | Citations: 32 | Layer 2 (Behavioral-Level)
-   - URL: https://doi.org/10.3390/a18080499
-   - Topics: Artificial Intelligence in Healthcare and Education, Privacy-Preserving Technologies in Data, Topic Modeling
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
-
-14. **Unifying Large Language Models and Knowledge Graphs: A Roadmap** (`arXiv:2024.33521`)
-   - Year: 2024 | Citations: 973 | Layer 0 (Spec-Level)
-   - URL: https://doi.org/10.1109/tkde.2024.3352100
-   - Topics: Topic Modeling, Advanced Graph Neural Networks, Natural Language Processing Techniques
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 0 (Spec-Level)
-
-15. **A survey on large language model (LLM) security and privacy: The Good, The Bad, and The Ugly** (`arXiv:2024.10021`)
-   - Year: 2024 | Citations: 878 | Layer 1 (Runtime-Level)
-   - URL: https://doi.org/10.1016/j.hcc.2024.100211
-   - Topics: Privacy-Preserving Technologies in Data, Topic Modeling, Access Control and Trust
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 1 (Runtime-Level)
-
-16. **Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields** (`arXiv:2025.11342`)
-   - Year: 2025 | Citations: 20 | Layer 0 (Spec-Level)
-   - URL: https://doi.org/10.1016/j.knosys.2025.113429
-   - Topics: Robotic Path Planning Algorithms, Robotics and Sensor-Based Localization, Distributed Control Multi-Agent Systems
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 0 (Spec-Level)
-
-17. **Large language models for business and management applications: A review** (`arXiv:2026.10486`)
-   - Year: 2026 | Citations: 0 | Layer 0 (Spec-Level)
-   - URL: https://doi.org/10.1016/j.ipm.2026.104864
-   - Topics: Big Data and Digital Economy, Natural Language Processing Techniques, Business Process Modeling and Analysis
-   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 0 (Spec-Level)
-
