@@ -258,13 +258,16 @@ def _infer_layer(paper: dict) -> str:
 
 
 def _extract_arxiv_id(paper: dict) -> str:
-    """Try to extract arXiv ID from paper data."""
+    """Try to extract arXiv ID from paper data. Only returns valid arXiv IDs."""
     import re
     for field in ("url", "openalex_id", "paper_id"):
         val = str(paper.get(field, ""))
-        m = re.search(r"(\d{4}\.\d{4,5})", val)
-        if m:
-            return m.group(1)
+        # Only match arXiv IDs in arXiv URLs or explicit arXiv references
+        # Valid arXiv IDs: YYMM.NNNNN where YY >= 07 (arXiv started numbering this way in 2007)
+        if "arxiv.org" in val:
+            m = re.search(r"(\d{4}\.\d{4,5})", val)
+            if m:
+                return m.group(1)
     return ""
 
 
@@ -419,7 +422,7 @@ def integrate_into_research_html(papers: list[dict]):
     date_str = datetime.now().strftime("%Y-%m-%d")
     new_entries = []
     for paper in papers[:20]:  # Top 20 into HTML
-        title = paper.get("title", "Unknown").replace('"', '&quot;').replace('<', '&lt;')
+        title = paper.get("title", "Unknown").replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
         arxiv_id = _extract_arxiv_id(paper)
         year = paper.get("year", "n.d.")
         layer = _infer_layer(paper)
@@ -427,8 +430,21 @@ def integrate_into_research_html(papers: list[dict]):
         cites = paper.get("citation_count", 0)
         layer_class = "layer0" if "0" in layer else ("layer1" if "1" in layer else "layer2")
 
+        # Determine best link: arXiv > DOI > other URL
+        if arxiv_id:
+            link_html = f'          <a href="https://arxiv.org/abs/{arxiv_id}" target="_blank" rel="noopener">arXiv:{arxiv_id}</a>\n'
+        elif url:
+            # Extract a readable label from the URL
+            if "doi.org" in url:
+                link_label = "DOI"
+            else:
+                link_label = "Paper"
+            link_html = f'          <a href="{url}" target="_blank" rel="noopener">{link_label}</a>\n'
+        else:
+            link_html = ''
+
         entry = (
-            f'        <!-- Daily Scout {date_str} -->\n'
+            f'        <!-- Scout {date_str} -->\n'
             f'        <div class="paper-card {layer_class}" data-year="{year}" data-layer="{layer_class}">\n'
             f'          <h3>{title}</h3>\n'
             f'          <div class="paper-meta">\n'
@@ -436,34 +452,30 @@ def integrate_into_research_html(papers: list[dict]):
             f'            <span class="layer-badge">{layer}</span>\n'
             f'            <span class="citations">{cites} citations</span>\n'
             f'          </div>\n'
+            f'{link_html}'
+            f'        </div>\n'
         )
-        if arxiv_id:
-            entry += f'          <a href="https://arxiv.org/abs/{arxiv_id}" target="_blank">arXiv:{arxiv_id}</a>\n'
-        elif url:
-            entry += f'          <a href="{url}" target="_blank">Link</a>\n'
-        entry += '        </div>\n'
         new_entries.append(entry)
 
     if not new_entries:
         return
 
-    # Find insertion point - look for the papers container or a comment marker
     insertion_block = "\n".join(new_entries)
 
-    # Try to find a papers section/container to insert into
-    # Look for </section> or a marker we can append before
+    # Find insertion point: look for marker or known structure
     marker_patterns = [
         r'(<!-- END PAPERS -->)',
+        r'(<!-- PAPERS GALLERY -->)',
         r'(</section>\s*<!-- papers -->)',
-        r'(<section[^>]*id="papers"[^>]*>)',
     ]
 
     inserted = False
     for pattern in marker_patterns:
         match = re.search(pattern, content, re.IGNORECASE)
         if match:
-            pos = match.start()
-            content = content[:pos] + insertion_block + "\n" + content[pos:]
+            # Insert AFTER the marker
+            pos = match.end()
+            content = content[:pos] + "\n" + insertion_block + content[pos:]
             inserted = True
             break
 
@@ -472,7 +484,7 @@ def integrate_into_research_html(papers: list[dict]):
         for tag in ("</main>", "</body>"):
             pos = content.rfind(tag)
             if pos > 0:
-                content = content[:pos] + f'\n    <!-- Daily Scout {date_str}: {len(new_entries)} new papers -->\n' + insertion_block + "\n" + content[pos:]
+                content = content[:pos] + f'\n    <!-- Scout {date_str}: {len(new_entries)} papers -->\n' + insertion_block + "\n" + content[pos:]
                 inserted = True
                 break
 
