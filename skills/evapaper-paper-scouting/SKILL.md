@@ -3,6 +3,26 @@
 ## Trigger
 Run after paper scouting yields new relevant papers.
 
+## Hard-Won Lessons (2026-07-07)
+
+These rules were learned through repeated failures. DO NOT skip them:
+
+1. **arXiv ID extraction**: ONLY extract from `arxiv.org` URLs. The pattern
+   `\d{4}\.\d{5}` also matches DOI fragments — NEVER use those as arXiv IDs.
+2. **Hyperlinks are mandatory**: Every paper in every markdown file must have
+   a clickable `[DOI](url)` or `[arXiv:ID](url)` link. No bare URLs.
+3. **TOC must link to sections**: Each date-based heading must have a
+   corresponding `[**Date** — desc](#anchor)` entry in the TOC.
+4. **Descending date order**: Newest scout section goes FIRST, not last.
+5. **ALL files updated together**: Never update just one report. All 4
+   deliverables must be updated in the same commit.
+6. **Relevance filter before integration**: Never dump raw OpenAlex results
+   into curated reports. Medical/biology/chemistry papers MUST be filtered out.
+7. **Valid HTML only**: Research HTML paper cards need full `<div>` structure,
+   not bare `<a>` tags.
+8. **Em-dash (—) in scout log**: The dashboard parser requires `—` not `-`.
+9. **Recency scoring**: 2025-2026 papers must rank above old classics.
+
 ## Relevance Filter (CRITICAL)
 Papers MUST pass a relevance gate before integration into curated reports.
 Only papers related to **AI agent governance, evaluation, safety, security, or tool use** 
