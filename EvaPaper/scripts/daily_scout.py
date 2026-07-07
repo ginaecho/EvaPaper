@@ -295,18 +295,13 @@ def integrate_into_scout_log(papers: list[dict]):
         score = paper.get("score", 0)
         cites = paper.get("citation_count", 0)
 
-        if arxiv_id:
-            section_lines.append(
-                f"{i}. **{title}** (arXiv:{arxiv_id}) - {year}. "
-                f"Score={score:.2f}, Citations={cites}. "
-                f"URL: {url} - **{layer}**"
-            )
-        else:
-            section_lines.append(
-                f"{i}. **{title}** - {year}. "
-                f"Score={score:.2f}, Citations={cites}. "
-                f"URL: {url} - **{layer}**"
-            )
+        # Format must match paper_corpus.py parser: N. **Title** (arXiv:ID) — body URL: ... — **Layer**
+        arxiv_part = f" (arXiv:{arxiv_id})" if arxiv_id else ""
+        section_lines.append(
+            f"{i}. **{title}**{arxiv_part} — "
+            f"{year}. Score={score:.2f}, Citations={cites}. "
+            f"URL: {url} — **{layer}**"
+        )
 
     section_lines.append("")
 

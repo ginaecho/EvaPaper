@@ -1,73 +1,73 @@
 {
-  "generated_from_latest_scout": "2026-07-01",
-  "paper_count": 105,
-  "scout_run_count": 11,
+  "generated_from_latest_scout": "2026-07-07",
+  "paper_count": 121,
+  "scout_run_count": 12,
   "topic_mix": [
     {
       "id": "specification",
       "label": "Specification & validation",
       "color": "#e4572e",
-      "count": 12,
-      "ratio": 0.11428571428571428
+      "count": 19,
+      "ratio": 0.15702479338842976
     },
     {
       "id": "supply_chain",
       "label": "Skill & tool security",
       "color": "#963484",
       "count": 10,
-      "ratio": 0.09523809523809523
+      "ratio": 0.08264462809917356
     },
     {
       "id": "identity",
       "label": "Identity & provenance",
       "color": "#4267ac",
       "count": 8,
-      "ratio": 0.0761904761904762
+      "ratio": 0.06611570247933884
     },
     {
       "id": "coordination",
       "label": "Coordination & composition",
       "color": "#5b8e3e",
-      "count": 5,
-      "ratio": 0.047619047619047616
+      "count": 8,
+      "ratio": 0.06611570247933884
     },
     {
       "id": "evaluation",
       "label": "Evaluation & benchmarks",
       "color": "#f3a712",
-      "count": 17,
-      "ratio": 0.1619047619047619
+      "count": 19,
+      "ratio": 0.15702479338842976
     },
     {
       "id": "runtime",
       "label": "Runtime enforcement",
       "color": "#1d6f75",
-      "count": 14,
-      "ratio": 0.13333333333333333
+      "count": 16,
+      "ratio": 0.1322314049586777
     },
     {
       "id": "policy",
       "label": "Policy & governance landscape",
       "color": "#636363",
-      "count": 39,
-      "ratio": 0.37142857142857144
+      "count": 41,
+      "ratio": 0.33884297520661155
     }
   ],
   "layer_mix": [
     {
       "layer": 0,
       "label": "Spec",
-      "count": 26
+      "count": 31
     },
     {
       "layer": 1,
       "label": "Runtime",
-      "count": 55
+      "count": 57
     },
     {
       "layer": 2,
       "label": "Behavior",
-      "count": 36
+      "count": 45
     },
     {
       "layer": 3,
@@ -339,29 +339,53 @@
         "runtime": 14,
         "policy": 39
       }
+    },
+    {
+      "date": "2026-07-07",
+      "new_papers": 16,
+      "cumulative": 121,
+      "leading_topic": "Specification & validation",
+      "topics": {
+        "specification": 7,
+        "supply_chain": 0,
+        "identity": 0,
+        "coordination": 3,
+        "evaluation": 2,
+        "runtime": 2,
+        "policy": 2
+      },
+      "cumulative_topics": {
+        "specification": 19,
+        "supply_chain": 10,
+        "identity": 8,
+        "coordination": 8,
+        "evaluation": 19,
+        "runtime": 16,
+        "policy": 41
+      }
     }
   ],
   "trending_topics": [
     {
       "id": "policy",
       "label": "Policy & governance landscape",
-      "recent_count": 13,
-      "total_count": 39,
+      "recent_count": 12,
+      "total_count": 41,
       "color": "#636363"
-    },
-    {
-      "id": "evaluation",
-      "label": "Evaluation & benchmarks",
-      "recent_count": 3,
-      "total_count": 17,
-      "color": "#f3a712"
     },
     {
       "id": "specification",
       "label": "Specification & validation",
-      "recent_count": 3,
-      "total_count": 12,
+      "recent_count": 8,
+      "total_count": 19,
       "color": "#e4572e"
+    },
+    {
+      "id": "runtime",
+      "label": "Runtime enforcement",
+      "recent_count": 4,
+      "total_count": 16,
+      "color": "#1d6f75"
     }
   ],
   "association_graph": {
@@ -405,7 +429,7 @@
           2
         ],
         "discovered": "2026-05-30",
-        "degree": 3
+        "degree": 4
       },
       {
         "id": "arxiv:2603.25747",
@@ -418,7 +442,7 @@
           2
         ],
         "discovered": "2026-05-30",
-        "degree": 9
+        "degree": 7
       },
       {
         "id": "kieranupadrasta-co-uk:csa-owasp-maestro-seven-layer-threat-mod",
@@ -458,7 +482,7 @@
           1
         ],
         "discovered": "2026-05-30",
-        "degree": 3
+        "degree": 4
       },
       {
         "id": "microsoft:agent-governance-toolkit",
@@ -790,7 +814,7 @@
           2
         ],
         "discovered": "2026-06-01",
-        "degree": 4
+        "degree": 3
       },
       {
         "id": "techtimes-com:finbot-agentic-ai-ctf",
@@ -803,7 +827,7 @@
           2
         ],
         "discovered": "2026-06-01",
-        "degree": 6
+        "degree": 5
       },
       {
         "id": "github:topics-skill-md",
@@ -829,7 +853,7 @@
           2
         ],
         "discovered": "2026-06-01",
-        "degree": 5
+        "degree": 6
       },
       {
         "id": "arxiv:2603.17445",
@@ -933,7 +957,7 @@
           0
         ],
         "discovered": "2026-06-04",
-        "degree": 4
+        "degree": 5
       },
       {
         "id": "arxiv:2604.08224",
@@ -959,7 +983,7 @@
           1
         ],
         "discovered": "2026-06-04",
-        "degree": 8
+        "degree": 5
       },
       {
         "id": "arxiv:2602.22302",
@@ -1203,7 +1227,7 @@
           1
         ],
         "discovered": "2026-06-06",
-        "degree": 4
+        "degree": 3
       },
       {
         "id": "arxiv:2606.03024",
@@ -1229,7 +1253,7 @@
           0
         ],
         "discovered": "2026-06-06",
-        "degree": 4
+        "degree": 3
       },
       {
         "id": "arxiv:2603.03340",
@@ -1323,7 +1347,7 @@
           0
         ],
         "discovered": "2026-06-07",
-        "degree": 4
+        "degree": 3
       },
       {
         "id": "arxiv:2605.12015",
@@ -1419,7 +1443,7 @@
           1
         ],
         "discovered": "2026-06-14",
-        "degree": 4
+        "degree": 5
       },
       {
         "id": "ieee:reprobe-audit",
@@ -1528,7 +1552,7 @@
           0
         ],
         "discovered": "2026-06-20",
-        "degree": 4
+        "degree": 3
       },
       {
         "id": "arxiv:2402.18649",
@@ -1570,7 +1594,7 @@
           2
         ],
         "discovered": "2026-06-28",
-        "degree": 6
+        "degree": 7
       },
       {
         "id": "arxiv:2406.12934",
@@ -1637,7 +1661,7 @@
           2
         ],
         "discovered": "2026-07-01",
-        "degree": 6
+        "degree": 4
       },
       {
         "id": "arxiv:2606.26494",
@@ -1663,7 +1687,7 @@
           2
         ],
         "discovered": "2026-07-01",
-        "degree": 4
+        "degree": 3
       },
       {
         "id": "arxiv:2606.23768",
@@ -1676,7 +1700,7 @@
           0
         ],
         "discovered": "2026-07-01",
-        "degree": 5
+        "degree": 4
       },
       {
         "id": "arxiv:2606.28592",
@@ -1755,6 +1779,214 @@
         ],
         "discovered": "2026-07-01",
         "degree": 3
+      },
+      {
+        "id": "doi-org:a-practical-framework-for-appropriate-im",
+        "title": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare",
+        "url": "https://doi.org/10.1038/s41746-025-01900-y",
+        "topic": "policy",
+        "topic_label": "Policy & governance landscape",
+        "color": "#636363",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-07-07",
+        "degree": 7
+      },
+      {
+        "id": "doi-org:a-research-landscape-of-agentic-ai-and-l",
+        "title": "A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions",
+        "url": "https://doi.org/10.3390/a18080499",
+        "topic": "specification",
+        "topic_label": "Specification & validation",
+        "color": "#e4572e",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-07-07",
+        "degree": 4
+      },
+      {
+        "id": "doi-org:a-survey-on-evaluation-of-large-language",
+        "title": "A Survey on Evaluation of Large Language Models",
+        "url": "https://doi.org/10.1145/3641289",
+        "topic": "evaluation",
+        "topic_label": "Evaluation & benchmarks",
+        "color": "#f3a712",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-07-07",
+        "degree": 12
+      },
+      {
+        "id": "doi-org:adaptive-multi-uav-cooperative-path-plan",
+        "title": "Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields",
+        "url": "https://doi.org/10.1016/j.knosys.2025.113429",
+        "topic": "specification",
+        "topic_label": "Specification & validation",
+        "color": "#e4572e",
+        "layers": [
+          0
+        ],
+        "discovered": "2026-07-07",
+        "degree": 6
+      },
+      {
+        "id": "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
+        "title": "Agentic AI: a comprehensive survey of architectures, applications, and future directions",
+        "url": "https://doi.org/10.1007/s10462-025-11422-4",
+        "topic": "runtime",
+        "topic_label": "Runtime enforcement",
+        "color": "#1d6f75",
+        "layers": [
+          1
+        ],
+        "discovered": "2026-07-07",
+        "degree": 4
+      },
+      {
+        "id": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+        "title": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications",
+        "url": "https://doi.org/10.1109/access.2025.3585609",
+        "topic": "policy",
+        "topic_label": "Policy & governance landscape",
+        "color": "#636363",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-07-07",
+        "degree": 8
+      },
+      {
+        "id": "doi-org:an-adaptive-multi-agent-architecture-wit",
+        "title": "An Adaptive Multi-Agent Architecture with Reinforcement Learning and Generative AI for Intelligent Tutoring Systems: A Moodle-Based Case Study",
+        "url": "https://doi.org/10.3390/app16031323",
+        "topic": "coordination",
+        "topic_label": "Coordination & composition",
+        "color": "#5b8e3e",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-07-07",
+        "degree": 4
+      },
+      {
+        "id": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+        "title": "Ethical perspectives on AI Agents and Agentic AI",
+        "url": "https://doi.org/10.1007/s43681-026-01027-0",
+        "topic": "specification",
+        "topic_label": "Specification & validation",
+        "color": "#e4572e",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-07-07",
+        "degree": 6
+      },
+      {
+        "id": "doi-org:exploring-agentic-ai-in-healthcare-a-stu",
+        "title": "Exploring Agentic AI in Healthcare: A Study on Its Working Mechanism",
+        "url": "https://doi.org/10.3389/fmed.2025.1753443",
+        "topic": "runtime",
+        "topic_label": "Runtime enforcement",
+        "color": "#1d6f75",
+        "layers": [
+          1
+        ],
+        "discovered": "2026-07-07",
+        "degree": 3
+      },
+      {
+        "id": "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+        "title": "Exploring the role of agentic AI in fostering self-efficacy, autonomy support, and self-learning motivation in higher education",
+        "url": "https://doi.org/10.3389/frai.2026.1738774",
+        "topic": "specification",
+        "topic_label": "Specification & validation",
+        "color": "#e4572e",
+        "layers": [
+          0
+        ],
+        "discovered": "2026-07-07",
+        "degree": 4
+      },
+      {
+        "id": "doi-org:large-language-models-for-business-and-m",
+        "title": "Large language models for business and management applications: A review",
+        "url": "https://doi.org/10.1016/j.ipm.2026.104864",
+        "topic": "specification",
+        "topic_label": "Specification & validation",
+        "color": "#e4572e",
+        "layers": [
+          0
+        ],
+        "discovered": "2026-07-07",
+        "degree": 6
+      },
+      {
+        "id": "doi-org:multi-agent-ai",
+        "title": "Multi-agent AI",
+        "url": "https://doi.org/10.1007/s12525-025-00862-z",
+        "topic": "coordination",
+        "topic_label": "Coordination & composition",
+        "color": "#5b8e3e",
+        "layers": [
+          0
+        ],
+        "discovered": "2026-07-07",
+        "degree": 7
+      },
+      {
+        "id": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+        "title": "The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges",
+        "url": "https://doi.org/10.3390/fi17090404",
+        "topic": "evaluation",
+        "topic_label": "Evaluation & benchmarks",
+        "color": "#f3a712",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-07-07",
+        "degree": 6
+      },
+      {
+        "id": "doi-org:toward-expert-level-medical-question-ans",
+        "title": "Toward expert-level medical question answering with large language models",
+        "url": "https://doi.org/10.1038/s41591-024-03423-7",
+        "topic": "specification",
+        "topic_label": "Specification & validation",
+        "color": "#e4572e",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-07-07",
+        "degree": 3
+      },
+      {
+        "id": "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
+        "title": "TRiSM for Agentic AI: A review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems",
+        "url": "https://doi.org/10.1016/j.aiopen.2026.02.006",
+        "topic": "coordination",
+        "topic_label": "Coordination & composition",
+        "color": "#5b8e3e",
+        "layers": [
+          2
+        ],
+        "discovered": "2026-07-07",
+        "degree": 4
+      },
+      {
+        "id": "doi-org:unifying-large-language-models-and-knowl",
+        "title": "Unifying Large Language Models and Knowledge Graphs: A Roadmap",
+        "url": "https://doi.org/10.1109/tkde.2024.3352100",
+        "topic": "specification",
+        "topic_label": "Specification & validation",
+        "color": "#e4572e",
+        "layers": [
+          0
+        ],
+        "discovered": "2026-07-07",
+        "degree": 5
       }
     ],
     "edges": [
@@ -1972,14 +2204,6 @@
       },
       {
         "source": "arxiv:2406.12934",
-        "target": "arxiv:2603.18829",
-        "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L1",
-        "shared_terms": []
-      },
-      {
-        "source": "arxiv:2406.12934",
         "target": "arxiv:2605.16198",
         "kind": "conceptual",
         "weight": 3.957,
@@ -2000,6 +2224,16 @@
         "shared_terms": [
           "risk",
           "risks"
+        ]
+      },
+      {
+        "source": "arxiv:2406.12934",
+        "target": "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
+        "kind": "conceptual",
+        "weight": 3.55,
+        "reason": "same topic; shared L1; terms: survey",
+        "shared_terms": [
+          "survey"
         ]
       },
       {
@@ -2036,9 +2270,19 @@
       },
       {
         "source": "arxiv:2602.11510",
-        "target": "arxiv:2605.10052",
+        "target": "doi-org:an-adaptive-multi-agent-architecture-wit",
         "kind": "conceptual",
-        "weight": 2.343,
+        "weight": 2.721,
+        "reason": "same topic; shared L2; terms: multi-agent",
+        "shared_terms": [
+          "multi-agent"
+        ]
+      },
+      {
+        "source": "arxiv:2602.11510",
+        "target": "doi-org:multi-agent-ai",
+        "kind": "conceptual",
+        "weight": 2.825,
         "reason": "same topic; terms: multi-agent",
         "shared_terms": [
           "multi-agent"
@@ -2046,11 +2290,13 @@
       },
       {
         "source": "arxiv:2602.11510",
-        "target": "arxiv:2606.00448",
+        "target": "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
         "kind": "conceptual",
-        "weight": 2.167,
-        "reason": "same topic; shared L1",
-        "shared_terms": []
+        "weight": 2.775,
+        "reason": "same topic; shared L2; terms: multi-agent",
+        "shared_terms": [
+          "multi-agent"
+        ]
       },
       {
         "source": "arxiv:2602.11510",
@@ -2255,33 +2501,32 @@
       },
       {
         "source": "arxiv:2603.07191",
-        "target": "arxiv:2603.16586",
-        "kind": "conceptual",
-        "weight": 3.475,
-        "reason": "same topic; shared L1; terms: audit, execution",
-        "shared_terms": [
-          "audit",
-          "execution"
-        ]
-      },
-      {
-        "source": "arxiv:2603.07191",
-        "target": "arxiv:2603.18829",
-        "kind": "conceptual",
-        "weight": 3.287,
-        "reason": "same topic; shared L1; terms: execution",
-        "shared_terms": [
-          "execution"
-        ]
-      },
-      {
-        "source": "arxiv:2603.07191",
         "target": "arxiv:2606.26494",
         "kind": "conceptual",
         "weight": 3.287,
         "reason": "same topic; shared L1; terms: architecture",
         "shared_terms": [
           "architecture"
+        ]
+      },
+      {
+        "source": "arxiv:2603.07191",
+        "target": "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
+        "kind": "conceptual",
+        "weight": 3.55,
+        "reason": "same topic; shared L1; terms: runtime-level",
+        "shared_terms": [
+          "runtime-level"
+        ]
+      },
+      {
+        "source": "arxiv:2603.07191",
+        "target": "doi-org:exploring-agentic-ai-in-healthcare-a-stu",
+        "kind": "conceptual",
+        "weight": 3.6,
+        "reason": "same topic; shared L1; terms: runtime-level",
+        "shared_terms": [
+          "runtime-level"
         ]
       },
       {
@@ -2477,14 +2722,6 @@
       },
       {
         "source": "arxiv:2603.18829",
-        "target": "arxiv:2606.26494",
-        "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L1",
-        "shared_terms": []
-      },
-      {
-        "source": "arxiv:2603.18829",
         "target": "github:topics-agent-control-protocol",
         "kind": "conceptual",
         "weight": 3.714,
@@ -2611,14 +2848,6 @@
       },
       {
         "source": "arxiv:2603.25747",
-        "target": "arxiv:2605.11891",
-        "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L2",
-        "shared_terms": []
-      },
-      {
-        "source": "arxiv:2603.25747",
         "target": "arxiv:2606.05405",
         "kind": "conceptual",
         "weight": 3.337,
@@ -2640,14 +2869,6 @@
         "shared_terms": [
           "task"
         ]
-      },
-      {
-        "source": "arxiv:2603.25747",
-        "target": "github:qualixar-agentassay",
-        "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L2",
-        "shared_terms": []
       },
       {
         "source": "arxiv:2603.25747",
@@ -2945,36 +3166,33 @@
       },
       {
         "source": "arxiv:2604.11174",
-        "target": "ieee:reprobe-audit",
+        "target": "doi-org:a-survey-on-evaluation-of-large-language",
         "kind": "conceptual",
-        "weight": 3.662,
-        "reason": "same topic; shared L2; terms: audit, behavioral-level, benchmark",
+        "weight": 4.0,
+        "reason": "same topic; shared L2; terms: behavioral-level",
         "shared_terms": [
-          "audit",
-          "behavioral-level",
-          "benchmark"
+          "behavioral-level"
         ]
       },
       {
         "source": "arxiv:2604.11174",
-        "target": "techtimes-com:finbot-agentic-ai-ctf",
+        "target": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
         "kind": "conceptual",
-        "weight": 3.421,
-        "reason": "same topic; shared L2; terms: benchmark",
+        "weight": 3.85,
+        "reason": "same topic; shared L2; terms: behavioral-level, metrics",
         "shared_terms": [
-          "benchmark"
+          "behavioral-level",
+          "metrics"
         ]
       },
       {
         "source": "arxiv:2604.11806",
-        "target": "ieee:reprobe-audit",
+        "target": "doi-org:a-survey-on-evaluation-of-large-language",
         "kind": "conceptual",
-        "weight": 3.662,
-        "reason": "same topic; shared L2; terms: audit, behavioral-level, benchmark",
+        "weight": 4.0,
+        "reason": "same topic; shared L2; terms: behavioral-level",
         "shared_terms": [
-          "audit",
-          "behavioral-level",
-          "benchmark"
+          "behavioral-level"
         ]
       },
       {
@@ -3028,27 +3246,33 @@
       },
       {
         "source": "arxiv:2604.16911",
-        "target": "arxiv:2604.24026",
+        "target": "doi-org:adaptive-multi-uav-cooperative-path-plan",
         "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L0",
-        "shared_terms": []
+        "weight": 3.446,
+        "reason": "same topic; shared L0; terms: spec-level",
+        "shared_terms": [
+          "spec-level"
+        ]
       },
       {
         "source": "arxiv:2604.16911",
-        "target": "arxiv:2605.27955",
+        "target": "doi-org:large-language-models-for-business-and-m",
         "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L0",
-        "shared_terms": []
+        "weight": 3.662,
+        "reason": "same topic; shared L0; terms: spec-level",
+        "shared_terms": [
+          "spec-level"
+        ]
       },
       {
         "source": "arxiv:2604.16911",
-        "target": "arxiv:2606.23768",
+        "target": "doi-org:unifying-large-language-models-and-knowl",
         "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L0",
-        "shared_terms": []
+        "weight": 3.662,
+        "reason": "same topic; shared L0; terms: spec-level",
+        "shared_terms": [
+          "spec-level"
+        ]
       },
       {
         "source": "arxiv:2604.16911",
@@ -3149,14 +3373,6 @@
       },
       {
         "source": "arxiv:2604.19818",
-        "target": "arxiv:2606.20669",
-        "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L2",
-        "shared_terms": []
-      },
-      {
-        "source": "arxiv:2604.19818",
         "target": "arxiv:2606.28791",
         "kind": "conceptual",
         "weight": 3.287,
@@ -3167,11 +3383,13 @@
       },
       {
         "source": "arxiv:2604.19818",
-        "target": "confident-ai:deep-team",
+        "target": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
         "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L2",
-        "shared_terms": []
+        "weight": 3.55,
+        "reason": "same topic; shared L2; terms: agentic",
+        "shared_terms": [
+          "agentic"
+        ]
       },
       {
         "source": "arxiv:2604.20805",
@@ -3229,7 +3447,7 @@
       },
       {
         "source": "arxiv:2604.24026",
-        "target": "arxiv:2606.23768",
+        "target": "doi-org:adaptive-multi-uav-cooperative-path-plan",
         "kind": "conceptual",
         "weight": 3.1,
         "reason": "same topic; shared L0",
@@ -3273,6 +3491,16 @@
         "reason": "same topic; shared L2; terms: frameworks",
         "shared_terms": [
           "frameworks"
+        ]
+      },
+      {
+        "source": "arxiv:2605.02709",
+        "target": "doi-org:a-practical-framework-for-appropriate-im",
+        "kind": "conceptual",
+        "weight": 3.509,
+        "reason": "same topic; shared L2; terms: healthcare",
+        "shared_terms": [
+          "healthcare"
         ]
       },
       {
@@ -3390,6 +3618,18 @@
       },
       {
         "source": "arxiv:2605.07358",
+        "target": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+        "kind": "conceptual",
+        "weight": 3.05,
+        "reason": "same topic; terms: applications, comprehensive, survey",
+        "shared_terms": [
+          "applications",
+          "comprehensive",
+          "survey"
+        ]
+      },
+      {
+        "source": "arxiv:2605.07358",
         "target": "github:varun369-skillfortify",
         "kind": "conceptual",
         "weight": 3.475,
@@ -3406,6 +3646,16 @@
         "weight": 2.4,
         "reason": "same topic; shared L0",
         "shared_terms": []
+      },
+      {
+        "source": "arxiv:2605.10052",
+        "target": "doi-org:multi-agent-ai",
+        "kind": "conceptual",
+        "weight": 4.225,
+        "reason": "same topic; shared L0; terms: multi-agent",
+        "shared_terms": [
+          "multi-agent"
+        ]
       },
       {
         "source": "arxiv:2605.11770",
@@ -3434,6 +3684,14 @@
         "shared_terms": [
           "ecosystems"
         ]
+      },
+      {
+        "source": "arxiv:2605.11891",
+        "target": "doi-org:a-survey-on-evaluation-of-large-language",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L2",
+        "shared_terms": []
       },
       {
         "source": "arxiv:2605.11891",
@@ -3590,6 +3848,16 @@
         ]
       },
       {
+        "source": "arxiv:2605.22634",
+        "target": "doi-org:large-language-models-for-business-and-m",
+        "kind": "conceptual",
+        "weight": 2.962,
+        "reason": "same topic; shared L0; terms: spec-level",
+        "shared_terms": [
+          "spec-level"
+        ]
+      },
+      {
         "source": "arxiv:2605.25376",
         "target": "arxiv:2606.31272",
         "kind": "conceptual",
@@ -3675,6 +3943,14 @@
       },
       {
         "source": "arxiv:2606.00448",
+        "target": "doi-org:multi-agent-ai",
+        "kind": "conceptual",
+        "weight": 2.4,
+        "reason": "same topic; shared L0",
+        "shared_terms": []
+      },
+      {
+        "source": "arxiv:2606.00448",
         "target": "preprints-org:agentverify",
         "kind": "conceptual",
         "weight": 2.587,
@@ -3695,13 +3971,12 @@
       },
       {
         "source": "arxiv:2606.04781",
-        "target": "arxiv:2606.06893",
+        "target": "doi-org:unifying-large-language-models-and-knowl",
         "kind": "conceptual",
-        "weight": 2.775,
-        "reason": "same topic; shared L0; terms: creation, execution",
+        "weight": 2.962,
+        "reason": "same topic; shared L0; terms: graphs",
         "shared_terms": [
-          "creation",
-          "execution"
+          "graphs"
         ]
       },
       {
@@ -3720,11 +3995,13 @@
       },
       {
         "source": "arxiv:2606.06893",
-        "target": "arxiv:2606.23768",
+        "target": "doi-org:large-language-models-for-business-and-m",
         "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L0",
-        "shared_terms": []
+        "weight": 3.662,
+        "reason": "same topic; shared L0; terms: management",
+        "shared_terms": [
+          "management"
+        ]
       },
       {
         "source": "arxiv:2606.09365",
@@ -3749,6 +4026,16 @@
       },
       {
         "source": "arxiv:2606.15899",
+        "target": "doi-org:a-survey-on-evaluation-of-large-language",
+        "kind": "conceptual",
+        "weight": 3.3,
+        "reason": "same topic; shared L2; terms: score",
+        "shared_terms": [
+          "score"
+        ]
+      },
+      {
+        "source": "arxiv:2606.15899",
         "target": "github:agent-security-harness",
         "kind": "conceptual",
         "weight": 3.196,
@@ -3760,47 +4047,46 @@
         ]
       },
       {
-        "source": "arxiv:2606.15899",
-        "target": "techtimes-com:finbot-agentic-ai-ctf",
+        "source": "arxiv:2606.17591",
+        "target": "doi-org:a-practical-framework-for-appropriate-im",
         "kind": "conceptual",
-        "weight": 3.043,
-        "reason": "same topic; shared L2; terms: data, security",
+        "weight": 3.1,
+        "reason": "same topic; shared L2",
+        "shared_terms": []
+      },
+      {
+        "source": "arxiv:2606.20669",
+        "target": "confident-ai:deep-team",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L2",
+        "shared_terms": []
+      },
+      {
+        "source": "arxiv:2606.20669",
+        "target": "doi-org:a-practical-framework-for-appropriate-im",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L2",
+        "shared_terms": []
+      },
+      {
+        "source": "arxiv:2606.23768",
+        "target": "doi-org:adaptive-multi-uav-cooperative-path-plan",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L0",
+        "shared_terms": []
+      },
+      {
+        "source": "arxiv:2606.23768",
+        "target": "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+        "kind": "conceptual",
+        "weight": 3.421,
+        "reason": "same topic; shared L0; terms: agentic",
         "shared_terms": [
-          "data",
-          "security"
+          "agentic"
         ]
-      },
-      {
-        "source": "arxiv:2606.17591",
-        "target": "arxiv:2606.20669",
-        "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L2",
-        "shared_terms": []
-      },
-      {
-        "source": "arxiv:2606.17591",
-        "target": "confident-ai:deep-team",
-        "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L2",
-        "shared_terms": []
-      },
-      {
-        "source": "arxiv:2606.20669",
-        "target": "arxiv:2606.28791",
-        "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L2",
-        "shared_terms": []
-      },
-      {
-        "source": "arxiv:2606.20669",
-        "target": "confident-ai:deep-team",
-        "kind": "conceptual",
-        "weight": 3.1,
-        "reason": "same topic; shared L2",
-        "shared_terms": []
       },
       {
         "source": "arxiv:2606.23768",
@@ -3811,6 +4097,16 @@
         "shared_terms": [
           "approach",
           "artifacts"
+        ]
+      },
+      {
+        "source": "arxiv:2606.26494",
+        "target": "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
+        "kind": "conceptual",
+        "weight": 3.55,
+        "reason": "same topic; shared L1; terms: future",
+        "shared_terms": [
+          "future"
         ]
       },
       {
@@ -3830,6 +4126,16 @@
         "weight": 3.1,
         "reason": "same topic; shared L1",
         "shared_terms": []
+      },
+      {
+        "source": "arxiv:2606.28791",
+        "target": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+        "kind": "conceptual",
+        "weight": 3.55,
+        "reason": "same topic; shared L2; terms: agentic",
+        "shared_terms": [
+          "agentic"
+        ]
       },
       {
         "source": "arxiv:2606.31272",
@@ -3864,6 +4170,22 @@
         ]
       },
       {
+        "source": "confident-ai:deep-team",
+        "target": "doi-org:a-practical-framework-for-appropriate-im",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L2",
+        "shared_terms": []
+      },
+      {
+        "source": "confident-ai:deep-team",
+        "target": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L2",
+        "shared_terms": []
+      },
+      {
         "source": "developer-nvidia-com:nvidia-verified-agent-skills-skillspecto",
         "target": "github:varun369-skillfortify",
         "kind": "conceptual",
@@ -3885,6 +4207,164 @@
         ]
       },
       {
+        "source": "doi-org:a-practical-framework-for-appropriate-im",
+        "target": "doi-org:a-survey-on-evaluation-of-large-language",
+        "kind": "conceptual",
+        "weight": 4.1,
+        "reason": "shared L2; terms: behavioral-level, citations, score",
+        "shared_terms": [
+          "behavioral-level",
+          "citations",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:a-practical-framework-for-appropriate-im",
+        "target": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+        "kind": "conceptual",
+        "weight": 4.45,
+        "reason": "same topic; shared L2; terms: behavioral-level, citations, score",
+        "shared_terms": [
+          "behavioral-level",
+          "citations",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:a-practical-framework-for-appropriate-im",
+        "target": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+        "kind": "conceptual",
+        "weight": 3.65,
+        "reason": "shared L2; terms: behavioral-level, citations, score",
+        "shared_terms": [
+          "behavioral-level",
+          "citations",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:a-research-landscape-of-agentic-ai-and-l",
+        "target": "doi-org:a-survey-on-evaluation-of-large-language",
+        "kind": "conceptual",
+        "weight": 5.0,
+        "reason": "shared L2; terms: behavioral-level, citations, language",
+        "shared_terms": [
+          "behavioral-level",
+          "citations",
+          "language",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:a-research-landscape-of-agentic-ai-and-l",
+        "target": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+        "kind": "conceptual",
+        "weight": 6.1,
+        "reason": "same topic; shared L2; terms: agentic, behavioral-level, citations",
+        "shared_terms": [
+          "agentic",
+          "behavioral-level",
+          "citations",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:a-research-landscape-of-agentic-ai-and-l",
+        "target": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+        "kind": "conceptual",
+        "weight": 4.1,
+        "reason": "shared L2; terms: agentic, applications, behavioral-level",
+        "shared_terms": [
+          "agentic",
+          "applications",
+          "behavioral-level",
+          "challenges",
+          "citations"
+        ]
+      },
+      {
+        "source": "doi-org:a-research-landscape-of-agentic-ai-and-l",
+        "target": "doi-org:toward-expert-level-medical-question-ans",
+        "kind": "conceptual",
+        "weight": 5.1,
+        "reason": "same topic; shared L2; terms: behavioral-level, citations, language",
+        "shared_terms": [
+          "behavioral-level",
+          "citations",
+          "language",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:a-survey-on-evaluation-of-large-language",
+        "target": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+        "kind": "conceptual",
+        "weight": 5.0,
+        "reason": "shared L2; terms: behavioral-level, citations, score",
+        "shared_terms": [
+          "behavioral-level",
+          "citations",
+          "score",
+          "survey"
+        ]
+      },
+      {
+        "source": "doi-org:a-survey-on-evaluation-of-large-language",
+        "target": "doi-org:an-adaptive-multi-agent-architecture-wit",
+        "kind": "conceptual",
+        "weight": 4.1,
+        "reason": "shared L2; terms: behavioral-level, citations, score",
+        "shared_terms": [
+          "behavioral-level",
+          "citations",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:a-survey-on-evaluation-of-large-language",
+        "target": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+        "kind": "conceptual",
+        "weight": 5.8,
+        "reason": "same topic; shared L2; terms: behavioral-level, citations, score",
+        "shared_terms": [
+          "behavioral-level",
+          "citations",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:a-survey-on-evaluation-of-large-language",
+        "target": "doi-org:toward-expert-level-medical-question-ans",
+        "kind": "conceptual",
+        "weight": 5.0,
+        "reason": "shared L2; terms: behavioral-level, citations, language",
+        "shared_terms": [
+          "behavioral-level",
+          "citations",
+          "language",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:a-survey-on-evaluation-of-large-language",
+        "target": "github:qualixar-agentassay",
+        "kind": "conceptual",
+        "weight": 3.1,
+        "reason": "same topic; shared L2",
+        "shared_terms": []
+      },
+      {
+        "source": "doi-org:a-survey-on-evaluation-of-large-language",
+        "target": "ieee:reprobe-audit",
+        "kind": "conceptual",
+        "weight": 4.9,
+        "reason": "same topic; shared L2; terms: behavioral-level, score",
+        "shared_terms": [
+          "behavioral-level",
+          "score"
+        ]
+      },
+      {
         "source": "doi-org:a-survey-on-large-language-model-llm-sec",
         "target": "owasp:mcp-guide",
         "kind": "conceptual",
@@ -3896,6 +4376,80 @@
         ]
       },
       {
+        "source": "doi-org:adaptive-multi-uav-cooperative-path-plan",
+        "target": "doi-org:large-language-models-for-business-and-m",
+        "kind": "conceptual",
+        "weight": 4.787,
+        "reason": "same topic; shared L0; terms: citations, score, spec-level",
+        "shared_terms": [
+          "citations",
+          "score",
+          "spec-level"
+        ]
+      },
+      {
+        "source": "doi-org:adaptive-multi-uav-cooperative-path-plan",
+        "target": "doi-org:multi-agent-ai",
+        "kind": "conceptual",
+        "weight": 4.775,
+        "reason": "shared L0; terms: citations, score, spec-level",
+        "shared_terms": [
+          "citations",
+          "score",
+          "spec-level"
+        ]
+      },
+      {
+        "source": "doi-org:adaptive-multi-uav-cooperative-path-plan",
+        "target": "doi-org:unifying-large-language-models-and-knowl",
+        "kind": "conceptual",
+        "weight": 4.787,
+        "reason": "same topic; shared L0; terms: citations, score, spec-level",
+        "shared_terms": [
+          "citations",
+          "score",
+          "spec-level"
+        ]
+      },
+      {
+        "source": "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
+        "target": "doi-org:exploring-agentic-ai-in-healthcare-a-stu",
+        "kind": "conceptual",
+        "weight": 5.1,
+        "reason": "same topic; shared L1; terms: agentic, citations, runtime-level",
+        "shared_terms": [
+          "agentic",
+          "citations",
+          "runtime-level",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+        "target": "doi-org:agentic-ai-autonomous-intelligence-for-c",
+        "kind": "conceptual",
+        "weight": 3.75,
+        "reason": "same topic; shared L2; terms: agentic, comprehensive, survey",
+        "shared_terms": [
+          "agentic",
+          "comprehensive",
+          "survey"
+        ]
+      },
+      {
+        "source": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+        "target": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+        "kind": "conceptual",
+        "weight": 4.4,
+        "reason": "shared L2; terms: agentic, behavioral-level, citations",
+        "shared_terms": [
+          "agentic",
+          "behavioral-level",
+          "citations",
+          "score"
+        ]
+      },
+      {
         "source": "doi-org:agentic-ai-autonomous-intelligence-for-c",
         "target": "doi-org:next-generation-phishing-how-llm-agents-",
         "kind": "conceptual",
@@ -3903,6 +4457,161 @@
         "reason": "same topic; shared L1/L2; terms: autonomous",
         "shared_terms": [
           "autonomous"
+        ]
+      },
+      {
+        "source": "doi-org:an-adaptive-multi-agent-architecture-wit",
+        "target": "doi-org:multi-agent-ai",
+        "kind": "conceptual",
+        "weight": 5.075,
+        "reason": "same topic; terms: citations, multi-agent, score",
+        "shared_terms": [
+          "citations",
+          "multi-agent",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:an-adaptive-multi-agent-architecture-wit",
+        "target": "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
+        "kind": "conceptual",
+        "weight": 4.6,
+        "reason": "same topic; shared L2; terms: behavioral-level, citations, multi-agent",
+        "shared_terms": [
+          "behavioral-level",
+          "citations",
+          "multi-agent",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+        "target": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+        "kind": "conceptual",
+        "weight": 4.4,
+        "reason": "shared L2; terms: agentic, behavioral-level, citations",
+        "shared_terms": [
+          "agentic",
+          "behavioral-level",
+          "citations",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+        "target": "doi-org:toward-expert-level-medical-question-ans",
+        "kind": "conceptual",
+        "weight": 5.35,
+        "reason": "same topic; shared L2; terms: behavioral-level, citations, score",
+        "shared_terms": [
+          "behavioral-level",
+          "citations",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+        "target": "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
+        "kind": "conceptual",
+        "weight": 4.4,
+        "reason": "shared L2; terms: agentic, behavioral-level, citations",
+        "shared_terms": [
+          "agentic",
+          "behavioral-level",
+          "citations",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:exploring-agentic-ai-in-healthcare-a-stu",
+        "target": "mitre:atlas-agentic",
+        "kind": "conceptual",
+        "weight": 3.6,
+        "reason": "same topic; shared L1; terms: agentic",
+        "shared_terms": [
+          "agentic"
+        ]
+      },
+      {
+        "source": "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+        "target": "doi-org:large-language-models-for-business-and-m",
+        "kind": "conceptual",
+        "weight": 4.787,
+        "reason": "same topic; shared L0; terms: citations, score, spec-level",
+        "shared_terms": [
+          "citations",
+          "score",
+          "spec-level"
+        ]
+      },
+      {
+        "source": "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+        "target": "doi-org:multi-agent-ai",
+        "kind": "conceptual",
+        "weight": 4.775,
+        "reason": "shared L0; terms: citations, score, spec-level",
+        "shared_terms": [
+          "citations",
+          "score",
+          "spec-level"
+        ]
+      },
+      {
+        "source": "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+        "target": "doi-org:unifying-large-language-models-and-knowl",
+        "kind": "conceptual",
+        "weight": 4.787,
+        "reason": "same topic; shared L0; terms: citations, score, spec-level",
+        "shared_terms": [
+          "citations",
+          "score",
+          "spec-level"
+        ]
+      },
+      {
+        "source": "doi-org:large-language-models-for-business-and-m",
+        "target": "doi-org:unifying-large-language-models-and-knowl",
+        "kind": "conceptual",
+        "weight": 5.35,
+        "reason": "same topic; shared L0; terms: citations, language, score",
+        "shared_terms": [
+          "citations",
+          "language",
+          "score",
+          "spec-level"
+        ]
+      },
+      {
+        "source": "doi-org:multi-agent-ai",
+        "target": "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
+        "kind": "conceptual",
+        "weight": 5.075,
+        "reason": "same topic; terms: citations, multi-agent, score",
+        "shared_terms": [
+          "citations",
+          "multi-agent",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+        "target": "ieee:reprobe-audit",
+        "kind": "conceptual",
+        "weight": 3.85,
+        "reason": "same topic; shared L2; terms: behavioral-level, score",
+        "shared_terms": [
+          "behavioral-level",
+          "score"
+        ]
+      },
+      {
+        "source": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+        "target": "techtimes-com:finbot-agentic-ai-ctf",
+        "kind": "conceptual",
+        "weight": 3.475,
+        "reason": "same topic; shared L2; terms: agentic",
+        "shared_terms": [
+          "agentic"
         ]
       },
       {
@@ -3963,22 +4672,22 @@
         ]
       }
     ],
-    "node_count": 105,
-    "edge_count": 210,
+    "node_count": 121,
+    "edge_count": 250,
     "hubs": [
+      {
+        "id": "doi-org:a-survey-on-evaluation-of-large-language",
+        "title": "A Survey on Evaluation of Large Language Models",
+        "degree": 12
+      },
       {
         "id": "owasp:mcp-guide",
         "title": "A Survey of the Model Context Protocol (MCP): Standardizing Context to Enhance LLMs",
         "degree": 9
       },
       {
-        "id": "arxiv:2603.25747",
-        "title": "BeSafe-Bench (BSB)",
-        "degree": 9
-      },
-      {
-        "id": "arxiv:2603.18829",
-        "title": "Admission Control for Agent Actions (ACP)",
+        "id": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+        "title": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications",
         "degree": 8
       },
       {
@@ -3987,21 +4696,21 @@
         "degree": 8
       },
       {
-        "id": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
-        "title": "Agent Evaluation Guide (Quality-Focused Frameworks)",
+        "id": "doi-org:a-practical-framework-for-appropriate-im",
+        "title": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare",
         "degree": 7
       }
     ],
     "method": "Each paper keeps its three strongest corpus neighbors. Association strength combines primary topic, shared governance layers, and shared technical terms. These are conceptual associations, not claimed citations."
   },
   "knowledge_wiki": {
-    "page_count": 117,
+    "page_count": 133,
     "pages": [
       {
         "id": "overview",
         "type": "overview",
         "title": "Agent Governance Research Overview",
-        "subtitle": "105 papers compiled into a living research wiki",
+        "subtitle": "121 papers compiled into a living research wiki",
         "body": "EvaPaper compiles specification, runtime, behavioral, ecosystem, security, identity, and coordination research into maintained pages. Use topic and layer pages to browse the corpus, then follow explicit related-paper links to inspect local research trails.",
         "links": [
           "topic:specification",
@@ -4022,7 +4731,7 @@
         "id": "topic:specification",
         "type": "topic",
         "title": "Specification & validation",
-        "subtitle": "12 papers in this primary topic",
+        "subtitle": "19 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "arxiv:2605.22634",
@@ -4036,7 +4745,14 @@
           "arxiv:2605.03159",
           "arxiv:2606.04781",
           "arxiv:2606.06893",
-          "arxiv:2606.23768"
+          "arxiv:2606.23768",
+          "doi-org:a-research-landscape-of-agentic-ai-and-l",
+          "doi-org:adaptive-multi-uav-cooperative-path-plan",
+          "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+          "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+          "doi-org:large-language-models-for-business-and-m",
+          "doi-org:toward-expert-level-medical-question-ans",
+          "doi-org:unifying-large-language-models-and-knowl"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -4082,14 +4798,17 @@
         "id": "topic:coordination",
         "type": "topic",
         "title": "Coordination & composition",
-        "subtitle": "5 papers in this primary topic",
+        "subtitle": "8 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "arxiv:2602.11510",
           "preprints-org:agentverify",
           "arxiv:2604.17612",
           "arxiv:2606.00448",
-          "arxiv:2605.10052"
+          "arxiv:2605.10052",
+          "doi-org:an-adaptive-multi-agent-architecture-wit",
+          "doi-org:multi-agent-ai",
+          "doi-org:trism-for-agentic-ai-a-review-of-trust-r"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -4097,7 +4816,7 @@
         "id": "topic:evaluation",
         "type": "topic",
         "title": "Evaluation & benchmarks",
-        "subtitle": "17 papers in this primary topic",
+        "subtitle": "19 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "arxiv:2603.25747",
@@ -4116,7 +4835,9 @@
           "ieee:reprobe-audit",
           "arxiv:2606.05405",
           "arxiv:2606.15899",
-          "arxiv:2606.14502"
+          "arxiv:2606.14502",
+          "doi-org:a-survey-on-evaluation-of-large-language",
+          "doi-org:the-rise-of-agentic-ai-a-review-of-defin"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -4124,7 +4845,7 @@
         "id": "topic:runtime",
         "type": "topic",
         "title": "Runtime enforcement",
-        "subtitle": "14 papers in this primary topic",
+        "subtitle": "16 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "arxiv:2603.07191",
@@ -4140,7 +4861,9 @@
           "arxiv:2605.16198",
           "mitre:atlas-agentic",
           "arxiv:2406.12934",
-          "arxiv:2606.26494"
+          "arxiv:2606.26494",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
+          "doi-org:exploring-agentic-ai-in-healthcare-a-stu"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -4148,7 +4871,7 @@
         "id": "topic:policy",
         "type": "topic",
         "title": "Policy & governance landscape",
-        "subtitle": "39 papers in this primary topic",
+        "subtitle": "41 papers in this primary topic",
         "body": "This page groups papers by their primary dashboard classification. Papers may also connect to other topics through layers and conceptual associations.",
         "links": [
           "doi-org:a-survey-on-large-language-model-llm-sec",
@@ -4189,7 +4912,9 @@
           "arxiv:2606.17591",
           "arxiv:2606.28592",
           "arxiv:2606.09365",
-          "arxiv:2606.28791"
+          "arxiv:2606.28791",
+          "doi-org:a-practical-framework-for-appropriate-im",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-tec"
         ],
         "provenance": "Primary-topic classification generated from corpus text and curated overrides."
       },
@@ -4197,7 +4922,7 @@
         "id": "layer:0",
         "type": "layer",
         "title": "Layer 0: Specification",
-        "subtitle": "26 papers mapped to this governance layer",
+        "subtitle": "31 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "kieranupadrasta-co-uk:csa-owasp-maestro-seven-layer-threat-mod",
@@ -4225,7 +4950,12 @@
           "developer-nvidia-com:nvidia-verified-agent-skills-skillspecto",
           "arxiv:2605.10052",
           "arxiv:2606.23768",
-          "arxiv:2606.31272"
+          "arxiv:2606.31272",
+          "doi-org:adaptive-multi-uav-cooperative-path-plan",
+          "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+          "doi-org:large-language-models-for-business-and-m",
+          "doi-org:multi-agent-ai",
+          "doi-org:unifying-large-language-models-and-knowl"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
       },
@@ -4233,7 +4963,7 @@
         "id": "layer:1",
         "type": "layer",
         "title": "Layer 1: Runtime",
-        "subtitle": "55 papers mapped to this governance layer",
+        "subtitle": "57 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "doi-org:a-survey-on-large-language-model-llm-sec",
@@ -4290,7 +5020,9 @@
           "developer-nvidia-com:nvidia-verified-agent-skills-skillspecto",
           "arxiv:2606.26494",
           "arxiv:2606.28592",
-          "arxiv:2606.16523"
+          "arxiv:2606.16523",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
+          "doi-org:exploring-agentic-ai-in-healthcare-a-stu"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
       },
@@ -4298,7 +5030,7 @@
         "id": "layer:2",
         "type": "layer",
         "title": "Layer 2: Behavioral",
-        "subtitle": "36 papers mapped to this governance layer",
+        "subtitle": "45 papers mapped to this governance layer",
         "body": "Layer membership is multi-label. A paper appears here when its methods or evaluation claims materially address this layer.",
         "links": [
           "ai-journal-com:agent-evaluation-guide-quality-focused-f",
@@ -4336,7 +5068,16 @@
           "arxiv:2606.17591",
           "arxiv:2606.09365",
           "arxiv:2606.14502",
-          "arxiv:2606.28791"
+          "arxiv:2606.28791",
+          "doi-org:a-practical-framework-for-appropriate-im",
+          "doi-org:a-research-landscape-of-agentic-ai-and-l",
+          "doi-org:a-survey-on-evaluation-of-large-language",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+          "doi-org:an-adaptive-multi-agent-architecture-wit",
+          "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+          "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+          "doi-org:toward-expert-level-medical-question-ans",
+          "doi-org:trism-for-agentic-ai-a-review-of-trust-r"
         ],
         "provenance": "Layer mapping compiled from report and scout annotations."
       },
@@ -4489,24 +5230,30 @@
           "topic:coordination",
           "layer:1",
           "layer:2",
-          "preprints-org:agentverify",
-          "arxiv:2605.10052",
-          "arxiv:2606.00448"
+          "doi-org:multi-agent-ai",
+          "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
+          "doi-org:an-adaptive-multi-agent-architecture-wit",
+          "preprints-org:agentverify"
         ],
         "related": [
           {
-            "id": "preprints-org:agentverify",
-            "title": "AgentVerify",
-            "reason": "same topic; shared L1"
-          },
-          {
-            "id": "arxiv:2605.10052",
-            "title": "Swarm Skills: A Portable, Self-Evolving Multi-Agent System Specification",
+            "id": "doi-org:multi-agent-ai",
+            "title": "Multi-agent AI",
             "reason": "same topic; terms: multi-agent"
           },
           {
-            "id": "arxiv:2606.00448",
-            "title": "Measuring Compositional Risk",
+            "id": "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
+            "title": "TRiSM for Agentic AI: A review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems",
+            "reason": "same topic; shared L2; terms: multi-agent"
+          },
+          {
+            "id": "doi-org:an-adaptive-multi-agent-architecture-wit",
+            "title": "An Adaptive Multi-Agent Architecture with Reinforcement Learning and Generative AI for Intelligent Tutoring Systems: A Moodle-Based Case Study",
+            "reason": "same topic; shared L2; terms: multi-agent"
+          },
+          {
+            "id": "preprints-org:agentverify",
+            "title": "AgentVerify",
             "reason": "same topic; shared L1"
           }
         ],
@@ -4531,9 +5278,7 @@
           "techtimes-com:finbot-agentic-ai-ctf",
           "arxiv:2606.05405",
           "arxiv:2606.14502",
-          "arxiv:2410.06703",
-          "arxiv:2605.11891",
-          "github:qualixar-agentassay"
+          "arxiv:2410.06703"
         ],
         "related": [
           {
@@ -4570,16 +5315,6 @@
             "id": "arxiv:2410.06703",
             "title": "ST-WebAgentBench",
             "reason": "same topic; shared L2; terms: besafe-bench, constraints, task"
-          },
-          {
-            "id": "arxiv:2605.11891",
-            "title": "Proteus",
-            "reason": "same topic; shared L2"
-          },
-          {
-            "id": "github:qualixar-agentassay",
-            "title": "AgentAssay (Open Source)",
-            "reason": "same topic; shared L2"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -4679,6 +5414,7 @@
           "layer:1",
           "arxiv:2605.03159",
           "arxiv:2606.04781",
+          "doi-org:large-language-models-for-business-and-m",
           "arxiv:2602.22302"
         ],
         "related": [
@@ -4691,6 +5427,11 @@
             "id": "arxiv:2606.04781",
             "title": "AIP \u2014 Agent Instruction Protocol for Structured Skill Graphs",
             "reason": "same topic; shared L0/L1; terms: execution"
+          },
+          {
+            "id": "doi-org:large-language-models-for-business-and-m",
+            "title": "Large language models for business and management applications: A review",
+            "reason": "same topic; shared L0; terms: spec-level"
           },
           {
             "id": "arxiv:2602.22302",
@@ -4750,9 +5491,9 @@
           "topic:runtime",
           "layer:1",
           "mitre:atlas-agentic",
-          "arxiv:2603.16586",
+          "doi-org:exploring-agentic-ai-in-healthcare-a-stu",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
           "arxiv:2406.12934",
-          "arxiv:2603.18829",
           "arxiv:2606.26494"
         ],
         "related": [
@@ -4762,19 +5503,19 @@
             "reason": "same topic; shared L1; terms: attack, injection, tool"
           },
           {
-            "id": "arxiv:2603.16586",
-            "title": "Runtime Governance / Policies on Paths",
-            "reason": "same topic; shared L1; terms: audit, execution"
+            "id": "doi-org:exploring-agentic-ai-in-healthcare-a-stu",
+            "title": "Exploring Agentic AI in Healthcare: A Study on Its Working Mechanism",
+            "reason": "same topic; shared L1; terms: runtime-level"
+          },
+          {
+            "id": "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
+            "title": "Agentic AI: a comprehensive survey of architectures, applications, and future directions",
+            "reason": "same topic; shared L1; terms: runtime-level"
           },
           {
             "id": "arxiv:2406.12934",
             "title": "Current State of LLM Risks and AI Guardrails",
             "reason": "same topic; shared L1; terms: guardrails"
-          },
-          {
-            "id": "arxiv:2603.18829",
-            "title": "Admission Control for Agent Actions (ACP)",
-            "reason": "same topic; shared L1; terms: execution"
           },
           {
             "id": "arxiv:2606.26494",
@@ -4797,11 +5538,16 @@
         "links": [
           "topic:evaluation",
           "layer:2",
+          "doi-org:a-survey-on-evaluation-of-large-language",
           "arxiv:2604.08523",
-          "arxiv:2604.11174",
-          "ieee:reprobe-audit"
+          "arxiv:2604.11174"
         ],
         "related": [
+          {
+            "id": "doi-org:a-survey-on-evaluation-of-large-language",
+            "title": "A Survey on Evaluation of Large Language Models",
+            "reason": "same topic; shared L2; terms: behavioral-level"
+          },
           {
             "id": "arxiv:2604.08523",
             "title": "ClawBench \u2014 Real-World Web Agent Benchmark",
@@ -4810,11 +5556,6 @@
           {
             "id": "arxiv:2604.11174",
             "title": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems",
-            "reason": "same topic; shared L2; terms: audit, behavioral-level, benchmark"
-          },
-          {
-            "id": "ieee:reprobe-audit",
-            "title": "reprobe-audit \u2014 An Open Scoring Schema for LLM Agent Benchmark Disclosure",
             "reason": "same topic; shared L2; terms: audit, behavioral-level, benchmark"
           }
         ],
@@ -4913,26 +5654,26 @@
         "links": [
           "topic:specification",
           "layer:0",
-          "arxiv:2604.24026",
-          "arxiv:2605.27955",
-          "arxiv:2606.23768",
+          "doi-org:large-language-models-for-business-and-m",
+          "doi-org:unifying-large-language-models-and-knowl",
+          "doi-org:adaptive-multi-uav-cooperative-path-plan",
           "github:topics-skill-md"
         ],
         "related": [
           {
-            "id": "arxiv:2604.24026",
-            "title": "SSL Representation / Skill Text to Structure",
-            "reason": "same topic; shared L0"
+            "id": "doi-org:large-language-models-for-business-and-m",
+            "title": "Large language models for business and management applications: A review",
+            "reason": "same topic; shared L0; terms: spec-level"
           },
           {
-            "id": "arxiv:2605.27955",
-            "title": "Skill-as-Pseudocode (SaP)",
-            "reason": "same topic; shared L0"
+            "id": "doi-org:unifying-large-language-models-and-knowl",
+            "title": "Unifying Large Language Models and Knowledge Graphs: A Roadmap",
+            "reason": "same topic; shared L0; terms: spec-level"
           },
           {
-            "id": "arxiv:2606.23768",
-            "title": "Cryptographic certificates of validity for trustworthy AI",
-            "reason": "same topic; shared L0"
+            "id": "doi-org:adaptive-multi-uav-cooperative-path-plan",
+            "title": "Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields",
+            "reason": "same topic; shared L0; terms: spec-level"
           },
           {
             "id": "github:topics-skill-md",
@@ -5186,24 +5927,24 @@
         "links": [
           "topic:policy",
           "layer:2",
-          "arxiv:2604.19818",
-          "arxiv:2606.17591",
-          "arxiv:2606.20669"
+          "arxiv:2606.20669",
+          "doi-org:a-practical-framework-for-appropriate-im",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-tec"
         ],
         "related": [
           {
-            "id": "arxiv:2604.19818",
-            "title": "Evidence-Synthesis Framework",
-            "reason": "same topic; shared L2"
-          },
-          {
-            "id": "arxiv:2606.17591",
-            "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning",
-            "reason": "same topic; shared L2"
-          },
-          {
             "id": "arxiv:2606.20669",
             "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
+            "reason": "same topic; shared L2"
+          },
+          {
+            "id": "doi-org:a-practical-framework-for-appropriate-im",
+            "title": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare",
+            "reason": "same topic; shared L2"
+          },
+          {
+            "id": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+            "title": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications",
             "reason": "same topic; shared L2"
           }
         ],
@@ -5355,7 +6096,7 @@
           "topic:evaluation",
           "layer:2",
           "arxiv:2603.02601",
-          "arxiv:2603.25747",
+          "doi-org:a-survey-on-evaluation-of-large-language",
           "github:qualixar-agentassay",
           "arxiv:2606.03024"
         ],
@@ -5366,8 +6107,8 @@
             "reason": "same topic; shared L2"
           },
           {
-            "id": "arxiv:2603.25747",
-            "title": "BeSafe-Bench (BSB)",
+            "id": "doi-org:a-survey-on-evaluation-of-large-language",
+            "title": "A Survey on Evaluation of Large Language Models",
             "reason": "same topic; shared L2"
           },
           {
@@ -5758,12 +6499,16 @@
         "links": [
           "topic:policy",
           "layer:2",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
           "arxiv:2605.02709",
-          "arxiv:2606.28791",
-          "arxiv:2606.20669",
-          "confident-ai:deep-team"
+          "arxiv:2606.28791"
         ],
         "related": [
+          {
+            "id": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+            "title": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications",
+            "reason": "same topic; shared L2; terms: agentic"
+          },
           {
             "id": "arxiv:2605.02709",
             "title": "Healthcare Skills",
@@ -5773,16 +6518,6 @@
             "id": "arxiv:2606.28791",
             "title": "From Determinism to Delegation: AI-Native Software Engineering and the Evolution of the Agentic Engineer",
             "reason": "same topic; shared L2; terms: agentic"
-          },
-          {
-            "id": "arxiv:2606.20669",
-            "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
-            "reason": "same topic; shared L2"
-          },
-          {
-            "id": "confident-ai:deep-team",
-            "title": "DeepTeam by Confident AI",
-            "reason": "same topic; shared L2"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -5800,14 +6535,18 @@
         "links": [
           "topic:evaluation",
           "layer:2",
+          "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
           "arxiv:2603.25747",
           "arxiv:2604.08523",
-          "arxiv:2604.11174",
           "github:agent-security-harness",
-          "arxiv:2605.12015",
-          "arxiv:2606.15899"
+          "arxiv:2605.12015"
         ],
         "related": [
+          {
+            "id": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+            "title": "The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges",
+            "reason": "same topic; shared L2; terms: agentic"
+          },
           {
             "id": "arxiv:2603.25747",
             "title": "BeSafe-Bench (BSB)",
@@ -5819,11 +6558,6 @@
             "reason": "same topic; shared L2; terms: benchmark"
           },
           {
-            "id": "arxiv:2604.11174",
-            "title": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems",
-            "reason": "same topic; shared L2; terms: benchmark"
-          },
-          {
             "id": "github:agent-security-harness",
             "title": "Agent Security Harness \u2014 474-Test Security Scanner for AI Agents",
             "reason": "same topic; shared L2; terms: data, security, test"
@@ -5832,11 +6566,6 @@
             "id": "arxiv:2605.12015",
             "title": "SkillSafetyBench",
             "reason": "same topic; shared L2; terms: benchmark, security"
-          },
-          {
-            "id": "arxiv:2606.15899",
-            "title": "SkillVetBench \u2014 LLM-as-Judge Security Evaluation for Agent Skills",
-            "reason": "same topic; shared L2; terms: data, security"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -5890,6 +6619,7 @@
         "links": [
           "topic:policy",
           "layer:2",
+          "doi-org:a-practical-framework-for-appropriate-im",
           "arxiv:2604.19818",
           "arxiv:2606.09365",
           "arxiv:2606.17591",
@@ -5897,6 +6627,11 @@
           "arxiv:2606.28791"
         ],
         "related": [
+          {
+            "id": "doi-org:a-practical-framework-for-appropriate-im",
+            "title": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare",
+            "reason": "same topic; shared L2; terms: healthcare"
+          },
           {
             "id": "arxiv:2604.19818",
             "title": "Evidence-Synthesis Framework",
@@ -6216,6 +6951,7 @@
           "layer:0",
           "arxiv:2602.12430",
           "github:varun369-skillfortify",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
           "developer-nvidia-com:nvidia-verified-agent-skills-skillspecto",
           "arxiv:2604.18652"
         ],
@@ -6229,6 +6965,11 @@
             "id": "github:varun369-skillfortify",
             "title": "SkillFortify (Open Source)",
             "reason": "same topic; shared L0; terms: capability, open"
+          },
+          {
+            "id": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+            "title": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications",
+            "reason": "same topic; terms: applications, comprehensive, survey"
           },
           {
             "id": "developer-nvidia-com:nvidia-verified-agent-skills-skillspecto",
@@ -6301,10 +7042,7 @@
           "github:topics-agent-control-protocol",
           "arxiv:2603.16586",
           "mitre:atlas-agentic",
-          "arxiv:2603.07191",
           "arxiv:2604.05485",
-          "arxiv:2406.12934",
-          "arxiv:2606.26494",
           "arxiv:2605.27690"
         ],
         "related": [
@@ -6324,24 +7062,9 @@
             "reason": "same topic; shared L1; terms: autonomous, boundary, detection"
           },
           {
-            "id": "arxiv:2603.07191",
-            "title": "Layered Governance Architecture (LGA)",
-            "reason": "same topic; shared L1; terms: execution"
-          },
-          {
             "id": "arxiv:2604.05485",
             "title": "Auditable Agents",
             "reason": "same topic; shared L1; terms: enforcing"
-          },
-          {
-            "id": "arxiv:2406.12934",
-            "title": "Current State of LLM Risks and AI Guardrails",
-            "reason": "same topic; shared L1"
-          },
-          {
-            "id": "arxiv:2606.26494",
-            "title": "Clinical Harness for Governable Medical AI Skill Ecosystems",
-            "reason": "same topic; shared L1"
           },
           {
             "id": "arxiv:2605.27690",
@@ -6498,8 +7221,8 @@
           "layer:2",
           "arxiv:2603.02601",
           "ieee:reprobe-audit",
-          "arxiv:2603.25747",
-          "arxiv:2605.11891"
+          "arxiv:2605.11891",
+          "doi-org:a-survey-on-evaluation-of-large-language"
         ],
         "related": [
           {
@@ -6513,13 +7236,13 @@
             "reason": "same topic; shared L2; terms: open"
           },
           {
-            "id": "arxiv:2603.25747",
-            "title": "BeSafe-Bench (BSB)",
+            "id": "arxiv:2605.11891",
+            "title": "Proteus",
             "reason": "same topic; shared L2"
           },
           {
-            "id": "arxiv:2605.11891",
-            "title": "Proteus",
+            "id": "doi-org:a-survey-on-evaluation-of-large-language",
+            "title": "A Survey on Evaluation of Large Language Models",
             "reason": "same topic; shared L2"
           }
         ],
@@ -7061,8 +7784,7 @@
           "layer:1",
           "arxiv:2603.18829",
           "arxiv:2605.16198",
-          "github:topics-agent-control-protocol",
-          "arxiv:2603.07191"
+          "github:topics-agent-control-protocol"
         ],
         "related": [
           {
@@ -7079,11 +7801,6 @@
             "id": "github:topics-agent-control-protocol",
             "title": "Agent Control Protocol (ACP)",
             "reason": "same topic; shared L1; terms: compliance, formal"
-          },
-          {
-            "id": "arxiv:2603.07191",
-            "title": "Layered Governance Architecture (LGA)",
-            "reason": "same topic; shared L1; terms: audit, execution"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -7139,8 +7856,7 @@
           "layer:0",
           "arxiv:2605.27955",
           "arxiv:2606.06893",
-          "arxiv:2604.16911",
-          "arxiv:2606.23768"
+          "doi-org:adaptive-multi-uav-cooperative-path-plan"
         ],
         "related": [
           {
@@ -7154,13 +7870,8 @@
             "reason": "same topic; shared L0; terms: representation"
           },
           {
-            "id": "arxiv:2604.16911",
-            "title": "Skilldex",
-            "reason": "same topic; shared L0"
-          },
-          {
-            "id": "arxiv:2606.23768",
-            "title": "Cryptographic certificates of validity for trustworthy AI",
+            "id": "doi-org:adaptive-multi-uav-cooperative-path-plan",
+            "title": "Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields",
             "reason": "same topic; shared L0"
           }
         ],
@@ -7389,7 +8100,7 @@
           "arxiv:2604.17612",
           "preprints-org:agentverify",
           "arxiv:2605.10052",
-          "arxiv:2602.11510"
+          "doi-org:multi-agent-ai"
         ],
         "related": [
           {
@@ -7408,9 +8119,9 @@
             "reason": "same topic; shared L0"
           },
           {
-            "id": "arxiv:2602.11510",
-            "title": "AgentLeak \u2014 Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems",
-            "reason": "same topic; shared L1"
+            "id": "doi-org:multi-agent-ai",
+            "title": "Multi-agent AI",
+            "reason": "same topic; shared L0"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -7430,8 +8141,7 @@
           "layer:0",
           "arxiv:2604.24026",
           "arxiv:2606.06893",
-          "arxiv:2606.23768",
-          "arxiv:2604.16911"
+          "arxiv:2606.23768"
         ],
         "related": [
           {
@@ -7448,11 +8158,6 @@
             "id": "arxiv:2606.23768",
             "title": "Cryptographic certificates of validity for trustworthy AI",
             "reason": "same topic; shared L0; terms: between"
-          },
-          {
-            "id": "arxiv:2604.16911",
-            "title": "Skilldex",
-            "reason": "same topic; shared L0"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -7674,11 +8379,11 @@
           "topic:evaluation",
           "layer:2",
           "arxiv:2603.25747",
+          "doi-org:a-survey-on-evaluation-of-large-language",
+          "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
           "arxiv:2604.11806",
-          "ieee:reprobe-audit",
           "arxiv:2603.02601",
-          "arxiv:2606.14502",
-          "techtimes-com:finbot-agentic-ai-ctf"
+          "arxiv:2606.14502"
         ],
         "related": [
           {
@@ -7687,13 +8392,18 @@
             "reason": "same topic; shared L2; terms: benchmark, completion, embodied"
           },
           {
-            "id": "arxiv:2604.11806",
-            "title": "Meerkat \u2014 Detecting Safety Violations Across Many Agent Traces",
-            "reason": "same topic; shared L2; terms: audit, behavioral-level, benchmark"
+            "id": "doi-org:a-survey-on-evaluation-of-large-language",
+            "title": "A Survey on Evaluation of Large Language Models",
+            "reason": "same topic; shared L2; terms: behavioral-level"
           },
           {
-            "id": "ieee:reprobe-audit",
-            "title": "reprobe-audit \u2014 An Open Scoring Schema for LLM Agent Benchmark Disclosure",
+            "id": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+            "title": "The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges",
+            "reason": "same topic; shared L2; terms: behavioral-level, metrics"
+          },
+          {
+            "id": "arxiv:2604.11806",
+            "title": "Meerkat \u2014 Detecting Safety Violations Across Many Agent Traces",
             "reason": "same topic; shared L2; terms: audit, behavioral-level, benchmark"
           },
           {
@@ -7705,11 +8415,6 @@
             "id": "arxiv:2606.14502",
             "title": "From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI",
             "reason": "same topic; shared L2; terms: auditable, task"
-          },
-          {
-            "id": "techtimes-com:finbot-agentic-ai-ctf",
-            "title": "FinBot Agentic AI CTF",
-            "reason": "same topic; shared L2; terms: benchmark"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -7730,6 +8435,7 @@
           "arxiv:2603.07191",
           "arxiv:2603.18829",
           "arxiv:2605.17380",
+          "doi-org:exploring-agentic-ai-in-healthcare-a-stu",
           "arxiv:2604.07536"
         ],
         "related": [
@@ -7747,6 +8453,11 @@
             "id": "arxiv:2605.17380",
             "title": "ADR",
             "reason": "shared L1; terms: agentic, detection"
+          },
+          {
+            "id": "doi-org:exploring-agentic-ai-in-healthcare-a-stu",
+            "title": "Exploring Agentic AI in Healthcare: A Study on Its Working Mechanism",
+            "reason": "same topic; shared L1; terms: agentic"
           },
           {
             "id": "arxiv:2604.07536",
@@ -7769,9 +8480,9 @@
         "links": [
           "topic:evaluation",
           "layer:2",
+          "doi-org:a-survey-on-evaluation-of-large-language",
+          "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
           "arxiv:2603.25747",
-          "arxiv:2604.11174",
-          "arxiv:2604.11806",
           "arxiv:2605.16282",
           "arxiv:2604.08523",
           "arxiv:2606.05405",
@@ -7780,19 +8491,19 @@
         ],
         "related": [
           {
+            "id": "doi-org:a-survey-on-evaluation-of-large-language",
+            "title": "A Survey on Evaluation of Large Language Models",
+            "reason": "same topic; shared L2; terms: behavioral-level, score"
+          },
+          {
+            "id": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+            "title": "The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges",
+            "reason": "same topic; shared L2; terms: behavioral-level, score"
+          },
+          {
             "id": "arxiv:2603.25747",
             "title": "BeSafe-Bench (BSB)",
             "reason": "same topic; shared L2; terms: benchmark, most, provides"
-          },
-          {
-            "id": "arxiv:2604.11174",
-            "title": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems",
-            "reason": "same topic; shared L2; terms: audit, behavioral-level, benchmark"
-          },
-          {
-            "id": "arxiv:2604.11806",
-            "title": "Meerkat \u2014 Detecting Safety Violations Across Many Agent Traces",
-            "reason": "same topic; shared L2; terms: audit, behavioral-level, benchmark"
           },
           {
             "id": "arxiv:2605.16282",
@@ -7875,7 +8586,7 @@
           "layer:1",
           "arxiv:2605.03159",
           "arxiv:2605.22634",
-          "arxiv:2606.06893"
+          "doi-org:unifying-large-language-models-and-knowl"
         ],
         "related": [
           {
@@ -7889,9 +8600,9 @@
             "reason": "same topic; shared L0/L1; terms: execution"
           },
           {
-            "id": "arxiv:2606.06893",
-            "title": "W2S \u2014 Workflow-to-Skill: Automatic Skill Construction from Traces",
-            "reason": "same topic; shared L0; terms: creation, execution"
+            "id": "doi-org:unifying-large-language-models-and-knowl",
+            "title": "Unifying Large Language Models and Knowledge Graphs: A Roadmap",
+            "reason": "same topic; shared L0; terms: graphs"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -8033,8 +8744,8 @@
           "layer:0",
           "layer:2",
           "arxiv:2605.12015",
-          "github:agent-security-harness",
-          "techtimes-com:finbot-agentic-ai-ctf"
+          "doi-org:a-survey-on-evaluation-of-large-language",
+          "github:agent-security-harness"
         ],
         "related": [
           {
@@ -8043,14 +8754,14 @@
             "reason": "same topic; shared L0/L2; terms: first, security"
           },
           {
+            "id": "doi-org:a-survey-on-evaluation-of-large-language",
+            "title": "A Survey on Evaluation of Large Language Models",
+            "reason": "same topic; shared L2; terms: score"
+          },
+          {
             "id": "github:agent-security-harness",
             "title": "Agent Security Harness \u2014 474-Test Security Scanner for AI Agents",
             "reason": "same topic; shared L0/L2; terms: data, security, tool"
-          },
-          {
-            "id": "techtimes-com:finbot-agentic-ai-ctf",
-            "title": "FinBot Agentic AI CTF",
-            "reason": "same topic; shared L2; terms: data, security"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -8068,12 +8779,16 @@
         "links": [
           "topic:specification",
           "layer:0",
+          "doi-org:large-language-models-for-business-and-m",
           "arxiv:2604.24026",
-          "arxiv:2605.27955",
-          "arxiv:2606.23768",
-          "arxiv:2606.04781"
+          "arxiv:2605.27955"
         ],
         "related": [
+          {
+            "id": "doi-org:large-language-models-for-business-and-m",
+            "title": "Large language models for business and management applications: A review",
+            "reason": "same topic; shared L0; terms: management"
+          },
           {
             "id": "arxiv:2604.24026",
             "title": "SSL Representation / Skill Text to Structure",
@@ -8083,16 +8798,6 @@
             "id": "arxiv:2605.27955",
             "title": "Skill-as-Pseudocode (SaP)",
             "reason": "same topic; shared L0; terms: execution"
-          },
-          {
-            "id": "arxiv:2606.23768",
-            "title": "Cryptographic certificates of validity for trustworthy AI",
-            "reason": "same topic; shared L0"
-          },
-          {
-            "id": "arxiv:2606.04781",
-            "title": "AIP \u2014 Agent Instruction Protocol for Structured Skill Graphs",
-            "reason": "same topic; shared L0; terms: creation, execution"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -8197,6 +8902,7 @@
           "topic:policy",
           "layer:1",
           "layer:2",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
           "ai-journal-com:agent-evaluation-guide-quality-focused-f",
           "arxiv:2605.12078",
           "arxiv:2605.26112",
@@ -8205,6 +8911,11 @@
           "arxiv:2604.18652"
         ],
         "related": [
+          {
+            "id": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+            "title": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications",
+            "reason": "same topic; shared L2; terms: agentic, comprehensive, survey"
+          },
           {
             "id": "ai-journal-com:agent-evaluation-guide-quality-focused-f",
             "title": "Agent Evaluation Guide (Quality-Focused Frameworks)",
@@ -8252,8 +8963,8 @@
           "topic:runtime",
           "layer:1",
           "arxiv:2605.16198",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
           "arxiv:2603.07191",
-          "arxiv:2603.18829",
           "arxiv:2605.27690"
         ],
         "related": [
@@ -8263,14 +8974,14 @@
             "reason": "same topic; shared L1; terms: intervention, monitoring, provides"
           },
           {
+            "id": "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
+            "title": "Agentic AI: a comprehensive survey of architectures, applications, and future directions",
+            "reason": "same topic; shared L1; terms: survey"
+          },
+          {
             "id": "arxiv:2603.07191",
             "title": "Layered Governance Architecture (LGA)",
             "reason": "same topic; shared L1; terms: guardrails"
-          },
-          {
-            "id": "arxiv:2603.18829",
-            "title": "Admission Control for Agent Actions (ACP)",
-            "reason": "same topic; shared L1"
           },
           {
             "id": "arxiv:2605.27690",
@@ -8379,11 +9090,16 @@
         "links": [
           "topic:coordination",
           "layer:0",
+          "doi-org:multi-agent-ai",
           "arxiv:2604.17612",
-          "arxiv:2606.00448",
-          "arxiv:2602.11510"
+          "arxiv:2606.00448"
         ],
         "related": [
+          {
+            "id": "doi-org:multi-agent-ai",
+            "title": "Multi-agent AI",
+            "reason": "same topic; shared L0; terms: multi-agent"
+          },
           {
             "id": "arxiv:2604.17612",
             "title": "ZipperGen / Provable Coordination for LLM Agents via MSCs",
@@ -8393,11 +9109,6 @@
             "id": "arxiv:2606.00448",
             "title": "Measuring Compositional Risk",
             "reason": "same topic; shared L0"
-          },
-          {
-            "id": "arxiv:2602.11510",
-            "title": "AgentLeak \u2014 Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems",
-            "reason": "same topic; terms: multi-agent"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -8417,10 +9128,8 @@
           "layer:2",
           "arxiv:2606.09365",
           "arxiv:2605.02709",
-          "arxiv:2604.19818",
-          "arxiv:2606.17591",
-          "arxiv:2606.28791",
-          "confident-ai:deep-team"
+          "confident-ai:deep-team",
+          "doi-org:a-practical-framework-for-appropriate-im"
         ],
         "related": [
           {
@@ -8434,23 +9143,13 @@
             "reason": "same topic; shared L2; terms: autonomy"
           },
           {
-            "id": "arxiv:2604.19818",
-            "title": "Evidence-Synthesis Framework",
-            "reason": "same topic; shared L2"
-          },
-          {
-            "id": "arxiv:2606.17591",
-            "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning",
-            "reason": "same topic; shared L2"
-          },
-          {
-            "id": "arxiv:2606.28791",
-            "title": "From Determinism to Delegation: AI-Native Software Engineering and the Evolution of the Agentic Engineer",
-            "reason": "same topic; shared L2"
-          },
-          {
             "id": "confident-ai:deep-team",
             "title": "DeepTeam by Confident AI",
+            "reason": "same topic; shared L2"
+          },
+          {
+            "id": "doi-org:a-practical-framework-for-appropriate-im",
+            "title": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare",
             "reason": "same topic; shared L2"
           }
         ],
@@ -8469,11 +9168,16 @@
         "links": [
           "topic:runtime",
           "layer:1",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
           "arxiv:2604.05485",
-          "arxiv:2603.07191",
-          "arxiv:2603.18829"
+          "arxiv:2603.07191"
         ],
         "related": [
+          {
+            "id": "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
+            "title": "Agentic AI: a comprehensive survey of architectures, applications, and future directions",
+            "reason": "same topic; shared L1; terms: future"
+          },
           {
             "id": "arxiv:2604.05485",
             "title": "Auditable Agents",
@@ -8483,11 +9187,6 @@
             "id": "arxiv:2603.07191",
             "title": "Layered Governance Architecture (LGA)",
             "reason": "same topic; shared L1; terms: architecture"
-          },
-          {
-            "id": "arxiv:2603.18829",
-            "title": "Admission Control for Agent Actions (ACP)",
-            "reason": "same topic; shared L1"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -8507,8 +9206,7 @@
           "layer:2",
           "arxiv:2605.02709",
           "arxiv:2606.09365",
-          "arxiv:2606.20669",
-          "confident-ai:deep-team"
+          "doi-org:a-practical-framework-for-appropriate-im"
         ],
         "related": [
           {
@@ -8522,13 +9220,8 @@
             "reason": "same topic; shared L2; terms: experience"
           },
           {
-            "id": "arxiv:2606.20669",
-            "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
-            "reason": "same topic; shared L2"
-          },
-          {
-            "id": "confident-ai:deep-team",
-            "title": "DeepTeam by Confident AI",
+            "id": "doi-org:a-practical-framework-for-appropriate-im",
+            "title": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare",
             "reason": "same topic; shared L2"
           }
         ],
@@ -8547,31 +9240,25 @@
         "links": [
           "topic:specification",
           "layer:0",
+          "doi-org:exploring-the-role-of-agentic-ai-in-fost",
           "arxiv:2605.27955",
-          "arxiv:2604.16911",
-          "arxiv:2604.24026",
-          "arxiv:2606.06893",
+          "doi-org:adaptive-multi-uav-cooperative-path-plan",
           "github:topics-skill-md"
         ],
         "related": [
+          {
+            "id": "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+            "title": "Exploring the role of agentic AI in fostering self-efficacy, autonomy support, and self-learning motivation in higher education",
+            "reason": "same topic; shared L0; terms: agentic"
+          },
           {
             "id": "arxiv:2605.27955",
             "title": "Skill-as-Pseudocode (SaP)",
             "reason": "same topic; shared L0; terms: between"
           },
           {
-            "id": "arxiv:2604.16911",
-            "title": "Skilldex",
-            "reason": "same topic; shared L0"
-          },
-          {
-            "id": "arxiv:2604.24026",
-            "title": "SSL Representation / Skill Text to Structure",
-            "reason": "same topic; shared L0"
-          },
-          {
-            "id": "arxiv:2606.06893",
-            "title": "W2S \u2014 Workflow-to-Skill: Automatic Skill Construction from Traces",
+            "id": "doi-org:adaptive-multi-uav-cooperative-path-plan",
+            "title": "Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields",
             "reason": "same topic; shared L0"
           },
           {
@@ -8703,12 +9390,17 @@
         "links": [
           "topic:policy",
           "layer:2",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
           "arxiv:2604.19818",
           "arxiv:2605.02709",
-          "arxiv:2606.20669",
           "arxiv:2604.20805"
         ],
         "related": [
+          {
+            "id": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+            "title": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications",
+            "reason": "same topic; shared L2; terms: agentic"
+          },
           {
             "id": "arxiv:2604.19818",
             "title": "Evidence-Synthesis Framework",
@@ -8718,11 +9410,6 @@
             "id": "arxiv:2605.02709",
             "title": "Healthcare Skills",
             "reason": "same topic; shared L2; terms: frameworks"
-          },
-          {
-            "id": "arxiv:2606.20669",
-            "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
-            "reason": "same topic; shared L2"
           },
           {
             "id": "arxiv:2604.20805",
@@ -8800,6 +9487,828 @@
             "id": "arxiv:2603.24775",
             "title": "AIP / Agent Identity Protocol",
             "reason": "same topic; terms: identity"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:a-practical-framework-for-appropriate-im",
+        "type": "paper",
+        "title": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare",
+        "subtitle": "Policy & governance landscape \u00b7 Layer 2",
+        "body": "2025. Score=5.37, Citations=46.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.1038/s41746-025-01900-y",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:policy",
+          "layer:2",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+          "doi-org:a-survey-on-evaluation-of-large-language",
+          "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+          "arxiv:2605.02709",
+          "arxiv:2606.17591",
+          "arxiv:2606.20669",
+          "confident-ai:deep-team"
+        ],
+        "related": [
+          {
+            "id": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+            "title": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications",
+            "reason": "same topic; shared L2; terms: behavioral-level, citations, score"
+          },
+          {
+            "id": "doi-org:a-survey-on-evaluation-of-large-language",
+            "title": "A Survey on Evaluation of Large Language Models",
+            "reason": "shared L2; terms: behavioral-level, citations, score"
+          },
+          {
+            "id": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+            "title": "Ethical perspectives on AI Agents and Agentic AI",
+            "reason": "shared L2; terms: behavioral-level, citations, score"
+          },
+          {
+            "id": "arxiv:2605.02709",
+            "title": "Healthcare Skills",
+            "reason": "same topic; shared L2; terms: healthcare"
+          },
+          {
+            "id": "arxiv:2606.17591",
+            "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning",
+            "reason": "same topic; shared L2"
+          },
+          {
+            "id": "arxiv:2606.20669",
+            "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
+            "reason": "same topic; shared L2"
+          },
+          {
+            "id": "confident-ai:deep-team",
+            "title": "DeepTeam by Confident AI",
+            "reason": "same topic; shared L2"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:a-research-landscape-of-agentic-ai-and-l",
+        "type": "paper",
+        "title": "A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions",
+        "subtitle": "Specification & validation \u00b7 Layer 2",
+        "body": "2025. Score=5.22, Citations=32.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.3390/a18080499",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:specification",
+          "layer:2",
+          "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+          "doi-org:toward-expert-level-medical-question-ans",
+          "doi-org:a-survey-on-evaluation-of-large-language",
+          "doi-org:the-rise-of-agentic-ai-a-review-of-defin"
+        ],
+        "related": [
+          {
+            "id": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+            "title": "Ethical perspectives on AI Agents and Agentic AI",
+            "reason": "same topic; shared L2; terms: agentic, behavioral-level, citations"
+          },
+          {
+            "id": "doi-org:toward-expert-level-medical-question-ans",
+            "title": "Toward expert-level medical question answering with large language models",
+            "reason": "same topic; shared L2; terms: behavioral-level, citations, language"
+          },
+          {
+            "id": "doi-org:a-survey-on-evaluation-of-large-language",
+            "title": "A Survey on Evaluation of Large Language Models",
+            "reason": "shared L2; terms: behavioral-level, citations, language"
+          },
+          {
+            "id": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+            "title": "The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges",
+            "reason": "shared L2; terms: agentic, applications, behavioral-level"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:a-survey-on-evaluation-of-large-language",
+        "type": "paper",
+        "title": "A Survey on Evaluation of Large Language Models",
+        "subtitle": "Evaluation & benchmarks \u00b7 Layer 2",
+        "body": "2024. Score=5.60, Citations=2489.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.1145/3641289",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:evaluation",
+          "layer:2",
+          "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+          "doi-org:a-research-landscape-of-agentic-ai-and-l",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+          "doi-org:toward-expert-level-medical-question-ans",
+          "ieee:reprobe-audit",
+          "doi-org:a-practical-framework-for-appropriate-im",
+          "doi-org:an-adaptive-multi-agent-architecture-wit",
+          "arxiv:2604.11174",
+          "arxiv:2604.11806",
+          "arxiv:2606.15899",
+          "arxiv:2605.11891",
+          "github:qualixar-agentassay"
+        ],
+        "related": [
+          {
+            "id": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+            "title": "The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges",
+            "reason": "same topic; shared L2; terms: behavioral-level, citations, score"
+          },
+          {
+            "id": "doi-org:a-research-landscape-of-agentic-ai-and-l",
+            "title": "A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions",
+            "reason": "shared L2; terms: behavioral-level, citations, language"
+          },
+          {
+            "id": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+            "title": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications",
+            "reason": "shared L2; terms: behavioral-level, citations, score"
+          },
+          {
+            "id": "doi-org:toward-expert-level-medical-question-ans",
+            "title": "Toward expert-level medical question answering with large language models",
+            "reason": "shared L2; terms: behavioral-level, citations, language"
+          },
+          {
+            "id": "ieee:reprobe-audit",
+            "title": "reprobe-audit \u2014 An Open Scoring Schema for LLM Agent Benchmark Disclosure",
+            "reason": "same topic; shared L2; terms: behavioral-level, score"
+          },
+          {
+            "id": "doi-org:a-practical-framework-for-appropriate-im",
+            "title": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare",
+            "reason": "shared L2; terms: behavioral-level, citations, score"
+          },
+          {
+            "id": "doi-org:an-adaptive-multi-agent-architecture-wit",
+            "title": "An Adaptive Multi-Agent Architecture with Reinforcement Learning and Generative AI for Intelligent Tutoring Systems: A Moodle-Based Case Study",
+            "reason": "shared L2; terms: behavioral-level, citations, score"
+          },
+          {
+            "id": "arxiv:2604.11174",
+            "title": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems",
+            "reason": "same topic; shared L2; terms: behavioral-level"
+          },
+          {
+            "id": "arxiv:2604.11806",
+            "title": "Meerkat \u2014 Detecting Safety Violations Across Many Agent Traces",
+            "reason": "same topic; shared L2; terms: behavioral-level"
+          },
+          {
+            "id": "arxiv:2606.15899",
+            "title": "SkillVetBench \u2014 LLM-as-Judge Security Evaluation for Agent Skills",
+            "reason": "same topic; shared L2; terms: score"
+          },
+          {
+            "id": "arxiv:2605.11891",
+            "title": "Proteus",
+            "reason": "same topic; shared L2"
+          },
+          {
+            "id": "github:qualixar-agentassay",
+            "title": "AgentAssay (Open Source)",
+            "reason": "same topic; shared L2"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:adaptive-multi-uav-cooperative-path-plan",
+        "type": "paper",
+        "title": "Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields",
+        "subtitle": "Specification & validation \u00b7 Layer 0",
+        "body": "2025. Score=5.02, Citations=20.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.1016/j.knosys.2025.113429",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:specification",
+          "layer:0",
+          "doi-org:large-language-models-for-business-and-m",
+          "doi-org:unifying-large-language-models-and-knowl",
+          "doi-org:multi-agent-ai",
+          "arxiv:2604.16911",
+          "arxiv:2604.24026",
+          "arxiv:2606.23768"
+        ],
+        "related": [
+          {
+            "id": "doi-org:large-language-models-for-business-and-m",
+            "title": "Large language models for business and management applications: A review",
+            "reason": "same topic; shared L0; terms: citations, score, spec-level"
+          },
+          {
+            "id": "doi-org:unifying-large-language-models-and-knowl",
+            "title": "Unifying Large Language Models and Knowledge Graphs: A Roadmap",
+            "reason": "same topic; shared L0; terms: citations, score, spec-level"
+          },
+          {
+            "id": "doi-org:multi-agent-ai",
+            "title": "Multi-agent AI",
+            "reason": "shared L0; terms: citations, score, spec-level"
+          },
+          {
+            "id": "arxiv:2604.16911",
+            "title": "Skilldex",
+            "reason": "same topic; shared L0; terms: spec-level"
+          },
+          {
+            "id": "arxiv:2604.24026",
+            "title": "SSL Representation / Skill Text to Structure",
+            "reason": "same topic; shared L0"
+          },
+          {
+            "id": "arxiv:2606.23768",
+            "title": "Cryptographic certificates of validity for trustworthy AI",
+            "reason": "same topic; shared L0"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
+        "type": "paper",
+        "title": "Agentic AI: a comprehensive survey of architectures, applications, and future directions",
+        "subtitle": "Runtime enforcement \u00b7 Layer 1",
+        "body": "2025. Score=5.47, Citations=58.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.1007/s10462-025-11422-4",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:runtime",
+          "layer:1",
+          "doi-org:exploring-agentic-ai-in-healthcare-a-stu",
+          "arxiv:2406.12934",
+          "arxiv:2603.07191",
+          "arxiv:2606.26494"
+        ],
+        "related": [
+          {
+            "id": "doi-org:exploring-agentic-ai-in-healthcare-a-stu",
+            "title": "Exploring Agentic AI in Healthcare: A Study on Its Working Mechanism",
+            "reason": "same topic; shared L1; terms: agentic, citations, runtime-level"
+          },
+          {
+            "id": "arxiv:2406.12934",
+            "title": "Current State of LLM Risks and AI Guardrails",
+            "reason": "same topic; shared L1; terms: survey"
+          },
+          {
+            "id": "arxiv:2603.07191",
+            "title": "Layered Governance Architecture (LGA)",
+            "reason": "same topic; shared L1; terms: runtime-level"
+          },
+          {
+            "id": "arxiv:2606.26494",
+            "title": "Clinical Harness for Governable Medical AI Skill Ecosystems",
+            "reason": "same topic; shared L1; terms: future"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+        "type": "paper",
+        "title": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications",
+        "subtitle": "Policy & governance landscape \u00b7 Layer 2",
+        "body": "2025. Score=5.30, Citations=39.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.1109/access.2025.3585609",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:policy",
+          "layer:2",
+          "doi-org:a-survey-on-evaluation-of-large-language",
+          "doi-org:a-practical-framework-for-appropriate-im",
+          "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+          "doi-org:agentic-ai-autonomous-intelligence-for-c",
+          "arxiv:2604.19818",
+          "arxiv:2606.28791",
+          "confident-ai:deep-team",
+          "arxiv:2605.07358"
+        ],
+        "related": [
+          {
+            "id": "doi-org:a-survey-on-evaluation-of-large-language",
+            "title": "A Survey on Evaluation of Large Language Models",
+            "reason": "shared L2; terms: behavioral-level, citations, score"
+          },
+          {
+            "id": "doi-org:a-practical-framework-for-appropriate-im",
+            "title": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare",
+            "reason": "same topic; shared L2; terms: behavioral-level, citations, score"
+          },
+          {
+            "id": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+            "title": "Ethical perspectives on AI Agents and Agentic AI",
+            "reason": "shared L2; terms: agentic, behavioral-level, citations"
+          },
+          {
+            "id": "doi-org:agentic-ai-autonomous-intelligence-for-c",
+            "title": "Agentic AI: Autonomous Intelligence for Complex Goals\u2014A Comprehensive Survey",
+            "reason": "same topic; shared L2; terms: agentic, comprehensive, survey"
+          },
+          {
+            "id": "arxiv:2604.19818",
+            "title": "Evidence-Synthesis Framework",
+            "reason": "same topic; shared L2; terms: agentic"
+          },
+          {
+            "id": "arxiv:2606.28791",
+            "title": "From Determinism to Delegation: AI-Native Software Engineering and the Evolution of the Agentic Engineer",
+            "reason": "same topic; shared L2; terms: agentic"
+          },
+          {
+            "id": "confident-ai:deep-team",
+            "title": "DeepTeam by Confident AI",
+            "reason": "same topic; shared L2"
+          },
+          {
+            "id": "arxiv:2605.07358",
+            "title": "A Comprehensive Survey on Agent Skills",
+            "reason": "same topic; terms: applications, comprehensive, survey"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:an-adaptive-multi-agent-architecture-wit",
+        "type": "paper",
+        "title": "An Adaptive Multi-Agent Architecture with Reinforcement Learning and Generative AI for Intelligent Tutoring Systems: A Moodle-Based Case Study",
+        "subtitle": "Coordination & composition \u00b7 Layer 2",
+        "body": "2026. Score=5.84, Citations=6.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.3390/app16031323",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:coordination",
+          "layer:2",
+          "doi-org:multi-agent-ai",
+          "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
+          "doi-org:a-survey-on-evaluation-of-large-language",
+          "arxiv:2602.11510"
+        ],
+        "related": [
+          {
+            "id": "doi-org:multi-agent-ai",
+            "title": "Multi-agent AI",
+            "reason": "same topic; terms: citations, multi-agent, score"
+          },
+          {
+            "id": "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
+            "title": "TRiSM for Agentic AI: A review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems",
+            "reason": "same topic; shared L2; terms: behavioral-level, citations, multi-agent"
+          },
+          {
+            "id": "doi-org:a-survey-on-evaluation-of-large-language",
+            "title": "A Survey on Evaluation of Large Language Models",
+            "reason": "shared L2; terms: behavioral-level, citations, score"
+          },
+          {
+            "id": "arxiv:2602.11510",
+            "title": "AgentLeak \u2014 Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems",
+            "reason": "same topic; shared L2; terms: multi-agent"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+        "type": "paper",
+        "title": "Ethical perspectives on AI Agents and Agentic AI",
+        "subtitle": "Specification & validation \u00b7 Layer 2",
+        "body": "2026. Score=5.60, Citations=3.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.1007/s43681-026-01027-0",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:specification",
+          "layer:2",
+          "doi-org:a-research-landscape-of-agentic-ai-and-l",
+          "doi-org:toward-expert-level-medical-question-ans",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+          "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+          "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
+          "doi-org:a-practical-framework-for-appropriate-im"
+        ],
+        "related": [
+          {
+            "id": "doi-org:a-research-landscape-of-agentic-ai-and-l",
+            "title": "A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions",
+            "reason": "same topic; shared L2; terms: agentic, behavioral-level, citations"
+          },
+          {
+            "id": "doi-org:toward-expert-level-medical-question-ans",
+            "title": "Toward expert-level medical question answering with large language models",
+            "reason": "same topic; shared L2; terms: behavioral-level, citations, score"
+          },
+          {
+            "id": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+            "title": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications",
+            "reason": "shared L2; terms: agentic, behavioral-level, citations"
+          },
+          {
+            "id": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+            "title": "The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges",
+            "reason": "shared L2; terms: agentic, behavioral-level, citations"
+          },
+          {
+            "id": "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
+            "title": "TRiSM for Agentic AI: A review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems",
+            "reason": "shared L2; terms: agentic, behavioral-level, citations"
+          },
+          {
+            "id": "doi-org:a-practical-framework-for-appropriate-im",
+            "title": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare",
+            "reason": "shared L2; terms: behavioral-level, citations, score"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:exploring-agentic-ai-in-healthcare-a-stu",
+        "type": "paper",
+        "title": "Exploring Agentic AI in Healthcare: A Study on Its Working Mechanism",
+        "subtitle": "Runtime enforcement \u00b7 Layer 1",
+        "body": "2026. Score=6.11, Citations=12.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.3389/fmed.2025.1753443",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:runtime",
+          "layer:1",
+          "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
+          "arxiv:2603.07191",
+          "mitre:atlas-agentic"
+        ],
+        "related": [
+          {
+            "id": "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
+            "title": "Agentic AI: a comprehensive survey of architectures, applications, and future directions",
+            "reason": "same topic; shared L1; terms: agentic, citations, runtime-level"
+          },
+          {
+            "id": "arxiv:2603.07191",
+            "title": "Layered Governance Architecture (LGA)",
+            "reason": "same topic; shared L1; terms: runtime-level"
+          },
+          {
+            "id": "mitre:atlas-agentic",
+            "title": "MITRE ATLAS agentic AI update",
+            "reason": "same topic; shared L1; terms: agentic"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+        "type": "paper",
+        "title": "Exploring the role of agentic AI in fostering self-efficacy, autonomy support, and self-learning motivation in higher education",
+        "subtitle": "Specification & validation \u00b7 Layer 0",
+        "body": "2026. Score=5.84, Citations=6.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.3389/frai.2026.1738774",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:specification",
+          "layer:0",
+          "doi-org:large-language-models-for-business-and-m",
+          "doi-org:unifying-large-language-models-and-knowl",
+          "doi-org:multi-agent-ai",
+          "arxiv:2606.23768"
+        ],
+        "related": [
+          {
+            "id": "doi-org:large-language-models-for-business-and-m",
+            "title": "Large language models for business and management applications: A review",
+            "reason": "same topic; shared L0; terms: citations, score, spec-level"
+          },
+          {
+            "id": "doi-org:unifying-large-language-models-and-knowl",
+            "title": "Unifying Large Language Models and Knowledge Graphs: A Roadmap",
+            "reason": "same topic; shared L0; terms: citations, score, spec-level"
+          },
+          {
+            "id": "doi-org:multi-agent-ai",
+            "title": "Multi-agent AI",
+            "reason": "shared L0; terms: citations, score, spec-level"
+          },
+          {
+            "id": "arxiv:2606.23768",
+            "title": "Cryptographic certificates of validity for trustworthy AI",
+            "reason": "same topic; shared L0; terms: agentic"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:large-language-models-for-business-and-m",
+        "type": "paper",
+        "title": "Large language models for business and management applications: A review",
+        "subtitle": "Specification & validation \u00b7 Layer 0",
+        "body": "2026. Score=5.00, Citations=0.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.1016/j.ipm.2026.104864",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:specification",
+          "layer:0",
+          "doi-org:unifying-large-language-models-and-knowl",
+          "doi-org:adaptive-multi-uav-cooperative-path-plan",
+          "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+          "arxiv:2604.16911",
+          "arxiv:2606.06893",
+          "arxiv:2605.22634"
+        ],
+        "related": [
+          {
+            "id": "doi-org:unifying-large-language-models-and-knowl",
+            "title": "Unifying Large Language Models and Knowledge Graphs: A Roadmap",
+            "reason": "same topic; shared L0; terms: citations, language, score"
+          },
+          {
+            "id": "doi-org:adaptive-multi-uav-cooperative-path-plan",
+            "title": "Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields",
+            "reason": "same topic; shared L0; terms: citations, score, spec-level"
+          },
+          {
+            "id": "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+            "title": "Exploring the role of agentic AI in fostering self-efficacy, autonomy support, and self-learning motivation in higher education",
+            "reason": "same topic; shared L0; terms: citations, score, spec-level"
+          },
+          {
+            "id": "arxiv:2604.16911",
+            "title": "Skilldex",
+            "reason": "same topic; shared L0; terms: spec-level"
+          },
+          {
+            "id": "arxiv:2606.06893",
+            "title": "W2S \u2014 Workflow-to-Skill: Automatic Skill Construction from Traces",
+            "reason": "same topic; shared L0; terms: management"
+          },
+          {
+            "id": "arxiv:2605.22634",
+            "title": "GovernSpec / Contractual Skills",
+            "reason": "same topic; shared L0; terms: spec-level"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:multi-agent-ai",
+        "type": "paper",
+        "title": "Multi-agent AI",
+        "subtitle": "Coordination & composition \u00b7 Layer 0",
+        "body": "2026. Score=5.95, Citations=8.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.1007/s12525-025-00862-z",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:coordination",
+          "layer:0",
+          "doi-org:an-adaptive-multi-agent-architecture-wit",
+          "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
+          "doi-org:adaptive-multi-uav-cooperative-path-plan",
+          "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+          "arxiv:2605.10052",
+          "arxiv:2602.11510",
+          "arxiv:2606.00448"
+        ],
+        "related": [
+          {
+            "id": "doi-org:an-adaptive-multi-agent-architecture-wit",
+            "title": "An Adaptive Multi-Agent Architecture with Reinforcement Learning and Generative AI for Intelligent Tutoring Systems: A Moodle-Based Case Study",
+            "reason": "same topic; terms: citations, multi-agent, score"
+          },
+          {
+            "id": "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
+            "title": "TRiSM for Agentic AI: A review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems",
+            "reason": "same topic; terms: citations, multi-agent, score"
+          },
+          {
+            "id": "doi-org:adaptive-multi-uav-cooperative-path-plan",
+            "title": "Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields",
+            "reason": "shared L0; terms: citations, score, spec-level"
+          },
+          {
+            "id": "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+            "title": "Exploring the role of agentic AI in fostering self-efficacy, autonomy support, and self-learning motivation in higher education",
+            "reason": "shared L0; terms: citations, score, spec-level"
+          },
+          {
+            "id": "arxiv:2605.10052",
+            "title": "Swarm Skills: A Portable, Self-Evolving Multi-Agent System Specification",
+            "reason": "same topic; shared L0; terms: multi-agent"
+          },
+          {
+            "id": "arxiv:2602.11510",
+            "title": "AgentLeak \u2014 Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems",
+            "reason": "same topic; terms: multi-agent"
+          },
+          {
+            "id": "arxiv:2606.00448",
+            "title": "Measuring Compositional Risk",
+            "reason": "same topic; shared L0"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+        "type": "paper",
+        "title": "The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges",
+        "subtitle": "Evaluation & benchmarks \u00b7 Layer 2",
+        "body": "2025. Score=5.66, Citations=91.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.3390/fi17090404",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:evaluation",
+          "layer:2",
+          "doi-org:a-survey-on-evaluation-of-large-language",
+          "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+          "doi-org:a-research-landscape-of-agentic-ai-and-l",
+          "arxiv:2604.11174",
+          "ieee:reprobe-audit",
+          "techtimes-com:finbot-agentic-ai-ctf"
+        ],
+        "related": [
+          {
+            "id": "doi-org:a-survey-on-evaluation-of-large-language",
+            "title": "A Survey on Evaluation of Large Language Models",
+            "reason": "same topic; shared L2; terms: behavioral-level, citations, score"
+          },
+          {
+            "id": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+            "title": "Ethical perspectives on AI Agents and Agentic AI",
+            "reason": "shared L2; terms: agentic, behavioral-level, citations"
+          },
+          {
+            "id": "doi-org:a-research-landscape-of-agentic-ai-and-l",
+            "title": "A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions",
+            "reason": "shared L2; terms: agentic, applications, behavioral-level"
+          },
+          {
+            "id": "arxiv:2604.11174",
+            "title": "EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems",
+            "reason": "same topic; shared L2; terms: behavioral-level, metrics"
+          },
+          {
+            "id": "ieee:reprobe-audit",
+            "title": "reprobe-audit \u2014 An Open Scoring Schema for LLM Agent Benchmark Disclosure",
+            "reason": "same topic; shared L2; terms: behavioral-level, score"
+          },
+          {
+            "id": "techtimes-com:finbot-agentic-ai-ctf",
+            "title": "FinBot Agentic AI CTF",
+            "reason": "same topic; shared L2; terms: agentic"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:toward-expert-level-medical-question-ans",
+        "type": "paper",
+        "title": "Toward expert-level medical question answering with large language models",
+        "subtitle": "Specification & validation \u00b7 Layer 2",
+        "body": "2025. Score=6.57, Citations=746.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.1038/s41591-024-03423-7",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:specification",
+          "layer:2",
+          "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+          "doi-org:a-research-landscape-of-agentic-ai-and-l",
+          "doi-org:a-survey-on-evaluation-of-large-language"
+        ],
+        "related": [
+          {
+            "id": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+            "title": "Ethical perspectives on AI Agents and Agentic AI",
+            "reason": "same topic; shared L2; terms: behavioral-level, citations, score"
+          },
+          {
+            "id": "doi-org:a-research-landscape-of-agentic-ai-and-l",
+            "title": "A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions",
+            "reason": "same topic; shared L2; terms: behavioral-level, citations, language"
+          },
+          {
+            "id": "doi-org:a-survey-on-evaluation-of-large-language",
+            "title": "A Survey on Evaluation of Large Language Models",
+            "reason": "shared L2; terms: behavioral-level, citations, language"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
+        "type": "paper",
+        "title": "TRiSM for Agentic AI: A review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems",
+        "subtitle": "Coordination & composition \u00b7 Layer 2",
+        "body": "2026. Score=6.38, Citations=23.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.1016/j.aiopen.2026.02.006",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:coordination",
+          "layer:2",
+          "doi-org:multi-agent-ai",
+          "doi-org:an-adaptive-multi-agent-architecture-wit",
+          "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+          "arxiv:2602.11510"
+        ],
+        "related": [
+          {
+            "id": "doi-org:multi-agent-ai",
+            "title": "Multi-agent AI",
+            "reason": "same topic; terms: citations, multi-agent, score"
+          },
+          {
+            "id": "doi-org:an-adaptive-multi-agent-architecture-wit",
+            "title": "An Adaptive Multi-Agent Architecture with Reinforcement Learning and Generative AI for Intelligent Tutoring Systems: A Moodle-Based Case Study",
+            "reason": "same topic; shared L2; terms: behavioral-level, citations, multi-agent"
+          },
+          {
+            "id": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+            "title": "Ethical perspectives on AI Agents and Agentic AI",
+            "reason": "shared L2; terms: agentic, behavioral-level, citations"
+          },
+          {
+            "id": "arxiv:2602.11510",
+            "title": "AgentLeak \u2014 Full-Stack Benchmark for Privacy Leakage in Multi-Agent LLM Systems",
+            "reason": "same topic; shared L2; terms: multi-agent"
+          }
+        ],
+        "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
+      },
+      {
+        "id": "doi-org:unifying-large-language-models-and-knowl",
+        "type": "paper",
+        "title": "Unifying Large Language Models and Knowledge Graphs: A Roadmap",
+        "subtitle": "Specification & validation \u00b7 Layer 0",
+        "body": "2024. Score=5.19, Citations=973.",
+        "relevance": "Relevance is represented by topic, layer, and association metadata.",
+        "recommendation": "Recommendation rationale pending corpus enrichment.",
+        "source_url": "https://doi.org/10.1109/tkde.2024.3352100",
+        "discovered": "2026-07-07",
+        "links": [
+          "topic:specification",
+          "layer:0",
+          "doi-org:large-language-models-for-business-and-m",
+          "doi-org:adaptive-multi-uav-cooperative-path-plan",
+          "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+          "arxiv:2604.16911",
+          "arxiv:2606.04781"
+        ],
+        "related": [
+          {
+            "id": "doi-org:large-language-models-for-business-and-m",
+            "title": "Large language models for business and management applications: A review",
+            "reason": "same topic; shared L0; terms: citations, language, score"
+          },
+          {
+            "id": "doi-org:adaptive-multi-uav-cooperative-path-plan",
+            "title": "Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields",
+            "reason": "same topic; shared L0; terms: citations, score, spec-level"
+          },
+          {
+            "id": "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+            "title": "Exploring the role of agentic AI in fostering self-efficacy, autonomy support, and self-learning motivation in higher education",
+            "reason": "same topic; shared L0; terms: citations, score, spec-level"
+          },
+          {
+            "id": "arxiv:2604.16911",
+            "title": "Skilldex",
+            "reason": "same topic; shared L0; terms: spec-level"
+          },
+          {
+            "id": "arxiv:2606.04781",
+            "title": "AIP \u2014 Agent Instruction Protocol for Structured Skill Graphs",
+            "reason": "same topic; shared L0; terms: graphs"
           }
         ],
         "provenance": "Generated from AI_Agent_Governance_Three_Layer_Stack_and_Papers.md and memory/agent_governance_scout_log.md."
@@ -10222,6 +11731,182 @@
       "discovered": "2026-07-01",
       "topic": "identity",
       "topic_label": "Identity & provenance",
+      "layers": [
+        0
+      ]
+    },
+    {
+      "id": "doi-org:a-practical-framework-for-appropriate-im",
+      "title": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare",
+      "url": "https://doi.org/10.1038/s41746-025-01900-y",
+      "discovered": "2026-07-07",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "id": "doi-org:a-research-landscape-of-agentic-ai-and-l",
+      "title": "A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions",
+      "url": "https://doi.org/10.3390/a18080499",
+      "discovered": "2026-07-07",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "id": "doi-org:a-survey-on-evaluation-of-large-language",
+      "title": "A Survey on Evaluation of Large Language Models",
+      "url": "https://doi.org/10.1145/3641289",
+      "discovered": "2026-07-07",
+      "topic": "evaluation",
+      "topic_label": "Evaluation & benchmarks",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "id": "doi-org:adaptive-multi-uav-cooperative-path-plan",
+      "title": "Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields",
+      "url": "https://doi.org/10.1016/j.knosys.2025.113429",
+      "discovered": "2026-07-07",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        0
+      ]
+    },
+    {
+      "id": "doi-org:agentic-ai-a-comprehensive-survey-of-arc",
+      "title": "Agentic AI: a comprehensive survey of architectures, applications, and future directions",
+      "url": "https://doi.org/10.1007/s10462-025-11422-4",
+      "discovered": "2026-07-07",
+      "topic": "runtime",
+      "topic_label": "Runtime enforcement",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "id": "doi-org:agentic-ai-a-comprehensive-survey-of-tec",
+      "title": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications",
+      "url": "https://doi.org/10.1109/access.2025.3585609",
+      "discovered": "2026-07-07",
+      "topic": "policy",
+      "topic_label": "Policy & governance landscape",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "id": "doi-org:an-adaptive-multi-agent-architecture-wit",
+      "title": "An Adaptive Multi-Agent Architecture with Reinforcement Learning and Generative AI for Intelligent Tutoring Systems: A Moodle-Based Case Study",
+      "url": "https://doi.org/10.3390/app16031323",
+      "discovered": "2026-07-07",
+      "topic": "coordination",
+      "topic_label": "Coordination & composition",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "id": "doi-org:ethical-perspectives-on-ai-agents-and-ag",
+      "title": "Ethical perspectives on AI Agents and Agentic AI",
+      "url": "https://doi.org/10.1007/s43681-026-01027-0",
+      "discovered": "2026-07-07",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "id": "doi-org:exploring-agentic-ai-in-healthcare-a-stu",
+      "title": "Exploring Agentic AI in Healthcare: A Study on Its Working Mechanism",
+      "url": "https://doi.org/10.3389/fmed.2025.1753443",
+      "discovered": "2026-07-07",
+      "topic": "runtime",
+      "topic_label": "Runtime enforcement",
+      "layers": [
+        1
+      ]
+    },
+    {
+      "id": "doi-org:exploring-the-role-of-agentic-ai-in-fost",
+      "title": "Exploring the role of agentic AI in fostering self-efficacy, autonomy support, and self-learning motivation in higher education",
+      "url": "https://doi.org/10.3389/frai.2026.1738774",
+      "discovered": "2026-07-07",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        0
+      ]
+    },
+    {
+      "id": "doi-org:large-language-models-for-business-and-m",
+      "title": "Large language models for business and management applications: A review",
+      "url": "https://doi.org/10.1016/j.ipm.2026.104864",
+      "discovered": "2026-07-07",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        0
+      ]
+    },
+    {
+      "id": "doi-org:multi-agent-ai",
+      "title": "Multi-agent AI",
+      "url": "https://doi.org/10.1007/s12525-025-00862-z",
+      "discovered": "2026-07-07",
+      "topic": "coordination",
+      "topic_label": "Coordination & composition",
+      "layers": [
+        0
+      ]
+    },
+    {
+      "id": "doi-org:the-rise-of-agentic-ai-a-review-of-defin",
+      "title": "The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges",
+      "url": "https://doi.org/10.3390/fi17090404",
+      "discovered": "2026-07-07",
+      "topic": "evaluation",
+      "topic_label": "Evaluation & benchmarks",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "id": "doi-org:toward-expert-level-medical-question-ans",
+      "title": "Toward expert-level medical question answering with large language models",
+      "url": "https://doi.org/10.1038/s41591-024-03423-7",
+      "discovered": "2026-07-07",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "id": "doi-org:trism-for-agentic-ai-a-review-of-trust-r",
+      "title": "TRiSM for Agentic AI: A review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems",
+      "url": "https://doi.org/10.1016/j.aiopen.2026.02.006",
+      "discovered": "2026-07-07",
+      "topic": "coordination",
+      "topic_label": "Coordination & composition",
+      "layers": [
+        2
+      ]
+    },
+    {
+      "id": "doi-org:unifying-large-language-models-and-knowl",
+      "title": "Unifying Large Language Models and Knowledge Graphs: A Roadmap",
+      "url": "https://doi.org/10.1109/tkde.2024.3352100",
+      "discovered": "2026-07-07",
+      "topic": "specification",
+      "topic_label": "Specification & validation",
       "layers": [
         0
       ]

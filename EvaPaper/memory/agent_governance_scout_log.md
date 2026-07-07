@@ -402,3 +402,26 @@ Status: **NEW GRAPH FINDINGS FOUND**
 ### Notes
 - Integrated from `data/agent_team/last_team_run.json` so dashboard generation can see live graph candidates.
 - Provider degradation, if present, is recorded in the team-run JSON; arXiv live search supplied these candidates.
+
+## 2026-07-07 Daily Scout Run
+Status: **NEW FINDINGS FOUND** (17 papers)
+
+### New Papers (Found: 0707)
+1. **Toward expert-level medical question answering with large language models** — 2025. Score=6.57, Citations=746. URL: https://doi.org/10.1038/s41591-024-03423-7 — **Layer 2 (Behavioral-Level)**
+2. **TRiSM for Agentic AI: A review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems** — 2026. Score=6.38, Citations=23. URL: https://doi.org/10.1016/j.aiopen.2026.02.006 — **Layer 2 (Behavioral-Level)**
+3. **Exploring Agentic AI in Healthcare: A Study on Its Working Mechanism** (arXiv:2025.17534) — 2026. Score=6.11, Citations=12. URL: https://doi.org/10.3389/fmed.2025.1753443 — **Layer 1 (Runtime-Level)**
+4. **Multi-agent AI** — 2026. Score=5.95, Citations=8. URL: https://doi.org/10.1007/s12525-025-00862-z — **Layer 0 (Spec-Level)**
+5. **An Adaptive Multi-Agent Architecture with Reinforcement Learning and Generative AI for Intelligent Tutoring Systems: A Moodle-Based Case Study** — 2026. Score=5.84, Citations=6. URL: https://doi.org/10.3390/app16031323 — **Layer 2 (Behavioral-Level)**
+6. **Exploring the role of agentic AI in fostering self-efficacy, autonomy support, and self-learning motivation in higher education** (arXiv:2026.17387) — 2026. Score=5.84, Citations=6. URL: https://doi.org/10.3389/frai.2026.1738774 — **Layer 0 (Spec-Level)**
+7. **The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges** — 2025. Score=5.66, Citations=91. URL: https://doi.org/10.3390/fi17090404 — **Layer 2 (Behavioral-Level)**
+8. **Ethical perspectives on AI Agents and Agentic AI** — 2026. Score=5.60, Citations=3. URL: https://doi.org/10.1007/s43681-026-01027-0 — **Layer 2 (Behavioral-Level)**
+9. **A Survey on Evaluation of Large Language Models** — 2024. Score=5.60, Citations=2489. URL: https://doi.org/10.1145/3641289 — **Layer 2 (Behavioral-Level)**
+10. **Agentic AI: a comprehensive survey of architectures, applications, and future directions** — 2025. Score=5.47, Citations=58. URL: https://doi.org/10.1007/s10462-025-11422-4 — **Layer 1 (Runtime-Level)**
+11. **A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare** — 2025. Score=5.37, Citations=46. URL: https://doi.org/10.1038/s41746-025-01900-y — **Layer 2 (Behavioral-Level)**
+12. **Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications** (arXiv:2025.35856) — 2025. Score=5.30, Citations=39. URL: https://doi.org/10.1109/access.2025.3585609 — **Layer 2 (Behavioral-Level)**
+13. **A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions** — 2025. Score=5.22, Citations=32. URL: https://doi.org/10.3390/a18080499 — **Layer 2 (Behavioral-Level)**
+14. **Unifying Large Language Models and Knowledge Graphs: A Roadmap** (arXiv:2024.33521) — 2024. Score=5.19, Citations=973. URL: https://doi.org/10.1109/tkde.2024.3352100 — **Layer 0 (Spec-Level)**
+15. **A survey on large language model (LLM) security and privacy: The Good, The Bad, and The Ugly** (arXiv:2024.10021) — 2024. Score=5.14, Citations=878. URL: https://doi.org/10.1016/j.hcc.2024.100211 — **Layer 1 (Runtime-Level)**
+16. **Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields** (arXiv:2025.11342) — 2025. Score=5.02, Citations=20. URL: https://doi.org/10.1016/j.knosys.2025.113429 — **Layer 0 (Spec-Level)**
+17. **Large language models for business and management applications: A review** (arXiv:2026.10486) — 2026. Score=5.00, Citations=0. URL: https://doi.org/10.1016/j.ipm.2026.104864 — **Layer 0 (Spec-Level)**
+

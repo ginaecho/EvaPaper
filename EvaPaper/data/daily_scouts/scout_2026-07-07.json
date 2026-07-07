@@ -1,0 +1,584 @@
+{
+  "date": "2026-07-07T17:36:44.541598",
+  "topics_searched": 9,
+  "total_seeds": 27,
+  "total_candidates_raw": 152,
+  "total_candidates_unique": 152,
+  "errors": [
+    "LLM coding agent benchmark SWE: openalex search failed: HTTPError: HTTP Error 429: Too Many Requests",
+    "LLM coding agent benchmark SWE: semantic scholar search failed: HTTPError: HTTP Error 429: ",
+    "agentic AI security vulnerability assessment: openalex search failed: HTTPError: HTTP Error 429: Too Many Requests",
+    "agentic AI security vulnerability assessment: semantic scholar search failed: HTTPError: HTTP Error 429: "
+  ],
+  "top_papers": [
+    {
+      "paper_id": "W4406152279",
+      "title": "Toward expert-level medical question answering with large language models",
+      "year": 2025,
+      "url": "https://doi.org/10.1038/s41591-024-03423-7",
+      "abstract": "Large language models (LLMs) have shown promise in medical question answering, with Med-PaLM being the first to exceed a 'passing' score in United States Medical Licensing Examination style questions. However, challenges remain in long-form medical question answering and handling real-world workflows. Here, we present Med-PaLM 2, which bridges these gaps with a combination of base LLM improvements, medical domain fine-tuning and new strategies for improving reasoning and grounding through ensemble refinement and chain of retrieval. Med-PaLM 2 scores up to 86.5% on the MedQA dataset, improving upon Med-PaLM by over 19%, and demonstrates dramatic performance increases across MedMCQA, PubMedQA and MMLU clinical topics datasets. Our detailed human evaluations framework shows that physicians prefer Med-PaLM 2 answers to those from other physicians on eight of nine clinical axes. Med-PaLM 2 also demonstrates significant improvements over its predecessor across all evaluation metrics, particularly on new adversarial datasets designed to probe LLM limitations (P < 0.001). In a pilot study using real-world medical questions, specialists preferred Med-PaLM 2 answers to generalist physician answers 65% of the time. While specialist answers were still preferred overall, both specialists and generalists rated Med-PaLM 2 to be as safe as physician answers, demonstrating its growing potential in real-world medical applications.",
+      "citation_count": 746,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W3027879771"
+      ],
+      "topics": [
+        "Topic Modeling",
+        "Machine Learning in Healthcare"
+      ],
+      "score": 6.573
+    },
+    {
+      "paper_id": "W7133236347",
+      "title": "TRiSM for Agentic AI: A review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems",
+      "year": 2026,
+      "url": "https://doi.org/10.1016/j.aiopen.2026.02.006",
+      "abstract": "Agentic AI systems, built upon large language models (LLMs) and deployed in multi-agent configurations, are redefining intelligence, autonomy, collaboration, and decision-making across enterprise and societal domains. This review presents a structured analysis of Trust, Risk, and Security Management (TRiSM) in the context of LLM-based Agentic Multi-Agent Systems (AMAS). We begin by examining the conceptual foundations of Agentic AI and highlight its architectural distinctions from traditional AI agents. We then adapt and extend the AI TRiSM framework for Agentic AI, structured around key pillars: Explainability, ModelOps, Security, Privacy and their Lifecycle Governance , each contextualized to the challenges of AMAS. A risk taxonomy is proposed to capture the unique threats and vulnerabilities of Agentic AI, ranging from coordination failures to prompt-based adversarial manipulation. To make coordination and tool use measurable in practice, we propose two metrics: the Component Synergy Score (CSS), which captures inter-agent enablement, and the Tool Utilization Efficacy (TUE), which evaluates whether tools are invoked correctly and efficiently. We further discuss strategies for improving explainability in Agentic AI, as well as approaches to enhancing security and privacy through encryption, adversarial robustness, and regulatory compliance. The review concludes with a research roadmap for the responsible development and deployment of Agentic AI, highlighting key directions to align emerging systems with TRiSM principles-ensuring safety, transparency, and accountability in their operation.",
+      "citation_count": 23,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4413427262"
+      ],
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Access Control and Trust",
+        "Mobile Agent-Based Network Management"
+      ],
+      "score": 6.38
+    },
+    {
+      "paper_id": "W7125926542",
+      "title": "Exploring Agentic AI in Healthcare: A Study on Its Working Mechanism",
+      "year": 2026,
+      "url": "https://doi.org/10.3389/fmed.2025.1753443",
+      "abstract": "Introduction: Rapid advancements in artificial intelligence (AI) have ushered in an era of hyperautomation and intelligent orchestration across multiple engineering domains, with healthcare emerging as one of the most impactful application areas. Among recent developments, Agentic AI has gained attention as a sub-domain of AI capable of autonomous operation, decision-making, and goal-driven behavior with minimal human intervention. This study aims to explore the architectural and functional role of Agentic AI in modern healthcare systems. Methods: The study adopts a conceptual and analytical approach to examine the core components of Agentic AI, including agent design, decision-making mechanisms, task allocation strategies, agent coordination, and ranking frameworks. It further investigates the integration of emerging 6G networking technologies within Agentic AI architectures. A qualitative case study on remote robotic surgery is presented to illustrate practical applicability. Additionally, a Strengths, Weaknesses, Opportunities, and Threats (SWOT) analysis is conducted to assess strategic and operational considerations. Results: The analysis demonstrates that Agentic AI architectures, when supported by high-speed and low-latency 6G communication, can enable efficient autonomous decision-making and coordinated task execution in complex healthcare workflows. The case study highlights the feasibility of Agentic AI in enabling remote robotic surgery with enhanced responsiveness, precision, and reliability. The SWOT analysis reveals strong potential for scalability and efficiency while also identifying challenges related to ethical governance, system robustness, and security. Discussion: The findings suggest that Agentic AI represents a promising paradigm for next-generation healthcare systems, particularly in remote and critical care applications. While the proposed framework offers architectural insights and strategic value, responsible integration requires addressing limitations such as trust, regulatory compliance, and system transparency. Overall, this study provides a holistic understanding of how Agentic AI can be effectively and ethically integrated into healthcare ecosystems.",
+      "citation_count": 12,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4413427262"
+      ],
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "IoT and Edge/Fog Computing",
+        "Social Robot Interaction and HRI"
+      ],
+      "score": 6.114
+    },
+    {
+      "paper_id": "W7135409568",
+      "title": "The role of agentic artificial intelligence in healthcare: a scoping review",
+      "year": 2026,
+      "url": "https://doi.org/10.1038/s41746-026-02517-5",
+      "abstract": "Agentic AI represents a promising evolution of artificial intelligence in healthcare, with systems capable of operating autonomously to achieve defined clinical goals. However, the literature lacks conceptual clarity in distinguishing AI agents from Agentic AI, and few studies have rigorously explored their applications. We conducted a scoping review across five databases, identifying seven eligible studies spanning emergency medicine, oncology, radiology, and rehabilitation. The included systems demonstrated features such as autonomous operation, goal-directed behavior, action initiation, and, in some cases, multi-agent collaboration. Reported outcomes included high accuracy in cancer diagnosis, treatment planning, alert generation, coaching, and workflow optimization. Despite promising results, most studies were exploratory, limited in scope, and lacked robust clinical validation, with only one trial involving patients. These findings highlight both the potential and immaturity of Agentic AI in healthcare, underscoring the need for standardized definitions, regulatory guidance, and rigorous evaluation to ensure safe and effective integration into practice.",
+      "citation_count": 8,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4413427262"
+      ],
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Machine Learning in Healthcare",
+        "Artificial Intelligence in Healthcare"
+      ],
+      "score": 5.954
+    },
+    {
+      "paper_id": "W7128165235",
+      "title": "Multi-agent AI",
+      "year": 2026,
+      "url": "https://doi.org/10.1007/s12525-025-00862-z",
+      "abstract": "Abstract Multi-agent artificial intelligence (MAAI) represents a foundational shift in the automation of knowledge work, moving beyond static workflows toward adaptive systems of interacting AI-based agents. These agents perceive, reason, and coordinate in real time to address complex, context-rich tasks that traditionally require human expertise. Drawing on the conceptual roots of process automation, agentic information systems, and AI, this paper introduces a structured, five-component framework that conceptualizes MAAI as a layered architecture composed of foundation model, data-centric perception and action, dynamic orchestration, agent-integrated workflow, and interaction interface. This framework disentangles the technical, organizational, and human-facing dimensions of MAAI, offering researchers and practitioners a systematic lens to analyze and design agent-based AI automation. The framework further structures three research pathways focused on advancing technical capabilities, enabling organizational integration, and addressing socio-technical implications such as fairness, accountability, and labor transformation. Together, these contributions establish a foundation for interdisciplinary inquiry into how MAAI reshapes work, coordination, and digital value creation.",
+      "citation_count": 8,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4413427262"
+      ],
+      "topics": [
+        "Robotic Process Automation Applications",
+        "Ethics and Social Impacts of AI",
+        "Innovation, Sustainability, Human-Machine Systems"
+      ],
+      "score": 5.954
+    },
+    {
+      "paper_id": "W4414183234",
+      "title": "The STARD-AI reporting guideline for diagnostic accuracy studies using artificial intelligence",
+      "year": 2025,
+      "url": "https://doi.org/10.1038/s41591-025-03953-8",
+      "abstract": null,
+      "citation_count": 141,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4406152263"
+      ],
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Radiomics and Machine Learning in Medical Imaging",
+        "Autopsy Techniques and Outcomes"
+      ],
+      "score": 5.852
+    },
+    {
+      "paper_id": "W7125981967",
+      "title": "An Adaptive Multi-Agent Architecture with Reinforcement Learning and Generative AI for Intelligent Tutoring Systems: A Moodle-Based Case Study",
+      "year": 2026,
+      "url": "https://doi.org/10.3390/app16031323",
+      "abstract": "Intelligent Tutoring Systems are increasingly used in higher education to support personalized learning and academic monitoring in large-scale digital environments. However, existing systems are predominantly based on static architecture and rigid rule-based mechanisms, which limit scalability and hinder effective adaptation to heterogeneous learners, evolving learning behaviors, and real-world educational contexts. This paper presents a self-adaptive multi-agent architecture based on Reinforcement Learning for autonomous decision-making in intelligent systems deployed in real environments. The proposal integrates an RL Meta-Agent that dynamically optimizes the selection of specialized agents through an intelligent switching mechanism, considering the user’s state, behavior, and interaction patterns. The architecture was implemented in Moodle using flows orchestrated in n8n, LLMs, databases, APIs developed in Django, and real academic data. For the empirical evaluation, a real and a simulated case study were designed. A questionnaire was administered to university students, considering dimensions of usability, satisfaction and usefulness, and accessibility and interaction, to understand the perception of the system and improvements. The quantitative data were analyzed using descriptive statistics and nonparametric tests (Mann–Whitney U and Kruskal–Wallis), while the qualitative data were examined using thematic categorization. A simulated case study was conducted to analyze the behavior of the system. The results show that the RL Meta-Agent significantly improves system efficiency, response relevance, and adaptive agent selection, demonstrating that self-adaptive RL-based MAS architectures are a viable solution for intelligent systems applied in real-world contexts, providing empirical evidence of their performance and adaptability in complex scenarios such as higher education.",
+      "citation_count": 6,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4413427262"
+      ],
+      "topics": [
+        "Intelligent Tutoring Systems and Adaptive Learning",
+        "Online Learning and Analytics",
+        "E-Learning and Knowledge Management"
+      ],
+      "score": 5.845
+    },
+    {
+      "paper_id": "W7125411310",
+      "title": "Exploring the role of agentic AI in fostering self-efficacy, autonomy support, and self-learning motivation in higher education",
+      "year": 2026,
+      "url": "https://doi.org/10.3389/frai.2026.1738774",
+      "abstract": "Introduction: Rapid adoption of Artificial Intelligence (AI) in learning has revolutionized learners' engagement but comprehension of psychological and technological drivers of successful AI-enabled learning remains scarce. This research investigates how students' perceived agency of AI, usefulness, ease of use, trust, autonomy supporting, and self-efficacy collectively impact students' self-learning behavior and motivation. Based on Technology Acceptance Model (TAM), Social Cognitive Theory (SCT), and Self-Determination Theory (SDT) theories, our research model predicts an integrated model of motivational and behavioral processes underlying AI adoption in learning settings. Methods: We adopted and followed a quantitative research design with a structured questionnaire administered among 280 higher education students in Saudi Arabia. We applied Structural Equation Modeling (SEM) using SmartPLS 4 to analyze data. Results: Findings indicate that students' perceived agency of AI significantly predicts usefulness, ease of use, and autonomy supporting, while ease of use significantly enhances AI-enabled self-efficacy. Self-efficacy and autonomy supporting significantly impact self-learning motivation, driving self-learning behavior positively. But usefulness and trust in AI failed to influence self-efficacy directly, which reveals cultural and contextual settings. Discussion: This research adds richness to the fusion of TAM, SCT, and SDT theories in illustrating how AI's perceived autonomy and usability collectively promote self-directed learning motivation. This research also provides guidelines to educators and system designers to design AI tools that promote learner autonomous settings, usability, and confidence. Future research ought to perform longitudinal and cross-cultural validations to fine-tune theoretically.",
+      "citation_count": 6,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4414023998"
+      ],
+      "topics": [
+        "Technology Adoption and User Behaviour",
+        "Motivation and Self-Concept in Sports",
+        "Technostress in Professional Settings"
+      ],
+      "score": 5.845
+    },
+    {
+      "paper_id": "W4407902322",
+      "title": "RETRACTED: A Comprehensive Review of Recent Advances in Perovskite Materials: Electrical, Dielectric, and Magnetic Properties",
+      "year": 2025,
+      "url": "https://doi.org/10.3390/inorganics13030067",
+      "abstract": "Perovskite materials have emerged as one of the most promising classes of compounds in recent years due to their unique combination of electrical, dielectric, and magnetic properties, which make them ideal candidates for a wide range of advanced technological applications. This comprehensive review explores the latest developments in the electrical, dielectric, and magnetic behavior of perovskites, providing an in-depth analysis of the underlying mechanisms and their potential for improving device performance. The review covers the fundamental aspects of charge transport, polarization, and magnetic interactions in perovskite structures including the impact of crystal symmetry, ion migration, and external stimuli on their properties. Moreover, it highlights the various strategies used to tailor these properties through compositional engineering, doping, and structural modifications, resulting in enhanced efficiency, stability, and multifunctionality in applications such as photovoltaics, capacitors, dielectric resonators, and spintronic devices. Additionally, the paper addresses the challenges associated with the practical implementation of perovskite materials including stability issues under harsh environmental conditions and scalability for industrial applications. The review concludes with an outlook on future directions, emphasizing the need for further research to overcome these challenges and unlock the full potential of perovskite materials in next-generation electronics, energy storage, and magnetic devices.",
+      "citation_count": 107,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4406793899"
+      ],
+      "topics": [
+        "Perovskite Materials and Applications",
+        "ZnO doping and properties",
+        "Magnetic and transport properties of perovskites and related materials"
+      ],
+      "score": 5.733
+    },
+    {
+      "paper_id": "W4414023998",
+      "title": "The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges",
+      "year": 2025,
+      "url": "https://doi.org/10.3390/fi17090404",
+      "abstract": "Agentic AI systems are a recently emerged and important approach that goes beyond traditional AI, generative AI, and autonomous systems by focusing on autonomy, adaptability, and goal-driven reasoning. This study provides a clear review of agentic AI systems by bringing together their definitions, frameworks, and architectures, and by comparing them with related areas like generative AI, autonomic computing, and multi-agent systems. To do this, we reviewed 143 primary studies on current LLM-based and non-LLM-driven agentic systems and examined how they support planning, memory, reflection, and goal pursuit. Furthermore, we classified architectural models, input–output mechanisms, and applications based on their task domains where agentic AI is applied, supported using tabular summaries that highlight real-world case studies. Evaluation metrics were classified as qualitative and quantitative measures, along with available testing methods of agentic AI systems to check the system’s performance and reliability. This study also highlights the main challenges and limitations of agentic AI, covering technical, architectural, coordination, ethical, and security issues. We organized the conceptual foundations, available tools, architectures, and evaluation metrics in this research, which defines a structured foundation for understanding and advancing agentic AI. These findings aim to help researchers and developers build better, clearer, and more adaptable systems that support responsible deployment in different domains.",
+      "citation_count": 91,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4412505619"
+      ],
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Multi-Agent Systems and Negotiation",
+        "Advanced Software Engineering Methodologies"
+      ],
+      "score": 5.664
+    },
+    {
+      "paper_id": "W7140217868",
+      "title": "Ethical perspectives on AI Agents and Agentic AI",
+      "year": 2026,
+      "url": "https://doi.org/10.1007/s43681-026-01027-0",
+      "abstract": "Abstract Recent developments in Artificial Intelligence (AI) have given rise to AI Agents and Agentic AI. These systems are not only capable of performing narrowly defined tasks, but can also take on more complex activities with minimal to no human involvement. While there is already some technical research on these systems, their ethical evaluation has so far received little attention. This paper provides an initial perspective on how recent developments in AI Agents and Agentic AI relate to classical ethical principles in the context of AI, focusing on transparency , justice and fairness , non-maleficence , responsibility and accountability , and privacy . To enable responsible development and deployment, we highlight three particularly crucial aspects of these systems: (1) their broad agency which (2) has a higher impact on human autonomy, leading to (3) an even deeper entanglement between humans and technology compared to traditional AI systems. Our analysis, which uses the method of the wide reflective equilibrium , serves as a starting point for ethical reflection and underscores the urgent need for ongoing interdisciplinary engagement to ensure that these novel AI systems are developed and used responsibly.",
+      "citation_count": 3,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4414023998"
+      ],
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)",
+        "Multi-Agent Systems and Negotiation"
+      ],
+      "score": 5.602
+    },
+    {
+      "paper_id": "W4391136507",
+      "title": "A Survey on Evaluation of Large Language Models",
+      "year": 2024,
+      "url": "https://doi.org/10.1145/3641289",
+      "abstract": "Large language models (LLMs) are gaining increasing popularity in both academia and industry, owing to their unprecedented performance in various applications. As LLMs continue to play a vital role in both research and daily use, their evaluation becomes increasingly critical, not only at the task level, but also at the society level for better understanding of their potential risks. Over the past years, significant efforts have been made to examine LLMs from various perspectives. This paper presents a comprehensive review of these evaluation methods for LLMs, focusing on three key dimensions: what to evaluate , where to evaluate , and how to evaluate . Firstly, we provide an overview from the perspective of evaluation tasks, encompassing general natural language processing tasks, reasoning, medical usage, ethics, education, natural and social sciences, agent applications, and other areas. Secondly, we answer the ‘where’ and ‘how’ questions by diving into the evaluation methods and benchmarks, which serve as crucial components in assessing the performance of LLMs. Then, we summarize the success and failure cases of LLMs in different tasks. Finally, we shed light on several future challenges that lie ahead in LLMs evaluation. Our aim is to offer invaluable insights to researchers in the realm of LLMs evaluation, thereby aiding the development of more proficient LLMs. Our key point is that evaluation should be treated as an essential discipline to better assist the development of LLMs. We consistently maintain the related open-source materials at: https://github.com/MLGroupJLU/LLM-eval-survey",
+      "citation_count": 2489,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4362515116"
+      ],
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "score": 5.596
+    },
+    {
+      "paper_id": "W4414849058",
+      "title": "Generative artificial intelligence in medicine",
+      "year": 2025,
+      "url": "https://doi.org/10.1038/s41591-025-03983-2",
+      "abstract": null,
+      "citation_count": 71,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4406152263"
+      ],
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Machine Learning in Healthcare",
+        "COVID-19 diagnosis using AI"
+      ],
+      "score": 5.557
+    },
+    {
+      "paper_id": "W4416209823",
+      "title": "Agentic AI: a comprehensive survey of architectures, applications, and future directions",
+      "year": 2025,
+      "url": "https://doi.org/10.1007/s10462-025-11422-4",
+      "abstract": "Abstract Agentic AI represents a transformative shift in artificial intelligence, but its rapid advancement has led to a fragmented understanding, often conflating modern neural systems with outdated symbolic models—a practice known as conceptual retrofitting . This survey cuts through this confusion by introducing a novel dual-paradigm framework that categorizes agentic systems into two distinct lineages: the symbolic/classical (relying on algorithmic planning and persistent state) and the neural/generative (leveraging stochastic generation and prompt-driven orchestration). Through a systematic PRISMA-based review of 90 studies (2018–2025), we provide a comprehensive analysis structured around this framework across three dimensions: (1) the theoretical foundations and architectural principles defining each paradigm; (2) domain-specific implementations in healthcare, finance, and robotics, demonstrating how application constraints dictate paradigm selection; and (3) paradigm-specific ethical and governance challenges, revealing divergent risks and mitigation strategies. Our analysis reveals that the choice of paradigm is strategic: symbolic systems dominate safety-critical domains (e.g., healthcare), while neural systems prevail in adaptive, data-rich environments (e.g., finance). Furthermore, we identify critical research gaps, including a significant deficit in governance models for symbolic systems and a pressing need for hybrid neuro-symbolic architectures. The findings culminate in a strategic roadmap arguing that the future of Agentic AI lies not in the dominance of one paradigm, but in their intentional integration to create systems that are both adaptable and reliable . This work provides the essential conceptual toolkit to guide future research, development, and policy toward robust and trustworthy hybrid intelligent systems.",
+      "citation_count": 58,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4412505619"
+      ],
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Explainable Artificial Intelligence (XAI)",
+        "Machine Learning in Healthcare"
+      ],
+      "score": 5.471
+    },
+    {
+      "paper_id": "W4410343249",
+      "title": "Reporting guideline for the use of Generative Artificial intelligence tools in MEdical Research: the GAMER Statement",
+      "year": 2025,
+      "url": "https://doi.org/10.1136/bmjebm-2025-113825",
+      "abstract": "OBJECTIVES: Generative artificial intelligence (GAI) tools can enhance the quality and efficiency of medical research, but their improper use may result in plagiarism, academic fraud and unreliable findings. Transparent reporting of GAI use is essential, yet existing guidelines from journals and institutions are inconsistent, with no standardised principles. DESIGN AND SETTING: International online Delphi study. PARTICIPANTS: International experts in medicine and artificial intelligence. MAIN OUTCOME MEASURES: The primary outcome measure is the consensus level of the Delphi expert panel on the items of inclusion criteria for GAMER (Rreporting guideline for the use of Generative Artificial intelligence tools in MEdical Research). RESULTS: The development process included a scoping review, two Delphi rounds and virtual meetings. 51 experts from 26 countries participated in the process (44 in the Delphi survey). The final checklist comprises nine reporting items: general declaration, GAI tool specifications, prompting techniques, tool's role in the study, declaration of new GAI model(s) developed, artificial intelligence-assisted sections in the manuscript, content verification, data privacy and impact on conclusions. CONCLUSION: GAMER provides universal and standardised guideline for GAI use in medical research, ensuring transparency, integrity and quality.",
+      "citation_count": 53,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4406152263"
+      ],
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Delphi Technique in Research",
+        "Ethics in Clinical Research"
+      ],
+      "score": 5.432
+    },
+    {
+      "paper_id": "W4413107286",
+      "title": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare",
+      "year": 2025,
+      "url": "https://doi.org/10.1038/s41746-025-01900-y",
+      "abstract": "Health systems face the challenge of balancing innovation and safety to responsibly implement artificial intelligence (AI) solutions. The rapid proliferation, growing complexity, ethical considerations, and rising demand for these tools require timely and efficient processes for rigorous evaluation and ongoing monitoring. Current AI evaluation frameworks often lack the practical guidance for health systems to address these challenges. To fill this gap, we developed a prescriptive evaluation framework informed by a literature review, in-depth interviews with key stakeholders, including patients, and a multidisciplinary design workshop. The resulting framework provides health systems an outline of the resources, structures, criteria, and template documents to enable pre-implementation evaluation and post-implementation monitoring of AI solutions. Health systems will need to treat this or any alternative framework as a living document to maintain relevance and effectiveness as the AI landscape and regulations continue to evolve.",
+      "citation_count": 46,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4406152263"
+      ],
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Artificial Intelligence in Healthcare",
+        "COVID-19 diagnosis using AI"
+      ],
+      "score": 5.372
+    },
+    {
+      "paper_id": "W4412602170",
+      "title": "Operationalization of Artificial Intelligence Applications in the Intensive Care Unit",
+      "year": 2025,
+      "url": "https://doi.org/10.1001/jamanetworkopen.2025.22866",
+      "abstract": "Importance: Artificial intelligence (AI) presents transformative opportunities to address the increasing challenges faced by health care systems globally. Particularly, in data-rich environments, such as intensive care units (ICUs), AI could assist in enhancing clinical decision-making, streamline workflows, and improve patient outcomes. Despite these promising applications, the practical implementation of AI in clinical settings remains limited. Objective: To systematically evaluate AI system operationalization in the ICU, focusing on the AI field's progress over time, technical maturity, and risk of bias. Evidence Review: In this systematic review, 5 databases (Embase, MEDLINE ALL, Web of Science Core Collection, Cochrane Central Register of Controlled Trials, and Google Scholar) were searched for studies published from July 28, 2020, to June 10, 2024. Eligible studies evaluated AI applications designed for use within ICUs for adults (aged ≥16 years) and used data collected during ICU stays. Two reviewers independently screened titles and abstracts, with a third reviewer resolving disagreements. Data extraction included AI application aims, dataset origins, technology readiness level (TRL) categorization, and the use of reporting standards. Risk of bias was assessed using the PROBAST (Prediction Model Study Risk of Bias Assessment Tool). Findings: Of 17 401 screened records, 1263 studies met the inclusion criteria. A total of 936 studies (74% of all studies) were classified as TRL 4 or below, indicating early-stage development or initial validation. Among these, 447 (37%) used internal datasets, 562 (46%) used MIMIC (Medical Information Mart for Intensive Care) datasets (I-IV), and 78 (6%) used the open-source eICU Collaborative Research Database. External validation (TRL 5) was achieved by 24% of studies. Only 25 (2%) progressed to clinical integration (TRL≥6), with no studies reaching full implementation (TRL 9). Although approximately half of generative AI models reached a higher TRL (14 [47%] with TRL 5), none reached clinical integration. Additionally, only 207 studies (16%) referenced reporting standards, with adherence modestly increasing from 14% in 2021 to 23% in 2024. High risk of bias was identified in 581 of 1103 studies (53%), primarily due to methodologic shortcomings in the analysis domain. Conclusions and Relevance: Despite substantial growth in AI research within intensive care medicine in recent years, the transition from development to clinical implementation still remains limited and has made little progress over time. A paradigm shift is urgently required in the medical literature-one that moves beyond retrospective validation toward the operationalization and prospective testing of AI for tangible clinical impact.",
+      "citation_count": 44,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4406152263"
+      ],
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Sepsis Diagnosis and Treatment",
+        "Electronic Health Records Systems"
+      ],
+      "score": 5.353
+    },
+    {
+      "paper_id": "W4411995908",
+      "title": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications",
+      "year": 2025,
+      "url": "https://doi.org/10.1109/access.2025.3585609",
+      "abstract": "Agentic AI brings a new level of advancement in artificial intelligence (AI), as it is capable of goal-directed behaviour, dynamic adaptation, and self-improvement. It influences various significant fields, such as robotics, healthcare, autonomous vehicles, and labor automation. This paper explores the defining features of agentic AI, highlights its differences from traditional AI, and discusses how autonomy, memory, goal-directed behavior, and adaptive reasoning contribute to increasingly general capabilities. Rather than proposing a new architecture, we offer a conceptual analysis of the trajectory from current agentic frameworks to future agentic AI systems. Examining applications in significant fields, including precision medicine, industrial robotics, and self-driving technologies, and discussing societal impacts, particularly concerning workforce disruption, augmentation, and ethical issues arising from agentic AI systems. The paper identifies key research directions for ensuring beneficial and controllable agentic AI development. This work serves as a primary source for exploring agentic AI by compiling existing research and identifying open questions.",
+      "citation_count": 39,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4412505619"
+      ],
+      "topics": [
+        "Impact of AI and Big Data on Business and Society",
+        "Smart Cities and Technologies",
+        "Transportation and Mobility Innovations"
+      ],
+      "score": 5.302
+    },
+    {
+      "paper_id": "W4384561707",
+      "title": "Large language models in medicine",
+      "year": 2023,
+      "url": "https://doi.org/10.1038/s41591-023-02448-8",
+      "abstract": null,
+      "citation_count": 3371,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "references:W4382618722"
+      ],
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Machine Learning in Healthcare",
+        "Topic Modeling"
+      ],
+      "score": 5.228
+    },
+    {
+      "paper_id": "W4413222071",
+      "title": "A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions",
+      "year": 2025,
+      "url": "https://doi.org/10.3390/a18080499",
+      "abstract": "Agentic AI and Large Language Models (LLMs) are transforming how language is understood and generated while reshaping decision-making, automation, and research practices. LLMs provide underlying reasoning capabilities, and Agentic AI systems use them to perform tasks through interactions with external tools, services, and Application Programming Interfaces (APIs). Based on a structured scoping review and thematic analysis, this study identifies that core challenges of LLMs, relating to security, privacy and trust, misinformation, misuse and bias, energy consumption, transparency and explainability, and value alignment, can propagate into Agentic AI. Beyond these inherited concerns, Agentic AI introduces new challenges, including context management, security, privacy and trust, goal misalignment, opaque decision-making, limited human oversight, multi-agent coordination, ethical and legal accountability, and long-term safety. We analyse the applications of Agentic AI powered by LLMs across six domains: education, healthcare, cybersecurity, autonomous vehicles, e-commerce, and customer service, to reveal their real-world impact. Furthermore, we demonstrate some LLM limitations using DeepSeek-R1 and GPT-4o. To the best of our knowledge, this is the first comprehensive study to integrate the challenges and applications of LLMs and Agentic AI within a single forward-looking research landscape that promotes interdisciplinary research and responsible advancement of this emerging field.",
+      "citation_count": 32,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4412505619"
+      ],
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Privacy-Preserving Technologies in Data",
+        "Topic Modeling"
+      ],
+      "score": 5.219
+    },
+    {
+      "paper_id": "W4414084747",
+      "title": "APD6: the antimicrobial peptide database is expanded to promote research and development by deploying an unprecedented information pipeline",
+      "year": 2025,
+      "url": "https://doi.org/10.1093/nar/gkaf860",
+      "abstract": "The global antibiotic resistance issue constitutes a driving force for developing host defense antimicrobial peptides (AMPs) into a new generation of antibiotics. To facilitate this development, we report the antimicrobial peptide database version 6 (APD6) with (i) the consolidated database platform, (ii) the most comprehensive AMP information pipeline (AMPIP), and (iii) the expanded wheel of function. As of 18 March 2025, the APD6 platform housed records for 5188 peptides, including 3306 natural, 1380 synthetic, and 239 predicted AMPs with systematic classification schemes for each group. Based on the refined dataset, we present an updated view and findings on natural AMPs. Natural AMPs provide a fundamental dataset for peptide design and predicting potential AMPs. While current artificial intelligence prediction of AMPs is limited to activity and hemolysis, the APD6 provides new positive and negative datasets (e.g. pH, salt, serum effects, and resistance) for building advanced AI prediction models to identify more robust antibiotics. The AMPIP covers information ranging from peptide discovery, in vitro/in vivo activity and toxicity data, to clinical trials. In addition, the APD6 (available at https://aps.unmc.edu) contains an expanded wheel of peptide functions (e.g. anticancer and antidiabetic), allowing for developing peptide therapeutics outside the antibiotic arena.",
+      "citation_count": 30,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4408221130"
+      ],
+      "topics": [
+        "Antimicrobial Peptides and Activities",
+        "Biochemical and Structural Characterization",
+        "Protein Hydrolysis and Bioactive Peptides"
+      ],
+      "score": 5.191
+    },
+    {
+      "paper_id": "W4390692489",
+      "title": "Unifying Large Language Models and Knowledge Graphs: A Roadmap",
+      "year": 2024,
+      "url": "https://doi.org/10.1109/tkde.2024.3352100",
+      "abstract": "Large language models (LLMs), such as ChatGPT and GPT4, are making new waves in the field of natural language processing and artificial intelligence, due to their emergent ability and generalizability. However, LLMs are black-box models, which often fall short of capturing and accessing factual knowledge. In contrast, Knowledge Graphs (KGs), Wikipedia and Huapu for example, are structured knowledge models that explicitly store rich factual knowledge. KGs can enhance LLMs by providing external knowledge for inference and interpretability. Meanwhile, KGs are difficult to construct and evolve by nature, which challenges the existing methods in KGs to generate new facts and represent unseen knowledge. Therefore, it is complementary to unify LLMs and KGs together and simultaneously leverage their advantages. In this article, we present a forward-looking roadmap for the unification of LLMs and KGs. Our roadmap consists of three general frameworks, namely, <italic xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">1) KG-enhanced LLMs,</i> which incorporate KGs during the pre-training and inference phases of LLMs, or for the purpose of enhancing understanding of the knowledge learned by LLMs; <italic xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">2) LLM-augmented KGs,</i> that leverage LLMs for different KG tasks such as embedding, completion, construction, graph-to-text generation, and question answering; and <italic xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">3) Synergized LLMs + KGs</i> , in which LLMs and KGs play equal roles and work in a mutually beneficial way to enhance both LLMs and KGs for bidirectional reasoning driven by both data and knowledge. We review and summarize existing efforts within these three frameworks in our roadmap and pinpoint their future research directions.",
+      "citation_count": 973,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4362515116"
+      ],
+      "topics": [
+        "Topic Modeling",
+        "Advanced Graph Neural Networks",
+        "Natural Language Processing Techniques"
+      ],
+      "score": 5.189
+    },
+    {
+      "paper_id": "W4392353733",
+      "title": "A survey on large language model (LLM) security and privacy: The Good, The Bad, and The Ugly",
+      "year": 2024,
+      "url": "https://doi.org/10.1016/j.hcc.2024.100211",
+      "abstract": "Large Language Models (LLMs), such as ChatGPT and Bard, have revolutionized natural language understanding and generation. They possess deep language comprehension, human-like text generation capabilities, contextual awareness, and robust problem-solving skills, making them invaluable in various domains (e.g., search engines, customer support, translation). In the meantime, LLMs have also gained traction in the security community, revealing security vulnerabilities and showcasing their potential in security-related tasks. This paper explores the intersection of LLMs with security and privacy. Specifically, we investigate how LLMs positively impact security and privacy, potential risks and threats associated with their use, and inherent vulnerabilities within LLMs. Through a comprehensive literature review, the paper categorizes the papers into “The Good” (beneficial LLM applications), “The Bad” (offensive applications), and “The Ugly” (vulnerabilities of LLMs and their defenses). We have some interesting findings. For example, LLMs have proven to enhance code security (code vulnerability detection) and data privacy (data confidentiality protection), outperforming traditional methods. However, they can also be harnessed for various attacks (particularly user-level attacks) due to their human-like reasoning abilities. We have identified areas that require further research efforts. For example, Research on model and parameter extraction attacks is limited and often theoretical, hindered by LLM parameter scale and confidentiality. Safe instruction tuning, a recent development, requires more exploration. We hope that our work can shed light on the LLMs’ potential to both bolster and jeopardize cybersecurity.",
+      "citation_count": 878,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4362515116"
+      ],
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Topic Modeling",
+        "Access Control and Trust"
+      ],
+      "score": 5.144
+    },
+    {
+      "paper_id": "W4409319464",
+      "title": "Advances in Smart Chromogenic Hydrogel Composites for Next‐Generation Digital Applications",
+      "year": 2025,
+      "url": "https://doi.org/10.1002/pat.70179",
+      "abstract": "ABSTRACT The rapid advancement of digital technologies has heightened the demand for multifunctional smart materials with adaptive and responsive capabilities. Among these, chromogenic hydrogel composites have emerged as promising candidates for next‐generation digital applications due to their unique stimuli‐responsive behavior. These hydrogels exhibit dynamic optical changes in response to external triggers such as light, temperature, pH, humidity, mechanical stress, and electric or magnetic fields, enabling a wide range of functionalities in data storage, security, authentication, and anti‐counterfeiting technologies. This review provides a comprehensive examination of smart chromogenic hydrogel composites, focusing on their fundamental design principles, stimuli‐responsive mechanisms, and emerging applications in digital systems. The review categorizes these materials based on their chromogenic response, including photochromic, hydrochromic, electrochromic, magnetochromic, thermochromic, tribochromic, and mechanochromic systems, analyzing their key material compositions and functional characteristics. Furthermore, recent advances in fabrication techniques such as 3D and 4D printing, self‐healing networks, and multi‐stimuli‐responsive hydrogels are discussed, highlighting their potential for programmable optical displays, rewritable data storage, and encrypted security systems. Finally, the review identifies current challenges and future directions in the field, emphasizing the need for enhanced durability, faster response times, and improved integration with digital technologies. The insights presented in this work aim to guide the development of next‐generation chromogenic hydrogels for innovative applications in interactive and intelligent materials.",
+      "citation_count": 23,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4406793899"
+      ],
+      "topics": [
+        "Advanced Sensor and Energy Harvesting Materials",
+        "Supercapacitor Materials and Fabrication",
+        "Advanced Materials and Mechanics"
+      ],
+      "score": 5.08
+    },
+    {
+      "paper_id": "W4391855109",
+      "title": "A Review on Large Language Models: Architectures, Applications, Taxonomies, Open Issues and Challenges",
+      "year": 2024,
+      "url": "https://doi.org/10.1109/access.2024.3365742",
+      "abstract": "Large Language Models (LLMs) recently demonstrated extraordinary capability, including natural language processing (NLP), language translation, text generation, question answering, etc. Moreover, LLMs are a new and essential part of computerized language processing, having the ability to understand complex verbal patterns and generate coherent and appropriate replies for the situation. Though this success of LLMs has prompted a substantial increase in research contributions, rapid growth has made it difficult to understand the overall impact of these improvements. Since a lot of new research on LLMs is coming out quickly, it is getting tough to get an overview of all of them in a short note. Consequently, the research community would benefit from a short but thorough review of the recent changes in this area. This article thoroughly overviews LLMs, including their history, architectures, transformers, resources, training methods, applications, impacts, challenges, etc. This paper begins by discussing the fundamental concepts of LLMs with its traditional pipeline of the LLMs training phase. It then provides an overview of the existing works, the history of LLMs, their evolution over time, the architecture of transformers in LLMs, the different resources of LLMs, and the different training methods that have been used to train them. It also demonstrated the datasets utilized in the studies. After that, the paper discusses the wide range of applications of LLMs, including biomedical and healthcare, education, social, business, and agriculture. It also illustrates how LLMs create an impact on society and shape the future of AI and how they can be used to solve real-world problems. Then it also explores open issues and challenges to deploying LLMs in real-world scenario. Our review paper aims to help practitioners, researchers, and experts thoroughly understand the evolution of LLMs, pre-trained architectures, applications, challenges, and future goals.",
+      "citation_count": 708,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4362515116"
+      ],
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Data Quality and Management"
+      ],
+      "score": 5.051
+    },
+    {
+      "paper_id": "W4392193048",
+      "title": "Adapted large language models can outperform medical experts in clinical text summarization",
+      "year": 2024,
+      "url": "https://doi.org/10.1038/s41591-024-02855-5",
+      "abstract": null,
+      "citation_count": 671,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4362515116"
+      ],
+      "topics": [
+        "Topic Modeling",
+        "Biomedical Text Mining and Ontologies",
+        "Machine Learning in Healthcare"
+      ],
+      "score": 5.027
+    },
+    {
+      "paper_id": "W4409273656",
+      "title": "Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields",
+      "year": 2025,
+      "url": "https://doi.org/10.1016/j.knosys.2025.113429",
+      "abstract": null,
+      "citation_count": 20,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4406793899"
+      ],
+      "topics": [
+        "Robotic Path Planning Algorithms",
+        "Robotics and Sensor-Based Localization",
+        "Distributed Control Multi-Agent Systems"
+      ],
+      "score": 5.022
+    },
+    {
+      "paper_id": "W7131127377",
+      "title": "Retrieval-Augmented Generation",
+      "year": 2026,
+      "url": "https://doi.org/10.1007/978-981-95-4632-9_4",
+      "abstract": null,
+      "citation_count": 0,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4415069437"
+      ],
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Big Data and Digital Economy"
+      ],
+      "score": 5.0
+    },
+    {
+      "paper_id": "W7160249288",
+      "title": "Large language models for business and management applications: A review",
+      "year": 2026,
+      "url": "https://doi.org/10.1016/j.ipm.2026.104864",
+      "abstract": "Large language models (LLMs) are rapidly reshaping business and management, yet existing reviews remain fragmented, with limited integration of bibliometric structure and operational insights. This study addresses that gap by combining bibliometric analysis with a systematic thematic synthesis, linking publication trends, intellectual structure, and real-world deployment patterns across 84 application-focused studies selected from an initial pool of 210 records identified from Scopus, Web of Science, and Google Scholar (up to August 2025). The analysis shows a sharp post-2023 expansion of research alongside a shift from general-purpose conversational use toward domain-specific and architecture-aware implementations. In contrast to prior reviews, this study identifies how application patterns differ across domains: knowledge-intensive contexts increasingly adopt retrieval-augmented generation (RAG) for grounding, while finance applications more frequently rely on fine-tuned and domain-specific models. Keyword co-occurrence analysis highlights a technology-centric core, dominated by ChatGPT, foundation models, and RAG, linked to key business domains including operations, finance, marketing, and supply chain management. While organisations are increasingly adopting customised LLM pipelines and governance-aware workflows, challenges persist in accuracy, integration, ethical risk, and data quality. By consolidating dispersed evidence, this study offers a structured understanding of emerging application patterns and provides guidance for future research and responsible enterprise adoption of LLMs.",
+      "citation_count": 0,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4416955380"
+      ],
+      "topics": [
+        "Big Data and Digital Economy",
+        "Natural Language Processing Techniques",
+        "Business Process Modeling and Analysis"
+      ],
+      "score": 5.0
+    },
+    {
+      "paper_id": "W7166880435",
+      "title": "A Survey and Computational Atlas of Personality Models",
+      "year": 2026,
+      "url": "https://doi.org/10.1145/3828667",
+      "abstract": "Personality psychology has spent a century characterizing individual differences, yet computational approaches to personality are dominated by a single model: the Big Five (OCEAN). Numerous other validated frameworks exist, spanning clinical diagnosis, narcissism, motivation, cognition, conflict resolution, and applied assessment, but without a shared computational format they remain fragmented across disciplinary silos. This paper surveys 44 personality models from seven research disciplines and encodes every construct as a factor chain , which we define as a structured descriptor set that disambiguates each factor through its defining adjectives, synonyms, verbs and nouns. The result is a uniformly encoded computational atlas of factor chains paired with neural embeddings and trained classifiers, searchable across all surveyed models simultaneously. Three layers of evaluation confirm the encoding: classifiers tested against human-authored items from published psychometric instruments, an independent LLM judge panel, and replication across multiple generators, achieving 86.8% accuracy on human-authored items. Embedding-space analysis reveals that the seven disciplinary categories do not form coherent clusters in semantic space; data-driven clustering instead uncovers 15 natural groupings that cut across the predefined categories, approximate established diagnostic boundaries, and offer large-scale, lexical-level evidence consistent with personality science having studied overlapping constructs under different names for decades, though shared vocabulary alone is not sufficient evidence for construct equivalence. We position the atlas as an exploratory resource for cross-model comparison and selection rather than a replacement for validated psychometric measurement. The full atlas, trained classifiers, and reproducibility notebooks are openly released.",
+      "citation_count": 0,
+      "source": "openalex",
+      "seed_distance": 1,
+      "matched_edges": [
+        "cites_seed:W4416955380"
+      ],
+      "topics": [
+        "Personality Traits and Psychology",
+        "Personality Disorders and Psychopathology",
+        "Mental Health Research Topics"
+      ],
+      "score": 5.0
+    }
+  ]
+}

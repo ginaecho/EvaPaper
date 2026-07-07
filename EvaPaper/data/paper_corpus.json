@@ -1,7 +1,7 @@
 {
   "report_path": "C:\\Users\\tzuchunchen\\Documents\\05_Research\\EvaPaper\\EvaPaper\\AI_Agent_Governance_Three_Layer_Stack_and_Papers.md",
   "scout_log_path": "C:\\Users\\tzuchunchen\\Documents\\05_Research\\EvaPaper\\EvaPaper\\memory\\agent_governance_scout_log.md",
-  "paper_count": 151,
+  "paper_count": 168,
   "papers": [
     {
       "ordinal": 1,
@@ -6126,6 +6126,554 @@
         {
           "field": "relevance",
           "text": "Live graph candidate relevant to Layer 2 governance for agent skills, specifications, or behavior."
+        }
+      ]
+    },
+    {
+      "ordinal": 259,
+      "title": "Toward expert-level medical question answering with large language models",
+      "url": "https://doi.org/10.1038/s41591-024-03423-7",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2 (Behavioral-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2025. Score=6.57, Citations=746."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Toward expert-level medical question answering with large language models\n2025. Score=6.57, Citations=746.\nLayer 2 (Behavioral-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2025. Score=6.57, Citations=746."
+        }
+      ]
+    },
+    {
+      "ordinal": 260,
+      "title": "TRiSM for Agentic AI: A review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems",
+      "url": "https://doi.org/10.1016/j.aiopen.2026.02.006",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2 (Behavioral-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2026. Score=6.38, Citations=23."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "TRiSM for Agentic AI: A review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems\n2026. Score=6.38, Citations=23.\nLayer 2 (Behavioral-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2026. Score=6.38, Citations=23."
+        }
+      ]
+    },
+    {
+      "ordinal": 261,
+      "title": "Exploring Agentic AI in Healthcare: A Study on Its Working Mechanism",
+      "url": "https://doi.org/10.3389/fmed.2025.1753443",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1 (Runtime-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2026. Score=6.11, Citations=12."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Exploring Agentic AI in Healthcare: A Study on Its Working Mechanism\n2026. Score=6.11, Citations=12.\nLayer 1 (Runtime-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2026. Score=6.11, Citations=12."
+        }
+      ]
+    },
+    {
+      "ordinal": 262,
+      "title": "Multi-agent AI",
+      "url": "https://doi.org/10.1007/s12525-025-00862-z",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 0 (Spec-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2026. Score=5.95, Citations=8."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Multi-agent AI\n2026. Score=5.95, Citations=8.\nLayer 0 (Spec-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2026. Score=5.95, Citations=8."
+        }
+      ]
+    },
+    {
+      "ordinal": 263,
+      "title": "An Adaptive Multi-Agent Architecture with Reinforcement Learning and Generative AI for Intelligent Tutoring Systems: A Moodle-Based Case Study",
+      "url": "https://doi.org/10.3390/app16031323",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2 (Behavioral-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2026. Score=5.84, Citations=6."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "An Adaptive Multi-Agent Architecture with Reinforcement Learning and Generative AI for Intelligent Tutoring Systems: A Moodle-Based Case Study\n2026. Score=5.84, Citations=6.\nLayer 2 (Behavioral-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2026. Score=5.84, Citations=6."
+        }
+      ]
+    },
+    {
+      "ordinal": 264,
+      "title": "Exploring the role of agentic AI in fostering self-efficacy, autonomy support, and self-learning motivation in higher education",
+      "url": "https://doi.org/10.3389/frai.2026.1738774",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 0 (Spec-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2026. Score=5.84, Citations=6."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Exploring the role of agentic AI in fostering self-efficacy, autonomy support, and self-learning motivation in higher education\n2026. Score=5.84, Citations=6.\nLayer 0 (Spec-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2026. Score=5.84, Citations=6."
+        }
+      ]
+    },
+    {
+      "ordinal": 265,
+      "title": "The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges",
+      "url": "https://doi.org/10.3390/fi17090404",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2 (Behavioral-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 1,
+        "landscape": 1
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "landscape"
+      ],
+      "fields": {
+        "abstract": "2025. Score=5.66, Citations=91."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges\n2025. Score=5.66, Citations=91.\nLayer 2 (Behavioral-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2025. Score=5.66, Citations=91."
+        }
+      ]
+    },
+    {
+      "ordinal": 266,
+      "title": "Ethical perspectives on AI Agents and Agentic AI",
+      "url": "https://doi.org/10.1007/s43681-026-01027-0",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2 (Behavioral-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2026. Score=5.60, Citations=3."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Ethical perspectives on AI Agents and Agentic AI\n2026. Score=5.60, Citations=3.\nLayer 2 (Behavioral-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2026. Score=5.60, Citations=3."
+        }
+      ]
+    },
+    {
+      "ordinal": 267,
+      "title": "A Survey on Evaluation of Large Language Models",
+      "url": "https://doi.org/10.1145/3641289",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2 (Behavioral-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 1,
+        "landscape": 0
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2024. Score=5.60, Citations=2489."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "A Survey on Evaluation of Large Language Models\n2024. Score=5.60, Citations=2489.\nLayer 2 (Behavioral-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2024. Score=5.60, Citations=2489."
+        }
+      ]
+    },
+    {
+      "ordinal": 268,
+      "title": "Agentic AI: a comprehensive survey of architectures, applications, and future directions",
+      "url": "https://doi.org/10.1007/s10462-025-11422-4",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1 (Runtime-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "2025. Score=5.47, Citations=58."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Agentic AI: a comprehensive survey of architectures, applications, and future directions\n2025. Score=5.47, Citations=58.\nLayer 1 (Runtime-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2025. Score=5.47, Citations=58."
+        }
+      ]
+    },
+    {
+      "ordinal": 269,
+      "title": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare",
+      "url": "https://doi.org/10.1038/s41746-025-01900-y",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2 (Behavioral-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2025. Score=5.37, Citations=46."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare\n2025. Score=5.37, Citations=46.\nLayer 2 (Behavioral-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2025. Score=5.37, Citations=46."
+        }
+      ]
+    },
+    {
+      "ordinal": 270,
+      "title": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications",
+      "url": "https://doi.org/10.1109/access.2025.3585609",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2 (Behavioral-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2025. Score=5.30, Citations=39."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications\n2025. Score=5.30, Citations=39.\nLayer 2 (Behavioral-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2025. Score=5.30, Citations=39."
+        }
+      ]
+    },
+    {
+      "ordinal": 271,
+      "title": "A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions",
+      "url": "https://doi.org/10.3390/a18080499",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2 (Behavioral-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2025. Score=5.22, Citations=32."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions\n2025. Score=5.22, Citations=32.\nLayer 2 (Behavioral-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2025. Score=5.22, Citations=32."
+        }
+      ]
+    },
+    {
+      "ordinal": 272,
+      "title": "Unifying Large Language Models and Knowledge Graphs: A Roadmap",
+      "url": "https://doi.org/10.1109/tkde.2024.3352100",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 0 (Spec-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2024. Score=5.19, Citations=973."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Unifying Large Language Models and Knowledge Graphs: A Roadmap\n2024. Score=5.19, Citations=973.\nLayer 0 (Spec-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2024. Score=5.19, Citations=973."
+        }
+      ]
+    },
+    {
+      "ordinal": 273,
+      "title": "A survey on large language model (LLM) security and privacy: The Good, The Bad, and The Ugly",
+      "url": "https://doi.org/10.1016/j.hcc.2024.100211",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1 (Runtime-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2024. Score=5.14, Citations=878."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "A survey on large language model (LLM) security and privacy: The Good, The Bad, and The Ugly\n2024. Score=5.14, Citations=878.\nLayer 1 (Runtime-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2024. Score=5.14, Citations=878."
+        }
+      ]
+    },
+    {
+      "ordinal": 274,
+      "title": "Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields",
+      "url": "https://doi.org/10.1016/j.knosys.2025.113429",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 0 (Spec-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2025. Score=5.02, Citations=20."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields\n2025. Score=5.02, Citations=20.\nLayer 0 (Spec-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2025. Score=5.02, Citations=20."
+        }
+      ]
+    },
+    {
+      "ordinal": 275,
+      "title": "Large language models for business and management applications: A review",
+      "url": "https://doi.org/10.1016/j.ipm.2026.104864",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 0 (Spec-Level)",
+      "solution": null,
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "landscape",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2026. Score=5.00, Citations=0."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Large language models for business and management applications: A review\n2026. Score=5.00, Citations=0.\nLayer 0 (Spec-Level)"
+        },
+        {
+          "field": "abstract",
+          "text": "2026. Score=5.00, Citations=0."
         }
       ]
     }

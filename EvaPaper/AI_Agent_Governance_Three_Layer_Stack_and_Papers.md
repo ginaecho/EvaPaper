@@ -1656,3 +1656,108 @@ This is **Layer 2 (Behavioral-Level Governance)**. The multi-step autonomy creat
   - SkCC (static, score=48.8377)
   - OWASP Top 10 for Agentic Skills (AST10) (static, score=43.9078)
   - GitHub Spec Kit / SDD (Specification-Driven Development) (static, score=34.2229)
+
+### 2026-07-07 Daily Scout: 17 newly surfaced papers
+
+1. **Toward expert-level medical question answering with large language models**
+   - Year: 2025 | Citations: 746 | Layer 2 (Behavioral-Level)
+   - URL: https://doi.org/10.1038/s41591-024-03423-7
+   - Topics: Topic Modeling, Machine Learning in Healthcare
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
+
+2. **TRiSM for Agentic AI: A review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems**
+   - Year: 2026 | Citations: 23 | Layer 2 (Behavioral-Level)
+   - URL: https://doi.org/10.1016/j.aiopen.2026.02.006
+   - Topics: Multi-Agent Systems and Negotiation, Access Control and Trust, Mobile Agent-Based Network Management
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
+
+3. **Exploring Agentic AI in Healthcare: A Study on Its Working Mechanism** (`arXiv:2025.17534`)
+   - Year: 2026 | Citations: 12 | Layer 1 (Runtime-Level)
+   - URL: https://doi.org/10.3389/fmed.2025.1753443
+   - Topics: Artificial Intelligence in Healthcare and Education, IoT and Edge/Fog Computing, Social Robot Interaction and HRI
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 1 (Runtime-Level)
+
+4. **Multi-agent AI**
+   - Year: 2026 | Citations: 8 | Layer 0 (Spec-Level)
+   - URL: https://doi.org/10.1007/s12525-025-00862-z
+   - Topics: Robotic Process Automation Applications, Ethics and Social Impacts of AI, Innovation, Sustainability, Human-Machine Systems
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 0 (Spec-Level)
+
+5. **An Adaptive Multi-Agent Architecture with Reinforcement Learning and Generative AI for Intelligent Tutoring Systems: A Moodle-Based Case Study**
+   - Year: 2026 | Citations: 6 | Layer 2 (Behavioral-Level)
+   - URL: https://doi.org/10.3390/app16031323
+   - Topics: Intelligent Tutoring Systems and Adaptive Learning, Online Learning and Analytics, E-Learning and Knowledge Management
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
+
+6. **Exploring the role of agentic AI in fostering self-efficacy, autonomy support, and self-learning motivation in higher education** (`arXiv:2026.17387`)
+   - Year: 2026 | Citations: 6 | Layer 0 (Spec-Level)
+   - URL: https://doi.org/10.3389/frai.2026.1738774
+   - Topics: Technology Adoption and User Behaviour, Motivation and Self-Concept in Sports, Technostress in Professional Settings
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 0 (Spec-Level)
+
+7. **The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges**
+   - Year: 2025 | Citations: 91 | Layer 2 (Behavioral-Level)
+   - URL: https://doi.org/10.3390/fi17090404
+   - Topics: Reinforcement Learning in Robotics, Multi-Agent Systems and Negotiation, Advanced Software Engineering Methodologies
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
+
+8. **Ethical perspectives on AI Agents and Agentic AI**
+   - Year: 2026 | Citations: 3 | Layer 2 (Behavioral-Level)
+   - URL: https://doi.org/10.1007/s43681-026-01027-0
+   - Topics: Ethics and Social Impacts of AI, Explainable Artificial Intelligence (XAI), Multi-Agent Systems and Negotiation
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
+
+9. **A Survey on Evaluation of Large Language Models**
+   - Year: 2024 | Citations: 2489 | Layer 2 (Behavioral-Level)
+   - URL: https://doi.org/10.1145/3641289
+   - Topics: Topic Modeling, Natural Language Processing Techniques, Artificial Intelligence in Healthcare and Education
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
+
+10. **Agentic AI: a comprehensive survey of architectures, applications, and future directions**
+   - Year: 2025 | Citations: 58 | Layer 1 (Runtime-Level)
+   - URL: https://doi.org/10.1007/s10462-025-11422-4
+   - Topics: Artificial Intelligence in Healthcare and Education, Explainable Artificial Intelligence (XAI), Machine Learning in Healthcare
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 1 (Runtime-Level)
+
+11. **A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare**
+   - Year: 2025 | Citations: 46 | Layer 2 (Behavioral-Level)
+   - URL: https://doi.org/10.1038/s41746-025-01900-y
+   - Topics: Artificial Intelligence in Healthcare and Education, Artificial Intelligence in Healthcare, COVID-19 diagnosis using AI
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
+
+12. **Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications** (`arXiv:2025.35856`)
+   - Year: 2025 | Citations: 39 | Layer 2 (Behavioral-Level)
+   - URL: https://doi.org/10.1109/access.2025.3585609
+   - Topics: Impact of AI and Big Data on Business and Society, Smart Cities and Technologies, Transportation and Mobility Innovations
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
+
+13. **A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions**
+   - Year: 2025 | Citations: 32 | Layer 2 (Behavioral-Level)
+   - URL: https://doi.org/10.3390/a18080499
+   - Topics: Artificial Intelligence in Healthcare and Education, Privacy-Preserving Technologies in Data, Topic Modeling
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 2 (Behavioral-Level)
+
+14. **Unifying Large Language Models and Knowledge Graphs: A Roadmap** (`arXiv:2024.33521`)
+   - Year: 2024 | Citations: 973 | Layer 0 (Spec-Level)
+   - URL: https://doi.org/10.1109/tkde.2024.3352100
+   - Topics: Topic Modeling, Advanced Graph Neural Networks, Natural Language Processing Techniques
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 0 (Spec-Level)
+
+15. **A survey on large language model (LLM) security and privacy: The Good, The Bad, and The Ugly** (`arXiv:2024.10021`)
+   - Year: 2024 | Citations: 878 | Layer 1 (Runtime-Level)
+   - URL: https://doi.org/10.1016/j.hcc.2024.100211
+   - Topics: Privacy-Preserving Technologies in Data, Topic Modeling, Access Control and Trust
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 1 (Runtime-Level)
+
+16. **Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields** (`arXiv:2025.11342`)
+   - Year: 2025 | Citations: 20 | Layer 0 (Spec-Level)
+   - URL: https://doi.org/10.1016/j.knosys.2025.113429
+   - Topics: Robotic Path Planning Algorithms, Robotics and Sensor-Based Localization, Distributed Control Multi-Agent Systems
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 0 (Spec-Level)
+
+17. **Large language models for business and management applications: A review** (`arXiv:2026.10486`)
+   - Year: 2026 | Citations: 0 | Layer 0 (Spec-Level)
+   - URL: https://doi.org/10.1016/j.ipm.2026.104864
+   - Topics: Big Data and Digital Economy, Natural Language Processing Techniques, Business Process Modeling and Analysis
+   - Why relevant: Discovered via daily scout graph expansion; classified as Layer 0 (Spec-Level)
+

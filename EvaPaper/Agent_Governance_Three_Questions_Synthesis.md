@@ -899,3 +899,38 @@ The speaker invites viewers to subscribe, like, and share to support ongoing con
 *Compiled by EvaPaper | Based on 32 papers across the Three-Layer Governance Stack + practical enterprise SOP methodology*
 
 ---
+
+---
+
+## 2026-07-07 Daily Scout Update
+
+New papers discovered: **17** across governance layers.
+
+### Layer 0 (Spec-Level) (5 papers)
+
+- **Multi-agent AI** - 2026
+- **Exploring the role of agentic AI in fostering self-efficacy, autonomy support, and self-learning motivation in higher education** (arXiv:2026.17387) - 2026
+- **Unifying Large Language Models and Knowledge Graphs: A Roadmap** (arXiv:2024.33521) - 2024
+- **Adaptive multi-UAV cooperative path planning based on novel rotation artificial potential fields** (arXiv:2025.11342) - 2025
+- **Large language models for business and management applications: A review** (arXiv:2026.10486) - 2026
+
+### Layer 1 (Runtime-Level) (3 papers)
+
+- **Exploring Agentic AI in Healthcare: A Study on Its Working Mechanism** (arXiv:2025.17534) - 2026
+- **Agentic AI: a comprehensive survey of architectures, applications, and future directions** - 2025
+- **A survey on large language model (LLM) security and privacy: The Good, The Bad, and The Ugly** (arXiv:2024.10021) - 2024
+
+### Layer 2 (Behavioral-Level) (9 papers)
+
+- **Toward expert-level medical question answering with large language models** - 2025
+- **TRiSM for Agentic AI: A review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems** - 2026
+- **An Adaptive Multi-Agent Architecture with Reinforcement Learning and Generative AI for Intelligent Tutoring Systems: A Moodle-Based Case Study** - 2026
+- **The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges** - 2025
+- **Ethical perspectives on AI Agents and Agentic AI** - 2026
+- **A Survey on Evaluation of Large Language Models** - 2024
+- **A practical framework for appropriate implementation and review of artificial intelligence (FAIR-AI) in healthcare** - 2025
+- **Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications** (arXiv:2025.35856) - 2025
+- **A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions** - 2025
+
+*These papers were auto-discovered by the daily scout and classified by keyword-based layer inference. Manual review recommended for governance question mapping.*
+
