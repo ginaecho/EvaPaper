@@ -3,8 +3,18 @@
 ## Trigger
 Run after paper scouting yields new relevant papers.
 
+## Relevance Filter (CRITICAL)
+Papers MUST pass a relevance gate before integration into curated reports.
+Only papers related to **AI agent governance, evaluation, safety, security, or tool use** 
+are integrated. Irrelevant domains (medical imaging, bioinformatics, chemistry, etc.) 
+are kept in raw scout JSON but NEVER pushed to curated markdown or HTML deliverables.
+
+**Minimum requirement:** At least 2 relevance signals from: agent, llm, language model, 
+governance, benchmark, evaluation, safety, security, trust, sandbox, runtime, skill, 
+tool use, multi-agent, autonomous, alignment, guardrail, agentic, etc.
+
 ## Mandatory Integration Targets
-Newly discovered papers **must** be added and integrated into **all four** of the following deliverables:
+Newly discovered **relevant** papers must be added to **all four** deliverables:
 
 1. **Markdown Synthesis**  
    `EvaPaper/AI_Agent_Governance_Three_Layer_Stack_and_Papers.md`  

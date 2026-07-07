@@ -1,7 +1,7 @@
 {
-  "report_path": "/Users/tzu-chunchen/Documents/AI/EvaPaper/AI_Agent_Governance_Three_Layer_Stack_and_Papers.md",
-  "scout_log_path": "/Users/tzu-chunchen/Documents/AI/EvaPaper/memory/agent_governance_scout_log.md",
-  "paper_count": 146,
+  "report_path": "C:\\Users\\tzuchunchen\\Documents\\05_Research\\EvaPaper\\EvaPaper\\AI_Agent_Governance_Three_Layer_Stack_and_Papers.md",
+  "scout_log_path": "C:\\Users\\tzuchunchen\\Documents\\05_Research\\EvaPaper\\EvaPaper\\memory\\agent_governance_scout_log.md",
+  "paper_count": 151,
   "papers": [
     {
       "ordinal": 1,
@@ -5934,6 +5934,198 @@
         {
           "field": "relevance",
           "text": "Turns policy satisfaction into independently checkable proof artifacts, directly relevant to enforceable agent-governance specifications."
+        }
+      ]
+    },
+    {
+      "ordinal": 254,
+      "title": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2606.17591",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 1,
+        "runtime": 0,
+        "behavioral": 1,
+        "landscape": 0
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "static"
+      ],
+      "fields": {
+        "abstract": "2026. Training-free verbal reinforcement learning enables LLM agents to learn from world feedback -- objective signals such as dynamic task outcomes, market returns, or demand forecasts -- by extracting verbal rules from experience and injecting them as context, updating the agent's behavior without parameter changes. However, in non-stationary environments these agents face a retention-forgetting dilemma: retaining stale insights causes negative transfer, while discarding them causes catastrophic forgetting when conditions recur. We identify four requirements for navigating this dilemma -- outcome-driven evaluation, persistent structured evidence, non-monotonic knowledge lifecycle, and compositional governance -- and show that existing methods invest heavily in experience extraction while underinvesting in insight governance. We propose a three-layer architecture -- rules, evidence, and skills -- connected by a feedback-driven curation loop that closes the governance gap. Rules capture distilled experience from world outcomes; evidence logs track each rule's reliability across episodes; skills govern which rules to apply, how to resolve conflicts, and when to abstain. On financial forecasting as a case study, where world feedback is naturally abundant, noisy, and non-stationary, we show that the same accumulated experience either degrades performance below the zero-shot baseline or dramatically improves accuracy and risk-adjusted returns, depending on whether the curation loop is present.",
+        "relevance": "Live graph candidate relevant to Layer 2 governance for agent skills, specifications, or behavior."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning\n2026. Training-free verbal reinforcement learning enables LLM agents to learn from world feedback -- objective signals such as dynamic task outcomes, market returns, or demand forecasts -- by extracting verbal rules from experience and injecting them as context, updating the agent's behavior without parameter changes. However, in non-stationary environments these agents face a retention-forgetting dilemma: retaining stale insights causes negative transfer, while discarding them causes catastrophic forgetting when conditions recur. We identify four requirements for navigating this dilemma -- outcome-driven evaluation, persistent structured evidence, non-monotonic knowledge lifecycle, and compositional governance -- and show that existing methods invest heavily in experience extraction while underinvesting in insight governance. We propose a three-layer architecture -- rules, evidence, and skills -- connected by a feedback-driven curation loop that closes the governance gap. Rules capture distilled experience from world outcomes; evidence logs track each rule's reliability across episodes; skills govern which rules to apply, how to resolve conflicts, and when to abstain. On financial forecasting as a case study, where world feedback is naturally abundant, noisy, and non-stationary, we show that the same accumulated experience either degrades performance below the zero-shot baseline or dramatically improves accuracy and risk-adjusted returns, depending on whether the curation loop is present.\nLive graph candidate relevant to Layer 2 governance for agent skills, specifications, or behavior.\nLayer 2"
+        },
+        {
+          "field": "abstract",
+          "text": "2026. Training-free verbal reinforcement learning enables LLM agents to learn from world feedback -- objective signals such as dynamic task outcomes, market returns, or demand forecasts -- by extracting verbal rules from experience and injecting them as context, updating the agent's behavior without parameter changes. However, in non-stationary environments these agents face a retention-forgetting dilemma: retaining stale insights causes negative transfer, while discarding them causes catastrophic forgetting when conditions recur. We identify four requirements for navigating this dilemma -- outcome-driven evaluation, persistent structured evidence, non-monotonic knowledge lifecycle, and compositional governance -- and show that existing methods invest heavily in experience extraction while underinvesting in insight governance. We propose a three-layer architecture -- rules, evidence, and skills -- connected by a feedback-driven curation loop that closes the governance gap. Rules capture distilled experience from world outcomes; evidence logs track each rule's reliability across episodes; skills govern which rules to apply, how to resolve conflicts, and when to abstain. On financial forecasting as a case study, where world feedback is naturally abundant, noisy, and non-stationary, we show that the same accumulated experience either degrades performance below the zero-shot baseline or dramatically improves accuracy and risk-adjusted returns, depending on whether the curation loop is present."
+        },
+        {
+          "field": "relevance",
+          "text": "Live graph candidate relevant to Layer 2 governance for agent skills, specifications, or behavior."
+        }
+      ]
+    },
+    {
+      "ordinal": 255,
+      "title": "SkillWiki: A Living Knowledge Infrastructure for Agent Skills",
+      "url": "https://arxiv.org/abs/2606.16523",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 1",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 1,
+        "behavioral": 0,
+        "landscape": 0
+      },
+      "primary_focus": "runtime",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2026. While knowledge is managed through Wikipedia and software through GitHub, agent skills still lack an infrastructure for large-scale production, governance, and evolution. SkillWiki is a living knowledge infrastructure that supports the organization, grounding, and continuous evolution of agent skills by transforming heterogeneous knowledge into reusable skill assets linked to their originating evidence. Our demonstration presents the complete skill lifecycle, from knowledge ingestion and skill production to provenance-aware exploration, governance, and execution-driven evolution. SkillWiki highlights a future in which knowledge, skills, and execution experience co-evolve within a shared infrastructure. The live demonstration and source code are publicly available at https://github.com/Huangdingcheng/SkillWiki.",
+        "relevance": "Treats agent skills as governed knowledge assets with provenance, lifecycle management, and execution-driven evolution."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "SkillWiki: A Living Knowledge Infrastructure for Agent Skills\n2026. While knowledge is managed through Wikipedia and software through GitHub, agent skills still lack an infrastructure for large-scale production, governance, and evolution. SkillWiki is a living knowledge infrastructure that supports the organization, grounding, and continuous evolution of agent skills by transforming heterogeneous knowledge into reusable skill assets linked to their originating evidence. Our demonstration presents the complete skill lifecycle, from knowledge ingestion and skill production to provenance-aware exploration, governance, and execution-driven evolution. SkillWiki highlights a future in which knowledge, skills, and execution experience co-evolve within a shared infrastructure. The live demonstration and source code are publicly available at https://github.com/Huangdingcheng/SkillWiki.\nTreats agent skills as governed knowledge assets with provenance, lifecycle management, and execution-driven evolution.\nLayer 1"
+        },
+        {
+          "field": "abstract",
+          "text": "2026. While knowledge is managed through Wikipedia and software through GitHub, agent skills still lack an infrastructure for large-scale production, governance, and evolution. SkillWiki is a living knowledge infrastructure that supports the organization, grounding, and continuous evolution of agent skills by transforming heterogeneous knowledge into reusable skill assets linked to their originating evidence. Our demonstration presents the complete skill lifecycle, from knowledge ingestion and skill production to provenance-aware exploration, governance, and execution-driven evolution. SkillWiki highlights a future in which knowledge, skills, and execution experience co-evolve within a shared infrastructure. The live demonstration and source code are publicly available at https://github.com/Huangdingcheng/SkillWiki."
+        },
+        {
+          "field": "relevance",
+          "text": "Treats agent skills as governed knowledge assets with provenance, lifecycle management, and execution-driven evolution."
+        }
+      ]
+    },
+    {
+      "ordinal": 256,
+      "title": "From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI",
+      "url": "https://arxiv.org/abs/2606.14502",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 2,
+        "runtime": 1,
+        "behavioral": 2,
+        "landscape": 0
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [
+        "static",
+        "runtime"
+      ],
+      "fields": {
+        "abstract": "2026. Large Language Models (LLMs) are undergoing a fundamental transformation from conversational generators into integrated AI systems capable of reasoning, action, memory, and self-improvement. We conceptualize this transition as a shift from Chatbot to Digital Colleague: from conversational answers to persistent work. We organize this transition along two tightly coupled dimensions. First, at the cognitive core level, LLMs are advancing from Chatbot-era \"fast thinking\" systems driven by next-token prediction toward Thinking LLMs that leverage inference-time computation, Chain-of-Thought reasoning, reflection, process supervision, and reinforcement learning to support more deliberate and reliable cognition. Second, at the tool-augmented task execution level, LLMs are progressing from tool-calling Agents that invoke external resources in an ad hoc manner toward OpenClaw-style workstation systems (OpenClaw) equipped with persistent Workspaces, skills, verification loops, and governance. The \"Workspace + Skill\" paradigm makes episodic tool use colleague-like via state persistence, reusable procedures, task closure, and experience reuse. We examine data construction shifts from instruction-response pairs to State-Action-Observation trajectories and evaluation from static benchmarks to sandboxed, auditable, self-evolving AI ecosystems.",
+        "relevance": "Directly analyzes the OpenClaw-style workspace plus skill paradigm as a governed persistent-agent system."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI\n2026. Large Language Models (LLMs) are undergoing a fundamental transformation from conversational generators into integrated AI systems capable of reasoning, action, memory, and self-improvement. We conceptualize this transition as a shift from Chatbot to Digital Colleague: from conversational answers to persistent work. We organize this transition along two tightly coupled dimensions. First, at the cognitive core level, LLMs are advancing from Chatbot-era \"fast thinking\" systems driven by next-token prediction toward Thinking LLMs that leverage inference-time computation, Chain-of-Thought reasoning, reflection, process supervision, and reinforcement learning to support more deliberate and reliable cognition. Second, at the tool-augmented task execution level, LLMs are progressing from tool-calling Agents that invoke external resources in an ad hoc manner toward OpenClaw-style workstation systems (OpenClaw) equipped with persistent Workspaces, skills, verification loops, and governance. The \"Workspace + Skill\" paradigm makes episodic tool use colleague-like via state persistence, reusable procedures, task closure, and experience reuse. We examine data construction shifts from instruction-response pairs to State-Action-Observation trajectories and evaluation from static benchmarks to sandboxed, auditable, self-evolving AI ecosystems.\nDirectly analyzes the OpenClaw-style workspace plus skill paradigm as a governed persistent-agent system.\nLayer 2"
+        },
+        {
+          "field": "abstract",
+          "text": "2026. Large Language Models (LLMs) are undergoing a fundamental transformation from conversational generators into integrated AI systems capable of reasoning, action, memory, and self-improvement. We conceptualize this transition as a shift from Chatbot to Digital Colleague: from conversational answers to persistent work. We organize this transition along two tightly coupled dimensions. First, at the cognitive core level, LLMs are advancing from Chatbot-era \"fast thinking\" systems driven by next-token prediction toward Thinking LLMs that leverage inference-time computation, Chain-of-Thought reasoning, reflection, process supervision, and reinforcement learning to support more deliberate and reliable cognition. Second, at the tool-augmented task execution level, LLMs are progressing from tool-calling Agents that invoke external resources in an ad hoc manner toward OpenClaw-style workstation systems (OpenClaw) equipped with persistent Workspaces, skills, verification loops, and governance. The \"Workspace + Skill\" paradigm makes episodic tool use colleague-like via state persistence, reusable procedures, task closure, and experience reuse. We examine data construction shifts from instruction-response pairs to State-Action-Observation trajectories and evaluation from static benchmarks to sandboxed, auditable, self-evolving AI ecosystems."
+        },
+        {
+          "field": "relevance",
+          "text": "Directly analyzes the OpenClaw-style workspace plus skill paradigm as a governed persistent-agent system."
+        }
+      ]
+    },
+    {
+      "ordinal": 257,
+      "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
+      "url": "https://arxiv.org/abs/2606.20669",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 0,
+        "runtime": 0,
+        "behavioral": 1,
+        "landscape": 0
+      },
+      "primary_focus": "behavioral",
+      "secondary_focuses": [],
+      "fields": {
+        "abstract": "2026. As organizations increasingly deploy generative AI agents to automate business processes, they face a governance dilemma: although these agents can increase operational flexibility, their non-deterministic nature challenges the control and standardization that Business Process Management seeks to enforce. This paper addresses this \\emph{invisible autonomy risk} by introducing \\emph{Agent Behavior Mining}, a governance capability that enables the application of process mining techniques to render generative AI agent decision-making observable and traceable. We (1) improve the understanding of generative AI agent behavior through an event data model that translates granular agent activities -- including reasoning traces, tool usage, and token costs -- into standardized process logs; (2) instantiate the data model in a multi-agent order-to-cash implementation, demonstrating how process managers can leverage agent logs to detect policy deviations and quantify operational variability; and (3) evaluate the perceived practical utility of the approach in an exploratory study with 18 industry practitioners. The results indicate that practitioners view behavioral transparency as a prerequisite for trust and consider the ability to examine agent reasoning as an important governance requirement for the next generation of AI-driven business processes.",
+        "relevance": "Makes agent behavior observable through process logs, supporting audit and policy-deviation detection."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes\n2026. As organizations increasingly deploy generative AI agents to automate business processes, they face a governance dilemma: although these agents can increase operational flexibility, their non-deterministic nature challenges the control and standardization that Business Process Management seeks to enforce. This paper addresses this \\emph{invisible autonomy risk} by introducing \\emph{Agent Behavior Mining}, a governance capability that enables the application of process mining techniques to render generative AI agent decision-making observable and traceable. We (1) improve the understanding of generative AI agent behavior through an event data model that translates granular agent activities -- including reasoning traces, tool usage, and token costs -- into standardized process logs; (2) instantiate the data model in a multi-agent order-to-cash implementation, demonstrating how process managers can leverage agent logs to detect policy deviations and quantify operational variability; and (3) evaluate the perceived practical utility of the approach in an exploratory study with 18 industry practitioners. The results indicate that practitioners view behavioral transparency as a prerequisite for trust and consider the ability to examine agent reasoning as an important governance requirement for the next generation of AI-driven business processes.\nMakes agent behavior observable through process logs, supporting audit and policy-deviation detection.\nLayer 2"
+        },
+        {
+          "field": "abstract",
+          "text": "2026. As organizations increasingly deploy generative AI agents to automate business processes, they face a governance dilemma: although these agents can increase operational flexibility, their non-deterministic nature challenges the control and standardization that Business Process Management seeks to enforce. This paper addresses this \\emph{invisible autonomy risk} by introducing \\emph{Agent Behavior Mining}, a governance capability that enables the application of process mining techniques to render generative AI agent decision-making observable and traceable. We (1) improve the understanding of generative AI agent behavior through an event data model that translates granular agent activities -- including reasoning traces, tool usage, and token costs -- into standardized process logs; (2) instantiate the data model in a multi-agent order-to-cash implementation, demonstrating how process managers can leverage agent logs to detect policy deviations and quantify operational variability; and (3) evaluate the perceived practical utility of the approach in an exploratory study with 18 industry practitioners. The results indicate that practitioners view behavioral transparency as a prerequisite for trust and consider the ability to examine agent reasoning as an important governance requirement for the next generation of AI-driven business processes."
+        },
+        {
+          "field": "relevance",
+          "text": "Makes agent behavior observable through process logs, supporting audit and policy-deviation detection."
+        }
+      ]
+    },
+    {
+      "ordinal": 258,
+      "title": "Experience Makes Skillful: Enabling Generalizable Medical Agent Reasoning via Self-Evolving Skill Memory",
+      "url": "https://arxiv.org/abs/2606.09365",
+      "pdf": null,
+      "paper_type": null,
+      "authors": null,
+      "date": null,
+      "layer": "Layer 2",
+      "solution": "Yes",
+      "focus_scores": {
+        "static": 3,
+        "runtime": 0,
+        "behavioral": 0,
+        "landscape": 1
+      },
+      "primary_focus": "static",
+      "secondary_focuses": [
+        "landscape"
+      ],
+      "fields": {
+        "abstract": "2026. Medical agent systems are increasingly expected to support interactive clinical decision making rather than only static question answering. In such settings, effective agents must reuse prior experience across evolving cases, yet existing memory mechanisms often retain raw historical traces that are redundant, noisy, and difficult to govern. More importantly, they rarely distinguish which memories are truly useful for future reasoning. This limits their ability to accumulate compact and reliable experience for long-horizon clinical reasoning. To close this gap, we propose SkeMex, a post-deployment self-evolution framework that improves medical agents through a skill-based memory without updating model weights. SkeMex distills informative interaction trajectories into structured skills that encode reusable procedural knowledge, and organizes them into a multi-branch repository spanning general, task-specific, and action-level experience. To determine which memories should be reused and retained, SkeMex estimates context-dependent utility from environment feedback and uses it to guide value-aware retrieval and repository governance. A closed-loop ``Read--Write--Assess--Govern\" lifecycle further supports continual evolution by writing new skills, updating utilities, promoting useful memories, and removing harmful entries. Experiments across diverse clinical tasks show that SkeMex consistently outperforms representative memory-based agents in both offline and online settings. It also generalizes across model backbones and supports transferable skill memory. All data and code will be released publicly.",
+        "relevance": "Live graph candidate relevant to Layer 2 governance for agent skills, specifications, or behavior."
+      },
+      "passages": [
+        {
+          "field": "paper_summary",
+          "text": "Experience Makes Skillful: Enabling Generalizable Medical Agent Reasoning via Self-Evolving Skill Memory\n2026. Medical agent systems are increasingly expected to support interactive clinical decision making rather than only static question answering. In such settings, effective agents must reuse prior experience across evolving cases, yet existing memory mechanisms often retain raw historical traces that are redundant, noisy, and difficult to govern. More importantly, they rarely distinguish which memories are truly useful for future reasoning. This limits their ability to accumulate compact and reliable experience for long-horizon clinical reasoning. To close this gap, we propose SkeMex, a post-deployment self-evolution framework that improves medical agents through a skill-based memory without updating model weights. SkeMex distills informative interaction trajectories into structured skills that encode reusable procedural knowledge, and organizes them into a multi-branch repository spanning general, task-specific, and action-level experience. To determine which memories should be reused and retained, SkeMex estimates context-dependent utility from environment feedback and uses it to guide value-aware retrieval and repository governance. A closed-loop ``Read--Write--Assess--Govern\" lifecycle further supports continual evolution by writing new skills, updating utilities, promoting useful memories, and removing harmful entries. Experiments across diverse clinical tasks show that SkeMex consistently outperforms representative memory-based agents in both offline and online settings. It also generalizes across model backbones and supports transferable skill memory. All data and code will be released publicly.\nLive graph candidate relevant to Layer 2 governance for agent skills, specifications, or behavior.\nLayer 2"
+        },
+        {
+          "field": "abstract",
+          "text": "2026. Medical agent systems are increasingly expected to support interactive clinical decision making rather than only static question answering. In such settings, effective agents must reuse prior experience across evolving cases, yet existing memory mechanisms often retain raw historical traces that are redundant, noisy, and difficult to govern. More importantly, they rarely distinguish which memories are truly useful for future reasoning. This limits their ability to accumulate compact and reliable experience for long-horizon clinical reasoning. To close this gap, we propose SkeMex, a post-deployment self-evolution framework that improves medical agents through a skill-based memory without updating model weights. SkeMex distills informative interaction trajectories into structured skills that encode reusable procedural knowledge, and organizes them into a multi-branch repository spanning general, task-specific, and action-level experience. To determine which memories should be reused and retained, SkeMex estimates context-dependent utility from environment feedback and uses it to guide value-aware retrieval and repository governance. A closed-loop ``Read--Write--Assess--Govern\" lifecycle further supports continual evolution by writing new skills, updating utilities, promoting useful memories, and removing harmful entries. Experiments across diverse clinical tasks show that SkeMex consistently outperforms representative memory-based agents in both offline and online settings. It also generalizes across model backbones and supports transferable skill memory. All data and code will be released publicly."
+        },
+        {
+          "field": "relevance",
+          "text": "Live graph candidate relevant to Layer 2 governance for agent skills, specifications, or behavior."
         }
       ]
     }

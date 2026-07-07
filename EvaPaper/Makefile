@@ -8,7 +8,7 @@ OUTPUT_TOKENS ?=
 COST_USD ?=
 COST_NOTE ?=
 
-.PHONY: help index dashboard opportunities-check scout scout-json integrate-graph sota sota-static sota-runtime sota-behavioral sota-all ask ask-static ask-runtime ask-behavioral team team-static team-runtime team-behavioral team-all workflow-static workflow-runtime workflow-behavioral workflow-all costs docs test
+.PHONY: help index dashboard opportunities-check scout scout-json daily-scout integrate-graph sota sota-static sota-runtime sota-behavioral sota-all ask ask-static ask-runtime ask-behavioral team team-static team-runtime team-behavioral team-all workflow-static workflow-runtime workflow-behavioral workflow-all costs docs test
 
 help:
 	@printf "%s\n" \
@@ -45,6 +45,15 @@ scout:
 
 scout-json:
 	$(PYTHON) scripts/scout.py --discover "$(QUERY)" --from-year 2024 --json
+
+daily-scout:
+	$(PYTHON) scripts/daily_scout.py --from-year 2025
+
+daily-scout-deep:
+	$(PYTHON) scripts/daily_scout.py --from-year 2025 --deep
+
+deep-research:
+	$(PYTHON) scripts/deep_research_pass.py --topic "$(QUERY)"
 
 integrate-graph:
 	$(PYTHON) scripts/integrate_graph_candidates.py --dashboard

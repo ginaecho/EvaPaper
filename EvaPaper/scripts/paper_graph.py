@@ -371,8 +371,19 @@ def compute_score(node: PaperNode) -> float:
     distance_penalty = 0.8 * max(node.seed_distance - 1, 0)
     recency_bonus = 0.0
     if node.year:
-        recency_bonus = max(0, node.year - 2022) * 0.15
-    return round(citation_score + edge_bonus + recency_bonus - distance_penalty, 3)
+        # Strong recency weighting: 2025+ papers get significant boost
+        years_since_2022 = max(0, node.year - 2022)
+        recency_bonus = years_since_2022 * 0.5
+        # Extra boost for very recent papers (2025-2026)
+        if node.year >= 2025:
+            recency_bonus += 1.0
+        if node.year >= 2026:
+            recency_bonus += 0.8
+    # Penalize highly-cited but old papers (classic foundational work)
+    age_citation_penalty = 0.0
+    if node.year and node.year < 2023 and node.citation_count > 500:
+        age_citation_penalty = min(citation_score * 0.4, 2.0)
+    return round(citation_score + edge_bonus + recency_bonus - distance_penalty - age_citation_penalty, 3)
 
 
 def discover_from_query(
