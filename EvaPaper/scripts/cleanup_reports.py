@@ -90,10 +90,12 @@ def _extract_date_from_heading(heading: str) -> datetime | None:
 
 
 def _make_anchor(text: str) -> str:
-    """Generate a markdown-compatible anchor ID."""
-    anchor = re.sub(r"[^a-z0-9\s-]", "", text.lower())
+    """Generate a GitHub-compatible anchor ID from a heading."""
+    # GitHub's anchor generation: lowercase, replace spaces with -, remove punctuation except -
+    anchor = text.lower()
+    anchor = re.sub(r"[^a-z0-9\s-]", "", anchor)
     anchor = re.sub(r"\s+", "-", anchor.strip())
-    return anchor[:60]
+    return anchor
 
 
 def cleanup_main_report(dry_run: bool = False):
@@ -156,9 +158,10 @@ def cleanup_main_report(dry_run: bool = False):
     for dt, sec_lines in sections:
         if dt:
             date_str = dt.strftime("%B %d, %Y")
-            anchor = _make_anchor(sec_lines[0].lstrip("# "))
-            brief = sec_lines[0].lstrip("# ").split(":")[-1].strip()[:50]
-            toc.append(f"- **{date_str}**: {brief}")
+            heading_text = sec_lines[0].lstrip("# ").strip()
+            anchor = _make_anchor(heading_text)
+            brief = heading_text.split(":")[-1].strip()[:60]
+            toc.append(f"- [**{date_str}** — {brief}](#{anchor})")
     toc.append("")
 
     new_lines = before.copy()

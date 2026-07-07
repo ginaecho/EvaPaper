@@ -316,17 +316,21 @@ def integrate_into_scout_log(papers: list[dict]):
 
 def integrate_into_main_report(papers: list[dict]):
     """Append new papers to AI_Agent_Governance_Three_Layer_Stack_and_Papers.md."""
+    import re as _re
     report_md = DEFAULT_WORKSPACE.report_md
     if not report_md.exists():
         print("[integrate] WARNING: Main report not found, skipping")
         return
 
-    date_str = datetime.now().strftime("%Y-%m-%d")
+    now = datetime.now()
+    date_str = now.strftime("%B %d, %Y")  # e.g. "July 7, 2026"
     content = report_md.read_text(encoding="utf-8")
 
+    # Build the new scout section
+    heading = f"### {date_str} scout addendum: {len(papers)} newly surfaced papers"
     section_lines = [
         "",
-        f"### {date_str} Daily Scout: {len(papers)} newly surfaced papers",
+        heading,
         "",
     ]
 
@@ -337,23 +341,44 @@ def integrate_into_main_report(papers: list[dict]):
         layer = _infer_layer(paper)
         url = paper.get("url", "")
         cites = paper.get("citation_count", 0)
-        topics = ", ".join(paper.get("topics", [])[:3]) if paper.get("topics") else ""
 
-        lines = [f"{i}. **{title}**"]
+        # Build paper entry with proper hyperlink
         if arxiv_id:
-            lines[0] += f" (`arXiv:{arxiv_id}`)"
-        lines.append(f"   - Year: {year} | Citations: {cites} | {layer}")
-        if url:
-            lines.append(f"   - URL: {url}")
-        if topics:
-            lines.append(f"   - Topics: {topics}")
-        lines.append(f"   - Why relevant: Discovered via daily scout graph expansion; classified as {layer}")
-        lines.append("")
-        section_lines.extend(lines)
+            ref = f" ([arXiv:{arxiv_id}](https://arxiv.org/abs/{arxiv_id}))"
+        elif url:
+            ref = f" — [DOI]({url})" if "doi.org" in url else f" — [Link]({url})"
+        else:
+            ref = ""
 
-    # Insert after the executive summary section (before first ## that isn't exec summary)
-    # Find a good insertion point - append before the last line
-    content = content.rstrip() + "\n" + "\n".join(section_lines) + "\n"
+        section_lines.append(f"{i}. **{title}** ({year}){ref}")
+        section_lines.append(f"   - {cites} citations | {layer}")
+        section_lines.append("")
+
+    # Add a TOC entry at the top (find "#### Scout History" and insert after it)
+    anchor = _re.sub(r"[^a-z0-9\s-]", "", heading.lstrip("# ").lower())
+    anchor = _re.sub(r"\s+", "-", anchor.strip())
+    toc_entry = f"- [**{date_str}** — {len(papers)} newly surfaced papers](#{anchor})"
+
+    # Insert TOC entry after "#### Scout History (newest first)" line
+    toc_marker = "#### Scout History (newest first)"
+    toc_idx = content.find(toc_marker)
+    if toc_idx > 0:
+        # Find the blank line after the heading
+        insert_pos = content.index("\n", toc_idx) + 1
+        # Skip blank line
+        if content[insert_pos] == "\n":
+            insert_pos += 1
+        content = content[:insert_pos] + toc_entry + "\n" + content[insert_pos:]
+
+    # Insert the section after the TOC block (before the first ### scout heading)
+    first_scout = _re.search(r"\n### .*(scout addendum|findings update)", content)
+    if first_scout:
+        pos = first_scout.start()
+        content = content[:pos] + "\n".join(section_lines) + content[pos:]
+    else:
+        # Fallback: append at end
+        content = content.rstrip() + "\n" + "\n".join(section_lines) + "\n"
+
     report_md.write_text(content, encoding="utf-8")
     print(f"[integrate] Main report MD updated")
 
